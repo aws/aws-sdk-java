@@ -36,8 +36,8 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
     private String bucket;
     /**
      * <p>
-     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
-     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be
+     * exported to an Amazon S3 bucket that is owned by an account other than the account running the build.
      * </p>
      */
     private String bucketOwner;
@@ -54,13 +54,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if packaging is
-     * not specified.
+     * <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not
+     * specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     * <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -121,13 +121,14 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
-     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be
+     * exported to an Amazon S3 bucket that is owned by an account other than the account running the build.
      * </p>
      * 
      * @param bucketOwner
-     *        The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to
-     *        an Amazon S3 bucket that is owned by an account other than the account running the build.
+     *        The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data
+     *        to be exported to an Amazon S3 bucket that is owned by an account other than the account running the
+     *        build.
      */
 
     public void setBucketOwner(String bucketOwner) {
@@ -136,12 +137,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
-     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be
+     * exported to an Amazon S3 bucket that is owned by an account other than the account running the build.
      * </p>
      * 
-     * @return The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported
-     *         to an Amazon S3 bucket that is owned by an account other than the account running the build.
+     * @return The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data
+     *         to be exported to an Amazon S3 bucket that is owned by an account other than the account running the
+     *         build.
      */
 
     public String getBucketOwner() {
@@ -150,13 +152,14 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an
-     * Amazon S3 bucket that is owned by an account other than the account running the build.
+     * The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be
+     * exported to an Amazon S3 bucket that is owned by an account other than the account running the build.
      * </p>
      * 
      * @param bucketOwner
-     *        The AWS account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to
-     *        an Amazon S3 bucket that is owned by an account other than the account running the build.
+     *        The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data
+     *        to be exported to an Amazon S3 bucket that is owned by an account other than the account running the
+     *        build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,13 +215,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if packaging is
-     * not specified.
+     * <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not
+     * specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     * <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -228,13 +231,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if
-     *        packaging is not specified.
+     *        <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging
+     *        is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     *        <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      *        </p>
      *        </li>
      * @see ReportPackagingType
@@ -251,13 +254,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if packaging is
-     * not specified.
+     * <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not
+     * specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     * <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -266,13 +269,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if
-     *         packaging is not specified.
+     *         <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging
+     *         is not specified.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     *         <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      *         </p>
      *         </li>
      * @see ReportPackagingType
@@ -289,13 +292,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if packaging is
-     * not specified.
+     * <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not
+     * specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     * <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -305,13 +308,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if
-     *        packaging is not specified.
+     *        <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging
+     *        is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     *        <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -330,13 +333,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if packaging is
-     * not specified.
+     * <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not
+     * specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     * <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      * </p>
      * </li>
      * </ul>
@@ -346,13 +349,13 @@ public class S3ReportExportConfig implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code>: AWS CodeBuild creates the raw data in the output bucket. This is the default if
-     *        packaging is not specified.
+     *        <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging
+     *        is not specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ZIP</code>: AWS CodeBuild creates a ZIP file with the raw data in the output bucket.
+     *        <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

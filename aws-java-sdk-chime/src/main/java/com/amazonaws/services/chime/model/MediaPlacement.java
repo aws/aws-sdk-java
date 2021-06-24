@@ -70,6 +70,12 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String turnControlUrl;
+    /**
+     * <p>
+     * The event ingestion URL.
+     * </p>
+     */
+    private String eventIngestionUrl;
 
     /**
      * <p>
@@ -352,6 +358,46 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The event ingestion URL.
+     * </p>
+     * 
+     * @param eventIngestionUrl
+     *        The event ingestion URL.
+     */
+
+    public void setEventIngestionUrl(String eventIngestionUrl) {
+        this.eventIngestionUrl = eventIngestionUrl;
+    }
+
+    /**
+     * <p>
+     * The event ingestion URL.
+     * </p>
+     * 
+     * @return The event ingestion URL.
+     */
+
+    public String getEventIngestionUrl() {
+        return this.eventIngestionUrl;
+    }
+
+    /**
+     * <p>
+     * The event ingestion URL.
+     * </p>
+     * 
+     * @param eventIngestionUrl
+     *        The event ingestion URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withEventIngestionUrl(String eventIngestionUrl) {
+        setEventIngestionUrl(eventIngestionUrl);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +422,9 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
         if (getSignalingUrl() != null)
             sb.append("SignalingUrl: ").append(getSignalingUrl()).append(",");
         if (getTurnControlUrl() != null)
-            sb.append("TurnControlUrl: ").append(getTurnControlUrl());
+            sb.append("TurnControlUrl: ").append(getTurnControlUrl()).append(",");
+        if (getEventIngestionUrl() != null)
+            sb.append("EventIngestionUrl: ").append(getEventIngestionUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +467,10 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTurnControlUrl() != null && other.getTurnControlUrl().equals(this.getTurnControlUrl()) == false)
             return false;
+        if (other.getEventIngestionUrl() == null ^ this.getEventIngestionUrl() == null)
+            return false;
+        if (other.getEventIngestionUrl() != null && other.getEventIngestionUrl().equals(this.getEventIngestionUrl()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +486,7 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getScreenViewingUrl() == null) ? 0 : getScreenViewingUrl().hashCode());
         hashCode = prime * hashCode + ((getSignalingUrl() == null) ? 0 : getSignalingUrl().hashCode());
         hashCode = prime * hashCode + ((getTurnControlUrl() == null) ? 0 : getTurnControlUrl().hashCode());
+        hashCode = prime * hashCode + ((getEventIngestionUrl() == null) ? 0 : getEventIngestionUrl().hashCode());
         return hashCode;
     }
 

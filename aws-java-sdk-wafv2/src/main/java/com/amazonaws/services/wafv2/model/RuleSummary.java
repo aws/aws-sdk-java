@@ -36,7 +36,12 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
-
+    /**
+     * <p>
+     * The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL
+     * level can override the rule action setting.
+     * </p>
+     */
     private RuleAction action;
 
     /**
@@ -80,7 +85,14 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL
+     * level can override the rule action setting.
+     * </p>
+     * 
      * @param action
+     *        The action that WAF should take on a web request when it matches a rule's statement. Settings at the web
+     *        ACL level can override the rule action setting.
      */
 
     public void setAction(RuleAction action) {
@@ -88,7 +100,13 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL
+     * level can override the rule action setting.
+     * </p>
+     * 
+     * @return The action that WAF should take on a web request when it matches a rule's statement. Settings at the web
+     *         ACL level can override the rule action setting.
      */
 
     public RuleAction getAction() {
@@ -96,7 +114,14 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL
+     * level can override the rule action setting.
+     * </p>
+     * 
      * @param action
+     *        The action that WAF should take on a web request when it matches a rule's statement. Settings at the web
+     *        ACL level can override the rule action setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

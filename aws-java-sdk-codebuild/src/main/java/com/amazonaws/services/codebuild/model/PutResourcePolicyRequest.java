@@ -31,7 +31,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     * >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      */
     private String policy;
@@ -49,7 +49,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     * >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param policy
@@ -57,7 +57,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share"
      *        >Sharing a Project</a> and <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     *        >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public void setPolicy(String policy) {
@@ -70,14 +70,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     * >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @return A JSON-formatted resource policy. For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share"
      *         >Sharing a Project</a> and <a href=
      *         "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     *         >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public String getPolicy() {
@@ -90,7 +90,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
      * a Project</a> and <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     * >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param policy
@@ -98,7 +98,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share"
      *        >Sharing a Project</a> and <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share"
-     *        >Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

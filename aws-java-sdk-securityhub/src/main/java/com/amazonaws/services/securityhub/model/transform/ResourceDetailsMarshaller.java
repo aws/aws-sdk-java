@@ -115,6 +115,10 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsRdsDbClusterSnapshot").build();
     private static final MarshallingInfo<StructuredPojo> AWSRDSDBCLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsRdsDbCluster").build();
+    private static final MarshallingInfo<StructuredPojo> AWSECSCLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEcsCluster").build();
+    private static final MarshallingInfo<StructuredPojo> AWSECSTASKDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEcsTaskDefinition").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Container").build();
     private static final MarshallingInfo<Map> OTHER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -179,6 +183,8 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsRdsDbSnapshot(), AWSRDSDBSNAPSHOT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsRdsDbClusterSnapshot(), AWSRDSDBCLUSTERSNAPSHOT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsRdsDbCluster(), AWSRDSDBCLUSTER_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEcsCluster(), AWSECSCLUSTER_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEcsTaskDefinition(), AWSECSTASKDEFINITION_BINDING);
             protocolMarshaller.marshall(resourceDetails.getContainer(), CONTAINER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getOther(), OTHER_BINDING);
         } catch (Exception e) {

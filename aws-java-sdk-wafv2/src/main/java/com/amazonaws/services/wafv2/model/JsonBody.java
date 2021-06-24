@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection
- * criteria. AWS WAF inspects only the parts of the JSON that result from the matches that you indicate.
+ * criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonBody" target="_top">AWS API
@@ -35,32 +35,32 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against the rule
+     * The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule
      * inspection criteria.
      * </p>
      */
     private JsonMatchPattern matchPattern;
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, AWS
-     * WAF matches against keys and values.
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * matches against keys and values.
      * </p>
      */
     private String matchScope;
     /**
      * <p>
-     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
+     * What WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
      * inspection criteria that you defined for the JSON inspection to the body text string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -71,15 +71,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
-     * that it encounters.
+     * If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that
+     * it encounters.
      * </p>
      * <p>
-     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
-     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as characters that
+     * aren't valid, duplicate keys, truncation, and any content whose root node isn't an object or an array.
      * </p>
      * <p>
-     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * WAF parses the JSON in the following examples as two valid key, value pairs:
      * </p>
      * <ul>
      * <li>
@@ -103,13 +103,13 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against the rule
+     * The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule
      * inspection criteria.
      * </p>
      * 
      * @param matchPattern
-     *        The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against
-     *        the rule inspection criteria.
+     *        The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the
+     *        rule inspection criteria.
      */
 
     public void setMatchPattern(JsonMatchPattern matchPattern) {
@@ -118,12 +118,12 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against the rule
+     * The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule
      * inspection criteria.
      * </p>
      * 
-     * @return The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against
-     *         the rule inspection criteria.
+     * @return The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the
+     *         rule inspection criteria.
      */
 
     public JsonMatchPattern getMatchPattern() {
@@ -132,13 +132,13 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against the rule
+     * The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule
      * inspection criteria.
      * </p>
      * 
      * @param matchPattern
-     *        The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against
-     *        the rule inspection criteria.
+     *        The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the
+     *        rule inspection criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,13 +149,13 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, AWS
-     * WAF matches against keys and values.
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * matches against keys and values.
      * </p>
      * 
      * @param matchScope
      *        The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *        <code>All</code>, AWS WAF matches against keys and values.
+     *        <code>All</code>, WAF matches against keys and values.
      * @see JsonMatchScope
      */
 
@@ -165,12 +165,12 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, AWS
-     * WAF matches against keys and values.
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * matches against keys and values.
      * </p>
      * 
      * @return The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *         <code>All</code>, AWS WAF matches against keys and values.
+     *         <code>All</code>, WAF matches against keys and values.
      * @see JsonMatchScope
      */
 
@@ -180,13 +180,13 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, AWS
-     * WAF matches against keys and values.
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * matches against keys and values.
      * </p>
      * 
      * @param matchScope
      *        The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *        <code>All</code>, AWS WAF matches against keys and values.
+     *        <code>All</code>, WAF matches against keys and values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JsonMatchScope
      */
@@ -198,13 +198,13 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, AWS
-     * WAF matches against keys and values.
+     * The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF
+     * matches against keys and values.
      * </p>
      * 
      * @param matchScope
      *        The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify
-     *        <code>All</code>, AWS WAF matches against keys and values.
+     *        <code>All</code>, WAF matches against keys and values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JsonMatchScope
      */
@@ -216,18 +216,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
+     * What WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
      * inspection criteria that you defined for the JSON inspection to the body text string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -238,15 +238,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
-     * that it encounters.
+     * If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that
+     * it encounters.
      * </p>
      * <p>
-     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
-     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as characters that
+     * aren't valid, duplicate keys, truncation, and any content whose root node isn't an object or an array.
      * </p>
      * <p>
-     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * WAF parses the JSON in the following examples as two valid key, value pairs:
      * </p>
      * <ul>
      * <li>
@@ -267,18 +267,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param invalidFallbackBehavior
-     *        What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
+     *        What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations
-     *        and inspection criteria that you defined for the JSON inspection to the body text string.
+     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
+     *        inspection criteria that you defined for the JSON inspection to the body text string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
-     *        to the request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *        the request.
      *        </p>
      *        </li>
      *        <li>
@@ -288,16 +288,16 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *        If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing
      *        failure that it encounters.
      *        </p>
      *        <p>
-     *        AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
-     *        invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
-     *        array.
+     *        WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *        characters that aren't valid, duplicate keys, truncation, and any content whose root node isn't an object
+     *        or an array.
      *        </p>
      *        <p>
-     *        AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *        WAF parses the JSON in the following examples as two valid key, value pairs:
      *        </p>
      *        <ul>
      *        <li>
@@ -324,18 +324,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
+     * What WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
      * inspection criteria that you defined for the JSON inspection to the body text string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -346,15 +346,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
-     * that it encounters.
+     * If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that
+     * it encounters.
      * </p>
      * <p>
-     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
-     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as characters that
+     * aren't valid, duplicate keys, truncation, and any content whose root node isn't an object or an array.
      * </p>
      * <p>
-     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * WAF parses the JSON in the following examples as two valid key, value pairs:
      * </p>
      * <ul>
      * <li>
@@ -374,18 +374,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
+     * @return What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text
-     *         transformations and inspection criteria that you defined for the JSON inspection to the body text string.
+     *         <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations
+     *         and inspection criteria that you defined for the JSON inspection to the body text string.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule
-     *         action to the request.
+     *         <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *         the request.
      *         </p>
      *         </li>
      *         <li>
@@ -395,16 +395,16 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *         If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing
      *         failure that it encounters.
      *         </p>
      *         <p>
-     *         AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
-     *         invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
-     *         array.
+     *         WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *         characters that aren't valid, duplicate keys, truncation, and any content whose root node isn't an object
+     *         or an array.
      *         </p>
      *         <p>
-     *         AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *         WAF parses the JSON in the following examples as two valid key, value pairs:
      *         </p>
      *         <ul>
      *         <li>
@@ -431,18 +431,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
+     * What WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
      * inspection criteria that you defined for the JSON inspection to the body text string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -453,15 +453,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
-     * that it encounters.
+     * If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that
+     * it encounters.
      * </p>
      * <p>
-     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
-     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as characters that
+     * aren't valid, duplicate keys, truncation, and any content whose root node isn't an object or an array.
      * </p>
      * <p>
-     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * WAF parses the JSON in the following examples as two valid key, value pairs:
      * </p>
      * <ul>
      * <li>
@@ -482,18 +482,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param invalidFallbackBehavior
-     *        What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
+     *        What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations
-     *        and inspection criteria that you defined for the JSON inspection to the body text string.
+     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
+     *        inspection criteria that you defined for the JSON inspection to the body text string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
-     *        to the request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *        the request.
      *        </p>
      *        </li>
      *        <li>
@@ -503,16 +503,16 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *        If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing
      *        failure that it encounters.
      *        </p>
      *        <p>
-     *        AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
-     *        invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
-     *        array.
+     *        WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *        characters that aren't valid, duplicate keys, truncation, and any content whose root node isn't an object
+     *        or an array.
      *        </p>
      *        <p>
-     *        AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *        WAF parses the JSON in the following examples as two valid key, value pairs:
      *        </p>
      *        <ul>
      *        <li>
@@ -541,18 +541,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
+     * What WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
      * inspection criteria that you defined for the JSON inspection to the body text string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -563,15 +563,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
-     * that it encounters.
+     * If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing failure that
+     * it encounters.
      * </p>
      * <p>
-     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
-     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as characters that
+     * aren't valid, duplicate keys, truncation, and any content whose root node isn't an object or an array.
      * </p>
      * <p>
-     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * WAF parses the JSON in the following examples as two valid key, value pairs:
      * </p>
      * <ul>
      * <li>
@@ -592,18 +592,18 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param invalidFallbackBehavior
-     *        What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
+     *        What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations
-     *        and inspection criteria that you defined for the JSON inspection to the body text string.
+     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and
+     *        inspection criteria that you defined for the JSON inspection to the body text string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
-     *        to the request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *        the request.
      *        </p>
      *        </li>
      *        <li>
@@ -613,16 +613,16 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *        If you don't provide this setting, WAF parses and evaluates the content only up to the first parsing
      *        failure that it encounters.
      *        </p>
      *        <p>
-     *        AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
-     *        invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
-     *        array.
+     *        WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *        characters that aren't valid, duplicate keys, truncation, and any content whose root node isn't an object
+     *        or an array.
      *        </p>
      *        <p>
-     *        AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *        WAF parses the JSON in the following examples as two valid key, value pairs:
      *        </p>
      *        <ul>
      *        <li>

@@ -45,7 +45,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
     private String sortOrder;
     /**
      * <p>
-     * The criterion to be used to list report groups shared with the current AWS account or user. Valid values include:
+     * The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid
+     * values include:
      * </p>
      * <ul>
      * <li>
@@ -232,7 +233,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The criterion to be used to list report groups shared with the current AWS account or user. Valid values include:
+     * The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid
+     * values include:
      * </p>
      * <ul>
      * <li>
@@ -248,8 +250,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param sortBy
-     *        The criterion to be used to list report groups shared with the current AWS account or user. Valid values
-     *        include: </p>
+     *        The criterion to be used to list report groups shared with the current Amazon Web Services account or
+     *        user. Valid values include: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -270,7 +272,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The criterion to be used to list report groups shared with the current AWS account or user. Valid values include:
+     * The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid
+     * values include:
      * </p>
      * <ul>
      * <li>
@@ -285,8 +288,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return The criterion to be used to list report groups shared with the current AWS account or user. Valid values
-     *         include: </p>
+     * @return The criterion to be used to list report groups shared with the current Amazon Web Services account or
+     *         user. Valid values include: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -308,7 +311,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The criterion to be used to list report groups shared with the current AWS account or user. Valid values include:
+     * The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid
+     * values include:
      * </p>
      * <ul>
      * <li>
@@ -324,8 +328,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param sortBy
-     *        The criterion to be used to list report groups shared with the current AWS account or user. Valid values
-     *        include: </p>
+     *        The criterion to be used to list report groups shared with the current Amazon Web Services account or
+     *        user. Valid values include: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -348,7 +352,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The criterion to be used to list report groups shared with the current AWS account or user. Valid values include:
+     * The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid
+     * values include:
      * </p>
      * <ul>
      * <li>
@@ -364,8 +369,8 @@ public class ListSharedReportGroupsRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param sortBy
-     *        The criterion to be used to list report groups shared with the current AWS account or user. Valid values
-     *        include: </p>
+     *        The criterion to be used to list report groups shared with the current Amazon Web Services account or
+     *        user. Valid values include: </p>
      *        <ul>
      *        <li>
      *        <p>

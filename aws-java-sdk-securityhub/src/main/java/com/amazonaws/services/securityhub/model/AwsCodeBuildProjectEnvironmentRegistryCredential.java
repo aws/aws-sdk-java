@@ -31,7 +31,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.
+     * The ARN or name of credentials created using AWS Secrets Manager.
      * </p>
      * <note>
      * <p>
@@ -52,7 +52,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.
+     * The ARN or name of credentials created using AWS Secrets Manager.
      * </p>
      * <note>
      * <p>
@@ -61,7 +61,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
      * </note>
      * 
      * @param credential
-     *        The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.</p> <note>
+     *        The ARN or name of credentials created using AWS Secrets Manager.</p> <note>
      *        <p>
      *        The credential can use the name of the credentials only if they exist in your current AWS Region.
      *        </p>
@@ -73,7 +73,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.
+     * The ARN or name of credentials created using AWS Secrets Manager.
      * </p>
      * <note>
      * <p>
@@ -81,7 +81,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.</p> <note>
+     * @return The ARN or name of credentials created using AWS Secrets Manager.</p> <note>
      *         <p>
      *         The credential can use the name of the credentials only if they exist in your current AWS Region.
      *         </p>
@@ -93,7 +93,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.
+     * The ARN or name of credentials created using AWS Secrets Manager.
      * </p>
      * <note>
      * <p>
@@ -102,7 +102,7 @@ public class AwsCodeBuildProjectEnvironmentRegistryCredential implements Seriali
      * </note>
      * 
      * @param credential
-     *        The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager.</p> <note>
+     *        The ARN or name of credentials created using AWS Secrets Manager.</p> <note>
      *        <p>
      *        The credential can use the name of the credentials only if they exist in your current AWS Region.
      *        </p>

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS WAF is not able to access the service linked role. This can be caused by a previous
+ * WAF is not able to access the service linked role. This can be caused by a previous
  * <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try
  * your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code>
  * request, which can lock the role for 15 minutes or more. If you recently made a call to

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
+ * Information about a webhook that connects repository events to a build project in CodeBuild.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Webhook" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
     private String url;
     /**
      * <p>
-     * The AWS CodeBuild endpoint where webhook events are sent.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      */
     private String payloadUrl;
@@ -130,11 +130,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS CodeBuild endpoint where webhook events are sent.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      * 
      * @param payloadUrl
-     *        The AWS CodeBuild endpoint where webhook events are sent.
+     *        The CodeBuild endpoint where webhook events are sent.
      */
 
     public void setPayloadUrl(String payloadUrl) {
@@ -143,10 +143,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS CodeBuild endpoint where webhook events are sent.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      * 
-     * @return The AWS CodeBuild endpoint where webhook events are sent.
+     * @return The CodeBuild endpoint where webhook events are sent.
      */
 
     public String getPayloadUrl() {
@@ -155,11 +155,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS CodeBuild endpoint where webhook events are sent.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      * 
      * @param payloadUrl
-     *        The AWS CodeBuild endpoint where webhook events are sent.
+     *        The CodeBuild endpoint where webhook events are sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

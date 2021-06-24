@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of Docker images that are related by programming language and are managed by AWS CodeBuild.
+ * A set of Docker images that are related by programming language and are managed by CodeBuild.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentLanguage" target="_top">AWS API

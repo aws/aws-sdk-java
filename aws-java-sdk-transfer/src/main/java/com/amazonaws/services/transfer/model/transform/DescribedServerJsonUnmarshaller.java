@@ -56,6 +56,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProtocolDetails", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setProtocolDetails(ProtocolDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Domain", targetDepth)) {
                     context.nextToken();
                     describedServer.setDomain(context.getUnmarshaller(String.class).unmarshall(context));

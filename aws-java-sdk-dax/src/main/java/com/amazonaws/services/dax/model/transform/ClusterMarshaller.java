@@ -62,6 +62,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParameterGroup").build();
     private static final MarshallingInfo<StructuredPojo> SSEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SSEDescription").build();
+    private static final MarshallingInfo<String> CLUSTERENDPOINTENCRYPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterEndpointEncryptionType").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -96,6 +98,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getIamRoleArn(), IAMROLEARN_BINDING);
             protocolMarshaller.marshall(cluster.getParameterGroup(), PARAMETERGROUP_BINDING);
             protocolMarshaller.marshall(cluster.getSSEDescription(), SSEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(cluster.getClusterEndpointEncryptionType(), CLUSTERENDPOINTENCRYPTIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

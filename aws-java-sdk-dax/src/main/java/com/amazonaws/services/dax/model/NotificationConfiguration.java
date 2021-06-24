@@ -37,7 +37,8 @@ public class NotificationConfiguration implements Serializable, Cloneable, Struc
     private String topicArn;
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      */
     private String topicStatus;
@@ -84,11 +85,13 @@ public class NotificationConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      * 
      * @param topicStatus
-     *        The current state of the topic.
+     *        The current state of the topic. A value of “active” means that notifications will be sent to the topic. A
+     *        value of “inactive” means that notifications will not be sent to the topic.
      */
 
     public void setTopicStatus(String topicStatus) {
@@ -97,10 +100,12 @@ public class NotificationConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      * 
-     * @return The current state of the topic.
+     * @return The current state of the topic. A value of “active” means that notifications will be sent to the topic. A
+     *         value of “inactive” means that notifications will not be sent to the topic.
      */
 
     public String getTopicStatus() {
@@ -109,11 +114,13 @@ public class NotificationConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      * 
      * @param topicStatus
-     *        The current state of the topic.
+     *        The current state of the topic. A value of “active” means that notifications will be sent to the topic. A
+     *        value of “inactive” means that notifications will not be sent to the topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

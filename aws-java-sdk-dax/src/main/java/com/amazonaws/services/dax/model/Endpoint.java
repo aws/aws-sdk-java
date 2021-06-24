@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster,
- * or to an individual node within the cluster.
+ * Represents the information required for client programs to connect to the endpoint for a DAX cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Endpoint" target="_top">AWS API Documentation</a>
@@ -40,6 +39,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer port;
+    /**
+     * <p>
+     * The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     * protocol and 9111 for the "daxs" protocol.
+     * </p>
+     */
+    private String uRL;
 
     /**
      * <p>
@@ -122,6 +128,52 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     * protocol and 9111 for the "daxs" protocol.
+     * </p>
+     * 
+     * @param uRL
+     *        The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     *        protocol and 9111 for the "daxs" protocol.
+     */
+
+    public void setURL(String uRL) {
+        this.uRL = uRL;
+    }
+
+    /**
+     * <p>
+     * The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     * protocol and 9111 for the "daxs" protocol.
+     * </p>
+     * 
+     * @return The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     *         protocol and 9111 for the "daxs" protocol.
+     */
+
+    public String getURL() {
+        return this.uRL;
+    }
+
+    /**
+     * <p>
+     * The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     * protocol and 9111 for the "daxs" protocol.
+     * </p>
+     * 
+     * @param uRL
+     *        The URL that applications should use to connect to the endpoint. The default ports are 8111 for the "dax"
+     *        protocol and 9111 for the "daxs" protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withURL(String uRL) {
+        setURL(uRL);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +188,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getAddress() != null)
             sb.append("Address: ").append(getAddress()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort());
+            sb.append("Port: ").append(getPort()).append(",");
+        if (getURL() != null)
+            sb.append("URL: ").append(getURL());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +213,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
+        if (other.getURL() == null ^ this.getURL() == null)
+            return false;
+        if (other.getURL() != null && other.getURL().equals(this.getURL()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +227,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getURL() == null) ? 0 : getURL().hashCode());
         return hashCode;
     }
 

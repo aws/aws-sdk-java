@@ -55,7 +55,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      * the response. If the referenced security group is deleted, this value is not returned.
      * </p>
      * <p>
-     * [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     * [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      * </p>
      */
     private String userId;
@@ -201,7 +201,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      * the response. If the referenced security group is deleted, this value is not returned.
      * </p>
      * <p>
-     * [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     * [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      * </p>
      * 
      * @param userId
@@ -211,7 +211,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      *        returned in the response. If the referenced security group is deleted, this value is not returned.
      *        </p>
      *        <p>
-     *        [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     *        [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      */
 
     public void setUserId(String userId) {
@@ -227,7 +227,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      * the response. If the referenced security group is deleted, this value is not returned.
      * </p>
      * <p>
-     * [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     * [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      * </p>
      * 
      * @return The ID of an AWS account.</p>
@@ -236,7 +236,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      *         returned in the response. If the referenced security group is deleted, this value is not returned.
      *         </p>
      *         <p>
-     *         [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     *         [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      */
 
     public String getUserId() {
@@ -252,7 +252,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      * the response. If the referenced security group is deleted, this value is not returned.
      * </p>
      * <p>
-     * [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     * [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      * </p>
      * 
      * @param userId
@@ -262,7 +262,7 @@ public class AwsEc2SecurityGroupUserIdGroupPair implements Serializable, Cloneab
      *        returned in the response. If the referenced security group is deleted, this value is not returned.
      *        </p>
      *        <p>
-     *        [EC2-Classic] Required when adding or removing rules that reference a security group in another AWS.
+     *        [EC2-Classic] Required when adding or removing rules that reference a security group in another VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

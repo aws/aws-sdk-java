@@ -50,7 +50,6 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The <code>AppInstanceUserArn</code> of the user that makes the API call.
      * </p>
-     * <p/>
      */
     private String chimeBearer;
 
@@ -251,11 +250,9 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The <code>AppInstanceUserArn</code> of the user that makes the API call.
      * </p>
-     * <p/>
      * 
      * @param chimeBearer
      *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
-     *        </p>
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -266,10 +263,8 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The <code>AppInstanceUserArn</code> of the user that makes the API call.
      * </p>
-     * <p/>
      * 
      * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
-     *         </p>
      */
 
     public String getChimeBearer() {
@@ -280,11 +275,9 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The <code>AppInstanceUserArn</code> of the user that makes the API call.
      * </p>
-     * <p/>
      * 
      * @param chimeBearer
      *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,6 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SharePointVersion {
 
+    SHAREPOINT_2013("SHAREPOINT_2013"),
+    SHAREPOINT_2016("SHAREPOINT_2016"),
     SHAREPOINT_ONLINE("SHAREPOINT_ONLINE");
 
     private String value;

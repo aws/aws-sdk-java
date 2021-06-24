@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.
+ * WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

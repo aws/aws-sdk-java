@@ -25,7 +25,7 @@ public class UpdateWebACLResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     * A token used for optimistic locking. WAF returns this token to your update requests. You use
      * <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      * </p>
      */
@@ -33,12 +33,12 @@ public class UpdateWebACLResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     * A token used for optimistic locking. WAF returns this token to your update requests. You use
      * <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      * </p>
      * 
      * @param nextLockToken
-     *        A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     *        A token used for optimistic locking. WAF returns this token to your update requests. You use
      *        <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      */
 
@@ -48,11 +48,11 @@ public class UpdateWebACLResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     * A token used for optimistic locking. WAF returns this token to your update requests. You use
      * <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      * </p>
      * 
-     * @return A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     * @return A token used for optimistic locking. WAF returns this token to your update requests. You use
      *         <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      */
 
@@ -62,12 +62,12 @@ public class UpdateWebACLResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     * A token used for optimistic locking. WAF returns this token to your update requests. You use
      * <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      * </p>
      * 
      * @param nextLockToken
-     *        A token used for optimistic locking. AWS WAF returns this token to your update requests. You use
+     *        A token used for optimistic locking. WAF returns this token to your update requests. You use
      *        <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

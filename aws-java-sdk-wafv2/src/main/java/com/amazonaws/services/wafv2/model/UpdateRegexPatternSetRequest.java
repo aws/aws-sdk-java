@@ -33,8 +33,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     private String name;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -70,10 +70,10 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     private java.util.List<Regex> regularExpressionList;
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
@@ -122,8 +122,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -142,9 +142,9 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -169,8 +169,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -188,9 +188,9 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -215,8 +215,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -235,9 +235,9 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -264,8 +264,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -284,9 +284,9 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -458,21 +458,21 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      */
 
     public void setLockToken(String lockToken) {
@@ -481,20 +481,20 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
-     * @return A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *         state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *         you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *         changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *         fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *         new token returned by that operation.
+     * @return A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *         of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *         provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *         been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *         <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *         returned by that operation.
      */
 
     public String getLockToken() {
@@ -503,21 +503,21 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

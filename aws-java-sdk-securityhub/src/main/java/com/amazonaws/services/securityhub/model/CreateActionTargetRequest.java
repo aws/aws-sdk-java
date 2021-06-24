@@ -27,7 +27,7 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the custom action target.
+     * The name of the custom action target. Can contain up to 20 characters.
      * </p>
      */
     private String name;
@@ -39,18 +39,18 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
     private String description;
     /**
      * <p>
-     * The ID for the custom action target.
+     * The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The name of the custom action target.
+     * The name of the custom action target. Can contain up to 20 characters.
      * </p>
      * 
      * @param name
-     *        The name of the custom action target.
+     *        The name of the custom action target. Can contain up to 20 characters.
      */
 
     public void setName(String name) {
@@ -59,10 +59,10 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the custom action target.
+     * The name of the custom action target. Can contain up to 20 characters.
      * </p>
      * 
-     * @return The name of the custom action target.
+     * @return The name of the custom action target. Can contain up to 20 characters.
      */
 
     public String getName() {
@@ -71,11 +71,11 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the custom action target.
+     * The name of the custom action target. Can contain up to 20 characters.
      * </p>
      * 
      * @param name
-     *        The name of the custom action target.
+     *        The name of the custom action target. Can contain up to 20 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the custom action target.
+     * The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      * </p>
      * 
      * @param id
-     *        The ID for the custom action target.
+     *        The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      */
 
     public void setId(String id) {
@@ -139,10 +139,10 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the custom action target.
+     * The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      * </p>
      * 
-     * @return The ID for the custom action target.
+     * @return The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      */
 
     public String getId() {
@@ -151,11 +151,11 @@ public class CreateActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the custom action target.
+     * The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      * </p>
      * 
      * @param id
-     *        The ID for the custom action target.
+     *        The ID for the custom action target. Can contain up to 20 alphanumeric characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

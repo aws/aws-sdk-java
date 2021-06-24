@@ -43,7 +43,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
@@ -112,6 +113,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private Boolean disableLocalGroups;
+
+    private S3Path sslCertificateS3Path;
 
     /**
      * <p>
@@ -245,7 +248,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
@@ -254,7 +258,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     *        user/password pair. For more information, see <a
+     *        user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of
+     *        the credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
      *        SharePoint Data Source</a>. For more information about AWS Secrets Manager, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager
@@ -268,7 +273,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
@@ -276,7 +282,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     *         user/password pair. For more information, see <a
+     *         user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part
+     *         of the credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
      *         SharePoint Data Source</a>. For more information about AWS Secrets Manager, see <a
      *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets
@@ -290,7 +297,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
@@ -299,7 +307,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     *        user/password pair. For more information, see <a
+     *        user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of
+     *        the credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
      *        SharePoint Data Source</a>. For more information about AWS Secrets Manager, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager
@@ -877,6 +886,32 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * @param sslCertificateS3Path
+     */
+
+    public void setSslCertificateS3Path(S3Path sslCertificateS3Path) {
+        this.sslCertificateS3Path = sslCertificateS3Path;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Path getSslCertificateS3Path() {
+        return this.sslCertificateS3Path;
+    }
+
+    /**
+     * @param sslCertificateS3Path
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withSslCertificateS3Path(S3Path sslCertificateS3Path) {
+        setSslCertificateS3Path(sslCertificateS3Path);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -909,7 +944,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         if (getDocumentTitleFieldName() != null)
             sb.append("DocumentTitleFieldName: ").append(getDocumentTitleFieldName()).append(",");
         if (getDisableLocalGroups() != null)
-            sb.append("DisableLocalGroups: ").append(getDisableLocalGroups());
+            sb.append("DisableLocalGroups: ").append(getDisableLocalGroups()).append(",");
+        if (getSslCertificateS3Path() != null)
+            sb.append("SslCertificateS3Path: ").append(getSslCertificateS3Path());
         sb.append("}");
         return sb.toString();
     }
@@ -968,6 +1005,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getDisableLocalGroups() != null && other.getDisableLocalGroups().equals(this.getDisableLocalGroups()) == false)
             return false;
+        if (other.getSslCertificateS3Path() == null ^ this.getSslCertificateS3Path() == null)
+            return false;
+        if (other.getSslCertificateS3Path() != null && other.getSslCertificateS3Path().equals(this.getSslCertificateS3Path()) == false)
+            return false;
         return true;
     }
 
@@ -987,6 +1028,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getFieldMappings() == null) ? 0 : getFieldMappings().hashCode());
         hashCode = prime * hashCode + ((getDocumentTitleFieldName() == null) ? 0 : getDocumentTitleFieldName().hashCode());
         hashCode = prime * hashCode + ((getDisableLocalGroups() == null) ? 0 : getDisableLocalGroups().hashCode());
+        hashCode = prime * hashCode + ((getSslCertificateS3Path() == null) ? 0 : getSslCertificateS3Path().hashCode());
         return hashCode;
     }
 

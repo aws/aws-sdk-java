@@ -33,6 +33,8 @@ public class GetRuleGroupRequestMarshaller {
             .marshallLocationName("Scope").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ARN").build();
 
     private static final GetRuleGroupRequestMarshaller instance = new GetRuleGroupRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class GetRuleGroupRequestMarshaller {
             protocolMarshaller.marshall(getRuleGroupRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(getRuleGroupRequest.getScope(), SCOPE_BINDING);
             protocolMarshaller.marshall(getRuleGroupRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(getRuleGroupRequest.getARN(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

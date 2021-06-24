@@ -34,9 +34,9 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -95,9 +95,9 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -114,8 +114,8 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param externalId
      *        A unique identifier that is required to identify specific groups within your directory. The users of the
      *        group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
-     *        following command using Windows PowerShell.</p>
+     *        using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
+     *        running the following command using Windows PowerShell.</p>
      *        <p>
      *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
@@ -135,9 +135,9 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -153,8 +153,8 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return A unique identifier that is required to identify specific groups within your directory. The users of the
      *         group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *         using AWS Transfer Family. If you know the group name, you can view the SID values by running the
-     *         following command using Windows PowerShell.</p>
+     *         using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
+     *         running the following command using Windows PowerShell.</p>
      *         <p>
      *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *         </p>
@@ -174,9 +174,9 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -193,8 +193,8 @@ public class DescribeAccessRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param externalId
      *        A unique identifier that is required to identify specific groups within your directory. The users of the
      *        group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
-     *        following command using Windows PowerShell.</p>
+     *        using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
+     *        running the following command using Windows PowerShell.</p>
      *        <p>
      *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>

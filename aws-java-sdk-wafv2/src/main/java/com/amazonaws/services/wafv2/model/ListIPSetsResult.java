@@ -26,7 +26,7 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      */
@@ -42,13 +42,13 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      * 
      * @param nextMarker
      *        When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are
-     *        still available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the
+     *        still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the
      *        response. To retrieve the next batch of objects, provide the marker from the prior call in your next
      *        request.
      */
@@ -60,12 +60,12 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      * 
      * @return When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are
-     *         still available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the
+     *         still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the
      *         response. To retrieve the next batch of objects, provide the marker from the prior call in your next
      *         request.
      */
@@ -77,13 +77,13 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      * 
      * @param nextMarker
      *        When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are
-     *        still available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the
+     *        still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the
      *        response. To retrieve the next batch of objects, provide the marker from the prior call in your next
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.

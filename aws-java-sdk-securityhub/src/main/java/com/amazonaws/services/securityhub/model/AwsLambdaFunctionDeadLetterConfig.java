@@ -30,18 +30,18 @@ public class AwsLambdaFunctionDeadLetterConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The ARN of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private String targetArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The ARN of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     *        The ARN of an Amazon SQS queue or Amazon SNS topic.
      */
 
     public void setTargetArn(String targetArn) {
@@ -50,10 +50,10 @@ public class AwsLambdaFunctionDeadLetterConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The ARN of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * @return The ARN of an Amazon SQS queue or Amazon SNS topic.
      */
 
     public String getTargetArn() {
@@ -62,11 +62,11 @@ public class AwsLambdaFunctionDeadLetterConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The ARN of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     *        The ARN of an Amazon SQS queue or Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

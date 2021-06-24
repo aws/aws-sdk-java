@@ -33,8 +33,7 @@ public class AwsCodeBuildProjectDetails implements Serializable, Cloneable, Stru
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output artifacts.
      * </p>
      * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using the
-     * format alias/alias-name).
+     * You can specify either the ARN of the CMK or, if available, the CMK alias (using the format alias/alias-name).
      * </p>
      */
     private String encryptionKey;
@@ -75,16 +74,15 @@ public class AwsCodeBuildProjectDetails implements Serializable, Cloneable, Stru
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output artifacts.
      * </p>
      * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using the
-     * format alias/alias-name).
+     * You can specify either the ARN of the CMK or, if available, the CMK alias (using the format alias/alias-name).
      * </p>
      * 
      * @param encryptionKey
      *        The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output
      *        artifacts.</p>
      *        <p>
-     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using
-     *        the format alias/alias-name).
+     *        You can specify either the ARN of the CMK or, if available, the CMK alias (using the format
+     *        alias/alias-name).
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -96,15 +94,14 @@ public class AwsCodeBuildProjectDetails implements Serializable, Cloneable, Stru
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output artifacts.
      * </p>
      * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using the
-     * format alias/alias-name).
+     * You can specify either the ARN of the CMK or, if available, the CMK alias (using the format alias/alias-name).
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output
      *         artifacts.</p>
      *         <p>
-     *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using
-     *         the format alias/alias-name).
+     *         You can specify either the ARN of the CMK or, if available, the CMK alias (using the format
+     *         alias/alias-name).
      */
 
     public String getEncryptionKey() {
@@ -116,16 +113,15 @@ public class AwsCodeBuildProjectDetails implements Serializable, Cloneable, Stru
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output artifacts.
      * </p>
      * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using the
-     * format alias/alias-name).
+     * You can specify either the ARN of the CMK or, if available, the CMK alias (using the format alias/alias-name).
      * </p>
      * 
      * @param encryptionKey
      *        The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the build output
      *        artifacts.</p>
      *        <p>
-     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK alias (using
-     *        the format alias/alias-name).
+     *        You can specify either the ARN of the CMK or, if available, the CMK alias (using the format
+     *        alias/alias-name).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

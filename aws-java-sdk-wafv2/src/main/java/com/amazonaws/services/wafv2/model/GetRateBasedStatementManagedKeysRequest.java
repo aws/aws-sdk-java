@@ -27,8 +27,8 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -49,13 +49,13 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
     private String scope;
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      */
     private String webACLName;
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      */
@@ -69,8 +69,8 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -89,9 +89,9 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -116,8 +116,8 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -135,9 +135,9 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -162,8 +162,8 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -182,9 +182,9 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -211,8 +211,8 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -231,9 +231,9 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -260,11 +260,11 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param webACLName
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public void setWebACLName(String webACLName) {
@@ -273,10 +273,10 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
-     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public String getWebACLName() {
@@ -285,11 +285,11 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param webACLName
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,12 +300,12 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param webACLId
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      */
 
@@ -315,11 +315,11 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
-     * @return The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     * @return The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *         You provide it to operations like update and delete.
      */
 
@@ -329,12 +329,12 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param webACLId
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

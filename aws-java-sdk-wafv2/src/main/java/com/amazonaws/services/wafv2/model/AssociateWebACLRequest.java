@@ -27,7 +27,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     * The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      * </p>
      */
     private String webACLArn;
@@ -47,7 +47,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -63,11 +63,11 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     * The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      * </p>
      * 
      * @param webACLArn
-     *        The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     *        The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      */
 
     public void setWebACLArn(String webACLArn) {
@@ -76,10 +76,10 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     * The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     * @return The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      */
 
     public String getWebACLArn() {
@@ -88,11 +88,11 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     * The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      * </p>
      * 
      * @param webACLArn
-     *        The Amazon Resource Name (ARN) of the Web ACL that you want to associate with the resource.
+     *        The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +117,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -143,7 +143,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        For an API Gateway REST API:
+     *        For an Amazon API Gateway REST API:
      *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>
@@ -175,7 +175,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -200,7 +200,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         For an API Gateway REST API:
+     *         For an Amazon API Gateway REST API:
      *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *         </p>
      *         </li>
@@ -232,7 +232,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -258,7 +258,7 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        For an API Gateway REST API:
+     *        For an Amazon API Gateway REST API:
      *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>

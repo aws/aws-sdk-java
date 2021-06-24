@@ -62,7 +62,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -93,7 +93,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      */
     private String sourceVersion;
@@ -130,15 +130,15 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private ProjectEnvironment environment;
     /**
      * <p>
-     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
-     * with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
-     * related build that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * build that did not get marked as completed.
      * </p>
      */
     private Integer timeoutInMinutes;
@@ -150,8 +150,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer queuedTimeoutInMinutes;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -170,13 +169,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
-     * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     * These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -188,8 +187,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean badgeEnabled;
     /**
      * <p>
-     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
-     * bucket, or both.
+     * Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket,
+     * or both.
      * </p>
      */
     private LogsConfig logsConfig;
@@ -440,7 +439,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -471,7 +470,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param sourceVersion
@@ -480,7 +479,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     *        For CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -511,7 +510,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -526,7 +525,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -557,7 +556,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @return A version of the build input to be built for this project. If not specified, the latest version is used.
@@ -565,7 +564,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <ul>
      *         <li>
      *         <p>
-     *         For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     *         For CodeCommit: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -596,7 +595,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *         Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public String getSourceVersion() {
@@ -611,7 +610,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -642,7 +641,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param sourceVersion
@@ -651,7 +650,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     *        For CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -682,7 +681,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,13 +964,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
-     * with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.
      * </p>
      * 
      * @param serviceRole
-     *        The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     *        interact with dependent AWS services on behalf of the AWS account.
+     *        The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with
+     *        dependent Amazon Web Services services on behalf of the Amazon Web Services account.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -980,12 +979,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
-     * with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.
      * </p>
      * 
-     * @return The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     *         interact with dependent AWS services on behalf of the AWS account.
+     * @return The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with
+     *         dependent Amazon Web Services services on behalf of the Amazon Web Services account.
      */
 
     public String getServiceRole() {
@@ -994,13 +993,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact
-     * with dependent AWS services on behalf of the AWS account.
+     * The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.
      * </p>
      * 
      * @param serviceRole
-     *        The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to
-     *        interact with dependent AWS services on behalf of the AWS account.
+     *        The replacement ARN of the Identity and Access Management role that enables CodeBuild to interact with
+     *        dependent Amazon Web Services services on behalf of the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1011,12 +1010,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
-     * related build that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * build that did not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+     *        The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
      *        related build that did not get marked as completed.
      */
 
@@ -1026,12 +1025,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
-     * related build that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * build that did not get marked as completed.
      * </p>
      * 
-     * @return The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out
-     *         any related build that did not get marked as completed.
+     * @return The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
+     *         related build that did not get marked as completed.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -1040,12 +1039,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
-     * related build that did not get marked as completed.
+     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * build that did not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before timing out any
+     *        The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
      *        related build that did not get marked as completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1097,8 +1096,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -1112,8 +1110,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param encryptionKey
-     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        output artifacts.</p> <note>
+     *        The Key Management Service customer master key (CMK) to be used for encrypting the build output
+     *        artifacts.</p> <note>
      *        <p>
      *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
      *        permission to that key.
@@ -1130,8 +1128,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -1144,8 +1141,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *         output artifacts.</p> <note>
+     * @return The Key Management Service customer master key (CMK) to be used for encrypting the build output
+     *         artifacts.</p> <note>
      *         <p>
      *         You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
      *         permission to that key.
@@ -1162,8 +1159,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -1177,8 +1173,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param encryptionKey
-     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        output artifacts.</p> <note>
+     *        The Key Management Service customer master key (CMK) to be used for encrypting the build output
+     *        artifacts.</p> <note>
      *        <p>
      *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
      *        permission to that key.
@@ -1200,12 +1196,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
-     * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     * These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
      * </p>
      * 
      * @return An updated list of tag key and value pairs associated with this build project.</p>
      *         <p>
-     *         These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     *         These tags are available for use by Amazon Web Services services that support CodeBuild build project
+     *         tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1217,13 +1214,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
-     * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     * These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
      * </p>
      * 
      * @param tags
      *        An updated list of tag key and value pairs associated with this build project.</p>
      *        <p>
-     *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     *        These tags are available for use by Amazon Web Services services that support CodeBuild build project
+     *        tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1240,7 +1238,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
-     * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     * These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1251,7 +1249,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param tags
      *        An updated list of tag key and value pairs associated with this build project.</p>
      *        <p>
-     *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     *        These tags are available for use by Amazon Web Services services that support CodeBuild build project
+     *        tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1270,13 +1269,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
-     * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     * These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.
      * </p>
      * 
      * @param tags
      *        An updated list of tag key and value pairs associated with this build project.</p>
      *        <p>
-     *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
+     *        These tags are available for use by Amazon Web Services services that support CodeBuild build project
+     *        tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1287,11 +1287,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
      * 
      * @param vpcConfig
-     *        VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     *        VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -1300,10 +1300,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
      * 
-     * @return VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * @return VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      */
 
     public VpcConfig getVpcConfig() {
@@ -1312,11 +1312,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
      * 
      * @param vpcConfig
-     *        VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     *        VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1379,13 +1379,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
-     * bucket, or both.
+     * Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket,
+     * or both.
      * </p>
      * 
      * @param logsConfig
-     *        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in
-     *        an S3 bucket, or both.
+     *        Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3
+     *        bucket, or both.
      */
 
     public void setLogsConfig(LogsConfig logsConfig) {
@@ -1394,12 +1394,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
-     * bucket, or both.
+     * Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket,
+     * or both.
      * </p>
      * 
-     * @return Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs
-     *         in an S3 bucket, or both.
+     * @return Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3
+     *         bucket, or both.
      */
 
     public LogsConfig getLogsConfig() {
@@ -1408,13 +1408,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
-     * bucket, or both.
+     * Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket,
+     * or both.
      * </p>
      * 
      * @param logsConfig
-     *        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in
-     *        an S3 bucket, or both.
+     *        Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3
+     *        bucket, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

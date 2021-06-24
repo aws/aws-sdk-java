@@ -221,6 +221,14 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsRdsDbCluster(AwsRdsDbClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsEcsCluster", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEcsCluster(AwsEcsClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEcsTaskDefinition", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEcsTaskDefinition(AwsEcsTaskDefinitionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Container", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setContainer(ContainerDetailsJsonUnmarshaller.getInstance().unmarshall(context));

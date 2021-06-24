@@ -30,7 +30,7 @@ public class AwsRdsDbInstanceAssociatedRole implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     * The ARN of the IAM role that is associated with the DB instance.
      * </p>
      */
     private String roleArn;
@@ -69,11 +69,11 @@ public class AwsRdsDbInstanceAssociatedRole implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     * The ARN of the IAM role that is associated with the DB instance.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     *        The ARN of the IAM role that is associated with the DB instance.
      */
 
     public void setRoleArn(String roleArn) {
@@ -82,10 +82,10 @@ public class AwsRdsDbInstanceAssociatedRole implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     * The ARN of the IAM role that is associated with the DB instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     * @return The ARN of the IAM role that is associated with the DB instance.
      */
 
     public String getRoleArn() {
@@ -94,11 +94,11 @@ public class AwsRdsDbInstanceAssociatedRole implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     * The ARN of the IAM role that is associated with the DB instance.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
+     *        The ARN of the IAM role that is associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

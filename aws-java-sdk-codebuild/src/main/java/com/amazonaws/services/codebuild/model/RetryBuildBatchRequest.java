@@ -35,8 +35,8 @@ public class RetryBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code>
      * request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you
-     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, AWS CodeBuild
-     * returns a parameter mismatch error.
+     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a
+     * parameter mismatch error.
      * </p>
      */
     private String idempotencyToken;
@@ -91,15 +91,15 @@ public class RetryBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code>
      * request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you
-     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, AWS CodeBuild
-     * returns a parameter mismatch error.
+     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a
+     * parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the
      *        <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request
      *        and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token,
-     *        but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     *        but change a parameter, CodeBuild returns a parameter mismatch error.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -110,14 +110,14 @@ public class RetryBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code>
      * request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you
-     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, AWS CodeBuild
-     * returns a parameter mismatch error.
+     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a
+     * parameter mismatch error.
      * </p>
      * 
      * @return A unique, case sensitive identifier you provide to ensure the idempotency of the
      *         <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request
      *         and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same
-     *         token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     *         token, but change a parameter, CodeBuild returns a parameter mismatch error.
      */
 
     public String getIdempotencyToken() {
@@ -128,15 +128,15 @@ public class RetryBuildBatchRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code>
      * request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you
-     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, AWS CodeBuild
-     * returns a parameter mismatch error.
+     * repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a
+     * parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the
      *        <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request
      *        and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token,
-     *        but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     *        but change a parameter, CodeBuild returns a parameter mismatch error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

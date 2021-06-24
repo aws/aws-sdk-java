@@ -27,14 +27,14 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -55,7 +55,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String scope;
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      */
@@ -63,11 +63,11 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -76,10 +76,10 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
-     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public String getName() {
@@ -88,11 +88,11 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,8 +103,8 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -123,9 +123,9 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -150,8 +150,8 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -169,9 +169,9 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -196,8 +196,8 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -216,9 +216,9 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -245,8 +245,8 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -265,9 +265,9 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -294,12 +294,12 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      */
 
@@ -309,11 +309,11 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
-     * @return The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     * @return The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *         You provide it to operations like update and delete.
      */
 
@@ -323,12 +323,12 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

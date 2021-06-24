@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To
  * allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
  * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
- * string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
- * allow or block requests that appear to contain malicious SQL code.
+ * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow
+ * or block requests that appear to contain malicious SQL code.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SqliMatchStatement" target="_top">AWS API
@@ -34,14 +34,14 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
@@ -50,11 +50,11 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -63,11 +63,10 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
-     * @return The part of a web request that you want AWS WAF to inspect. For more information, see
-     *         <a>FieldToMatch</a>.
+     * @return The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -76,11 +75,11 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,16 +91,15 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *         effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *         performs all transformations on the content of the request component identified by
-     *         <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *         match.
+     *         effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *         all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *         starting from the lowest priority setting, before inspecting the content for a match.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -111,17 +109,16 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -136,7 +133,7 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
@@ -148,10 +145,9 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,17 +164,16 @@ public class SqliMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

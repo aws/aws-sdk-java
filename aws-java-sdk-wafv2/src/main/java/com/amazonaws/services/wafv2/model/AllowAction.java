@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies that AWS WAF should allow the request and optionally defines additional custom handling for the request.
+ * Specifies that WAF should allow the request and optionally defines additional custom handling for the request.
  * </p>
  * <p>
  * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
@@ -39,8 +39,8 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      */
     private CustomRequestHandling customRequestHandling;
@@ -52,8 +52,8 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @param customRequestHandling
@@ -61,8 +61,8 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in AWS WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      */
 
     public void setCustomRequestHandling(CustomRequestHandling customRequestHandling) {
@@ -76,17 +76,16 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @return Defines custom handling for the web request.</p>
      *         <p>
      *         For information about customizing web requests and responses, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *         web requests and responses in AWS WAF</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
-     *         Guide</a>.
+     *         web requests and responses in WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      */
 
     public CustomRequestHandling getCustomRequestHandling() {
@@ -100,8 +99,8 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @param customRequestHandling
@@ -109,8 +108,8 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in AWS WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

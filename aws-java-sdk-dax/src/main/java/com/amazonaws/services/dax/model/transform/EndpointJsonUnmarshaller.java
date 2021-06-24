@@ -56,6 +56,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("URL", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setURL(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

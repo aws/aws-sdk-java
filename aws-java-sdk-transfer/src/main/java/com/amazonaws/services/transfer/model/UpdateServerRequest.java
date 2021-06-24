@@ -27,23 +27,23 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -85,9 +85,20 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String certificate;
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
-     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
-     * will need to associate one or more Elastic IP addresses with your server's endpoint.
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     */
+    private ProtocolDetails protocolDetails;
+    /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
@@ -100,10 +111,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -131,7 +142,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     * Guide</i>.
      * </p>
      */
     private String hostKey;
@@ -143,8 +155,9 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
-     * in Amazon CloudWatch, turning logging on or off.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      */
     private String loggingRole;
@@ -172,8 +185,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager
+     * (ACM) which will be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -205,23 +218,23 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -261,22 +274,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param certificate
-     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *        The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
+     *        when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      *        <p>
      *        To request a new public certificate, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To import an existing certificate into ACM, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
-     *        into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To request a private certificate to use FTPS through private IP addresses, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -321,23 +334,23 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -376,22 +389,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *         <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * @return The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
+     *         when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      *         <p>
      *         To request a new public certificate, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     *         certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *         </p>
      *         <p>
      *         To import an existing certificate into ACM, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
-     *         into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *         </p>
      *         <p>
      *         To request a private certificate to use FTPS through private IP addresses, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     *         certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *         </p>
      *         <p>
      *         Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -436,23 +449,23 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -492,22 +505,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param certificate
-     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *        The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
+     *        when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      *        <p>
      *        To request a new public certificate, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To import an existing certificate into ACM, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
-     *        into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To request a private certificate to use FTPS through private IP addresses, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -554,15 +567,78 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
-     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
-     * will need to associate one or more Elastic IP addresses with your server's endpoint.
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     * 
+     * @param protocolDetails
+     *        The protocol settings that are configured for your server. </p>
+     *        <p>
+     *        Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a
+     *        single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     */
+
+    public void setProtocolDetails(ProtocolDetails protocolDetails) {
+        this.protocolDetails = protocolDetails;
+    }
+
+    /**
+     * <p>
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     * 
+     * @return The protocol settings that are configured for your server. </p>
+     *         <p>
+     *         Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a
+     *         single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     */
+
+    public ProtocolDetails getProtocolDetails() {
+        return this.protocolDetails;
+    }
+
+    /**
+     * <p>
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     * 
+     * @param protocolDetails
+     *        The protocol settings that are configured for your server. </p>
+     *        <p>
+     *        Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a
+     *        single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServerRequest withProtocolDetails(ProtocolDetails protocolDetails) {
+        setProtocolDetails(protocolDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
-     *        endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
-     *        internet traffic, you will need to associate one or more Elastic IP addresses with your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *        groups are automatically assigned to your endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -571,15 +647,16 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
-     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
-     * will need to associate one or more Elastic IP addresses with your server's endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
-     *         endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
-     *         internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     *         endpoint.
+     * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *         endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *         Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *         groups are automatically assigned to your endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -588,15 +665,17 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
-     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
-     * will need to associate one or more Elastic IP addresses with your server's endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
-     *        endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
-     *        internet traffic, you will need to associate one or more Elastic IP addresses with your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *        groups are automatically assigned to your endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,10 +693,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -638,9 +717,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
      *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have
+     *        already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on
+     *        or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *        <code>VPC</code>.
      *        </p>
      *        <p>
      *        For more information, see
@@ -668,10 +748,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -691,9 +771,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         facing by attaching Elastic IP addresses directly to it.</p> <note>
      *         <p>
      *         After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *         your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *         servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *         will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *         your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have
+     *         already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on
+     *         or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *         <code>VPC</code>.
      *         </p>
      *         <p>
      *         For more information, see
@@ -721,10 +802,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -745,9 +826,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
      *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have
+     *        already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on
+     *        or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *        <code>VPC</code>.
      *        </p>
      *        <p>
      *        For more information, see
@@ -777,10 +859,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -801,9 +883,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
      *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have
+     *        already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on
+     *        or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *        <code>VPC</code>.
      *        </p>
      *        <p>
      *        For more information, see
@@ -837,7 +920,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     * Guide</i>.
      * </p>
      * 
      * @param hostKey
@@ -851,7 +935,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *        >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     *        >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     *        Guide</i>.
      */
 
     public void setHostKey(String hostKey) {
@@ -871,7 +956,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     * Guide</i>.
      * </p>
      * 
      * @return The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
@@ -884,7 +970,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *         >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     *         >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     *         Guide</i>.
      */
 
     public String getHostKey() {
@@ -904,7 +991,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     * Guide</i>.
      * </p>
      * 
      * @param hostKey
@@ -918,7 +1006,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *        >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     *        >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -969,13 +1058,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
-     * in Amazon CloudWatch, turning logging on or off.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be
-     *        logged in Amazon CloudWatch, turning logging on or off.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -984,12 +1075,14 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
-     * in Amazon CloudWatch, turning logging on or off.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
-     * @return Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to
-     *         be logged in Amazon CloudWatch, turning logging on or off.
+     * @return Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *         role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *         set, user activity can be viewed in your CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -998,13 +1091,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
-     * in Amazon CloudWatch, turning logging on or off.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be
-     *        logged in Amazon CloudWatch, turning logging on or off.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1037,8 +1132,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager
+     * (ACM) which will be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1075,8 +1170,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </ul>
      *         <note>
      *         <p>
-     *         If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *         which will be used to identify your server when clients connect to it over FTPS.
+     *         If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+     *         Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.
      *         </p>
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1122,8 +1217,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager
+     * (ACM) which will be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1161,8 +1256,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+     *        Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1213,8 +1308,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager
+     * (ACM) which will be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1257,8 +1352,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+     *        Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1311,8 +1406,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager
+     * (ACM) which will be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1350,8 +1445,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+     *        Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1399,8 +1494,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager
+     * (ACM) which will be used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1438,8 +1533,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+     *        Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1565,6 +1660,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getProtocolDetails() != null)
+            sb.append("ProtocolDetails: ").append(getProtocolDetails()).append(",");
         if (getEndpointDetails() != null)
             sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
         if (getEndpointType() != null)
@@ -1598,6 +1695,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getCertificate() == null ^ this.getCertificate() == null)
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
+        if (other.getProtocolDetails() == null ^ this.getProtocolDetails() == null)
+            return false;
+        if (other.getProtocolDetails() != null && other.getProtocolDetails().equals(this.getProtocolDetails()) == false)
             return false;
         if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
             return false;
@@ -1640,6 +1741,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getProtocolDetails() == null) ? 0 : getProtocolDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getHostKey() == null) ? 0 : getHostKey().hashCode());

@@ -30,7 +30,7 @@ public class AwsLambdaFunctionLayer implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the function layer.
      * </p>
      */
     private String arn;
@@ -43,11 +43,11 @@ public class AwsLambdaFunctionLayer implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the function layer.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the function layer.
+     *        The ARN of the function layer.
      */
 
     public void setArn(String arn) {
@@ -56,10 +56,10 @@ public class AwsLambdaFunctionLayer implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the function layer.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the function layer.
+     * @return The ARN of the function layer.
      */
 
     public String getArn() {
@@ -68,11 +68,11 @@ public class AwsLambdaFunctionLayer implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the function layer.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the function layer.
+     *        The ARN of the function layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,14 @@ public class UpdateParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * An array of name-value pairs for the parameters in the group. Each element in the array represents a single
      * parameter.
      * </p>
+     * <note>
+     * <p>
+     * <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more
+     * details, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     * >Configuring TTL Settings</a>.
+     * </p>
+     * </note>
      */
     private java.util.List<ParameterNameValue> parameterNameValues;
 
@@ -84,9 +92,23 @@ public class UpdateParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * An array of name-value pairs for the parameters in the group. Each element in the array represents a single
      * parameter.
      * </p>
+     * <note>
+     * <p>
+     * <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more
+     * details, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     * >Configuring TTL Settings</a>.
+     * </p>
+     * </note>
      * 
      * @return An array of name-value pairs for the parameters in the group. Each element in the array represents a
-     *         single parameter.
+     *         single parameter.</p> <note>
+     *         <p>
+     *         <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names.
+     *         For more details, see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     *         >Configuring TTL Settings</a>.
+     *         </p>
      */
 
     public java.util.List<ParameterNameValue> getParameterNameValues() {
@@ -98,10 +120,24 @@ public class UpdateParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * An array of name-value pairs for the parameters in the group. Each element in the array represents a single
      * parameter.
      * </p>
+     * <note>
+     * <p>
+     * <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more
+     * details, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     * >Configuring TTL Settings</a>.
+     * </p>
+     * </note>
      * 
      * @param parameterNameValues
      *        An array of name-value pairs for the parameters in the group. Each element in the array represents a
-     *        single parameter.
+     *        single parameter.</p> <note>
+     *        <p>
+     *        <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names.
+     *        For more details, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     *        >Configuring TTL Settings</a>.
+     *        </p>
      */
 
     public void setParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {
@@ -118,6 +154,14 @@ public class UpdateParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * An array of name-value pairs for the parameters in the group. Each element in the array represents a single
      * parameter.
      * </p>
+     * <note>
+     * <p>
+     * <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more
+     * details, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     * >Configuring TTL Settings</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameterNameValues(java.util.Collection)} or {@link #withParameterNameValues(java.util.Collection)}
@@ -126,7 +170,13 @@ public class UpdateParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param parameterNameValues
      *        An array of name-value pairs for the parameters in the group. Each element in the array represents a
-     *        single parameter.
+     *        single parameter.</p> <note>
+     *        <p>
+     *        <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names.
+     *        For more details, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     *        >Configuring TTL Settings</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +195,24 @@ public class UpdateParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * An array of name-value pairs for the parameters in the group. Each element in the array represents a single
      * parameter.
      * </p>
+     * <note>
+     * <p>
+     * <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more
+     * details, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     * >Configuring TTL Settings</a>.
+     * </p>
+     * </note>
      * 
      * @param parameterNameValues
      *        An array of name-value pairs for the parameters in the group. Each element in the array represents a
-     *        single parameter.
+     *        single parameter.</p> <note>
+     *        <p>
+     *        <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names.
+     *        For more details, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl"
+     *        >Configuring TTL Settings</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

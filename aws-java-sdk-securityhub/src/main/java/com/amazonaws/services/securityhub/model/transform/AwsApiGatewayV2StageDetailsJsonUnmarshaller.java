@@ -48,6 +48,10 @@ public class AwsApiGatewayV2StageDetailsJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ClientCertificateId", targetDepth)) {
+                    context.nextToken();
+                    awsApiGatewayV2StageDetails.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
                     awsApiGatewayV2StageDetails.setCreatedDate(context.getUnmarshaller(String.class).unmarshall(context));

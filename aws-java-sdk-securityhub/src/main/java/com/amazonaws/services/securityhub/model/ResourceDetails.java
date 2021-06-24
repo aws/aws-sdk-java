@@ -60,7 +60,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsCloudFrontDistributionDetails awsCloudFrontDistribution;
     /**
      * <p>
-     * Details about an Amazon EC2 instance related to a finding.
+     * Details about an EC2 instance related to a finding.
      * </p>
      */
     private AwsEc2InstanceDetails awsEc2Instance;
@@ -301,6 +301,19 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsRdsDbClusterDetails awsRdsDbCluster;
     /**
      * <p>
+     * Details about an ECS cluster.
+     * </p>
+     */
+    private AwsEcsClusterDetails awsEcsCluster;
+    /**
+     * <p>
+     * Details about a task definition. A task definition describes the container and volume definitions of an Amazon
+     * Elastic Container Service task.
+     * </p>
+     */
+    private AwsEcsTaskDefinitionDetails awsEcsTaskDefinition;
+    /**
+     * <p>
      * Details about a container resource related to a finding.
      * </p>
      */
@@ -450,11 +463,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an Amazon EC2 instance related to a finding.
+     * Details about an EC2 instance related to a finding.
      * </p>
      * 
      * @param awsEc2Instance
-     *        Details about an Amazon EC2 instance related to a finding.
+     *        Details about an EC2 instance related to a finding.
      */
 
     public void setAwsEc2Instance(AwsEc2InstanceDetails awsEc2Instance) {
@@ -463,10 +476,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an Amazon EC2 instance related to a finding.
+     * Details about an EC2 instance related to a finding.
      * </p>
      * 
-     * @return Details about an Amazon EC2 instance related to a finding.
+     * @return Details about an EC2 instance related to a finding.
      */
 
     public AwsEc2InstanceDetails getAwsEc2Instance() {
@@ -475,11 +488,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an Amazon EC2 instance related to a finding.
+     * Details about an EC2 instance related to a finding.
      * </p>
      * 
      * @param awsEc2Instance
-     *        Details about an Amazon EC2 instance related to a finding.
+     *        Details about an EC2 instance related to a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2056,6 +2069,92 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details about an ECS cluster.
+     * </p>
+     * 
+     * @param awsEcsCluster
+     *        Details about an ECS cluster.
+     */
+
+    public void setAwsEcsCluster(AwsEcsClusterDetails awsEcsCluster) {
+        this.awsEcsCluster = awsEcsCluster;
+    }
+
+    /**
+     * <p>
+     * Details about an ECS cluster.
+     * </p>
+     * 
+     * @return Details about an ECS cluster.
+     */
+
+    public AwsEcsClusterDetails getAwsEcsCluster() {
+        return this.awsEcsCluster;
+    }
+
+    /**
+     * <p>
+     * Details about an ECS cluster.
+     * </p>
+     * 
+     * @param awsEcsCluster
+     *        Details about an ECS cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEcsCluster(AwsEcsClusterDetails awsEcsCluster) {
+        setAwsEcsCluster(awsEcsCluster);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a task definition. A task definition describes the container and volume definitions of an Amazon
+     * Elastic Container Service task.
+     * </p>
+     * 
+     * @param awsEcsTaskDefinition
+     *        Details about a task definition. A task definition describes the container and volume definitions of an
+     *        Amazon Elastic Container Service task.
+     */
+
+    public void setAwsEcsTaskDefinition(AwsEcsTaskDefinitionDetails awsEcsTaskDefinition) {
+        this.awsEcsTaskDefinition = awsEcsTaskDefinition;
+    }
+
+    /**
+     * <p>
+     * Details about a task definition. A task definition describes the container and volume definitions of an Amazon
+     * Elastic Container Service task.
+     * </p>
+     * 
+     * @return Details about a task definition. A task definition describes the container and volume definitions of an
+     *         Amazon Elastic Container Service task.
+     */
+
+    public AwsEcsTaskDefinitionDetails getAwsEcsTaskDefinition() {
+        return this.awsEcsTaskDefinition;
+    }
+
+    /**
+     * <p>
+     * Details about a task definition. A task definition describes the container and volume definitions of an Amazon
+     * Elastic Container Service task.
+     * </p>
+     * 
+     * @param awsEcsTaskDefinition
+     *        Details about a task definition. A task definition describes the container and volume definitions of an
+     *        Amazon Elastic Container Service task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEcsTaskDefinition(AwsEcsTaskDefinitionDetails awsEcsTaskDefinition) {
+        setAwsEcsTaskDefinition(awsEcsTaskDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about a container resource related to a finding.
      * </p>
      * 
@@ -2353,6 +2452,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsRdsDbClusterSnapshot: ").append(getAwsRdsDbClusterSnapshot()).append(",");
         if (getAwsRdsDbCluster() != null)
             sb.append("AwsRdsDbCluster: ").append(getAwsRdsDbCluster()).append(",");
+        if (getAwsEcsCluster() != null)
+            sb.append("AwsEcsCluster: ").append(getAwsEcsCluster()).append(",");
+        if (getAwsEcsTaskDefinition() != null)
+            sb.append("AwsEcsTaskDefinition: ").append(getAwsEcsTaskDefinition()).append(",");
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
         if (getOther() != null)
@@ -2547,6 +2650,14 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsRdsDbCluster() != null && other.getAwsRdsDbCluster().equals(this.getAwsRdsDbCluster()) == false)
             return false;
+        if (other.getAwsEcsCluster() == null ^ this.getAwsEcsCluster() == null)
+            return false;
+        if (other.getAwsEcsCluster() != null && other.getAwsEcsCluster().equals(this.getAwsEcsCluster()) == false)
+            return false;
+        if (other.getAwsEcsTaskDefinition() == null ^ this.getAwsEcsTaskDefinition() == null)
+            return false;
+        if (other.getAwsEcsTaskDefinition() != null && other.getAwsEcsTaskDefinition().equals(this.getAwsEcsTaskDefinition()) == false)
+            return false;
         if (other.getContainer() == null ^ this.getContainer() == null)
             return false;
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false)
@@ -2606,6 +2717,8 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsRdsDbSnapshot() == null) ? 0 : getAwsRdsDbSnapshot().hashCode());
         hashCode = prime * hashCode + ((getAwsRdsDbClusterSnapshot() == null) ? 0 : getAwsRdsDbClusterSnapshot().hashCode());
         hashCode = prime * hashCode + ((getAwsRdsDbCluster() == null) ? 0 : getAwsRdsDbCluster().hashCode());
+        hashCode = prime * hashCode + ((getAwsEcsCluster() == null) ? 0 : getAwsEcsCluster().hashCode());
+        hashCode = prime * hashCode + ((getAwsEcsTaskDefinition() == null) ? 0 : getAwsEcsTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getOther() == null) ? 0 : getOther().hashCode());
         return hashCode;

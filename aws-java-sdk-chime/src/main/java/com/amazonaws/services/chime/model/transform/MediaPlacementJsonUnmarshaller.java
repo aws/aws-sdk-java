@@ -76,6 +76,10 @@ public class MediaPlacementJsonUnmarshaller implements Unmarshaller<MediaPlaceme
                     context.nextToken();
                     mediaPlacement.setTurnControlUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EventIngestionUrl", targetDepth)) {
+                    context.nextToken();
+                    mediaPlacement.setEventIngestionUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

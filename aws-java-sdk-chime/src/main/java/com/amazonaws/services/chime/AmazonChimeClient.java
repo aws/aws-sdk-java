@@ -888,8 +888,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Removes the suspension from up to 50 previously suspended users for the specified Amazon Chime
      * <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code> accounts can be unsuspended using
      * this action. For more information about different account types, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
-     * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html"> Managing Your Amazon Chime Accounts
+     * </a> in the account types, in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
      * Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status.
@@ -7124,7 +7124,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
      * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
-     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param getRetentionSettingsRequest
@@ -8704,7 +8704,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i> .
+     * <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param listAttendeesRequest

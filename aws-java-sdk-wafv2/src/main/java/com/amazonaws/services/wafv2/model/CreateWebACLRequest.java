@@ -27,14 +27,14 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -61,15 +61,15 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     private DefaultAction defaultAction;
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      */
     private String description;
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      */
     private java.util.List<Rule> rules;
@@ -94,24 +94,24 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      */
     private java.util.Map<String, CustomResponseBody> customResponseBodies;
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -120,10 +120,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
-     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public String getName() {
@@ -132,11 +132,11 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,8 +147,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -167,9 +167,9 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -194,8 +194,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -213,9 +213,9 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -240,8 +240,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -260,9 +260,9 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -289,8 +289,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -309,9 +309,9 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -378,11 +378,11 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification.
+     *        A description of the web ACL that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -391,10 +391,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      * 
-     * @return A description of the Web ACL that helps with identification.
+     * @return A description of the web ACL that helps with identification.
      */
 
     public String getDescription() {
@@ -403,11 +403,11 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification.
+     *        A description of the web ACL that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,13 +419,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * 
      * @return The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count.
-     *         Each rule includes one top-level statement that AWS WAF uses to identify matching web requests, and
-     *         parameters that govern how AWS WAF handles them.
+     *         Each rule includes one top-level statement that WAF uses to identify matching web requests, and
+     *         parameters that govern how WAF handles them.
      */
 
     public java.util.List<Rule> getRules() {
@@ -435,14 +435,14 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * 
      * @param rules
      *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters
-     *        that govern how AWS WAF handles them.
+     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
+     *        govern how WAF handles them.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -457,8 +457,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -468,8 +468,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param rules
      *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters
-     *        that govern how AWS WAF handles them.
+     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
+     *        govern how WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,14 +486,14 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * 
      * @param rules
      *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters
-     *        that govern how AWS WAF handles them.
+     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
+     *        govern how WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -621,13 +621,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @return A map of custom response keys and content bodies. When you create a rule with a block action, you can
@@ -636,15 +636,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For information about customizing web requests and responses, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *         web requests and responses in AWS WAF</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
-     *         Guide</a>.
+     *         web requests and responses in WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      *         </p>
      *         <p>
      *         For information about the limits on count and size for custom request and response settings, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
-     *         Guide</a>.
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      */
 
     public java.util.Map<String, CustomResponseBody> getCustomResponseBodies() {
@@ -660,13 +658,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @param customResponseBodies
@@ -676,13 +674,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in AWS WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      *        </p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      */
 
     public void setCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
@@ -698,13 +696,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @param customResponseBodies
@@ -714,13 +712,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in AWS WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      *        </p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

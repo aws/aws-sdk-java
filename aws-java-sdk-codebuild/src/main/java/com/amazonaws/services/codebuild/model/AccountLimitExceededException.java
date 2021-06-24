@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An AWS service limit was exceeded for the calling AWS account.
+ * An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

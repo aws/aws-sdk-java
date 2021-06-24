@@ -33,8 +33,8 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -60,6 +60,12 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the entity.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -103,8 +109,8 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -123,9 +129,9 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -150,8 +156,8 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -169,9 +175,9 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -196,8 +202,8 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -216,9 +222,9 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -245,8 +251,8 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -265,9 +271,9 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -339,6 +345,46 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the entity.
+     * </p>
+     * 
+     * @param aRN
+     *        The Amazon Resource Name (ARN) of the entity.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the entity.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the entity.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the entity.
+     * </p>
+     * 
+     * @param aRN
+     *        The Amazon Resource Name (ARN) of the entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRuleGroupRequest withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +401,9 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getScope() != null)
             sb.append("Scope: ").append(getScope()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -382,6 +430,10 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -393,6 +445,7 @@ public class GetRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

@@ -25,15 +25,14 @@ import com.amazonaws.services.codebuild.model.*;
  * {@link com.amazonaws.services.codebuild.AbstractAWSCodeBuildAsync} instead.
  * </p>
  * <p>
- * <fullname>AWS CodeBuild</fullname>
  * <p>
- * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
- * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
- * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
- * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests. You pay only
- * for the build time you consume. For more information about AWS CodeBuild, see the <i> <a
- * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>.</i>
+ * CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source code, runs unit tests, and
+ * produces artifacts that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own
+ * build servers. It provides prepackaged build environments for the most popular programming languages and build tools,
+ * such as Apache Maven, Gradle, and more. You can also fully customize build environments in CodeBuild to use your own
+ * build tools. CodeBuild scales automatically to meet peak build requests. You pay only for the build time you consume.
+ * For more information about CodeBuild, see the <i> <a
+ * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild User Guide</a>.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -289,16 +288,16 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
-     * enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * <important>
      * <p>
-     * If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline,
-     * then two identical builds are created for each commit. One build is triggered through webhooks, and one through
-     * AWS CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
-     * using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild console,
-     * clear the Webhook box. For more information, see step 5 in <a
+     * If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then
+     * two identical builds are created for each commit. One build is triggered through webhooks, and one through
+     * CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
+     * using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the
+     * Webhook box. For more information, see step 5 in <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
      * Build Project's Settings</a>.
      * </p>
@@ -314,16 +313,16 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
-     * enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * <important>
      * <p>
-     * If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline,
-     * then two identical builds are created for each commit. One build is triggered through webhooks, and one through
-     * AWS CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
-     * using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild console,
-     * clear the Webhook box. For more information, see step 5 in <a
+     * If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then
+     * two identical builds are created for each commit. One build is triggered through webhooks, and one through
+     * CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
+     * using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the
+     * Webhook box. For more information, see step 5 in <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
      * Build Project's Settings</a>.
      * </p>
@@ -530,8 +529,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
-     * stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * stops CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -544,8 +543,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
-     * stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * stops CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -687,8 +686,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
-     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub,
+     * GitHub Enterprise, or Bitbucket repository.
      * </p>
      * 
      * @param importSourceCredentialsRequest
@@ -701,8 +700,8 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
-     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub,
+     * GitHub Enterprise, or Bitbucket repository.
      * </p>
      * 
      * @param importSourceCredentialsRequest
@@ -879,7 +878,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets information about Docker images that are managed by AWS CodeBuild.
+     * Gets information about Docker images that are managed by CodeBuild.
      * </p>
      * 
      * @param listCuratedEnvironmentImagesRequest
@@ -894,7 +893,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets information about Docker images that are managed by AWS CodeBuild.
+     * Gets information about Docker images that are managed by CodeBuild.
      * </p>
      * 
      * @param listCuratedEnvironmentImagesRequest
@@ -945,7 +944,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list ARNs for the report groups in the current AWS account.
+     * Gets a list ARNs for the report groups in the current Amazon Web Services account.
      * </p>
      * 
      * @param listReportGroupsRequest
@@ -958,7 +957,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list ARNs for the report groups in the current AWS account.
+     * Gets a list ARNs for the report groups in the current Amazon Web Services account.
      * </p>
      * 
      * @param listReportGroupsRequest
@@ -976,7 +975,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Returns a list of ARNs for the reports in the current AWS account.
+     * Returns a list of ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * 
      * @param listReportsRequest
@@ -989,7 +988,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Returns a list of ARNs for the reports in the current AWS account.
+     * Returns a list of ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * 
      * @param listReportsRequest
@@ -1040,7 +1039,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list of projects that are shared with other AWS accounts or users.
+     * Gets a list of projects that are shared with other Amazon Web Services accounts or users.
      * </p>
      * 
      * @param listSharedProjectsRequest
@@ -1053,7 +1052,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list of projects that are shared with other AWS accounts or users.
+     * Gets a list of projects that are shared with other Amazon Web Services accounts or users.
      * </p>
      * 
      * @param listSharedProjectsRequest
@@ -1071,7 +1070,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * Gets a list of report groups that are shared with other Amazon Web Services accounts or users.
      * </p>
      * 
      * @param listSharedReportGroupsRequest
@@ -1084,7 +1083,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * Gets a list of report groups that are shared with other Amazon Web Services accounts or users.
      * </p>
      * 
      * @param listSharedReportGroupsRequest
@@ -1412,7 +1411,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Updates the webhook associated with an AWS CodeBuild build project.
+     * Updates the webhook associated with an CodeBuild build project.
      * </p>
      * <note>
      * <p>
@@ -1430,7 +1429,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
-     * Updates the webhook associated with an AWS CodeBuild build project.
+     * Updates the webhook associated with an CodeBuild build project.
      * </p>
      * <note>
      * <p>

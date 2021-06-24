@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The processing guidance for a <a>Rule</a>, used by AWS WAF to determine whether a web request matches the rule.
+ * The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement" target="_top">AWS API
@@ -30,10 +30,10 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     * statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other
-     * settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF
-     * console and the developer guide, this is refered to as a string match statement.
+     * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
+     * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
+     * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
+     * developer guide, this is refered to as a string match statement.
      * </p>
      */
     private ByteMatchStatement byteMatchStatement;
@@ -42,18 +42,18 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
      * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
+     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
      * allow or block requests that appear to contain malicious SQL code.
      * </p>
      */
     private SqliMatchStatement sqliMatchStatement;
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. XSS
+     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
      * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
      * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want AWS WAF to search and text transformations to use on the search area before AWS WAF searches for
-     * character sequences that are likely to be malicious strings.
+     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
+     * sequences that are likely to be malicious strings.
      * </p>
      */
     private XssMatchStatement xssMatchStatement;
@@ -64,8 +64,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the
-     * request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
+     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
+     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
      * requests that have a request body greater than 8192 bytes.
      * </p>
      * <p>
@@ -100,8 +100,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This
-     * allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically
-     * updates all rules that reference it.
+     * allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates
+     * all rules that reference it.
      * </p>
      */
     private IPSetReferenceStatement iPSetReferenceStatement;
@@ -114,8 +114,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent
-     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     * WAF automatically updates all rules that reference it.
+     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     * automatically updates all rules that reference it.
      * </p>
      */
     private RegexPatternSetReferenceStatement regexPatternSetReferenceStatement;
@@ -126,8 +126,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to put a temporary block on requests from an IP address that is sending excessive requests.
      * </p>
      * <p>
-     * When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate
-     * falls below the limit.
+     * When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls
+     * below the limit.
      * </p>
      * <p>
      * You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so
@@ -187,7 +187,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * <a>ListAvailableManagedRuleGroups</a>.
      * </p>
      * <p>
-     * You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
+     * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
      */
@@ -201,7 +201,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * The label match statement provides the label or namespace string to search for. The label string can represent a
      * part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have
      * a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the
-     * rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF
+     * rule that added the label. If you do not provide the fully qualified name in your label match string, WAF
      * performs the search for labels that were added in the same context as the label match statement.
      * </p>
      */
@@ -209,17 +209,17 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     * statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other
-     * settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF
-     * console and the developer guide, this is refered to as a string match statement.
+     * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
+     * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
+     * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
+     * developer guide, this is refered to as a string match statement.
      * </p>
      * 
      * @param byteMatchStatement
-     *        A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     *        statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and
+     *        A rule statement that defines a string match search for WAF to apply to web requests. The byte match
+     *        statement provides the bytes to search for, the location in requests that you want WAF to search, and
      *        other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In
-     *        the AWS WAF console and the developer guide, this is refered to as a string match statement.
+     *        the WAF console and the developer guide, this is refered to as a string match statement.
      */
 
     public void setByteMatchStatement(ByteMatchStatement byteMatchStatement) {
@@ -228,16 +228,16 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     * statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other
-     * settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF
-     * console and the developer guide, this is refered to as a string match statement.
+     * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
+     * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
+     * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
+     * developer guide, this is refered to as a string match statement.
      * </p>
      * 
-     * @return A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     *         statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and
+     * @return A rule statement that defines a string match search for WAF to apply to web requests. The byte match
+     *         statement provides the bytes to search for, the location in requests that you want WAF to search, and
      *         other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In
-     *         the AWS WAF console and the developer guide, this is refered to as a string match statement.
+     *         the WAF console and the developer guide, this is refered to as a string match statement.
      */
 
     public ByteMatchStatement getByteMatchStatement() {
@@ -246,17 +246,17 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     * statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other
-     * settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF
-     * console and the developer guide, this is refered to as a string match statement.
+     * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
+     * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The
+     * bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the
+     * developer guide, this is refered to as a string match statement.
      * </p>
      * 
      * @param byteMatchStatement
-     *        A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match
-     *        statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and
+     *        A rule statement that defines a string match search for WAF to apply to web requests. The byte match
+     *        statement provides the bytes to search for, the location in requests that you want WAF to search, and
      *        other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In
-     *        the AWS WAF console and the developer guide, this is refered to as a string match statement.
+     *        the WAF console and the developer guide, this is refered to as a string match statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,7 +270,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
      * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
+     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
      * allow or block requests that appear to contain malicious SQL code.
      * </p>
      * 
@@ -278,7 +278,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your
      *        database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL
      *        injection match conditions. An SQL injection match condition identifies the part of web requests, such as
-     *        the URI or the query string, that you want AWS WAF to inspect. Later in the process, when you create a web
+     *        the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web
      *        ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
      */
 
@@ -291,16 +291,15 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
      * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
+     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
      * allow or block requests that appear to contain malicious SQL code.
      * </p>
      * 
      * @return Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your
      *         database. To allow or block web requests that appear to contain malicious SQL code, create one or more
      *         SQL injection match conditions. An SQL injection match condition identifies the part of web requests,
-     *         such as the URI or the query string, that you want AWS WAF to inspect. Later in the process, when you
-     *         create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL
-     *         code.
+     *         such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create
+     *         a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
      */
 
     public SqliMatchStatement getSqliMatchStatement() {
@@ -312,7 +311,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database.
      * To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match
      * conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query
-     * string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
+     * string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to
      * allow or block requests that appear to contain malicious SQL code.
      * </p>
      * 
@@ -320,7 +319,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your
      *        database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL
      *        injection match conditions. An SQL injection match condition identifies the part of web requests, such as
-     *        the URI or the query string, that you want AWS WAF to inspect. Later in the process, when you create a web
+     *        the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web
      *        ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -332,19 +331,19 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. XSS
+     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
      * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
      * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want AWS WAF to search and text transformations to use on the search area before AWS WAF searches for
-     * character sequences that are likely to be malicious strings.
+     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
+     * sequences that are likely to be malicious strings.
      * </p>
      * 
      * @param xssMatchStatement
-     *        A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web
-     *        requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle
-     *        to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement
-     *        provides the location in requests that you want AWS WAF to search and text transformations to use on the
-     *        search area before AWS WAF searches for character sequences that are likely to be malicious strings.
+     *        A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
+     *        XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject
+     *        malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the
+     *        location in requests that you want WAF to search and text transformations to use on the search area before
+     *        WAF searches for character sequences that are likely to be malicious strings.
      */
 
     public void setXssMatchStatement(XssMatchStatement xssMatchStatement) {
@@ -353,18 +352,18 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. XSS
+     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
      * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
      * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want AWS WAF to search and text transformations to use on the search area before AWS WAF searches for
-     * character sequences that are likely to be malicious strings.
+     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
+     * sequences that are likely to be malicious strings.
      * </p>
      * 
-     * @return A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web
-     *         requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle
-     *         to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement
-     *         provides the location in requests that you want AWS WAF to search and text transformations to use on the
-     *         search area before AWS WAF searches for character sequences that are likely to be malicious strings.
+     * @return A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
+     *         XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject
+     *         malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the
+     *         location in requests that you want WAF to search and text transformations to use on the search area
+     *         before WAF searches for character sequences that are likely to be malicious strings.
      */
 
     public XssMatchStatement getXssMatchStatement() {
@@ -373,19 +372,19 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. XSS
+     * A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS
      * attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
      * client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests
-     * that you want AWS WAF to search and text transformations to use on the search area before AWS WAF searches for
-     * character sequences that are likely to be malicious strings.
+     * that you want WAF to search and text transformations to use on the search area before WAF searches for character
+     * sequences that are likely to be malicious strings.
      * </p>
      * 
      * @param xssMatchStatement
-     *        A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web
-     *        requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle
-     *        to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement
-     *        provides the location in requests that you want AWS WAF to search and text transformations to use on the
-     *        search area before AWS WAF searches for character sequences that are likely to be malicious strings.
+     *        A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests.
+     *        XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject
+     *        malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the
+     *        location in requests that you want WAF to search and text transformations to use on the search area before
+     *        WAF searches for character sequences that are likely to be malicious strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,8 +400,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the
-     * request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
+     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
+     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
      * requests that have a request body greater than 8192 bytes.
      * </p>
      * <p>
@@ -415,9 +414,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size
      *        constraint statement to look for query strings that are longer than 100 bytes. </p>
      *        <p>
-     *        If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB).
-     *        If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint
-     *        condition and block requests that have a request body greater than 8192 bytes.
+     *        If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
+     *        request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition
+     *        and block requests that have a request body greater than 8192 bytes.
      *        </p>
      *        <p>
      *        If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -435,8 +434,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the
-     * request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
+     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
+     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
      * requests that have a request body greater than 8192 bytes.
      * </p>
      * <p>
@@ -448,9 +447,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size
      *         constraint statement to look for query strings that are longer than 100 bytes. </p>
      *         <p>
-     *         If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB).
-     *         If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint
-     *         condition and block requests that have a request body greater than 8192 bytes.
+     *         If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
+     *         request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition
+     *         and block requests that have a request body greater than 8192 bytes.
      *         </p>
      *         <p>
      *         If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -468,8 +467,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the
-     * request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
+     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
+     * body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block
      * requests that have a request body greater than 8192 bytes.
      * </p>
      * <p>
@@ -482,9 +481,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size
      *        constraint statement to look for query strings that are longer than 100 bytes. </p>
      *        <p>
-     *        If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB).
-     *        If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint
-     *        condition and block requests that have a request body greater than 8192 bytes.
+     *        If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
+     *        request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition
+     *        and block requests that have a request body greater than 8192 bytes.
      *        </p>
      *        <p>
      *        If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -618,8 +617,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This
-     * allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically
-     * updates all rules that reference it.
+     * allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates
+     * all rules that reference it.
      * </p>
      * 
      * @param iPSetReferenceStatement
@@ -628,8 +627,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
      *        <p>
      *        Each IP set rule statement references an IP set. You create and maintain the set independent of your
-     *        rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     *        WAF automatically updates all rules that reference it.
+     *        rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     *        automatically updates all rules that reference it.
      */
 
     public void setIPSetReferenceStatement(IPSetReferenceStatement iPSetReferenceStatement) {
@@ -644,8 +643,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This
-     * allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically
-     * updates all rules that reference it.
+     * allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates
+     * all rules that reference it.
      * </p>
      * 
      * @return A rule statement used to detect web requests coming from particular IP addresses or address ranges. To
@@ -653,8 +652,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         that set in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
      *         <p>
      *         Each IP set rule statement references an IP set. You create and maintain the set independent of your
-     *         rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     *         WAF automatically updates all rules that reference it.
+     *         rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     *         automatically updates all rules that reference it.
      */
 
     public IPSetReferenceStatement getIPSetReferenceStatement() {
@@ -669,8 +668,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This
-     * allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically
-     * updates all rules that reference it.
+     * allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates
+     * all rules that reference it.
      * </p>
      * 
      * @param iPSetReferenceStatement
@@ -679,8 +678,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        in this statement. To create an IP set, see <a>CreateIPSet</a>.</p>
      *        <p>
      *        Each IP set rule statement references an IP set. You create and maintain the set independent of your
-     *        rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     *        WAF automatically updates all rules that reference it.
+     *        rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     *        automatically updates all rules that reference it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,8 +697,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent
-     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     * WAF automatically updates all rules that reference it.
+     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     * automatically updates all rules that reference it.
      * </p>
      * 
      * @param regexPatternSetReferenceStatement
@@ -711,7 +710,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Each regex pattern set rule statement references a regex pattern set. You create and maintain the set
      *        independent of your rules. This allows you to use the single set in multiple rules. When you update the
-     *        referenced set, AWS WAF automatically updates all rules that reference it.
+     *        referenced set, WAF automatically updates all rules that reference it.
      */
 
     public void setRegexPatternSetReferenceStatement(RegexPatternSetReferenceStatement regexPatternSetReferenceStatement) {
@@ -727,8 +726,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent
-     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     * WAF automatically updates all rules that reference it.
+     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     * automatically updates all rules that reference it.
      * </p>
      * 
      * @return A rule statement used to search web request components for matches with regular expressions. To use this,
@@ -739,7 +738,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Each regex pattern set rule statement references a regex pattern set. You create and maintain the set
      *         independent of your rules. This allows you to use the single set in multiple rules. When you update the
-     *         referenced set, AWS WAF automatically updates all rules that reference it.
+     *         referenced set, WAF automatically updates all rules that reference it.
      */
 
     public RegexPatternSetReferenceStatement getRegexPatternSetReferenceStatement() {
@@ -755,8 +754,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent
-     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS
-     * WAF automatically updates all rules that reference it.
+     * of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
+     * automatically updates all rules that reference it.
      * </p>
      * 
      * @param regexPatternSetReferenceStatement
@@ -768,7 +767,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Each regex pattern set rule statement references a regex pattern set. You create and maintain the set
      *        independent of your rules. This allows you to use the single set in multiple rules. When you update the
-     *        referenced set, AWS WAF automatically updates all rules that reference it.
+     *        referenced set, WAF automatically updates all rules that reference it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -784,8 +783,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to put a temporary block on requests from an IP address that is sending excessive requests.
      * </p>
      * <p>
-     * When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate
-     * falls below the limit.
+     * When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls
+     * below the limit.
      * </p>
      * <p>
      * You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so
@@ -822,8 +821,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        You can use this to put a temporary block on requests from an IP address that is sending excessive
      *        requests.</p>
      *        <p>
-     *        When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request
-     *        rate falls below the limit.
+     *        When the rule action triggers, WAF blocks additional requests from the IP address until the request rate
+     *        falls below the limit.
      *        </p>
      *        <p>
      *        You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule
@@ -865,8 +864,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to put a temporary block on requests from an IP address that is sending excessive requests.
      * </p>
      * <p>
-     * When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate
-     * falls below the limit.
+     * When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls
+     * below the limit.
      * </p>
      * <p>
      * You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so
@@ -902,8 +901,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         span. You can use this to put a temporary block on requests from an IP address that is sending excessive
      *         requests.</p>
      *         <p>
-     *         When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request
-     *         rate falls below the limit.
+     *         When the rule action triggers, WAF blocks additional requests from the IP address until the request rate
+     *         falls below the limit.
      *         </p>
      *         <p>
      *         You can optionally nest another statement inside the rate-based statement, to narrow the scope of the
@@ -945,8 +944,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to put a temporary block on requests from an IP address that is sending excessive requests.
      * </p>
      * <p>
-     * When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate
-     * falls below the limit.
+     * When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls
+     * below the limit.
      * </p>
      * <p>
      * You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so
@@ -983,8 +982,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        You can use this to put a temporary block on requests from an IP address that is sending excessive
      *        requests.</p>
      *        <p>
-     *        When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request
-     *        rate falls below the limit.
+     *        When the rule action triggers, WAF blocks additional requests from the IP address until the request rate
+     *        falls below the limit.
      *        </p>
      *        <p>
      *        You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule
@@ -1166,7 +1165,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * <a>ListAvailableManagedRuleGroups</a>.
      * </p>
      * <p>
-     * You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
+     * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
      * 
@@ -1175,7 +1174,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        vendor name and the name of the rule group in this statement. You can retrieve the required names by
      *        calling <a>ListAvailableManagedRuleGroups</a>.</p>
      *        <p>
-     *        You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
+     *        You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
      *        <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
      *        within a rule.
      */
@@ -1191,7 +1190,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * <a>ListAvailableManagedRuleGroups</a>.
      * </p>
      * <p>
-     * You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
+     * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
      * 
@@ -1199,7 +1198,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         vendor name and the name of the rule group in this statement. You can retrieve the required names by
      *         calling <a>ListAvailableManagedRuleGroups</a>.</p>
      *         <p>
-     *         You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
+     *         You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
      *         <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
      *         within a rule.
      */
@@ -1215,7 +1214,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * <a>ListAvailableManagedRuleGroups</a>.
      * </p>
      * <p>
-     * You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
+     * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
      * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
      * </p>
      * 
@@ -1224,7 +1223,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        vendor name and the name of the rule group in this statement. You can retrieve the required names by
      *        calling <a>ListAvailableManagedRuleGroups</a>.</p>
      *        <p>
-     *        You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
+     *        You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
      *        <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
      *        within a rule.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1244,7 +1243,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * The label match statement provides the label or namespace string to search for. The label string can represent a
      * part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have
      * a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the
-     * rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF
+     * rule that added the label. If you do not provide the fully qualified name in your label match string, WAF
      * performs the search for labels that were added in the same context as the label match statement.
      * </p>
      * 
@@ -1256,7 +1255,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        represent a part or all of the fully qualified label name that had been added to the web request. Fully
      *        qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group
      *        or web ACL context of the rule that added the label. If you do not provide the fully qualified name in
-     *        your label match string, AWS WAF performs the search for labels that were added in the same context as the
+     *        your label match string, WAF performs the search for labels that were added in the same context as the
      *        label match statement.
      */
 
@@ -1273,7 +1272,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * The label match statement provides the label or namespace string to search for. The label string can represent a
      * part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have
      * a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the
-     * rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF
+     * rule that added the label. If you do not provide the fully qualified name in your label match string, WAF
      * performs the search for labels that were added in the same context as the label match statement.
      * </p>
      * 
@@ -1284,8 +1283,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         represent a part or all of the fully qualified label name that had been added to the web request. Fully
      *         qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group
      *         or web ACL context of the rule that added the label. If you do not provide the fully qualified name in
-     *         your label match string, AWS WAF performs the search for labels that were added in the same context as
-     *         the label match statement.
+     *         your label match string, WAF performs the search for labels that were added in the same context as the
+     *         label match statement.
      */
 
     public LabelMatchStatement getLabelMatchStatement() {
@@ -1301,7 +1300,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * The label match statement provides the label or namespace string to search for. The label string can represent a
      * part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have
      * a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the
-     * rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF
+     * rule that added the label. If you do not provide the fully qualified name in your label match string, WAF
      * performs the search for labels that were added in the same context as the label match statement.
      * </p>
      * 
@@ -1313,7 +1312,7 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        represent a part or all of the fully qualified label name that had been added to the web request. Fully
      *        qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group
      *        or web ACL context of the rule that added the label. If you do not provide the fully qualified name in
-     *        your label match string, AWS WAF performs the search for labels that were added in the same context as the
+     *        your label match string, WAF performs the search for labels that were added in the same context as the
      *        label match statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

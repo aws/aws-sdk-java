@@ -38,7 +38,7 @@ public class BatchRestrictions implements Serializable, Cloneable, StructuredPoj
      * <p>
      * An array of strings that specify the compute types that are allowed for the batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
-     * compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     * compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * </p>
      */
     private java.util.List<String> computeTypesAllowed;
@@ -87,12 +87,12 @@ public class BatchRestrictions implements Serializable, Cloneable, StructuredPoj
      * <p>
      * An array of strings that specify the compute types that are allowed for the batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
-     * compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     * compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * </p>
      * 
      * @return An array of strings that specify the compute types that are allowed for the batch build. See <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     *         environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     *         environment compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      */
 
     public java.util.List<String> getComputeTypesAllowed() {
@@ -103,13 +103,13 @@ public class BatchRestrictions implements Serializable, Cloneable, StructuredPoj
      * <p>
      * An array of strings that specify the compute types that are allowed for the batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
-     * compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     * compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * </p>
      * 
      * @param computeTypesAllowed
      *        An array of strings that specify the compute types that are allowed for the batch build. See <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     *        environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     *        environment compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      */
 
     public void setComputeTypesAllowed(java.util.Collection<String> computeTypesAllowed) {
@@ -125,7 +125,7 @@ public class BatchRestrictions implements Serializable, Cloneable, StructuredPoj
      * <p>
      * An array of strings that specify the compute types that are allowed for the batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
-     * compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     * compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +136,7 @@ public class BatchRestrictions implements Serializable, Cloneable, StructuredPoj
      * @param computeTypesAllowed
      *        An array of strings that specify the compute types that are allowed for the batch build. See <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     *        environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     *        environment compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,13 +154,13 @@ public class BatchRestrictions implements Serializable, Cloneable, StructuredPoj
      * <p>
      * An array of strings that specify the compute types that are allowed for the batch build. See <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
-     * compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     * compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * </p>
      * 
      * @param computeTypesAllowed
      *        An array of strings that specify the compute types that are allowed for the batch build. See <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     *        environment compute types</a> in the <i>AWS CodeBuild User Guide</i> for these values.
+     *        environment compute types</a> in the <i>CodeBuild User Guide</i> for these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

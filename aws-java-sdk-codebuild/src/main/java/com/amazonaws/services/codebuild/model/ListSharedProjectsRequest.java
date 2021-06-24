@@ -27,8 +27,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     * include:
+     * The criterion to be used to list build projects shared with the current Amazon Web Services account or user.
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -82,8 +82,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     * include:
+     * The criterion to be used to list build projects shared with the current Amazon Web Services account or user.
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -99,8 +99,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param sortBy
-     *        The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     *        include: </p>
+     *        The criterion to be used to list build projects shared with the current Amazon Web Services account or
+     *        user. Valid values include: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -121,8 +121,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     * include:
+     * The criterion to be used to list build projects shared with the current Amazon Web Services account or user.
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -137,8 +137,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     *         include: </p>
+     * @return The criterion to be used to list build projects shared with the current Amazon Web Services account or
+     *         user. Valid values include: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -159,8 +159,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     * include:
+     * The criterion to be used to list build projects shared with the current Amazon Web Services account or user.
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -176,8 +176,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param sortBy
-     *        The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     *        include: </p>
+     *        The criterion to be used to list build projects shared with the current Amazon Web Services account or
+     *        user. Valid values include: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -200,8 +200,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     * include:
+     * The criterion to be used to list build projects shared with the current Amazon Web Services account or user.
+     * Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -217,8 +217,8 @@ public class ListSharedProjectsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param sortBy
-     *        The criterion to be used to list build projects shared with the current AWS account or user. Valid values
-     *        include: </p>
+     *        The criterion to be used to list build projects shared with the current Amazon Web Services account or
+     *        user. Valid values include: </p>
      *        <ul>
      *        <li>
      *        <p>

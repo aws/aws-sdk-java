@@ -27,7 +27,7 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the AWS CodeBuild project.
+     * The name of the CodeBuild project.
      * </p>
      */
     private String projectName;
@@ -67,11 +67,11 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the AWS CodeBuild project.
+     * The name of the CodeBuild project.
      * </p>
      * 
      * @param projectName
-     *        The name of the AWS CodeBuild project.
+     *        The name of the CodeBuild project.
      */
 
     public void setProjectName(String projectName) {
@@ -80,10 +80,10 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the AWS CodeBuild project.
+     * The name of the CodeBuild project.
      * </p>
      * 
-     * @return The name of the AWS CodeBuild project.
+     * @return The name of the CodeBuild project.
      */
 
     public String getProjectName() {
@@ -92,11 +92,11 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the AWS CodeBuild project.
+     * The name of the CodeBuild project.
      * </p>
      * 
      * @param projectName
-     *        The name of the AWS CodeBuild project.
+     *        The name of the CodeBuild project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

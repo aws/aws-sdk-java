@@ -198,6 +198,24 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private SSESpecification sSESpecification;
+    /**
+     * <p>
+     * The type of encryption the cluster's endpoint should support. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String clusterEndpointEncryptionType;
 
     /**
      * <p>
@@ -1366,6 +1384,157 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The type of encryption the cluster's endpoint should support. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterEndpointEncryptionType
+     *        The type of encryption the cluster's endpoint should support. Values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> for no encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TLS</code> for Transport Layer Security
+     *        </p>
+     *        </li>
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public void setClusterEndpointEncryptionType(String clusterEndpointEncryptionType) {
+        this.clusterEndpointEncryptionType = clusterEndpointEncryptionType;
+    }
+
+    /**
+     * <p>
+     * The type of encryption the cluster's endpoint should support. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of encryption the cluster's endpoint should support. Values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code> for no encryption
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TLS</code> for Transport Layer Security
+     *         </p>
+     *         </li>
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public String getClusterEndpointEncryptionType() {
+        return this.clusterEndpointEncryptionType;
+    }
+
+    /**
+     * <p>
+     * The type of encryption the cluster's endpoint should support. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterEndpointEncryptionType
+     *        The type of encryption the cluster's endpoint should support. Values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> for no encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TLS</code> for Transport Layer Security
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public CreateClusterRequest withClusterEndpointEncryptionType(String clusterEndpointEncryptionType) {
+        setClusterEndpointEncryptionType(clusterEndpointEncryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of encryption the cluster's endpoint should support. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterEndpointEncryptionType
+     *        The type of encryption the cluster's endpoint should support. Values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> for no encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TLS</code> for Transport Layer Security
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public CreateClusterRequest withClusterEndpointEncryptionType(ClusterEndpointEncryptionType clusterEndpointEncryptionType) {
+        this.clusterEndpointEncryptionType = clusterEndpointEncryptionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1402,7 +1571,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSSESpecification() != null)
-            sb.append("SSESpecification: ").append(getSSESpecification());
+            sb.append("SSESpecification: ").append(getSSESpecification()).append(",");
+        if (getClusterEndpointEncryptionType() != null)
+            sb.append("ClusterEndpointEncryptionType: ").append(getClusterEndpointEncryptionType());
         sb.append("}");
         return sb.toString();
     }
@@ -1469,6 +1640,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
             return false;
+        if (other.getClusterEndpointEncryptionType() == null ^ this.getClusterEndpointEncryptionType() == null)
+            return false;
+        if (other.getClusterEndpointEncryptionType() != null
+                && other.getClusterEndpointEncryptionType().equals(this.getClusterEndpointEncryptionType()) == false)
+            return false;
         return true;
     }
 
@@ -1490,6 +1666,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
+        hashCode = prime * hashCode + ((getClusterEndpointEncryptionType() == null) ? 0 : getClusterEndpointEncryptionType().hashCode());
         return hashCode;
     }
 

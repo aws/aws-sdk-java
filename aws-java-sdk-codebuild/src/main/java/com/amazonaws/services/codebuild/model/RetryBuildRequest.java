@@ -35,7 +35,7 @@ public class RetryBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request.
      * The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild returns a parameter
+     * <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter
      * mismatch error.
      * </p>
      */
@@ -85,14 +85,14 @@ public class RetryBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request.
      * The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild returns a parameter
+     * <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter
      * mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code>
      *        request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If
-     *        you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild
+     *        you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild
      *        returns a parameter mismatch error.
      */
 
@@ -104,13 +104,13 @@ public class RetryBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request.
      * The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild returns a parameter
+     * <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter
      * mismatch error.
      * </p>
      * 
      * @return A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code>
      *         request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If
-     *         you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild
+     *         you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild
      *         returns a parameter mismatch error.
      */
 
@@ -122,14 +122,14 @@ public class RetryBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request.
      * The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild returns a parameter
+     * <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter
      * mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code>
      *        request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If
-     *        you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, AWS CodeBuild
+     *        you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild
      *        returns a parameter mismatch error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

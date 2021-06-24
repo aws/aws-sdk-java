@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This
- * allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates
- * all rules that reference it.
+ * allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all
+ * rules that reference it.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSetReferenceStatement" target="_top">AWS API
@@ -49,7 +49,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      */
@@ -103,7 +103,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -112,7 +112,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
      *        you can specify any header name. </p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      */
@@ -129,7 +129,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -137,8 +137,8 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      *         address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header,
      *         but you can specify any header name. </p> <note>
      *         <p>
-     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
-     *         at all.
+     *         If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
+     *         all.
      *         </p>
      */
 
@@ -154,7 +154,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -163,7 +163,7 @@ public class IPSetReferenceStatement implements Serializable, Cloneable, Structu
      *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
      *        you can specify any header name. </p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

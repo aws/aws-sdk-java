@@ -19,12 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The path component of the URI of a web request. This is the part of a web request that identifies a resource, for
+ * The path component of the URI of a web request. This is the part of a web request that identifies a resource. For
  * example, <code>/images/daily-ad.jpg</code>.
  * </p>
  * <p>
- * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
- * specification.
+ * This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UriPath" target="_top">AWS API

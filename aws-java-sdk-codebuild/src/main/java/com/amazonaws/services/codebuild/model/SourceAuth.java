@@ -19,11 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
+ * Information about the authorization settings for CodeBuild to access the source code to be built.
  * </p>
  * <p>
- * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
- * directly.
+ * This information is for the CodeBuild console's use only. Your code should not get or set this information directly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth" target="_top">AWS API

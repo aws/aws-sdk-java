@@ -71,9 +71,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications
-     * can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to
-     * intelligently route requests and responses to nodes in the DAX cluster.
+     * The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use
+     * the URL to configure the DAX client to find their cluster.
      * </p>
      */
     private Endpoint clusterDiscoveryEndpoint;
@@ -135,6 +134,22 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SSEDescription sSEDescription;
+    /**
+     * <p>
+     * The type of encryption supported by the cluster's endpoint. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String clusterEndpointEncryptionType;
 
     /**
      * <p>
@@ -418,15 +433,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications
-     * can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to
-     * intelligently route requests and responses to nodes in the DAX cluster.
+     * The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use
+     * the URL to configure the DAX client to find their cluster.
      * </p>
      * 
      * @param clusterDiscoveryEndpoint
-     *        The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client
-     *        applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client
-     *        software to intelligently route requests and responses to nodes in the DAX cluster.
+     *        The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should
+     *        use the URL to configure the DAX client to find their cluster.
      */
 
     public void setClusterDiscoveryEndpoint(Endpoint clusterDiscoveryEndpoint) {
@@ -435,14 +448,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications
-     * can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to
-     * intelligently route requests and responses to nodes in the DAX cluster.
+     * The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use
+     * the URL to configure the DAX client to find their cluster.
      * </p>
      * 
-     * @return The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client
-     *         applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client
-     *         software to intelligently route requests and responses to nodes in the DAX cluster.
+     * @return The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications
+     *         should use the URL to configure the DAX client to find their cluster.
      */
 
     public Endpoint getClusterDiscoveryEndpoint() {
@@ -451,15 +462,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client applications
-     * can specify this endpoint, rather than an individual node endpoint, and allow the DAX client software to
-     * intelligently route requests and responses to nodes in the DAX cluster.
+     * The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should use
+     * the URL to configure the DAX client to find their cluster.
      * </p>
      * 
      * @param clusterDiscoveryEndpoint
-     *        The configuration endpoint for this DAX cluster, consisting of a DNS name and a port number. Client
-     *        applications can specify this endpoint, rather than an individual node endpoint, and allow the DAX client
-     *        software to intelligently route requests and responses to nodes in the DAX cluster.
+     *        The endpoint for this DAX cluster, consisting of a DNS name, a port number, and a URL. Applications should
+     *        use the URL to configure the DAX client to find their cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -943,6 +952,141 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of encryption supported by the cluster's endpoint. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterEndpointEncryptionType
+     *        The type of encryption supported by the cluster's endpoint. Values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> for no encryption
+     *        </p>
+     *        <p>
+     *        <code>TLS</code> for Transport Layer Security
+     *        </p>
+     *        </li>
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public void setClusterEndpointEncryptionType(String clusterEndpointEncryptionType) {
+        this.clusterEndpointEncryptionType = clusterEndpointEncryptionType;
+    }
+
+    /**
+     * <p>
+     * The type of encryption supported by the cluster's endpoint. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of encryption supported by the cluster's endpoint. Values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code> for no encryption
+     *         </p>
+     *         <p>
+     *         <code>TLS</code> for Transport Layer Security
+     *         </p>
+     *         </li>
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public String getClusterEndpointEncryptionType() {
+        return this.clusterEndpointEncryptionType;
+    }
+
+    /**
+     * <p>
+     * The type of encryption supported by the cluster's endpoint. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterEndpointEncryptionType
+     *        The type of encryption supported by the cluster's endpoint. Values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> for no encryption
+     *        </p>
+     *        <p>
+     *        <code>TLS</code> for Transport Layer Security
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public Cluster withClusterEndpointEncryptionType(String clusterEndpointEncryptionType) {
+        setClusterEndpointEncryptionType(clusterEndpointEncryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of encryption supported by the cluster's endpoint. Values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> for no encryption
+     * </p>
+     * <p>
+     * <code>TLS</code> for Transport Layer Security
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterEndpointEncryptionType
+     *        The type of encryption supported by the cluster's endpoint. Values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> for no encryption
+     *        </p>
+     *        <p>
+     *        <code>TLS</code> for Transport Layer Security
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterEndpointEncryptionType
+     */
+
+    public Cluster withClusterEndpointEncryptionType(ClusterEndpointEncryptionType clusterEndpointEncryptionType) {
+        this.clusterEndpointEncryptionType = clusterEndpointEncryptionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -987,7 +1131,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getParameterGroup() != null)
             sb.append("ParameterGroup: ").append(getParameterGroup()).append(",");
         if (getSSEDescription() != null)
-            sb.append("SSEDescription: ").append(getSSEDescription());
+            sb.append("SSEDescription: ").append(getSSEDescription()).append(",");
+        if (getClusterEndpointEncryptionType() != null)
+            sb.append("ClusterEndpointEncryptionType: ").append(getClusterEndpointEncryptionType());
         sb.append("}");
         return sb.toString();
     }
@@ -1070,6 +1216,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSSEDescription() != null && other.getSSEDescription().equals(this.getSSEDescription()) == false)
             return false;
+        if (other.getClusterEndpointEncryptionType() == null ^ this.getClusterEndpointEncryptionType() == null)
+            return false;
+        if (other.getClusterEndpointEncryptionType() != null
+                && other.getClusterEndpointEncryptionType().equals(this.getClusterEndpointEncryptionType()) == false)
+            return false;
         return true;
     }
 
@@ -1095,6 +1246,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getParameterGroup() == null) ? 0 : getParameterGroup().hashCode());
         hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
+        hashCode = prime * hashCode + ((getClusterEndpointEncryptionType() == null) ? 0 : getClusterEndpointEncryptionType().hashCode());
         return hashCode;
     }
 

@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match statement
- * provides the bytes to search for, the location in requests that you want AWS WAF to search, and other settings. The
- * bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF console and the
- * developer guide, this is refered to as a string match statement.
+ * A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement
+ * provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes
+ * to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer
+ * guide, this is refered to as a string match statement.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ByteMatchStatement" target="_top">AWS API
@@ -33,8 +33,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that you
-     * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
+     * A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate
+     * for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
      * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
@@ -42,13 +42,13 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of operation
+     * <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation
      * specified in the request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     * <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
@@ -57,7 +57,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
      * </p>
      * <p>
-     * <b>If you're using the AWS WAF API</b>
+     * <b>If you're using the WAF API</b>
      * </p>
      * <p>
      * Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50
@@ -70,23 +70,23 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      * </p>
      * <p>
-     * <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     * <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      * </p>
      * <p>
-     * The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     * The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      * </p>
      */
     private java.nio.ByteBuffer searchString;
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
@@ -94,7 +94,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     private java.util.List<TextTransformation> textTransformations;
     /**
      * <p>
-     * The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>. Valid
+     * The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid
      * values include the following:
      * </p>
      * <p>
@@ -151,8 +151,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that you
-     * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
+     * A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate
+     * for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
      * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
@@ -160,13 +160,13 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of operation
+     * <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation
      * specified in the request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     * <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
@@ -175,7 +175,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
      * </p>
      * <p>
-     * <b>If you're using the AWS WAF API</b>
+     * <b>If you're using the WAF API</b>
      * </p>
      * <p>
      * Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50
@@ -188,10 +188,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      * </p>
      * <p>
-     * <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     * <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      * </p>
      * <p>
-     * The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     * The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -205,21 +205,21 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param searchString
-     *        A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that
-     *        you designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
+     *        A string value that you want WAF to search for. WAF searches only in the part of web requests that you
+     *        designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
      *        <p>
      *        Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of
-     *        operation specified in the request.
+     *        <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation
+     *        specified in the request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     *        <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *        <code>/images/daily-ad.jpg</code>.
      *        </p>
      *        </li>
@@ -229,7 +229,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        sensitive.
      *        </p>
      *        <p>
-     *        <b>If you're using the AWS WAF API</b>
+     *        <b>If you're using the WAF API</b>
      *        </p>
      *        <p>
      *        Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it
@@ -242,10 +242,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      *        </p>
      *        <p>
-     *        <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     *        <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      *        </p>
      *        <p>
-     *        The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     *        The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      */
 
     public void setSearchString(java.nio.ByteBuffer searchString) {
@@ -254,8 +254,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that you
-     * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
+     * A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate
+     * for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
      * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
@@ -263,13 +263,13 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of operation
+     * <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation
      * specified in the request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     * <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
@@ -278,7 +278,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
      * </p>
      * <p>
-     * <b>If you're using the AWS WAF API</b>
+     * <b>If you're using the WAF API</b>
      * </p>
      * <p>
      * Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50
@@ -291,10 +291,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      * </p>
      * <p>
-     * <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     * <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      * </p>
      * <p>
-     * The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     * The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -304,22 +304,21 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * {@code position}.
      * </p>
      * 
-     * @return A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests
-     *         that you designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50
-     *         bytes.</p>
+     * @return A string value that you want WAF to search for. WAF searches only in the part of web requests that you
+     *         designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
      *         <p>
      *         Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of
+     *         <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of
      *         operation specified in the request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     *         <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *         <code>/images/daily-ad.jpg</code>.
      *         </p>
      *         </li>
@@ -329,7 +328,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         sensitive.
      *         </p>
      *         <p>
-     *         <b>If you're using the AWS WAF API</b>
+     *         <b>If you're using the WAF API</b>
      *         </p>
      *         <p>
      *         Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode
@@ -342,10 +341,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      *         </p>
      *         <p>
-     *         <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     *         <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      *         </p>
      *         <p>
-     *         The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     *         The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      */
 
     public java.nio.ByteBuffer getSearchString() {
@@ -354,8 +353,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that you
-     * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
+     * A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate
+     * for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
      * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
@@ -363,13 +362,13 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of operation
+     * <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation
      * specified in the request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     * <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      * <code>/images/daily-ad.jpg</code>.
      * </p>
      * </li>
@@ -378,7 +377,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.
      * </p>
      * <p>
-     * <b>If you're using the AWS WAF API</b>
+     * <b>If you're using the WAF API</b>
      * </p>
      * <p>
      * Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50
@@ -391,10 +390,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      * </p>
      * <p>
-     * <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     * <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      * </p>
      * <p>
-     * The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     * The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -408,21 +407,21 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param searchString
-     *        A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that
-     *        you designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
+     *        A string value that you want WAF to search for. WAF searches only in the part of web requests that you
+     *        designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
      *        <p>
      *        Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Method</code>: The HTTP method that you want AWS WAF to search for. This indicates the type of
-     *        operation specified in the request.
+     *        <code>Method</code>: The HTTP method that you want WAF to search for. This indicates the type of operation
+     *        specified in the request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UriPath</code>: The value that you want AWS WAF to search for in the URI path, for example,
+     *        <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *        <code>/images/daily-ad.jpg</code>.
      *        </p>
      *        </li>
@@ -432,7 +431,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        sensitive.
      *        </p>
      *        <p>
-     *        <b>If you're using the AWS WAF API</b>
+     *        <b>If you're using the WAF API</b>
      *        </p>
      *        <p>
      *        Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it
@@ -445,10 +444,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.
      *        </p>
      *        <p>
-     *        <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+     *        <b>If you're using the CLI or one of the Amazon Web Services SDKs</b>
      *        </p>
      *        <p>
-     *        The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.
+     *        The value that you want WAF to search for. The SDK automatically base64 encodes the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,11 +458,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -472,11 +471,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
-     * @return The part of a web request that you want AWS WAF to inspect. For more information, see
-     *         <a>FieldToMatch</a>.
+     * @return The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -485,11 +483,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,16 +499,15 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *         effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *         performs all transformations on the content of the request component identified by
-     *         <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *         match.
+     *         effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *         all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *         starting from the lowest priority setting, before inspecting the content for a match.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -520,17 +517,16 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -545,7 +541,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
@@ -557,10 +553,9 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,17 +572,16 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,7 +592,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>. Valid
+     * The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid
      * values include the following:
      * </p>
      * <p>
@@ -652,8 +646,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param positionalConstraint
-     *        The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>
-     *        . Valid values include the following:</p>
+     *        The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
+     *        Valid values include the following:</p>
      *        <p>
      *        <b>CONTAINS</b>
      *        </p>
@@ -713,7 +707,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>. Valid
+     * The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid
      * values include the following:
      * </p>
      * <p>
@@ -766,8 +760,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * The value of <code>SearchString</code> must appear at the end of the specified part of the web request.
      * </p>
      * 
-     * @return The area within the portion of a web request that you want AWS WAF to search for
-     *         <code>SearchString</code>. Valid values include the following:</p>
+     * @return The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
+     *         Valid values include the following:</p>
      *         <p>
      *         <b>CONTAINS</b>
      *         </p>
@@ -827,7 +821,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>. Valid
+     * The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid
      * values include the following:
      * </p>
      * <p>
@@ -881,8 +875,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param positionalConstraint
-     *        The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>
-     *        . Valid values include the following:</p>
+     *        The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
+     *        Valid values include the following:</p>
      *        <p>
      *        <b>CONTAINS</b>
      *        </p>
@@ -944,7 +938,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>. Valid
+     * The area within the portion of a web request that you want WAF to search for <code>SearchString</code>. Valid
      * values include the following:
      * </p>
      * <p>
@@ -998,8 +992,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param positionalConstraint
-     *        The area within the portion of a web request that you want AWS WAF to search for <code>SearchString</code>
-     *        . Valid values include the following:</p>
+     *        The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
+     *        Valid values include the following:</p>
      *        <p>
      *        <b>CONTAINS</b>
      *        </p>

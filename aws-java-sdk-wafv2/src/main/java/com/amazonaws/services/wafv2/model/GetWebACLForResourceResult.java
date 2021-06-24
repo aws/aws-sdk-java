@@ -25,21 +25,19 @@ public class GetWebACLForResourceResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a null Web
-     * ACL.
+     * The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.
      * </p>
      */
     private WebACL webACL;
 
     /**
      * <p>
-     * The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a null Web
-     * ACL.
+     * The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.
      * </p>
      * 
      * @param webACL
-     *        The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a
-     *        null Web ACL.
+     *        The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null
+     *        web ACL.
      */
 
     public void setWebACL(WebACL webACL) {
@@ -48,12 +46,11 @@ public class GetWebACLForResourceResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a null Web
-     * ACL.
+     * The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.
      * </p>
      * 
-     * @return The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a
-     *         null Web ACL.
+     * @return The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null
+     *         web ACL.
      */
 
     public WebACL getWebACL() {
@@ -62,13 +59,12 @@ public class GetWebACLForResourceResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a null Web
-     * ACL.
+     * The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.
      * </p>
      * 
      * @param webACL
-     *        The Web ACL that is associated with the resource. If there is no associated resource, AWS WAF returns a
-     *        null Web ACL.
+     *        The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null
+     *        web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -61,8 +61,6 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
      */
     private Boolean encryptionDisabled;
 
-    private String bucketOwnerAccess;
-
     /**
      * <p>
      * The current status of the S3 build logs. Valid values are:
@@ -321,46 +319,6 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @param bucketOwnerAccess
-     * @see BucketOwnerAccess
-     */
-
-    public void setBucketOwnerAccess(String bucketOwnerAccess) {
-        this.bucketOwnerAccess = bucketOwnerAccess;
-    }
-
-    /**
-     * @return
-     * @see BucketOwnerAccess
-     */
-
-    public String getBucketOwnerAccess() {
-        return this.bucketOwnerAccess;
-    }
-
-    /**
-     * @param bucketOwnerAccess
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see BucketOwnerAccess
-     */
-
-    public S3LogsConfig withBucketOwnerAccess(String bucketOwnerAccess) {
-        setBucketOwnerAccess(bucketOwnerAccess);
-        return this;
-    }
-
-    /**
-     * @param bucketOwnerAccess
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see BucketOwnerAccess
-     */
-
-    public S3LogsConfig withBucketOwnerAccess(BucketOwnerAccess bucketOwnerAccess) {
-        this.bucketOwnerAccess = bucketOwnerAccess.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -377,9 +335,7 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
         if (getEncryptionDisabled() != null)
-            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled()).append(",");
-        if (getBucketOwnerAccess() != null)
-            sb.append("BucketOwnerAccess: ").append(getBucketOwnerAccess());
+            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled());
         sb.append("}");
         return sb.toString();
     }
@@ -406,10 +362,6 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEncryptionDisabled() != null && other.getEncryptionDisabled().equals(this.getEncryptionDisabled()) == false)
             return false;
-        if (other.getBucketOwnerAccess() == null ^ this.getBucketOwnerAccess() == null)
-            return false;
-        if (other.getBucketOwnerAccess() != null && other.getBucketOwnerAccess().equals(this.getBucketOwnerAccess()) == false)
-            return false;
         return true;
     }
 
@@ -421,7 +373,6 @@ public class S3LogsConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
-        hashCode = prime * hashCode + ((getBucketOwnerAccess() == null) ? 0 : getBucketOwnerAccess().hashCode());
         return hashCode;
     }
 

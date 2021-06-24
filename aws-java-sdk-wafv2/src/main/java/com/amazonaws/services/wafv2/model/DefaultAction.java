@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web request doesn't match any of the
- * rules in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.
+ * In a <a>WebACL</a>, this is the action that you want WAF to perform when a web request doesn't match any of the rules
+ * in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction" target="_top">AWS API
@@ -31,24 +31,24 @@ public class DefaultAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies that AWS WAF should block requests by default.
+     * Specifies that WAF should block requests by default.
      * </p>
      */
     private BlockAction block;
     /**
      * <p>
-     * Specifies that AWS WAF should allow requests by default.
+     * Specifies that WAF should allow requests by default.
      * </p>
      */
     private AllowAction allow;
 
     /**
      * <p>
-     * Specifies that AWS WAF should block requests by default.
+     * Specifies that WAF should block requests by default.
      * </p>
      * 
      * @param block
-     *        Specifies that AWS WAF should block requests by default.
+     *        Specifies that WAF should block requests by default.
      */
 
     public void setBlock(BlockAction block) {
@@ -57,10 +57,10 @@ public class DefaultAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies that AWS WAF should block requests by default.
+     * Specifies that WAF should block requests by default.
      * </p>
      * 
-     * @return Specifies that AWS WAF should block requests by default.
+     * @return Specifies that WAF should block requests by default.
      */
 
     public BlockAction getBlock() {
@@ -69,11 +69,11 @@ public class DefaultAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies that AWS WAF should block requests by default.
+     * Specifies that WAF should block requests by default.
      * </p>
      * 
      * @param block
-     *        Specifies that AWS WAF should block requests by default.
+     *        Specifies that WAF should block requests by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class DefaultAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies that AWS WAF should allow requests by default.
+     * Specifies that WAF should allow requests by default.
      * </p>
      * 
      * @param allow
-     *        Specifies that AWS WAF should allow requests by default.
+     *        Specifies that WAF should allow requests by default.
      */
 
     public void setAllow(AllowAction allow) {
@@ -97,10 +97,10 @@ public class DefaultAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies that AWS WAF should allow requests by default.
+     * Specifies that WAF should allow requests by default.
      * </p>
      * 
-     * @return Specifies that AWS WAF should allow requests by default.
+     * @return Specifies that WAF should allow requests by default.
      */
 
     public AllowAction getAllow() {
@@ -109,11 +109,11 @@ public class DefaultAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies that AWS WAF should allow requests by default.
+     * Specifies that WAF should allow requests by default.
      * </p>
      * 
      * @param allow
-     *        Specifies that AWS WAF should allow requests by default.
+     *        Specifies that WAF should allow requests by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

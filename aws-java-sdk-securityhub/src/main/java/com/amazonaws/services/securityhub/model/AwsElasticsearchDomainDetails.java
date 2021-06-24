@@ -90,10 +90,22 @@ public class AwsElasticsearchDomainDetails implements Serializable, Cloneable, S
     private AwsElasticsearchDomainEncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
+     * Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     * </p>
+     */
+    private AwsElasticsearchDomainLogPublishingOptions logPublishingOptions;
+    /**
+     * <p>
      * Details about the configuration for node-to-node encryption.
      * </p>
      */
     private AwsElasticsearchDomainNodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
+    /**
+     * <p>
+     * Information about the status of a domain relative to the latest service software.
+     * </p>
+     */
+    private AwsElasticsearchDomainServiceSoftwareOptions serviceSoftwareOptions;
     /**
      * <p>
      * Information that Amazon ES derives based on <code>VPCOptions</code> for the domain.
@@ -520,6 +532,46 @@ public class AwsElasticsearchDomainDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     */
+
+    public void setLogPublishingOptions(AwsElasticsearchDomainLogPublishingOptions logPublishingOptions) {
+        this.logPublishingOptions = logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     */
+
+    public AwsElasticsearchDomainLogPublishingOptions getLogPublishingOptions() {
+        return this.logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Configures the CloudWatch Logs to publish for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsElasticsearchDomainDetails withLogPublishingOptions(AwsElasticsearchDomainLogPublishingOptions logPublishingOptions) {
+        setLogPublishingOptions(logPublishingOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about the configuration for node-to-node encryption.
      * </p>
      * 
@@ -555,6 +607,46 @@ public class AwsElasticsearchDomainDetails implements Serializable, Cloneable, S
 
     public AwsElasticsearchDomainDetails withNodeToNodeEncryptionOptions(AwsElasticsearchDomainNodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
         setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the status of a domain relative to the latest service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        Information about the status of a domain relative to the latest service software.
+     */
+
+    public void setServiceSoftwareOptions(AwsElasticsearchDomainServiceSoftwareOptions serviceSoftwareOptions) {
+        this.serviceSoftwareOptions = serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the status of a domain relative to the latest service software.
+     * </p>
+     * 
+     * @return Information about the status of a domain relative to the latest service software.
+     */
+
+    public AwsElasticsearchDomainServiceSoftwareOptions getServiceSoftwareOptions() {
+        return this.serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the status of a domain relative to the latest service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        Information about the status of a domain relative to the latest service software.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsElasticsearchDomainDetails withServiceSoftwareOptions(AwsElasticsearchDomainServiceSoftwareOptions serviceSoftwareOptions) {
+        setServiceSoftwareOptions(serviceSoftwareOptions);
         return this;
     }
 
@@ -626,8 +718,12 @@ public class AwsElasticsearchDomainDetails implements Serializable, Cloneable, S
             sb.append("ElasticsearchVersion: ").append(getElasticsearchVersion()).append(",");
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getLogPublishingOptions() != null)
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
         if (getNodeToNodeEncryptionOptions() != null)
             sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
+        if (getServiceSoftwareOptions() != null)
+            sb.append("ServiceSoftwareOptions: ").append(getServiceSoftwareOptions()).append(",");
         if (getVPCOptions() != null)
             sb.append("VPCOptions: ").append(getVPCOptions());
         sb.append("}");
@@ -676,9 +772,17 @@ public class AwsElasticsearchDomainDetails implements Serializable, Cloneable, S
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
             return false;
+        if (other.getLogPublishingOptions() == null ^ this.getLogPublishingOptions() == null)
+            return false;
+        if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
+            return false;
         if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
             return false;
         if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
+        if (other.getServiceSoftwareOptions() == null ^ this.getServiceSoftwareOptions() == null)
+            return false;
+        if (other.getServiceSoftwareOptions() != null && other.getServiceSoftwareOptions().equals(this.getServiceSoftwareOptions()) == false)
             return false;
         if (other.getVPCOptions() == null ^ this.getVPCOptions() == null)
             return false;
@@ -700,7 +804,9 @@ public class AwsElasticsearchDomainDetails implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchVersion() == null) ? 0 : getElasticsearchVersion().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
+        hashCode = prime * hashCode + ((getServiceSoftwareOptions() == null) ? 0 : getServiceSoftwareOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         return hashCode;
     }

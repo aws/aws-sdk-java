@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule group that's defined for an AWS Firewall Manager WAF policy.
+ * A rule group that's defined for an Firewall Manager WAF policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FirewallManagerRuleGroup" target="_top">AWS API
@@ -36,7 +36,7 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     private String name;
     /**
      * <p>
-     * If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF evaluates each
+     * If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each
      * request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to
      * be consecutive, but they must all be different.
      * </p>
@@ -44,14 +44,44 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     private Integer priority;
     /**
      * <p>
-     * The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it
-     * can only contain a rule group reference.
+     * The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can
+     * only contain a rule group reference.
      * </p>
      */
     private FirewallManagerStatement firewallManagerStatement;
-
+    /**
+     * <p>
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private OverrideAction overrideAction;
-
+    /**
+     * <p>
+     * Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     * </p>
+     */
     private VisibilityConfig visibilityConfig;
 
     /**
@@ -96,15 +126,15 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF evaluates each
+     * If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each
      * request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to
      * be consecutive, but they must all be different.
      * </p>
      * 
      * @param priority
-     *        If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF
-     *        evaluates each request against the rule groups in order, starting from the lowest priority setting. The
-     *        priorities don't need to be consecutive, but they must all be different.
+     *        If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates
+     *        each request against the rule groups in order, starting from the lowest priority setting. The priorities
+     *        don't need to be consecutive, but they must all be different.
      */
 
     public void setPriority(Integer priority) {
@@ -113,14 +143,14 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF evaluates each
+     * If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each
      * request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to
      * be consecutive, but they must all be different.
      * </p>
      * 
-     * @return If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF
-     *         evaluates each request against the rule groups in order, starting from the lowest priority setting. The
-     *         priorities don't need to be consecutive, but they must all be different.
+     * @return If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates
+     *         each request against the rule groups in order, starting from the lowest priority setting. The priorities
+     *         don't need to be consecutive, but they must all be different.
      */
 
     public Integer getPriority() {
@@ -129,15 +159,15 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF evaluates each
+     * If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each
      * request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to
      * be consecutive, but they must all be different.
      * </p>
      * 
      * @param priority
-     *        If you define more than one rule group in the first or last Firewall Manager rule groups, AWS WAF
-     *        evaluates each request against the rule groups in order, starting from the lowest priority setting. The
-     *        priorities don't need to be consecutive, but they must all be different.
+     *        If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates
+     *        each request against the rule groups in order, starting from the lowest priority setting. The priorities
+     *        don't need to be consecutive, but they must all be different.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,13 +178,13 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it
-     * can only contain a rule group reference.
+     * The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can
+     * only contain a rule group reference.
      * </p>
      * 
      * @param firewallManagerStatement
-     *        The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>,
-     *        but it can only contain a rule group reference.
+     *        The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it
+     *        can only contain a rule group reference.
      */
 
     public void setFirewallManagerStatement(FirewallManagerStatement firewallManagerStatement) {
@@ -163,12 +193,12 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it
-     * can only contain a rule group reference.
+     * The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can
+     * only contain a rule group reference.
      * </p>
      * 
-     * @return The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>,
-     *         but it can only contain a rule group reference.
+     * @return The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but
+     *         it can only contain a rule group reference.
      */
 
     public FirewallManagerStatement getFirewallManagerStatement() {
@@ -177,13 +207,13 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it
-     * can only contain a rule group reference.
+     * The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can
+     * only contain a rule group reference.
      * </p>
      * 
      * @param firewallManagerStatement
-     *        The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>,
-     *        but it can only contain a rule group reference.
+     *        The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it
+     *        can only contain a rule group reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,7 +223,56 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param overrideAction
+     *        The override action to apply to the rules in a rule group. Used only for rule statements that reference a
+     *        rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+     *        <p>
+     *        Set the override action to none to leave the rule actions in effect. Set it to count to only count
+     *        matches, regardless of the rule action settings.
+     *        </p>
+     *        <p>
+     *        In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     *        <code>Action</code> setting, but not both:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the rule statement references a rule group, use this override action setting and not the action
+     *        setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the rule statement does not reference a rule group, use the rule action setting and not this rule
+     *        override action setting.
+     *        </p>
+     *        </li>
      */
 
     public void setOverrideAction(OverrideAction overrideAction) {
@@ -201,7 +280,56 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The override action to apply to the rules in a rule group. Used only for rule statements that reference a
+     *         rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     *         </p>
+     *         <p>
+     *         Set the override action to none to leave the rule actions in effect. Set it to count to only count
+     *         matches, regardless of the rule action settings.
+     *         </p>
+     *         <p>
+     *         In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     *         <code>Action</code> setting, but not both:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the rule statement references a rule group, use this override action setting and not the action
+     *         setting.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the rule statement does not reference a rule group, use the rule action setting and not this rule
+     *         override action setting.
+     *         </p>
+     *         </li>
      */
 
     public OverrideAction getOverrideAction() {
@@ -209,7 +337,56 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param overrideAction
+     *        The override action to apply to the rules in a rule group. Used only for rule statements that reference a
+     *        rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+     *        <p>
+     *        Set the override action to none to leave the rule actions in effect. Set it to count to only count
+     *        matches, regardless of the rule action settings.
+     *        </p>
+     *        <p>
+     *        In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     *        <code>Action</code> setting, but not both:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the rule statement references a rule group, use this override action setting and not the action
+     *        setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the rule statement does not reference a rule group, use the rule action setting and not this rule
+     *        override action setting.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,7 +396,12 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     * </p>
+     * 
      * @param visibilityConfig
+     *        Defines and enables Amazon CloudWatch metrics and web request sample collection.
      */
 
     public void setVisibilityConfig(VisibilityConfig visibilityConfig) {
@@ -227,7 +409,11 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     * </p>
+     * 
+     * @return Defines and enables Amazon CloudWatch metrics and web request sample collection.
      */
 
     public VisibilityConfig getVisibilityConfig() {
@@ -235,7 +421,12 @@ public class FirewallManagerRuleGroup implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     * </p>
+     * 
      * @param visibilityConfig
+     *        Defines and enables Amazon CloudWatch metrics and web request sample collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

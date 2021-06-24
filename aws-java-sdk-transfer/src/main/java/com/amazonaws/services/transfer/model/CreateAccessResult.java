@@ -32,7 +32,7 @@ public class CreateAccessResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled
-     * protocols using AWS Transfer Family.
+     * protocols using Amazon Web Services Transfer Family.
      * </p>
      */
     private String externalId;
@@ -80,12 +80,12 @@ public class CreateAccessResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled
-     * protocols using AWS Transfer Family.
+     * protocols using Amazon Web Services Transfer Family.
      * </p>
      * 
      * @param externalId
      *        The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the
-     *        enabled protocols using AWS Transfer Family.
+     *        enabled protocols using Amazon Web Services Transfer Family.
      */
 
     public void setExternalId(String externalId) {
@@ -95,11 +95,11 @@ public class CreateAccessResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled
-     * protocols using AWS Transfer Family.
+     * protocols using Amazon Web Services Transfer Family.
      * </p>
      * 
      * @return The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the
-     *         enabled protocols using AWS Transfer Family.
+     *         enabled protocols using Amazon Web Services Transfer Family.
      */
 
     public String getExternalId() {
@@ -109,12 +109,12 @@ public class CreateAccessResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled
-     * protocols using AWS Transfer Family.
+     * protocols using Amazon Web Services Transfer Family.
      * </p>
      * 
      * @param externalId
      *        The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the
-     *        enabled protocols using AWS Transfer Family.
+     *        enabled protocols using Amazon Web Services Transfer Family.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

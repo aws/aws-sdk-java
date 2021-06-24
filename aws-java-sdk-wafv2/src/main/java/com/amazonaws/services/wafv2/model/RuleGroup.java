@@ -49,15 +49,15 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * When you create your own rule group, you define this, and you cannot change it after creation. When you add or
-     * modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set of rules
-     * using <a>CheckCapacity</a>.
+     * modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using
+     * <a>CheckCapacity</a>.
      * </p>
      * <p>
-     * AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups,
-     * and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative cost of each
-     * rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power.
-     * Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule
-     * group. The WCU limit for web ACLs is 1,500.
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * The WCU limit for web ACLs is 1,500.
      * </p>
      */
     private Long capacity;
@@ -76,8 +76,8 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      */
     private java.util.List<Rule> rules;
@@ -102,7 +102,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -122,20 +122,20 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      */
     private java.util.Map<String, CustomResponseBody> customResponseBodies;
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      */
     private java.util.List<LabelSummary> availableLabels;
@@ -239,30 +239,30 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * When you create your own rule group, you define this, and you cannot change it after creation. When you add or
-     * modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set of rules
-     * using <a>CheckCapacity</a>.
+     * modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using
+     * <a>CheckCapacity</a>.
      * </p>
      * <p>
-     * AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups,
-     * and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative cost of each
-     * rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power.
-     * Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule
-     * group. The WCU limit for web ACLs is 1,500.
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * The WCU limit for web ACLs is 1,500.
      * </p>
      * 
      * @param capacity
      *        The web ACL capacity units (WCUs) required for this rule group.</p>
      *        <p>
      *        When you create your own rule group, you define this, and you cannot change it after creation. When you
-     *        add or modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set
-     *        of rules using <a>CheckCapacity</a>.
+     *        add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of
+     *        rules using <a>CheckCapacity</a>.
      *        </p>
      *        <p>
-     *        AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
-     *        groups, and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative
-     *        cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use
-     *        more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
-     *        usage when they use a rule group. The WCU limit for web ACLs is 1,500.
+     *        WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *        groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost
+     *        of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more
+     *        processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+     *        when they use a rule group. The WCU limit for web ACLs is 1,500.
      */
 
     public void setCapacity(Long capacity) {
@@ -275,26 +275,26 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * When you create your own rule group, you define this, and you cannot change it after creation. When you add or
-     * modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set of rules
-     * using <a>CheckCapacity</a>.
+     * modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using
+     * <a>CheckCapacity</a>.
      * </p>
      * <p>
-     * AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups,
-     * and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative cost of each
-     * rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power.
-     * Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule
-     * group. The WCU limit for web ACLs is 1,500.
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * The WCU limit for web ACLs is 1,500.
      * </p>
      * 
      * @return The web ACL capacity units (WCUs) required for this rule group.</p>
      *         <p>
      *         When you create your own rule group, you define this, and you cannot change it after creation. When you
-     *         add or modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a
-     *         set of rules using <a>CheckCapacity</a>.
+     *         add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of
+     *         rules using <a>CheckCapacity</a>.
      *         </p>
      *         <p>
-     *         AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
-     *         groups, and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative
+     *         WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *         groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative
      *         cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use
      *         more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
      *         usage when they use a rule group. The WCU limit for web ACLs is 1,500.
@@ -310,30 +310,30 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * When you create your own rule group, you define this, and you cannot change it after creation. When you add or
-     * modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set of rules
-     * using <a>CheckCapacity</a>.
+     * modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using
+     * <a>CheckCapacity</a>.
      * </p>
      * <p>
-     * AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups,
-     * and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative cost of each
-     * rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power.
-     * Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule
-     * group. The WCU limit for web ACLs is 1,500.
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * The WCU limit for web ACLs is 1,500.
      * </p>
      * 
      * @param capacity
      *        The web ACL capacity units (WCUs) required for this rule group.</p>
      *        <p>
      *        When you create your own rule group, you define this, and you cannot change it after creation. When you
-     *        add or modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set
-     *        of rules using <a>CheckCapacity</a>.
+     *        add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of
+     *        rules using <a>CheckCapacity</a>.
      *        </p>
      *        <p>
-     *        AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
-     *        groups, and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative
-     *        cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use
-     *        more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
-     *        usage when they use a rule group. The WCU limit for web ACLs is 1,500.
+     *        WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *        groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost
+     *        of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more
+     *        processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+     *        when they use a rule group. The WCU limit for web ACLs is 1,500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,13 +425,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * 
      * @return The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count.
-     *         Each rule includes one top-level statement that AWS WAF uses to identify matching web requests, and
-     *         parameters that govern how AWS WAF handles them.
+     *         Each rule includes one top-level statement that WAF uses to identify matching web requests, and
+     *         parameters that govern how WAF handles them.
      */
 
     public java.util.List<Rule> getRules() {
@@ -441,14 +441,14 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * 
      * @param rules
      *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters
-     *        that govern how AWS WAF handles them.
+     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
+     *        govern how WAF handles them.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -463,8 +463,8 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -474,8 +474,8 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param rules
      *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters
-     *        that govern how AWS WAF handles them.
+     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
+     *        govern how WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,14 +492,14 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each rule
-     * includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern
-     * how AWS WAF handles them.
+     * includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how
+     * WAF handles them.
      * </p>
      * 
      * @param rules
      *        The <a>Rule</a> statements used to identify the web requests that you want to allow, block, or count. Each
-     *        rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters
-     *        that govern how AWS WAF handles them.
+     *        rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that
+     *        govern how WAF handles them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,7 +563,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -587,9 +587,9 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
-     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
-     *        defined and the label from the rule, separated by a colon:
+     *        When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
+     *        qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined
+     *        and the label from the rule, separated by a colon:
      *        </p>
      *        <p>
      *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
@@ -616,7 +616,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -639,7 +639,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *         When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A
      *         fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
      *         defined and the label from the rule, separated by a colon:
      *         </p>
@@ -668,7 +668,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -692,9 +692,9 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
-     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
-     *        defined and the label from the rule, separated by a colon:
+     *        When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
+     *        qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined
+     *        and the label from the rule, separated by a colon:
      *        </p>
      *        <p>
      *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
@@ -717,13 +717,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @return A map of custom response keys and content bodies. When you create a rule with a block action, you can
@@ -732,15 +732,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For information about customizing web requests and responses, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *         web requests and responses in AWS WAF</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
-     *         Guide</a>.
+     *         web requests and responses in WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      *         </p>
      *         <p>
      *         For information about the limits on count and size for custom request and response settings, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
-     *         Guide</a>.
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      */
 
     public java.util.Map<String, CustomResponseBody> getCustomResponseBodies() {
@@ -756,13 +754,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @param customResponseBodies
@@ -772,13 +770,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in AWS WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      *        </p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      */
 
     public void setCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
@@ -794,13 +792,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
      * @param customResponseBodies
@@ -810,13 +808,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in AWS WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      *        </p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -855,12 +853,12 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * 
-     * @return The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined
-     *         in the <code>RuleLabels</code> for a <a>Rule</a>.
+     * @return The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *         defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      */
 
     public java.util.List<LabelSummary> getAvailableLabels() {
@@ -869,13 +867,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * 
      * @param availableLabels
-     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
-     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     *        The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *        defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      */
 
     public void setAvailableLabels(java.util.Collection<LabelSummary> availableLabels) {
@@ -889,8 +887,8 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -899,8 +897,8 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availableLabels
-     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
-     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     *        The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *        defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -916,13 +914,13 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * 
      * @param availableLabels
-     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
-     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     *        The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *        defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

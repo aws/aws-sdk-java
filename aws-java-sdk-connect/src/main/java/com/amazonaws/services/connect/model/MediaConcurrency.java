@@ -43,7 +43,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      * </p>
      * <p>
-     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      * </p>
      * <p>
      * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
@@ -118,7 +118,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      * </p>
      * <p>
-     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      * </p>
      * <p>
      * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
@@ -130,7 +130,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      *        Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      *        </p>
      *        <p>
-     *        Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     *        Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      *        </p>
      *        <p>
      *        Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
@@ -148,7 +148,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      * </p>
      * <p>
-     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      * </p>
      * <p>
      * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
@@ -159,7 +159,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      *         Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      *         </p>
      *         <p>
-     *         Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     *         Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      *         </p>
      *         <p>
      *         Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
@@ -177,7 +177,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      * </p>
      * <p>
-     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      * </p>
      * <p>
      * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
@@ -189,7 +189,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      *        Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
      *        </p>
      *        <p>
-     *        Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     *        Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
      *        </p>
      *        <p>
      *        Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.

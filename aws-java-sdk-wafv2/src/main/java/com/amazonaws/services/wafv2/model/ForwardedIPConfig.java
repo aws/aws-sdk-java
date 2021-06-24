@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+ * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
  * </p>
  * </note>
  * <p>
@@ -33,7 +33,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead.
  * </p>
  * <p>
- * AWS WAF only evaluates the first IP address found in the specified HTTP header.
+ * WAF only evaluates the first IP address found in the specified HTTP header.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ForwardedIPConfig" target="_top">AWS API
@@ -49,7 +49,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      */
@@ -61,7 +61,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -70,7 +70,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -90,7 +90,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -98,7 +98,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF)
      *        header, set this to <code>X-Forwarded-For</code>.</p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      */
@@ -114,15 +114,15 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
      * @return The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF)
      *         header, set this to <code>X-Forwarded-For</code>.</p> <note>
      *         <p>
-     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
-     *         at all.
+     *         If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
+     *         all.
      *         </p>
      */
 
@@ -137,7 +137,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -145,7 +145,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF)
      *        header, set this to <code>X-Forwarded-For</code>.</p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -163,7 +163,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -172,7 +172,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -187,7 +187,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        The match status to assign to the web request if the request doesn't have a valid IP address in the
      *        specified position.</p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      *        </note>
@@ -197,8 +197,8 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
-     *        to the request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *        the request.
      *        </p>
      *        </li>
      *        <li>
@@ -220,7 +220,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -229,7 +229,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -243,8 +243,8 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * @return The match status to assign to the web request if the request doesn't have a valid IP address in the
      *         specified position.</p> <note>
      *         <p>
-     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
-     *         at all.
+     *         If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
+     *         all.
      *         </p>
      *         </note>
      *         <p>
@@ -253,8 +253,8 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule
-     *         action to the request.
+     *         <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *         the request.
      *         </p>
      *         </li>
      *         <li>
@@ -276,7 +276,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -285,7 +285,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -300,7 +300,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        The match status to assign to the web request if the request doesn't have a valid IP address in the
      *        specified position.</p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      *        </note>
@@ -310,8 +310,8 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
-     *        to the request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *        the request.
      *        </p>
      *        </li>
      *        <li>
@@ -335,7 +335,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -344,7 +344,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
+     * <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the
      * request.
      * </p>
      * </li>
@@ -359,7 +359,7 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        The match status to assign to the web request if the request doesn't have a valid IP address in the
      *        specified position.</p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      *        </note>
@@ -369,8 +369,8 @@ public class ForwardedIPConfig implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
-     *        to the request.
+     *        <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to
+     *        the request.
      *        </p>
      *        </li>
      *        <li>

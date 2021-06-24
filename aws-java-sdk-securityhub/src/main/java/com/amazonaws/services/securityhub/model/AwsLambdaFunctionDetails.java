@@ -96,7 +96,7 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
     private String masterArn;
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The memory that is allocated to the function.
      * </p>
      */
     private Integer memorySize;
@@ -608,11 +608,11 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The memory that is allocated to the function.
      * </p>
      * 
      * @param memorySize
-     *        The memory that's allocated to the function.
+     *        The memory that is allocated to the function.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -621,10 +621,10 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The memory that is allocated to the function.
      * </p>
      * 
-     * @return The memory that's allocated to the function.
+     * @return The memory that is allocated to the function.
      */
 
     public Integer getMemorySize() {
@@ -633,11 +633,11 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The memory that is allocated to the function.
      * </p>
      * 
      * @param memorySize
-     *        The memory that's allocated to the function.
+     *        The memory that is allocated to the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

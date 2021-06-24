@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+ * WAF couldn’t perform the operation because your resource doesn’t exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

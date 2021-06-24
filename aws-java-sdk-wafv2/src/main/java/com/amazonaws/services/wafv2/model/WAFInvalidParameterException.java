@@ -16,12 +16,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation failed because AWS WAF didn't recognize a parameter in the request. For example:
+ * The operation failed because WAF didn't recognize a parameter in the request. For example:
  * </p>
  * <ul>
  * <li>
  * <p>
- * You specified an invalid parameter name or value.
+ * You specified a parameter name or value that isn't valid.
  * </p>
  * </li>
  * <li>
@@ -37,7 +37,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL cannot be
+ * Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be
  * associated.
  * </p>
  * </li>

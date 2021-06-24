@@ -65,6 +65,11 @@ public class AwsS3BucketDetailsJsonUnmarshaller implements Unmarshaller<AwsS3Buc
                     awsS3BucketDetails.setServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("BucketLifecycleConfiguration", targetDepth)) {
+                    context.nextToken();
+                    awsS3BucketDetails.setBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetailsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("PublicAccessBlockConfiguration", targetDepth)) {
                     context.nextToken();
                     awsS3BucketDetails

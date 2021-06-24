@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AwsApiGatewayV2StageDetailsMarshaller {
 
+    private static final MarshallingInfo<String> CLIENTCERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientCertificateId").build();
     private static final MarshallingInfo<String> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -70,6 +72,7 @@ public class AwsApiGatewayV2StageDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(awsApiGatewayV2StageDetails.getClientCertificateId(), CLIENTCERTIFICATEID_BINDING);
             protocolMarshaller.marshall(awsApiGatewayV2StageDetails.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(awsApiGatewayV2StageDetails.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(awsApiGatewayV2StageDetails.getDefaultRouteSettings(), DEFAULTROUTESETTINGS_BINDING);

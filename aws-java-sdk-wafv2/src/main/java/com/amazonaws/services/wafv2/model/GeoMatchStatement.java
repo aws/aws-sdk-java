@@ -43,7 +43,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      */
@@ -165,7 +165,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -174,7 +174,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
      *        you can specify any header name. </p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      */
@@ -191,7 +191,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -199,8 +199,8 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      *         address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header,
      *         but you can specify any header name. </p> <note>
      *         <p>
-     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
-     *         at all.
+     *         If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
+     *         all.
      *         </p>
      */
 
@@ -216,7 +216,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * 
@@ -225,7 +225,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
      *        you can specify any header name. </p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

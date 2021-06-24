@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and
- * try again.
+ * WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try
+ * again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

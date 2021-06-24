@@ -33,8 +33,8 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -69,7 +69,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -77,25 +77,25 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -109,10 +109,10 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> addresses;
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
@@ -161,8 +161,8 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -181,9 +181,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -208,8 +208,8 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -227,9 +227,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -254,8 +254,8 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -274,9 +274,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -303,8 +303,8 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -323,9 +323,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -439,7 +439,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -447,25 +447,25 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -477,33 +477,33 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *         Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *         <p>
      *         Examples:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *         To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *         specify <code>192.0.2.44/32</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *         to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *         To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *         192.0.2.255, specify <code>192.0.2.0/24</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *         To configure WAF to allow, block, or count requests that originated from the IP address
      *         1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>
      *         .
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *         To configure WAF to allow, block, or count requests that originated from IP addresses
      *         1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *         <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *         </p>
@@ -521,7 +521,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -529,25 +529,25 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -560,32 +560,32 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *        Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *        specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *        to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        To configure WAF to allow, block, or count requests that originated from the IP address
      *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses
      *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
@@ -608,7 +608,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -616,25 +616,25 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -652,32 +652,32 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *        Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *        specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *        to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        To configure WAF to allow, block, or count requests that originated from the IP address
      *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses
      *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
@@ -702,7 +702,7 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -710,25 +710,25 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -741,32 +741,32 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *        Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *        specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *        to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        To configure WAF to allow, block, or count requests that originated from the IP address
      *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses
      *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
@@ -785,21 +785,21 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      */
 
     public void setLockToken(String lockToken) {
@@ -808,20 +808,20 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
-     * @return A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *         state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *         you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *         changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *         fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *         new token returned by that operation.
+     * @return A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *         of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *         provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *         been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *         <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *         returned by that operation.
      */
 
     public String getLockToken() {
@@ -830,21 +830,21 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

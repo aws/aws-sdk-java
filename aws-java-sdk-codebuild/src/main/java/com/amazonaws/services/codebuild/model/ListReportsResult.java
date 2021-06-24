@@ -35,7 +35,7 @@ public class ListReportsResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String nextToken;
     /**
      * <p>
-     * The list of returned ARNs for the reports in the current AWS account.
+     * The list of returned ARNs for the reports in the current Amazon Web Services account.
      * </p>
      */
     private java.util.List<String> reports;
@@ -106,10 +106,10 @@ public class ListReportsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The list of returned ARNs for the reports in the current AWS account.
+     * The list of returned ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * 
-     * @return The list of returned ARNs for the reports in the current AWS account.
+     * @return The list of returned ARNs for the reports in the current Amazon Web Services account.
      */
 
     public java.util.List<String> getReports() {
@@ -118,11 +118,11 @@ public class ListReportsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The list of returned ARNs for the reports in the current AWS account.
+     * The list of returned ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * 
      * @param reports
-     *        The list of returned ARNs for the reports in the current AWS account.
+     *        The list of returned ARNs for the reports in the current Amazon Web Services account.
      */
 
     public void setReports(java.util.Collection<String> reports) {
@@ -136,7 +136,7 @@ public class ListReportsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The list of returned ARNs for the reports in the current AWS account.
+     * The list of returned ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class ListReportsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param reports
-     *        The list of returned ARNs for the reports in the current AWS account.
+     *        The list of returned ARNs for the reports in the current Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class ListReportsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The list of returned ARNs for the reports in the current AWS account.
+     * The list of returned ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * 
      * @param reports
-     *        The list of returned ARNs for the reports in the current AWS account.
+     *        The list of returned ARNs for the reports in the current Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

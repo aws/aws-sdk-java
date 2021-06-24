@@ -24,8 +24,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * temporary block on requests from an IP address that is sending excessive requests.
  * </p>
  * <p>
- * When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls
- * below the limit.
+ * When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below
+ * the limit.
  * </p>
  * <p>
  * You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it
@@ -90,8 +90,10 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
     private String aggregateKeyType;
     /**
      * <p>
-     * An optional nested statement that narrows the scope of the rate-based statement to matching web requests. This
-     * can be any nestable statement, and you can nest statements at any level below this scope-down statement.
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based
+     * statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can
+     * use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same
+     * as you can for a rule statement.
      * </p>
      */
     private Statement scopeDownStatement;
@@ -103,7 +105,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -319,14 +321,17 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An optional nested statement that narrows the scope of the rate-based statement to matching web requests. This
-     * can be any nestable statement, and you can nest statements at any level below this scope-down statement.
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based
+     * statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can
+     * use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same
+     * as you can for a rule statement.
      * </p>
      * 
      * @param scopeDownStatement
-     *        An optional nested statement that narrows the scope of the rate-based statement to matching web requests.
-     *        This can be any nestable statement, and you can nest statements at any level below this scope-down
-     *        statement.
+     *        An optional nested statement that narrows the scope of the web requests that are evaluated by the
+     *        rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down
+     *        statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest
+     *        statements at any level, the same as you can for a rule statement.
      */
 
     public void setScopeDownStatement(Statement scopeDownStatement) {
@@ -335,13 +340,16 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An optional nested statement that narrows the scope of the rate-based statement to matching web requests. This
-     * can be any nestable statement, and you can nest statements at any level below this scope-down statement.
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based
+     * statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can
+     * use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same
+     * as you can for a rule statement.
      * </p>
      * 
-     * @return An optional nested statement that narrows the scope of the rate-based statement to matching web requests.
-     *         This can be any nestable statement, and you can nest statements at any level below this scope-down
-     *         statement.
+     * @return An optional nested statement that narrows the scope of the web requests that are evaluated by the
+     *         rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down
+     *         statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest
+     *         statements at any level, the same as you can for a rule statement.
      */
 
     public Statement getScopeDownStatement() {
@@ -350,14 +358,17 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An optional nested statement that narrows the scope of the rate-based statement to matching web requests. This
-     * can be any nestable statement, and you can nest statements at any level below this scope-down statement.
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the rate-based
+     * statement. Requests are only tracked by the rate-based statement if they match the scope-down statement. You can
+     * use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same
+     * as you can for a rule statement.
      * </p>
      * 
      * @param scopeDownStatement
-     *        An optional nested statement that narrows the scope of the rate-based statement to matching web requests.
-     *        This can be any nestable statement, and you can nest statements at any level below this scope-down
-     *        statement.
+     *        An optional nested statement that narrows the scope of the web requests that are evaluated by the
+     *        rate-based statement. Requests are only tracked by the rate-based statement if they match the scope-down
+     *        statement. You can use any nestable <a>Statement</a> in the scope-down statement, and you can nest
+     *        statements at any level, the same as you can for a rule statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,7 +385,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -386,7 +397,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
      *        you can specify any header name. </p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      *        </note>
@@ -406,7 +417,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -417,8 +428,8 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      *         address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header,
      *         but you can specify any header name. </p> <note>
      *         <p>
-     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
-     *         at all.
+     *         If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
+     *         all.
      *         </p>
      *         </note>
      *         <p>
@@ -437,7 +448,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.
      * </p>
      * </note>
      * <p>
@@ -449,7 +460,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
      *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
      *        you can specify any header name. </p> <note>
      *        <p>
-     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at
      *        all.
      *        </p>
      *        </note>

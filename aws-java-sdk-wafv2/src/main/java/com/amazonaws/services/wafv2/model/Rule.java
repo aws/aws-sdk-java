@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to
- * allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web
- * requests, and parameters that govern how AWS WAF handles them.
+ * allow, block, or count. Each rule includes one top-level <a>Statement</a> that WAF uses to identify matching web
+ * requests, and parameters that govern how WAF handles them.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Rule" target="_top">AWS API Documentation</a>
@@ -37,22 +37,22 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request against
-     * the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes rules with lower
-     * priority first. The priorities don't need to be consecutive, but they must all be different.
+     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the
+     * <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority
+     * first. The priorities don't need to be consecutive, but they must all be different.
      * </p>
      */
     private Integer priority;
     /**
      * <p>
-     * The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     * The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      * <a>SizeConstraintStatement</a>.
      * </p>
      */
     private Statement statement;
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL
      * level can override the rule action setting.
      * </p>
      * <p>
@@ -108,7 +108,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private OverrideAction overrideAction;
     /**
      * <p>
-     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
      * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
      * rule's rule group or web ACL defines the label namespace.
      * </p>
@@ -198,16 +198,15 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request against
-     * the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes rules with lower
-     * priority first. The priorities don't need to be consecutive, but they must all be different.
+     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the
+     * <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority
+     * first. The priorities don't need to be consecutive, but they must all be different.
      * </p>
      * 
      * @param priority
-     *        If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request
-     *        against the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes
-     *        rules with lower priority first. The priorities don't need to be consecutive, but they must all be
-     *        different.
+     *        If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against
+     *        the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with
+     *        lower priority first. The priorities don't need to be consecutive, but they must all be different.
      */
 
     public void setPriority(Integer priority) {
@@ -216,15 +215,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request against
-     * the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes rules with lower
-     * priority first. The priorities don't need to be consecutive, but they must all be different.
+     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the
+     * <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority
+     * first. The priorities don't need to be consecutive, but they must all be different.
      * </p>
      * 
-     * @return If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request
-     *         against the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes
-     *         rules with lower priority first. The priorities don't need to be consecutive, but they must all be
-     *         different.
+     * @return If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request
+     *         against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules
+     *         with lower priority first. The priorities don't need to be consecutive, but they must all be different.
      */
 
     public Integer getPriority() {
@@ -233,16 +231,15 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request against
-     * the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes rules with lower
-     * priority first. The priorities don't need to be consecutive, but they must all be different.
+     * If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the
+     * <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority
+     * first. The priorities don't need to be consecutive, but they must all be different.
      * </p>
      * 
      * @param priority
-     *        If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS WAF evaluates each request
-     *        against the <code>Rules</code> in order based on the value of <code>Priority</code>. AWS WAF processes
-     *        rules with lower priority first. The priorities don't need to be consecutive, but they must all be
-     *        different.
+     *        If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against
+     *        the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with
+     *        lower priority first. The priorities don't need to be consecutive, but they must all be different.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,12 +250,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     * The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      * <a>SizeConstraintStatement</a>.
      * </p>
      * 
      * @param statement
-     *        The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     *        The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      *        <a>SizeConstraintStatement</a>.
      */
 
@@ -268,11 +265,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     * The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      * <a>SizeConstraintStatement</a>.
      * </p>
      * 
-     * @return The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     * @return The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      *         <a>SizeConstraintStatement</a>.
      */
 
@@ -282,12 +279,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     * The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      * <a>SizeConstraintStatement</a>.
      * </p>
      * 
      * @param statement
-     *        The AWS WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
+     *        The WAF processing statement for the rule, for example <a>ByteMatchStatement</a> or
      *        <a>SizeConstraintStatement</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -299,7 +296,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL
      * level can override the rule action setting.
      * </p>
      * <p>
@@ -325,8 +322,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param action
-     *        The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the
-     *        web ACL level can override the rule action setting. </p>
+     *        The action that WAF should take on a web request when it matches the rule statement. Settings at the web
+     *        ACL level can override the rule action setting. </p>
      *        <p>
      *        This is used only for rules whose statements do not reference a rule group. Rule statements that reference
      *        a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
@@ -356,7 +353,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL
      * level can override the rule action setting.
      * </p>
      * <p>
@@ -381,8 +378,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the
-     *         web ACL level can override the rule action setting. </p>
+     * @return The action that WAF should take on a web request when it matches the rule statement. Settings at the web
+     *         ACL level can override the rule action setting. </p>
      *         <p>
      *         This is used only for rules whose statements do not reference a rule group. Rule statements that
      *         reference a rule group include <code>RuleGroupReferenceStatement</code> and
@@ -413,7 +410,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL
      * level can override the rule action setting.
      * </p>
      * <p>
@@ -439,8 +436,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param action
-     *        The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the
-     *        web ACL level can override the rule action setting. </p>
+     *        The action that WAF should take on a web request when it matches the rule statement. Settings at the web
+     *        ACL level can override the rule action setting. </p>
      *        <p>
      *        This is used only for rules whose statements do not reference a rule group. Rule statements that reference
      *        a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
@@ -645,7 +642,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
      * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
      * rule's rule group or web ACL defines the label namespace.
      * </p>
@@ -685,9 +682,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
      * </p>
      * 
-     * @return Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
-     *         labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
-     *         rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     * @return Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels
+     *         to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule
+     *         label. The rule's rule group or web ACL defines the label namespace. </p>
      *         <p>
      *         Rules that run after this rule in the web ACL can match against these labels using a
      *         <code>LabelMatchStatement</code>.
@@ -730,7 +727,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
      * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
      * rule's rule group or web ACL defines the label namespace.
      * </p>
@@ -771,9 +768,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ruleLabels
-     *        Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
-     *        labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
-     *        rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *        Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
+     *        matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label.
+     *        The rule's rule group or web ACL defines the label namespace. </p>
      *        <p>
      *        Rules that run after this rule in the web ACL can match against these labels using a
      *        <code>LabelMatchStatement</code>.
@@ -821,7 +818,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
      * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
      * rule's rule group or web ACL defines the label namespace.
      * </p>
@@ -867,9 +864,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ruleLabels
-     *        Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
-     *        labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
-     *        rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *        Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
+     *        matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label.
+     *        The rule's rule group or web ACL defines the label namespace. </p>
      *        <p>
      *        Rules that run after this rule in the web ACL can match against these labels using a
      *        <code>LabelMatchStatement</code>.
@@ -919,7 +916,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
      * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
      * rule's rule group or web ACL defines the label namespace.
      * </p>
@@ -960,9 +957,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ruleLabels
-     *        Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
-     *        labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
-     *        rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *        Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to
+     *        matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label.
+     *        The rule's rule group or web ACL defines the label namespace. </p>
      *        <p>
      *        Rules that run after this rule in the web ACL can match against these labels using a
      *        <code>LabelMatchStatement</code>.

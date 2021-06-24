@@ -33,16 +33,16 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code>
      * requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request
-     * that your AWS resource received during the specified time range.
+     * that your Amazon Web Services resource received during the specified time range.
      * </p>
      */
     private Long populationSize;
     /**
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
-     * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
-     * Coordinated Universal Time (UTC) format.
+     * request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range
+     * that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000
+     * requests. Times are in Coordinated Universal Time (UTC) format.
      * </p>
      */
     private TimeWindow timeWindow;
@@ -121,13 +121,14 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code>
      * requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request
-     * that your AWS resource received during the specified time range.
+     * that your Amazon Web Services resource received during the specified time range.
      * </p>
      * 
      * @param populationSize
      *        The total number of requests from which <code>GetSampledRequests</code> got a sample of
      *        <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the
-     *        sample includes every request that your AWS resource received during the specified time range.
+     *        sample includes every request that your Amazon Web Services resource received during the specified time
+     *        range.
      */
 
     public void setPopulationSize(Long populationSize) {
@@ -138,12 +139,13 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code>
      * requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request
-     * that your AWS resource received during the specified time range.
+     * that your Amazon Web Services resource received during the specified time range.
      * </p>
      * 
      * @return The total number of requests from which <code>GetSampledRequests</code> got a sample of
      *         <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the
-     *         sample includes every request that your AWS resource received during the specified time range.
+     *         sample includes every request that your Amazon Web Services resource received during the specified time
+     *         range.
      */
 
     public Long getPopulationSize() {
@@ -154,13 +156,14 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code>
      * requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request
-     * that your AWS resource received during the specified time range.
+     * that your Amazon Web Services resource received during the specified time range.
      * </p>
      * 
      * @param populationSize
      *        The total number of requests from which <code>GetSampledRequests</code> got a sample of
      *        <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the
-     *        sample includes every request that your AWS resource received during the specified time range.
+     *        sample includes every request that your Amazon Web Services resource received during the specified time
+     *        range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,16 +175,16 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
-     * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
-     * Coordinated Universal Time (UTC) format.
+     * request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range
+     * that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000
+     * requests. Times are in Coordinated Universal Time (UTC) format.
      * </p>
      * 
      * @param timeWindow
      *        Usually, <code>TimeWindow</code> is the time range that you specified in the
-     *        <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests
-     *        during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time
-     *        range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
+     *        <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than
+     *        5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code>
+     *        returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
      */
 
     public void setTimeWindow(TimeWindow timeWindow) {
@@ -191,15 +194,16 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
-     * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
-     * Coordinated Universal Time (UTC) format.
+     * request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range
+     * that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000
+     * requests. Times are in Coordinated Universal Time (UTC) format.
      * </p>
      * 
      * @return Usually, <code>TimeWindow</code> is the time range that you specified in the
-     *         <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests
-     *         during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time
-     *         range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
+     *         <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than
+     *         5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code>
+     *         returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC)
+     *         format.
      */
 
     public TimeWindow getTimeWindow() {
@@ -209,16 +213,16 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
-     * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
-     * Coordinated Universal Time (UTC) format.
+     * request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range
+     * that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000
+     * requests. Times are in Coordinated Universal Time (UTC) format.
      * </p>
      * 
      * @param timeWindow
      *        Usually, <code>TimeWindow</code> is the time range that you specified in the
-     *        <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests
-     *        during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time
-     *        range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
+     *        <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than
+     *        5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code>
+     *        returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

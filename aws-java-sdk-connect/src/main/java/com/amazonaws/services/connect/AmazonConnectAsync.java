@@ -531,9 +531,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Creates a quick connect for the specified Amazon Connect instance.
      * </p>
      * 
@@ -546,9 +543,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<CreateQuickConnectResult> createQuickConnectAsync(CreateQuickConnectRequest createQuickConnectRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Creates a quick connect for the specified Amazon Connect instance.
      * </p>
@@ -788,9 +782,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Deletes a quick connect.
      * </p>
      * 
@@ -803,9 +794,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DeleteQuickConnectResult> deleteQuickConnectAsync(DeleteQuickConnectRequest deleteQuickConnectRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Deletes a quick connect.
      * </p>
@@ -1170,9 +1158,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Describes the quick connect.
      * </p>
      * 
@@ -1185,9 +1170,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<DescribeQuickConnectResult> describeQuickConnectAsync(DescribeQuickConnectRequest describeQuickConnectRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Describes the quick connect.
      * </p>
@@ -2359,9 +2341,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Provides information about the quick connects for the specified Amazon Connect instance.
      * </p>
      * 
@@ -2374,9 +2353,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<ListQuickConnectsResult> listQuickConnectsAsync(ListQuickConnectsRequest listQuickConnectsRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Provides information about the quick connects for the specified Amazon Connect instance.
      * </p>
@@ -3596,9 +3572,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Updates the configuration settings for the specified quick connect.
      * </p>
      * 
@@ -3611,9 +3584,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<UpdateQuickConnectConfigResult> updateQuickConnectConfigAsync(UpdateQuickConnectConfigRequest updateQuickConnectConfigRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Updates the configuration settings for the specified quick connect.
      * </p>
@@ -3633,9 +3603,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
      * least <code>Name</code> or <code>Description</code> must be provided.
      * </p>
@@ -3649,9 +3616,6 @@ public interface AmazonConnectAsync extends AmazonConnect {
     java.util.concurrent.Future<UpdateQuickConnectNameResult> updateQuickConnectNameAsync(UpdateQuickConnectNameRequest updateQuickConnectNameRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
      * least <code>Name</code> or <code>Description</code> must be provided.

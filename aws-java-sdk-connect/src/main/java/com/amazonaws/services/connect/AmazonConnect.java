@@ -419,9 +419,6 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Creates a quick connect for the specified Amazon Connect instance.
      * </p>
      * 
@@ -607,9 +604,6 @@ public interface AmazonConnect {
     DeleteIntegrationAssociationResult deleteIntegrationAssociation(DeleteIntegrationAssociationRequest deleteIntegrationAssociationRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Deletes a quick connect.
      * </p>
@@ -868,9 +862,6 @@ public interface AmazonConnect {
     DescribeQueueResult describeQueue(DescribeQueueRequest describeQueueRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Describes the quick connect.
      * </p>
@@ -1668,9 +1659,6 @@ public interface AmazonConnect {
     ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Provides information about the quick connects for the specified Amazon Connect instance.
      * </p>
@@ -2494,9 +2482,6 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
-     * <p>
      * Updates the configuration settings for the specified quick connect.
      * </p>
      * 
@@ -2519,9 +2504,6 @@ public interface AmazonConnect {
     UpdateQuickConnectConfigResult updateQuickConnectConfig(UpdateQuickConnectConfigRequest updateQuickConnectConfigRequest);
 
     /**
-     * <p>
-     * This API is in preview release for Amazon Connect and is subject to change.
-     * </p>
      * <p>
      * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At
      * least <code>Name</code> or <code>Description</code> must be provided.

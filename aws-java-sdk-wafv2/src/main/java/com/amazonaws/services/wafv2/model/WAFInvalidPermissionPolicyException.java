@@ -40,7 +40,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
- * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra actions or wildcard actions in the policy.
+ * <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.
  * </p>
  * </li>
  * <li>

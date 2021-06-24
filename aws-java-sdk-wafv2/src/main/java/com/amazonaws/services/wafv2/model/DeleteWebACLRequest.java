@@ -27,14 +27,14 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -55,17 +55,17 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String scope;
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
@@ -74,11 +74,11 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -87,10 +87,10 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
-     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public String getName() {
@@ -99,11 +99,11 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,8 +114,8 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -134,9 +134,9 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -161,8 +161,8 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -180,9 +180,9 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -207,8 +207,8 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -227,9 +227,9 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -256,8 +256,8 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -276,9 +276,9 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -305,12 +305,12 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      */
 
@@ -320,11 +320,11 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
-     * @return The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     * @return The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *         You provide it to operations like update and delete.
      */
 
@@ -334,12 +334,12 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -351,21 +351,21 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      */
 
     public void setLockToken(String lockToken) {
@@ -374,20 +374,20 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
-     * @return A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *         state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *         you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *         changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *         fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *         new token returned by that operation.
+     * @return A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *         of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *         provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *         been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *         <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *         returned by that operation.
      */
 
     public String getLockToken() {
@@ -396,21 +396,21 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

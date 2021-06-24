@@ -25,17 +25,17 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL or
+     * The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or
      * create a new one.
      * </p>
      */
     private WebACL webACL;
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
@@ -44,12 +44,12 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL or
+     * The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or
      * create a new one.
      * </p>
      * 
      * @param webACL
-     *        The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL
+     *        The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL
      *        or create a new one.
      */
 
@@ -59,11 +59,11 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL or
+     * The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or
      * create a new one.
      * </p>
      * 
-     * @return The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL
+     * @return The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL
      *         or create a new one.
      */
 
@@ -73,12 +73,12 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL or
+     * The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or
      * create a new one.
      * </p>
      * 
      * @param webACL
-     *        The Web ACL specification. You can modify the settings in this Web ACL and use it to update this Web ACL
+     *        The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL
      *        or create a new one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -90,21 +90,21 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      */
 
     public void setLockToken(String lockToken) {
@@ -113,20 +113,20 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
-     * @return A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *         state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *         you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *         changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *         fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *         new token returned by that operation.
+     * @return A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *         of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *         provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *         been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *         <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *         returned by that operation.
      */
 
     public String getLockToken() {
@@ -135,21 +135,21 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

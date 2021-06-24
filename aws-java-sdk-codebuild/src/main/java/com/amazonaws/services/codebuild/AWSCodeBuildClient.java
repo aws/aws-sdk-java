@@ -50,15 +50,14 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * Client for accessing AWS CodeBuild. All service calls made using this client are blocking, and will not return until
  * the service call completes.
  * <p>
- * <fullname>AWS CodeBuild</fullname>
  * <p>
- * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
- * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
- * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
- * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests. You pay only
- * for the build time you consume. For more information about AWS CodeBuild, see the <i> <a
- * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>.</i>
+ * CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source code, runs unit tests, and
+ * produces artifacts that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own
+ * build servers. It provides prepackaged build environments for the most popular programming languages and build tools,
+ * such as Apache Maven, Gradle, and more. You can also fully customize build environments in CodeBuild to use your own
+ * build tools. CodeBuild scales automatically to meet peak build requests. You pay only for the build time you consume.
+ * For more information about CodeBuild, see the <i> <a
+ * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild User Guide</a>.</i>
  * </p>
  */
 @ThreadSafe
@@ -651,10 +650,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceAlreadyExistsException
-     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
-     *         exists.
+     *         The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource
+     *         with the same settings already exists.
      * @throws AccountLimitExceededException
-     *         An AWS service limit was exceeded for the calling AWS account.
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
      * @sample AWSCodeBuild.CreateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject" target="_top">AWS API
      *      Documentation</a>
@@ -713,10 +712,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceAlreadyExistsException
-     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
-     *         exists.
+     *         The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource
+     *         with the same settings already exists.
      * @throws AccountLimitExceededException
-     *         An AWS service limit was exceeded for the calling AWS account.
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
      * @sample AWSCodeBuild.CreateReportGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup" target="_top">AWS
      *      API Documentation</a>
@@ -767,16 +766,16 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
-     * enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * <important>
      * <p>
-     * If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline,
-     * then two identical builds are created for each commit. One build is triggered through webhooks, and one through
-     * AWS CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
-     * using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild console,
-     * clear the Webhook box. For more information, see step 5 in <a
+     * If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then
+     * two identical builds are created for each commit. One build is triggered through webhooks, and one through
+     * CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
+     * using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the
+     * Webhook box. For more information, see step 5 in <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
      * Build Project's Settings</a>.
      * </p>
@@ -789,10 +788,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws OAuthProviderException
      *         There was a problem with the underlying OAuth provider.
      * @throws ResourceAlreadyExistsException
-     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
-     *         exists.
+     *         The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource
+     *         with the same settings already exists.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.CreateWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook" target="_top">AWS API
      *      Documentation</a>
@@ -1136,7 +1135,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.DeleteSourceCredentials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials"
      *      target="_top">AWS API Documentation</a>
@@ -1189,8 +1188,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
-     * stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * stops CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -1198,7 +1197,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @throws OAuthProviderException
      *         There was a problem with the underlying OAuth provider.
      * @sample AWSCodeBuild.DeleteWebhook
@@ -1317,7 +1316,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.DescribeTestCases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases" target="_top">AWS
      *      API Documentation</a>
@@ -1376,7 +1375,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.GetReportGroupTrend
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
      *      API Documentation</a>
@@ -1433,7 +1432,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @param getResourcePolicyRequest
      * @return Result of the GetResourcePolicy operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.GetResourcePolicy
@@ -1486,8 +1485,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
-     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub,
+     * GitHub Enterprise, or Bitbucket repository.
      * </p>
      * 
      * @param importSourceCredentialsRequest
@@ -1495,10 +1494,10 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws AccountLimitExceededException
-     *         An AWS service limit was exceeded for the calling AWS account.
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
      * @throws ResourceAlreadyExistsException
-     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
-     *         exists.
+     *         The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource
+     *         with the same settings already exists.
      * @sample AWSCodeBuild.ImportSourceCredentials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials"
      *      target="_top">AWS API Documentation</a>
@@ -1559,7 +1558,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.InvalidateProjectCache
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache"
      *      target="_top">AWS API Documentation</a>
@@ -1676,7 +1675,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.ListBuildBatchesForProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject"
      *      target="_top">AWS API Documentation</a>
@@ -1795,7 +1794,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.ListBuildsForProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject" target="_top">AWS
      *      API Documentation</a>
@@ -1846,7 +1845,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets information about Docker images that are managed by AWS CodeBuild.
+     * Gets information about Docker images that are managed by CodeBuild.
      * </p>
      * 
      * @param listCuratedEnvironmentImagesRequest
@@ -1960,7 +1959,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets a list ARNs for the report groups in the current AWS account.
+     * Gets a list ARNs for the report groups in the current Amazon Web Services account.
      * </p>
      * 
      * @param listReportGroupsRequest
@@ -2017,7 +2016,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Returns a list of ARNs for the reports in the current AWS account.
+     * Returns a list of ARNs for the reports in the current Amazon Web Services account.
      * </p>
      * 
      * @param listReportsRequest
@@ -2082,7 +2081,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.ListReportsForReportGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup"
      *      target="_top">AWS API Documentation</a>
@@ -2135,7 +2134,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets a list of projects that are shared with other AWS accounts or users.
+     * Gets a list of projects that are shared with other Amazon Web Services accounts or users.
      * </p>
      * 
      * @param listSharedProjectsRequest
@@ -2192,7 +2191,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * Gets a list of report groups that are shared with other Amazon Web Services accounts or users.
      * </p>
      * 
      * @param listSharedReportGroupsRequest
@@ -2314,7 +2313,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @param putResourcePolicyRequest
      * @return Result of the PutResourcePolicy operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.PutResourcePolicy
@@ -2375,9 +2374,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @throws AccountLimitExceededException
-     *         An AWS service limit was exceeded for the calling AWS account.
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
      * @sample AWSCodeBuild.RetryBuild
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild" target="_top">AWS API
      *      Documentation</a>
@@ -2436,7 +2435,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.RetryBuildBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch" target="_top">AWS API
      *      Documentation</a>
@@ -2495,9 +2494,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @throws AccountLimitExceededException
-     *         An AWS service limit was exceeded for the calling AWS account.
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
      * @sample AWSCodeBuild.StartBuild
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild" target="_top">AWS API
      *      Documentation</a>
@@ -2556,7 +2555,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.StartBuildBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch" target="_top">AWS API
      *      Documentation</a>
@@ -2615,7 +2614,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.StopBuild
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild" target="_top">AWS API
      *      Documentation</a>
@@ -2674,7 +2673,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.StopBuildBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch" target="_top">AWS API
      *      Documentation</a>
@@ -2733,7 +2732,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.UpdateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject" target="_top">AWS API
      *      Documentation</a>
@@ -2792,7 +2791,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @sample AWSCodeBuild.UpdateReportGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup" target="_top">AWS
      *      API Documentation</a>
@@ -2843,7 +2842,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Updates the webhook associated with an AWS CodeBuild build project.
+     * Updates the webhook associated with an CodeBuild build project.
      * </p>
      * <note>
      * <p>
@@ -2856,7 +2855,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * @throws InvalidInputException
      *         The input value that was provided is not valid.
      * @throws ResourceNotFoundException
-     *         The specified AWS resource cannot be found.
+     *         The specified Amazon Web Services resource cannot be found.
      * @throws OAuthProviderException
      *         There was a problem with the underlying OAuth provider.
      * @sample AWSCodeBuild.UpdateWebhook

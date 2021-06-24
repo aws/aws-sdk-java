@@ -50,6 +50,8 @@ public class SharePointConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentTitleFieldName").build();
     private static final MarshallingInfo<Boolean> DISABLELOCALGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableLocalGroups").build();
+    private static final MarshallingInfo<StructuredPojo> SSLCERTIFICATES3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslCertificateS3Path").build();
 
     private static final SharePointConfigurationMarshaller instance = new SharePointConfigurationMarshaller();
 
@@ -78,6 +80,7 @@ public class SharePointConfigurationMarshaller {
             protocolMarshaller.marshall(sharePointConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getDisableLocalGroups(), DISABLELOCALGROUPS_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getSslCertificateS3Path(), SSLCERTIFICATES3PATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

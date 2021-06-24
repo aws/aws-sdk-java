@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <a>ListAvailableManagedRuleGroups</a>.
  * </p>
  * <p>
- * You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or
+ * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or
  * <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
  * </p>
  * 
@@ -54,7 +54,14 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.List<ExcludedRule> excludedRules;
-
+    /**
+     * <p>
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule
+     * group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same as you
+     * can for a rule statement.
+     * </p>
+     */
     private Statement scopeDownStatement;
 
     /**
@@ -222,7 +229,18 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule
+     * group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same as you
+     * can for a rule statement.
+     * </p>
+     * 
      * @param scopeDownStatement
+     *        An optional nested statement that narrows the scope of the web requests that are evaluated by the managed
+     *        rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can
+     *        use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level,
+     *        the same as you can for a rule statement.
      */
 
     public void setScopeDownStatement(Statement scopeDownStatement) {
@@ -230,7 +248,17 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule
+     * group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same as you
+     * can for a rule statement.
+     * </p>
+     * 
+     * @return An optional nested statement that narrows the scope of the web requests that are evaluated by the managed
+     *         rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can
+     *         use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level,
+     *         the same as you can for a rule statement.
      */
 
     public Statement getScopeDownStatement() {
@@ -238,7 +266,18 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule
+     * group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level, the same as you
+     * can for a rule statement.
+     * </p>
+     * 
      * @param scopeDownStatement
+     *        An optional nested statement that narrows the scope of the web requests that are evaluated by the managed
+     *        rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can
+     *        use any nestable <a>Statement</a> in the scope-down statement, and you can nest statements at any level,
+     *        the same as you can for a rule statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,9 +42,19 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     private String domain;
     /**
      * <p>
-     * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
-     * authentication method.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      */
     private String identityProviderType;
@@ -57,8 +67,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     private String endpointType;
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      */
     private String loggingRole;
@@ -189,15 +200,35 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
-     * authentication method.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the authentication method used to validate a user for a server that was specified. This can
-     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
-     *        custom authentication method.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -207,14 +238,34 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
-     * authentication method.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
-     * @return Specifies the authentication method used to validate a user for a server that was specified. This can
-     *         include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
-     *         custom authentication method.
+     * @return Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *         which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *         service.</p>
+     *         <p>
+     *         Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web
+     *         Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in
+     *         Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using
+     *         the <code>IdentityProviderDetails</code> parameter.
+     *         </p>
+     *         <p>
+     *         Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *         <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *         authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -224,15 +275,35 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
-     * authentication method.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the authentication method used to validate a user for a server that was specified. This can
-     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
-     *        custom authentication method.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -244,15 +315,35 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
-     * authentication method.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the authentication method used to validate a user for a server that was specified. This can
-     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
-     *        custom authentication method.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -331,13 +422,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *        CloudWatch logging.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -346,12 +439,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
-     * @return Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *         CloudWatch logging.
+     * @return Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *         role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *         set, user activity can be viewed in your CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -360,13 +455,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *        CloudWatch logging.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

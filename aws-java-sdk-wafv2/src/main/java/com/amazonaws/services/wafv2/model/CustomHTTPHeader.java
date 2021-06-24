@@ -34,9 +34,9 @@ public class CustomHTTPHeader implements Serializable, Cloneable, StructuredPojo
      * The name of the custom header.
      * </p>
      * <p>
-     * For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this name
+     * For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
      * <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for
-     * the header name <code>sample</code>, AWS WAF inserts the header <code>x-amzn-waf-sample</code>.
+     * the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      * </p>
      */
     private String name;
@@ -52,18 +52,17 @@ public class CustomHTTPHeader implements Serializable, Cloneable, StructuredPojo
      * The name of the custom header.
      * </p>
      * <p>
-     * For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this name
+     * For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
      * <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for
-     * the header name <code>sample</code>, AWS WAF inserts the header <code>x-amzn-waf-sample</code>.
+     * the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      * </p>
      * 
      * @param name
      *        The name of the custom header. </p>
      *        <p>
-     *        For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this
-     *        name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For
-     *        example, for the header name <code>sample</code>, AWS WAF inserts the header
-     *        <code>x-amzn-waf-sample</code>.
+     *        For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
+     *        <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For
+     *        example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      */
 
     public void setName(String name) {
@@ -75,17 +74,16 @@ public class CustomHTTPHeader implements Serializable, Cloneable, StructuredPojo
      * The name of the custom header.
      * </p>
      * <p>
-     * For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this name
+     * For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
      * <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for
-     * the header name <code>sample</code>, AWS WAF inserts the header <code>x-amzn-waf-sample</code>.
+     * the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      * </p>
      * 
      * @return The name of the custom header. </p>
      *         <p>
-     *         For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this
-     *         name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For
-     *         example, for the header name <code>sample</code>, AWS WAF inserts the header
-     *         <code>x-amzn-waf-sample</code>.
+     *         For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
+     *         <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For
+     *         example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      */
 
     public String getName() {
@@ -97,18 +95,17 @@ public class CustomHTTPHeader implements Serializable, Cloneable, StructuredPojo
      * The name of the custom header.
      * </p>
      * <p>
-     * For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this name
+     * For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
      * <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for
-     * the header name <code>sample</code>, AWS WAF inserts the header <code>x-amzn-waf-sample</code>.
+     * the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      * </p>
      * 
      * @param name
      *        The name of the custom header. </p>
      *        <p>
-     *        For custom request header insertion, when AWS WAF inserts the header into the request, it prefixes this
-     *        name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For
-     *        example, for the header name <code>sample</code>, AWS WAF inserts the header
-     *        <code>x-amzn-waf-sample</code>.
+     *        For custom request header insertion, when WAF inserts the header into the request, it prefixes this name
+     *        <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For
+     *        example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

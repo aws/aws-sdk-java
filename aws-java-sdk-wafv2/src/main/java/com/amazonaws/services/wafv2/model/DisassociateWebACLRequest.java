@@ -41,7 +41,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -71,7 +71,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -97,7 +97,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        For an API Gateway REST API:
+     *        For an Amazon API Gateway REST API:
      *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>
@@ -129,7 +129,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -154,7 +154,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         For an API Gateway REST API:
+     *         For an Amazon API Gateway REST API:
      *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *         </p>
      *         </li>
@@ -186,7 +186,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * For an API Gateway REST API:
+     * For an Amazon API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
@@ -212,7 +212,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        For an API Gateway REST API:
+     *        For an Amazon API Gateway REST API:
      *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>

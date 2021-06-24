@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about Amazon CloudWatch Logs for a build project.
+ * Information about CloudWatch Logs for a build project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CloudWatchLogsConfig" target="_top">AWS API
@@ -30,17 +30,17 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     * <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     * <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      * </p>
      * </li>
      * </ul>
@@ -48,7 +48,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
-     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
@@ -56,7 +56,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     private String groupName;
     /**
      * <p>
-     * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     * The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
@@ -65,32 +65,32 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     * <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     * <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     *        The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     *        <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     *        <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      *        </p>
      *        </li>
      * @see LogsConfigStatusType
@@ -102,31 +102,31 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     * <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     * <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     * @return The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     *         <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     *         <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      *         </p>
      *         </li>
      * @see LogsConfigStatusType
@@ -138,32 +138,32 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     * <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     * <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     *        The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     *        <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     *        <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -177,32 +177,32 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:
+     * The current status of the logs in CloudWatch Logs for a build project. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     * <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     * <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the logs in Amazon CloudWatch Logs for a build project. Valid values are:</p>
+     *        The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.
+     *        <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.
+     *        <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -216,13 +216,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param groupName
-     *        The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     *        The group name of the logs in CloudWatch Logs. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      */
@@ -233,12 +233,12 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
-     * @return The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     * @return The group name of the logs in CloudWatch Logs. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *         >Working with Log Groups and Log Streams</a>.
      */
@@ -249,13 +249,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     * The group name of the logs in CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param groupName
-     *        The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
+     *        The group name of the logs in CloudWatch Logs. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -268,13 +268,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     * The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param streamName
-     *        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     *        The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      */
@@ -285,12 +285,12 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     * The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
-     * @return The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     * @return The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *         >Working with Log Groups and Log Streams</a>.
      */
@@ -301,13 +301,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     * The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param streamName
-     *        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
+     *        The prefix of the stream name of the CloudWatch Logs. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

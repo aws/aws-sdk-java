@@ -26,8 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The label match statement provides the label or namespace string to search for. The label string can represent a part
  * or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a
  * prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that
- * added the label. If you do not provide the fully qualified name in your label match string, AWS WAF performs the
- * search for labels that were added in the same context as the label match statement.
+ * added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search
+ * for labels that were added in the same context as the label match statement.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LabelMatchStatement" target="_top">AWS API
@@ -45,7 +45,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code>
-     * settings:
+     * setting:
      * </p>
      * <ul>
      * <li>
@@ -132,7 +132,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code>
-     * settings:
+     * setting:
      * </p>
      * <ul>
      * <li>
@@ -157,7 +157,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
      * 
      * @param key
      *        The string to match against. The setting you provide for this depends on the match statement's
-     *        <code>Scope</code> settings: </p>
+     *        <code>Scope</code> setting: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -186,7 +186,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code>
-     * settings:
+     * setting:
      * </p>
      * <ul>
      * <li>
@@ -210,7 +210,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return The string to match against. The setting you provide for this depends on the match statement's
-     *         <code>Scope</code> settings: </p>
+     *         <code>Scope</code> setting: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -239,7 +239,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code>
-     * settings:
+     * setting:
      * </p>
      * <ul>
      * <li>
@@ -264,7 +264,7 @@ public class LabelMatchStatement implements Serializable, Cloneable, StructuredP
      * 
      * @param key
      *        The string to match against. The setting you provide for this depends on the match statement's
-     *        <code>Scope</code> settings: </p>
+     *        <code>Scope</code> setting: </p>
      *        <ul>
      *        <li>
      *        <p>

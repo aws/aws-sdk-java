@@ -53,7 +53,8 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String notificationTopicArn;
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      */
     private String notificationTopicStatus;
@@ -245,11 +246,13 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      * 
      * @param notificationTopicStatus
-     *        The current state of the topic.
+     *        The current state of the topic. A value of “active” means that notifications will be sent to the topic. A
+     *        value of “inactive” means that notifications will not be sent to the topic.
      */
 
     public void setNotificationTopicStatus(String notificationTopicStatus) {
@@ -258,10 +261,12 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      * 
-     * @return The current state of the topic.
+     * @return The current state of the topic. A value of “active” means that notifications will be sent to the topic. A
+     *         value of “inactive” means that notifications will not be sent to the topic.
      */
 
     public String getNotificationTopicStatus() {
@@ -270,11 +275,13 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The current state of the topic.
+     * The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value
+     * of “inactive” means that notifications will not be sent to the topic.
      * </p>
      * 
      * @param notificationTopicStatus
-     *        The current state of the topic.
+     *        The current state of the topic. A value of “active” means that notifications will be sent to the topic. A
+     *        value of “inactive” means that notifications will not be sent to the topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

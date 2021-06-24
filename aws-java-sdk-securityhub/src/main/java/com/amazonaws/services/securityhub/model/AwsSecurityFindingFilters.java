@@ -600,6 +600,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * A keyword for a finding.
      * </p>
      */
+    @Deprecated
     private java.util.List<KeywordFilter> keyword;
     /**
      * <p>
@@ -6972,7 +6973,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @return A keyword for a finding.
      */
-
+    @Deprecated
     public java.util.List<KeywordFilter> getKeyword() {
         return keyword;
     }
@@ -6985,7 +6986,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * @param keyword
      *        A keyword for a finding.
      */
-
+    @Deprecated
     public void setKeyword(java.util.Collection<KeywordFilter> keyword) {
         if (keyword == null) {
             this.keyword = null;
@@ -7009,7 +7010,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        A keyword for a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AwsSecurityFindingFilters withKeyword(KeywordFilter... keyword) {
         if (this.keyword == null) {
             setKeyword(new java.util.ArrayList<KeywordFilter>(keyword.length));
@@ -7029,7 +7030,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        A keyword for a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AwsSecurityFindingFilters withKeyword(java.util.Collection<KeywordFilter> keyword) {
         setKeyword(keyword);
         return this;

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The action that AWS WAF should take on a web request when it matches a rule's statement. Settings at the web ACL
- * level can override the rule action setting.
+ * The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level
+ * can override the rule action setting.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleAction" target="_top">AWS API
@@ -31,30 +31,30 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to block the web request.
+     * Instructs WAF to block the web request.
      * </p>
      */
     private BlockAction block;
     /**
      * <p>
-     * Instructs AWS WAF to allow the web request.
+     * Instructs WAF to allow the web request.
      * </p>
      */
     private AllowAction allow;
     /**
      * <p>
-     * Instructs AWS WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and allow it.
      * </p>
      */
     private CountAction count;
 
     /**
      * <p>
-     * Instructs AWS WAF to block the web request.
+     * Instructs WAF to block the web request.
      * </p>
      * 
      * @param block
-     *        Instructs AWS WAF to block the web request.
+     *        Instructs WAF to block the web request.
      */
 
     public void setBlock(BlockAction block) {
@@ -63,10 +63,10 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to block the web request.
+     * Instructs WAF to block the web request.
      * </p>
      * 
-     * @return Instructs AWS WAF to block the web request.
+     * @return Instructs WAF to block the web request.
      */
 
     public BlockAction getBlock() {
@@ -75,11 +75,11 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to block the web request.
+     * Instructs WAF to block the web request.
      * </p>
      * 
      * @param block
-     *        Instructs AWS WAF to block the web request.
+     *        Instructs WAF to block the web request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to allow the web request.
+     * Instructs WAF to allow the web request.
      * </p>
      * 
      * @param allow
-     *        Instructs AWS WAF to allow the web request.
+     *        Instructs WAF to allow the web request.
      */
 
     public void setAllow(AllowAction allow) {
@@ -103,10 +103,10 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to allow the web request.
+     * Instructs WAF to allow the web request.
      * </p>
      * 
-     * @return Instructs AWS WAF to allow the web request.
+     * @return Instructs WAF to allow the web request.
      */
 
     public AllowAction getAllow() {
@@ -115,11 +115,11 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to allow the web request.
+     * Instructs WAF to allow the web request.
      * </p>
      * 
      * @param allow
-     *        Instructs AWS WAF to allow the web request.
+     *        Instructs WAF to allow the web request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and allow it.
      * </p>
      * 
      * @param count
-     *        Instructs AWS WAF to count the web request and allow it.
+     *        Instructs WAF to count the web request and allow it.
      */
 
     public void setCount(CountAction count) {
@@ -143,10 +143,10 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and allow it.
      * </p>
      * 
-     * @return Instructs AWS WAF to count the web request and allow it.
+     * @return Instructs WAF to count the web request and allow it.
      */
 
     public CountAction getCount() {
@@ -155,11 +155,11 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Instructs AWS WAF to count the web request and allow it.
+     * Instructs WAF to count the web request and allow it.
      * </p>
      * 
      * @param count
-     *        Instructs AWS WAF to count the web request and allow it.
+     *        Instructs WAF to count the web request and allow it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,6 +31,8 @@ public class EndpointMarshaller {
             .marshallLocationName("Address").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
+    private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("URL").build();
 
     private static final EndpointMarshaller instance = new EndpointMarshaller();
 
@@ -50,6 +52,7 @@ public class EndpointMarshaller {
         try {
             protocolMarshaller.marshall(endpoint.getAddress(), ADDRESS_BINDING);
             protocolMarshaller.marshall(endpoint.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(endpoint.getURL(), URL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

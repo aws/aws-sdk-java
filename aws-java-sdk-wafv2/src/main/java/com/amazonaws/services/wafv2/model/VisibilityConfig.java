@@ -30,38 +30,38 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You can
-     * view the sampled requests through the AWS WAF console.
+     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
+     * the sampled requests through the WAF console.
      * </p>
      */
     private Boolean sampledRequestsEnabled;
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of available
-     * metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS WAF
+     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
      * Metrics</a>.
      * </p>
      */
     private Boolean cloudWatchMetricsEnabled;
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
-     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action."
+     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for WAF, for example "All" and "Default_Action."
      * </p>
      */
     private String metricName;
 
     /**
      * <p>
-     * A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You can
-     * view the sampled requests through the AWS WAF console.
+     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
+     * the sampled requests through the WAF console.
      * </p>
      * 
      * @param sampledRequestsEnabled
-     *        A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You
-     *        can view the sampled requests through the AWS WAF console.
+     *        A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can
+     *        view the sampled requests through the WAF console.
      */
 
     public void setSampledRequestsEnabled(Boolean sampledRequestsEnabled) {
@@ -70,12 +70,12 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You can
-     * view the sampled requests through the AWS WAF console.
+     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
+     * the sampled requests through the WAF console.
      * </p>
      * 
-     * @return A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules.
-     *         You can view the sampled requests through the AWS WAF console.
+     * @return A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You
+     *         can view the sampled requests through the WAF console.
      */
 
     public Boolean getSampledRequestsEnabled() {
@@ -84,13 +84,13 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You can
-     * view the sampled requests through the AWS WAF console.
+     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
+     * the sampled requests through the WAF console.
      * </p>
      * 
      * @param sampledRequestsEnabled
-     *        A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You
-     *        can view the sampled requests through the AWS WAF console.
+     *        A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can
+     *        view the sampled requests through the WAF console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +101,12 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules. You can
-     * view the sampled requests through the AWS WAF console.
+     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
+     * the sampled requests through the WAF console.
      * </p>
      * 
-     * @return A boolean indicating whether AWS WAF should store a sampling of the web requests that match the rules.
-     *         You can view the sampled requests through the AWS WAF console.
+     * @return A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You
+     *         can view the sampled requests through the WAF console.
      */
 
     public Boolean isSampledRequestsEnabled() {
@@ -115,17 +115,17 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of available
-     * metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS WAF
+     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
      * Metrics</a>.
      * </p>
      * 
      * @param cloudWatchMetricsEnabled
-     *        A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of
+     *        A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
      *        available metrics, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS
-     *        WAF Metrics</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     *        Metrics</a>.
      */
 
     public void setCloudWatchMetricsEnabled(Boolean cloudWatchMetricsEnabled) {
@@ -134,16 +134,16 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of available
-     * metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS WAF
+     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
      * Metrics</a>.
      * </p>
      * 
-     * @return A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of
+     * @return A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
      *         available metrics, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS
-     *         WAF Metrics</a>.
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     *         Metrics</a>.
      */
 
     public Boolean getCloudWatchMetricsEnabled() {
@@ -152,17 +152,17 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of available
-     * metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS WAF
+     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
      * Metrics</a>.
      * </p>
      * 
      * @param cloudWatchMetricsEnabled
-     *        A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of
+     *        A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
      *        available metrics, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS
-     *        WAF Metrics</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     *        Metrics</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,16 +173,16 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of available
-     * metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS WAF
+     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
+     * available metrics, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
      * Metrics</a>.
      * </p>
      * 
-     * @return A boolean indicating whether the associated resource sends metrics to CloudWatch. For the list of
+     * @return A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
      *         available metrics, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">AWS
-     *         WAF Metrics</a>.
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     *         Metrics</a>.
      */
 
     public Boolean isCloudWatchMetricsEnabled() {
@@ -191,15 +191,15 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
-     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action."
+     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for WAF, for example "All" and "Default_Action."
      * </p>
      * 
      * @param metricName
-     *        A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     *        _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
-     *        names reserved for AWS WAF, for example "All" and "Default_Action."
+     *        A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, -
+     *        (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace
+     *        or metric names reserved for WAF, for example "All" and "Default_Action."
      */
 
     public void setMetricName(String metricName) {
@@ -208,14 +208,14 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
-     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action."
+     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for WAF, for example "All" and "Default_Action."
      * </p>
      * 
-     * @return A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     *         _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
-     *         names reserved for AWS WAF, for example "All" and "Default_Action."
+     * @return A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, -
+     *         (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain
+     *         whitespace or metric names reserved for WAF, for example "All" and "Default_Action."
      */
 
     public String getMetricName() {
@@ -224,15 +224,15 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
-     * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action."
+     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
+     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
+     * reserved for WAF, for example "All" and "Default_Action."
      * </p>
      * 
      * @param metricName
-     *        A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     *        _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
-     *        names reserved for AWS WAF, for example "All" and "Default_Action."
+     *        A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, -
+     *        (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace
+     *        or metric names reserved for WAF, for example "All" and "Default_Action."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

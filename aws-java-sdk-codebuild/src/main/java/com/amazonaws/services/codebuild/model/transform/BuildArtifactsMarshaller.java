@@ -39,8 +39,6 @@ public class BuildArtifactsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionDisabled").build();
     private static final MarshallingInfo<String> ARTIFACTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactIdentifier").build();
-    private static final MarshallingInfo<String> BUCKETOWNERACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketOwnerAccess").build();
 
     private static final BuildArtifactsMarshaller instance = new BuildArtifactsMarshaller();
 
@@ -64,7 +62,6 @@ public class BuildArtifactsMarshaller {
             protocolMarshaller.marshall(buildArtifacts.getOverrideArtifactName(), OVERRIDEARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(buildArtifacts.getEncryptionDisabled(), ENCRYPTIONDISABLED_BINDING);
             protocolMarshaller.marshall(buildArtifacts.getArtifactIdentifier(), ARTIFACTIDENTIFIER_BINDING);
-            protocolMarshaller.marshall(buildArtifacts.getBucketOwnerAccess(), BUCKETOWNERACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

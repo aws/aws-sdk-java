@@ -30,6 +30,12 @@ public class AwsApiGatewayV2StageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     * </p>
+     */
+    private String clientCertificateId;
+    /**
+     * <p>
      * Indicates when the stage was created.
      * </p>
      * <p>
@@ -133,6 +139,46 @@ public class AwsApiGatewayV2StageDetails implements Serializable, Cloneable, Str
      * </p>
      */
     private Boolean apiGatewayManaged;
+
+    /**
+     * <p>
+     * The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     * </p>
+     * 
+     * @param clientCertificateId
+     *        The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     */
+
+    public void setClientCertificateId(String clientCertificateId) {
+        this.clientCertificateId = clientCertificateId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     * </p>
+     * 
+     * @return The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     */
+
+    public String getClientCertificateId() {
+        return this.clientCertificateId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     * </p>
+     * 
+     * @param clientCertificateId
+     *        The identifier of a client certificate for a stage. Supported only for WebSocket API calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsApiGatewayV2StageDetails withClientCertificateId(String clientCertificateId) {
+        setClientCertificateId(clientCertificateId);
+        return this;
+    }
 
     /**
      * <p>
@@ -870,6 +916,8 @@ public class AwsApiGatewayV2StageDetails implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientCertificateId() != null)
+            sb.append("ClientCertificateId: ").append(getClientCertificateId()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getDescription() != null)
@@ -908,6 +956,10 @@ public class AwsApiGatewayV2StageDetails implements Serializable, Cloneable, Str
         if (obj instanceof AwsApiGatewayV2StageDetails == false)
             return false;
         AwsApiGatewayV2StageDetails other = (AwsApiGatewayV2StageDetails) obj;
+        if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
+            return false;
+        if (other.getClientCertificateId() != null && other.getClientCertificateId().equals(this.getClientCertificateId()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -964,6 +1016,7 @@ public class AwsApiGatewayV2StageDetails implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultRouteSettings() == null) ? 0 : getDefaultRouteSettings().hashCode());

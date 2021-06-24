@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when an error occurs in the AWS Transfer Family service.
+ * This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -47,7 +47,7 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the AWS CodeBuild console.
+     * connection is not supported by the API and must be created using the CodeBuild console.
      * </p>
      */
     private String authType;
@@ -210,12 +210,12 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the AWS CodeBuild console.
+     * connection is not supported by the API and must be created using the CodeBuild console.
      * </p>
      * 
      * @param authType
      *        The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *        OAUTH connection is not supported by the API and must be created using the AWS CodeBuild console.
+     *        OAUTH connection is not supported by the API and must be created using the CodeBuild console.
      * @see AuthType
      */
 
@@ -226,11 +226,11 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the AWS CodeBuild console.
+     * connection is not supported by the API and must be created using the CodeBuild console.
      * </p>
      * 
      * @return The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *         OAUTH connection is not supported by the API and must be created using the AWS CodeBuild console.
+     *         OAUTH connection is not supported by the API and must be created using the CodeBuild console.
      * @see AuthType
      */
 
@@ -241,12 +241,12 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the AWS CodeBuild console.
+     * connection is not supported by the API and must be created using the CodeBuild console.
      * </p>
      * 
      * @param authType
      *        The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *        OAUTH connection is not supported by the API and must be created using the AWS CodeBuild console.
+     *        OAUTH connection is not supported by the API and must be created using the CodeBuild console.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthType
      */
@@ -259,12 +259,12 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the AWS CodeBuild console.
+     * connection is not supported by the API and must be created using the CodeBuild console.
      * </p>
      * 
      * @param authType
      *        The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *        OAUTH connection is not supported by the API and must be created using the AWS CodeBuild console.
+     *        OAUTH connection is not supported by the API and must be created using the CodeBuild console.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthType
      */

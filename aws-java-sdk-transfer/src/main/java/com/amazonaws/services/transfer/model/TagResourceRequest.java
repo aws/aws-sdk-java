@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     * An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.
      * </p>
      */
     private String arn;
@@ -41,11 +41,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     * An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.
      * </p>
      * 
      * @param arn
-     *        An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     *        An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
+     *        role.
      */
 
     public void setArn(String arn) {
@@ -54,10 +55,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     * An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.
      * </p>
      * 
-     * @return An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     * @return An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
+     *         role.
      */
 
     public String getArn() {
@@ -66,11 +68,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     * An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.
      * </p>
      * 
      * @param arn
-     *        An Amazon Resource Name (ARN) for a specific AWS resource, such as a server, user, or role.
+     *        An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
+     *        role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

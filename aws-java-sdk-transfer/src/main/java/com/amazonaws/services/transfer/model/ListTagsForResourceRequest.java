@@ -28,7 +28,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific
-     * AWS resource, such as a server, user, or role.
+     * Amazon Web Services resource, such as a server, user, or role.
      * </p>
      */
     private String arn;
@@ -50,12 +50,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific
-     * AWS resource, such as a server, user, or role.
+     * Amazon Web Services resource, such as a server, user, or role.
      * </p>
      * 
      * @param arn
      *        Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a
-     *        specific AWS resource, such as a server, user, or role.
+     *        specific Amazon Web Services resource, such as a server, user, or role.
      */
 
     public void setArn(String arn) {
@@ -65,11 +65,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific
-     * AWS resource, such as a server, user, or role.
+     * Amazon Web Services resource, such as a server, user, or role.
      * </p>
      * 
      * @return Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a
-     *         specific AWS resource, such as a server, user, or role.
+     *         specific Amazon Web Services resource, such as a server, user, or role.
      */
 
     public String getArn() {
@@ -79,12 +79,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific
-     * AWS resource, such as a server, user, or role.
+     * Amazon Web Services resource, such as a server, user, or role.
      * </p>
      * 
      * @param arn
      *        Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a
-     *        specific AWS resource, such as a server, user, or role.
+     *        specific Amazon Web Services resource, such as a server, user, or role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

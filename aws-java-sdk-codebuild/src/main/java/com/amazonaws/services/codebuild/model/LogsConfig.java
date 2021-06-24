@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3
- * bucket, or both.
+ * Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or
+ * both.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsConfig" target="_top">AWS API
@@ -31,7 +31,7 @@ public class LogsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.
+     * Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      * </p>
      */
     private CloudWatchLogsConfig cloudWatchLogs;
@@ -44,12 +44,11 @@ public class LogsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.
+     * Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      * </p>
      * 
      * @param cloudWatchLogs
-     *        Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by
-     *        default.
+     *        Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      */
 
     public void setCloudWatchLogs(CloudWatchLogsConfig cloudWatchLogs) {
@@ -58,11 +57,10 @@ public class LogsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.
+     * Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      * </p>
      * 
-     * @return Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by
-     *         default.
+     * @return Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      */
 
     public CloudWatchLogsConfig getCloudWatchLogs() {
@@ -71,12 +69,11 @@ public class LogsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.
+     * Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      * </p>
      * 
      * @param cloudWatchLogs
-     *        Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by
-     *        default.
+     *        Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

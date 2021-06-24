@@ -46,7 +46,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     private Long weight;
     /**
      * <p>
-     * The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     * The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in
+     * seconds).
      * </p>
      */
     private java.util.Date timestamp;
@@ -68,8 +69,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     private String ruleNameWithinRuleGroup;
     /**
      * <p>
-     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
-     * the matching rule action.
+     * Custom request headers inserted by WAF into the request, according to the custom request configuration for the
+     * matching rule action.
      * </p>
      */
     private java.util.List<HTTPHeader> requestHeadersInserted;
@@ -81,9 +82,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     private Integer responseCodeSent;
     /**
      * <p>
-     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
-     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
-     * group or web ACL defines the label namespace.
+     * Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests.
+     * A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web
+     * ACL defines the label namespace.
      * </p>
      * <p>
      * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
@@ -186,11 +187,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     * The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in
+     * seconds).
      * </p>
      * 
      * @param timestamp
-     *        The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     *        The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in
+     *        seconds).
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -199,10 +202,12 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     * The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in
+     * seconds).
      * </p>
      * 
-     * @return The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     * @return The time at which WAF received the request from your Amazon Web Services resource, in Unix time format
+     *         (in seconds).
      */
 
     public java.util.Date getTimestamp() {
@@ -211,11 +216,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     * The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in
+     * seconds).
      * </p>
      * 
      * @param timestamp
-     *        The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).
+     *        The time at which WAF received the request from your Amazon Web Services resource, in Unix time format (in
+     *        seconds).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,12 +337,12 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
-     * the matching rule action.
+     * Custom request headers inserted by WAF into the request, according to the custom request configuration for the
+     * matching rule action.
      * </p>
      * 
-     * @return Custom request headers inserted by AWS WAF into the request, according to the custom request
-     *         configuration for the matching rule action.
+     * @return Custom request headers inserted by WAF into the request, according to the custom request configuration
+     *         for the matching rule action.
      */
 
     public java.util.List<HTTPHeader> getRequestHeadersInserted() {
@@ -344,13 +351,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
-     * the matching rule action.
+     * Custom request headers inserted by WAF into the request, according to the custom request configuration for the
+     * matching rule action.
      * </p>
      * 
      * @param requestHeadersInserted
-     *        Custom request headers inserted by AWS WAF into the request, according to the custom request configuration
-     *        for the matching rule action.
+     *        Custom request headers inserted by WAF into the request, according to the custom request configuration for
+     *        the matching rule action.
      */
 
     public void setRequestHeadersInserted(java.util.Collection<HTTPHeader> requestHeadersInserted) {
@@ -364,8 +371,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
-     * the matching rule action.
+     * Custom request headers inserted by WAF into the request, according to the custom request configuration for the
+     * matching rule action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -374,8 +381,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param requestHeadersInserted
-     *        Custom request headers inserted by AWS WAF into the request, according to the custom request configuration
-     *        for the matching rule action.
+     *        Custom request headers inserted by WAF into the request, according to the custom request configuration for
+     *        the matching rule action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,13 +398,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
-     * the matching rule action.
+     * Custom request headers inserted by WAF into the request, according to the custom request configuration for the
+     * matching rule action.
      * </p>
      * 
      * @param requestHeadersInserted
-     *        Custom request headers inserted by AWS WAF into the request, according to the custom request configuration
-     *        for the matching rule action.
+     *        Custom request headers inserted by WAF into the request, according to the custom request configuration for
+     *        the matching rule action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,18 +455,18 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
-     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
-     * group or web ACL defines the label namespace.
+     * Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests.
+     * A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web
+     * ACL defines the label namespace.
      * </p>
      * <p>
      * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
      * <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
      * </p>
      * 
-     * @return Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
-     *         web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
-     *         rule's rule group or web ACL defines the label namespace. </p>
+     * @return Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web
+     *         requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's
+     *         rule group or web ACL defines the label namespace. </p>
      *         <p>
      *         For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
      *         <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
@@ -471,9 +478,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
-     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
-     * group or web ACL defines the label namespace.
+     * Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests.
+     * A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web
+     * ACL defines the label namespace.
      * </p>
      * <p>
      * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
@@ -481,9 +488,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param labels
-     *        Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
-     *        web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
-     *        rule's rule group or web ACL defines the label namespace. </p>
+     *        Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web
+     *        requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's
+     *        rule group or web ACL defines the label namespace. </p>
      *        <p>
      *        For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
      *        <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
@@ -500,9 +507,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
-     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
-     * group or web ACL defines the label namespace.
+     * Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests.
+     * A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web
+     * ACL defines the label namespace.
      * </p>
      * <p>
      * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
@@ -515,9 +522,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param labels
-     *        Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
-     *        web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
-     *        rule's rule group or web ACL defines the label namespace. </p>
+     *        Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web
+     *        requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's
+     *        rule group or web ACL defines the label namespace. </p>
      *        <p>
      *        For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
      *        <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
@@ -536,9 +543,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
-     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
-     * group or web ACL defines the label namespace.
+     * Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests.
+     * A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web
+     * ACL defines the label namespace.
      * </p>
      * <p>
      * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
@@ -546,9 +553,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param labels
-     *        Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
-     *        web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
-     *        rule's rule group or web ACL defines the label namespace. </p>
+     *        Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web
+     *        requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's
+     *        rule group or web ACL defines the label namespace. </p>
      *        <p>
      *        For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
      *        <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.

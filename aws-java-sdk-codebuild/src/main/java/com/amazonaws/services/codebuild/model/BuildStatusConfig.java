@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information that defines how the AWS CodeBuild build project reports the build status to the source
- * provider.
+ * Contains information that defines how the CodeBuild build project reports the build status to the source provider.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildStatusConfig" target="_top">AWS API

@@ -27,7 +27,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the AWS CodeBuild build project to start running a build.
+     * The name of the CodeBuild build project to start running a build.
      * </p>
      */
     private String projectName;
@@ -50,7 +50,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the contents depends on the source provider:
      * </p>
      * <dl>
-     * <dt>AWS CodeCommit</dt>
+     * <dt>CodeCommit</dt>
      * <dd>
      * <p>
      * The commit ID, branch, or Git tag to use.
@@ -87,7 +87,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      */
     private String sourceVersion;
@@ -139,7 +139,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer gitCloneDepthOverride;
     /**
      * <p>
-     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * Information about the Git submodules configuration for this build of an CodeBuild build project.
      * </p>
      */
     private GitSubmodulesConfig gitSubmodulesConfigOverride;
@@ -151,10 +151,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
      * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
-     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
-     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
-     * information, see <a
+     * bucket. The bucket must be in the same Region as the build project. Specify the buildspec file using its ARN (for
+     * example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set
+     * to an empty string, the source code must contain a buildspec file in its root directory. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
@@ -178,7 +178,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * To be able to report the build status to the source provider, the user associated with the source provider must
      * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
      * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
+     * provider access</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -252,8 +252,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer queuedTimeoutInMinutesOverride;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
-     * project. The CMK key encrypts the build output artifacts.
+     * The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The
+     * CMK key encrypts the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -271,7 +271,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
      * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
-     * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     * token, but change a parameter, CodeBuild returns a parameter mismatch error.
      * </p>
      */
     private String idempotencyToken;
@@ -289,26 +289,26 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private RegistryCredential registryCredentialOverride;
     /**
      * <p>
-     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
      * </p>
      * <dl>
      * <dt>CODEBUILD</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository policy
-     * to trust AWS CodeBuild's service principal.
+     * Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to
+     * trust CodeBuild's service principal.
      * </p>
      * </dd>
      * <dt>SERVICE_ROLE</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses your build project's service role.
+     * Specifies that CodeBuild uses your build project's service role.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     * using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * </p>
      */
     private String imagePullCredentialsTypeOverride;
@@ -323,11 +323,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the AWS CodeBuild build project to start running a build.
+     * The name of the CodeBuild build project to start running a build.
      * </p>
      * 
      * @param projectName
-     *        The name of the AWS CodeBuild build project to start running a build.
+     *        The name of the CodeBuild build project to start running a build.
      */
 
     public void setProjectName(String projectName) {
@@ -336,10 +336,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the AWS CodeBuild build project to start running a build.
+     * The name of the CodeBuild build project to start running a build.
      * </p>
      * 
-     * @return The name of the AWS CodeBuild build project to start running a build.
+     * @return The name of the CodeBuild build project to start running a build.
      */
 
     public String getProjectName() {
@@ -348,11 +348,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the AWS CodeBuild build project to start running a build.
+     * The name of the CodeBuild build project to start running a build.
      * </p>
      * 
      * @param projectName
-     *        The name of the AWS CodeBuild build project to start running a build.
+     *        The name of the CodeBuild build project to start running a build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,7 +515,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the contents depends on the source provider:
      * </p>
      * <dl>
-     * <dt>AWS CodeCommit</dt>
+     * <dt>CodeCommit</dt>
      * <dd>
      * <p>
      * The commit ID, branch, or Git tag to use.
@@ -552,14 +552,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param sourceVersion
      *        The version of the build input to be built, for this build only. If not specified, the latest version is
      *        used. If specified, the contents depends on the source provider:</p>
      *        <dl>
-     *        <dt>AWS CodeCommit</dt>
+     *        <dt>CodeCommit</dt>
      *        <dd>
      *        <p>
      *        The commit ID, branch, or Git tag to use.
@@ -596,7 +596,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -609,7 +609,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the contents depends on the source provider:
      * </p>
      * <dl>
-     * <dt>AWS CodeCommit</dt>
+     * <dt>CodeCommit</dt>
      * <dd>
      * <p>
      * The commit ID, branch, or Git tag to use.
@@ -646,13 +646,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @return The version of the build input to be built, for this build only. If not specified, the latest version is
      *         used. If specified, the contents depends on the source provider:</p>
      *         <dl>
-     *         <dt>AWS CodeCommit</dt>
+     *         <dt>CodeCommit</dt>
      *         <dd>
      *         <p>
      *         The commit ID, branch, or Git tag to use.
@@ -689,7 +689,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *         Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public String getSourceVersion() {
@@ -702,7 +702,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the contents depends on the source provider:
      * </p>
      * <dl>
-     * <dt>AWS CodeCommit</dt>
+     * <dt>CodeCommit</dt>
      * <dd>
      * <p>
      * The commit ID, branch, or Git tag to use.
@@ -739,14 +739,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param sourceVersion
      *        The version of the build input to be built, for this build only. If not specified, the latest version is
      *        used. If specified, the contents depends on the source provider:</p>
      *        <dl>
-     *        <dt>AWS CodeCommit</dt>
+     *        <dt>CodeCommit</dt>
      *        <dd>
      *        <p>
      *        The commit ID, branch, or Git tag to use.
@@ -783,7 +783,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1179,11 +1179,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * Information about the Git submodules configuration for this build of an CodeBuild build project.
      * </p>
      * 
      * @param gitSubmodulesConfigOverride
-     *        Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     *        Information about the Git submodules configuration for this build of an CodeBuild build project.
      */
 
     public void setGitSubmodulesConfigOverride(GitSubmodulesConfig gitSubmodulesConfigOverride) {
@@ -1192,10 +1192,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * Information about the Git submodules configuration for this build of an CodeBuild build project.
      * </p>
      * 
-     * @return Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * @return Information about the Git submodules configuration for this build of an CodeBuild build project.
      */
 
     public GitSubmodulesConfig getGitSubmodulesConfigOverride() {
@@ -1204,11 +1204,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     * Information about the Git submodules configuration for this build of an CodeBuild build project.
      * </p>
      * 
      * @param gitSubmodulesConfigOverride
-     *        Information about the Git submodules configuration for this build of an AWS CodeBuild build project.
+     *        Information about the Git submodules configuration for this build of an CodeBuild build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1225,10 +1225,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
      * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
-     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
-     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
-     * information, see <a
+     * bucket. The bucket must be in the same Region as the build project. Specify the buildspec file using its ARN (for
+     * example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set
+     * to an empty string, the source code must contain a buildspec file in its root directory. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
@@ -1239,10 +1239,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
      *        file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
-     *        path to an S3 bucket. The bucket must be in the same AWS Region as the build project. Specify the
-     *        buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
-     *        If this value is not provided or is set to an empty string, the source code must contain a buildspec file
-     *        in its root directory. For more information, see <a href=
+     *        path to an S3 bucket. The bucket must be in the same Region as the build project. Specify the buildspec
+     *        file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this
+     *        value is not provided or is set to an empty string, the source code must contain a buildspec file in its
+     *        root directory. For more information, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      *        >Buildspec File Name and Storage Location</a>.
      */
@@ -1259,10 +1259,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
      * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
-     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
-     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
-     * information, see <a
+     * bucket. The bucket must be in the same Region as the build project. Specify the buildspec file using its ARN (for
+     * example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set
+     * to an empty string, the source code must contain a buildspec file in its root directory. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
@@ -1272,10 +1272,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
      *         file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
-     *         path to an S3 bucket. The bucket must be in the same AWS Region as the build project. Specify the
-     *         buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
-     *         If this value is not provided or is set to an empty string, the source code must contain a buildspec file
-     *         in its root directory. For more information, see <a href=
+     *         path to an S3 bucket. The bucket must be in the same Region as the build project. Specify the buildspec
+     *         file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this
+     *         value is not provided or is set to an empty string, the source code must contain a buildspec file in its
+     *         root directory. For more information, see <a href=
      *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      *         >Buildspec File Name and Storage Location</a>.
      */
@@ -1292,10 +1292,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
      * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
-     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
-     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
-     * information, see <a
+     * bucket. The bucket must be in the same Region as the build project. Specify the buildspec file using its ARN (for
+     * example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set
+     * to an empty string, the source code must contain a buildspec file in its root directory. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
@@ -1306,10 +1306,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
      *        file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
-     *        path to an S3 bucket. The bucket must be in the same AWS Region as the build project. Specify the
-     *        buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
-     *        If this value is not provided or is set to an empty string, the source code must contain a buildspec file
-     *        in its root directory. For more information, see <a href=
+     *        path to an S3 bucket. The bucket must be in the same Region as the build project. Specify the buildspec
+     *        file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this
+     *        value is not provided or is set to an empty string, the source code must contain a buildspec file in its
+     *        root directory. For more information, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      *        >Buildspec File Name and Storage Location</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1398,7 +1398,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * To be able to report the build status to the source provider, the user associated with the source provider must
      * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
      * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
+     * provider access</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1415,7 +1415,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        must have write access to the repo. If the user does not have write access, the build status cannot be
      *        updated. For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
-     *        access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        access</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1437,7 +1437,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * To be able to report the build status to the source provider, the user associated with the source provider must
      * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
      * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
+     * provider access</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1453,7 +1453,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         provider must have write access to the repo. If the user does not have write access, the build status
      *         cannot be updated. For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
-     *         access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         access</a> in the <i>CodeBuild User Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -1475,7 +1475,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * To be able to report the build status to the source provider, the user associated with the source provider must
      * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
      * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
+     * provider access</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1492,7 +1492,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        must have write access to the repo. If the user does not have write access, the build status cannot be
      *        updated. For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
-     *        access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        access</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1516,7 +1516,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * To be able to report the build status to the source provider, the user associated with the source provider must
      * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
      * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
+     * provider access</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1532,7 +1532,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         provider must have write access to the repo. If the user does not have write access, the build status
      *         cannot be updated. For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
-     *         access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         access</a> in the <i>CodeBuild User Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -2014,8 +2014,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
-     * project. The CMK key encrypts the build output artifacts.
+     * The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The
+     * CMK key encrypts the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -2029,8 +2029,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param encryptionKeyOverride
-     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the
-     *        build project. The CMK key encrypts the build output artifacts.</p> <note>
+     *        The Key Management Service customer master key (CMK) that overrides the one specified in the build
+     *        project. The CMK key encrypts the build output artifacts.</p> <note>
      *        <p>
      *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
      *        permission to that key.
@@ -2047,8 +2047,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
-     * project. The CMK key encrypts the build output artifacts.
+     * The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The
+     * CMK key encrypts the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -2061,8 +2061,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in
-     *         the build project. The CMK key encrypts the build output artifacts.</p> <note>
+     * @return The Key Management Service customer master key (CMK) that overrides the one specified in the build
+     *         project. The CMK key encrypts the build output artifacts.</p> <note>
      *         <p>
      *         You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
      *         permission to that key.
@@ -2079,8 +2079,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
-     * project. The CMK key encrypts the build output artifacts.
+     * The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The
+     * CMK key encrypts the build output artifacts.
      * </p>
      * <note>
      * <p>
@@ -2094,8 +2094,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param encryptionKeyOverride
-     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the
-     *        build project. The CMK key encrypts the build output artifacts.</p> <note>
+     *        The Key Management Service customer master key (CMK) that overrides the one specified in the build
+     *        project. The CMK key encrypts the build output artifacts.</p> <note>
      *        <p>
      *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
      *        permission to that key.
@@ -2116,13 +2116,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
      * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
-     * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     * token, but change a parameter, CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
      *        token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
-     *        request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     *        request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -2133,12 +2133,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
      * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
-     * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     * token, but change a parameter, CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @return A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
      *         token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
-     *         request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     *         request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
      */
 
     public String getIdempotencyToken() {
@@ -2149,13 +2149,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
      * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
-     * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     * token, but change a parameter, CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
      *        token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
-     *        request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
+     *        request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2246,48 +2246,48 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
      * </p>
      * <dl>
      * <dt>CODEBUILD</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository policy
-     * to trust AWS CodeBuild's service principal.
+     * Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to
+     * trust CodeBuild's service principal.
      * </p>
      * </dd>
      * <dt>SERVICE_ROLE</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses your build project's service role.
+     * Specifies that CodeBuild uses your build project's service role.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     * using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * </p>
      * 
      * @param imagePullCredentialsTypeOverride
-     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
      *        <dl>
      *        <dt>CODEBUILD</dt>
      *        <dd>
      *        <p>
-     *        Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository
-     *        policy to trust AWS CodeBuild's service principal.
+     *        Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository
+     *        policy to trust CodeBuild's service principal.
      *        </p>
      *        </dd>
      *        <dt>SERVICE_ROLE</dt>
      *        <dd>
      *        <p>
-     *        Specifies that AWS CodeBuild uses your build project's service role.
+     *        Specifies that CodeBuild uses your build project's service role.
      *        </p>
      *        </dd>
      *        </dl>
      *        <p>
      *        When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials.
-     *        When using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     *        When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * @see ImagePullCredentialsType
      */
 
@@ -2297,47 +2297,47 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
      * </p>
      * <dl>
      * <dt>CODEBUILD</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository policy
-     * to trust AWS CodeBuild's service principal.
+     * Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to
+     * trust CodeBuild's service principal.
      * </p>
      * </dd>
      * <dt>SERVICE_ROLE</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses your build project's service role.
+     * Specifies that CodeBuild uses your build project's service role.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     * using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * </p>
      * 
-     * @return The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     * @return The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
      *         <dl>
      *         <dt>CODEBUILD</dt>
      *         <dd>
      *         <p>
-     *         Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository
-     *         policy to trust AWS CodeBuild's service principal.
+     *         Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository
+     *         policy to trust CodeBuild's service principal.
      *         </p>
      *         </dd>
      *         <dt>SERVICE_ROLE</dt>
      *         <dd>
      *         <p>
-     *         Specifies that AWS CodeBuild uses your build project's service role.
+     *         Specifies that CodeBuild uses your build project's service role.
      *         </p>
      *         </dd>
      *         </dl>
      *         <p>
      *         When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials.
-     *         When using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     *         When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * @see ImagePullCredentialsType
      */
 
@@ -2347,48 +2347,48 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
      * </p>
      * <dl>
      * <dt>CODEBUILD</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository policy
-     * to trust AWS CodeBuild's service principal.
+     * Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to
+     * trust CodeBuild's service principal.
      * </p>
      * </dd>
      * <dt>SERVICE_ROLE</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses your build project's service role.
+     * Specifies that CodeBuild uses your build project's service role.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     * using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * </p>
      * 
      * @param imagePullCredentialsTypeOverride
-     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
      *        <dl>
      *        <dt>CODEBUILD</dt>
      *        <dd>
      *        <p>
-     *        Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository
-     *        policy to trust AWS CodeBuild's service principal.
+     *        Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository
+     *        policy to trust CodeBuild's service principal.
      *        </p>
      *        </dd>
      *        <dt>SERVICE_ROLE</dt>
      *        <dd>
      *        <p>
-     *        Specifies that AWS CodeBuild uses your build project's service role.
+     *        Specifies that CodeBuild uses your build project's service role.
      *        </p>
      *        </dd>
      *        </dl>
      *        <p>
      *        When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials.
-     *        When using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     *        When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImagePullCredentialsType
      */
@@ -2400,48 +2400,48 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
      * </p>
      * <dl>
      * <dt>CODEBUILD</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository policy
-     * to trust AWS CodeBuild's service principal.
+     * Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to
+     * trust CodeBuild's service principal.
      * </p>
      * </dd>
      * <dt>SERVICE_ROLE</dt>
      * <dd>
      * <p>
-     * Specifies that AWS CodeBuild uses your build project's service role.
+     * Specifies that CodeBuild uses your build project's service role.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     * using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * </p>
      * 
      * @param imagePullCredentialsTypeOverride
-     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
      *        <dl>
      *        <dt>CODEBUILD</dt>
      *        <dd>
      *        <p>
-     *        Specifies that AWS CodeBuild uses its own credentials. This requires that you modify your ECR repository
-     *        policy to trust AWS CodeBuild's service principal.
+     *        Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository
+     *        policy to trust CodeBuild's service principal.
      *        </p>
      *        </dd>
      *        <dt>SERVICE_ROLE</dt>
      *        <dd>
      *        <p>
-     *        Specifies that AWS CodeBuild uses your build project's service role.
+     *        Specifies that CodeBuild uses your build project's service role.
      *        </p>
      *        </dd>
      *        </dl>
      *        <p>
      *        When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials.
-     *        When using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
+     *        When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImagePullCredentialsType
      */

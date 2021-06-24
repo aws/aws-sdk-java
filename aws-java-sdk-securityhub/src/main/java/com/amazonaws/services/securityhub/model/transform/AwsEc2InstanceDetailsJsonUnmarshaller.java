@@ -88,6 +88,13 @@ public class AwsEc2InstanceDetailsJsonUnmarshaller implements Unmarshaller<AwsEc
                     context.nextToken();
                     awsEc2InstanceDetails.setLaunchedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NetworkInterfaces", targetDepth)) {
+                    context.nextToken();
+                    awsEc2InstanceDetails.setNetworkInterfaces(new ListUnmarshaller<AwsEc2InstanceNetworkInterfacesDetails>(
+                            AwsEc2InstanceNetworkInterfacesDetailsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

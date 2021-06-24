@@ -59,6 +59,12 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     private AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
     /**
      * <p>
+     * The lifecycle configuration for objects in the S3 bucket.
+     * </p>
+     */
+    private AwsS3BucketBucketLifecycleConfigurationDetails bucketLifecycleConfiguration;
+    /**
+     * <p>
      * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
      * </p>
      */
@@ -253,6 +259,46 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The lifecycle configuration for objects in the S3 bucket.
+     * </p>
+     * 
+     * @param bucketLifecycleConfiguration
+     *        The lifecycle configuration for objects in the S3 bucket.
+     */
+
+    public void setBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails bucketLifecycleConfiguration) {
+        this.bucketLifecycleConfiguration = bucketLifecycleConfiguration;
+    }
+
+    /**
+     * <p>
+     * The lifecycle configuration for objects in the S3 bucket.
+     * </p>
+     * 
+     * @return The lifecycle configuration for objects in the S3 bucket.
+     */
+
+    public AwsS3BucketBucketLifecycleConfigurationDetails getBucketLifecycleConfiguration() {
+        return this.bucketLifecycleConfiguration;
+    }
+
+    /**
+     * <p>
+     * The lifecycle configuration for objects in the S3 bucket.
+     * </p>
+     * 
+     * @param bucketLifecycleConfiguration
+     *        The lifecycle configuration for objects in the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails bucketLifecycleConfiguration) {
+        setBucketLifecycleConfiguration(bucketLifecycleConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
      * </p>
      * 
@@ -311,6 +357,8 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
             sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration()).append(",");
+        if (getBucketLifecycleConfiguration() != null)
+            sb.append("BucketLifecycleConfiguration: ").append(getBucketLifecycleConfiguration()).append(",");
         if (getPublicAccessBlockConfiguration() != null)
             sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration());
         sb.append("}");
@@ -344,6 +392,10 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (other.getServerSideEncryptionConfiguration() != null
                 && other.getServerSideEncryptionConfiguration().equals(this.getServerSideEncryptionConfiguration()) == false)
             return false;
+        if (other.getBucketLifecycleConfiguration() == null ^ this.getBucketLifecycleConfiguration() == null)
+            return false;
+        if (other.getBucketLifecycleConfiguration() != null && other.getBucketLifecycleConfiguration().equals(this.getBucketLifecycleConfiguration()) == false)
+            return false;
         if (other.getPublicAccessBlockConfiguration() == null ^ this.getPublicAccessBlockConfiguration() == null)
             return false;
         if (other.getPublicAccessBlockConfiguration() != null
@@ -361,6 +413,7 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getOwnerName() == null) ? 0 : getOwnerName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getBucketLifecycleConfiguration() == null) ? 0 : getBucketLifecycleConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPublicAccessBlockConfiguration() == null) ? 0 : getPublicAccessBlockConfiguration().hashCode());
         return hashCode;
     }

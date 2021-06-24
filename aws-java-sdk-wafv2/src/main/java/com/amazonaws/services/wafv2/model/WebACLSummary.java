@@ -32,29 +32,29 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
@@ -69,11 +69,11 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -82,10 +82,10 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
-     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the web ACL. You cannot change the name of a web ACL after you create it.
      */
 
     public String getName() {
@@ -94,11 +94,11 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the web ACL. You cannot change the name of a web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,12 +109,12 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      */
 
@@ -124,11 +124,11 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
-     * @return The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     * @return The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *         You provide it to operations like update and delete.
      */
 
@@ -138,12 +138,12 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands. You
+     * The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You
      * provide it to operations like update and delete.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the Web ACL. This ID is returned in the responses to create and list commands.
+     *        The unique identifier for the web ACL. This ID is returned in the responses to create and list commands.
      *        You provide it to operations like update and delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -155,11 +155,11 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification.
+     *        A description of the web ACL that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -168,10 +168,10 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      * 
-     * @return A description of the Web ACL that helps with identification.
+     * @return A description of the web ACL that helps with identification.
      */
 
     public String getDescription() {
@@ -180,11 +180,11 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification.
+     * A description of the web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification.
+     *        A description of the web ACL that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,21 +195,21 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      */
 
     public void setLockToken(String lockToken) {
@@ -218,20 +218,20 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
-     * @return A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *         state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *         you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *         changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *         fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *         new token returned by that operation.
+     * @return A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *         of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *         provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *         been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *         <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *         returned by that operation.
      */
 
     public String getLockToken() {
@@ -240,21 +240,21 @@ public class WebACLSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the state of
-     * the entity at the time of the request. To make changes to the entity associated with the token, you provide the
-     * token to operations like update and delete. AWS WAF uses the token to ensure that no changes have been made to
-     * the entity since you last retrieved it. If a change has been made, the update fails with a
+     * A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the
+     * entity at the time of the request. To make changes to the entity associated with the token, you provide the token
+     * to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity
+     * since you last retrieved it. If a change has been made, the update fails with a
      * <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by
      * that operation.
      * </p>
      * 
      * @param lockToken
-     *        A token used for optimistic locking. AWS WAF returns a token to your get and list requests, to mark the
-     *        state of the entity at the time of the request. To make changes to the entity associated with the token,
-     *        you provide the token to operations like update and delete. AWS WAF uses the token to ensure that no
-     *        changes have been made to the entity since you last retrieved it. If a change has been made, the update
-     *        fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the
-     *        new token returned by that operation.
+     *        A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state
+     *        of the entity at the time of the request. To make changes to the entity associated with the token, you
+     *        provide the token to operations like update and delete. WAF uses the token to ensure that no changes have
+     *        been made to the entity since you last retrieved it. If a change has been made, the update fails with a
+     *        <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token
+     *        returned by that operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

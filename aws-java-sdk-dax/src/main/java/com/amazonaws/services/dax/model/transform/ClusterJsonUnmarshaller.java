@@ -122,6 +122,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setSSEDescription(SSEDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ClusterEndpointEncryptionType", targetDepth)) {
+                    context.nextToken();
+                    cluster.setClusterEndpointEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

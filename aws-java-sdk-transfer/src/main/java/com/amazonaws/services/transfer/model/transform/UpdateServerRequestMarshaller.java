@@ -30,6 +30,8 @@ public class UpdateServerRequestMarshaller {
 
     private static final MarshallingInfo<String> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Certificate").build();
+    private static final MarshallingInfo<StructuredPojo> PROTOCOLDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtocolDetails").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointDetails").build();
     private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class UpdateServerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateServerRequest.getCertificate(), CERTIFICATE_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getProtocolDetails(), PROTOCOLDETAILS_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getHostKey(), HOSTKEY_BINDING);

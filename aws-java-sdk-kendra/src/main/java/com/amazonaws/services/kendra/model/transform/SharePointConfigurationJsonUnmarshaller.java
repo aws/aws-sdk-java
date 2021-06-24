@@ -101,6 +101,10 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                     context.nextToken();
                     sharePointConfiguration.setDisableLocalGroups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SslCertificateS3Path", targetDepth)) {
+                    context.nextToken();
+                    sharePointConfiguration.setSslCertificateS3Path(S3PathJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

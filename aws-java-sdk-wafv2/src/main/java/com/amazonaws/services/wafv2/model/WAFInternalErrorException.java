@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your request is valid, but AWS WAF couldn’t perform the operation because of a system problem. Retry your request.
+ * Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

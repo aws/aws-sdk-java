@@ -40,8 +40,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     private String ruleMetricName;
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -65,16 +65,16 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
-     * WAF sets it to three hours ago.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF
+     * sets it to three hours ago.
      * </p>
      */
     private TimeWindow timeWindow;
     /**
      * <p>
-     * The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource
-     * received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them.
+     * The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web
+     * Services resource received during the time range. If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      * </p>
      */
     private Long maxItems;
@@ -167,8 +167,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -187,9 +187,9 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -214,8 +214,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -233,9 +233,9 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -260,8 +260,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -280,9 +280,9 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -309,8 +309,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -329,9 +329,9 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -361,8 +361,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
-     * WAF sets it to three hours ago.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF
+     * sets it to three hours ago.
      * </p>
      * 
      * @param timeWindow
@@ -370,7 +370,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated
      *        Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
      *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you
-     *        specify a start time that's earlier than three hours ago, AWS WAF sets it to three hours ago.
+     *        specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.
      */
 
     public void setTimeWindow(TimeWindow timeWindow) {
@@ -382,15 +382,15 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
-     * WAF sets it to three hours ago.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF
+     * sets it to three hours ago.
      * </p>
      * 
      * @return The start date and time and the end date and time of the range for which you want
      *         <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated
      *         Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
      *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you
-     *         specify a start time that's earlier than three hours ago, AWS WAF sets it to three hours ago.
+     *         specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.
      */
 
     public TimeWindow getTimeWindow() {
@@ -402,8 +402,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code>
      * to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format
      * includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
-     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, AWS
-     * WAF sets it to three hours ago.
+     * any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF
+     * sets it to three hours ago.
      * </p>
      * 
      * @param timeWindow
@@ -411,7 +411,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated
      *        Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
      *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you
-     *        specify a start time that's earlier than three hours ago, AWS WAF sets it to three hours ago.
+     *        specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,15 +422,15 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource
-     * received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them.
+     * The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web
+     * Services resource received during the time range. If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      * </p>
      * 
      * @param maxItems
-     *        The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS
-     *        resource received during the time range. If your resource received fewer requests than the value of
-     *        <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
+     *        The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon
+     *        Web Services resource received during the time range. If your resource received fewer requests than the
+     *        value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      */
 
     public void setMaxItems(Long maxItems) {
@@ -439,14 +439,14 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource
-     * received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them.
+     * The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web
+     * Services resource received during the time range. If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      * </p>
      * 
-     * @return The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS
-     *         resource received during the time range. If your resource received fewer requests than the value of
-     *         <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
+     * @return The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon
+     *         Web Services resource received during the time range. If your resource received fewer requests than the
+     *         value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      */
 
     public Long getMaxItems() {
@@ -455,15 +455,15 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource
-     * received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>,
-     * <code>GetSampledRequests</code> returns information about all of them.
+     * The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web
+     * Services resource received during the time range. If your resource received fewer requests than the value of
+     * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      * </p>
      * 
      * @param maxItems
-     *        The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS
-     *        resource received during the time range. If your resource received fewer requests than the value of
-     *        <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
+     *        The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon
+     *        Web Services resource received during the time range. If your resource received fewer requests than the
+     *        value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

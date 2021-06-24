@@ -41,9 +41,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <important>
      * <p>
      * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     * variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface (AWS
+     * CLI). For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
      * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
@@ -56,10 +56,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
-     * learn how to specify a parameter store environment variable, see <a href=
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to
+     * specify a parameter store environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     * >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -69,10 +69,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     * >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -126,9 +126,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <important>
      * <p>
      * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     * variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface (AWS
+     * CLI). For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
      * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
@@ -137,10 +137,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        The value of the environment variable.</p> <important>
      *        <p>
      *        We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     *        especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     *        displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     *        sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
-     *        <code>SECRETS_MANAGER</code>.
+     *        especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     *        variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface
+     *        (AWS CLI). For sensitive values, we recommend you use an environment variable of type
+     *        <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.
      *        </p>
      */
 
@@ -155,9 +155,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <important>
      * <p>
      * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     * variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface (AWS
+     * CLI). For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
      * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
@@ -165,10 +165,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * @return The value of the environment variable.</p> <important>
      *         <p>
      *         We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     *         especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     *         displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     *         sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
-     *         <code>SECRETS_MANAGER</code>.
+     *         especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     *         variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface
+     *         (AWS CLI). For sensitive values, we recommend you use an environment variable of type
+     *         <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.
      *         </p>
      */
 
@@ -183,9 +183,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <important>
      * <p>
      * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     * variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface (AWS
+     * CLI). For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
      * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
@@ -194,10 +194,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        The value of the environment variable.</p> <important>
      *        <p>
      *        We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
-     *        especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
-     *        displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
-     *        sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
-     *        <code>SECRETS_MANAGER</code>.
+     *        especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment
+     *        variables can be displayed in plain text using the CodeBuild console and the AWS Command Line Interface
+     *        (AWS CLI). For sensitive values, we recommend you use an environment variable of type
+     *        <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -214,10 +214,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
-     * learn how to specify a parameter store environment variable, see <a href=
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to
+     * specify a parameter store environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     * >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -227,10 +227,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     * >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -240,10 +240,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *        Store. To learn how to specify a parameter store environment variable, see <a href=
+     *        <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn
+     *        how to specify a parameter store environment variable, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     *        >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -253,10 +253,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
-     *        specify a secrets manager environment variable, see <a href=
+     *        <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
+     *        secrets manager environment variable, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     *        >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        </li>
      * @see EnvironmentVariableType
@@ -273,10 +273,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
-     * learn how to specify a parameter store environment variable, see <a href=
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to
+     * specify a parameter store environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     * >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -286,10 +286,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     * >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -298,10 +298,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *         Store. To learn how to specify a parameter store environment variable, see <a href=
+     *         <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn
+     *         how to specify a parameter store environment variable, see <a href=
      *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     *         >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -311,10 +311,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
-     *         specify a secrets manager environment variable, see <a href=
+     *         <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify
+     *         a secrets manager environment variable, see <a href=
      *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     *         >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      *         </p>
      *         </li>
      * @see EnvironmentVariableType
@@ -331,10 +331,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
-     * learn how to specify a parameter store environment variable, see <a href=
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to
+     * specify a parameter store environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     * >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -344,10 +344,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     * >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -357,10 +357,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *        Store. To learn how to specify a parameter store environment variable, see <a href=
+     *        <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn
+     *        how to specify a parameter store environment variable, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     *        >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -370,10 +370,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
-     *        specify a secrets manager environment variable, see <a href=
+     *        <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
+     *        secrets manager environment variable, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     *        >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -392,10 +392,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
-     * learn how to specify a parameter store environment variable, see <a href=
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to
+     * specify a parameter store environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     * >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -405,10 +405,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
      * secrets manager environment variable, see <a href=
      * "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     * >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     * >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -418,10 +418,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *        Store. To learn how to specify a parameter store environment variable, see <a href=
+     *        <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn
+     *        how to specify a parameter store environment variable, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store"
-     *        >env/parameter-store</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >env/parameter-store</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -431,10 +431,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
-     *        specify a secrets manager environment variable, see <a href=
+     *        <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a
+     *        secrets manager environment variable, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager"
-     *        >env/secrets-manager</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        >env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

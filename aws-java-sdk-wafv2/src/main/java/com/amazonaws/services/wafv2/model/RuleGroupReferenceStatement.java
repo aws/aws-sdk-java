@@ -41,8 +41,8 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
     private String aRN;
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from processing
-     * for this rule statement.
+     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
+     * this rule statement.
      * </p>
      */
     private java.util.List<ExcludedRule> excludedRules;
@@ -89,11 +89,11 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from processing
-     * for this rule statement.
+     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
+     * this rule statement.
      * </p>
      * 
-     * @return The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from
+     * @return The names of rules that are in the referenced rule group, but that you want WAF to exclude from
      *         processing for this rule statement.
      */
 
@@ -103,13 +103,13 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from processing
-     * for this rule statement.
+     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
+     * this rule statement.
      * </p>
      * 
      * @param excludedRules
-     *        The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from
-     *        processing for this rule statement.
+     *        The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing
+     *        for this rule statement.
      */
 
     public void setExcludedRules(java.util.Collection<ExcludedRule> excludedRules) {
@@ -123,8 +123,8 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from processing
-     * for this rule statement.
+     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
+     * this rule statement.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,8 +133,8 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param excludedRules
-     *        The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from
-     *        processing for this rule statement.
+     *        The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing
+     *        for this rule statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,13 +150,13 @@ public class RuleGroupReferenceStatement implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from processing
-     * for this rule statement.
+     * The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing for
+     * this rule statement.
      * </p>
      * 
      * @param excludedRules
-     *        The names of rules that are in the referenced rule group, but that you want AWS WAF to exclude from
-     *        processing for this rule statement.
+     *        The names of rules that are in the referenced rule group, but that you want WAF to exclude from processing
+     *        for this rule statement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,8 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any.
  * </p>
  * <p>
- * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
- * specification.
+ * This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/QueryString" target="_top">AWS API

@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides
  * information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web
- * ACL. Managed rule groups include AWS Managed Rules rule groups, which are free of charge to AWS WAF customers, and
- * AWS Marketplace managed rule groups, which you can subscribe to through AWS Marketplace.
+ * ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF
+ * customers, and Marketplace managed rule groups, which you can subscribe to through Marketplace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupSummary" target="_top">AWS API
@@ -46,8 +46,8 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
     private String name;
     /**
      * <p>
-     * The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller who
-     * manages it.
+     * The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Marketplace
+     * seller who manages it.
      * </p>
      */
     private String description;
@@ -140,13 +140,13 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller who
-     * manages it.
+     * The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Marketplace
+     * seller who manages it.
      * </p>
      * 
      * @param description
-     *        The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller who
-     *        manages it.
+     *        The description of the managed rule group, provided by Amazon Web Services Managed Rules or the
+     *        Marketplace seller who manages it.
      */
 
     public void setDescription(String description) {
@@ -155,12 +155,12 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller who
-     * manages it.
+     * The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Marketplace
+     * seller who manages it.
      * </p>
      * 
-     * @return The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller
-     *         who manages it.
+     * @return The description of the managed rule group, provided by Amazon Web Services Managed Rules or the
+     *         Marketplace seller who manages it.
      */
 
     public String getDescription() {
@@ -169,13 +169,13 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller who
-     * manages it.
+     * The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Marketplace
+     * seller who manages it.
      * </p>
      * 
      * @param description
-     *        The description of the managed rule group, provided by AWS Managed Rules or the AWS Marketplace seller who
-     *        manages it.
+     *        The description of the managed rule group, provided by Amazon Web Services Managed Rules or the
+     *        Marketplace seller who manages it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

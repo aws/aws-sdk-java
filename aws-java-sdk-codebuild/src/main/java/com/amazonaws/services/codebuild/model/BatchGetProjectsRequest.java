@@ -27,20 +27,20 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or ARNs of the build projects. To get information about a project shared with your AWS account, its ARN
-     * must be specified. You cannot specify a shared project using its name.
+     * The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services
+     * account, its ARN must be specified. You cannot specify a shared project using its name.
      * </p>
      */
     private java.util.List<String> names;
 
     /**
      * <p>
-     * The names or ARNs of the build projects. To get information about a project shared with your AWS account, its ARN
-     * must be specified. You cannot specify a shared project using its name.
+     * The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services
+     * account, its ARN must be specified. You cannot specify a shared project using its name.
      * </p>
      * 
-     * @return The names or ARNs of the build projects. To get information about a project shared with your AWS account,
-     *         its ARN must be specified. You cannot specify a shared project using its name.
+     * @return The names or ARNs of the build projects. To get information about a project shared with your Amazon Web
+     *         Services account, its ARN must be specified. You cannot specify a shared project using its name.
      */
 
     public java.util.List<String> getNames() {
@@ -49,13 +49,13 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or ARNs of the build projects. To get information about a project shared with your AWS account, its ARN
-     * must be specified. You cannot specify a shared project using its name.
+     * The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services
+     * account, its ARN must be specified. You cannot specify a shared project using its name.
      * </p>
      * 
      * @param names
-     *        The names or ARNs of the build projects. To get information about a project shared with your AWS account,
-     *        its ARN must be specified. You cannot specify a shared project using its name.
+     *        The names or ARNs of the build projects. To get information about a project shared with your Amazon Web
+     *        Services account, its ARN must be specified. You cannot specify a shared project using its name.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -69,8 +69,8 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or ARNs of the build projects. To get information about a project shared with your AWS account, its ARN
-     * must be specified. You cannot specify a shared project using its name.
+     * The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services
+     * account, its ARN must be specified. You cannot specify a shared project using its name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,8 +79,8 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param names
-     *        The names or ARNs of the build projects. To get information about a project shared with your AWS account,
-     *        its ARN must be specified. You cannot specify a shared project using its name.
+     *        The names or ARNs of the build projects. To get information about a project shared with your Amazon Web
+     *        Services account, its ARN must be specified. You cannot specify a shared project using its name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,13 +96,13 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or ARNs of the build projects. To get information about a project shared with your AWS account, its ARN
-     * must be specified. You cannot specify a shared project using its name.
+     * The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services
+     * account, its ARN must be specified. You cannot specify a shared project using its name.
      * </p>
      * 
      * @param names
-     *        The names or ARNs of the build projects. To get information about a project shared with your AWS account,
-     *        its ARN must be specified. You cannot specify a shared project using its name.
+     *        The names or ARNs of the build projects. To get information about a project shared with your Amazon Web
+     *        Services account, its ARN must be specified. You cannot specify a shared project using its name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

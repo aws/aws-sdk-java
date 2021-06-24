@@ -83,10 +83,20 @@ public class AwsElasticsearchDomainDetailsJsonUnmarshaller implements Unmarshall
                     awsElasticsearchDomainDetails.setEncryptionAtRestOptions(AwsElasticsearchDomainEncryptionAtRestOptionsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    context.nextToken();
+                    awsElasticsearchDomainDetails.setLogPublishingOptions(AwsElasticsearchDomainLogPublishingOptionsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
                     context.nextToken();
                     awsElasticsearchDomainDetails.setNodeToNodeEncryptionOptions(AwsElasticsearchDomainNodeToNodeEncryptionOptionsJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    context.nextToken();
+                    awsElasticsearchDomainDetails.setServiceSoftwareOptions(AwsElasticsearchDomainServiceSoftwareOptionsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("VPCOptions", targetDepth)) {
                     context.nextToken();

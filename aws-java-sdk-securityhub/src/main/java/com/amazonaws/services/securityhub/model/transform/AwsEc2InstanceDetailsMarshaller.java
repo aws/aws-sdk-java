@@ -46,6 +46,8 @@ public class AwsEc2InstanceDetailsMarshaller {
             .marshallLocationName("SubnetId").build();
     private static final MarshallingInfo<String> LAUNCHEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchedAt").build();
+    private static final MarshallingInfo<List> NETWORKINTERFACES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkInterfaces").build();
 
     private static final AwsEc2InstanceDetailsMarshaller instance = new AwsEc2InstanceDetailsMarshaller();
 
@@ -72,6 +74,7 @@ public class AwsEc2InstanceDetailsMarshaller {
             protocolMarshaller.marshall(awsEc2InstanceDetails.getVpcId(), VPCID_BINDING);
             protocolMarshaller.marshall(awsEc2InstanceDetails.getSubnetId(), SUBNETID_BINDING);
             protocolMarshaller.marshall(awsEc2InstanceDetails.getLaunchedAt(), LAUNCHEDAT_BINDING);
+            protocolMarshaller.marshall(awsEc2InstanceDetails.getNetworkInterfaces(), NETWORKINTERFACES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

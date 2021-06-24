@@ -22,10 +22,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains information about an exported environment variable.
  * </p>
  * <p>
- * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from the
+ * Exported environment variables are used in conjunction with CodePipeline to export environment variables from the
  * current build stage to subsequent stages in the pipeline. For more information, see <a
  * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in
- * the <i>AWS CodePipeline User Guide</i>.
+ * the <i>CodePipeline User Guide</i>.
  * </p>
  * <note>
  * <p>

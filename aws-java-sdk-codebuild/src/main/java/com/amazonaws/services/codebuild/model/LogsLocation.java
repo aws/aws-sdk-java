@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about build logs in Amazon CloudWatch Logs.
+ * Information about build logs in CloudWatch Logs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsLocation" target="_top">AWS API
@@ -30,19 +30,19 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the build logs.
+     * The name of the CloudWatch Logs group for the build logs.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the build logs.
+     * The name of the CloudWatch Logs stream for the build logs.
      * </p>
      */
     private String streamName;
     /**
      * <p>
-     * The URL to an individual build log in Amazon CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs.
      * </p>
      */
     private String deepLink;
@@ -54,11 +54,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
     private String s3DeepLink;
     /**
      * <p>
-     * The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     * >Resources Defined by Amazon CloudWatch Logs</a>.
+     * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      */
     private String cloudWatchLogsArn;
@@ -73,7 +73,7 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
     private String s3LogsArn;
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project.
+     * Information about CloudWatch Logs for a build project.
      * </p>
      */
     private CloudWatchLogsConfig cloudWatchLogs;
@@ -86,11 +86,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the build logs.
+     * The name of the CloudWatch Logs group for the build logs.
      * </p>
      * 
      * @param groupName
-     *        The name of the Amazon CloudWatch Logs group for the build logs.
+     *        The name of the CloudWatch Logs group for the build logs.
      */
 
     public void setGroupName(String groupName) {
@@ -99,10 +99,10 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the build logs.
+     * The name of the CloudWatch Logs group for the build logs.
      * </p>
      * 
-     * @return The name of the Amazon CloudWatch Logs group for the build logs.
+     * @return The name of the CloudWatch Logs group for the build logs.
      */
 
     public String getGroupName() {
@@ -111,11 +111,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs group for the build logs.
+     * The name of the CloudWatch Logs group for the build logs.
      * </p>
      * 
      * @param groupName
-     *        The name of the Amazon CloudWatch Logs group for the build logs.
+     *        The name of the CloudWatch Logs group for the build logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the build logs.
+     * The name of the CloudWatch Logs stream for the build logs.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon CloudWatch Logs stream for the build logs.
+     *        The name of the CloudWatch Logs stream for the build logs.
      */
 
     public void setStreamName(String streamName) {
@@ -139,10 +139,10 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the build logs.
+     * The name of the CloudWatch Logs stream for the build logs.
      * </p>
      * 
-     * @return The name of the Amazon CloudWatch Logs stream for the build logs.
+     * @return The name of the CloudWatch Logs stream for the build logs.
      */
 
     public String getStreamName() {
@@ -151,11 +151,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon CloudWatch Logs stream for the build logs.
+     * The name of the CloudWatch Logs stream for the build logs.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon CloudWatch Logs stream for the build logs.
+     *        The name of the CloudWatch Logs stream for the build logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +166,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in Amazon CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs.
      * </p>
      * 
      * @param deepLink
-     *        The URL to an individual build log in Amazon CloudWatch Logs.
+     *        The URL to an individual build log in CloudWatch Logs.
      */
 
     public void setDeepLink(String deepLink) {
@@ -179,10 +179,10 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in Amazon CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs.
      * </p>
      * 
-     * @return The URL to an individual build log in Amazon CloudWatch Logs.
+     * @return The URL to an individual build log in CloudWatch Logs.
      */
 
     public String getDeepLink() {
@@ -191,11 +191,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in Amazon CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs.
      * </p>
      * 
      * @param deepLink
-     *        The URL to an individual build log in Amazon CloudWatch Logs.
+     *        The URL to an individual build log in CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,19 +246,19 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     * >Resources Defined by Amazon CloudWatch Logs</a>.
+     * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLogsArn
-     *        The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     *        The ARN of CloudWatch Logs for a build project. Its format is
      *        <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>
      *        . For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     *        >Resources Defined by Amazon CloudWatch Logs</a>.
+     *        >Resources Defined by CloudWatch Logs</a>.
      */
 
     public void setCloudWatchLogsArn(String cloudWatchLogsArn) {
@@ -267,18 +267,18 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     * >Resources Defined by Amazon CloudWatch Logs</a>.
+     * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      * 
-     * @return The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * @return The ARN of CloudWatch Logs for a build project. Its format is
      *         <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>
      *         . For more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     *         >Resources Defined by Amazon CloudWatch Logs</a>.
+     *         >Resources Defined by CloudWatch Logs</a>.
      */
 
     public String getCloudWatchLogsArn() {
@@ -287,19 +287,19 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * The ARN of CloudWatch Logs for a build project. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     * >Resources Defined by Amazon CloudWatch Logs</a>.
+     * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLogsArn
-     *        The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     *        The ARN of CloudWatch Logs for a build project. Its format is
      *        <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>
      *        . For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
-     *        >Resources Defined by Amazon CloudWatch Logs</a>.
+     *        >Resources Defined by CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +368,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project.
+     * Information about CloudWatch Logs for a build project.
      * </p>
      * 
      * @param cloudWatchLogs
-     *        Information about Amazon CloudWatch Logs for a build project.
+     *        Information about CloudWatch Logs for a build project.
      */
 
     public void setCloudWatchLogs(CloudWatchLogsConfig cloudWatchLogs) {
@@ -381,10 +381,10 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project.
+     * Information about CloudWatch Logs for a build project.
      * </p>
      * 
-     * @return Information about Amazon CloudWatch Logs for a build project.
+     * @return Information about CloudWatch Logs for a build project.
      */
 
     public CloudWatchLogsConfig getCloudWatchLogs() {
@@ -393,11 +393,11 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about Amazon CloudWatch Logs for a build project.
+     * Information about CloudWatch Logs for a build project.
      * </p>
      * 
      * @param cloudWatchLogs
-     *        Information about Amazon CloudWatch Logs for a build project.
+     *        Information about CloudWatch Logs for a build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

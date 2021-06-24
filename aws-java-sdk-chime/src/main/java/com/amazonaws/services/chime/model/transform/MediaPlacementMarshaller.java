@@ -41,6 +41,8 @@ public class MediaPlacementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SignalingUrl").build();
     private static final MarshallingInfo<String> TURNCONTROLURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TurnControlUrl").build();
+    private static final MarshallingInfo<String> EVENTINGESTIONURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventIngestionUrl").build();
 
     private static final MediaPlacementMarshaller instance = new MediaPlacementMarshaller();
 
@@ -65,6 +67,7 @@ public class MediaPlacementMarshaller {
             protocolMarshaller.marshall(mediaPlacement.getScreenViewingUrl(), SCREENVIEWINGURL_BINDING);
             protocolMarshaller.marshall(mediaPlacement.getSignalingUrl(), SIGNALINGURL_BINDING);
             protocolMarshaller.marshall(mediaPlacement.getTurnControlUrl(), TURNCONTROLURL_BINDING);
+            protocolMarshaller.marshall(mediaPlacement.getEventIngestionUrl(), EVENTINGESTIONURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

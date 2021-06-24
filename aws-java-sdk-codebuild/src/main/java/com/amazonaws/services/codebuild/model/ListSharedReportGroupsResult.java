@@ -35,7 +35,7 @@ public class ListSharedReportGroupsResult extends com.amazonaws.AmazonWebService
     private String nextToken;
     /**
      * <p>
-     * The list of ARNs for the report groups shared with the current AWS account or user.
+     * The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * </p>
      */
     private java.util.List<String> reportGroups;
@@ -106,10 +106,10 @@ public class ListSharedReportGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of ARNs for the report groups shared with the current AWS account or user.
+     * The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * </p>
      * 
-     * @return The list of ARNs for the report groups shared with the current AWS account or user.
+     * @return The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      */
 
     public java.util.List<String> getReportGroups() {
@@ -118,11 +118,11 @@ public class ListSharedReportGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of ARNs for the report groups shared with the current AWS account or user.
+     * The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * </p>
      * 
      * @param reportGroups
-     *        The list of ARNs for the report groups shared with the current AWS account or user.
+     *        The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      */
 
     public void setReportGroups(java.util.Collection<String> reportGroups) {
@@ -136,7 +136,7 @@ public class ListSharedReportGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of ARNs for the report groups shared with the current AWS account or user.
+     * The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class ListSharedReportGroupsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param reportGroups
-     *        The list of ARNs for the report groups shared with the current AWS account or user.
+     *        The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class ListSharedReportGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of ARNs for the report groups shared with the current AWS account or user.
+     * The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * </p>
      * 
      * @param reportGroups
-     *        The list of ARNs for the report groups shared with the current AWS account or user.
+     *        The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,23 +27,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -113,10 +113,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -144,7 +144,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     * Guide</i>.
      * </p>
      */
     private String hostKey;
@@ -160,11 +161,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use
-     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
-     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
-     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
@@ -172,8 +178,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String identityProviderType;
     /**
      * <p>
-     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
-     * purposes.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      */
     private String loggingRole;
@@ -201,8 +208,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager
+     * (ACM) which is used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -234,23 +241,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -290,22 +297,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param certificate
-     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
+     *        when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      *        <p>
      *        To request a new public certificate, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To import an existing certificate into ACM, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
-     *        into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To request a private certificate to use FTPS through private IP addresses, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -350,23 +357,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -405,22 +412,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *         <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
+     *         when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      *         <p>
      *         To request a new public certificate, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     *         certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *         </p>
      *         <p>
      *         To import an existing certificate into ACM, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
-     *         into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *         </p>
      *         <p>
      *         To request a private certificate to use FTPS through private IP addresses, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     *         certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *         </p>
      *         <p>
      *         Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -465,23 +472,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * <p>
      * To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
-     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * To request a private certificate to use FTPS through private IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * <p>
      * Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -521,22 +528,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param certificate
-     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
+     *        when <code>Protocols</code> is set to <code>FTPS</code>.</p>
      *        <p>
      *        To request a new public certificate, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To import an existing certificate into ACM, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
-     *        into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        To request a private certificate to use FTPS through private IP addresses, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
-     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
      *        </p>
      *        <p>
      *        Certificates with the following cryptographic algorithms and key sizes are supported:
@@ -751,10 +758,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -775,9 +782,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
      *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have
+     *        already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on
+     *        or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *        <code>VPC</code>.
      *        </p>
      *        <p>
      *        For more information, see
@@ -805,10 +813,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -828,9 +836,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         facing by attaching Elastic IP addresses directly to it.</p> <note>
      *         <p>
      *         After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *         your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *         servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *         will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *         your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have
+     *         already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account
+     *         on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *         <code>VPC</code>.
      *         </p>
      *         <p>
      *         For more information, see
@@ -858,10 +867,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -882,9 +891,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
      *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have
+     *        already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on
+     *        or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *        <code>VPC</code>.
      *        </p>
      *        <p>
      *        For more information, see
@@ -914,10 +924,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
-     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
-     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May
+     * 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -938,9 +948,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
      *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
-     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have
+     *        already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on
+     *        or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=
+     *        <code>VPC</code>.
      *        </p>
      *        <p>
      *        For more information, see
@@ -974,7 +985,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     * Guide</i>.
      * </p>
      * 
      * @param hostKey
@@ -988,7 +1000,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *        >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     *        >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     *        Guide</i>.
      */
 
     public void setHostKey(String hostKey) {
@@ -1008,7 +1021,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     * Guide</i>.
      * </p>
      * 
      * @return The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>
@@ -1021,7 +1035,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *         >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     *         >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     *         Guide</i>.
      */
 
     public String getHostKey() {
@@ -1041,7 +1056,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     * Guide</i>.
      * </p>
      * 
      * @param hostKey
@@ -1055,7 +1071,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *        >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
+     *        >Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1125,23 +1142,33 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use
-     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
-     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
-     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use
-     *        <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
-     *        Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
-     *        This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
-     *        parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     *        The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
      *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
@@ -1153,23 +1180,33 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use
-     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
-     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
-     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @return Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *         which allows you to store and access user credentials within the AWS Transfer Family service. Use
-     *         <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
-     *         Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
-     *         This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
-     *         parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     *         choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
-     *         call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *         which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *         service.</p>
+     *         <p>
+     *         Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web
+     *         Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in
+     *         Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using
+     *         the <code>IdentityProviderDetails</code> parameter.
+     *         </p>
+     *         <p>
+     *         Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *         <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *         authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -1180,23 +1217,33 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use
-     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
-     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
-     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use
-     *        <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
-     *        Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
-     *        This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
-     *        parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     *        The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
      *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
@@ -1210,23 +1257,33 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use
-     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
-     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
-     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use
-     *        <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
-     *        Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
-     *        This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
-     *        parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
-     *        The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
      *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
@@ -1239,13 +1296,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
-     * purposes.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and
-     *        auditing purposes.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -1254,12 +1313,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
-     * purposes.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
-     * @return Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and
-     *         auditing purposes.
+     * @return Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *         role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *         set, user activity can be viewed in your CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -1268,13 +1329,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
-     * purposes.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and
-     *        auditing purposes.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1307,8 +1370,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager
+     * (ACM) which is used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1345,8 +1408,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </ul>
      *         <note>
      *         <p>
-     *         If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *         which will be used to identify your server when clients connect to it over FTPS.
+     *         If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+     *         Manager (ACM) which is used to identify your server when clients connect to it over FTPS.
      *         </p>
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1392,8 +1455,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager
+     * (ACM) which is used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1431,8 +1494,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+     *        Manager (ACM) which is used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1483,8 +1546,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager
+     * (ACM) which is used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1527,8 +1590,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+     *        Manager (ACM) which is used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1581,8 +1644,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager
+     * (ACM) which is used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1620,8 +1683,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+     *        Manager (ACM) which is used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1669,8 +1732,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <note>
      * <p>
-     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager
+     * (ACM) which is used to identify your server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1708,8 +1771,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </ul>
      *        <note>
      *        <p>
-     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+     *        Manager (ACM) which is used to identify your server when clients connect to it over FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the

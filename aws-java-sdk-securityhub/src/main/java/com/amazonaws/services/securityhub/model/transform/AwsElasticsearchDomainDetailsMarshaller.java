@@ -45,8 +45,12 @@ public class AwsElasticsearchDomainDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchVersion").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATRESTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRestOptions").build();
+    private static final MarshallingInfo<StructuredPojo> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
     private static final MarshallingInfo<StructuredPojo> NODETONODEENCRYPTIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeToNodeEncryptionOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICESOFTWAREOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceSoftwareOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCOptions").build();
 
@@ -74,7 +78,9 @@ public class AwsElasticsearchDomainDetailsMarshaller {
             protocolMarshaller.marshall(awsElasticsearchDomainDetails.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(awsElasticsearchDomainDetails.getElasticsearchVersion(), ELASTICSEARCHVERSION_BINDING);
             protocolMarshaller.marshall(awsElasticsearchDomainDetails.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
+            protocolMarshaller.marshall(awsElasticsearchDomainDetails.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
             protocolMarshaller.marshall(awsElasticsearchDomainDetails.getNodeToNodeEncryptionOptions(), NODETONODEENCRYPTIONOPTIONS_BINDING);
+            protocolMarshaller.marshall(awsElasticsearchDomainDetails.getServiceSoftwareOptions(), SERVICESOFTWAREOPTIONS_BINDING);
             protocolMarshaller.marshall(awsElasticsearchDomainDetails.getVPCOptions(), VPCOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

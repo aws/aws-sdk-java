@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an Amazon EC2 instance.
+ * The details of an EC2 instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails" target="_top">AWS
@@ -87,6 +87,13 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
      * </p>
      */
     private String launchedAt;
+    /**
+     * <p>
+     * The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a
+     * corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * </p>
+     */
+    private java.util.List<AwsEc2InstanceNetworkInterfacesDetails> networkInterfaces;
 
     /**
      * <p>
@@ -536,6 +543,84 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a
+     * corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * </p>
+     * 
+     * @return The identifiers of the network interfaces for the EC2 instance. The details for each network interface
+     *         are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     */
+
+    public java.util.List<AwsEc2InstanceNetworkInterfacesDetails> getNetworkInterfaces() {
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a
+     * corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The identifiers of the network interfaces for the EC2 instance. The details for each network interface are
+     *        in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<AwsEc2InstanceNetworkInterfacesDetails> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new java.util.ArrayList<AwsEc2InstanceNetworkInterfacesDetails>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a
+     * corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The identifiers of the network interfaces for the EC2 instance. The details for each network interface are
+     *        in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2InstanceDetails withNetworkInterfaces(AwsEc2InstanceNetworkInterfacesDetails... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new java.util.ArrayList<AwsEc2InstanceNetworkInterfacesDetails>(networkInterfaces.length));
+        }
+        for (AwsEc2InstanceNetworkInterfacesDetails ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a
+     * corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The identifiers of the network interfaces for the EC2 instance. The details for each network interface are
+     *        in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2InstanceDetails withNetworkInterfaces(java.util.Collection<AwsEc2InstanceNetworkInterfacesDetails> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -564,7 +649,9 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getLaunchedAt() != null)
-            sb.append("LaunchedAt: ").append(getLaunchedAt());
+            sb.append("LaunchedAt: ").append(getLaunchedAt()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
         sb.append("}");
         return sb.toString();
     }
@@ -615,6 +702,10 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getLaunchedAt() != null && other.getLaunchedAt().equals(this.getLaunchedAt()) == false)
             return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
         return true;
     }
 
@@ -632,6 +723,7 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getLaunchedAt() == null) ? 0 : getLaunchedAt().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         return hashCode;
     }
 

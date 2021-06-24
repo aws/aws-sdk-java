@@ -27,8 +27,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -50,24 +50,24 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      */
     private String nextMarker;
     /**
      * <p>
-     * The maximum number of objects that you want AWS WAF to return for this request. If more objects are available, in
-     * the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.
+     * The maximum number of objects that you want WAF to return for this request. If more objects are available, in the
+     * response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next
+     * batch of objects.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -86,9 +86,9 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -113,8 +113,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -132,9 +132,9 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * </ul>
      * 
-     * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
-     *         API. </p>
+     * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *         GraphQL API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -159,8 +159,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -179,9 +179,9 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -208,8 +208,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -228,9 +228,9 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @param scope
-     *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
-     *        </p>
+     *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
+     *        GraphQL API. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -258,13 +258,13 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      * 
      * @param nextMarker
      *        When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are
-     *        still available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the
+     *        still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the
      *        response. To retrieve the next batch of objects, provide the marker from the prior call in your next
      *        request.
      */
@@ -276,12 +276,12 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      * 
      * @return When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are
-     *         still available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the
+     *         still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the
      *         response. To retrieve the next batch of objects, provide the marker from the prior call in your next
      *         request.
      */
@@ -293,13 +293,13 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still
-     * available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the response. To
+     * available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in your next request.
      * </p>
      * 
      * @param nextMarker
      *        When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are
-     *        still available for retrieval exceeds the limit, AWS WAF returns a <code>NextMarker</code> value in the
+     *        still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the
      *        response. To retrieve the next batch of objects, provide the marker from the prior call in your next
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -312,15 +312,15 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of objects that you want AWS WAF to return for this request. If more objects are available, in
-     * the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.
+     * The maximum number of objects that you want WAF to return for this request. If more objects are available, in the
+     * response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next
+     * batch of objects.
      * </p>
      * 
      * @param limit
-     *        The maximum number of objects that you want AWS WAF to return for this request. If more objects are
-     *        available, in the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a
-     *        subsequent call to get the next batch of objects.
+     *        The maximum number of objects that you want WAF to return for this request. If more objects are available,
+     *        in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get
+     *        the next batch of objects.
      */
 
     public void setLimit(Integer limit) {
@@ -329,14 +329,14 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of objects that you want AWS WAF to return for this request. If more objects are available, in
-     * the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.
+     * The maximum number of objects that you want WAF to return for this request. If more objects are available, in the
+     * response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next
+     * batch of objects.
      * </p>
      * 
-     * @return The maximum number of objects that you want AWS WAF to return for this request. If more objects are
-     *         available, in the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a
-     *         subsequent call to get the next batch of objects.
+     * @return The maximum number of objects that you want WAF to return for this request. If more objects are
+     *         available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent
+     *         call to get the next batch of objects.
      */
 
     public Integer getLimit() {
@@ -345,15 +345,15 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of objects that you want AWS WAF to return for this request. If more objects are available, in
-     * the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the
-     * next batch of objects.
+     * The maximum number of objects that you want WAF to return for this request. If more objects are available, in the
+     * response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next
+     * batch of objects.
      * </p>
      * 
      * @param limit
-     *        The maximum number of objects that you want AWS WAF to return for this request. If more objects are
-     *        available, in the response, AWS WAF provides a <code>NextMarker</code> value that you can use in a
-     *        subsequent call to get the next batch of objects.
+     *        The maximum number of objects that you want WAF to return for this request. If more objects are available,
+     *        in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get
+     *        the next batch of objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

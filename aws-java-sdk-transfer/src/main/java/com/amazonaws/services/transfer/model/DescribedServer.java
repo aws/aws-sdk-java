@@ -36,11 +36,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
-     * to <code>FTPS</code>.
+     * Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      */
     private String certificate;
+    /**
+     * <p>
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     */
+    private ProtocolDetails protocolDetails;
     /**
      * <p>
      * Specifies the domain of the storage system that is used for file transfers.
@@ -49,7 +59,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private String domain;
     /**
      * <p>
-     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
@@ -77,19 +90,27 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of
-     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
-     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
-     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      */
     private String identityProviderType;
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      */
     private String loggingRole;
@@ -198,13 +219,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
-     * to <code>FTPS</code>.
+     * Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * 
      * @param certificate
-     *        Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code>
-     *        is set to <code>FTPS</code>.
+     *        Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     *        <code>Protocols</code> is set to <code>FTPS</code>.
      */
 
     public void setCertificate(String certificate) {
@@ -213,12 +234,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
-     * to <code>FTPS</code>.
+     * Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * 
-     * @return Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code>
-     *         is set to <code>FTPS</code>.
+     * @return Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     *         <code>Protocols</code> is set to <code>FTPS</code>.
      */
 
     public String getCertificate() {
@@ -227,18 +248,79 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
-     * to <code>FTPS</code>.
+     * Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
      * 
      * @param certificate
-     *        Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code>
-     *        is set to <code>FTPS</code>.
+     *        Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when
+     *        <code>Protocols</code> is set to <code>FTPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribedServer withCertificate(String certificate) {
         setCertificate(certificate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     * 
+     * @param protocolDetails
+     *        The protocol settings that are configured for your server. </p>
+     *        <p>
+     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
+     *        address, such as the external IP address of a firewall, router, or load balancer.
+     */
+
+    public void setProtocolDetails(ProtocolDetails protocolDetails) {
+        this.protocolDetails = protocolDetails;
+    }
+
+    /**
+     * <p>
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     * 
+     * @return The protocol settings that are configured for your server. </p>
+     *         <p>
+     *         Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
+     *         address, such as the external IP address of a firewall, router, or load balancer.
+     */
+
+    public ProtocolDetails getProtocolDetails() {
+        return this.protocolDetails;
+    }
+
+    /**
+     * <p>
+     * The protocol settings that are configured for your server.
+     * </p>
+     * <p>
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer.
+     * </p>
+     * 
+     * @param protocolDetails
+     *        The protocol settings that are configured for your server. </p>
+     *        <p>
+     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
+     *        address, such as the external IP address of a firewall, router, or load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withProtocolDetails(ProtocolDetails protocolDetails) {
+        setProtocolDetails(protocolDetails);
         return this;
     }
 
@@ -303,11 +385,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *        groups are automatically assigned to your endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -316,10 +404,16 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
-     * @return Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *         endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *         Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *         groups are automatically assigned to your endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -328,11 +422,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
+     *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
+     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *        groups are automatically assigned to your endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,21 +608,35 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of
-     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
-     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
-     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication method enabled for this service. A value of
-     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
-     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
-     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
-     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
-     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -532,20 +646,34 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of
-     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
-     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
-     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
-     * @return Specifies the mode of authentication method enabled for this service. A value of
-     *         <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
-     *         Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
-     *         Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
-     *         access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
-     *         integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
+     * @return Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *         which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *         service.</p>
+     *         <p>
+     *         Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web
+     *         Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in
+     *         Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using
+     *         the <code>IdentityProviderDetails</code> parameter.
+     *         </p>
+     *         <p>
+     *         Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *         <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *         authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -555,21 +683,35 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of
-     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
-     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
-     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication method enabled for this service. A value of
-     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
-     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
-     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
-     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
-     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -581,21 +723,35 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of
-     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
-     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
-     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
+     * allows you to store and access user credentials within the Amazon Web Services Transfer Family service.
+     * </p>
+     * <p>
+     * Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     * Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services
+     * using AD Connectors. This option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.
+     * </p>
+     * <p>
+     * Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
+     * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication method enabled for this service. A value of
-     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
-     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
-     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
-     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
-     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
+     *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+     *        which allows you to store and access user credentials within the Amazon Web Services Transfer Family
+     *        service.</p>
+     *        <p>
+     *        Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web
+     *        Services using AD Connectors. This option also requires you to provide a Directory ID using the
+     *        <code>IdentityProviderDetails</code> parameter.
+     *        </p>
+     *        <p>
+     *        Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -607,14 +763,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *        CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
-     *        CloudWatch logs.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -623,13 +780,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
-     * @return Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *         CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
-     *         CloudWatch logs.
+     * @return Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *         role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *         set, user activity can be viewed in your CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -638,14 +796,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role
+     * that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user
+     * activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *        CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
-     *        CloudWatch logs.
+     *        Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM)
+     *        role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When
+     *        set, user activity can be viewed in your CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1252,6 +1411,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getProtocolDetails() != null)
+            sb.append("ProtocolDetails: ").append(getProtocolDetails()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getEndpointDetails() != null)
@@ -1299,6 +1460,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         if (other.getCertificate() == null ^ this.getCertificate() == null)
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
+        if (other.getProtocolDetails() == null ^ this.getProtocolDetails() == null)
+            return false;
+        if (other.getProtocolDetails() != null && other.getProtocolDetails().equals(this.getProtocolDetails()) == false)
             return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
@@ -1362,6 +1527,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getProtocolDetails() == null) ? 0 : getProtocolDetails().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());

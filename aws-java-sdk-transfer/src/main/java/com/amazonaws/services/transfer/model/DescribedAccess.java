@@ -39,12 +39,12 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     private String homeDirectory;
     /**
      * <p>
-     * Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be
-     * visible to the associated access and how you want to make them visible. You must specify the "<code>Entry</code>
-     * " and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     * <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
-     * is. You also must ensure that your AWS Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the scope-down policy to lock down the associated access to the
@@ -86,9 +86,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -161,12 +161,12 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be
-     * visible to the associated access and how you want to make them visible. You must specify the "<code>Entry</code>
-     * " and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     * <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
-     * is. You also must ensure that your AWS Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the scope-down policy to lock down the associated access to the
@@ -174,12 +174,13 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * <code>Target</code> to the <code>HomeDirectory</code> parameter value.
      * </p>
      * 
-     * @return Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-     *         be visible to the associated access and how you want to make them visible. You must specify the "
-     *         <code>Entry</code>" and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     *         visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it
-     *         will be displayed as is. You also must ensure that your AWS Identity and Access Management (IAM) role
-     *         provides access to paths in <code>Target</code>.</p>
+     * @return Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *         your user and how you want to make them visible. You must specify the <code>Entry</code> and
+     *         <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
+     *         <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *         displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *         role provides access to paths in <code>Target</code>. This value can only be set when
+     *         <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *         <p>
      *         In most cases, you can use this value instead of the scope-down policy to lock down the associated access
      *         to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
@@ -192,12 +193,12 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be
-     * visible to the associated access and how you want to make them visible. You must specify the "<code>Entry</code>
-     * " and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     * <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
-     * is. You also must ensure that your AWS Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the scope-down policy to lock down the associated access to the
@@ -206,12 +207,13 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-     *        be visible to the associated access and how you want to make them visible. You must specify the "
-     *        <code>Entry</code>" and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     *        visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will
-     *        be displayed as is. You also must ensure that your AWS Identity and Access Management (IAM) role provides
-     *        access to paths in <code>Target</code>.</p>
+     *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
+     *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
+     *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *        role provides access to paths in <code>Target</code>. This value can only be set when
+     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *        <p>
      *        In most cases, you can use this value instead of the scope-down policy to lock down the associated access
      *        to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
@@ -229,12 +231,12 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be
-     * visible to the associated access and how you want to make them visible. You must specify the "<code>Entry</code>
-     * " and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     * <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
-     * is. You also must ensure that your AWS Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the scope-down policy to lock down the associated access to the
@@ -248,12 +250,13 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-     *        be visible to the associated access and how you want to make them visible. You must specify the "
-     *        <code>Entry</code>" and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     *        visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will
-     *        be displayed as is. You also must ensure that your AWS Identity and Access Management (IAM) role provides
-     *        access to paths in <code>Target</code>.</p>
+     *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
+     *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
+     *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *        role provides access to paths in <code>Target</code>. This value can only be set when
+     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *        <p>
      *        In most cases, you can use this value instead of the scope-down policy to lock down the associated access
      *        to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
@@ -273,12 +276,12 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be
-     * visible to the associated access and how you want to make them visible. You must specify the "<code>Entry</code>
-     * " and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     * <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be displayed as
-     * is. You also must ensure that your AWS Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * In most cases, you can use this value instead of the scope-down policy to lock down the associated access to the
@@ -287,12 +290,13 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Specifies the logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-     *        be visible to the associated access and how you want to make them visible. You must specify the "
-     *        <code>Entry</code>" and "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     *        visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will
-     *        be displayed as is. You also must ensure that your AWS Identity and Access Management (IAM) role provides
-     *        access to paths in <code>Target</code>.</p>
+     *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
+     *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
+     *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *        role provides access to paths in <code>Target</code>. This value can only be set when
+     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *        <p>
      *        In most cases, you can use this value instead of the scope-down policy to lock down the associated access
      *        to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
@@ -543,9 +547,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -562,8 +566,8 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * @param externalId
      *        A unique identifier that is required to identify specific groups within your directory. The users of the
      *        group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
-     *        following command using Windows PowerShell.</p>
+     *        using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
+     *        running the following command using Windows PowerShell.</p>
      *        <p>
      *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
@@ -583,9 +587,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -601,8 +605,8 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * 
      * @return A unique identifier that is required to identify specific groups within your directory. The users of the
      *         group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *         using AWS Transfer Family. If you know the group name, you can view the SID values by running the
-     *         following command using Windows PowerShell.</p>
+     *         using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
+     *         running the following command using Windows PowerShell.</p>
      *         <p>
      *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *         </p>
@@ -622,9 +626,9 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A unique identifier that is required to identify specific groups within your directory. The users of the group
-     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using AWS
-     * Transfer Family. If you know the group name, you can view the SID values by running the following command using
-     * Windows PowerShell.
+     * that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon
+     * Web Services Transfer Family. If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.
      * </p>
      * <p>
      * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
@@ -641,8 +645,8 @@ public class DescribedAccess implements Serializable, Cloneable, StructuredPojo 
      * @param externalId
      *        A unique identifier that is required to identify specific groups within your directory. The users of the
      *        group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols
-     *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
-     *        following command using Windows PowerShell.</p>
+     *        using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by
+     *        running the following command using Windows PowerShell.</p>
      *        <p>
      *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>

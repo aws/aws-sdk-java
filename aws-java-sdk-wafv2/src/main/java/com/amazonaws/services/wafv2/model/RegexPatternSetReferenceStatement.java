@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of
- * your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF
+ * your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF
  * automatically updates all rules that reference it.
  * </p>
  * 
@@ -44,14 +44,14 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
     private String aRN;
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      */
     private FieldToMatch fieldToMatch;
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
@@ -100,11 +100,11 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      */
 
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
@@ -113,11 +113,10 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
-     * @return The part of a web request that you want AWS WAF to inspect. For more information, see
-     *         <a>FieldToMatch</a>.
+     * @return The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      */
 
     public FieldToMatch getFieldToMatch() {
@@ -126,11 +125,11 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     * The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * </p>
      * 
      * @param fieldToMatch
-     *        The part of a web request that you want AWS WAF to inspect. For more information, see <a>FieldToMatch</a>.
+     *        The part of a web request that you want WAF to inspect. For more information, see <a>FieldToMatch</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,16 +141,15 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *         effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *         performs all transformations on the content of the request component identified by
-     *         <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *         match.
+     *         effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *         all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *         starting from the lowest priority setting, before inspecting the content for a match.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -161,17 +159,16 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -186,7 +183,7 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
@@ -198,10 +195,9 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,17 +214,16 @@ public class RegexPatternSetReferenceStatement implements Serializable, Cloneabl
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
+     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
      * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
      * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content of the request component identified by
-     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
-     *        match.
+     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
+     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
+     *        starting from the lowest priority setting, before inspecting the content for a match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

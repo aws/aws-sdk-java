@@ -1,3 +1,40 @@
+# __1.12.12__ __2021-06-24__
+## __AWS Cloud9__
+  - ### Features
+    - Minor update to AWS Cloud9 documentation to allow correct parsing of outputted text
+
+## __AWS CodeBuild__
+  - ### Features
+    - BucketOwnerAccess is currently not supported
+
+## __AWS SecurityHub__
+  - ### Features
+    - Added new resource details for ECS clusters and ECS task definitions. Added additional information for S3 buckets, Elasticsearch domains, and API Gateway V2 stages.
+
+## __AWS Transfer Family__
+  - ### Features
+    - Customers can successfully use legacy clients with Transfer Family endpoints enabled for FTPS and FTP behind routers, firewalls, and load balancers by providing a Custom IP address used for data channel communication.
+
+## __AWS WAFV2__
+  - ### Features
+    - Added support for 15 new text transformation.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now supports SharePoint 2013 and SharePoint 2016 when using a SharePoint data source.
+
+## __Amazon Chime__
+  - ### Features
+    - Adds EventIngestionUrl field to MediaPlacement
+
+## __Amazon Connect Service__
+  - ### Features
+    - Released Amazon Connect quick connects management API for general availability (GA). For more information, see https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html
+
+## __Amazon DynamoDB Accelerator (DAX)__
+  - ### Features
+    - Add support for encryption in transit to DAX clusters.
+
 # __1.12.11__ __2021-06-23__
 ## __AWS Cloud9__
   - ### Features

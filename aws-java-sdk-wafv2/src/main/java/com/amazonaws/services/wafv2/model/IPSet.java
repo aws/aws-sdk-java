@@ -20,13 +20,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
- * notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the
+ * notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the
  * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
  * Routing</a>.
  * </p>
  * <p>
- * AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to
- * the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
+ * WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the
+ * <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSet" target="_top">AWS API Documentation</a>
@@ -68,7 +68,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -76,25 +76,25 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -335,7 +335,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -343,25 +343,25 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -373,33 +373,33 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *         Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *         <p>
      *         Examples:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *         To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *         specify <code>192.0.2.44/32</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *         to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *         To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *         192.0.2.255, specify <code>192.0.2.0/24</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *         To configure WAF to allow, block, or count requests that originated from the IP address
      *         1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>
      *         .
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *         To configure WAF to allow, block, or count requests that originated from IP addresses
      *         1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *         <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *         </p>
@@ -417,7 +417,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -425,25 +425,25 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -456,32 +456,32 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *        Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *        specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *        to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        To configure WAF to allow, block, or count requests that originated from the IP address
      *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses
      *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
@@ -504,7 +504,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -512,25 +512,25 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -548,32 +548,32 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *        Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *        specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *        to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        To configure WAF to allow, block, or count requests that originated from the IP address
      *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses
      *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
@@ -598,7 +598,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -606,25 +606,25 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
+     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
      * <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
      * 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     * To configure WAF to allow, block, or count requests that originated from the IP address
      * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     * To configure WAF to allow, block, or count requests that originated from IP addresses
      * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
@@ -637,32 +637,32 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+     *        Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
+     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
      *        specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0
-     *        to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
+     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from the IP address
+     *        To configure WAF to allow, block, or count requests that originated from the IP address
      *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+     *        To configure WAF to allow, block, or count requests that originated from IP addresses
      *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>

@@ -45,12 +45,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String homeDirectoryType;
     /**
      * <p>
-     * Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your user and
-     * how you want to make them visible. You will need to specify the <code>Entry</code> and <code>Target</code> pair,
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * EFS path. If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM
-     * role provides access to paths in <code>Target</code>. This value can only be set when
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example.
@@ -67,11 +67,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      * </p>
      * <p>
-     * <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored. As a
+     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
      * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
      * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
      * <code>efs</code> so you can use the put-object operation. For example, you use the following:
@@ -93,8 +93,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      * </p>
      * <p>
-     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the
+     * Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     * <code>Policy</code> argument.
      * </p>
      * <p>
      * For an example of a scope-down policy, see <a
@@ -103,8 +104,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
-     * Security Token Service API Reference</i>.
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon
+     * Web Services Security Token Service API Reference</i>.
      * </p>
      * </note>
      */
@@ -302,12 +303,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your user and
-     * how you want to make them visible. You will need to specify the <code>Entry</code> and <code>Target</code> pair,
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * EFS path. If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM
-     * role provides access to paths in <code>Target</code>. This value can only be set when
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example.
@@ -324,11 +325,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      * </p>
      * <p>
-     * <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored. As a
+     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
      * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
      * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
      * <code>efs</code> so you can use the put-object operation. For example, you use the following:
@@ -337,13 +338,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your
-     *         user and how you want to make them visible. You will need to specify the <code>Entry</code> and
+     * @return Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *         your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *         <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
-     *         <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be
-     *         displayed as is. You will need to also make sure that your IAM role provides access to paths in
-     *         <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to
-     *         <code>LOGICAL</code>.</p>
+     *         <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *         displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *         role provides access to paths in <code>Target</code>. This value can only be set when
+     *         <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *         <p>
      *         The following is an <code>Entry</code> and <code>Target</code> pair example.
      *         </p>
@@ -359,13 +360,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      *         </p>
      *         <p>
-     *         <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     *         <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      *         </p>
      *         <note>
      *         <p>
-     *         If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored.
-     *         As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for
-     *         your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+     *         If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
+     *         workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
+     *         directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
      *         <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
      *         following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
      *         the end of the key name ends in a <code>/</code> for it to be considered a folder.
@@ -378,12 +379,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your user and
-     * how you want to make them visible. You will need to specify the <code>Entry</code> and <code>Target</code> pair,
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * EFS path. If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM
-     * role provides access to paths in <code>Target</code>. This value can only be set when
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example.
@@ -400,11 +401,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      * </p>
      * <p>
-     * <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored. As a
+     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
      * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
      * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
      * <code>efs</code> so you can use the put-object operation. For example, you use the following:
@@ -414,13 +415,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your
-     *        user and how you want to make them visible. You will need to specify the <code>Entry</code> and
+     *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
-     *        <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be
-     *        displayed as is. You will need to also make sure that your IAM role provides access to paths in
-     *        <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to
-     *        <code>LOGICAL</code>.</p>
+     *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *        role provides access to paths in <code>Target</code>. This value can only be set when
+     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *        <p>
      *        The following is an <code>Entry</code> and <code>Target</code> pair example.
      *        </p>
@@ -436,13 +437,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      *        </p>
      *        <p>
-     *        <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     *        <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      *        </p>
      *        <note>
      *        <p>
-     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored.
-     *        As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for
-     *        your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
+     *        workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
+     *        directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
      *        <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
      *        following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the
      *        end of the key name ends in a <code>/</code> for it to be considered a folder.
@@ -460,12 +461,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your user and
-     * how you want to make them visible. You will need to specify the <code>Entry</code> and <code>Target</code> pair,
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * EFS path. If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM
-     * role provides access to paths in <code>Target</code>. This value can only be set when
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example.
@@ -482,11 +483,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      * </p>
      * <p>
-     * <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored. As a
+     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
      * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
      * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
      * <code>efs</code> so you can use the put-object operation. For example, you use the following:
@@ -501,13 +502,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your
-     *        user and how you want to make them visible. You will need to specify the <code>Entry</code> and
+     *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
-     *        <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be
-     *        displayed as is. You will need to also make sure that your IAM role provides access to paths in
-     *        <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to
-     *        <code>LOGICAL</code>.</p>
+     *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *        role provides access to paths in <code>Target</code>. This value can only be set when
+     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *        <p>
      *        The following is an <code>Entry</code> and <code>Target</code> pair example.
      *        </p>
@@ -523,13 +524,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      *        </p>
      *        <p>
-     *        <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     *        <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      *        </p>
      *        <note>
      *        <p>
-     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored.
-     *        As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for
-     *        your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
+     *        workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
+     *        directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
      *        <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
      *        following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the
      *        end of the key name ends in a <code>/</code> for it to be considered a folder.
@@ -549,12 +550,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your user and
-     * how you want to make them visible. You will need to specify the <code>Entry</code> and <code>Target</code> pair,
+     * Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your
+     * user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair,
      * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or
-     * EFS path. If you only specify a target, it will be displayed as is. You will need to also make sure that your IAM
-     * role provides access to paths in <code>Target</code>. This value can only be set when
-     * <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.
+     * Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web
+     * Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+     * can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example.
@@ -571,11 +572,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      * </p>
      * <p>
-     * <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     * <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored. As a
+     * If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
      * workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
      * directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or
      * <code>efs</code> so you can use the put-object operation. For example, you use the following:
@@ -585,13 +586,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that specify what Amazon S3 or EFS paths and keys should be visible to your
-     *        user and how you want to make them visible. You will need to specify the <code>Entry</code> and
+     *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
+     *        your user and how you want to make them visible. You must specify the <code>Entry</code> and
      *        <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and
-     *        <code>Target</code> is the actual Amazon S3 or EFS path. If you only specify a target, it will be
-     *        displayed as is. You will need to also make sure that your IAM role provides access to paths in
-     *        <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to
-     *        <code>LOGICAL</code>.</p>
+     *        <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     *        displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM)
+     *        role provides access to paths in <code>Target</code>. This value can only be set when
+     *        <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
      *        <p>
      *        The following is an <code>Entry</code> and <code>Target</code> pair example.
      *        </p>
@@ -607,13 +608,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
      *        </p>
      *        <p>
-     *        <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+     *        <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
      *        </p>
      *        <note>
      *        <p>
-     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry will be ignored.
-     *        As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for
-     *        your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+     *        If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a
+     *        workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your
+     *        directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
      *        <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
      *        following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the
      *        end of the key name ends in a <code>/</code> for it to be considered a folder.
@@ -638,8 +639,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      * </p>
      * <p>
-     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the
+     * Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     * <code>Policy</code> argument.
      * </p>
      * <p>
      * For an example of a scope-down policy, see <a
@@ -648,8 +650,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
-     * Security Token Service API Reference</i>.
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon
+     * Web Services Security Token Service API Reference</i>.
      * </p>
      * </note>
      * 
@@ -662,8 +664,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      *        </p>
      *        <p>
-     *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
-     *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     *        For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of
+     *        the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      *        <code>Policy</code> argument.
      *        </p>
      *        <p>
@@ -674,7 +676,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the
-     *        <i>AWS Security Token Service API Reference</i>.
+     *        <i>Amazon Web Services Security Token Service API Reference</i>.
      *        </p>
      */
 
@@ -694,8 +696,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      * </p>
      * <p>
-     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the
+     * Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     * <code>Policy</code> argument.
      * </p>
      * <p>
      * For an example of a scope-down policy, see <a
@@ -704,8 +707,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
-     * Security Token Service API Reference</i>.
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon
+     * Web Services Security Token Service API Reference</i>.
      * </p>
      * </note>
      * 
@@ -717,8 +720,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      *         </p>
      *         <p>
-     *         For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
-     *         Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     *         For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of
+     *         the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      *         <code>Policy</code> argument.
      *         </p>
      *         <p>
@@ -729,7 +732,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the
-     *         <i>AWS Security Token Service API Reference</i>.
+     *         <i>Amazon Web Services Security Token Service API Reference</i>.
      *         </p>
      */
 
@@ -749,8 +752,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      * </p>
      * <p>
-     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the
+     * Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     * <code>Policy</code> argument.
      * </p>
      * <p>
      * For an example of a scope-down policy, see <a
@@ -759,8 +763,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
-     * Security Token Service API Reference</i>.
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon
+     * Web Services Security Token Service API Reference</i>.
      * </p>
      * </note>
      * 
@@ -773,8 +777,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This only applies when domain of ServerId is S3. EFS does not use scope down policy.
      *        </p>
      *        <p>
-     *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
-     *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     *        For scope-down policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of
+     *        the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      *        <code>Policy</code> argument.
      *        </p>
      *        <p>
@@ -785,7 +789,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the
-     *        <i>AWS Security Token Service API Reference</i>.
+     *        <i>Amazon Web Services Security Token Service API Reference</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

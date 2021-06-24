@@ -25,8 +25,8 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
+     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
      * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
      * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
      * ACLs is 1,500.
@@ -50,7 +50,7 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -63,8 +63,8 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
     private String labelNamespace;
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      */
     private java.util.List<LabelSummary> availableLabels;
@@ -78,19 +78,19 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
+     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
      * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
      * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
      * ACLs is 1,500.
      * </p>
      * 
      * @param capacity
-     *        The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU)
-     *        to calculate and control the operating resources that are used to run your rules, rule groups, and web
-     *        ACLs. AWS WAF calculates capacity differently for each rule type, to reflect each rule's relative cost.
-     *        Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule
-     *        group. The WCU limit for web ACLs is 1,500.
+     *        The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     *        calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
+     *        WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
+     *        capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
+     *        WCU limit for web ACLs is 1,500.
      */
 
     public void setCapacity(Long capacity) {
@@ -99,18 +99,18 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
+     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
      * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
      * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
      * ACLs is 1,500.
      * </p>
      * 
-     * @return The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU)
-     *         to calculate and control the operating resources that are used to run your rules, rule groups, and web
-     *         ACLs. AWS WAF calculates capacity differently for each rule type, to reflect each rule's relative cost.
-     *         Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule
-     *         group. The WCU limit for web ACLs is 1,500.
+     * @return The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     *         calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
+     *         WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
+     *         capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
+     *         WCU limit for web ACLs is 1,500.
      */
 
     public Long getCapacity() {
@@ -119,19 +119,19 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. AWS WAF
+     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
      * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
      * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
      * ACLs is 1,500.
      * </p>
      * 
      * @param capacity
-     *        The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses web ACL capacity units (WCU)
-     *        to calculate and control the operating resources that are used to run your rules, rule groups, and web
-     *        ACLs. AWS WAF calculates capacity differently for each rule type, to reflect each rule's relative cost.
-     *        Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule
-     *        group. The WCU limit for web ACLs is 1,500.
+     *        The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
+     *        calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
+     *        WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
+     *        capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
+     *        WCU limit for web ACLs is 1,500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,7 +214,7 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -238,9 +238,9 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
-     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
-     *        defined and the label from the rule, separated by a colon:
+     *        When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
+     *        qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined
+     *        and the label from the rule, separated by a colon:
      *        </p>
      *        <p>
      *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
@@ -267,7 +267,7 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -290,7 +290,7 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *         When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A
      *         fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
      *         defined and the label from the rule, separated by a colon:
      *         </p>
@@ -319,7 +319,7 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
      * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
      * the label from the rule, separated by a colon:
      * </p>
@@ -343,9 +343,9 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
-     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
-     *        defined and the label from the rule, separated by a colon:
+     *        When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully
+     *        qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined
+     *        and the label from the rule, separated by a colon:
      *        </p>
      *        <p>
      *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
@@ -361,12 +361,12 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * 
-     * @return The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined
-     *         in the <code>RuleLabels</code> for a <a>Rule</a>.
+     * @return The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *         defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      */
 
     public java.util.List<LabelSummary> getAvailableLabels() {
@@ -375,13 +375,13 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * 
      * @param availableLabels
-     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
-     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     *        The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *        defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      */
 
     public void setAvailableLabels(java.util.Collection<LabelSummary> availableLabels) {
@@ -395,8 +395,8 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -405,8 +405,8 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param availableLabels
-     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
-     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     *        The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *        defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,13 +422,13 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
-     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * The labels that one or more rules in this rule group add to matching web requests. These labels are defined in
+     * the <code>RuleLabels</code> for a <a>Rule</a>.
      * </p>
      * 
      * @param availableLabels
-     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
-     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     *        The labels that one or more rules in this rule group add to matching web requests. These labels are
+     *        defined in the <code>RuleLabels</code> for a <a>Rule</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

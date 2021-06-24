@@ -42,7 +42,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -69,7 +69,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      */
     private String sourceVersion;
@@ -127,7 +127,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -154,7 +154,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param sourceVersion
@@ -162,7 +162,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     *        For CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -189,7 +189,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -203,7 +203,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -230,14 +230,14 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @return The source version for the corresponding source identifier. If specified, must be one of:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     *         For CodeCommit: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -264,7 +264,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *         Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      */
 
     public String getSourceVersion() {
@@ -278,7 +278,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     * For CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -305,7 +305,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * </p>
      * 
      * @param sourceVersion
@@ -313,7 +313,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
+     *        For CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -340,7 +340,7 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
-     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

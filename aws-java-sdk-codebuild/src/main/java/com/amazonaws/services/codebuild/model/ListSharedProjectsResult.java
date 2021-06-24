@@ -35,7 +35,7 @@ public class ListSharedProjectsResult extends com.amazonaws.AmazonWebServiceResu
     private String nextToken;
     /**
      * <p>
-     * The list of ARNs for the build projects shared with the current AWS account or user.
+     * The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * </p>
      */
     private java.util.List<String> projects;
@@ -106,10 +106,10 @@ public class ListSharedProjectsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of ARNs for the build projects shared with the current AWS account or user.
+     * The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * </p>
      * 
-     * @return The list of ARNs for the build projects shared with the current AWS account or user.
+     * @return The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      */
 
     public java.util.List<String> getProjects() {
@@ -118,11 +118,11 @@ public class ListSharedProjectsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of ARNs for the build projects shared with the current AWS account or user.
+     * The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * </p>
      * 
      * @param projects
-     *        The list of ARNs for the build projects shared with the current AWS account or user.
+     *        The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      */
 
     public void setProjects(java.util.Collection<String> projects) {
@@ -136,7 +136,7 @@ public class ListSharedProjectsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of ARNs for the build projects shared with the current AWS account or user.
+     * The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class ListSharedProjectsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param projects
-     *        The list of ARNs for the build projects shared with the current AWS account or user.
+     *        The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class ListSharedProjectsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of ARNs for the build projects shared with the current AWS account or user.
+     * The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * </p>
      * 
      * @param projects
-     *        The list of ARNs for the build projects shared with the current AWS account or user.
+     *        The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

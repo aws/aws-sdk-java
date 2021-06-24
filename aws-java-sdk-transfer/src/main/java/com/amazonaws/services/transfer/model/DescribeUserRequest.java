@@ -34,7 +34,7 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the
-     * AWS Transfer Family service and perform file transfer tasks.
+     * Amazon Web Services Transfer Family service and perform file transfer tasks.
      * </p>
      */
     private String userName;
@@ -82,12 +82,12 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the
-     * AWS Transfer Family service and perform file transfer tasks.
+     * Amazon Web Services Transfer Family service and perform file transfer tasks.
      * </p>
      * 
      * @param userName
      *        The name of the user assigned to one or more servers. User names are part of the sign-in credentials to
-     *        use the AWS Transfer Family service and perform file transfer tasks.
+     *        use the Amazon Web Services Transfer Family service and perform file transfer tasks.
      */
 
     public void setUserName(String userName) {
@@ -97,11 +97,11 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the
-     * AWS Transfer Family service and perform file transfer tasks.
+     * Amazon Web Services Transfer Family service and perform file transfer tasks.
      * </p>
      * 
      * @return The name of the user assigned to one or more servers. User names are part of the sign-in credentials to
-     *         use the AWS Transfer Family service and perform file transfer tasks.
+     *         use the Amazon Web Services Transfer Family service and perform file transfer tasks.
      */
 
     public String getUserName() {
@@ -111,12 +111,12 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the
-     * AWS Transfer Family service and perform file transfer tasks.
+     * Amazon Web Services Transfer Family service and perform file transfer tasks.
      * </p>
      * 
      * @param userName
      *        The name of the user assigned to one or more servers. User names are part of the sign-in credentials to
-     *        use the AWS Transfer Family service and perform file transfer tasks.
+     *        use the Amazon Web Services Transfer Family service and perform file transfer tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

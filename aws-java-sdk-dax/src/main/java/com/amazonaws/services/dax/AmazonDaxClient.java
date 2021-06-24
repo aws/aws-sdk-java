@@ -119,6 +119,9 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientClusterCapacityFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.dax.model.transform.InsufficientClusterCapacityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagNotFoundFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.dax.model.transform.TagNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -241,6 +244,10 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
+     * @throws ServiceQuotaExceededException
+     *         You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a
+     *         30 day period. Contact AWS customer support to discuss options for continuing to create encrypted
+     *         clusters.
      * @sample AmazonDax.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster" target="_top">AWS API
      *      Documentation</a>

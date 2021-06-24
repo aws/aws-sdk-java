@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings.
+ * The VPC security groups and subnets that are attached to a Lambda function.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionVpcConfig"
