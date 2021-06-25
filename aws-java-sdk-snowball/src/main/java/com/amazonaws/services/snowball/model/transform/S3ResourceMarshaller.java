@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.snowball.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class S3ResourceMarshaller {
             .marshallLocationName("BucketArn").build();
     private static final MarshallingInfo<StructuredPojo> KEYRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyRange").build();
+    private static final MarshallingInfo<List> TARGETONDEVICESERVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetOnDeviceServices").build();
 
     private static final S3ResourceMarshaller instance = new S3ResourceMarshaller();
 
@@ -50,6 +53,7 @@ public class S3ResourceMarshaller {
         try {
             protocolMarshaller.marshall(s3Resource.getBucketArn(), BUCKETARN_BINDING);
             protocolMarshaller.marshall(s3Resource.getKeyRange(), KEYRANGE_BINDING);
+            protocolMarshaller.marshall(s3Resource.getTargetOnDeviceServices(), TARGETONDEVICESERVICES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

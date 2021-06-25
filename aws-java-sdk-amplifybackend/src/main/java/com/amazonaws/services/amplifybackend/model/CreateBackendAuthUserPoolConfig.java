@@ -37,7 +37,7 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
     private CreateBackendAuthForgotPasswordConfig forgotPassword;
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      */
@@ -57,13 +57,13 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
     private CreateBackendAuthPasswordPolicyConfig passwordPolicy;
     /**
      * <p>
-     * The required attributes to sign up new users in the Amazon Cognito user pool.
+     * The required attributes to sign up new users in the user pool.
      * </p>
      */
     private java.util.List<String> requiredSignUpAttributes;
     /**
      * <p>
-     * Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool that's
+     * Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool,
      * configured as a part of your Amplify project.
      * </p>
      */
@@ -123,13 +123,13 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param mfa
-     *        Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
+     *        configured as a part of your Amplify project.
      */
 
     public void setMfa(CreateBackendAuthMFAConfig mfa) {
@@ -138,12 +138,12 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      * 
-     * @return Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool
-     *         that's configured as a part of your Amplify project.
+     * @return Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user
+     *         pool configured as a part of your Amplify project.
      */
 
     public CreateBackendAuthMFAConfig getMfa() {
@@ -152,13 +152,13 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param mfa
-     *        Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
+     *        configured as a part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,10 +258,10 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The required attributes to sign up new users in the Amazon Cognito user pool.
+     * The required attributes to sign up new users in the user pool.
      * </p>
      * 
-     * @return The required attributes to sign up new users in the Amazon Cognito user pool.
+     * @return The required attributes to sign up new users in the user pool.
      * @see RequiredSignUpAttributesElement
      */
 
@@ -271,11 +271,11 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The required attributes to sign up new users in the Amazon Cognito user pool.
+     * The required attributes to sign up new users in the user pool.
      * </p>
      * 
      * @param requiredSignUpAttributes
-     *        The required attributes to sign up new users in the Amazon Cognito user pool.
+     *        The required attributes to sign up new users in the user pool.
      * @see RequiredSignUpAttributesElement
      */
 
@@ -290,7 +290,7 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The required attributes to sign up new users in the Amazon Cognito user pool.
+     * The required attributes to sign up new users in the user pool.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -299,7 +299,7 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
      * </p>
      * 
      * @param requiredSignUpAttributes
-     *        The required attributes to sign up new users in the Amazon Cognito user pool.
+     *        The required attributes to sign up new users in the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredSignUpAttributesElement
      */
@@ -316,11 +316,11 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The required attributes to sign up new users in the Amazon Cognito user pool.
+     * The required attributes to sign up new users in the user pool.
      * </p>
      * 
      * @param requiredSignUpAttributes
-     *        The required attributes to sign up new users in the Amazon Cognito user pool.
+     *        The required attributes to sign up new users in the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredSignUpAttributesElement
      */
@@ -332,11 +332,11 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The required attributes to sign up new users in the Amazon Cognito user pool.
+     * The required attributes to sign up new users in the user pool.
      * </p>
      * 
      * @param requiredSignUpAttributes
-     *        The required attributes to sign up new users in the Amazon Cognito user pool.
+     *        The required attributes to sign up new users in the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredSignUpAttributesElement
      */
@@ -356,13 +356,13 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool that's
+     * Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool,
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param signInMethod
-     *        Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user
+     *        pool, configured as a part of your Amplify project.
      * @see SignInMethod
      */
 
@@ -372,12 +372,12 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool that's
+     * Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool,
      * configured as a part of your Amplify project.
      * </p>
      * 
-     * @return Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool
-     *         that's configured as a part of your Amplify project.
+     * @return Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user
+     *         pool, configured as a part of your Amplify project.
      * @see SignInMethod
      */
 
@@ -387,13 +387,13 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool that's
+     * Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool,
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param signInMethod
-     *        Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user
+     *        pool, configured as a part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SignInMethod
      */
@@ -405,13 +405,13 @@ public class CreateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool that's
+     * Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool,
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param signInMethod
-     *        Describes the sign-in methods that your Amplify app users to log in using the Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user
+     *        pool, configured as a part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SignInMethod
      */

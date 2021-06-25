@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.proton.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.proton.waiters.AWSProtonWaiters;
 
 /**
  * Abstract implementation of {@code AWSProton}. Convenient method forms pass through to the corresponding overload that
@@ -279,6 +280,11 @@ public class AbstractAWSProton implements AWSProton {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSProtonWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

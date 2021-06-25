@@ -1,3 +1,16 @@
+# __1.12.13__ __2021-06-25__
+## __AWS Proton__
+  - ### Features
+    - Added waiters for template registration, service operations, and environment deployments.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices. AWS Snowball Edge Storage Optimized customers can now import and export their data using NFS.
+
+## __AmplifyBackend__
+  - ### Features
+    - Imports an existing backend authentication resource.
+
 # __1.12.12__ __2021-06-24__
 ## __AWS Cloud9__
   - ### Features

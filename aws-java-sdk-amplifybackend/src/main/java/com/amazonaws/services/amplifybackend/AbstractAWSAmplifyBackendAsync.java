@@ -249,6 +249,19 @@ public class AbstractAWSAmplifyBackendAsync extends AbstractAWSAmplifyBackend im
     }
 
     @Override
+    public java.util.concurrent.Future<ImportBackendAuthResult> importBackendAuthAsync(ImportBackendAuthRequest request) {
+
+        return importBackendAuthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportBackendAuthResult> importBackendAuthAsync(ImportBackendAuthRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportBackendAuthRequest, ImportBackendAuthResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBackendJobsResult> listBackendJobsAsync(ListBackendJobsRequest request) {
 
         return listBackendJobsAsync(request, null);

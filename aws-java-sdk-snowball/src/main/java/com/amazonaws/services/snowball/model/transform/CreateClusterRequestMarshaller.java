@@ -31,6 +31,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocationName("JobType").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Resources").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEVICESERVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDeviceServiceConfiguration").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> ADDRESSID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardingAddressId").build();
     private static final MarshallingInfo<StructuredPojo> TAXDOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaxDocuments").build();
+    private static final MarshallingInfo<String> REMOTEMANAGEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteManagement").build();
 
     private static final CreateClusterRequestMarshaller instance = new CreateClusterRequestMarshaller();
 
@@ -68,6 +72,7 @@ public class CreateClusterRequestMarshaller {
         try {
             protocolMarshaller.marshall(createClusterRequest.getJobType(), JOBTYPE_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getResources(), RESOURCES_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getOnDeviceServiceConfiguration(), ONDEVICESERVICECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getAddressId(), ADDRESSID_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getKmsKeyARN(), KMSKEYARN_BINDING);
@@ -77,6 +82,7 @@ public class CreateClusterRequestMarshaller {
             protocolMarshaller.marshall(createClusterRequest.getNotification(), NOTIFICATION_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getForwardingAddressId(), FORWARDINGADDRESSID_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getTaxDocuments(), TAXDOCUMENTS_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getRemoteManagement(), REMOTEMANAGEMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

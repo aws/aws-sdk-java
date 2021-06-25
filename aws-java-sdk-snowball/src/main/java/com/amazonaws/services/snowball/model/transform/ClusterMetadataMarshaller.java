@@ -55,6 +55,8 @@ public class ClusterMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardingAddressId").build();
     private static final MarshallingInfo<StructuredPojo> TAXDOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaxDocuments").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEVICESERVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDeviceServiceConfiguration").build();
 
     private static final ClusterMetadataMarshaller instance = new ClusterMetadataMarshaller();
 
@@ -86,6 +88,7 @@ public class ClusterMetadataMarshaller {
             protocolMarshaller.marshall(clusterMetadata.getNotification(), NOTIFICATION_BINDING);
             protocolMarshaller.marshall(clusterMetadata.getForwardingAddressId(), FORWARDINGADDRESSID_BINDING);
             protocolMarshaller.marshall(clusterMetadata.getTaxDocuments(), TAXDOCUMENTS_BINDING);
+            protocolMarshaller.marshall(clusterMetadata.getOnDeviceServiceConfiguration(), ONDEVICESERVICECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

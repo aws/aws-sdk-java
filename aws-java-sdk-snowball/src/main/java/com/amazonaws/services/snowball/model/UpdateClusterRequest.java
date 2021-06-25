@@ -55,6 +55,13 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private JobResource resources;
     /**
      * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     */
+    private OnDeviceServiceConfiguration onDeviceServiceConfiguration;
+    /**
+     * <p>
      * The ID of the updated <a>Address</a> object.
      * </p>
      */
@@ -262,6 +269,52 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public UpdateClusterRequest withResources(JobResource resources) {
         setResources(resources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public void setOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        this.onDeviceServiceConfiguration = onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @return Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *         from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public OnDeviceServiceConfiguration getOnDeviceServiceConfiguration() {
+        return this.onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClusterRequest withOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        setOnDeviceServiceConfiguration(onDeviceServiceConfiguration);
         return this;
     }
 
@@ -478,6 +531,8 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Description: ").append(getDescription()).append(",");
         if (getResources() != null)
             sb.append("Resources: ").append(getResources()).append(",");
+        if (getOnDeviceServiceConfiguration() != null)
+            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration()).append(",");
         if (getAddressId() != null)
             sb.append("AddressId: ").append(getAddressId()).append(",");
         if (getShippingOption() != null)
@@ -516,6 +571,10 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
             return false;
+        if (other.getOnDeviceServiceConfiguration() == null ^ this.getOnDeviceServiceConfiguration() == null)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() != null && other.getOnDeviceServiceConfiguration().equals(this.getOnDeviceServiceConfiguration()) == false)
+            return false;
         if (other.getAddressId() == null ^ this.getAddressId() == null)
             return false;
         if (other.getAddressId() != null && other.getAddressId().equals(this.getAddressId()) == false)
@@ -544,6 +603,7 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
+        hashCode = prime * hashCode + ((getOnDeviceServiceConfiguration() == null) ? 0 : getOnDeviceServiceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAddressId() == null) ? 0 : getAddressId().hashCode());
         hashCode = prime * hashCode + ((getShippingOption() == null) ? 0 : getShippingOption().hashCode());
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());

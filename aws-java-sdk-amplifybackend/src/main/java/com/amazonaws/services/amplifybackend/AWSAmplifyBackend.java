@@ -349,7 +349,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Gets backend auth details.
+     * Gets a backend auth details.
      * </p>
      * 
      * @param getBackendAuthRequest
@@ -413,6 +413,28 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
+     * Imports an existing backend authentication resource.
+     * </p>
+     * 
+     * @param importBackendAuthRequest
+     *        The request body for ImportBackendAuth.
+     * @return Result of the ImportBackendAuth operation returned by the service.
+     * @throws NotFoundException
+     *         404 response
+     * @throws GatewayTimeoutException
+     *         504 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @throws BadRequestException
+     *         400 response
+     * @sample AWSAmplifyBackend.ImportBackendAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ImportBackendAuthResult importBackendAuth(ImportBackendAuthRequest importBackendAuthRequest);
+
+    /**
+     * <p>
      * Lists the jobs for the backend of an Amplify app.
      * </p>
      * 
@@ -457,7 +479,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Removes the AWS resources that are required to access the Amplify Admin UI.
+     * Removes the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param removeBackendConfigRequest
@@ -522,7 +544,7 @@ public interface AWSAmplifyBackend {
 
     /**
      * <p>
-     * Updates the AWS resources that are required to access the Amplify Admin UI.
+     * Updates the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param updateBackendConfigRequest

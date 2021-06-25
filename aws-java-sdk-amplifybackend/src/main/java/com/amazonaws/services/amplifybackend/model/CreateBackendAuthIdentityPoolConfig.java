@@ -30,7 +30,7 @@ public class CreateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * Name of the identity pool used for authorization.
+     * Name of the Amazon Cognito identity pool used for authorization.
      * </p>
      */
     private String identityPoolName;
@@ -43,11 +43,11 @@ public class CreateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * Name of the identity pool used for authorization.
+     * Name of the Amazon Cognito identity pool used for authorization.
      * </p>
      * 
      * @param identityPoolName
-     *        Name of the identity pool used for authorization.
+     *        Name of the Amazon Cognito identity pool used for authorization.
      */
 
     public void setIdentityPoolName(String identityPoolName) {
@@ -56,10 +56,10 @@ public class CreateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * Name of the identity pool used for authorization.
+     * Name of the Amazon Cognito identity pool used for authorization.
      * </p>
      * 
-     * @return Name of the identity pool used for authorization.
+     * @return Name of the Amazon Cognito identity pool used for authorization.
      */
 
     public String getIdentityPoolName() {
@@ -68,11 +68,11 @@ public class CreateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * Name of the identity pool used for authorization.
+     * Name of the Amazon Cognito identity pool used for authorization.
      * </p>
      * 
      * @param identityPoolName
-     *        Name of the identity pool used for authorization.
+     *        Name of the Amazon Cognito identity pool used for authorization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

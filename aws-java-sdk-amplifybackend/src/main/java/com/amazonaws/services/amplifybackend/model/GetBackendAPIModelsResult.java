@@ -25,7 +25,7 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Stringified JSON of the DataStore model.
+     * Stringified JSON of the datastore model.
      * </p>
      */
     private String models;
@@ -38,11 +38,11 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Stringified JSON of the DataStore model.
+     * Stringified JSON of the datastore model.
      * </p>
      * 
      * @param models
-     *        Stringified JSON of the DataStore model.
+     *        Stringified JSON of the datastore model.
      */
 
     public void setModels(String models) {
@@ -51,10 +51,10 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Stringified JSON of the DataStore model.
+     * Stringified JSON of the datastore model.
      * </p>
      * 
-     * @return Stringified JSON of the DataStore model.
+     * @return Stringified JSON of the datastore model.
      */
 
     public String getModels() {
@@ -63,11 +63,11 @@ public class GetBackendAPIModelsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Stringified JSON of the DataStore model.
+     * Stringified JSON of the datastore model.
      * </p>
      * 
      * @param models
-     *        Stringified JSON of the DataStore model.
+     *        Stringified JSON of the datastore model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

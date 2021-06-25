@@ -46,6 +46,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private JobResource resources;
     /**
      * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     */
+    private OnDeviceServiceConfiguration onDeviceServiceConfiguration;
+    /**
+     * <p>
      * An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.
      * </p>
      */
@@ -112,7 +119,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -137,7 +144,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -166,6 +173,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private TaxDocuments taxDocuments;
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     * network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     * device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     */
+    private String remoteManagement;
 
     /**
      * <p>
@@ -348,6 +363,52 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateClusterRequest withResources(JobResource resources) {
         setResources(resources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public void setOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        this.onDeviceServiceConfiguration = onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @return Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *         from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public OnDeviceServiceConfiguration getOnDeviceServiceConfiguration() {
+        return this.onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        setOnDeviceServiceConfiguration(onDeviceServiceConfiguration);
         return this;
     }
 
@@ -744,7 +805,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -769,7 +830,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -799,7 +860,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -824,7 +885,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -861,7 +922,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -886,7 +947,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -915,7 +976,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snow device are delivered in one to seven days.
+     *         In India, Snow devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -940,7 +1001,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snow device are delivered in one to seven days.
+     *         In India, Snow devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -977,7 +1038,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1002,7 +1063,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1032,7 +1093,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1057,7 +1118,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1096,7 +1157,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1121,7 +1182,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1151,7 +1212,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1176,7 +1237,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1213,7 +1274,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1238,7 +1299,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -1268,7 +1329,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1293,7 +1354,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1431,6 +1492,104 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     * network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     * device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     *        network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
+     *        when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *        device.
+     * @see RemoteManagement
+     */
+
+    public void setRemoteManagement(String remoteManagement) {
+        this.remoteManagement = remoteManagement;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     * network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     * device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @return Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your
+     *         internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     *         available when the device arrives at your location. Otherwise, you need to use the Snowball Client to
+     *         manage the device.
+     * @see RemoteManagement
+     */
+
+    public String getRemoteManagement() {
+        return this.remoteManagement;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     * network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     * device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     *        network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
+     *        when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *        device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RemoteManagement
+     */
+
+    public CreateClusterRequest withRemoteManagement(String remoteManagement) {
+        setRemoteManagement(remoteManagement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     * network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     * device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     *        network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
+     *        when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *        device.
+     * @see RemoteManagement
+     */
+
+    public void setRemoteManagement(RemoteManagement remoteManagement) {
+        withRemoteManagement(remoteManagement);
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     * network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     * device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal
+     *        network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
+     *        when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *        device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RemoteManagement
+     */
+
+    public CreateClusterRequest withRemoteManagement(RemoteManagement remoteManagement) {
+        this.remoteManagement = remoteManagement.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1446,6 +1605,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("JobType: ").append(getJobType()).append(",");
         if (getResources() != null)
             sb.append("Resources: ").append(getResources()).append(",");
+        if (getOnDeviceServiceConfiguration() != null)
+            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getAddressId() != null)
@@ -1463,7 +1624,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getForwardingAddressId() != null)
             sb.append("ForwardingAddressId: ").append(getForwardingAddressId()).append(",");
         if (getTaxDocuments() != null)
-            sb.append("TaxDocuments: ").append(getTaxDocuments());
+            sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
+        if (getRemoteManagement() != null)
+            sb.append("RemoteManagement: ").append(getRemoteManagement());
         sb.append("}");
         return sb.toString();
     }
@@ -1485,6 +1648,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() == null ^ this.getOnDeviceServiceConfiguration() == null)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() != null && other.getOnDeviceServiceConfiguration().equals(this.getOnDeviceServiceConfiguration()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -1522,6 +1689,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTaxDocuments() != null && other.getTaxDocuments().equals(this.getTaxDocuments()) == false)
             return false;
+        if (other.getRemoteManagement() == null ^ this.getRemoteManagement() == null)
+            return false;
+        if (other.getRemoteManagement() != null && other.getRemoteManagement().equals(this.getRemoteManagement()) == false)
+            return false;
         return true;
     }
 
@@ -1532,6 +1703,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
+        hashCode = prime * hashCode + ((getOnDeviceServiceConfiguration() == null) ? 0 : getOnDeviceServiceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAddressId() == null) ? 0 : getAddressId().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyARN() == null) ? 0 : getKmsKeyARN().hashCode());
@@ -1541,6 +1713,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
+        hashCode = prime * hashCode + ((getRemoteManagement() == null) ? 0 : getRemoteManagement().hashCode());
         return hashCode;
     }
 

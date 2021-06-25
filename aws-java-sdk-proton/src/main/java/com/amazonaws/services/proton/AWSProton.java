@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.proton.model.*;
+import com.amazonaws.services.proton.waiters.AWSProtonWaiters;
 
 /**
  * Interface for accessing AWS Proton.
@@ -1735,5 +1736,7 @@ public interface AWSProton {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSProtonWaiters waiters();
 
 }

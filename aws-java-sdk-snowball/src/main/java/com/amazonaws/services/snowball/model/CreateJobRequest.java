@@ -49,6 +49,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private JobResource resources;
     /**
      * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     */
+    private OnDeviceServiceConfiguration onDeviceServiceConfiguration;
+    /**
+     * <p>
      * Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.
      * </p>
      */
@@ -162,7 +169,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String snowballType;
     /**
      * <p>
-     * The forwarding address ID for a job. This field is not supported in most regions.
+     * The forwarding address ID for a job. This field is not supported in most Regions.
      * </p>
      */
     private String forwardingAddressId;
@@ -186,7 +193,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private DeviceConfiguration deviceConfiguration;
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     */
+    private String remoteManagement;
+    /**
+     * <p>
+     * The ID of the long-term pricing type for the device.
      * </p>
      */
     private String longTermPricingId;
@@ -358,6 +373,52 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public CreateJobRequest withResources(JobResource resources) {
         setResources(resources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public void setOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        this.onDeviceServiceConfiguration = onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @return Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *         from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public OnDeviceServiceConfiguration getOnDeviceServiceConfiguration() {
+        return this.onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        setOnDeviceServiceConfiguration(onDeviceServiceConfiguration);
         return this;
     }
 
@@ -1386,11 +1447,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The forwarding address ID for a job. This field is not supported in most regions.
+     * The forwarding address ID for a job. This field is not supported in most Regions.
      * </p>
      * 
      * @param forwardingAddressId
-     *        The forwarding address ID for a job. This field is not supported in most regions.
+     *        The forwarding address ID for a job. This field is not supported in most Regions.
      */
 
     public void setForwardingAddressId(String forwardingAddressId) {
@@ -1399,10 +1460,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The forwarding address ID for a job. This field is not supported in most regions.
+     * The forwarding address ID for a job. This field is not supported in most Regions.
      * </p>
      * 
-     * @return The forwarding address ID for a job. This field is not supported in most regions.
+     * @return The forwarding address ID for a job. This field is not supported in most Regions.
      */
 
     public String getForwardingAddressId() {
@@ -1411,11 +1472,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The forwarding address ID for a job. This field is not supported in most regions.
+     * The forwarding address ID for a job. This field is not supported in most Regions.
      * </p>
      * 
      * @param forwardingAddressId
-     *        The forwarding address ID for a job. This field is not supported in most regions.
+     *        The forwarding address ID for a job. This field is not supported in most Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1542,11 +1603,105 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @see RemoteManagement
+     */
+
+    public void setRemoteManagement(String remoteManagement) {
+        this.remoteManagement = remoteManagement;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @return Allows you to securely operate and manage Snowcone devices remotely from outside of your internal
+     *         network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
+     *         when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *         device.
+     * @see RemoteManagement
+     */
+
+    public String getRemoteManagement() {
+        return this.remoteManagement;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RemoteManagement
+     */
+
+    public CreateJobRequest withRemoteManagement(String remoteManagement) {
+        setRemoteManagement(remoteManagement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @see RemoteManagement
+     */
+
+    public void setRemoteManagement(RemoteManagement remoteManagement) {
+        withRemoteManagement(remoteManagement);
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RemoteManagement
+     */
+
+    public CreateJobRequest withRemoteManagement(RemoteManagement remoteManagement) {
+        this.remoteManagement = remoteManagement.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      */
 
     public void setLongTermPricingId(String longTermPricingId) {
@@ -1555,10 +1710,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
-     * @return The ID of the long term pricing type for the device.
+     * @return The ID of the long-term pricing type for the device.
      */
 
     public String getLongTermPricingId() {
@@ -1567,11 +1722,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1596,6 +1751,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("JobType: ").append(getJobType()).append(",");
         if (getResources() != null)
             sb.append("Resources: ").append(getResources()).append(",");
+        if (getOnDeviceServiceConfiguration() != null)
+            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getAddressId() != null)
@@ -1620,6 +1777,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
         if (getDeviceConfiguration() != null)
             sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getRemoteManagement() != null)
+            sb.append("RemoteManagement: ").append(getRemoteManagement()).append(",");
         if (getLongTermPricingId() != null)
             sb.append("LongTermPricingId: ").append(getLongTermPricingId());
         sb.append("}");
@@ -1643,6 +1802,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() == null ^ this.getOnDeviceServiceConfiguration() == null)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() != null && other.getOnDeviceServiceConfiguration().equals(this.getOnDeviceServiceConfiguration()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -1692,6 +1855,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
             return false;
+        if (other.getRemoteManagement() == null ^ this.getRemoteManagement() == null)
+            return false;
+        if (other.getRemoteManagement() != null && other.getRemoteManagement().equals(this.getRemoteManagement()) == false)
+            return false;
         if (other.getLongTermPricingId() == null ^ this.getLongTermPricingId() == null)
             return false;
         if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
@@ -1706,6 +1873,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
+        hashCode = prime * hashCode + ((getOnDeviceServiceConfiguration() == null) ? 0 : getOnDeviceServiceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAddressId() == null) ? 0 : getAddressId().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyARN() == null) ? 0 : getKmsKeyARN().hashCode());
@@ -1718,6 +1886,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRemoteManagement() == null) ? 0 : getRemoteManagement().hashCode());
         hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
         return hashCode;
     }

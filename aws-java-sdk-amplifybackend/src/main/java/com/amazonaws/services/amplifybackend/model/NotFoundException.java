@@ -25,7 +25,7 @@ public class NotFoundException extends com.amazonaws.services.amplifybackend.mod
 
     /**
      * <p>
-     * The type of resource that wasn't found.
+     * The type of resource that is not found.
      * </p>
      */
     private String resourceType;
@@ -42,11 +42,11 @@ public class NotFoundException extends com.amazonaws.services.amplifybackend.mod
 
     /**
      * <p>
-     * The type of resource that wasn't found.
+     * The type of resource that is not found.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource that wasn't found.
+     *        The type of resource that is not found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
@@ -56,10 +56,10 @@ public class NotFoundException extends com.amazonaws.services.amplifybackend.mod
 
     /**
      * <p>
-     * The type of resource that wasn't found.
+     * The type of resource that is not found.
      * </p>
      * 
-     * @return The type of resource that wasn't found.
+     * @return The type of resource that is not found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
@@ -69,11 +69,11 @@ public class NotFoundException extends com.amazonaws.services.amplifybackend.mod
 
     /**
      * <p>
-     * The type of resource that wasn't found.
+     * The type of resource that is not found.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource that wasn't found.
+     *        The type of resource that is not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

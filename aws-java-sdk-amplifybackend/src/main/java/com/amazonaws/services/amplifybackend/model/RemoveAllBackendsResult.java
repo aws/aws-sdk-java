@@ -31,7 +31,7 @@ public class RemoveAllBackendsResult extends com.amazonaws.AmazonWebServiceResul
     private String appId;
     /**
      * <p>
-     * If the request failed, this is the returned error.
+     * If the request fails, this error is returned.
      * </p>
      */
     private String error;
@@ -96,11 +96,11 @@ public class RemoveAllBackendsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the request failed, this is the returned error.
+     * If the request fails, this error is returned.
      * </p>
      * 
      * @param error
-     *        If the request failed, this is the returned error.
+     *        If the request fails, this error is returned.
      */
 
     public void setError(String error) {
@@ -109,10 +109,10 @@ public class RemoveAllBackendsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the request failed, this is the returned error.
+     * If the request fails, this error is returned.
      * </p>
      * 
-     * @return If the request failed, this is the returned error.
+     * @return If the request fails, this error is returned.
      */
 
     public String getError() {
@@ -121,11 +121,11 @@ public class RemoveAllBackendsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the request failed, this is the returned error.
+     * If the request fails, this error is returned.
      * </p>
      * 
      * @param error
-     *        If the request failed, this is the returned error.
+     *        If the request fails, this error is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,7 +50,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -98,7 +98,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -128,7 +128,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -165,7 +165,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -194,7 +194,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snow device are delivered in one to seven days.
+     *         In India, Snow devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -231,7 +231,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -261,7 +261,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -300,7 +300,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -330,7 +330,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -367,7 +367,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * In India, Snow device are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -397,7 +397,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snow device are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>

@@ -635,6 +635,39 @@ public class AWSAmplifyBackendAsyncClient extends AWSAmplifyBackendClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ImportBackendAuthResult> importBackendAuthAsync(ImportBackendAuthRequest request) {
+
+        return importBackendAuthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportBackendAuthResult> importBackendAuthAsync(final ImportBackendAuthRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportBackendAuthRequest, ImportBackendAuthResult> asyncHandler) {
+        final ImportBackendAuthRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportBackendAuthResult>() {
+            @Override
+            public ImportBackendAuthResult call() throws Exception {
+                ImportBackendAuthResult result = null;
+
+                try {
+                    result = executeImportBackendAuth(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBackendJobsResult> listBackendJobsAsync(ListBackendJobsRequest request) {
 
         return listBackendJobsAsync(request, null);

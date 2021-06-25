@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the password policy for your Amazon Cognito user pool that's configured as a part of your Amplify project.
+ * Describes the password policy for your Amazon Cognito user pool configured as a part of your Amplify project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthPasswordPolicyConfig"
@@ -30,8 +30,8 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes additional constrains on the password requirements to sign in to the auth resource, configured as a
-     * part of your Amplify project.
+     * Describes additional constraints on password requirements to sign in to the auth resource, configured as a part
+     * of your Amplify project.
      * </p>
      */
     private java.util.List<String> additionalConstraints;
@@ -45,12 +45,12 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes additional constrains on the password requirements to sign in to the auth resource, configured as a
-     * part of your Amplify project.
+     * Describes additional constraints on password requirements to sign in to the auth resource, configured as a part
+     * of your Amplify project.
      * </p>
      * 
-     * @return Describes additional constrains on the password requirements to sign in to the auth resource, configured
-     *         as a part of your Amplify project.
+     * @return Describes additional constraints on password requirements to sign in to the auth resource, configured as
+     *         a part of your Amplify project.
      * @see AdditionalConstraintsElement
      */
 
@@ -60,13 +60,13 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes additional constrains on the password requirements to sign in to the auth resource, configured as a
-     * part of your Amplify project.
+     * Describes additional constraints on password requirements to sign in to the auth resource, configured as a part
+     * of your Amplify project.
      * </p>
      * 
      * @param additionalConstraints
-     *        Describes additional constrains on the password requirements to sign in to the auth resource, configured
-     *        as a part of your Amplify project.
+     *        Describes additional constraints on password requirements to sign in to the auth resource, configured as a
+     *        part of your Amplify project.
      * @see AdditionalConstraintsElement
      */
 
@@ -81,8 +81,8 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes additional constrains on the password requirements to sign in to the auth resource, configured as a
-     * part of your Amplify project.
+     * Describes additional constraints on password requirements to sign in to the auth resource, configured as a part
+     * of your Amplify project.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,8 +91,8 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
      * </p>
      * 
      * @param additionalConstraints
-     *        Describes additional constrains on the password requirements to sign in to the auth resource, configured
-     *        as a part of your Amplify project.
+     *        Describes additional constraints on password requirements to sign in to the auth resource, configured as a
+     *        part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalConstraintsElement
      */
@@ -109,13 +109,13 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes additional constrains on the password requirements to sign in to the auth resource, configured as a
-     * part of your Amplify project.
+     * Describes additional constraints on password requirements to sign in to the auth resource, configured as a part
+     * of your Amplify project.
      * </p>
      * 
      * @param additionalConstraints
-     *        Describes additional constrains on the password requirements to sign in to the auth resource, configured
-     *        as a part of your Amplify project.
+     *        Describes additional constraints on password requirements to sign in to the auth resource, configured as a
+     *        part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalConstraintsElement
      */
@@ -127,13 +127,13 @@ public class UpdateBackendAuthPasswordPolicyConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes additional constrains on the password requirements to sign in to the auth resource, configured as a
-     * part of your Amplify project.
+     * Describes additional constraints on password requirements to sign in to the auth resource, configured as a part
+     * of your Amplify project.
      * </p>
      * 
      * @param additionalConstraints
-     *        Describes additional constrains on the password requirements to sign in to the auth resource, configured
-     *        as a part of your Amplify project.
+     *        Describes additional constraints on password requirements to sign in to the auth resource, configured as a
+     *        part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalConstraintsElement
      */

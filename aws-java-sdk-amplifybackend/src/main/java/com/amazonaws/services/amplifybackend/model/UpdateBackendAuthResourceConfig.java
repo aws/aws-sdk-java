@@ -36,8 +36,8 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
     private String authResources;
     /**
      * <p>
-     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your
+     * auth resource in the Amplify project.
      * </p>
      */
     private UpdateBackendAuthIdentityPoolConfig identityPoolConfigs;
@@ -49,8 +49,8 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
     private String service;
     /**
      * <p>
-     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth
+     * resource in the Amplify project.
      * </p>
      */
     private UpdateBackendAuthUserPoolConfig userPoolConfigs;
@@ -116,13 +116,13 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your
+     * auth resource in the Amplify project.
      * </p>
      * 
      * @param identityPoolConfigs
      *        Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of
-     *        the auth resource in your Amplify project.
+     *        your auth resource in the Amplify project.
      */
 
     public void setIdentityPoolConfigs(UpdateBackendAuthIdentityPoolConfig identityPoolConfigs) {
@@ -131,12 +131,12 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your
+     * auth resource in the Amplify project.
      * </p>
      * 
      * @return Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of
-     *         the auth resource in your Amplify project.
+     *         your auth resource in the Amplify project.
      */
 
     public UpdateBackendAuthIdentityPoolConfig getIdentityPoolConfigs() {
@@ -145,13 +145,13 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your
+     * auth resource in the Amplify project.
      * </p>
      * 
      * @param identityPoolConfigs
      *        Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of
-     *        the auth resource in your Amplify project.
+     *        your auth resource in the Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,13 +221,13 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth
+     * resource in the Amplify project.
      * </p>
      * 
      * @param userPoolConfigs
-     *        Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the
-     *        auth resource in your Amplify project.
+     *        Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your
+     *        auth resource in the Amplify project.
      */
 
     public void setUserPoolConfigs(UpdateBackendAuthUserPoolConfig userPoolConfigs) {
@@ -236,12 +236,12 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth
+     * resource in the Amplify project.
      * </p>
      * 
-     * @return Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the
-     *         auth resource in your Amplify project.
+     * @return Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of
+     *         your auth resource in the Amplify project.
      */
 
     public UpdateBackendAuthUserPoolConfig getUserPoolConfigs() {
@@ -250,13 +250,13 @@ public class UpdateBackendAuthResourceConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the auth
-     * resource in your Amplify project.
+     * Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your auth
+     * resource in the Amplify project.
      * </p>
      * 
      * @param userPoolConfigs
-     *        Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of the
-     *        auth resource in your Amplify project.
+     *        Describes the authentication configuration for the Amazon Cognito user pool, provisioned as a part of your
+     *        auth resource in the Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

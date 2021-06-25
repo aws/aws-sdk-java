@@ -48,13 +48,13 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
     private java.util.List<String> oAuthScopes;
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     * Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * </p>
      */
     private java.util.List<String> redirectSignInURIs;
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * </p>
      */
     private java.util.List<String> redirectSignOutURIs;
@@ -264,10 +264,10 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     * Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * </p>
      * 
-     * @return Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     * @return Redirect URLs used by OAuth when a user signs in to an Amplify app.
      */
 
     public java.util.List<String> getRedirectSignInURIs() {
@@ -276,11 +276,11 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     * Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * </p>
      * 
      * @param redirectSignInURIs
-     *        Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     *        Redirect URLs used by OAuth when a user signs in to an Amplify app.
      */
 
     public void setRedirectSignInURIs(java.util.Collection<String> redirectSignInURIs) {
@@ -294,7 +294,7 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     * Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -303,7 +303,7 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
      * </p>
      * 
      * @param redirectSignInURIs
-     *        Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     *        Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +319,11 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     * Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * </p>
      * 
      * @param redirectSignInURIs
-     *        Redirect URLs that OAuth uses when a user signs in to an Amplify app.
+     *        Redirect URLs used by OAuth when a user signs in to an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,10 +334,10 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * </p>
      * 
-     * @return Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     * @return Redirect URLs used by OAuth when a user signs out of an Amplify app.
      */
 
     public java.util.List<String> getRedirectSignOutURIs() {
@@ -346,11 +346,11 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * </p>
      * 
      * @param redirectSignOutURIs
-     *        Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     *        Redirect URLs used by OAuth when a user signs out of an Amplify app.
      */
 
     public void setRedirectSignOutURIs(java.util.Collection<String> redirectSignOutURIs) {
@@ -364,7 +364,7 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -373,7 +373,7 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
      * </p>
      * 
      * @param redirectSignOutURIs
-     *        Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     *        Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +389,11 @@ public class UpdateBackendAuthOAuthConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     * Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * </p>
      * 
      * @param redirectSignOutURIs
-     *        Redirect URLs that OAuth uses when a user signs out of an Amplify app.
+     *        Redirect URLs used by OAuth when a user signs out of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

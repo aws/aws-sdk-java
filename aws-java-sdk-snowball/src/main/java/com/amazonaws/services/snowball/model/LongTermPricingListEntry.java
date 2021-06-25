@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Each <code>LongTermPricingListEntry</code> object contains information about a long term pricing type.
+ * Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/LongTermPricingListEntry" target="_top">AWS
@@ -30,73 +30,73 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      */
     private String longTermPricingId;
     /**
      * <p>
-     * The end date the long term pricing contract.
+     * The end date the long-term pricing contract.
      * </p>
      */
     private java.util.Date longTermPricingEndDate;
     /**
      * <p>
-     * The start date of the long term pricing contract.
+     * The start date of the long-term pricing contract.
      * </p>
      */
     private java.util.Date longTermPricingStartDate;
     /**
      * <p>
-     * The type of long term pricing that was selected for the device.
+     * The type of long-term pricing that was selected for the device.
      * </p>
      */
     private String longTermPricingType;
     /**
      * <p>
-     * The current active jobs on the device the long term pricing type.
+     * The current active jobs on the device the long-term pricing type.
      * </p>
      */
     private String currentActiveJob;
     /**
      * <p>
-     * A new device that replaces a device that is ordered with long term pricing.
+     * A new device that replaces a device that is ordered with long-term pricing.
      * </p>
      */
     private String replacementJob;
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      */
     private Boolean isLongTermPricingAutoRenew;
     /**
      * <p>
-     * The status of the long term pricing type.
+     * The status of the long-term pricing type.
      * </p>
      */
     private String longTermPricingStatus;
     /**
      * <p>
-     * The type of AWS Snow Family device associated with this long term pricing job.
+     * The type of AWS Snow Family device associated with this long-term pricing job.
      * </p>
      */
     private String snowballType;
     /**
      * <p>
-     * The IDs of the jobs that are associated with a long term pricing type.
+     * The IDs of the jobs that are associated with a long-term pricing type.
      * </p>
      */
     private java.util.List<String> jobIds;
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      */
 
     public void setLongTermPricingId(String longTermPricingId) {
@@ -105,10 +105,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
-     * @return The ID of the long term pricing type for the device.
+     * @return The ID of the long-term pricing type for the device.
      */
 
     public String getLongTermPricingId() {
@@ -117,11 +117,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The end date the long term pricing contract.
+     * The end date the long-term pricing contract.
      * </p>
      * 
      * @param longTermPricingEndDate
-     *        The end date the long term pricing contract.
+     *        The end date the long-term pricing contract.
      */
 
     public void setLongTermPricingEndDate(java.util.Date longTermPricingEndDate) {
@@ -145,10 +145,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The end date the long term pricing contract.
+     * The end date the long-term pricing contract.
      * </p>
      * 
-     * @return The end date the long term pricing contract.
+     * @return The end date the long-term pricing contract.
      */
 
     public java.util.Date getLongTermPricingEndDate() {
@@ -157,11 +157,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The end date the long term pricing contract.
+     * The end date the long-term pricing contract.
      * </p>
      * 
      * @param longTermPricingEndDate
-     *        The end date the long term pricing contract.
+     *        The end date the long-term pricing contract.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The start date of the long term pricing contract.
+     * The start date of the long-term pricing contract.
      * </p>
      * 
      * @param longTermPricingStartDate
-     *        The start date of the long term pricing contract.
+     *        The start date of the long-term pricing contract.
      */
 
     public void setLongTermPricingStartDate(java.util.Date longTermPricingStartDate) {
@@ -185,10 +185,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The start date of the long term pricing contract.
+     * The start date of the long-term pricing contract.
      * </p>
      * 
-     * @return The start date of the long term pricing contract.
+     * @return The start date of the long-term pricing contract.
      */
 
     public java.util.Date getLongTermPricingStartDate() {
@@ -197,11 +197,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The start date of the long term pricing contract.
+     * The start date of the long-term pricing contract.
      * </p>
      * 
      * @param longTermPricingStartDate
-     *        The start date of the long term pricing contract.
+     *        The start date of the long-term pricing contract.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +212,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of long term pricing that was selected for the device.
+     * The type of long-term pricing that was selected for the device.
      * </p>
      * 
      * @param longTermPricingType
-     *        The type of long term pricing that was selected for the device.
+     *        The type of long-term pricing that was selected for the device.
      * @see LongTermPricingType
      */
 
@@ -226,10 +226,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of long term pricing that was selected for the device.
+     * The type of long-term pricing that was selected for the device.
      * </p>
      * 
-     * @return The type of long term pricing that was selected for the device.
+     * @return The type of long-term pricing that was selected for the device.
      * @see LongTermPricingType
      */
 
@@ -239,11 +239,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of long term pricing that was selected for the device.
+     * The type of long-term pricing that was selected for the device.
      * </p>
      * 
      * @param longTermPricingType
-     *        The type of long term pricing that was selected for the device.
+     *        The type of long-term pricing that was selected for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LongTermPricingType
      */
@@ -255,11 +255,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of long term pricing that was selected for the device.
+     * The type of long-term pricing that was selected for the device.
      * </p>
      * 
      * @param longTermPricingType
-     *        The type of long term pricing that was selected for the device.
+     *        The type of long-term pricing that was selected for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LongTermPricingType
      */
@@ -271,11 +271,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The current active jobs on the device the long term pricing type.
+     * The current active jobs on the device the long-term pricing type.
      * </p>
      * 
      * @param currentActiveJob
-     *        The current active jobs on the device the long term pricing type.
+     *        The current active jobs on the device the long-term pricing type.
      */
 
     public void setCurrentActiveJob(String currentActiveJob) {
@@ -284,10 +284,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The current active jobs on the device the long term pricing type.
+     * The current active jobs on the device the long-term pricing type.
      * </p>
      * 
-     * @return The current active jobs on the device the long term pricing type.
+     * @return The current active jobs on the device the long-term pricing type.
      */
 
     public String getCurrentActiveJob() {
@@ -296,11 +296,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The current active jobs on the device the long term pricing type.
+     * The current active jobs on the device the long-term pricing type.
      * </p>
      * 
      * @param currentActiveJob
-     *        The current active jobs on the device the long term pricing type.
+     *        The current active jobs on the device the long-term pricing type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,11 +311,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A new device that replaces a device that is ordered with long term pricing.
+     * A new device that replaces a device that is ordered with long-term pricing.
      * </p>
      * 
      * @param replacementJob
-     *        A new device that replaces a device that is ordered with long term pricing.
+     *        A new device that replaces a device that is ordered with long-term pricing.
      */
 
     public void setReplacementJob(String replacementJob) {
@@ -324,10 +324,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A new device that replaces a device that is ordered with long term pricing.
+     * A new device that replaces a device that is ordered with long-term pricing.
      * </p>
      * 
-     * @return A new device that replaces a device that is ordered with long term pricing.
+     * @return A new device that replaces a device that is ordered with long-term pricing.
      */
 
     public String getReplacementJob() {
@@ -336,11 +336,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A new device that replaces a device that is ordered with long term pricing.
+     * A new device that replaces a device that is ordered with long-term pricing.
      * </p>
      * 
      * @param replacementJob
-     *        A new device that replaces a device that is ordered with long term pricing.
+     *        A new device that replaces a device that is ordered with long-term pricing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,13 +351,13 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
-     *        If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *        automatically renewed before the long term pricing contract expires.
+     *        If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *        automatically renewed before the long-term pricing contract expires.
      */
 
     public void setIsLongTermPricingAutoRenew(Boolean isLongTermPricingAutoRenew) {
@@ -366,12 +366,12 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
-     * @return If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *         automatically renewed before the long term pricing contract expires.
+     * @return If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *         automatically renewed before the long-term pricing contract expires.
      */
 
     public Boolean getIsLongTermPricingAutoRenew() {
@@ -380,13 +380,13 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
-     *        If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *        automatically renewed before the long term pricing contract expires.
+     *        If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *        automatically renewed before the long-term pricing contract expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,12 +397,12 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
-     * @return If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *         automatically renewed before the long term pricing contract expires.
+     * @return If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *         automatically renewed before the long-term pricing contract expires.
      */
 
     public Boolean isLongTermPricingAutoRenew() {
@@ -411,11 +411,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the long term pricing type.
+     * The status of the long-term pricing type.
      * </p>
      * 
      * @param longTermPricingStatus
-     *        The status of the long term pricing type.
+     *        The status of the long-term pricing type.
      */
 
     public void setLongTermPricingStatus(String longTermPricingStatus) {
@@ -424,10 +424,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the long term pricing type.
+     * The status of the long-term pricing type.
      * </p>
      * 
-     * @return The status of the long term pricing type.
+     * @return The status of the long-term pricing type.
      */
 
     public String getLongTermPricingStatus() {
@@ -436,11 +436,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the long term pricing type.
+     * The status of the long-term pricing type.
      * </p>
      * 
      * @param longTermPricingStatus
-     *        The status of the long term pricing type.
+     *        The status of the long-term pricing type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,11 +451,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of AWS Snow Family device associated with this long term pricing job.
+     * The type of AWS Snow Family device associated with this long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snow Family device associated with this long term pricing job.
+     *        The type of AWS Snow Family device associated with this long-term pricing job.
      * @see SnowballType
      */
 
@@ -465,10 +465,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of AWS Snow Family device associated with this long term pricing job.
+     * The type of AWS Snow Family device associated with this long-term pricing job.
      * </p>
      * 
-     * @return The type of AWS Snow Family device associated with this long term pricing job.
+     * @return The type of AWS Snow Family device associated with this long-term pricing job.
      * @see SnowballType
      */
 
@@ -478,11 +478,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of AWS Snow Family device associated with this long term pricing job.
+     * The type of AWS Snow Family device associated with this long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snow Family device associated with this long term pricing job.
+     *        The type of AWS Snow Family device associated with this long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -494,11 +494,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of AWS Snow Family device associated with this long term pricing job.
+     * The type of AWS Snow Family device associated with this long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snow Family device associated with this long term pricing job.
+     *        The type of AWS Snow Family device associated with this long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -510,10 +510,10 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The IDs of the jobs that are associated with a long term pricing type.
+     * The IDs of the jobs that are associated with a long-term pricing type.
      * </p>
      * 
-     * @return The IDs of the jobs that are associated with a long term pricing type.
+     * @return The IDs of the jobs that are associated with a long-term pricing type.
      */
 
     public java.util.List<String> getJobIds() {
@@ -522,11 +522,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The IDs of the jobs that are associated with a long term pricing type.
+     * The IDs of the jobs that are associated with a long-term pricing type.
      * </p>
      * 
      * @param jobIds
-     *        The IDs of the jobs that are associated with a long term pricing type.
+     *        The IDs of the jobs that are associated with a long-term pricing type.
      */
 
     public void setJobIds(java.util.Collection<String> jobIds) {
@@ -540,7 +540,7 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The IDs of the jobs that are associated with a long term pricing type.
+     * The IDs of the jobs that are associated with a long-term pricing type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -549,7 +549,7 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param jobIds
-     *        The IDs of the jobs that are associated with a long term pricing type.
+     *        The IDs of the jobs that are associated with a long-term pricing type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,11 +565,11 @@ public class LongTermPricingListEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The IDs of the jobs that are associated with a long term pricing type.
+     * The IDs of the jobs that are associated with a long-term pricing type.
      * </p>
      * 
      * @param jobIds
-     *        The IDs of the jobs that are associated with a long term pricing type.
+     *        The IDs of the jobs that are associated with a long-term pricing type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

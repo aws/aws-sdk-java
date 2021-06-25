@@ -25,18 +25,18 @@ public class CreateLongTermPricingResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      */
     private String longTermPricingId;
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      */
 
     public void setLongTermPricingId(String longTermPricingId) {
@@ -45,10 +45,10 @@ public class CreateLongTermPricingResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
-     * @return The ID of the long term pricing type for the device.
+     * @return The ID of the long-term pricing type for the device.
      */
 
     public String getLongTermPricingId() {
@@ -57,11 +57,11 @@ public class CreateLongTermPricingResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

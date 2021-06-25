@@ -56,6 +56,12 @@ public class S3ResourceJsonUnmarshaller implements Unmarshaller<S3Resource, Json
                     context.nextToken();
                     s3Resource.setKeyRange(KeyRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TargetOnDeviceServices", targetDepth)) {
+                    context.nextToken();
+                    s3Resource.setTargetOnDeviceServices(new ListUnmarshaller<TargetOnDeviceService>(TargetOnDeviceServiceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,31 +27,31 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      */
     private String longTermPricingId;
     /**
      * <p>
-     * Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     * Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      * </p>
      */
     private String replacementJob;
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      */
     private Boolean isLongTermPricingAutoRenew;
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      */
 
     public void setLongTermPricingId(String longTermPricingId) {
@@ -60,10 +60,10 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
-     * @return The ID of the long term pricing type for the device.
+     * @return The ID of the long-term pricing type for the device.
      */
 
     public String getLongTermPricingId() {
@@ -72,11 +72,11 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     * Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      * </p>
      * 
      * @param replacementJob
-     *        Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     *        Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      */
 
     public void setReplacementJob(String replacementJob) {
@@ -100,10 +100,10 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     * Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      * </p>
      * 
-     * @return Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     * @return Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      */
 
     public String getReplacementJob() {
@@ -112,11 +112,11 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     * Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      * </p>
      * 
      * @param replacementJob
-     *        Specifies that a device that is ordered with long term pricing should be replaced with a new device.
+     *        Specifies that a device that is ordered with long-term pricing should be replaced with a new device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +127,13 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
-     *        If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *        automatically renewed before the long term pricing contract expires.
+     *        If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *        automatically renewed before the long-term pricing contract expires.
      */
 
     public void setIsLongTermPricingAutoRenew(Boolean isLongTermPricingAutoRenew) {
@@ -142,12 +142,12 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
-     * @return If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *         automatically renewed before the long term pricing contract expires.
+     * @return If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *         automatically renewed before the long-term pricing contract expires.
      */
 
     public Boolean getIsLongTermPricingAutoRenew() {
@@ -156,13 +156,13 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
-     *        If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *        automatically renewed before the long term pricing contract expires.
+     *        If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *        automatically renewed before the long-term pricing contract expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,12 +173,12 @@ public class UpdateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     * automatically renewed before the long term pricing contract expires.
+     * If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     * automatically renewed before the long-term pricing contract expires.
      * </p>
      * 
-     * @return If set to <code>true</code>, specifies that the current long term pricing type for the device should be
-     *         automatically renewed before the long term pricing contract expires.
+     * @return If set to <code>true</code>, specifies that the current long-term pricing type for the device should be
+     *         automatically renewed before the long-term pricing contract expires.
      */
 
     public Boolean isLongTermPricingAutoRenew() {

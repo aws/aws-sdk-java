@@ -124,9 +124,17 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                     context.nextToken();
                     jobMetadata.setDeviceConfiguration(DeviceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RemoteManagement", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setRemoteManagement(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LongTermPricingId", targetDepth)) {
                     context.nextToken();
                     jobMetadata.setLongTermPricingId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OnDeviceServiceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setOnDeviceServiceConfiguration(OnDeviceServiceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

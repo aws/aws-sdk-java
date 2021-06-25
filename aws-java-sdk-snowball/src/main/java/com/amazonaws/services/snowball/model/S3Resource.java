@@ -45,6 +45,13 @@ public class S3Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private KeyRange keyRange;
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     */
+    private java.util.List<TargetOnDeviceService> targetOnDeviceServices;
 
     /**
      * <p>
@@ -139,6 +146,84 @@ public class S3Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @return Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *         from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public java.util.List<TargetOnDeviceService> getTargetOnDeviceServices() {
+        return targetOnDeviceServices;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param targetOnDeviceServices
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     */
+
+    public void setTargetOnDeviceServices(java.util.Collection<TargetOnDeviceService> targetOnDeviceServices) {
+        if (targetOnDeviceServices == null) {
+            this.targetOnDeviceServices = null;
+            return;
+        }
+
+        this.targetOnDeviceServices = new java.util.ArrayList<TargetOnDeviceService>(targetOnDeviceServices);
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetOnDeviceServices(java.util.Collection)} or
+     * {@link #withTargetOnDeviceServices(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param targetOnDeviceServices
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Resource withTargetOnDeviceServices(TargetOnDeviceService... targetOnDeviceServices) {
+        if (this.targetOnDeviceServices == null) {
+            setTargetOnDeviceServices(new java.util.ArrayList<TargetOnDeviceService>(targetOnDeviceServices.length));
+        }
+        for (TargetOnDeviceService ele : targetOnDeviceServices) {
+            this.targetOnDeviceServices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the service or services on the Snow Family device that your transferred data will be exported from or
+     * imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * </p>
+     * 
+     * @param targetOnDeviceServices
+     *        Specifies the service or services on the Snow Family device that your transferred data will be exported
+     *        from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Resource withTargetOnDeviceServices(java.util.Collection<TargetOnDeviceService> targetOnDeviceServices) {
+        setTargetOnDeviceServices(targetOnDeviceServices);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -153,7 +238,9 @@ public class S3Resource implements Serializable, Cloneable, StructuredPojo {
         if (getBucketArn() != null)
             sb.append("BucketArn: ").append(getBucketArn()).append(",");
         if (getKeyRange() != null)
-            sb.append("KeyRange: ").append(getKeyRange());
+            sb.append("KeyRange: ").append(getKeyRange()).append(",");
+        if (getTargetOnDeviceServices() != null)
+            sb.append("TargetOnDeviceServices: ").append(getTargetOnDeviceServices());
         sb.append("}");
         return sb.toString();
     }
@@ -176,6 +263,10 @@ public class S3Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKeyRange() != null && other.getKeyRange().equals(this.getKeyRange()) == false)
             return false;
+        if (other.getTargetOnDeviceServices() == null ^ this.getTargetOnDeviceServices() == null)
+            return false;
+        if (other.getTargetOnDeviceServices() != null && other.getTargetOnDeviceServices().equals(this.getTargetOnDeviceServices()) == false)
+            return false;
         return true;
     }
 
@@ -186,6 +277,7 @@ public class S3Resource implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getBucketArn() == null) ? 0 : getBucketArn().hashCode());
         hashCode = prime * hashCode + ((getKeyRange() == null) ? 0 : getKeyRange().hashCode());
+        hashCode = prime * hashCode + ((getTargetOnDeviceServices() == null) ? 0 : getTargetOnDeviceServices().hashCode());
         return hashCode;
     }
 

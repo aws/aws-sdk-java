@@ -30,20 +30,21 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your data
+     * The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data
      * models.
      * </p>
      */
     private String cognitoUserPoolId;
     /**
      * <p>
-     * The API key description for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data
+     * models.
      * </p>
      */
     private Double expirationTime;
@@ -55,7 +56,7 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
     private String openIDAuthTTL;
     /**
      * <p>
-     * The clientID for openID, if openID is used as an authentication setting to access your data models.
+     * The clientID for openID, if openID was used as an authentication setting to access your data models.
      * </p>
      */
     private String openIDClientId;
@@ -67,25 +68,25 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
     private String openIDIatTTL;
     /**
      * <p>
-     * The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     * The openID issuer URL, if openID was used as an authentication setting to access your data models.
      * </p>
      */
     private String openIDIssueURL;
     /**
      * <p>
-     * The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     * The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      * </p>
      */
     private String openIDProviderName;
 
     /**
      * <p>
-     * The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your data
+     * The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data
      * models.
      * </p>
      * 
      * @param cognitoUserPoolId
-     *        The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your
+     *        The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your
      *        data models.
      */
 
@@ -95,11 +96,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your data
+     * The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data
      * models.
      * </p>
      * 
-     * @return The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your
+     * @return The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your
      *         data models.
      */
 
@@ -109,12 +110,12 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your data
+     * The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data
      * models.
      * </p>
      * 
      * @param cognitoUserPoolId
-     *        The Amazon Cognito user pool ID, if Amazon Cognito is used as an authentication setting to access your
+     *        The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your
      *        data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -126,11 +127,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The API key description for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.
      * </p>
      * 
      * @param description
-     *        The API key description for API_KEY, if it is used as an authentication mechanism to access your data
+     *        The API key description for API_KEY, if it was used as an authentication mechanism to access your data
      *        models.
      */
 
@@ -140,10 +141,10 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The API key description for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.
      * </p>
      * 
-     * @return The API key description for API_KEY, if it is used as an authentication mechanism to access your data
+     * @return The API key description for API_KEY, if it was used as an authentication mechanism to access your data
      *         models.
      */
 
@@ -153,11 +154,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The API key description for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.
      * </p>
      * 
      * @param description
-     *        The API key description for API_KEY, if it is used as an authentication mechanism to access your data
+     *        The API key description for API_KEY, if it was used as an authentication mechanism to access your data
      *        models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -169,11 +170,12 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data
+     * models.
      * </p>
      * 
      * @param expirationTime
-     *        The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data
+     *        The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data
      *        models.
      */
 
@@ -183,11 +185,12 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data
+     * models.
      * </p>
      * 
-     * @return The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data
-     *         models.
+     * @return The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your
+     *         data models.
      */
 
     public Double getExpirationTime() {
@@ -196,11 +199,12 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data models.
+     * The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data
+     * models.
      * </p>
      * 
      * @param expirationTime
-     *        The API key expiration time for API_KEY, if it is used as an authentication mechanism to access your data
+     *        The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data
      *        models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -252,11 +256,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The clientID for openID, if openID is used as an authentication setting to access your data models.
+     * The clientID for openID, if openID was used as an authentication setting to access your data models.
      * </p>
      * 
      * @param openIDClientId
-     *        The clientID for openID, if openID is used as an authentication setting to access your data models.
+     *        The clientID for openID, if openID was used as an authentication setting to access your data models.
      */
 
     public void setOpenIDClientId(String openIDClientId) {
@@ -265,10 +269,10 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The clientID for openID, if openID is used as an authentication setting to access your data models.
+     * The clientID for openID, if openID was used as an authentication setting to access your data models.
      * </p>
      * 
-     * @return The clientID for openID, if openID is used as an authentication setting to access your data models.
+     * @return The clientID for openID, if openID was used as an authentication setting to access your data models.
      */
 
     public String getOpenIDClientId() {
@@ -277,11 +281,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The clientID for openID, if openID is used as an authentication setting to access your data models.
+     * The clientID for openID, if openID was used as an authentication setting to access your data models.
      * </p>
      * 
      * @param openIDClientId
-     *        The clientID for openID, if openID is used as an authentication setting to access your data models.
+     *        The clientID for openID, if openID was used as an authentication setting to access your data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,11 +336,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     * The openID issuer URL, if openID was used as an authentication setting to access your data models.
      * </p>
      * 
      * @param openIDIssueURL
-     *        The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     *        The openID issuer URL, if openID was used as an authentication setting to access your data models.
      */
 
     public void setOpenIDIssueURL(String openIDIssueURL) {
@@ -345,10 +349,10 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     * The openID issuer URL, if openID was used as an authentication setting to access your data models.
      * </p>
      * 
-     * @return The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     * @return The openID issuer URL, if openID was used as an authentication setting to access your data models.
      */
 
     public String getOpenIDIssueURL() {
@@ -357,11 +361,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     * The openID issuer URL, if openID was used as an authentication setting to access your data models.
      * </p>
      * 
      * @param openIDIssueURL
-     *        The openID issuer URL, if openID is used as an authentication setting to access your data models.
+     *        The openID issuer URL, if openID was used as an authentication setting to access your data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,11 +376,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     * The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      * </p>
      * 
      * @param openIDProviderName
-     *        The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     *        The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      */
 
     public void setOpenIDProviderName(String openIDProviderName) {
@@ -385,10 +389,10 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     * The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      * </p>
      * 
-     * @return The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     * @return The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      */
 
     public String getOpenIDProviderName() {
@@ -397,11 +401,11 @@ public class BackendAPIAppSyncAuthSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     * The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      * </p>
      * 
      * @param openIDProviderName
-     *        The openID provider name, if openID is used as an authentication mechanism to access your data models.
+     *        The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

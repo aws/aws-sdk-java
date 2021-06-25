@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.proton.AWSProtonClientBuilder;
+import com.amazonaws.services.proton.waiters.AWSProtonWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -170,6 +171,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "proton";
+
+    private volatile AWSProtonWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -4015,8 +4018,23 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
     }
 
     @Override
+    public AWSProtonWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSProtonWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
     public void shutdown() {
         super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

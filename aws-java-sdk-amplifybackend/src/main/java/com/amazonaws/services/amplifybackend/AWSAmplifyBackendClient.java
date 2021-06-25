@@ -1035,7 +1035,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets backend auth details.
+     * Gets a backend auth details.
      * </p>
      * 
      * @param getBackendAuthRequest
@@ -1225,6 +1225,70 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Imports an existing backend authentication resource.
+     * </p>
+     * 
+     * @param importBackendAuthRequest
+     *        The request body for ImportBackendAuth.
+     * @return Result of the ImportBackendAuth operation returned by the service.
+     * @throws NotFoundException
+     *         404 response
+     * @throws GatewayTimeoutException
+     *         504 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @throws BadRequestException
+     *         400 response
+     * @sample AWSAmplifyBackend.ImportBackendAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ImportBackendAuthResult importBackendAuth(ImportBackendAuthRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportBackendAuth(request);
+    }
+
+    @SdkInternalApi
+    final ImportBackendAuthResult executeImportBackendAuth(ImportBackendAuthRequest importBackendAuthRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importBackendAuthRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportBackendAuthRequest> request = null;
+        Response<ImportBackendAuthResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportBackendAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importBackendAuthRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyBackend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportBackendAuth");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportBackendAuthResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportBackendAuthResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the jobs for the backend of an Amplify app.
      * </p>
      * 
@@ -1353,7 +1417,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Removes the AWS resources that are required to access the Amplify Admin UI.
+     * Removes the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param removeBackendConfigRequest
@@ -1544,7 +1608,7 @@ public class AWSAmplifyBackendClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates the AWS resources that are required to access the Amplify Admin UI.
+     * Updates the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param updateBackendConfigRequest

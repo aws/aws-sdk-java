@@ -205,7 +205,7 @@ public interface AmazonSnowball {
      * The device capacity is optional.
      * </p>
      * <p>
-     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * Availability of device types differ by AWS Region. For more information about Region availability, see <a
      * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
      * Regional Services</a>.
      * </p>
@@ -374,9 +374,9 @@ public interface AmazonSnowball {
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws ClusterLimitExceededException
-     *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
+     *         Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
-     *         has exactly five notes.
+     *         has exactly five nodes.
      * @throws Ec2RequestFailedException
      *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateJob
@@ -387,9 +387,8 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
-     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
-     * information see XXXXXXXX
+     * Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term
+     * pricing type for the device. You are billed upfront, and AWS provides discounts for long-term pricing.
      * </p>
      * 
      * @param createLongTermPricingRequest
@@ -703,7 +702,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Lists all long term pricing types.
+     * Lists all long-term pricing types.
      * </p>
      * 
      * @param listLongTermPricingRequest
@@ -771,9 +770,9 @@ public interface AmazonSnowball {
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws ClusterLimitExceededException
-     *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
+     *         Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
-     *         has exactly five notes.
+     *         has exactly five nodes.
      * @throws Ec2RequestFailedException
      *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateJob
@@ -784,7 +783,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Updates the state when a the shipment states changes to a different state.
+     * Updates the state when a shipment state changes to a different state.
      * </p>
      * 
      * @param updateJobShipmentStateRequest
@@ -802,7 +801,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Updates the long term pricing type.
+     * Updates the long-term pricing type.
      * </p>
      * 
      * @param updateLongTermPricingRequest

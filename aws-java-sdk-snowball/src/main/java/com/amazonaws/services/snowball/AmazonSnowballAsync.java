@@ -189,7 +189,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * The device capacity is optional.
      * </p>
      * <p>
-     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * Availability of device types differ by AWS Region. For more information about Region availability, see <a
      * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
      * Regional Services</a>.
      * </p>
@@ -368,7 +368,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * The device capacity is optional.
      * </p>
      * <p>
-     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * Availability of device types differ by AWS Region. For more information about Region availability, see <a
      * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
      * Regional Services</a>.
      * </p>
@@ -539,9 +539,8 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
-     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
-     * information see XXXXXXXX
+     * Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term
+     * pricing type for the device. You are billed upfront, and AWS provides discounts for long-term pricing.
      * </p>
      * 
      * @param createLongTermPricingRequest
@@ -554,9 +553,8 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
-     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
-     * information see XXXXXXXX
+     * Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term
+     * pricing type for the device. You are billed upfront, and AWS provides discounts for long-term pricing.
      * </p>
      * 
      * @param createLongTermPricingRequest
@@ -1104,7 +1102,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Lists all long term pricing types.
+     * Lists all long-term pricing types.
      * </p>
      * 
      * @param listLongTermPricingRequest
@@ -1117,7 +1115,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Lists all long term pricing types.
+     * Lists all long-term pricing types.
      * </p>
      * 
      * @param listLongTermPricingRequest
@@ -1205,7 +1203,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Updates the state when a the shipment states changes to a different state.
+     * Updates the state when a shipment state changes to a different state.
      * </p>
      * 
      * @param updateJobShipmentStateRequest
@@ -1218,7 +1216,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Updates the state when a the shipment states changes to a different state.
+     * Updates the state when a shipment state changes to a different state.
      * </p>
      * 
      * @param updateJobShipmentStateRequest
@@ -1236,7 +1234,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Updates the long term pricing type.
+     * Updates the long-term pricing type.
      * </p>
      * 
      * @param updateLongTermPricingRequest
@@ -1249,7 +1247,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Updates the long term pricing type.
+     * Updates the long-term pricing type.
      * </p>
      * 
      * @param updateLongTermPricingRequest

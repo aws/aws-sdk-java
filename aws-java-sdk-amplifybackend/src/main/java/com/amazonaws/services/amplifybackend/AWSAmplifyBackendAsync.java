@@ -492,7 +492,7 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
-     * Gets backend auth details.
+     * Gets a backend auth details.
      * </p>
      * 
      * @param getBackendAuthRequest
@@ -506,7 +506,7 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
-     * Gets backend auth details.
+     * Gets a backend auth details.
      * </p>
      * 
      * @param getBackendAuthRequest
@@ -587,6 +587,39 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
+     * Imports an existing backend authentication resource.
+     * </p>
+     * 
+     * @param importBackendAuthRequest
+     *        The request body for ImportBackendAuth.
+     * @return A Java Future containing the result of the ImportBackendAuth operation returned by the service.
+     * @sample AWSAmplifyBackendAsync.ImportBackendAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportBackendAuthResult> importBackendAuthAsync(ImportBackendAuthRequest importBackendAuthRequest);
+
+    /**
+     * <p>
+     * Imports an existing backend authentication resource.
+     * </p>
+     * 
+     * @param importBackendAuthRequest
+     *        The request body for ImportBackendAuth.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportBackendAuth operation returned by the service.
+     * @sample AWSAmplifyBackendAsyncHandler.ImportBackendAuth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportBackendAuthResult> importBackendAuthAsync(ImportBackendAuthRequest importBackendAuthRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportBackendAuthRequest, ImportBackendAuthResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the jobs for the backend of an Amplify app.
      * </p>
      * 
@@ -653,7 +686,7 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
-     * Removes the AWS resources that are required to access the Amplify Admin UI.
+     * Removes the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param removeBackendConfigRequest
@@ -666,7 +699,7 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
-     * Removes the AWS resources that are required to access the Amplify Admin UI.
+     * Removes the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param removeBackendConfigRequest
@@ -750,7 +783,7 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
-     * Updates the AWS resources that are required to access the Amplify Admin UI.
+     * Updates the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param updateBackendConfigRequest
@@ -764,7 +797,7 @@ public interface AWSAmplifyBackendAsync extends AWSAmplifyBackend {
 
     /**
      * <p>
-     * Updates the AWS resources that are required to access the Amplify Admin UI.
+     * Updates the AWS resources required to access the Amplify Admin UI.
      * </p>
      * 
      * @param updateBackendConfigRequest

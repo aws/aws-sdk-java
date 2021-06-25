@@ -83,14 +83,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.snowball.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.snowball.model.transform.InvalidJobStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.snowball.model.transform.InvalidResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ReturnShippingLabelAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.snowball.model.transform.ReturnShippingLabelAlreadyExistsExceptionUnmarshaller.getInstance()))
@@ -101,12 +95,6 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedAddressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.snowball.model.transform.UnsupportedAddressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.snowball.model.transform.ClusterLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputCombinationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.snowball.model.transform.InvalidInputCombinationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("Ec2RequestFailedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.snowball.model.transform.Ec2RequestFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -115,6 +103,18 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAddressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.snowball.model.transform.InvalidAddressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.snowball.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.snowball.model.transform.InvalidResourceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.snowball.model.transform.ClusterLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputCombinationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.snowball.model.transform.InvalidInputCombinationExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.snowball.model.AmazonSnowballException.class));
 
     /**
@@ -590,7 +590,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * The device capacity is optional.
      * </p>
      * <p>
-     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * Availability of device types differ by AWS Region. For more information about Region availability, see <a
      * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
      * Regional Services</a>.
      * </p>
@@ -759,9 +759,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws ClusterLimitExceededException
-     *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
+     *         Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
-     *         has exactly five notes.
+     *         has exactly five nodes.
      * @throws Ec2RequestFailedException
      *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateJob
@@ -814,9 +814,8 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
-     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
-     * information see XXXXXXXX
+     * Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term
+     * pricing type for the device. You are billed upfront, and AWS provides discounts for long-term pricing.
      * </p>
      * 
      * @param createLongTermPricingRequest
@@ -1765,7 +1764,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists all long term pricing types.
+     * Lists all long-term pricing types.
      * </p>
      * 
      * @param listLongTermPricingRequest
@@ -1917,9 +1916,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws ClusterLimitExceededException
-     *         Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your
+     *         Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
-     *         has exactly five notes.
+     *         has exactly five nodes.
      * @throws Ec2RequestFailedException
      *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateJob
@@ -1972,7 +1971,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates the state when a the shipment states changes to a different state.
+     * Updates the state when a shipment state changes to a different state.
      * </p>
      * 
      * @param updateJobShipmentStateRequest
@@ -2033,7 +2032,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates the long term pricing type.
+     * Updates the long-term pricing type.
      * </p>
      * 
      * @param updateLongTermPricingRequest

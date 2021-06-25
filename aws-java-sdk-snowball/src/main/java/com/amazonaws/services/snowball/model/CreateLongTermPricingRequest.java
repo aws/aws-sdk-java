@@ -27,30 +27,30 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of long term pricing option you want for the device - one year or three year long term pricing.
+     * The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * </p>
      */
     private String longTermPricingType;
     /**
      * <p>
-     * Specifies whether the current long term pricing type for the device should be renewed.
+     * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      */
     private Boolean isLongTermPricingAutoRenew;
     /**
      * <p>
-     * The type of AWS Snow Family device to use for the long term pricing job.
+     * The type of AWS Snow Family device to use for the long-term pricing job.
      * </p>
      */
     private String snowballType;
 
     /**
      * <p>
-     * The type of long term pricing option you want for the device - one year or three year long term pricing.
+     * The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * </p>
      * 
      * @param longTermPricingType
-     *        The type of long term pricing option you want for the device - one year or three year long term pricing.
+     *        The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * @see LongTermPricingType
      */
 
@@ -60,10 +60,10 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of long term pricing option you want for the device - one year or three year long term pricing.
+     * The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * </p>
      * 
-     * @return The type of long term pricing option you want for the device - one year or three year long term pricing.
+     * @return The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * @see LongTermPricingType
      */
 
@@ -73,11 +73,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of long term pricing option you want for the device - one year or three year long term pricing.
+     * The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * </p>
      * 
      * @param longTermPricingType
-     *        The type of long term pricing option you want for the device - one year or three year long term pricing.
+     *        The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LongTermPricingType
      */
@@ -89,11 +89,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of long term pricing option you want for the device - one year or three year long term pricing.
+     * The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * </p>
      * 
      * @param longTermPricingType
-     *        The type of long term pricing option you want for the device - one year or three year long term pricing.
+     *        The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LongTermPricingType
      */
@@ -105,11 +105,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether the current long term pricing type for the device should be renewed.
+     * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
-     *        Specifies whether the current long term pricing type for the device should be renewed.
+     *        Specifies whether the current long-term pricing type for the device should be renewed.
      */
 
     public void setIsLongTermPricingAutoRenew(Boolean isLongTermPricingAutoRenew) {
@@ -118,10 +118,10 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether the current long term pricing type for the device should be renewed.
+     * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
-     * @return Specifies whether the current long term pricing type for the device should be renewed.
+     * @return Specifies whether the current long-term pricing type for the device should be renewed.
      */
 
     public Boolean getIsLongTermPricingAutoRenew() {
@@ -130,11 +130,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether the current long term pricing type for the device should be renewed.
+     * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
      * @param isLongTermPricingAutoRenew
-     *        Specifies whether the current long term pricing type for the device should be renewed.
+     *        Specifies whether the current long-term pricing type for the device should be renewed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +145,10 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether the current long term pricing type for the device should be renewed.
+     * Specifies whether the current long-term pricing type for the device should be renewed.
      * </p>
      * 
-     * @return Specifies whether the current long term pricing type for the device should be renewed.
+     * @return Specifies whether the current long-term pricing type for the device should be renewed.
      */
 
     public Boolean isLongTermPricingAutoRenew() {
@@ -157,11 +157,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of AWS Snow Family device to use for the long term pricing job.
+     * The type of AWS Snow Family device to use for the long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snow Family device to use for the long term pricing job.
+     *        The type of AWS Snow Family device to use for the long-term pricing job.
      * @see SnowballType
      */
 
@@ -171,10 +171,10 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of AWS Snow Family device to use for the long term pricing job.
+     * The type of AWS Snow Family device to use for the long-term pricing job.
      * </p>
      * 
-     * @return The type of AWS Snow Family device to use for the long term pricing job.
+     * @return The type of AWS Snow Family device to use for the long-term pricing job.
      * @see SnowballType
      */
 
@@ -184,11 +184,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of AWS Snow Family device to use for the long term pricing job.
+     * The type of AWS Snow Family device to use for the long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snow Family device to use for the long term pricing job.
+     *        The type of AWS Snow Family device to use for the long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -200,11 +200,11 @@ public class CreateLongTermPricingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The type of AWS Snow Family device to use for the long term pricing job.
+     * The type of AWS Snow Family device to use for the long-term pricing job.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snow Family device to use for the long term pricing job.
+     *        The type of AWS Snow Family device to use for the long-term pricing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */

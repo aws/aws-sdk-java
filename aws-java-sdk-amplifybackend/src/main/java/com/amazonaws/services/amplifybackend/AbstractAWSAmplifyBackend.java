@@ -113,6 +113,11 @@ public class AbstractAWSAmplifyBackend implements AWSAmplifyBackend {
     }
 
     @Override
+    public ImportBackendAuthResult importBackendAuth(ImportBackendAuthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListBackendJobsResult listBackendJobs(ListBackendJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

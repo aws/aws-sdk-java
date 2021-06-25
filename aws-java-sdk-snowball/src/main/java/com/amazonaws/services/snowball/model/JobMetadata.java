@@ -161,10 +161,24 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private DeviceConfiguration deviceConfiguration;
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     */
+    private String remoteManagement;
+    /**
+     * <p>
+     * The ID of the long-term pricing type for the device.
      * </p>
      */
     private String longTermPricingId;
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     */
+    private OnDeviceServiceConfiguration onDeviceServiceConfiguration;
 
     /**
      * <p>
@@ -1197,11 +1211,105 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @see RemoteManagement
+     */
+
+    public void setRemoteManagement(String remoteManagement) {
+        this.remoteManagement = remoteManagement;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @return Allows you to securely operate and manage Snowcone devices remotely from outside of your internal
+     *         network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
+     *         when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *         device.
+     * @see RemoteManagement
+     */
+
+    public String getRemoteManagement() {
+        return this.remoteManagement;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RemoteManagement
+     */
+
+    public JobMetadata withRemoteManagement(String remoteManagement) {
+        setRemoteManagement(remoteManagement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @see RemoteManagement
+     */
+
+    public void setRemoteManagement(RemoteManagement remoteManagement) {
+        withRemoteManagement(remoteManagement);
+    }
+
+    /**
+     * <p>
+     * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
+     * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
+     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * </p>
+     * 
+     * @param remoteManagement
+     *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
+     *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
+     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RemoteManagement
+     */
+
+    public JobMetadata withRemoteManagement(RemoteManagement remoteManagement) {
+        this.remoteManagement = remoteManagement.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      */
 
     public void setLongTermPricingId(String longTermPricingId) {
@@ -1210,10 +1318,10 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
-     * @return The ID of the long term pricing type for the device.
+     * @return The ID of the long-term pricing type for the device.
      */
 
     public String getLongTermPricingId() {
@@ -1222,16 +1330,56 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the long term pricing type for the device.
+     * The ID of the long-term pricing type for the device.
      * </p>
      * 
      * @param longTermPricingId
-     *        The ID of the long term pricing type for the device.
+     *        The ID of the long-term pricing type for the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobMetadata withLongTermPricingId(String longTermPricingId) {
         setLongTermPricingId(longTermPricingId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Represents metadata and configuration settings for services on an AWS Snow Family device.
+     */
+
+    public void setOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        this.onDeviceServiceConfiguration = onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     * 
+     * @return Represents metadata and configuration settings for services on an AWS Snow Family device.
+     */
+
+    public OnDeviceServiceConfiguration getOnDeviceServiceConfiguration() {
+        return this.onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        setOnDeviceServiceConfiguration(onDeviceServiceConfiguration);
         return this;
     }
 
@@ -1285,8 +1433,12 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
         if (getDeviceConfiguration() != null)
             sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getRemoteManagement() != null)
+            sb.append("RemoteManagement: ").append(getRemoteManagement()).append(",");
         if (getLongTermPricingId() != null)
-            sb.append("LongTermPricingId: ").append(getLongTermPricingId());
+            sb.append("LongTermPricingId: ").append(getLongTermPricingId()).append(",");
+        if (getOnDeviceServiceConfiguration() != null)
+            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1377,9 +1529,17 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
             return false;
+        if (other.getRemoteManagement() == null ^ this.getRemoteManagement() == null)
+            return false;
+        if (other.getRemoteManagement() != null && other.getRemoteManagement().equals(this.getRemoteManagement()) == false)
+            return false;
         if (other.getLongTermPricingId() == null ^ this.getLongTermPricingId() == null)
             return false;
         if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() == null ^ this.getOnDeviceServiceConfiguration() == null)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() != null && other.getOnDeviceServiceConfiguration().equals(this.getOnDeviceServiceConfiguration()) == false)
             return false;
         return true;
     }
@@ -1408,7 +1568,9 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRemoteManagement() == null) ? 0 : getRemoteManagement().hashCode());
         hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
+        hashCode = prime * hashCode + ((getOnDeviceServiceConfiguration() == null) ? 0 : getOnDeviceServiceConfiguration().hashCode());
         return hashCode;
     }
 

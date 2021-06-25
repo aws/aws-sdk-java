@@ -43,8 +43,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple Notification
-     * Service (SNS) API action.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+     * Service (Amazon SNS) API action.
      * </p>
      */
     private String snsTopicARN;
@@ -69,8 +69,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple Notification
-     * Service (SNS) API action.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+     * Service (Amazon SNS) API action.
      * </p>
      * 
      * @param snsTopicARN
@@ -80,8 +80,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      *        action.</p>
      *        <p>
      *        You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using
-     *        the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple
-     *        Notification Service (SNS) API action.
+     *        the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple
+     *        Notification Service (Amazon SNS) API action.
      */
 
     public void setSnsTopicARN(String snsTopicARN) {
@@ -96,8 +96,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple Notification
-     * Service (SNS) API action.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+     * Service (Amazon SNS) API action.
      * </p>
      * 
      * @return The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon
@@ -106,8 +106,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      *         action.</p>
      *         <p>
      *         You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using
-     *         the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple
-     *         Notification Service (SNS) API action.
+     *         the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple
+     *         Notification Service (Amazon SNS) API action.
      */
 
     public String getSnsTopicARN() {
@@ -122,8 +122,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple Notification
-     * Service (SNS) API action.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification
+     * Service (Amazon SNS) API action.
      * </p>
      * 
      * @param snsTopicARN
@@ -133,8 +133,8 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      *        action.</p>
      *        <p>
      *        You can subscribe email addresses to an Amazon SNS topic through the AWS Management Console, or by using
-     *        the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> AWS Simple
-     *        Notification Service (SNS) API action.
+     *        the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple
+     *        Notification Service (Amazon SNS) API action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The resource configuration for the data model, configured as a part of the Amplify project.
+ * The resource config for the data model, configured as a part of the Amplify project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIResourceConfig"
@@ -36,7 +36,7 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
     private java.util.List<BackendAPIAuthType> additionalAuthTypes;
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the Amplify project.
+     * The API name used to interact with the data model, configured as a part of the amplify project.
      * </p>
      */
     private String apiName;
@@ -137,11 +137,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the Amplify project.
+     * The API name used to interact with the data model, configured as a part of the amplify project.
      * </p>
      * 
      * @param apiName
-     *        The API name used to interact with the data model, configured as a part of the Amplify project.
+     *        The API name used to interact with the data model, configured as a part of the amplify project.
      */
 
     public void setApiName(String apiName) {
@@ -150,10 +150,10 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the Amplify project.
+     * The API name used to interact with the data model, configured as a part of the amplify project.
      * </p>
      * 
-     * @return The API name used to interact with the data model, configured as a part of the Amplify project.
+     * @return The API name used to interact with the data model, configured as a part of the amplify project.
      */
 
     public String getApiName() {
@@ -162,11 +162,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the Amplify project.
+     * The API name used to interact with the data model, configured as a part of the amplify project.
      * </p>
      * 
      * @param apiName
-     *        The API name used to interact with the data model, configured as a part of the Amplify project.
+     *        The API name used to interact with the data model, configured as a part of the amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

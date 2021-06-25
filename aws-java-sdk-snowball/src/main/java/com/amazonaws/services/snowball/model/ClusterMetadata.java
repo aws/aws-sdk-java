@@ -150,6 +150,12 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private TaxDocuments taxDocuments;
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     */
+    private OnDeviceServiceConfiguration onDeviceServiceConfiguration;
 
     /**
      * <p>
@@ -1190,6 +1196,46 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Represents metadata and configuration settings for services on an AWS Snow Family device.
+     */
+
+    public void setOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        this.onDeviceServiceConfiguration = onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     * 
+     * @return Represents metadata and configuration settings for services on an AWS Snow Family device.
+     */
+
+    public OnDeviceServiceConfiguration getOnDeviceServiceConfiguration() {
+        return this.onDeviceServiceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * </p>
+     * 
+     * @param onDeviceServiceConfiguration
+     *        Represents metadata and configuration settings for services on an AWS Snow Family device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterMetadata withOnDeviceServiceConfiguration(OnDeviceServiceConfiguration onDeviceServiceConfiguration) {
+        setOnDeviceServiceConfiguration(onDeviceServiceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1228,7 +1274,9 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
         if (getForwardingAddressId() != null)
             sb.append("ForwardingAddressId: ").append(getForwardingAddressId()).append(",");
         if (getTaxDocuments() != null)
-            sb.append("TaxDocuments: ").append(getTaxDocuments());
+            sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
+        if (getOnDeviceServiceConfiguration() != null)
+            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1299,6 +1347,10 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTaxDocuments() != null && other.getTaxDocuments().equals(this.getTaxDocuments()) == false)
             return false;
+        if (other.getOnDeviceServiceConfiguration() == null ^ this.getOnDeviceServiceConfiguration() == null)
+            return false;
+        if (other.getOnDeviceServiceConfiguration() != null && other.getOnDeviceServiceConfiguration().equals(this.getOnDeviceServiceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1321,6 +1373,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
+        hashCode = prime * hashCode + ((getOnDeviceServiceConfiguration() == null) ? 0 : getOnDeviceServiceConfiguration().hashCode());
         return hashCode;
     }
 

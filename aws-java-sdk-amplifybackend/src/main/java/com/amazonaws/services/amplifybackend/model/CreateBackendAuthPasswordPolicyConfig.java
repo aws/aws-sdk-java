@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The password policy configuration for the backend of your Amplify project.
+ * The password policy configuration for the backend to your Amplify project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthPasswordPolicyConfig"

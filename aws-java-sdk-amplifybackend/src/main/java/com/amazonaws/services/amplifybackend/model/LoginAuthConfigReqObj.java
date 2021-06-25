@@ -30,7 +30,7 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      * </p>
      */
     private String awsCognitoIdentityPoolId;
@@ -55,11 +55,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      * </p>
      * 
      * @param awsCognitoIdentityPoolId
-     *        The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     *        The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      */
 
     public void setAwsCognitoIdentityPoolId(String awsCognitoIdentityPoolId) {
@@ -68,10 +68,10 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      * </p>
      * 
-     * @return The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     * @return The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      */
 
     public String getAwsCognitoIdentityPoolId() {
@@ -80,11 +80,11 @@ public class LoginAuthConfigReqObj implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     * The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      * </p>
      * 
      * @param awsCognitoIdentityPoolId
-     *        The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
+     *        The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

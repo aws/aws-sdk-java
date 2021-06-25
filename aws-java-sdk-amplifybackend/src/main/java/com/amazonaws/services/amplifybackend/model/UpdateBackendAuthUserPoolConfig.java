@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the Amazon Cognito user pool configuration to configure the authorization resource for your Amplify project
- * on an update.
+ * Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify
+ * project on an update.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthUserPoolConfig"
@@ -38,7 +38,7 @@ public class UpdateBackendAuthUserPoolConfig implements Serializable, Cloneable,
     private UpdateBackendAuthForgotPasswordConfig forgotPassword;
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      */
@@ -105,13 +105,13 @@ public class UpdateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param mfa
-     *        Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
+     *        configured as a part of your Amplify project.
      */
 
     public void setMfa(UpdateBackendAuthMFAConfig mfa) {
@@ -120,12 +120,12 @@ public class UpdateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      * 
-     * @return Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool
-     *         that's configured as a part of your Amplify project.
+     * @return Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user
+     *         pool configured as a part of your Amplify project.
      */
 
     public UpdateBackendAuthMFAConfig getMfa() {
@@ -134,13 +134,13 @@ public class UpdateBackendAuthUserPoolConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's
+     * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
      * configured as a part of your Amplify project.
      * </p>
      * 
      * @param mfa
-     *        Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool
-     *        that's configured as a part of your Amplify project.
+     *        Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool
+     *        configured as a part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
