@@ -50,6 +50,16 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     private Hdr10Metadata hdr10Metadata;
     /** Hue in degrees. */
     private Integer hue;
+    /**
+     * Specify the video color sample range for this output. To create a full range output, you must start with a full
+     * range YUV input and keep the default value, None (NONE). To create a limited range output from a full range
+     * input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range,
+     * regardless of your choice here. When you create a limited range output from a full range input, MediaConvert
+     * limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values
+     * from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert
+     * also changes the output metadata to note the limited range.
+     */
+    private String sampleRangeConversion;
     /** Saturation level. */
     private Integer saturation;
 
@@ -314,6 +324,105 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify the video color sample range for this output. To create a full range output, you must start with a full
+     * range YUV input and keep the default value, None (NONE). To create a limited range output from a full range
+     * input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range,
+     * regardless of your choice here. When you create a limited range output from a full range input, MediaConvert
+     * limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values
+     * from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert
+     * also changes the output metadata to note the limited range.
+     * 
+     * @param sampleRangeConversion
+     *        Specify the video color sample range for this output. To create a full range output, you must start with a
+     *        full range YUV input and keep the default value, None (NONE). To create a limited range output from a full
+     *        range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited
+     *        range, regardless of your choice here. When you create a limited range output from a full range input,
+     *        MediaConvert limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs
+     *        contain only values from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With
+     *        this conversion, MediaConvert also changes the output metadata to note the limited range.
+     * @see SampleRangeConversion
+     */
+
+    public void setSampleRangeConversion(String sampleRangeConversion) {
+        this.sampleRangeConversion = sampleRangeConversion;
+    }
+
+    /**
+     * Specify the video color sample range for this output. To create a full range output, you must start with a full
+     * range YUV input and keep the default value, None (NONE). To create a limited range output from a full range
+     * input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range,
+     * regardless of your choice here. When you create a limited range output from a full range input, MediaConvert
+     * limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values
+     * from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert
+     * also changes the output metadata to note the limited range.
+     * 
+     * @return Specify the video color sample range for this output. To create a full range output, you must start with
+     *         a full range YUV input and keep the default value, None (NONE). To create a limited range output from a
+     *         full range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always
+     *         limited range, regardless of your choice here. When you create a limited range output from a full range
+     *         input, MediaConvert limits the active pixel values in a way that depends on the output's bit depth: 8-bit
+     *         outputs contain only values from 16 through 235 and 10-bit outputs contain only values from 64 through
+     *         940. With this conversion, MediaConvert also changes the output metadata to note the limited range.
+     * @see SampleRangeConversion
+     */
+
+    public String getSampleRangeConversion() {
+        return this.sampleRangeConversion;
+    }
+
+    /**
+     * Specify the video color sample range for this output. To create a full range output, you must start with a full
+     * range YUV input and keep the default value, None (NONE). To create a limited range output from a full range
+     * input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range,
+     * regardless of your choice here. When you create a limited range output from a full range input, MediaConvert
+     * limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values
+     * from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert
+     * also changes the output metadata to note the limited range.
+     * 
+     * @param sampleRangeConversion
+     *        Specify the video color sample range for this output. To create a full range output, you must start with a
+     *        full range YUV input and keep the default value, None (NONE). To create a limited range output from a full
+     *        range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited
+     *        range, regardless of your choice here. When you create a limited range output from a full range input,
+     *        MediaConvert limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs
+     *        contain only values from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With
+     *        this conversion, MediaConvert also changes the output metadata to note the limited range.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SampleRangeConversion
+     */
+
+    public ColorCorrector withSampleRangeConversion(String sampleRangeConversion) {
+        setSampleRangeConversion(sampleRangeConversion);
+        return this;
+    }
+
+    /**
+     * Specify the video color sample range for this output. To create a full range output, you must start with a full
+     * range YUV input and keep the default value, None (NONE). To create a limited range output from a full range
+     * input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range,
+     * regardless of your choice here. When you create a limited range output from a full range input, MediaConvert
+     * limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values
+     * from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert
+     * also changes the output metadata to note the limited range.
+     * 
+     * @param sampleRangeConversion
+     *        Specify the video color sample range for this output. To create a full range output, you must start with a
+     *        full range YUV input and keep the default value, None (NONE). To create a limited range output from a full
+     *        range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited
+     *        range, regardless of your choice here. When you create a limited range output from a full range input,
+     *        MediaConvert limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs
+     *        contain only values from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With
+     *        this conversion, MediaConvert also changes the output metadata to note the limited range.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SampleRangeConversion
+     */
+
+    public ColorCorrector withSampleRangeConversion(SampleRangeConversion sampleRangeConversion) {
+        this.sampleRangeConversion = sampleRangeConversion.toString();
+        return this;
+    }
+
+    /**
      * Saturation level.
      * 
      * @param saturation
@@ -369,6 +478,8 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
             sb.append("Hdr10Metadata: ").append(getHdr10Metadata()).append(",");
         if (getHue() != null)
             sb.append("Hue: ").append(getHue()).append(",");
+        if (getSampleRangeConversion() != null)
+            sb.append("SampleRangeConversion: ").append(getSampleRangeConversion()).append(",");
         if (getSaturation() != null)
             sb.append("Saturation: ").append(getSaturation());
         sb.append("}");
@@ -405,6 +516,10 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHue() != null && other.getHue().equals(this.getHue()) == false)
             return false;
+        if (other.getSampleRangeConversion() == null ^ this.getSampleRangeConversion() == null)
+            return false;
+        if (other.getSampleRangeConversion() != null && other.getSampleRangeConversion().equals(this.getSampleRangeConversion()) == false)
+            return false;
         if (other.getSaturation() == null ^ this.getSaturation() == null)
             return false;
         if (other.getSaturation() != null && other.getSaturation().equals(this.getSaturation()) == false)
@@ -422,6 +537,7 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContrast() == null) ? 0 : getContrast().hashCode());
         hashCode = prime * hashCode + ((getHdr10Metadata() == null) ? 0 : getHdr10Metadata().hashCode());
         hashCode = prime * hashCode + ((getHue() == null) ? 0 : getHue().hashCode());
+        hashCode = prime * hashCode + ((getSampleRangeConversion() == null) ? 0 : getSampleRangeConversion().hashCode());
         hashCode = prime * hashCode + ((getSaturation() == null) ? 0 : getSaturation().hashCode());
         return hashCode;
     }

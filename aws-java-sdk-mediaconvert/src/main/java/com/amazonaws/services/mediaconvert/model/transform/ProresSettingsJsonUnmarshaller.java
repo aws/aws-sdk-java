@@ -48,6 +48,10 @@ public class ProresSettingsJsonUnmarshaller implements Unmarshaller<ProresSettin
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("chromaSampling", targetDepth)) {
+                    context.nextToken();
+                    proresSettings.setChromaSampling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("codecProfile", targetDepth)) {
                     context.nextToken();
                     proresSettings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));

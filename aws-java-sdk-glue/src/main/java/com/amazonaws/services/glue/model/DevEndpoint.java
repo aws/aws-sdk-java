@@ -119,11 +119,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String workerType;
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -147,7 +147,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private Integer numberOfWorkers;
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      * </p>
      */
     private Integer numberOfNodes;
@@ -250,16 +250,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>"--enable-glue-datacatalog": ""</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
      * </p>
      * </li>
      * </ul>
@@ -944,11 +934,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -961,12 +951,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
      *        indicates the version supported for running your ETL scripts on development endpoints. </p>
      *        <p>
-     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
-     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
-     *        guide.
+     *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      *        </p>
      *        <p>
      *        Development endpoints that are created without specifying a Glue version default to Glue 0.9.
@@ -983,11 +972,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -999,11 +988,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * provided, the version defaults to Python 2.
      * </p>
      * 
-     * @return Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python
-     *         version indicates the version supported for running your ETL scripts on development endpoints. </p>
+     * @return Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
+     *         indicates the version supported for running your ETL scripts on development endpoints. </p>
      *         <p>
-     *         For more information about the available AWS Glue versions and corresponding Spark and Python versions,
-     *         see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *         For more information about the available Glue versions and corresponding Spark and Python versions, see
+     *         <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
      *         guide.
      *         </p>
      *         <p>
@@ -1021,11 +1010,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -1038,12 +1027,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
      *        indicates the version supported for running your ETL scripts on development endpoints. </p>
      *        <p>
-     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
-     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
-     *        guide.
+     *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      *        </p>
      *        <p>
      *        Development endpoints that are created without specifying a Glue version default to Glue 0.9.
@@ -1120,11 +1108,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     *        The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -1133,10 +1121,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     * @return The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      */
 
     public Integer getNumberOfNodes() {
@@ -1145,11 +1133,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
+     *        The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1783,16 +1771,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -1808,16 +1786,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>"--enable-glue-datacatalog": ""</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>"GLUE_PYTHON_VERSION": "2"</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -1844,16 +1812,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -1870,16 +1828,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>"--enable-glue-datacatalog": ""</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -1906,16 +1854,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -1932,16 +1870,6 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>"--enable-glue-datacatalog": ""</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
      *        </p>
      *        </li>
      *        </ul>

@@ -12,9 +12,9 @@
  */
 
 /**
- * <fullname>AWS Glue</fullname>
+ * <fullname>Glue</fullname>
  * <p>
- * Defines the public endpoint for the AWS Glue service.
+ * Defines the public endpoint for the Glue service.
  * </p>
  */
 package com.amazonaws.services.glue;

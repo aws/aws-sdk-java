@@ -60,6 +60,10 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
                     context.nextToken();
                     audioSelector.setExternalAudioFileInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hlsRenditionGroupSettings", targetDepth)) {
+                    context.nextToken();
+                    audioSelector.setHlsRenditionGroupSettings(HlsRenditionGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("languageCode", targetDepth)) {
                     context.nextToken();
                     audioSelector.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));

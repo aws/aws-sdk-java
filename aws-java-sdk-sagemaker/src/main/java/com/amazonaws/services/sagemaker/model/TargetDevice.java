@@ -45,6 +45,7 @@ public enum TargetDevice {
     Qcs603("qcs603"),
     Sitara_am57x("sitara_am57x"),
     Amba_cv22("amba_cv22"),
+    Amba_cv25("amba_cv25"),
     X86_win32("x86_win32"),
     X86_win64("x86_win64"),
     Coreml("coreml"),

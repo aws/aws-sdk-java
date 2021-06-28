@@ -29,7 +29,8 @@ public enum VideoCodec {
     PRORES("PRORES"),
     VC3("VC3"),
     VP8("VP8"),
-    VP9("VP9");
+    VP9("VP9"),
+    XAVC("XAVC");
 
     private String value;
 

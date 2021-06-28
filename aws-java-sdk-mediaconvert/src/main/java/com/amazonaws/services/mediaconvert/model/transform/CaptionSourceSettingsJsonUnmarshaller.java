@@ -76,6 +76,10 @@ public class CaptionSourceSettingsJsonUnmarshaller implements Unmarshaller<Capti
                     context.nextToken();
                     captionSourceSettings.setTrackSourceSettings(TrackSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("webvttHlsSourceSettings", targetDepth)) {
+                    context.nextToken();
+                    captionSourceSettings.setWebvttHlsSourceSettings(WebvttHlsSourceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -34,6 +34,8 @@ public class AudioSelectorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultSelection").build();
     private static final MarshallingInfo<String> EXTERNALAUDIOFILEINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalAudioFileInput").build();
+    private static final MarshallingInfo<StructuredPojo> HLSRENDITIONGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsRenditionGroupSettings").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("languageCode").build();
     private static final MarshallingInfo<Integer> OFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class AudioSelectorMarshaller {
             protocolMarshaller.marshall(audioSelector.getCustomLanguageCode(), CUSTOMLANGUAGECODE_BINDING);
             protocolMarshaller.marshall(audioSelector.getDefaultSelection(), DEFAULTSELECTION_BINDING);
             protocolMarshaller.marshall(audioSelector.getExternalAudioFileInput(), EXTERNALAUDIOFILEINPUT_BINDING);
+            protocolMarshaller.marshall(audioSelector.getHlsRenditionGroupSettings(), HLSRENDITIONGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(audioSelector.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(audioSelector.getOffset(), OFFSET_BINDING);
             protocolMarshaller.marshall(audioSelector.getPids(), PIDS_BINDING);

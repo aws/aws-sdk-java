@@ -39,7 +39,7 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     private String description;
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      */
     private java.util.List<GlueTable> inputRecordTables;
@@ -53,15 +53,15 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
-     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the
      * transform.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * This role needs Glue service role permissions to allow access to resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
-     * Access AWS Glue</a>.
+     * Access Glue</a>.
      * </p>
      * </li>
      * <li>
@@ -75,20 +75,20 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     private String role;
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      */
     private String glueVersion;
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
@@ -208,9 +208,9 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this machine learning transform. You may use tags to limit access to the machine learning
-     * transform. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the developer
-     * guide.
+     * transform. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the
+     * developer guide.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -304,10 +304,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * 
-     * @return A list of AWS Glue table definitions used by the transform.
+     * @return A list of Glue table definitions used by the transform.
      */
 
     public java.util.List<GlueTable> getInputRecordTables() {
@@ -316,11 +316,11 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * 
      * @param inputRecordTables
-     *        A list of AWS Glue table definitions used by the transform.
+     *        A list of Glue table definitions used by the transform.
      */
 
     public void setInputRecordTables(java.util.Collection<GlueTable> inputRecordTables) {
@@ -334,7 +334,7 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -343,7 +343,7 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param inputRecordTables
-     *        A list of AWS Glue table definitions used by the transform.
+     *        A list of Glue table definitions used by the transform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +359,11 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * 
      * @param inputRecordTables
-     *        A list of AWS Glue table definitions used by the transform.
+     *        A list of Glue table definitions used by the transform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,15 +421,15 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
-     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the
      * transform.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * This role needs Glue service role permissions to allow access to resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
-     * Access AWS Glue</a>.
+     * Access Glue</a>.
      * </p>
      * </li>
      * <li>
@@ -442,14 +442,14 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param role
      *        The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
-     *        permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3
-     *        permissions required by the transform. </p>
+     *        permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions
+     *        required by the transform. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     *        This role needs Glue service role permissions to allow access to resources in Glue. See <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users
-     *        That Access AWS Glue</a>.
+     *        That Access Glue</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -467,15 +467,15 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
-     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the
      * transform.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * This role needs Glue service role permissions to allow access to resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
-     * Access AWS Glue</a>.
+     * Access Glue</a>.
      * </p>
      * </li>
      * <li>
@@ -487,14 +487,14 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @return The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
-     *         permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3
-     *         permissions required by the transform. </p>
+     *         permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions
+     *         required by the transform. </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     *         This role needs Glue service role permissions to allow access to resources in Glue. See <a
      *         href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM
-     *         Users That Access AWS Glue</a>.
+     *         Users That Access Glue</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -512,15 +512,15 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
-     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the
      * transform.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * This role needs Glue service role permissions to allow access to resources in Glue. See <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
-     * Access AWS Glue</a>.
+     * Access Glue</a>.
      * </p>
      * </li>
      * <li>
@@ -533,14 +533,14 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param role
      *        The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
-     *        permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3
-     *        permissions required by the transform. </p>
+     *        permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions
+     *        required by the transform. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     *        This role needs Glue service role permissions to allow access to resources in Glue. See <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users
-     *        That Access AWS Glue</a>.
+     *        That Access Glue</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -559,18 +559,18 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *        0.9. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *        is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *        Versions</a> in the developer guide.
      */
 
@@ -580,17 +580,17 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
-     * @return This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *         1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *         0.9. For more information, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     * @return This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *         is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *         Versions</a> in the developer guide.
      */
 
@@ -600,18 +600,18 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *        0.9. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *        is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *        Versions</a> in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -623,10 +623,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
@@ -666,10 +666,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param maxCapacity
-     *        The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
-     *        You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
-     *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You
+     *        can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that
+     *        consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
+     *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
      *        <p>
      *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
      *        <code>WorkerType</code>.
@@ -713,10 +713,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
@@ -755,10 +755,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>MaxCapacity</code> field is set automatically and becomes read-only.
      * </p>
      * 
-     * @return The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
-     *         You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
-     *         that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     * @return The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You
+     *         can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that
+     *         consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
+     *         href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
      *         <p>
      *         <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
      *         <code>WorkerType</code>.
@@ -802,10 +802,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
@@ -845,10 +845,10 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param maxCapacity
-     *        The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
-     *        You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
-     *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You
+     *        can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that
+     *        consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
+     *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
      *        <p>
      *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
      *        <code>WorkerType</code>.
@@ -1485,15 +1485,15 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this machine learning transform. You may use tags to limit access to the machine learning
-     * transform. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the developer
-     * guide.
+     * transform. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the
+     * developer guide.
      * </p>
      * 
      * @return The tags to use with this machine learning transform. You may use tags to limit access to the machine
-     *         learning transform. For more information about tags in AWS Glue, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *         developer guide.
+     *         learning transform. For more information about tags in Glue, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *         in the developer guide.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1503,16 +1503,16 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this machine learning transform. You may use tags to limit access to the machine learning
-     * transform. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the developer
-     * guide.
+     * transform. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the
+     * developer guide.
      * </p>
      * 
      * @param tags
      *        The tags to use with this machine learning transform. You may use tags to limit access to the machine
-     *        learning transform. For more information about tags in AWS Glue, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *        developer guide.
+     *        learning transform. For more information about tags in Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *        in the developer guide.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1522,16 +1522,16 @@ public class CreateMLTransformRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this machine learning transform. You may use tags to limit access to the machine learning
-     * transform. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the developer
-     * guide.
+     * transform. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the
+     * developer guide.
      * </p>
      * 
      * @param tags
      *        The tags to use with this machine learning transform. You may use tags to limit access to the machine
-     *        learning transform. For more information about tags in AWS Glue, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *        developer guide.
+     *        learning transform. For more information about tags in Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *        in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

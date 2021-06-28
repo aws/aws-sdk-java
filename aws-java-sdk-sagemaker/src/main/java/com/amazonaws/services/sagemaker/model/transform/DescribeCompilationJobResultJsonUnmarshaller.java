@@ -72,6 +72,10 @@ public class DescribeCompilationJobResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeCompilationJobResult.setStoppingCondition(StoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InferenceImage", targetDepth)) {
+                    context.nextToken();
+                    describeCompilationJobResult.setInferenceImage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeCompilationJobResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -103,6 +107,10 @@ public class DescribeCompilationJobResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("OutputConfig", targetDepth)) {
                     context.nextToken();
                     describeCompilationJobResult.setOutputConfig(OutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    describeCompilationJobResult.setVpcConfig(NeoVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

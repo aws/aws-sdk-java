@@ -132,7 +132,7 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     private String createdBy;
     /**
      * <p>
-     * Indicates whether the table has been registered with AWS Lake Formation.
+     * Indicates whether the table has been registered with Lake Formation.
      * </p>
      */
     private Boolean isRegisteredWithLakeFormation;
@@ -908,11 +908,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the table has been registered with AWS Lake Formation.
+     * Indicates whether the table has been registered with Lake Formation.
      * </p>
      * 
      * @param isRegisteredWithLakeFormation
-     *        Indicates whether the table has been registered with AWS Lake Formation.
+     *        Indicates whether the table has been registered with Lake Formation.
      */
 
     public void setIsRegisteredWithLakeFormation(Boolean isRegisteredWithLakeFormation) {
@@ -921,10 +921,10 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the table has been registered with AWS Lake Formation.
+     * Indicates whether the table has been registered with Lake Formation.
      * </p>
      * 
-     * @return Indicates whether the table has been registered with AWS Lake Formation.
+     * @return Indicates whether the table has been registered with Lake Formation.
      */
 
     public Boolean getIsRegisteredWithLakeFormation() {
@@ -933,11 +933,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the table has been registered with AWS Lake Formation.
+     * Indicates whether the table has been registered with Lake Formation.
      * </p>
      * 
      * @param isRegisteredWithLakeFormation
-     *        Indicates whether the table has been registered with AWS Lake Formation.
+     *        Indicates whether the table has been registered with Lake Formation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -948,10 +948,10 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the table has been registered with AWS Lake Formation.
+     * Indicates whether the table has been registered with Lake Formation.
      * </p>
      * 
-     * @return Indicates whether the table has been registered with AWS Lake Formation.
+     * @return Indicates whether the table has been registered with Lake Formation.
      */
 
     public Boolean isRegisteredWithLakeFormation() {

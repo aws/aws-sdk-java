@@ -37,7 +37,7 @@ public class GetSchemaVersionResult extends com.amazonaws.AmazonWebServiceResult
     private String schemaDefinition;
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      */
     private String dataFormat;
@@ -148,11 +148,11 @@ public class GetSchemaVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
      * @param dataFormat
-     *        The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     *        The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * @see DataFormat
      */
 
@@ -162,10 +162,11 @@ public class GetSchemaVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
-     * @return The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * @return The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are
+     *         supported.
      * @see DataFormat
      */
 
@@ -175,11 +176,11 @@ public class GetSchemaVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
      * @param dataFormat
-     *        The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     *        The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataFormat
      */
@@ -191,11 +192,11 @@ public class GetSchemaVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
      * @param dataFormat
-     *        The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     *        The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataFormat
      */

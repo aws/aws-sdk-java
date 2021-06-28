@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The unique ID of the schema in the AWS Glue schema registry.
+ * The unique ID of the schema in the Glue schema registry.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaId" target="_top">AWS API

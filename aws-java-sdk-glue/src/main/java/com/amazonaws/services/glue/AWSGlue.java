@@ -26,9 +26,9 @@ import com.amazonaws.services.glue.model.*;
  * {@link com.amazonaws.services.glue.AbstractAWSGlue} instead.
  * </p>
  * <p>
- * <fullname>AWS Glue</fullname>
+ * <fullname>Glue</fullname>
  * <p>
- * Defines the public endpoint for the AWS Glue service.
+ * Defines the public endpoint for the Glue service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -114,8 +114,8 @@ public interface AWSGlue {
      * <note>
      * <p>
      * After completing this operation, you no longer have access to the table versions and partitions that belong to
-     * the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
-     * discretion of the service.
+     * the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion
+     * of the service.
      * </p>
      * <p>
      * To ensure the immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use
@@ -333,8 +333,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that AWS Glue runs on your behalf
-     * as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling
+     * Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as
+     * part of various machine learning workflows. You can cancel a machine learning task run at any time by calling
      * <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's
      * <code>TaskRunId</code>.
      * </p>
@@ -526,8 +526,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Creates an AWS Glue machine learning transform. This operation creates the transform and all the necessary
-     * parameters to train it.
+     * Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters
+     * to train it.
      * </p>
      * <p>
      * Call this operation as the first step in the process of using a machine learning transform (such as the
@@ -535,7 +535,7 @@ public interface AWSGlue {
      * in addition to the parameters that you want to use for your algorithm.
      * </p>
      * <p>
-     * You must also specify certain parameters for the tasks that AWS Glue runs on your behalf as part of learning from
+     * You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from
      * your data and creating a high-quality machine learning transform. These parameters include <code>Role</code>, and
      * optionally, <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more
      * information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.
@@ -698,8 +698,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Creates a new security configuration. A security configuration is a set of security properties that can be used
-     * by AWS Glue. You can use a security configuration to encrypt data at rest. For information about using security
-     * configurations in AWS Glue, see <a
+     * by Glue. You can use a security configuration to encrypt data at rest. For information about using security
+     * configurations in Glue, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting Data Written
      * by Crawlers, Jobs, and Development Endpoints</a>.
      * </p>
@@ -919,7 +919,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.
+     * Removes a specified crawler from the Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.
      * </p>
      * 
      * @param deleteCrawlerRequest
@@ -945,7 +945,7 @@ public interface AWSGlue {
      * <note>
      * <p>
      * After completing this operation, you no longer have access to the tables (and all table versions and partitions
-     * that might belong to the tables) and the user-defined functions in the deleted database. AWS Glue deletes these
+     * that might belong to the tables) and the user-defined functions in the deleted database. Glue deletes these
      * "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
      * </p>
      * <p>
@@ -1014,11 +1014,11 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Deletes an AWS Glue machine learning transform. Machine learning transforms are a special type of transform that
-     * use machine learning to learn the details of the transformation to be performed by learning from examples
-     * provided by humans. These transformations are then saved by AWS Glue. If you no longer need a transform, you can
-     * delete it by calling <code>DeleteMLTransforms</code>. However, any AWS Glue jobs that still reference the deleted
-     * transform will no longer succeed.
+     * Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use
+     * machine learning to learn the details of the transformation to be performed by learning from examples provided by
+     * humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by
+     * calling <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted transform will
+     * no longer succeed.
      * </p>
      * 
      * @param deleteMLTransformRequest
@@ -1086,8 +1086,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Delete the entire registry including schema and all of its versions. To get the status of the delete operation,
-     * you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will disable all
-     * online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>,
+     * you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will deactivate
+     * all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>,
      * <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs.
      * </p>
      * 
@@ -1133,8 +1133,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete
-     * operation, you can call <code>GetSchema</code> API after the asynchronous call. Deleting a registry will disable
-     * all online operations for the schema, such as the <code>GetSchemaByDefinition</code>, and
+     * operation, you can call <code>GetSchema</code> API after the asynchronous call. Deleting a registry will
+     * deactivate all online operations for the schema, such as the <code>GetSchemaByDefinition</code>, and
      * <code>RegisterSchemaVersion</code> APIs.
      * </p>
      * 
@@ -1220,8 +1220,8 @@ public interface AWSGlue {
      * <note>
      * <p>
      * After completing this operation, you no longer have access to the table versions and partitions that belong to
-     * the deleted table. AWS Glue deletes these "orphaned" resources asynchronously in a timely manner, at the
-     * discretion of the service.
+     * the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion
+     * of the service.
      * </p>
      * <p>
      * To ensure the immediate deletion of all related resources, before calling <code>DeleteTable</code>, use
@@ -1608,9 +1608,9 @@ public interface AWSGlue {
      * </p>
      * <note>
      * <p>
-     * When you create a development endpoint in a virtual private cloud (VPC), AWS Glue returns only a private IP
-     * address, and the public IP address field is not populated. When you create a non-VPC development endpoint, AWS
-     * Glue returns only a public IP address.
+     * When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address,
+     * and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns
+     * only a public IP address.
      * </p>
      * </note>
      * 
@@ -1636,9 +1636,9 @@ public interface AWSGlue {
      * </p>
      * <note>
      * <p>
-     * When you create a development endpoint in a virtual private cloud (VPC), AWS Glue returns only a private IP
-     * address and the public IP address field is not populated. When you create a non-VPC development endpoint, AWS
-     * Glue returns only a public IP address.
+     * When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address
+     * and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns
+     * only a public IP address.
      * </p>
      * </note>
      * 
@@ -1768,8 +1768,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous
-     * tasks that AWS Glue runs on your behalf as part of various machine learning workflows. You can check the stats of
-     * any task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's
+     * tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any
+     * task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's
      * <code>TransformID</code>.
      * </p>
      * 
@@ -1791,9 +1791,9 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Gets a list of runs for a machine learning transform. Machine learning task runs are asynchronous tasks that AWS
-     * Glue runs on your behalf as part of various machine learning workflows. You can get a sortable, filterable list
-     * of machine learning task runs by calling <code>GetMLTaskRuns</code> with their parent transform's
+     * Gets a list of runs for a machine learning transform. Machine learning task runs are asynchronous tasks that Glue
+     * runs on your behalf as part of various machine learning workflows. You can get a sortable, filterable list of
+     * machine learning task runs by calling <code>GetMLTaskRuns</code> with their parent transform's
      * <code>TransformID</code> and other optional parameters as documented in this section.
      * </p>
      * <p>
@@ -1818,10 +1818,10 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Gets an AWS Glue machine learning transform artifact and all its corresponding metadata. Machine learning
-     * transforms are a special type of transform that use machine learning to learn the details of the transformation
-     * to be performed by learning from examples provided by humans. These transformations are then saved by AWS Glue.
-     * You can retrieve their metadata by calling <code>GetMLTransform</code>.
+     * Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms
+     * are a special type of transform that use machine learning to learn the details of the transformation to be
+     * performed by learning from examples provided by humans. These transformations are then saved by Glue. You can
+     * retrieve their metadata by calling <code>GetMLTransform</code>.
      * </p>
      * 
      * @param getMLTransformRequest
@@ -1842,10 +1842,10 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Gets a sortable, filterable list of existing AWS Glue machine learning transforms. Machine learning transforms
-     * are a special type of transform that use machine learning to learn the details of the transformation to be
-     * performed by learning from examples provided by humans. These transformations are then saved by AWS Glue, and you
-     * can retrieve their metadata by calling <code>GetMLTransforms</code>.
+     * Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a
+     * special type of transform that use machine learning to learn the details of the transformation to be performed by
+     * learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve
+     * their metadata by calling <code>GetMLTransforms</code>.
      * </p>
      * 
      * @param getMLTransformsRequest
@@ -1996,12 +1996,12 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves the resource policies set on individual resources by AWS Resource Access Manager during cross-account
+     * Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account
      * permission grants. Also retrieves the Data Catalog resource policy.
      * </p>
      * <p>
-     * If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the AWS KMS key,
-     * the operation can't return the Data Catalog resource policy.
+     * If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the
+     * operation can't return the Data Catalog resource policy.
      * </p>
      * 
      * @param getResourcePoliciesRequest
@@ -2462,7 +2462,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Imports an existing Amazon Athena Data Catalog to AWS Glue
+     * Imports an existing Amazon Athena Data Catalog to Glue.
      * </p>
      * 
      * @param importCatalogToGlueRequest
@@ -2479,8 +2479,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves the names of all crawler resources in this AWS account, or the resources with the specified tag. This
-     * operation allows you to see which resources are available in your account, and their names.
+     * Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the
+     * specified tag. This operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
      * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
@@ -2500,8 +2500,9 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves the names of all <code>DevEndpoint</code> resources in this AWS account, or the resources with the
-     * specified tag. This operation allows you to see which resources are available in your account, and their names.
+     * Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the
+     * resources with the specified tag. This operation allows you to see which resources are available in your account,
+     * and their names.
      * </p>
      * <p>
      * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
@@ -2527,8 +2528,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves the names of all job resources in this AWS account, or the resources with the specified tag. This
-     * operation allows you to see which resources are available in your account, and their names.
+     * Retrieves the names of all job resources in this Amazon Web Services account, or the resources with the specified
+     * tag. This operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
      * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
@@ -2554,10 +2555,10 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms in this AWS account, or
-     * the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can
-     * use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
-     * filtering, only resources with the tags are retrieved.
+     * Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services
+     * account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field,
+     * which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you
+     * choose to use tag filtering, only resources with the tags are retrieved.
      * </p>
      * 
      * @param listMLTransformsRequest
@@ -2648,8 +2649,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves the names of all trigger resources in this AWS account, or the resources with the specified tag. This
-     * operation allows you to see which resources are available in your account, and their names.
+     * Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the
+     * specified tag. This operation allows you to see which resources are available in your account, and their names.
      * </p>
      * <p>
      * This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that
@@ -3017,11 +3018,11 @@ public interface AWSGlue {
      * quality of your machine learning transform.
      * </p>
      * <p>
-     * After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue machine learning will have
-     * generated a series of questions for humans to answer. (Answering these questions is often called 'labeling' in
-     * the machine learning workflows). In the case of the <code>FindMatches</code> transform, these questions are of
-     * the form, “What is the correct way to group these rows together into groups composed entirely of matching
-     * records?” After the labeling process is finished, users upload their answers/labels with a call to
+     * After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine learning will have generated a
+     * series of questions for humans to answer. (Answering these questions is often called 'labeling' in the machine
+     * learning workflows). In the case of the <code>FindMatches</code> transform, these questions are of the form,
+     * “What is the correct way to group these rows together into groups composed entirely of matching records?” After
+     * the labeling process is finished, users upload their answers/labels with a call to
      * <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes, all future runs of
      * the machine learning transform use the new and improved labels and perform a higher-quality transformation.
      * </p>
@@ -3084,8 +3085,8 @@ public interface AWSGlue {
      * Starts a task to estimate the quality of the transform.
      * </p>
      * <p>
-     * When you provide label sets as examples of truth, AWS Glue machine learning uses some of those examples to learn
-     * from them. The rest of the labels are used as a test to estimate quality.
+     * When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from
+     * them. The rest of the labels are used as a test to estimate quality.
      * </p>
      * <p>
      * Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more information about the
@@ -3118,8 +3119,8 @@ public interface AWSGlue {
      * generating label sets and adding labels.
      * </p>
      * <p>
-     * When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue will have generated a "labeling set"
-     * or a set of questions for humans to answer.
+     * When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have generated a "labeling set" or
+     * a set of questions for humans to answer.
      * </p>
      * <p>
      * In the case of the <code>FindMatches</code> transform, these questions are of the form, “What is the correct way
@@ -3292,9 +3293,9 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS Glue, you can tag only
-     * certain resources. For information about what resources you can tag, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
+     * Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource. In Glue, you can tag
+     * only certain resources. For information about what resources you can tag, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>.
      * </p>
      * 
      * @param tagResourceRequest

@@ -42,7 +42,7 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String schemaName;
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      */
     private String dataFormat;
@@ -118,8 +118,8 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified,
-     * follows the AWS tags-on-create pattern.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If
+     * specified, follows the Amazon Web Services tags-on-create pattern.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -230,11 +230,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
      * @param dataFormat
-     *        The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     *        The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * @see DataFormat
      */
 
@@ -244,10 +244,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
-     * @return The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * @return The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are
+     *         supported.
      * @see DataFormat
      */
 
@@ -257,11 +258,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
      * @param dataFormat
-     *        The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     *        The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataFormat
      */
@@ -273,11 +274,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     * The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * </p>
      * 
      * @param dataFormat
-     *        The data format of the schema definition. Currently only <code>AVRO</code> is supported.
+     *        The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataFormat
      */
@@ -854,12 +855,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified,
-     * follows the AWS tags-on-create pattern.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If
+     * specified, follows the Amazon Web Services tags-on-create pattern.
      * </p>
      * 
-     * @return AWS tags that contain a key value pair and may be searched by console, command line, or API. If
-     *         specified, follows the AWS tags-on-create pattern.
+     * @return Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or
+     *         API. If specified, follows the Amazon Web Services tags-on-create pattern.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -868,13 +869,13 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified,
-     * follows the AWS tags-on-create pattern.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If
+     * specified, follows the Amazon Web Services tags-on-create pattern.
      * </p>
      * 
      * @param tags
-     *        AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified,
-     *        follows the AWS tags-on-create pattern.
+     *        Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or
+     *        API. If specified, follows the Amazon Web Services tags-on-create pattern.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -883,13 +884,13 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified,
-     * follows the AWS tags-on-create pattern.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If
+     * specified, follows the Amazon Web Services tags-on-create pattern.
      * </p>
      * 
      * @param tags
-     *        AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified,
-     *        follows the AWS tags-on-create pattern.
+     *        Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or
+     *        API. If specified, follows the Amazon Web Services tags-on-create pattern.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

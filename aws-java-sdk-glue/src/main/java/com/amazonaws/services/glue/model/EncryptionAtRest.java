@@ -36,7 +36,7 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
     private String catalogEncryptionMode;
     /**
      * <p>
-     * The ID of the AWS KMS key to use for encryption at rest.
+     * The ID of the KMS key to use for encryption at rest.
      * </p>
      */
     private String sseAwsKmsKeyId;
@@ -102,11 +102,11 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS KMS key to use for encryption at rest.
+     * The ID of the KMS key to use for encryption at rest.
      * </p>
      * 
      * @param sseAwsKmsKeyId
-     *        The ID of the AWS KMS key to use for encryption at rest.
+     *        The ID of the KMS key to use for encryption at rest.
      */
 
     public void setSseAwsKmsKeyId(String sseAwsKmsKeyId) {
@@ -115,10 +115,10 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS KMS key to use for encryption at rest.
+     * The ID of the KMS key to use for encryption at rest.
      * </p>
      * 
-     * @return The ID of the AWS KMS key to use for encryption at rest.
+     * @return The ID of the KMS key to use for encryption at rest.
      */
 
     public String getSseAwsKmsKeyId() {
@@ -127,11 +127,11 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS KMS key to use for encryption at rest.
+     * The ID of the KMS key to use for encryption at rest.
      * </p>
      * 
      * @param sseAwsKmsKeyId
-     *        The ID of the AWS KMS key to use for encryption at rest.
+     *        The ID of the KMS key to use for encryption at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,8 @@ public class BatchCreatePartitionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account ID.
+     * The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services
+     * account ID.
      * </p>
      */
     private String catalogId;
@@ -52,12 +53,13 @@ public class BatchCreatePartitionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account ID.
+     * The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services
+     * account ID.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account
-     *        ID.
+     *        The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web
+     *        Services account ID.
      */
 
     public void setCatalogId(String catalogId) {
@@ -66,11 +68,12 @@ public class BatchCreatePartitionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account ID.
+     * The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services
+     * account ID.
      * </p>
      * 
-     * @return The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account
-     *         ID.
+     * @return The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web
+     *         Services account ID.
      */
 
     public String getCatalogId() {
@@ -79,12 +82,13 @@ public class BatchCreatePartitionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account ID.
+     * The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services
+     * account ID.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the catalog in which the partition is to be created. Currently, this should be the AWS account
-     *        ID.
+     *        The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web
+     *        Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

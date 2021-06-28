@@ -40,7 +40,7 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     private String description;
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -136,10 +136,11 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.
      * </p>
      * 
-     * @return AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     * @return Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or
+     *         API.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -148,11 +149,12 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.
      * </p>
      * 
      * @param tags
-     *        AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     *        Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or
+     *        API.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -161,11 +163,12 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     * Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.
      * </p>
      * 
      * @param tags
-     *        AWS tags that contain a key value pair and may be searched by console, command line, or API.
+     *        Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

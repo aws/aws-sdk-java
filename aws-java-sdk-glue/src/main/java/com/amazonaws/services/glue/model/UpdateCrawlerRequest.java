@@ -40,7 +40,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String role;
     /**
      * <p>
-     * The AWS Glue database where results are stored, such as:
+     * The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      */
@@ -201,12 +201,12 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Glue database where results are stored, such as:
+     * The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
      * @param databaseName
-     *        The AWS Glue database where results are stored, such as:
+     *        The Glue database where results are stored, such as:
      *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      */
 
@@ -216,11 +216,11 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Glue database where results are stored, such as:
+     * The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
-     * @return The AWS Glue database where results are stored, such as:
+     * @return The Glue database where results are stored, such as:
      *         <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      */
 
@@ -230,12 +230,12 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Glue database where results are stored, such as:
+     * The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
      * @param databaseName
-     *        The AWS Glue database where results are stored, such as:
+     *        The Glue database where results are stored, such as:
      *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

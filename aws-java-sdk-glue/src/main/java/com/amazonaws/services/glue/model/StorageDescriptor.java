@@ -105,7 +105,7 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
     private Boolean storedAsSubDirectories;
     /**
      * <p>
-     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * An object that references a schema stored in the Glue Schema Registry.
      * </p>
      * <p>
      * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
@@ -755,14 +755,14 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * An object that references a schema stored in the Glue Schema Registry.
      * </p>
      * <p>
      * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
      * </p>
      * 
      * @param schemaReference
-     *        An object that references a schema stored in the AWS Glue Schema Registry.</p>
+     *        An object that references a schema stored in the Glue Schema Registry.</p>
      *        <p>
      *        When creating a table, you can pass an empty list of columns for the schema, and instead use a schema
      *        reference.
@@ -774,13 +774,13 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * An object that references a schema stored in the Glue Schema Registry.
      * </p>
      * <p>
      * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
      * </p>
      * 
-     * @return An object that references a schema stored in the AWS Glue Schema Registry.</p>
+     * @return An object that references a schema stored in the Glue Schema Registry.</p>
      *         <p>
      *         When creating a table, you can pass an empty list of columns for the schema, and instead use a schema
      *         reference.
@@ -792,14 +792,14 @@ public class StorageDescriptor implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An object that references a schema stored in the AWS Glue Schema Registry.
+     * An object that references a schema stored in the Glue Schema Registry.
      * </p>
      * <p>
      * When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.
      * </p>
      * 
      * @param schemaReference
-     *        An object that references a schema stored in the AWS Glue Schema Registry.</p>
+     *        An object that references a schema stored in the Glue Schema Registry.</p>
      *        <p>
      *        When creating a table, you can pass an empty list of columns for the schema, and instead use a schema
      *        reference.

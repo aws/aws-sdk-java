@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ProresSettingsMarshaller {
 
+    private static final MarshallingInfo<String> CHROMASAMPLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("chromaSampling").build();
     private static final MarshallingInfo<String> CODECPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecProfile").build();
     private static final MarshallingInfo<String> FRAMERATECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class ProresSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(proresSettings.getChromaSampling(), CHROMASAMPLING_BINDING);
             protocolMarshaller.marshall(proresSettings.getCodecProfile(), CODECPROFILE_BINDING);
             protocolMarshaller.marshall(proresSettings.getFramerateControl(), FRAMERATECONTROL_BINDING);
             protocolMarshaller.marshall(proresSettings.getFramerateConversionAlgorithm(), FRAMERATECONVERSIONALGORITHM_BINDING);

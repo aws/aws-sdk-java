@@ -44,7 +44,7 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     private CaptionSourceFramerate framerate;
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', 'smi', and 'vtt'.
+     * 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
     private String sourceFile;
     /** Specifies a time delta in seconds to offset the captions from the source file. */
@@ -181,11 +181,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', 'smi', and 'vtt'.
+     * 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', 'xml', 'smi', and 'vtt'.
+     *        'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
 
     public void setSourceFile(String sourceFile) {
@@ -194,10 +194,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', 'smi', and 'vtt'.
+     * 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      * 
      * @return External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *         'stl', 'srt', 'xml', 'smi', and 'vtt'.
+     *         'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
 
     public String getSourceFile() {
@@ -206,11 +206,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', 'smi', and 'vtt'.
+     * 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', 'xml', 'smi', and 'vtt'.
+     *        'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

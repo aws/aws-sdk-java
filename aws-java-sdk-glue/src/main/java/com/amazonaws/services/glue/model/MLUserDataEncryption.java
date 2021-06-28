@@ -40,8 +40,7 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.
+     * SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -66,8 +65,7 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.
+     * SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -82,8 +80,8 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     *        Amazon S3.
+     *        SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     *        S3.
      *        </p>
      *        </li>
      * @see MLUserDataEncryptionModeString
@@ -105,8 +103,7 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.
+     * SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -120,7 +117,7 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      *         </li>
      *         <li>
      *         <p>
-     *         SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in
+     *         SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in
      *         Amazon S3.
      *         </p>
      *         </li>
@@ -143,8 +140,7 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.
+     * SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -159,8 +155,8 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     *        Amazon S3.
+     *        SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     *        S3.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -184,8 +180,7 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      * </li>
      * <li>
      * <p>
-     * SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in Amazon
-     * S3.
+     * SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.
      * </p>
      * </li>
      * </ul>
@@ -200,8 +195,8 @@ public class MLUserDataEncryption implements Serializable, Cloneable, Structured
      *        </li>
      *        <li>
      *        <p>
-     *        SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in
-     *        Amazon S3.
+     *        SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon
+     *        S3.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

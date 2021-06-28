@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies an AWS Glue Data Catalog target.
+ * Specifies an Glue Data Catalog target.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogTarget" target="_top">AWS API

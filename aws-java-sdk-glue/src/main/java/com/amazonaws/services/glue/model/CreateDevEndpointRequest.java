@@ -72,7 +72,7 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<String> publicKeys;
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      * </p>
      */
     private Integer numberOfNodes;
@@ -110,11 +110,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     private String workerType;
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -165,8 +165,8 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -549,11 +549,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     *        The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -562,10 +562,10 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      * </p>
      * 
-     * @return The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     * @return The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      */
 
     public Integer getNumberOfNodes() {
@@ -574,11 +574,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     * The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of AWS Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+     *        The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -852,11 +852,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -869,12 +869,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
      *        indicates the version supported for running your ETL scripts on development endpoints. </p>
      *        <p>
-     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
-     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
-     *        guide.
+     *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      *        </p>
      *        <p>
      *        Development endpoints that are created without specifying a Glue version default to Glue 0.9.
@@ -891,11 +890,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -907,11 +906,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * provided, the version defaults to Python 2.
      * </p>
      * 
-     * @return Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python
-     *         version indicates the version supported for running your ETL scripts on development endpoints. </p>
+     * @return Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
+     *         indicates the version supported for running your ETL scripts on development endpoints. </p>
      *         <p>
-     *         For more information about the available AWS Glue versions and corresponding Spark and Python versions,
-     *         see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *         For more information about the available Glue versions and corresponding Spark and Python versions, see
+     *         <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
      *         guide.
      *         </p>
      *         <p>
@@ -929,11 +928,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
      * </p>
      * <p>
-     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * <p>
@@ -946,12 +945,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
      *        indicates the version supported for running your ETL scripts on development endpoints. </p>
      *        <p>
-     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
-     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
-     *        guide.
+     *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      *        </p>
      *        <p>
      *        Development endpoints that are created without specifying a Glue version default to Glue 0.9.
@@ -1197,14 +1195,14 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      * 
      * @return The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more
-     *         information about tags in AWS Glue, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *         developer guide.
+     *         information about tags in Glue, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *         in the developer guide.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1214,15 +1212,15 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      * 
      * @param tags
      *        The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more
-     *        information about tags in AWS Glue, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *        developer guide.
+     *        information about tags in Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *        in the developer guide.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1232,15 +1230,15 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      * 
      * @param tags
      *        The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more
-     *        information about tags in AWS Glue, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *        developer guide.
+     *        information about tags in Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *        in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

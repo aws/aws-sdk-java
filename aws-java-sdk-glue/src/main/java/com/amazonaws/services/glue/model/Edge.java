@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An edge represents a directed connection between two AWS Glue components that are part of the workflow the edge
- * belongs to.
+ * An edge represents a directed connection between two Glue components that are part of the workflow the edge belongs
+ * to.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Edge" target="_top">AWS API Documentation</a>

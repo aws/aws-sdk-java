@@ -64,6 +64,10 @@ public class Eac3AtmosSettingsJsonUnmarshaller implements Unmarshaller<Eac3Atmos
                     context.nextToken();
                     eac3AtmosSettings.setDialogueIntelligence(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("downmixControl", targetDepth)) {
+                    context.nextToken();
+                    eac3AtmosSettings.setDownmixControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("dynamicRangeCompressionLine", targetDepth)) {
                     context.nextToken();
                     eac3AtmosSettings.setDynamicRangeCompressionLine(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class Eac3AtmosSettingsJsonUnmarshaller implements Unmarshaller<Eac3Atmos
                 if (context.testExpression("dynamicRangeCompressionRf", targetDepth)) {
                     context.nextToken();
                     eac3AtmosSettings.setDynamicRangeCompressionRf(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("dynamicRangeControl", targetDepth)) {
+                    context.nextToken();
+                    eac3AtmosSettings.setDynamicRangeControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("loRoCenterMixLevel", targetDepth)) {
                     context.nextToken();

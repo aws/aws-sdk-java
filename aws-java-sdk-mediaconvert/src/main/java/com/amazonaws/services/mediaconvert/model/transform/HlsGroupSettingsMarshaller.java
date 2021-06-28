@@ -52,6 +52,8 @@ public class HlsGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("directoryStructure").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
+    private static final MarshallingInfo<String> IMAGEBASEDTRICKPLAY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageBasedTrickPlay").build();
     private static final MarshallingInfo<String> MANIFESTCOMPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestCompression").build();
     private static final MarshallingInfo<String> MANIFESTDURATIONFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -109,6 +111,7 @@ public class HlsGroupSettingsMarshaller {
             protocolMarshaller.marshall(hlsGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getDirectoryStructure(), DIRECTORYSTRUCTURE_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getEncryption(), ENCRYPTION_BINDING);
+            protocolMarshaller.marshall(hlsGroupSettings.getImageBasedTrickPlay(), IMAGEBASEDTRICKPLAY_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getManifestCompression(), MANIFESTCOMPRESSION_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getManifestDurationFormat(), MANIFESTDURATIONFORMAT_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getMinFinalSegmentLength(), MINFINALSEGMENTLENGTH_BINDING);

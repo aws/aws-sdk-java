@@ -27,8 +27,8 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
-     * used by default.
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services
+     * account ID is used by default.
      * </p>
      */
     private String catalogId;
@@ -176,7 +176,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * If an invalid type is encountered, an exception is thrown.
+     * If an type is encountered that is not valid, an exception is thrown.
      * </p>
      * <p>
      * The following list shows the valid operators on each type. When you define a crawler, the
@@ -210,13 +210,13 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
-     * used by default.
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services
+     * account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account
-     *        ID is used by default.
+     *        The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web
+     *        Services account ID is used by default.
      */
 
     public void setCatalogId(String catalogId) {
@@ -225,12 +225,12 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
-     * used by default.
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services
+     * account ID is used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account
-     *         ID is used by default.
+     * @return The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web
+     *         Services account ID is used by default.
      */
 
     public String getCatalogId() {
@@ -239,13 +239,13 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
-     * used by default.
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services
+     * account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account
-     *        ID is used by default.
+     *        The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web
+     *        Services account ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,7 +466,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * If an invalid type is encountered, an exception is thrown.
+     * If an type is encountered that is not valid, an exception is thrown.
      * </p>
      * <p>
      * The following list shows the valid operators on each type. When you define a crawler, the
@@ -607,7 +607,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        </ul>
      *        <p>
-     *        If an invalid type is encountered, an exception is thrown.
+     *        If an type is encountered that is not valid, an exception is thrown.
      *        </p>
      *        <p>
      *        The following list shows the valid operators on each type. When you define a crawler, the
@@ -754,7 +754,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * If an invalid type is encountered, an exception is thrown.
+     * If an type is encountered that is not valid, an exception is thrown.
      * </p>
      * <p>
      * The following list shows the valid operators on each type. When you define a crawler, the
@@ -894,7 +894,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         </ul>
      *         <p>
-     *         If an invalid type is encountered, an exception is thrown.
+     *         If an type is encountered that is not valid, an exception is thrown.
      *         </p>
      *         <p>
      *         The following list shows the valid operators on each type. When you define a crawler, the
@@ -1041,7 +1041,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * If an invalid type is encountered, an exception is thrown.
+     * If an type is encountered that is not valid, an exception is thrown.
      * </p>
      * <p>
      * The following list shows the valid operators on each type. When you define a crawler, the
@@ -1182,7 +1182,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        </ul>
      *        <p>
-     *        If an invalid type is encountered, an exception is thrown.
+     *        If an type is encountered that is not valid, an exception is thrown.
      *        </p>
      *        <p>
      *        The following list shows the valid operators on each type. When you define a crawler, the

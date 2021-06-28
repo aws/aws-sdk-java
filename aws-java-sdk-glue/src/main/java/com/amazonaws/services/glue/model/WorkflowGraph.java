@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and
- * all the directed connections between them.
+ * A workflow graph represents the complete workflow containing all the Glue components present in the workflow and all
+ * the directed connections between them.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/WorkflowGraph" target="_top">AWS API
@@ -31,7 +31,7 @@ public class WorkflowGraph implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the the AWS Glue components belong to the workflow represented as nodes.
+     * A list of the the Glue components belong to the workflow represented as nodes.
      * </p>
      */
     private java.util.List<Node> nodes;
@@ -44,10 +44,10 @@ public class WorkflowGraph implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the the AWS Glue components belong to the workflow represented as nodes.
+     * A list of the the Glue components belong to the workflow represented as nodes.
      * </p>
      * 
-     * @return A list of the the AWS Glue components belong to the workflow represented as nodes.
+     * @return A list of the the Glue components belong to the workflow represented as nodes.
      */
 
     public java.util.List<Node> getNodes() {
@@ -56,11 +56,11 @@ public class WorkflowGraph implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the the AWS Glue components belong to the workflow represented as nodes.
+     * A list of the the Glue components belong to the workflow represented as nodes.
      * </p>
      * 
      * @param nodes
-     *        A list of the the AWS Glue components belong to the workflow represented as nodes.
+     *        A list of the the Glue components belong to the workflow represented as nodes.
      */
 
     public void setNodes(java.util.Collection<Node> nodes) {
@@ -74,7 +74,7 @@ public class WorkflowGraph implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the the AWS Glue components belong to the workflow represented as nodes.
+     * A list of the the Glue components belong to the workflow represented as nodes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class WorkflowGraph implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodes
-     *        A list of the the AWS Glue components belong to the workflow represented as nodes.
+     *        A list of the the Glue components belong to the workflow represented as nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class WorkflowGraph implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the the AWS Glue components belong to the workflow represented as nodes.
+     * A list of the the Glue components belong to the workflow represented as nodes.
      * </p>
      * 
      * @param nodes
-     *        A list of the the AWS Glue components belong to the workflow represented as nodes.
+     *        A list of the the Glue components belong to the workflow represented as nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

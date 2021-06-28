@@ -36,8 +36,8 @@ public class CreateJsonClassifierRequest implements Serializable, Cloneable, Str
     private String name;
     /**
      * <p>
-     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset
-     * of JsonPath, as described in <a
+     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of
+     * JsonPath, as described in <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath
      * Custom Classifiers</a>.
      * </p>
@@ -86,14 +86,14 @@ public class CreateJsonClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset
-     * of JsonPath, as described in <a
+     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of
+     * JsonPath, as described in <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath
      * Custom Classifiers</a>.
      * </p>
      * 
      * @param jsonPath
-     *        A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a
+     *        A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a
      *        subset of JsonPath, as described in <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      *        JsonPath Custom Classifiers</a>.
@@ -105,13 +105,13 @@ public class CreateJsonClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset
-     * of JsonPath, as described in <a
+     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of
+     * JsonPath, as described in <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath
      * Custom Classifiers</a>.
      * </p>
      * 
-     * @return A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a
+     * @return A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a
      *         subset of JsonPath, as described in <a
      *         href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      *         JsonPath Custom Classifiers</a>.
@@ -123,14 +123,14 @@ public class CreateJsonClassifierRequest implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset
-     * of JsonPath, as described in <a
+     * A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of
+     * JsonPath, as described in <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath
      * Custom Classifiers</a>.
      * </p>
      * 
      * @param jsonPath
-     *        A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a
+     *        A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a
      *        subset of JsonPath, as described in <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      *        JsonPath Custom Classifiers</a>.

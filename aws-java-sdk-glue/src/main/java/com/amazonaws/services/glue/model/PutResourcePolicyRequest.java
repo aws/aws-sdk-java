@@ -65,7 +65,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * By using the <b>Grant permissions</b> command on the Management Console.
      * </p>
      * </li>
      * </ul>
@@ -293,7 +293,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * By using the <b>Grant permissions</b> command on the Management Console.
      * </p>
      * </li>
      * </ul>
@@ -313,7 +313,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        By using the <b>Grant permissions</b> command on the Management Console.
      *        </p>
      *        </li>
      *        </ul>
@@ -340,7 +340,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * By using the <b>Grant permissions</b> command on the Management Console.
      * </p>
      * </li>
      * </ul>
@@ -359,7 +359,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *         By using the <b>Grant permissions</b> command on the Management Console.
      *         </p>
      *         </li>
      *         </ul>
@@ -386,7 +386,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * By using the <b>Grant permissions</b> command on the Management Console.
      * </p>
      * </li>
      * </ul>
@@ -406,7 +406,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        By using the <b>Grant permissions</b> command on the Management Console.
      *        </p>
      *        </li>
      *        </ul>
@@ -435,7 +435,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * By using the <b>Grant permissions</b> command on the Management Console.
      * </p>
      * </li>
      * </ul>
@@ -455,7 +455,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        By using the <b>Grant permissions</b> command on the Management Console.
      *        </p>
      *        </li>
      *        </ul>

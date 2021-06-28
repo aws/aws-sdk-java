@@ -68,6 +68,10 @@ public class ColorCorrectorJsonUnmarshaller implements Unmarshaller<ColorCorrect
                     context.nextToken();
                     colorCorrector.setHue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("sampleRangeConversion", targetDepth)) {
+                    context.nextToken();
+                    colorCorrector.setSampleRangeConversion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("saturation", targetDepth)) {
                     context.nextToken();
                     colorCorrector.setSaturation(context.getUnmarshaller(Integer.class).unmarshall(context));

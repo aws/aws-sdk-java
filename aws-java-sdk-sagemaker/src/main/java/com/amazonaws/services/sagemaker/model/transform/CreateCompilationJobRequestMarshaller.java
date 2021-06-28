@@ -36,6 +36,8 @@ public class CreateCompilationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputConfig").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputConfig").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
     private static final MarshallingInfo<StructuredPojo> STOPPINGCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoppingCondition").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class CreateCompilationJobRequestMarshaller {
             protocolMarshaller.marshall(createCompilationJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createCompilationJobRequest.getInputConfig(), INPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createCompilationJobRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);
+            protocolMarshaller.marshall(createCompilationJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(createCompilationJobRequest.getStoppingCondition(), STOPPINGCONDITION_BINDING);
             protocolMarshaller.marshall(createCompilationJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

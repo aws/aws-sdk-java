@@ -39,6 +39,15 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     private String defaultSelection;
     /** Specifies audio data from an external file source. */
     private String externalAudioFileInput;
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId,
+     * renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the
+     * job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video
+     * segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen
+     * instead.
+     */
+    private HlsRenditionGroupSettings hlsRenditionGroupSettings;
     /** Selects a specific language code from within an audio source. */
     private String languageCode;
     /** Specifies a time delta in milliseconds to offset the audio from the input video. */
@@ -203,6 +212,70 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
 
     public AudioSelector withExternalAudioFileInput(String externalAudioFileInput) {
         setExternalAudioFileInput(externalAudioFileInput);
+        return this;
+    }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId,
+     * renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the
+     * job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video
+     * segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen
+     * instead.
+     * 
+     * @param hlsRenditionGroupSettings
+     *        Settings specific to audio sources in an HLS alternate rendition group. Specify the properties
+     *        (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the
+     *        alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks
+     *        match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified,
+     *        the default audio track within the video segment is chosen. If there is no audio within video segment, the
+     *        alternative audio with DEFAULT=YES is chosen instead.
+     */
+
+    public void setHlsRenditionGroupSettings(HlsRenditionGroupSettings hlsRenditionGroupSettings) {
+        this.hlsRenditionGroupSettings = hlsRenditionGroupSettings;
+    }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId,
+     * renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the
+     * job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video
+     * segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen
+     * instead.
+     * 
+     * @return Settings specific to audio sources in an HLS alternate rendition group. Specify the properties
+     *         (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the
+     *         alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks
+     *         match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are
+     *         specified, the default audio track within the video segment is chosen. If there is no audio within video
+     *         segment, the alternative audio with DEFAULT=YES is chosen instead.
+     */
+
+    public HlsRenditionGroupSettings getHlsRenditionGroupSettings() {
+        return this.hlsRenditionGroupSettings;
+    }
+
+    /**
+     * Settings specific to audio sources in an HLS alternate rendition group. Specify the properties (renditionGroupId,
+     * renditionName or renditionLanguageCode) to identify the unique audio track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks match the properties provided, the
+     * job fails. If no properties in hlsRenditionGroupSettings are specified, the default audio track within the video
+     * segment is chosen. If there is no audio within video segment, the alternative audio with DEFAULT=YES is chosen
+     * instead.
+     * 
+     * @param hlsRenditionGroupSettings
+     *        Settings specific to audio sources in an HLS alternate rendition group. Specify the properties
+     *        (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique audio track among the
+     *        alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks
+     *        match the properties provided, the job fails. If no properties in hlsRenditionGroupSettings are specified,
+     *        the default audio track within the video segment is chosen. If there is no audio within video segment, the
+     *        alternative audio with DEFAULT=YES is chosen instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioSelector withHlsRenditionGroupSettings(HlsRenditionGroupSettings hlsRenditionGroupSettings) {
+        setHlsRenditionGroupSettings(hlsRenditionGroupSettings);
         return this;
     }
 
@@ -613,6 +686,8 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
             sb.append("DefaultSelection: ").append(getDefaultSelection()).append(",");
         if (getExternalAudioFileInput() != null)
             sb.append("ExternalAudioFileInput: ").append(getExternalAudioFileInput()).append(",");
+        if (getHlsRenditionGroupSettings() != null)
+            sb.append("HlsRenditionGroupSettings: ").append(getHlsRenditionGroupSettings()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getOffset() != null)
@@ -653,6 +728,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExternalAudioFileInput() != null && other.getExternalAudioFileInput().equals(this.getExternalAudioFileInput()) == false)
             return false;
+        if (other.getHlsRenditionGroupSettings() == null ^ this.getHlsRenditionGroupSettings() == null)
+            return false;
+        if (other.getHlsRenditionGroupSettings() != null && other.getHlsRenditionGroupSettings().equals(this.getHlsRenditionGroupSettings()) == false)
+            return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
@@ -692,6 +771,7 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDefaultSelection() == null) ? 0 : getDefaultSelection().hashCode());
         hashCode = prime * hashCode + ((getExternalAudioFileInput() == null) ? 0 : getExternalAudioFileInput().hashCode());
+        hashCode = prime * hashCode + ((getHlsRenditionGroupSettings() == null) ? 0 : getHlsRenditionGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getOffset() == null) ? 0 : getOffset().hashCode());
         hashCode = prime * hashCode + ((getPids() == null) ? 0 : getPids().hashCode());

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The AWS Lake Formation principal.
+ * The Lake Formation principal.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataLakePrincipal" target="_top">AWS API
@@ -30,18 +30,18 @@ public class DataLakePrincipal implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An identifier for the AWS Lake Formation principal.
+     * An identifier for the Lake Formation principal.
      * </p>
      */
     private String dataLakePrincipalIdentifier;
 
     /**
      * <p>
-     * An identifier for the AWS Lake Formation principal.
+     * An identifier for the Lake Formation principal.
      * </p>
      * 
      * @param dataLakePrincipalIdentifier
-     *        An identifier for the AWS Lake Formation principal.
+     *        An identifier for the Lake Formation principal.
      */
 
     public void setDataLakePrincipalIdentifier(String dataLakePrincipalIdentifier) {
@@ -50,10 +50,10 @@ public class DataLakePrincipal implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An identifier for the AWS Lake Formation principal.
+     * An identifier for the Lake Formation principal.
      * </p>
      * 
-     * @return An identifier for the AWS Lake Formation principal.
+     * @return An identifier for the Lake Formation principal.
      */
 
     public String getDataLakePrincipalIdentifier() {
@@ -62,11 +62,11 @@ public class DataLakePrincipal implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An identifier for the AWS Lake Formation principal.
+     * An identifier for the Lake Formation principal.
      * </p>
      * 
      * @param dataLakePrincipalIdentifier
-     *        An identifier for the AWS Lake Formation principal.
+     *        An identifier for the Lake Formation principal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

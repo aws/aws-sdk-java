@@ -82,6 +82,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private String directoryStructure;
     /** DRM settings. */
     private HlsEncryptionSettings encryption;
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
+     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
+     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    private String imageBasedTrickPlay;
     /** When set to GZIP, compresses HLS playlist. */
     private String manifestCompression;
     /** Indicates whether the output manifest should use floating point values for segment duration. */
@@ -863,6 +873,106 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
+     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
+     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * 
+     * @param imageBasedTrickPlay
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
+     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
+     *        MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
+     *        entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
+     *        and full-frame images that MediaConvert creates with this feature are compatible with this Roku
+     *        specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * @see HlsImageBasedTrickPlay
+     */
+
+    public void setImageBasedTrickPlay(String imageBasedTrickPlay) {
+        this.imageBasedTrickPlay = imageBasedTrickPlay;
+    }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
+     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
+     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * 
+     * @return Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     *         generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
+     *         frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
+     *         MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
+     *         entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
+     *         and full-frame images that MediaConvert creates with this feature are compatible with this Roku
+     *         specification:
+     *         https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * @see HlsImageBasedTrickPlay
+     */
+
+    public String getImageBasedTrickPlay() {
+        return this.imageBasedTrickPlay;
+    }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
+     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
+     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * 
+     * @param imageBasedTrickPlay
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
+     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
+     *        MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
+     *        entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
+     *        and full-frame images that MediaConvert creates with this feature are compatible with this Roku
+     *        specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsImageBasedTrickPlay
+     */
+
+    public HlsGroupSettings withImageBasedTrickPlay(String imageBasedTrickPlay) {
+        setImageBasedTrickPlay(imageBasedTrickPlay);
+        return this;
+    }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
+     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
+     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * 
+     * @param imageBasedTrickPlay
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
+     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
+     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
+     *        MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
+     *        entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
+     *        and full-frame images that MediaConvert creates with this feature are compatible with this Roku
+     *        specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsImageBasedTrickPlay
+     */
+
+    public HlsGroupSettings withImageBasedTrickPlay(HlsImageBasedTrickPlay imageBasedTrickPlay) {
+        this.imageBasedTrickPlay = imageBasedTrickPlay.toString();
+        return this;
+    }
+
+    /**
      * When set to GZIP, compresses HLS playlist.
      * 
      * @param manifestCompression
@@ -1577,6 +1687,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("DirectoryStructure: ").append(getDirectoryStructure()).append(",");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
+        if (getImageBasedTrickPlay() != null)
+            sb.append("ImageBasedTrickPlay: ").append(getImageBasedTrickPlay()).append(",");
         if (getManifestCompression() != null)
             sb.append("ManifestCompression: ").append(getManifestCompression()).append(",");
         if (getManifestDurationFormat() != null)
@@ -1667,6 +1779,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
             return false;
+        if (other.getImageBasedTrickPlay() == null ^ this.getImageBasedTrickPlay() == null)
+            return false;
+        if (other.getImageBasedTrickPlay() != null && other.getImageBasedTrickPlay().equals(this.getImageBasedTrickPlay()) == false)
+            return false;
         if (other.getManifestCompression() == null ^ this.getManifestCompression() == null)
             return false;
         if (other.getManifestCompression() != null && other.getManifestCompression().equals(this.getManifestCompression()) == false)
@@ -1743,6 +1859,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getDirectoryStructure() == null) ? 0 : getDirectoryStructure().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getImageBasedTrickPlay() == null) ? 0 : getImageBasedTrickPlay().hashCode());
         hashCode = prime * hashCode + ((getManifestCompression() == null) ? 0 : getManifestCompression().hashCode());
         hashCode = prime * hashCode + ((getManifestDurationFormat() == null) ? 0 : getManifestDurationFormat().hashCode());
         hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());

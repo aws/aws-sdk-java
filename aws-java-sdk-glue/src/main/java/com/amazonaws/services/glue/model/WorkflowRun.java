@@ -30,7 +30,7 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow that was executed.
+     * Name of the workflow that was run.
      * </p>
      */
     private String name;
@@ -85,7 +85,7 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
     private WorkflowRunStatistics statistics;
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      */
@@ -93,11 +93,11 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow that was executed.
+     * Name of the workflow that was run.
      * </p>
      * 
      * @param name
-     *        Name of the workflow that was executed.
+     *        Name of the workflow that was run.
      */
 
     public void setName(String name) {
@@ -106,10 +106,10 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow that was executed.
+     * Name of the workflow that was run.
      * </p>
      * 
-     * @return Name of the workflow that was executed.
+     * @return Name of the workflow that was run.
      */
 
     public String getName() {
@@ -118,11 +118,11 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow that was executed.
+     * Name of the workflow that was run.
      * </p>
      * 
      * @param name
-     *        Name of the workflow that was executed.
+     *        Name of the workflow that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,12 +506,12 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      * 
      * @param graph
-     *        The graph representing all the AWS Glue components that belong to the workflow as nodes and directed
+     *        The graph representing all the Glue components that belong to the workflow as nodes and directed
      *        connections between them as edges.
      */
 
@@ -521,11 +521,11 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      * 
-     * @return The graph representing all the AWS Glue components that belong to the workflow as nodes and directed
+     * @return The graph representing all the Glue components that belong to the workflow as nodes and directed
      *         connections between them as edges.
      */
 
@@ -535,12 +535,12 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      * 
      * @param graph
-     *        The graph representing all the AWS Glue components that belong to the workflow as nodes and directed
+     *        The graph representing all the Glue components that belong to the workflow as nodes and directed
      *        connections between them as edges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

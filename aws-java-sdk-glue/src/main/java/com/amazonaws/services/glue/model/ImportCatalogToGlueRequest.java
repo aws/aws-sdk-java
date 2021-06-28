@@ -27,18 +27,18 @@ public class ImportCatalogToGlueRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the catalog to import. Currently, this should be the AWS account ID.
+     * The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      * </p>
      */
     private String catalogId;
 
     /**
      * <p>
-     * The ID of the catalog to import. Currently, this should be the AWS account ID.
+     * The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the catalog to import. Currently, this should be the AWS account ID.
+     *        The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      */
 
     public void setCatalogId(String catalogId) {
@@ -47,10 +47,10 @@ public class ImportCatalogToGlueRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the catalog to import. Currently, this should be the AWS account ID.
+     * The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      * </p>
      * 
-     * @return The ID of the catalog to import. Currently, this should be the AWS account ID.
+     * @return The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      */
 
     public String getCatalogId() {
@@ -59,11 +59,11 @@ public class ImportCatalogToGlueRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the catalog to import. Currently, this should be the AWS account ID.
+     * The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the catalog to import. Currently, this should be the AWS account ID.
+     *        The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

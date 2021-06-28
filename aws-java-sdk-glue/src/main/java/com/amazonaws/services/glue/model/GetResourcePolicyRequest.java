@@ -27,10 +27,10 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     * The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
      * resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For
      * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue Resource
+     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource
      * ARNs</a>.
      * </p>
      */
@@ -38,18 +38,18 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     * The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
      * resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For
      * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue Resource
+     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource
      * ARNs</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data
-     *        Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource
-     *        policies. For more information see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue
+     *        The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     *        resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies.
+     *        For more information see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue
      *        Resource ARNs</a>.
      */
 
@@ -59,17 +59,17 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     * The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
      * resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For
      * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue Resource
+     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource
      * ARNs</a>.
      * </p>
      * 
-     * @return The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data
-     *         Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource
-     *         policies. For more information see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue
+     * @return The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     *         resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies.
+     *         For more information see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue
      *         Resource ARNs</a>.
      */
 
@@ -79,18 +79,18 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     * The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
      * resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For
      * more information see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue Resource
+     * href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource
      * ARNs</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data
-     *        Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource
-     *        policies. For more information see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying AWS Glue
+     *        The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog
+     *        resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies.
+     *        For more information see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue
      *        Resource ARNs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -49,11 +49,11 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
     private String status;
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      */
     private String glueVersion;
@@ -259,18 +259,18 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *        0.9. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *        is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *        Versions</a> in the developer guide.
      */
 
@@ -280,17 +280,17 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
-     * @return This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *         1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *         0.9. For more information, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     * @return This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *         is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *         Versions</a> in the developer guide.
      */
 
@@ -300,18 +300,18 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *        0.9. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *        is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *        Versions</a> in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

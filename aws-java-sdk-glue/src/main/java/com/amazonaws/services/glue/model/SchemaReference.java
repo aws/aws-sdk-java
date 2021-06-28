@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that references a schema stored in the AWS Glue Schema Registry.
+ * An object that references a schema stored in the Glue Schema Registry.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaReference" target="_top">AWS API

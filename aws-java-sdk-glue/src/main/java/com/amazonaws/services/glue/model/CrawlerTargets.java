@@ -54,7 +54,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DynamoDBTarget> dynamoDBTargets;
     /**
      * <p>
-     * Specifies AWS Glue Data Catalog targets.
+     * Specifies Glue Data Catalog targets.
      * </p>
      */
     private java.util.List<CatalogTarget> catalogTargets;
@@ -341,10 +341,10 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies AWS Glue Data Catalog targets.
+     * Specifies Glue Data Catalog targets.
      * </p>
      * 
-     * @return Specifies AWS Glue Data Catalog targets.
+     * @return Specifies Glue Data Catalog targets.
      */
 
     public java.util.List<CatalogTarget> getCatalogTargets() {
@@ -353,11 +353,11 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies AWS Glue Data Catalog targets.
+     * Specifies Glue Data Catalog targets.
      * </p>
      * 
      * @param catalogTargets
-     *        Specifies AWS Glue Data Catalog targets.
+     *        Specifies Glue Data Catalog targets.
      */
 
     public void setCatalogTargets(java.util.Collection<CatalogTarget> catalogTargets) {
@@ -371,7 +371,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies AWS Glue Data Catalog targets.
+     * Specifies Glue Data Catalog targets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -380,7 +380,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param catalogTargets
-     *        Specifies AWS Glue Data Catalog targets.
+     *        Specifies Glue Data Catalog targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,11 +396,11 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies AWS Glue Data Catalog targets.
+     * Specifies Glue Data Catalog targets.
      * </p>
      * 
      * @param catalogTargets
-     *        Specifies AWS Glue Data Catalog targets.
+     *        Specifies Glue Data Catalog targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

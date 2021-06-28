@@ -68,6 +68,8 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private StoppingCondition stoppingCondition;
+
+    private String inferenceImage;
     /**
      * <p>
      * The time that the model compilation job was created.
@@ -118,6 +120,15 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private OutputConfig outputConfig;
+    /**
+     * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     */
+    private NeoVpcConfig vpcConfig;
 
     /**
      * <p>
@@ -426,6 +437,32 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     public DescribeCompilationJobResult withStoppingCondition(StoppingCondition stoppingCondition) {
         setStoppingCondition(stoppingCondition);
+        return this;
+    }
+
+    /**
+     * @param inferenceImage
+     */
+
+    public void setInferenceImage(String inferenceImage) {
+        this.inferenceImage = inferenceImage;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getInferenceImage() {
+        return this.inferenceImage;
+    }
+
+    /**
+     * @param inferenceImage
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCompilationJobResult withInferenceImage(String inferenceImage) {
+        setInferenceImage(inferenceImage);
         return this;
     }
 
@@ -766,6 +803,64 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
+     *        access to your models by configuring the VPC. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
+     */
+
+    public void setVpcConfig(NeoVpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     * 
+     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to.
+     *         Control access to your models by configuring the VPC. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
+     *         Amazon Virtual Private Cloud</a>.
+     */
+
+    public NeoVpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
+     *        access to your models by configuring the VPC. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCompilationJobResult withVpcConfig(NeoVpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -789,6 +884,8 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             sb.append("CompilationEndTime: ").append(getCompilationEndTime()).append(",");
         if (getStoppingCondition() != null)
             sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
+        if (getInferenceImage() != null)
+            sb.append("InferenceImage: ").append(getInferenceImage()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
@@ -804,7 +901,9 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         if (getInputConfig() != null)
             sb.append("InputConfig: ").append(getInputConfig()).append(",");
         if (getOutputConfig() != null)
-            sb.append("OutputConfig: ").append(getOutputConfig());
+            sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -843,6 +942,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
             return false;
+        if (other.getInferenceImage() == null ^ this.getInferenceImage() == null)
+            return false;
+        if (other.getInferenceImage() != null && other.getInferenceImage().equals(this.getInferenceImage()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -875,6 +978,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOutputConfig() != null && other.getOutputConfig().equals(this.getOutputConfig()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -889,6 +996,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCompilationStartTime() == null) ? 0 : getCompilationStartTime().hashCode());
         hashCode = prime * hashCode + ((getCompilationEndTime() == null) ? 0 : getCompilationEndTime().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
+        hashCode = prime * hashCode + ((getInferenceImage() == null) ? 0 : getInferenceImage().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
@@ -897,6 +1005,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

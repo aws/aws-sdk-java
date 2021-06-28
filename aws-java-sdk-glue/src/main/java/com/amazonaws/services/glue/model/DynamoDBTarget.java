@@ -47,8 +47,8 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
     private Boolean scanAll;
     /**
      * <p>
-     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
-     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term
+     * defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
      * performed on that table per second.
      * </p>
      * <p>
@@ -189,8 +189,8 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
-     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term
+     * defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
      * performed on that table per second.
      * </p>
      * <p>
@@ -200,9 +200,9 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param scanRate
-     *        The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units
-     *        is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads
-     *        that can be performed on that table per second.</p>
+     *        The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a
+     *        term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that
+     *        can be performed on that table per second.</p>
      *        <p>
      *        The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a
      *        value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the
@@ -215,8 +215,8 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
-     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term
+     * defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
      * performed on that table per second.
      * </p>
      * <p>
@@ -225,9 +225,9 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
      * Read Capacity Unit (for tables using on-demand mode).
      * </p>
      * 
-     * @return The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units
-     *         is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads
-     *         that can be performed on that table per second.</p>
+     * @return The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a
+     *         term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that
+     *         can be performed on that table per second.</p>
      *         <p>
      *         The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide
      *         a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of
@@ -240,8 +240,8 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a
-     * term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
+     * The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term
+     * defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be
      * performed on that table per second.
      * </p>
      * <p>
@@ -251,9 +251,9 @@ public class DynamoDBTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param scanRate
-     *        The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units
-     *        is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads
-     *        that can be performed on that table per second.</p>
+     *        The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a
+     *        term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that
+     *        can be performed on that table per second.</p>
      *        <p>
      *        The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a
      *        value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the

@@ -33,7 +33,7 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
     private String policyHashCondition;
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * The ARN of the Glue resource for the resource policy to be deleted.
      * </p>
      */
     private String resourceArn;
@@ -80,11 +80,11 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * The ARN of the Glue resource for the resource policy to be deleted.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource for the resource policy to be deleted.
+     *        The ARN of the Glue resource for the resource policy to be deleted.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -93,10 +93,10 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * The ARN of the Glue resource for the resource policy to be deleted.
      * </p>
      * 
-     * @return The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * @return The ARN of the Glue resource for the resource policy to be deleted.
      */
 
     public String getResourceArn() {
@@ -105,11 +105,11 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be deleted.
+     * The ARN of the Glue resource for the resource policy to be deleted.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource for the resource policy to be deleted.
+     *        The ARN of the Glue resource for the resource policy to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

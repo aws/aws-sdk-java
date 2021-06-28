@@ -67,7 +67,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private Integer zeppelinRemoteSparkInterpreterPort;
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     * The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      */
     private Integer numberOfNodes;
@@ -80,8 +80,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private String workerType;
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      */
     private String glueVersion;
@@ -145,16 +149,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>"--enable-glue-datacatalog": ""</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
      * </p>
      * </li>
      * </ul>
@@ -478,11 +472,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     * The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     *        The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -491,10 +485,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     * The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
-     * @return The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     * @return The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      */
 
     public Integer getNumberOfNodes() {
@@ -503,11 +497,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     * The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
+     *        The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,13 +579,20 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     *        indicates the version supported for running your ETL scripts on development endpoints.
+     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
+     *        indicates the version supported for running your ETL scripts on development endpoints. </p>
+     *        <p>
+     *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      */
 
     public void setGlueVersion(String glueVersion) {
@@ -600,12 +601,20 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * 
-     * @return Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python
-     *         version indicates the version supported for running your ETL scripts on development endpoints.
+     * @return Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
+     *         indicates the version supported for running your ETL scripts on development endpoints. </p>
+     *         <p>
+     *         For more information about the available Glue versions and corresponding Spark and Python versions, see
+     *         <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *         guide.
      */
 
     public String getGlueVersion() {
@@ -614,13 +623,20 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     * indicates the version supported for running your ETL scripts on development endpoints.
+     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
+     * the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
-     *        indicates the version supported for running your ETL scripts on development endpoints.
+     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
+     *        indicates the version supported for running your ETL scripts on development endpoints. </p>
+     *        <p>
+     *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -975,16 +991,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -1000,16 +1006,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      *         <li>
      *         <p>
      *         <code>"--enable-glue-datacatalog": ""</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>"GLUE_PYTHON_VERSION": "2"</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -1036,16 +1032,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -1062,16 +1048,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        <code>"--enable-glue-datacatalog": ""</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -1098,16 +1074,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -1124,16 +1090,6 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
      *        <li>
      *        <p>
      *        <code>"--enable-glue-datacatalog": ""</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
      *        </p>
      *        </li>
      *        </ul>

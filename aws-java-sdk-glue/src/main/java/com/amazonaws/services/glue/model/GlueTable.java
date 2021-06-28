@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The database and table in the AWS Glue Data Catalog that is used for input or output data.
+ * The database and table in the Glue Data Catalog that is used for input or output data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GlueTable" target="_top">AWS API
@@ -30,36 +30,36 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A database name in the AWS Glue Data Catalog.
+     * A database name in the Glue Data Catalog.
      * </p>
      */
     private String databaseName;
     /**
      * <p>
-     * A table name in the AWS Glue Data Catalog.
+     * A table name in the Glue Data Catalog.
      * </p>
      */
     private String tableName;
     /**
      * <p>
-     * A unique identifier for the AWS Glue Data Catalog.
+     * A unique identifier for the Glue Data Catalog.
      * </p>
      */
     private String catalogId;
     /**
      * <p>
-     * The name of the connection to the AWS Glue Data Catalog.
+     * The name of the connection to the Glue Data Catalog.
      * </p>
      */
     private String connectionName;
 
     /**
      * <p>
-     * A database name in the AWS Glue Data Catalog.
+     * A database name in the Glue Data Catalog.
      * </p>
      * 
      * @param databaseName
-     *        A database name in the AWS Glue Data Catalog.
+     *        A database name in the Glue Data Catalog.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -68,10 +68,10 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A database name in the AWS Glue Data Catalog.
+     * A database name in the Glue Data Catalog.
      * </p>
      * 
-     * @return A database name in the AWS Glue Data Catalog.
+     * @return A database name in the Glue Data Catalog.
      */
 
     public String getDatabaseName() {
@@ -80,11 +80,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A database name in the AWS Glue Data Catalog.
+     * A database name in the Glue Data Catalog.
      * </p>
      * 
      * @param databaseName
-     *        A database name in the AWS Glue Data Catalog.
+     *        A database name in the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A table name in the AWS Glue Data Catalog.
+     * A table name in the Glue Data Catalog.
      * </p>
      * 
      * @param tableName
-     *        A table name in the AWS Glue Data Catalog.
+     *        A table name in the Glue Data Catalog.
      */
 
     public void setTableName(String tableName) {
@@ -108,10 +108,10 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A table name in the AWS Glue Data Catalog.
+     * A table name in the Glue Data Catalog.
      * </p>
      * 
-     * @return A table name in the AWS Glue Data Catalog.
+     * @return A table name in the Glue Data Catalog.
      */
 
     public String getTableName() {
@@ -120,11 +120,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A table name in the AWS Glue Data Catalog.
+     * A table name in the Glue Data Catalog.
      * </p>
      * 
      * @param tableName
-     *        A table name in the AWS Glue Data Catalog.
+     *        A table name in the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the AWS Glue Data Catalog.
+     * A unique identifier for the Glue Data Catalog.
      * </p>
      * 
      * @param catalogId
-     *        A unique identifier for the AWS Glue Data Catalog.
+     *        A unique identifier for the Glue Data Catalog.
      */
 
     public void setCatalogId(String catalogId) {
@@ -148,10 +148,10 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the AWS Glue Data Catalog.
+     * A unique identifier for the Glue Data Catalog.
      * </p>
      * 
-     * @return A unique identifier for the AWS Glue Data Catalog.
+     * @return A unique identifier for the Glue Data Catalog.
      */
 
     public String getCatalogId() {
@@ -160,11 +160,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the AWS Glue Data Catalog.
+     * A unique identifier for the Glue Data Catalog.
      * </p>
      * 
      * @param catalogId
-     *        A unique identifier for the AWS Glue Data Catalog.
+     *        A unique identifier for the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection to the AWS Glue Data Catalog.
+     * The name of the connection to the Glue Data Catalog.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection to the AWS Glue Data Catalog.
+     *        The name of the connection to the Glue Data Catalog.
      */
 
     public void setConnectionName(String connectionName) {
@@ -188,10 +188,10 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection to the AWS Glue Data Catalog.
+     * The name of the connection to the Glue Data Catalog.
      * </p>
      * 
-     * @return The name of the connection to the AWS Glue Data Catalog.
+     * @return The name of the connection to the Glue Data Catalog.
      */
 
     public String getConnectionName() {
@@ -200,11 +200,11 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection to the AWS Glue Data Catalog.
+     * The name of the connection to the Glue Data Catalog.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection to the AWS Glue Data Catalog.
+     *        The name of the connection to the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

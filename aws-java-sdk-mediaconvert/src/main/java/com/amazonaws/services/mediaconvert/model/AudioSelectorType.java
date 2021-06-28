@@ -22,7 +22,8 @@ public enum AudioSelectorType {
 
     PID("PID"),
     TRACK("TRACK"),
-    LANGUAGE_CODE("LANGUAGE_CODE");
+    LANGUAGE_CODE("LANGUAGE_CODE"),
+    HLS_RENDITION_GROUP("HLS_RENDITION_GROUP");
 
     private String value;
 

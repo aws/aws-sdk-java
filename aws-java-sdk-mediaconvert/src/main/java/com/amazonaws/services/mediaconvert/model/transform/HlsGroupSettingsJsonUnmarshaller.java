@@ -103,6 +103,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setEncryption(HlsEncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("imageBasedTrickPlay", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setImageBasedTrickPlay(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("manifestCompression", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setManifestCompression(context.getUnmarshaller(String.class).unmarshall(context));

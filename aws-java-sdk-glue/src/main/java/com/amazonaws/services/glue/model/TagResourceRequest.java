@@ -27,10 +27,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
-     * the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.
+     * The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a
+     * href
+     * ="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.
      * </p>
      */
     private String resourceArn;
@@ -43,17 +43,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
-     * the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.
+     * The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a
+     * href
+     * ="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource
-     *        ARNs, see the <a href=
+     *        The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see
+     *        the <a href=
      *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
-     *        >AWS Glue ARN string pattern</a>.
+     *        >Glue ARN string pattern</a>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -62,16 +62,16 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
-     * the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.
+     * The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a
+     * href
+     * ="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.
      * </p>
      * 
-     * @return The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource
-     *         ARNs, see the <a href=
+     * @return The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see
+     *         the <a href=
      *         "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
-     *         >AWS Glue ARN string pattern</a>.
+     *         >Glue ARN string pattern</a>.
      */
 
     public String getResourceArn() {
@@ -80,17 +80,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
-     * the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>.
+     * The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a
+     * href
+     * ="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue
+     * ARN string pattern</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource
-     *        ARNs, see the <a href=
+     *        The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see
+     *        the <a href=
      *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
-     *        >AWS Glue ARN string pattern</a>.
+     *        >Glue ARN string pattern</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

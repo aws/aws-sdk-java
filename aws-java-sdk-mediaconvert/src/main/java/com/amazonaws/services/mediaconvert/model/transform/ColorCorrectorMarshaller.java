@@ -37,6 +37,8 @@ public class ColorCorrectorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdr10Metadata").build();
     private static final MarshallingInfo<Integer> HUE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hue").build();
+    private static final MarshallingInfo<String> SAMPLERANGECONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sampleRangeConversion").build();
     private static final MarshallingInfo<Integer> SATURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("saturation").build();
 
@@ -61,6 +63,7 @@ public class ColorCorrectorMarshaller {
             protocolMarshaller.marshall(colorCorrector.getContrast(), CONTRAST_BINDING);
             protocolMarshaller.marshall(colorCorrector.getHdr10Metadata(), HDR10METADATA_BINDING);
             protocolMarshaller.marshall(colorCorrector.getHue(), HUE_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getSampleRangeConversion(), SAMPLERANGECONVERSION_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSaturation(), SATURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

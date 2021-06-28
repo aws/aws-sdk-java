@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DataFormat {
 
-    AVRO("AVRO");
+    AVRO("AVRO"),
+    JSON("JSON");
 
     private String value;
 

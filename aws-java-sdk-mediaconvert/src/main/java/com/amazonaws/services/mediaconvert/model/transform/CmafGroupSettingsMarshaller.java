@@ -44,6 +44,8 @@ public class CmafGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Integer> FRAGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fragmentLength").build();
+    private static final MarshallingInfo<String> IMAGEBASEDTRICKPLAY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageBasedTrickPlay").build();
     private static final MarshallingInfo<String> MANIFESTCOMPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestCompression").build();
     private static final MarshallingInfo<String> MANIFESTDURATIONFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -93,6 +95,7 @@ public class CmafGroupSettingsMarshaller {
             protocolMarshaller.marshall(cmafGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getFragmentLength(), FRAGMENTLENGTH_BINDING);
+            protocolMarshaller.marshall(cmafGroupSettings.getImageBasedTrickPlay(), IMAGEBASEDTRICKPLAY_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getManifestCompression(), MANIFESTCOMPRESSION_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getManifestDurationFormat(), MANIFESTDURATIONFORMAT_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getMinBufferTime(), MINBUFFERTIME_BINDING);

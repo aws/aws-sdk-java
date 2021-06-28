@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A workflow represents a flow in which AWS Glue components should be executed to complete a logical task.
+ * A workflow represents a flow in which Glue components should be run to complete a logical task.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Workflow" target="_top">AWS API
@@ -66,7 +66,7 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
     private WorkflowRun lastRun;
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      */
@@ -350,12 +350,12 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      * 
      * @param graph
-     *        The graph representing all the AWS Glue components that belong to the workflow as nodes and directed
+     *        The graph representing all the Glue components that belong to the workflow as nodes and directed
      *        connections between them as edges.
      */
 
@@ -365,11 +365,11 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      * 
-     * @return The graph representing all the AWS Glue components that belong to the workflow as nodes and directed
+     * @return The graph representing all the Glue components that belong to the workflow as nodes and directed
      *         connections between them as edges.
      */
 
@@ -379,12 +379,12 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections
+     * The graph representing all the Glue components that belong to the workflow as nodes and directed connections
      * between them as edges.
      * </p>
      * 
      * @param graph
-     *        The graph representing all the AWS Glue components that belong to the workflow as nodes and directed
+     *        The graph representing all the Glue components that belong to the workflow as nodes and directed
      *        connections between them as edges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -81,16 +81,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -507,16 +497,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -532,16 +512,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <li>
      *         <p>
      *         <code>"--enable-glue-datacatalog": ""</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>"GLUE_PYTHON_VERSION": "2"</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -568,16 +538,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -594,16 +554,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        <code>"--enable-glue-datacatalog": ""</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -630,16 +580,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>"--enable-glue-datacatalog": ""</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
@@ -656,16 +596,6 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        <code>"--enable-glue-datacatalog": ""</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
      *        </p>
      *        </li>
      *        </ul>

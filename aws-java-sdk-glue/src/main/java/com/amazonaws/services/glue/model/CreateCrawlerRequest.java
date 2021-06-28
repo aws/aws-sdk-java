@@ -39,7 +39,7 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String role;
     /**
      * <p>
-     * The AWS Glue database where results are written, such as:
+     * The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      */
@@ -114,8 +114,8 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -205,12 +205,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Glue database where results are written, such as:
+     * The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
      * @param databaseName
-     *        The AWS Glue database where results are written, such as:
+     *        The Glue database where results are written, such as:
      *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      */
 
@@ -220,11 +220,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Glue database where results are written, such as:
+     * The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
-     * @return The AWS Glue database where results are written, such as:
+     * @return The Glue database where results are written, such as:
      *         <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      */
 
@@ -234,12 +234,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Glue database where results are written, such as:
+     * The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
      * @param databaseName
-     *        The AWS Glue database where results are written, such as:
+     *        The Glue database where results are written, such as:
      *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -730,14 +730,14 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      * 
      * @return The tags to use with this crawler request. You may use tags to limit access to the crawler. For more
-     *         information about tags in AWS Glue, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *         developer guide.
+     *         information about tags in Glue, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *         in the developer guide.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -747,15 +747,15 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      * 
      * @param tags
      *        The tags to use with this crawler request. You may use tags to limit access to the crawler. For more
-     *        information about tags in AWS Glue, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *        developer guide.
+     *        information about tags in Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *        in the developer guide.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -765,15 +765,15 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information
-     * about tags in AWS Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.
+     * about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.
      * </p>
      * 
      * @param tags
      *        The tags to use with this crawler request. You may use tags to limit access to the crawler. For more
-     *        information about tags in AWS Glue, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a> in the
-     *        developer guide.
+     *        information about tags in Glue, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>
+     *        in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

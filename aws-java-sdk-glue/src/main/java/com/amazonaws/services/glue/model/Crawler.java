@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If
- * successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.
+ * successful, the crawler records metadata concerning the data source in the Glue Data Catalog.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler" target="_top">AWS API Documentation</a>

@@ -289,9 +289,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
     private String compilerOptions;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account
+     * The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to
+     * encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a
+     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -1884,9 +1887,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account
+     * The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to
+     * encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a
+     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -1915,9 +1921,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     *        for Amazon S3 for your role's account</p>
+     *        The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to
+     *        encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't
+     *        provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>
@@ -1950,9 +1959,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account
+     * The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to
+     * encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a
+     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -1980,9 +1992,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *         volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS
-     *         key for Amazon S3 for your role's account</p>
+     * @return The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses
+     *         to encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't
+     *         provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     *         Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
      *         <p>
      *         The KmsKeyId can be any of the following formats:
      *         </p>
@@ -2015,9 +2030,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account
+     * The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to
+     * encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't provide a
+     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -2046,9 +2064,12 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     *        for Amazon S3 for your role's account</p>
+     *        The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to
+     *        encrypt your output models with Amazon S3 server-side encryption after compilation job. If you don't
+     *        provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> </p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>

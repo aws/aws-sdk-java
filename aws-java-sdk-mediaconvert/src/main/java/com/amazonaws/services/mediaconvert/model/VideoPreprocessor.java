@@ -39,6 +39,8 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     private Deinterlacer deinterlacer;
     /** Enable Dolby Vision feature to produce Dolby Vision compatible video output. */
     private DolbyVision dolbyVision;
+    /** Enable HDR10+ analyis and metadata injection. Compatible with HEVC only. */
+    private Hdr10Plus hdr10Plus;
     /**
      * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
      * this feature for each output individually. This setting is disabled by default.
@@ -171,6 +173,40 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
 
     public VideoPreprocessor withDolbyVision(DolbyVision dolbyVision) {
         setDolbyVision(dolbyVision);
+        return this;
+    }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * 
+     * @param hdr10Plus
+     *        Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+
+    public void setHdr10Plus(Hdr10Plus hdr10Plus) {
+        this.hdr10Plus = hdr10Plus;
+    }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * 
+     * @return Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+
+    public Hdr10Plus getHdr10Plus() {
+        return this.hdr10Plus;
+    }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * 
+     * @param hdr10Plus
+     *        Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoPreprocessor withHdr10Plus(Hdr10Plus hdr10Plus) {
+        setHdr10Plus(hdr10Plus);
         return this;
     }
 
@@ -346,6 +382,8 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             sb.append("Deinterlacer: ").append(getDeinterlacer()).append(",");
         if (getDolbyVision() != null)
             sb.append("DolbyVision: ").append(getDolbyVision()).append(",");
+        if (getHdr10Plus() != null)
+            sb.append("Hdr10Plus: ").append(getHdr10Plus()).append(",");
         if (getImageInserter() != null)
             sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getNoiseReducer() != null)
@@ -380,6 +418,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDolbyVision() != null && other.getDolbyVision().equals(this.getDolbyVision()) == false)
             return false;
+        if (other.getHdr10Plus() == null ^ this.getHdr10Plus() == null)
+            return false;
+        if (other.getHdr10Plus() != null && other.getHdr10Plus().equals(this.getHdr10Plus()) == false)
+            return false;
         if (other.getImageInserter() == null ^ this.getImageInserter() == null)
             return false;
         if (other.getImageInserter() != null && other.getImageInserter().equals(this.getImageInserter()) == false)
@@ -407,6 +449,7 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getColorCorrector() == null) ? 0 : getColorCorrector().hashCode());
         hashCode = prime * hashCode + ((getDeinterlacer() == null) ? 0 : getDeinterlacer().hashCode());
         hashCode = prime * hashCode + ((getDolbyVision() == null) ? 0 : getDolbyVision().hashCode());
+        hashCode = prime * hashCode + ((getHdr10Plus() == null) ? 0 : getHdr10Plus().hashCode());
         hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNoiseReducer() == null) ? 0 : getNoiseReducer().hashCode());
         hashCode = prime * hashCode + ((getPartnerWatermarking() == null) ? 0 : getPartnerWatermarking().hashCode());

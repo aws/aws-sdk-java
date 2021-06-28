@@ -26,7 +26,8 @@ public enum MxfProfile {
 
     D_10("D_10"),
     XDCAM("XDCAM"),
-    OP1A("OP1A");
+    OP1A("OP1A"),
+    XAVC("XAVC");
 
     private String value;
 

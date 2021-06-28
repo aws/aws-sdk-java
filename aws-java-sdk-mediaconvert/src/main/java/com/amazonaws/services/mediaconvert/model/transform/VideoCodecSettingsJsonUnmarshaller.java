@@ -92,6 +92,10 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                     context.nextToken();
                     videoCodecSettings.setVp9Settings(Vp9SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("xavcSettings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setXavcSettings(XavcSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

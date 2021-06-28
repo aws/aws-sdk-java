@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies code executed when a job is run.
+ * Specifies code that runs when a job is run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobCommand" target="_top">AWS API
@@ -38,13 +38,13 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      * </p>
      */
     private String scriptLocation;
     /**
      * <p>
-     * The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     * The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      * </p>
      */
     private String pythonVersion;
@@ -103,11 +103,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      * </p>
      * 
      * @param scriptLocation
-     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      */
 
     public void setScriptLocation(String scriptLocation) {
@@ -116,10 +116,10 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      * </p>
      * 
-     * @return Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     * @return Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      */
 
     public String getScriptLocation() {
@@ -128,11 +128,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     * Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      * </p>
      * 
      * @param scriptLocation
-     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that executes a job.
+     *        Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     * The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      * </p>
      * 
      * @param pythonVersion
-     *        The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     *        The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      */
 
     public void setPythonVersion(String pythonVersion) {
@@ -156,10 +156,10 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     * The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      * </p>
      * 
-     * @return The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     * @return The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      */
 
     public String getPythonVersion() {
@@ -168,11 +168,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     * The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      * </p>
      * 
      * @param pythonVersion
-     *        The Python version being used to execute a Python shell job. Allowed values are 2 or 3.
+     *        The Python version being used to run a Python shell job. Allowed values are 2 or 3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

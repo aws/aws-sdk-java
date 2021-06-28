@@ -26,6 +26,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4
+     * chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma
+     * sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose
+     * an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4
+     * chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file
+     * marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     * conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     * (DUPLICATE_DROP).
+     */
+    private String chromaSampling;
     /** Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output. */
     private String codecProfile;
     /**
@@ -123,6 +136,133 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
      * with the field polarity to create a smoother picture.
      */
     private String telecine;
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4
+     * chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma
+     * sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose
+     * an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4
+     * chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file
+     * marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     * conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     * (DUPLICATE_DROP).
+     * 
+     * @param chromaSampling
+     *        This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use
+     *        4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use
+     *        4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports
+     *        4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling
+     *        (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling.
+     *        These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     *        (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to
+     *        Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker
+     *        (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     *        conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     *        (DUPLICATE_DROP).
+     * @see ProresChromaSampling
+     */
+
+    public void setChromaSampling(String chromaSampling) {
+        this.chromaSampling = chromaSampling;
+    }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4
+     * chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma
+     * sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose
+     * an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4
+     * chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file
+     * marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     * conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     * (DUPLICATE_DROP).
+     * 
+     * @return This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use
+     *         4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use
+     *         4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports
+     *         4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling
+     *         (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling.
+     *         These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     *         (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to
+     *         Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker
+     *         (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     *         conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     *         (DUPLICATE_DROP).
+     * @see ProresChromaSampling
+     */
+
+    public String getChromaSampling() {
+        return this.chromaSampling;
+    }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4
+     * chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma
+     * sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose
+     * an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4
+     * chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file
+     * marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     * conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     * (DUPLICATE_DROP).
+     * 
+     * @param chromaSampling
+     *        This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use
+     *        4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use
+     *        4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports
+     *        4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling
+     *        (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling.
+     *        These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     *        (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to
+     *        Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker
+     *        (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     *        conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     *        (DUPLICATE_DROP).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProresChromaSampling
+     */
+
+    public ProresSettings withChromaSampling(String chromaSampling) {
+        setChromaSampling(chromaSampling);
+        return this;
+    }
+
+    /**
+     * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4
+     * chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma
+     * sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose
+     * an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4
+     * chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you
+     * set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file
+     * marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     * conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     * (DUPLICATE_DROP).
+     * 
+     * @param chromaSampling
+     *        This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use
+     *        4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use
+     *        4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports
+     *        4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling
+     *        (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling.
+     *        These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444
+     *        (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to
+     *        Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker
+     *        (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate
+     *        conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate
+     *        (DUPLICATE_DROP).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProresChromaSampling
+     */
+
+    public ProresSettings withChromaSampling(ProresChromaSampling chromaSampling) {
+        this.chromaSampling = chromaSampling.toString();
+        return this;
+    }
 
     /**
      * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
@@ -1090,6 +1230,8 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getChromaSampling() != null)
+            sb.append("ChromaSampling: ").append(getChromaSampling()).append(",");
         if (getCodecProfile() != null)
             sb.append("CodecProfile: ").append(getCodecProfile()).append(",");
         if (getFramerateControl() != null)
@@ -1128,6 +1270,10 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ProresSettings == false)
             return false;
         ProresSettings other = (ProresSettings) obj;
+        if (other.getChromaSampling() == null ^ this.getChromaSampling() == null)
+            return false;
+        if (other.getChromaSampling() != null && other.getChromaSampling().equals(this.getChromaSampling()) == false)
+            return false;
         if (other.getCodecProfile() == null ^ this.getCodecProfile() == null)
             return false;
         if (other.getCodecProfile() != null && other.getCodecProfile().equals(this.getCodecProfile()) == false)
@@ -1184,6 +1330,7 @@ public class ProresSettings implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getChromaSampling() == null) ? 0 : getChromaSampling().hashCode());
         hashCode = prime * hashCode + ((getCodecProfile() == null) ? 0 : getCodecProfile().hashCode());
         hashCode = prime * hashCode + ((getFramerateControl() == null) ? 0 : getFramerateControl().hashCode());
         hashCode = prime * hashCode + ((getFramerateConversionAlgorithm() == null) ? 0 : getFramerateConversionAlgorithm().hashCode());

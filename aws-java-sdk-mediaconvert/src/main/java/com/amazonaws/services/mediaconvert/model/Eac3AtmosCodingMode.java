@@ -15,11 +15,14 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * The coding mode for Dolby Digital Plus JOC (Atmos) is always 9.1.6 (CODING_MODE_9_1_6).
+ * The coding mode for Dolby Digital Plus JOC (Atmos).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3AtmosCodingMode {
 
+    CODING_MODE_AUTO("CODING_MODE_AUTO"),
+    CODING_MODE_5_1_4("CODING_MODE_5_1_4"),
+    CODING_MODE_7_1_4("CODING_MODE_7_1_4"),
     CODING_MODE_9_1_6("CODING_MODE_9_1_6");
 
     private String value;

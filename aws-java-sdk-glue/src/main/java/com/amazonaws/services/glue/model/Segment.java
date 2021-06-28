@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel.
+ * Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Segment" target="_top">AWS API Documentation</a>

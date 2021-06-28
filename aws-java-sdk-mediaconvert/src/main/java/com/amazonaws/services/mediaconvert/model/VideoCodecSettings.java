@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
  * object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264,
  * H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8,
- * Vp8Settings * VP9, Vp9Settings
+ * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -58,6 +58,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     private Vp8Settings vp8Settings;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9. */
     private Vp9Settings vp9Settings;
+    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC. */
+    private XavcSettings xavcSettings;
 
     /**
      * Required when you set Codec, under VideoDescription>CodecSettings to the value AV1.
@@ -469,6 +471,40 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * 
+     * @param xavcSettings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     */
+
+    public void setXavcSettings(XavcSettings xavcSettings) {
+        this.xavcSettings = xavcSettings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * 
+     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     */
+
+    public XavcSettings getXavcSettings() {
+        return this.xavcSettings;
+    }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * 
+     * @param xavcSettings
+     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withXavcSettings(XavcSettings xavcSettings) {
+        setXavcSettings(xavcSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -501,7 +537,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         if (getVp8Settings() != null)
             sb.append("Vp8Settings: ").append(getVp8Settings()).append(",");
         if (getVp9Settings() != null)
-            sb.append("Vp9Settings: ").append(getVp9Settings());
+            sb.append("Vp9Settings: ").append(getVp9Settings()).append(",");
+        if (getXavcSettings() != null)
+            sb.append("XavcSettings: ").append(getXavcSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -560,6 +598,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getVp9Settings() != null && other.getVp9Settings().equals(this.getVp9Settings()) == false)
             return false;
+        if (other.getXavcSettings() == null ^ this.getXavcSettings() == null)
+            return false;
+        if (other.getXavcSettings() != null && other.getXavcSettings().equals(this.getXavcSettings()) == false)
+            return false;
         return true;
     }
 
@@ -579,6 +621,7 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getVc3Settings() == null) ? 0 : getVc3Settings().hashCode());
         hashCode = prime * hashCode + ((getVp8Settings() == null) ? 0 : getVp8Settings().hashCode());
         hashCode = prime * hashCode + ((getVp9Settings() == null) ? 0 : getVp9Settings().hashCode());
+        hashCode = prime * hashCode + ((getXavcSettings() == null) ? 0 : getXavcSettings().hashCode());
         return hashCode;
     }
 

@@ -62,7 +62,7 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date lastModifiedOn;
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      */
     private java.util.List<GlueTable> inputRecordTables;
@@ -99,20 +99,20 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
     private String role;
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      */
     private String glueVersion;
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
@@ -443,10 +443,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * 
-     * @return A list of AWS Glue table definitions used by the transform.
+     * @return A list of Glue table definitions used by the transform.
      */
 
     public java.util.List<GlueTable> getInputRecordTables() {
@@ -455,11 +455,11 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * 
      * @param inputRecordTables
-     *        A list of AWS Glue table definitions used by the transform.
+     *        A list of Glue table definitions used by the transform.
      */
 
     public void setInputRecordTables(java.util.Collection<GlueTable> inputRecordTables) {
@@ -473,7 +473,7 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -482,7 +482,7 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param inputRecordTables
-     *        A list of AWS Glue table definitions used by the transform.
+     *        A list of Glue table definitions used by the transform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,11 +498,11 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of AWS Glue table definitions used by the transform.
+     * A list of Glue table definitions used by the transform.
      * </p>
      * 
      * @param inputRecordTables
-     *        A list of AWS Glue table definitions used by the transform.
+     *        A list of Glue table definitions used by the transform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,18 +751,18 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *        0.9. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *        is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *        Versions</a> in the developer guide.
      */
 
@@ -772,17 +772,17 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
-     * @return This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *         1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *         0.9. For more information, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     * @return This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *         is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *         Versions</a> in the developer guide.
      */
 
@@ -792,18 +792,18 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is
      * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
-     * in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in
+     * the developer guide.
      * </p>
      * 
      * @param glueVersion
-     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
-     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
-     *        0.9. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0
+     *        is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      *        Versions</a> in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -815,10 +815,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
@@ -826,10 +826,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param maxCapacity
-     *        The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
-     *        You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
-     *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You
+     *        can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that
+     *        consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
+     *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
      *        <p>
      *        When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      *        <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -841,20 +841,20 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      * <code>MaxCapacity</code> field is set automatically and becomes read-only.
      * </p>
      * 
-     * @return The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
-     *         You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
-     *         that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     * @return The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You
+     *         can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that
+     *         consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
+     *         href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
      *         <p>
      *         When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      *         <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -866,10 +866,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
+     * The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
@@ -877,10 +877,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param maxCapacity
-     *        The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
-     *        You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
-     *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You
+     *        can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that
+     *        consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
+     *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
      *        <p>
      *        When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      *        <code>MaxCapacity</code> field is set automatically and becomes read-only.

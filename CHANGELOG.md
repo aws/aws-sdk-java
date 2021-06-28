@@ -1,3 +1,20 @@
+# __1.12.14__ __2021-06-28__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - MediaConvert adds support for HDR10+, ProRes 4444,  and XAVC outputs, ADM/DAMF support for Dolby Atmos ingest, and alternative audio and WebVTT caption ingest via HLS inputs. MediaConvert also now supports creating trickplay outputs for Roku devices for HLS, CMAF, and DASH output groups.
+
+## __AWS Glue__
+  - ### Features
+    - Add JSON Support for Glue Schema Registry
+
+## __Amazon Redshift__
+  - ### Features
+    - Added InvalidClusterStateFault to the DisableLogging API, thrown when calling the API on a non available cluster.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Sagemaker Neo now supports running compilation jobs using customer's Amazon VPC
+
 # __1.12.13__ __2021-06-25__
 ## __AWS Proton__
   - ### Features

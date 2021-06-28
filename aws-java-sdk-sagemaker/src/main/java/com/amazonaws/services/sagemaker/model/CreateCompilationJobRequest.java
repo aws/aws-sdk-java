@@ -82,6 +82,15 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     private OutputConfig outputConfig;
     /**
      * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     */
+    private NeoVpcConfig vpcConfig;
+    /**
+     * <p>
      * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
      * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
@@ -450,6 +459,64 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
+     *        access to your models by configuring the VPC. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
+     */
+
+    public void setVpcConfig(NeoVpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     * 
+     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to.
+     *         Control access to your models by configuring the VPC. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
+     *         Amazon Virtual Private Cloud</a>.
+     */
+
+    public NeoVpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
+     * to your models by configuring the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+     * Virtual Private Cloud</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
+     *        access to your models by configuring the VPC. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCompilationJobRequest withVpcConfig(NeoVpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
      * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
@@ -600,6 +667,8 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("InputConfig: ").append(getInputConfig()).append(",");
         if (getOutputConfig() != null)
             sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getStoppingCondition() != null)
             sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
         if (getTags() != null)
@@ -634,6 +703,10 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOutputConfig() != null && other.getOutputConfig().equals(this.getOutputConfig()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         if (other.getStoppingCondition() == null ^ this.getStoppingCondition() == null)
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
@@ -654,6 +727,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

@@ -43,6 +43,8 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      */
     private String profile;
+    /** Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC. */
+    private MxfXavcProfileSettings xavcProfileSettings;
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
@@ -223,6 +225,40 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+     * 
+     * @param xavcProfileSettings
+     *        Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+     */
+
+    public void setXavcProfileSettings(MxfXavcProfileSettings xavcProfileSettings) {
+        this.xavcProfileSettings = xavcProfileSettings;
+    }
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+     * 
+     * @return Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+     */
+
+    public MxfXavcProfileSettings getXavcProfileSettings() {
+        return this.xavcProfileSettings;
+    }
+
+    /**
+     * Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+     * 
+     * @param xavcProfileSettings
+     *        Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MxfSettings withXavcProfileSettings(MxfXavcProfileSettings xavcProfileSettings) {
+        setXavcProfileSettings(xavcProfileSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -237,7 +273,9 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
         if (getAfdSignaling() != null)
             sb.append("AfdSignaling: ").append(getAfdSignaling()).append(",");
         if (getProfile() != null)
-            sb.append("Profile: ").append(getProfile());
+            sb.append("Profile: ").append(getProfile()).append(",");
+        if (getXavcProfileSettings() != null)
+            sb.append("XavcProfileSettings: ").append(getXavcProfileSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +298,10 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProfile() != null && other.getProfile().equals(this.getProfile()) == false)
             return false;
+        if (other.getXavcProfileSettings() == null ^ this.getXavcProfileSettings() == null)
+            return false;
+        if (other.getXavcProfileSettings() != null && other.getXavcProfileSettings().equals(this.getXavcProfileSettings()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +312,7 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAfdSignaling() == null) ? 0 : getAfdSignaling().hashCode());
         hashCode = prime * hashCode + ((getProfile() == null) ? 0 : getProfile().hashCode());
+        hashCode = prime * hashCode + ((getXavcProfileSettings() == null) ? 0 : getXavcProfileSettings().hashCode());
         return hashCode;
     }
 

@@ -27,8 +27,8 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS account
-     * ID is used by default.
+     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web
+     * Services account ID is used by default.
      * </p>
      */
     private String catalogId;
@@ -60,13 +60,13 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS account
-     * ID is used by default.
+     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web
+     * Services account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS
-     *        account ID is used by default.
+     *        The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the
+     *        Amazon Web Services account ID is used by default.
      */
 
     public void setCatalogId(String catalogId) {
@@ -75,12 +75,12 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS account
-     * ID is used by default.
+     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web
+     * Services account ID is used by default.
      * </p>
      * 
-     * @return The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS
-     *         account ID is used by default.
+     * @return The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the
+     *         Amazon Web Services account ID is used by default.
      */
 
     public String getCatalogId() {
@@ -89,13 +89,13 @@ public class GetUserDefinedFunctionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS account
-     * ID is used by default.
+     * The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web
+     * Services account ID is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the AWS
-     *        account ID is used by default.
+     *        The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the
+     *        Amazon Web Services account ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

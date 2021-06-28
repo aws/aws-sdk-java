@@ -29,7 +29,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a job to be executed.
+     * The name of a job to be run.
      * </p>
      */
     private String jobName;
@@ -39,18 +39,18 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * job definition itself.
      * </p>
      * <p>
-     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
+     * consumes.
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
-     * in Python</a> topic in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
+     * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
-     * Used by AWS Glue</a> topic in the developer guide.
+     * Used by Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> arguments;
@@ -83,11 +83,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a job to be executed.
+     * The name of a job to be run.
      * </p>
      * 
      * @param jobName
-     *        The name of a job to be executed.
+     *        The name of a job to be run.
      */
 
     public void setJobName(String jobName) {
@@ -96,10 +96,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a job to be executed.
+     * The name of a job to be run.
      * </p>
      * 
-     * @return The name of a job to be executed.
+     * @return The name of a job to be run.
      */
 
     public String getJobName() {
@@ -108,11 +108,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a job to be executed.
+     * The name of a job to be run.
      * </p>
      * 
      * @param jobName
-     *        The name of a job to be executed.
+     *        The name of a job to be run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,35 +127,35 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * job definition itself.
      * </p>
      * <p>
-     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
+     * consumes.
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
-     * in Python</a> topic in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
+     * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
-     * Used by AWS Glue</a> topic in the developer guide.
+     * Used by Glue</a> topic in the developer guide.
      * </p>
      * 
      * @return The job arguments used when this trigger fires. For this job run, they replace the default arguments set
      *         in the job definition itself.</p>
      *         <p>
-     *         You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
+     *         You can specify arguments here that your own job-execution script consumes, as well as arguments that
      *         Glue itself consumes.
      *         </p>
      *         <p>
      *         For information about how to specify and consume your own Job arguments, see the <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
-     *         Glue APIs in Python</a> topic in the developer guide.
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue
+     *         APIs in Python</a> topic in the developer guide.
      *         </p>
      *         <p>
-     *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     *         For information about the key-value pairs that Glue consumes to set up your job, see the <a
      *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     *         Parameters Used by AWS Glue</a> topic in the developer guide.
+     *         Parameters Used by Glue</a> topic in the developer guide.
      */
 
     public java.util.Map<String, String> getArguments() {
@@ -168,36 +168,36 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * job definition itself.
      * </p>
      * <p>
-     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
+     * consumes.
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
-     * in Python</a> topic in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
+     * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
-     * Used by AWS Glue</a> topic in the developer guide.
+     * Used by Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
      *        The job arguments used when this trigger fires. For this job run, they replace the default arguments set
      *        in the job definition itself.</p>
      *        <p>
-     *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
-     *        Glue itself consumes.
+     *        You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue
+     *        itself consumes.
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
-     *        Glue APIs in Python</a> topic in the developer guide.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue
+     *        APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
-     *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     *        For information about the key-value pairs that Glue consumes to set up your job, see the <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     *        Parameters Used by AWS Glue</a> topic in the developer guide.
+     *        Parameters Used by Glue</a> topic in the developer guide.
      */
 
     public void setArguments(java.util.Map<String, String> arguments) {
@@ -210,36 +210,36 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * job definition itself.
      * </p>
      * <p>
-     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
+     * consumes.
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
-     * in Python</a> topic in the developer guide.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in
+     * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
-     * Used by AWS Glue</a> topic in the developer guide.
+     * Used by Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
      *        The job arguments used when this trigger fires. For this job run, they replace the default arguments set
      *        in the job definition itself.</p>
      *        <p>
-     *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
-     *        Glue itself consumes.
+     *        You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue
+     *        itself consumes.
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
-     *        Glue APIs in Python</a> topic in the developer guide.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue
+     *        APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
-     *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     *        For information about the key-value pairs that Glue consumes to set up your job, see the <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     *        Parameters Used by AWS Glue</a> topic in the developer guide.
+     *        Parameters Used by Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
