@@ -40,7 +40,7 @@ public class ConditionExpression implements Serializable, Cloneable, StructuredP
      * <p>
      * A specific condition to apply to a recipe action. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the
-     * <i>AWS Glue DataBrew Developer Guide</i>.
+     * <i>Glue DataBrew Developer Guide</i>.
      * </p>
      */
     private String condition;
@@ -61,13 +61,13 @@ public class ConditionExpression implements Serializable, Cloneable, StructuredP
      * <p>
      * A specific condition to apply to a recipe action. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the
-     * <i>AWS Glue DataBrew Developer Guide</i>.
+     * <i>Glue DataBrew Developer Guide</i>.
      * </p>
      * 
      * @param condition
      *        A specific condition to apply to a recipe action. For more information, see <a
      *        href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a>
-     *        in the <i>AWS Glue DataBrew Developer Guide</i>.
+     *        in the <i>Glue DataBrew Developer Guide</i>.
      */
 
     public void setCondition(String condition) {
@@ -78,12 +78,12 @@ public class ConditionExpression implements Serializable, Cloneable, StructuredP
      * <p>
      * A specific condition to apply to a recipe action. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the
-     * <i>AWS Glue DataBrew Developer Guide</i>.
+     * <i>Glue DataBrew Developer Guide</i>.
      * </p>
      * 
      * @return A specific condition to apply to a recipe action. For more information, see <a
      *         href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a>
-     *         in the <i>AWS Glue DataBrew Developer Guide</i>.
+     *         in the <i>Glue DataBrew Developer Guide</i>.
      */
 
     public String getCondition() {
@@ -94,13 +94,13 @@ public class ConditionExpression implements Serializable, Cloneable, StructuredP
      * <p>
      * A specific condition to apply to a recipe action. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the
-     * <i>AWS Glue DataBrew Developer Guide</i>.
+     * <i>Glue DataBrew Developer Guide</i>.
      * </p>
      * 
      * @param condition
      *        A specific condition to apply to a recipe action. For more information, see <a
      *        href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a>
-     *        in the <i>AWS Glue DataBrew Developer Guide</i>.
+     *        in the <i>Glue DataBrew Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

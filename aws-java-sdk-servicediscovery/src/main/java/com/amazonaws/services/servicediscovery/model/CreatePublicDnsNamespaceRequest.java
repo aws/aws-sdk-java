@@ -52,6 +52,12 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Properties for the public DNS namespace.
+     * </p>
+     */
+    private PublicDnsNamespaceProperties properties;
 
     /**
      * <p>
@@ -264,6 +270,46 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Properties for the public DNS namespace.
+     * </p>
+     * 
+     * @param properties
+     *        Properties for the public DNS namespace.
+     */
+
+    public void setProperties(PublicDnsNamespaceProperties properties) {
+        this.properties = properties;
+    }
+
+    /**
+     * <p>
+     * Properties for the public DNS namespace.
+     * </p>
+     * 
+     * @return Properties for the public DNS namespace.
+     */
+
+    public PublicDnsNamespaceProperties getProperties() {
+        return this.properties;
+    }
+
+    /**
+     * <p>
+     * Properties for the public DNS namespace.
+     * </p>
+     * 
+     * @param properties
+     *        Properties for the public DNS namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePublicDnsNamespaceRequest withProperties(PublicDnsNamespaceProperties properties) {
+        setProperties(properties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -282,7 +328,9 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getProperties() != null)
+            sb.append("Properties: ").append(getProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -313,6 +361,10 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getProperties() == null ^ this.getProperties() == null)
+            return false;
+        if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
+            return false;
         return true;
     }
 
@@ -325,6 +377,7 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
         return hashCode;
     }
 

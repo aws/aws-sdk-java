@@ -29,6 +29,8 @@ public class DnsPropertiesMarshaller {
 
     private static final MarshallingInfo<String> HOSTEDZONEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HostedZoneId").build();
+    private static final MarshallingInfo<StructuredPojo> SOA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SOA").build();
 
     private static final DnsPropertiesMarshaller instance = new DnsPropertiesMarshaller();
 
@@ -47,6 +49,7 @@ public class DnsPropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(dnsProperties.getHostedZoneId(), HOSTEDZONEID_BINDING);
+            protocolMarshaller.marshall(dnsProperties.getSOA(), SOA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

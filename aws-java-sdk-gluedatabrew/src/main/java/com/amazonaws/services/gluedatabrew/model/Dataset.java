@@ -30,7 +30,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the dataset.
+     * The ID of the Amazon Web Services account that owns the dataset.
      * </p>
      */
     private String accountId;
@@ -54,7 +54,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      */
     private String format;
@@ -66,7 +66,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private FormatOptions formatOptions;
     /**
      * <p>
-     * Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     * Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      * </p>
      */
     private Input input;
@@ -84,13 +84,13 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String lastModifiedBy;
     /**
      * <p>
-     * The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      */
     private PathOptions pathOptions;
@@ -109,11 +109,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the dataset.
+     * The ID of the Amazon Web Services account that owns the dataset.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that owns the dataset.
+     *        The ID of the Amazon Web Services account that owns the dataset.
      */
 
     public void setAccountId(String accountId) {
@@ -122,10 +122,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the dataset.
+     * The ID of the Amazon Web Services account that owns the dataset.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the dataset.
+     * @return The ID of the Amazon Web Services account that owns the dataset.
      */
 
     public String getAccountId() {
@@ -134,11 +134,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the dataset.
+     * The ID of the Amazon Web Services account that owns the dataset.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that owns the dataset.
+     *        The ID of the Amazon Web Services account that owns the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,11 +269,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @see InputFormat
      */
 
@@ -283,10 +283,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
-     * @return The file format of a dataset that is created from an S3 file or folder.
+     * @return The file format of a dataset that is created from an Amazon S3 file or folder.
      * @see InputFormat
      */
 
@@ -296,11 +296,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -312,11 +312,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -368,11 +368,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     * Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      * </p>
      * 
      * @param input
-     *        Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     *        Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      */
 
     public void setInput(Input input) {
@@ -381,10 +381,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     * Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      * </p>
      * 
-     * @return Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     * @return Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      */
 
     public Input getInput() {
@@ -393,11 +393,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     * Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      * </p>
      * 
      * @param input
-     *        Information on how DataBrew can find the dataset, in either the AWS Glue Data Catalog or Amazon S3.
+     *        Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,11 +488,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
      * @param source
-     *        The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     *        The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * @see Source
      */
 
@@ -502,10 +502,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
-     * @return The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     * @return The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * @see Source
      */
 
@@ -515,11 +515,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
      * @param source
-     *        The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     *        The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Source
      */
@@ -531,11 +531,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
      * @param source
-     *        The location of the data for the dataset, either Amazon S3 or the AWS Glue Data Catalog.
+     *        The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Source
      */
@@ -547,11 +547,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
      * @param pathOptions
-     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     *        A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      */
 
     public void setPathOptions(PathOptions pathOptions) {
@@ -560,10 +560,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
-     * @return A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * @return A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      */
 
     public PathOptions getPathOptions() {
@@ -572,11 +572,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
      * @param pathOptions
-     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     *        A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

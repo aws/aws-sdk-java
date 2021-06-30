@@ -54,7 +54,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      * </p>
      * </li>
      * <li>
@@ -128,6 +128,12 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.List<Output> outputs;
     /**
      * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     */
+    private java.util.List<DataCatalogOutput> dataCatalogOutputs;
+    /**
+     * <p>
      * The DataBrew project associated with this job.
      * </p>
      */
@@ -142,7 +148,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String resourceArn;
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      */
     private String roleArn;
@@ -334,7 +340,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      * </p>
      * </li>
      * <li>
@@ -349,7 +355,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -371,7 +377,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      * </p>
      * </li>
      * <li>
@@ -385,7 +391,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     *         <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      *         </p>
      *         </li>
      *         <li>
@@ -407,7 +413,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      * </p>
      * </li>
      * <li>
@@ -422,7 +428,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -446,7 +452,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      * </p>
      * </li>
      * <li>
@@ -461,7 +467,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -968,6 +974,76 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * 
+     * @return One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     */
+
+    public java.util.List<DataCatalogOutput> getDataCatalogOutputs() {
+        return dataCatalogOutputs;
+    }
+
+    /**
+     * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * 
+     * @param dataCatalogOutputs
+     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     */
+
+    public void setDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
+        if (dataCatalogOutputs == null) {
+            this.dataCatalogOutputs = null;
+            return;
+        }
+
+        this.dataCatalogOutputs = new java.util.ArrayList<DataCatalogOutput>(dataCatalogOutputs);
+    }
+
+    /**
+     * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataCatalogOutputs(java.util.Collection)} or {@link #withDataCatalogOutputs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param dataCatalogOutputs
+     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withDataCatalogOutputs(DataCatalogOutput... dataCatalogOutputs) {
+        if (this.dataCatalogOutputs == null) {
+            setDataCatalogOutputs(new java.util.ArrayList<DataCatalogOutput>(dataCatalogOutputs.length));
+        }
+        for (DataCatalogOutput ele : dataCatalogOutputs) {
+            this.dataCatalogOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * 
+     * @param dataCatalogOutputs
+     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobResult withDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
+        setDataCatalogOutputs(dataCatalogOutputs);
+        return this;
+    }
+
+    /**
+     * <p>
      * The DataBrew project associated with this job.
      * </p>
      * 
@@ -1074,11 +1150,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     *        The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -1087,10 +1163,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
-     * @return The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * @return The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      */
 
     public String getRoleArn() {
@@ -1099,11 +1175,11 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     *        The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1310,6 +1386,8 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("MaxRetries: ").append(getMaxRetries()).append(",");
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
+        if (getDataCatalogOutputs() != null)
+            sb.append("DataCatalogOutputs: ").append(getDataCatalogOutputs()).append(",");
         if (getProjectName() != null)
             sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getRecipeReference() != null)
@@ -1390,6 +1468,10 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false)
             return false;
+        if (other.getDataCatalogOutputs() == null ^ this.getDataCatalogOutputs() == null)
+            return false;
+        if (other.getDataCatalogOutputs() != null && other.getDataCatalogOutputs().equals(this.getDataCatalogOutputs()) == false)
+            return false;
         if (other.getProjectName() == null ^ this.getProjectName() == null)
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
@@ -1439,6 +1521,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
+        hashCode = prime * hashCode + ((getDataCatalogOutputs() == null) ? 0 : getDataCatalogOutputs().hashCode());
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getRecipeReference() == null) ? 0 : getRecipeReference().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());

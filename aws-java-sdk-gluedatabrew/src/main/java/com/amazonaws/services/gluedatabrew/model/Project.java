@@ -30,7 +30,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the project.
+     * The ID of the Amazon Web Services account that owns the project.
      * </p>
      */
     private String accountId;
@@ -116,11 +116,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the project.
+     * The ID of the Amazon Web Services account that owns the project.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that owns the project.
+     *        The ID of the Amazon Web Services account that owns the project.
      */
 
     public void setAccountId(String accountId) {
@@ -129,10 +129,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the project.
+     * The ID of the Amazon Web Services account that owns the project.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the project.
+     * @return The ID of the Amazon Web Services account that owns the project.
      */
 
     public String getAccountId() {
@@ -141,11 +141,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the project.
+     * The ID of the Amazon Web Services account that owns the project.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that owns the project.
+     *        The ID of the Amazon Web Services account that owns the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

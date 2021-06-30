@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a dataset paramater that defines type and conditions for a parameter in the S3 path of the dataset.
+ * Represents a dataset paramater that defines type and conditions for a parameter in the Amazon S3 path of the dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatasetParameter" target="_top">AWS API
@@ -30,7 +30,7 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parameter that is used in the dataset's S3 path.
+     * The name of the parameter that is used in the dataset's Amazon S3 path.
      * </p>
      */
     private String name;
@@ -48,8 +48,8 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
     private DatetimeOptions datetimeOptions;
     /**
      * <p>
-     * Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     * additional column in the dataset.
+     * Optional boolean value that defines whether the captured value of this parameter should be used to create a new
+     * column in a dataset.
      * </p>
      */
     private Boolean createColumn;
@@ -62,11 +62,11 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parameter that is used in the dataset's S3 path.
+     * The name of the parameter that is used in the dataset's Amazon S3 path.
      * </p>
      * 
      * @param name
-     *        The name of the parameter that is used in the dataset's S3 path.
+     *        The name of the parameter that is used in the dataset's Amazon S3 path.
      */
 
     public void setName(String name) {
@@ -75,10 +75,10 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parameter that is used in the dataset's S3 path.
+     * The name of the parameter that is used in the dataset's Amazon S3 path.
      * </p>
      * 
-     * @return The name of the parameter that is used in the dataset's S3 path.
+     * @return The name of the parameter that is used in the dataset's Amazon S3 path.
      */
 
     public String getName() {
@@ -87,11 +87,11 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the parameter that is used in the dataset's S3 path.
+     * The name of the parameter that is used in the dataset's Amazon S3 path.
      * </p>
      * 
      * @param name
-     *        The name of the parameter that is used in the dataset's S3 path.
+     *        The name of the parameter that is used in the dataset's Amazon S3 path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,13 +201,13 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     * additional column in the dataset.
+     * Optional boolean value that defines whether the captured value of this parameter should be used to create a new
+     * column in a dataset.
      * </p>
      * 
      * @param createColumn
-     *        Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     *        additional column in the dataset.
+     *        Optional boolean value that defines whether the captured value of this parameter should be used to create
+     *        a new column in a dataset.
      */
 
     public void setCreateColumn(Boolean createColumn) {
@@ -216,12 +216,12 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     * additional column in the dataset.
+     * Optional boolean value that defines whether the captured value of this parameter should be used to create a new
+     * column in a dataset.
      * </p>
      * 
-     * @return Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     *         additional column in the dataset.
+     * @return Optional boolean value that defines whether the captured value of this parameter should be used to create
+     *         a new column in a dataset.
      */
 
     public Boolean getCreateColumn() {
@@ -230,13 +230,13 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     * additional column in the dataset.
+     * Optional boolean value that defines whether the captured value of this parameter should be used to create a new
+     * column in a dataset.
      * </p>
      * 
      * @param createColumn
-     *        Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     *        additional column in the dataset.
+     *        Optional boolean value that defines whether the captured value of this parameter should be used to create
+     *        a new column in a dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,12 +247,12 @@ public class DatasetParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     * additional column in the dataset.
+     * Optional boolean value that defines whether the captured value of this parameter should be used to create a new
+     * column in a dataset.
      * </p>
      * 
-     * @return Optional boolean value that defines whether the captured value of this parameter should be loaded as an
-     *         additional column in the dataset.
+     * @return Optional boolean value that defines whether the captured value of this parameter should be used to create
+     *         a new column in a dataset.
      */
 
     public Boolean isCreateColumn() {

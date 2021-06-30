@@ -52,6 +52,10 @@ public class DnsPropertiesJsonUnmarshaller implements Unmarshaller<DnsProperties
                     context.nextToken();
                     dnsProperties.setHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SOA", targetDepth)) {
+                    context.nextToken();
+                    dnsProperties.setSOA(SOAJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

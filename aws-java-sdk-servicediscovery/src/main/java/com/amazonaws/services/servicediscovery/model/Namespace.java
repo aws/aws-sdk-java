@@ -36,7 +36,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      * </p>
      */
     private String arn;
@@ -54,7 +54,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      * <dt>HTTP</dt>
      * <dd>
      * <p>
-     * Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code> API.
+     * Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      * </p>
      * </dd>
      * <dt>DNS_PUBLIC</dt>
@@ -148,11 +148,11 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     *        The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      */
 
     public void setArn(String arn) {
@@ -161,10 +161,10 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     * @return The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      */
 
     public String getArn() {
@@ -173,11 +173,11 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
+     *        The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,7 +234,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      * <dt>HTTP</dt>
      * <dd>
      * <p>
-     * Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code> API.
+     * Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      * </p>
      * </dd>
      * <dt>DNS_PUBLIC</dt>
@@ -258,8 +258,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      *        <dt>HTTP</dt>
      *        <dd>
      *        <p>
-     *        Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code>
-     *        API.
+     *        Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      *        </p>
      *        </dd>
      *        <dt>DNS_PUBLIC</dt>
@@ -289,7 +288,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      * <dt>HTTP</dt>
      * <dd>
      * <p>
-     * Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code> API.
+     * Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      * </p>
      * </dd>
      * <dt>DNS_PUBLIC</dt>
@@ -312,7 +311,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      *         <dt>HTTP</dt>
      *         <dd>
      *         <p>
-     *         Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code>
+     *         Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code>
      *         API.
      *         </p>
      *         </dd>
@@ -343,7 +342,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      * <dt>HTTP</dt>
      * <dd>
      * <p>
-     * Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code> API.
+     * Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      * </p>
      * </dd>
      * <dt>DNS_PUBLIC</dt>
@@ -367,8 +366,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      *        <dt>HTTP</dt>
      *        <dd>
      *        <p>
-     *        Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code>
-     *        API.
+     *        Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      *        </p>
      *        </dd>
      *        <dt>DNS_PUBLIC</dt>
@@ -400,7 +398,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      * <dt>HTTP</dt>
      * <dd>
      * <p>
-     * Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code> API.
+     * Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      * </p>
      * </dd>
      * <dt>DNS_PUBLIC</dt>
@@ -424,8 +422,7 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      *        <dt>HTTP</dt>
      *        <dd>
      *        <p>
-     *        Instances can be discovered only programmatically, using the AWS Cloud Map <code>DiscoverInstances</code>
-     *        API.
+     *        Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code> API.
      *        </p>
      *        </dd>
      *        <dt>DNS_PUBLIC</dt>

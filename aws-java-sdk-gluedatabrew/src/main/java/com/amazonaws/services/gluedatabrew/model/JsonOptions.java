@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the JSON-specific options that define how input is to be interpreted by AWS Glue DataBrew.
+ * Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JsonOptions" target="_top">AWS API

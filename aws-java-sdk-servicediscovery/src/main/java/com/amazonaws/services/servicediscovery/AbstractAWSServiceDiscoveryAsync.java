@@ -301,6 +301,19 @@ public class AbstractAWSServiceDiscoveryAsync extends AbstractAWSServiceDiscover
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateHttpNamespaceResult> updateHttpNamespaceAsync(UpdateHttpNamespaceRequest request) {
+
+        return updateHttpNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHttpNamespaceResult> updateHttpNamespaceAsync(UpdateHttpNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateHttpNamespaceRequest, UpdateHttpNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
             UpdateInstanceCustomHealthStatusRequest request) {
 
@@ -311,6 +324,32 @@ public class AbstractAWSServiceDiscoveryAsync extends AbstractAWSServiceDiscover
     public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
             UpdateInstanceCustomHealthStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInstanceCustomHealthStatusRequest, UpdateInstanceCustomHealthStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateDnsNamespaceResult> updatePrivateDnsNamespaceAsync(UpdatePrivateDnsNamespaceRequest request) {
+
+        return updatePrivateDnsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateDnsNamespaceResult> updatePrivateDnsNamespaceAsync(UpdatePrivateDnsNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePrivateDnsNamespaceRequest, UpdatePrivateDnsNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicDnsNamespaceResult> updatePublicDnsNamespaceAsync(UpdatePublicDnsNamespaceRequest request) {
+
+        return updatePublicDnsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicDnsNamespaceResult> updatePublicDnsNamespaceAsync(UpdatePublicDnsNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePublicDnsNamespaceRequest, UpdatePublicDnsNamespaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

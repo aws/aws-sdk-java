@@ -36,7 +36,7 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
      * possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.
      * </p>
@@ -45,9 +45,9 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 namespaces.
+     * The maximum number of namespaces that you want Cloud Map to return in the response to a
+     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns
+     * up to 100 namespaces.
      * </p>
      */
     private Integer maxResults;
@@ -73,7 +73,7 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
      * possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.
      * </p>
@@ -88,10 +88,10 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified
-     *        criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the
-     *        specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces
-     *        that match the criteria.
+     *        Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria.
+     *        It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified
+     *        criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match
+     *        the criteria.
      *        </p>
      */
 
@@ -110,7 +110,7 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
      * possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.
      * </p>
@@ -124,10 +124,10 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </p>
      *         <note>
      *         <p>
-     *         AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified
-     *         criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the
-     *         specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces
-     *         that match the criteria.
+     *         Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria.
+     *         It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified
+     *         criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that
+     *         match the criteria.
      *         </p>
      */
 
@@ -146,7 +146,7 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
      * possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.
      * </p>
@@ -161,10 +161,10 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified
-     *        criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the
-     *        specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces
-     *        that match the criteria.
+     *        Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria.
+     *        It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified
+     *        criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match
+     *        the criteria.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,15 +176,15 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 namespaces.
+     * The maximum number of namespaces that you want Cloud Map to return in the response to a
+     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns
+     * up to 100 namespaces.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     *        <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
-     *        Map returns up to 100 namespaces.
+     *        The maximum number of namespaces that you want Cloud Map to return in the response to a
+     *        <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
+     *        returns up to 100 namespaces.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -193,14 +193,14 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 namespaces.
+     * The maximum number of namespaces that you want Cloud Map to return in the response to a
+     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns
+     * up to 100 namespaces.
      * </p>
      * 
-     * @return The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     *         <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
-     *         Map returns up to 100 namespaces.
+     * @return The maximum number of namespaces that you want Cloud Map to return in the response to a
+     *         <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
+     *         returns up to 100 namespaces.
      */
 
     public Integer getMaxResults() {
@@ -209,15 +209,15 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 namespaces.
+     * The maximum number of namespaces that you want Cloud Map to return in the response to a
+     * <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns
+     * up to 100 namespaces.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of namespaces that you want AWS Cloud Map to return in the response to a
-     *        <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
-     *        Map returns up to 100 namespaces.
+     *        The maximum number of namespaces that you want Cloud Map to return in the response to a
+     *        <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
+     *        returns up to 100 namespaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

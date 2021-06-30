@@ -30,7 +30,7 @@ public class DatabaseInputDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Glue Connection that stores the connection information for the target database.
+     * The Glue Connection that stores the connection information for the target database.
      * </p>
      */
     private String glueConnectionName;
@@ -45,11 +45,11 @@ public class DatabaseInputDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Glue Connection that stores the connection information for the target database.
+     * The Glue Connection that stores the connection information for the target database.
      * </p>
      * 
      * @param glueConnectionName
-     *        The AWS Glue Connection that stores the connection information for the target database.
+     *        The Glue Connection that stores the connection information for the target database.
      */
 
     public void setGlueConnectionName(String glueConnectionName) {
@@ -58,10 +58,10 @@ public class DatabaseInputDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Glue Connection that stores the connection information for the target database.
+     * The Glue Connection that stores the connection information for the target database.
      * </p>
      * 
-     * @return The AWS Glue Connection that stores the connection information for the target database.
+     * @return The Glue Connection that stores the connection information for the target database.
      */
 
     public String getGlueConnectionName() {
@@ -70,11 +70,11 @@ public class DatabaseInputDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Glue Connection that stores the connection information for the target database.
+     * The Glue Connection that stores the connection information for the target database.
      * </p>
      * 
      * @param glueConnectionName
-     *        The AWS Glue Connection that stores the connection information for the target database.
+     *        The Glue Connection that stores the connection information for the target database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

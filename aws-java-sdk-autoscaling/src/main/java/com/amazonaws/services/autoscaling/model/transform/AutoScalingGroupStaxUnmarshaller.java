@@ -234,6 +234,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.setWarmPoolSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Context", targetDepth)) {
+                    autoScalingGroup.setContext(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return autoScalingGroup;

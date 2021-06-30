@@ -31,7 +31,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      */
     private String bucket;
@@ -44,11 +44,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket name.
+     *        The Amazon S3 bucket name.
      */
 
     public void setBucket(String bucket) {
@@ -57,10 +57,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      * 
-     * @return The S3 bucket name.
+     * @return The Amazon S3 bucket name.
      */
 
     public String getBucket() {
@@ -69,11 +69,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket name.
+     *        The Amazon S3 bucket name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,12 +25,13 @@ import java.util.concurrent.ExecutorService;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <fullname>Cloud Map</fullname>
  * <p>
- * With AWS Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications
- * run in. When an instance becomes available, you can call the AWS Cloud Map API to register the instance with AWS
- * Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an optional
- * health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer
- * that contains up to eight healthy records.
+ * With Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications run
+ * in. When an instance becomes available, you can call the Cloud Map API to register the instance with Cloud Map. For
+ * public or private DNS namespaces, Cloud Map automatically creates DNS records and an optional health check. Clients
+ * that submit public or private DNS queries, or HTTP requests, for the service receive an answer that contains up to
+ * eight healthy records.
  * </p>
  */
 @ThreadSafe
@@ -773,6 +774,39 @@ public class AWSServiceDiscoveryAsyncClient extends AWSServiceDiscoveryClient im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateHttpNamespaceResult> updateHttpNamespaceAsync(UpdateHttpNamespaceRequest request) {
+
+        return updateHttpNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHttpNamespaceResult> updateHttpNamespaceAsync(final UpdateHttpNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateHttpNamespaceRequest, UpdateHttpNamespaceResult> asyncHandler) {
+        final UpdateHttpNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateHttpNamespaceResult>() {
+            @Override
+            public UpdateHttpNamespaceResult call() throws Exception {
+                UpdateHttpNamespaceResult result = null;
+
+                try {
+                    result = executeUpdateHttpNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
             UpdateInstanceCustomHealthStatusRequest request) {
 
@@ -792,6 +826,72 @@ public class AWSServiceDiscoveryAsyncClient extends AWSServiceDiscoveryClient im
 
                 try {
                     result = executeUpdateInstanceCustomHealthStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateDnsNamespaceResult> updatePrivateDnsNamespaceAsync(UpdatePrivateDnsNamespaceRequest request) {
+
+        return updatePrivateDnsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateDnsNamespaceResult> updatePrivateDnsNamespaceAsync(final UpdatePrivateDnsNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePrivateDnsNamespaceRequest, UpdatePrivateDnsNamespaceResult> asyncHandler) {
+        final UpdatePrivateDnsNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePrivateDnsNamespaceResult>() {
+            @Override
+            public UpdatePrivateDnsNamespaceResult call() throws Exception {
+                UpdatePrivateDnsNamespaceResult result = null;
+
+                try {
+                    result = executeUpdatePrivateDnsNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicDnsNamespaceResult> updatePublicDnsNamespaceAsync(UpdatePublicDnsNamespaceRequest request) {
+
+        return updatePublicDnsNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicDnsNamespaceResult> updatePublicDnsNamespaceAsync(final UpdatePublicDnsNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePublicDnsNamespaceRequest, UpdatePublicDnsNamespaceResult> asyncHandler) {
+        final UpdatePublicDnsNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePublicDnsNamespaceResult>() {
+            @Override
+            public UpdatePublicDnsNamespaceResult call() throws Exception {
+                UpdatePublicDnsNamespaceResult result = null;
+
+                try {
+                    result = executeUpdatePublicDnsNamespace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

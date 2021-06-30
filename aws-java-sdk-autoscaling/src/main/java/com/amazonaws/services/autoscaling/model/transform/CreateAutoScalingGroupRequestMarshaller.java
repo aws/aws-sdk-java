@@ -374,6 +374,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("MaxInstanceLifetime", StringUtils.fromInteger(createAutoScalingGroupRequest.getMaxInstanceLifetime()));
         }
 
+        if (createAutoScalingGroupRequest.getContext() != null) {
+            request.addParameter("Context", StringUtils.fromString(createAutoScalingGroupRequest.getContext()));
+        }
+
         return request;
     }
 

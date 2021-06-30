@@ -338,6 +338,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Lists the tags of an escalation plan or contact.</p>"
@@ -409,6 +410,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>"
@@ -443,6 +445,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"},
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Removes tags from the specified resource. </p>"
@@ -588,7 +591,7 @@
       "type":"string",
       "max":255,
       "min":1,
-      "pattern":"^[a-zA-Z0-9_\\-\\s\\.]*$"
+      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.\\-]*$"
     },
     "ChannelTargetInfo":{
       "type":"structure",
@@ -721,8 +724,8 @@
     "ContactName":{
       "type":"string",
       "max":255,
-      "min":1,
-      "pattern":"^[a-zA-Z0-9_\\-\\s\\.]*$"
+      "min":0,
+      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.\\-]*$"
     },
     "ContactTargetInfo":{
       "type":"structure",
@@ -1804,7 +1807,7 @@
     },
     "TagKey":{
       "type":"string",
-      "max":255,
+      "max":128,
       "min":1,
       "pattern":"^[\\\\\\/a-zA-Z0-9_+=\\-]*$"
     },
@@ -1838,7 +1841,7 @@
     },
     "TagValue":{
       "type":"string",
-      "max":255,
+      "max":256,
       "min":1,
       "pattern":"^[\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*$"
     },

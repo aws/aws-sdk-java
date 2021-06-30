@@ -30,7 +30,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the schedule.
+     * The ID of the Amazon Web Services account that owns the schedule.
      * </p>
      */
     private String accountId;
@@ -73,8 +73,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dates and times when the job is to run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      */
     private String cronExpression;
@@ -93,11 +93,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the schedule.
+     * The ID of the Amazon Web Services account that owns the schedule.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that owns the schedule.
+     *        The ID of the Amazon Web Services account that owns the schedule.
      */
 
     public void setAccountId(String accountId) {
@@ -106,10 +106,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the schedule.
+     * The ID of the Amazon Web Services account that owns the schedule.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the schedule.
+     * @return The ID of the Amazon Web Services account that owns the schedule.
      */
 
     public String getAccountId() {
@@ -118,11 +118,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the schedule.
+     * The ID of the Amazon Web Services account that owns the schedule.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that owns the schedule.
+     *        The ID of the Amazon Web Services account that owns the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,14 +404,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dates and times when the job is to run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
      *        The dates and times when the job is to run. For more information, see <a
-     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
-     *        Glue DataBrew Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue
+     *        DataBrew Developer Guide</i>.
      */
 
     public void setCronExpression(String cronExpression) {
@@ -421,13 +421,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dates and times when the job is to run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      * 
      * @return The dates and times when the job is to run. For more information, see <a
-     *         href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
-     *         Glue DataBrew Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue
+     *         DataBrew Developer Guide</i>.
      */
 
     public String getCronExpression() {
@@ -437,14 +437,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The dates and times when the job is to run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
      *        The dates and times when the job is to run. For more information, see <a
-     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
-     *        Glue DataBrew Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue
+     *        DataBrew Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

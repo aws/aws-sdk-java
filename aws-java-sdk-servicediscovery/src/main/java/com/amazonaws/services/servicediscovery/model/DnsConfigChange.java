@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when
- * you register an instance.
+ * A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you
+ * register an instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfigChange" target="_top">AWS
@@ -31,7 +31,7 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      */
@@ -39,12 +39,12 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * 
-     * @return An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud
-     *         Map to create when you register an instance.
+     * @return An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *         to create when you register an instance.
      */
 
     public java.util.List<DnsRecord> getDnsRecords() {
@@ -53,13 +53,13 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud
-     *        Map to create when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *        to create when you register an instance.
      */
 
     public void setDnsRecords(java.util.Collection<DnsRecord> dnsRecords) {
@@ -73,7 +73,7 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * <p>
@@ -83,8 +83,8 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud
-     *        Map to create when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *        to create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud Map to
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
      * create when you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want AWS Cloud
-     *        Map to create when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map
+     *        to create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -80,29 +80,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
      * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
      * <dd>
      * <p>
-     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </dd>
      * </dl>
@@ -195,29 +195,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
      * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
      * <dd>
      * <p>
-     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </dd>
      * </dl>
@@ -265,29 +265,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         <dt>AWS_INSTANCE_CNAME</dt>
      *         <dd>
      *         <p>
-     *         For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
+     *         For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
      *         example, <code>example.com</code>).
      *         </p>
      *         </dd>
      *         <dt>AWS_INSTANCE_IPV4</dt>
      *         <dd>
      *         <p>
-     *         For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
+     *         For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
      *         example, <code>192.0.2.44</code>).
      *         </p>
      *         </dd>
      *         <dt>AWS_INSTANCE_IPV6</dt>
      *         <dd>
      *         <p>
-     *         For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
+     *         For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
      *         example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *         </p>
      *         </dd>
      *         <dt>AWS_INSTANCE_PORT</dt>
      *         <dd>
      *         <p>
-     *         For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     *         includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     *         For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     *         includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      *         </p>
      *         </dd>
      */
@@ -342,29 +342,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
      * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
      * <dd>
      * <p>
-     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </dd>
      * </dl>
@@ -413,29 +413,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <dt>AWS_INSTANCE_CNAME</dt>
      *        <dd>
      *        <p>
-     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
+     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
      *        example, <code>example.com</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV4</dt>
      *        <dd>
      *        <p>
-     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
+     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
      *        example, <code>192.0.2.44</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV6</dt>
      *        <dd>
      *        <p>
-     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
+     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
      *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_PORT</dt>
      *        <dd>
      *        <p>
-     *        For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     *        includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     *        For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     *        includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      *        </p>
      *        </dd>
      */
@@ -490,29 +490,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
      * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
      * <dd>
      * <p>
-     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </dd>
      * </dl>
@@ -561,29 +561,29 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <dt>AWS_INSTANCE_CNAME</dt>
      *        <dd>
      *        <p>
-     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
+     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
      *        example, <code>example.com</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV4</dt>
      *        <dd>
      *        <p>
-     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
+     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
      *        example, <code>192.0.2.44</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV6</dt>
      *        <dd>
      *        <p>
-     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
+     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
      *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_PORT</dt>
      *        <dd>
      *        <p>
-     *        For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
-     *        includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     *        For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     *        includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

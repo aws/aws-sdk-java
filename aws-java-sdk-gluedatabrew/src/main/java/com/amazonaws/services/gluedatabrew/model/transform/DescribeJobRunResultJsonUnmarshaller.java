@@ -94,6 +94,12 @@ public class DescribeJobRunResultJsonUnmarshaller implements Unmarshaller<Descri
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("DataCatalogOutputs", targetDepth)) {
+                    context.nextToken();
+                    describeJobRunResult.setDataCatalogOutputs(new ListUnmarshaller<DataCatalogOutput>(DataCatalogOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("RecipeReference", targetDepth)) {
                     context.nextToken();
                     describeJobRunResult.setRecipeReference(RecipeReferenceJsonUnmarshaller.getInstance().unmarshall(context));

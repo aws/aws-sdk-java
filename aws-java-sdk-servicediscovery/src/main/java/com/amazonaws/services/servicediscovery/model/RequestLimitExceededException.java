@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The operation can't be completed because you've reached the quota for the number of requests. For more information,
- * see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">AWS Cloud Map API request throttling
- * quota</a> in the <i>AWS Cloud Map Developer Guide</i>.
+ * see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API request throttling
+ * quota</a> in the <i>Cloud Map Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -40,8 +40,8 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     private String serviceName;
     /**
      * <p>
-     * The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * The maximum number of instances that you want Cloud Map to return in the response to a
+     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
      * returns up to 100 instances.
      * </p>
      */
@@ -185,15 +185,15 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * The maximum number of instances that you want Cloud Map to return in the response to a
+     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
      * returns up to 100 instances.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     *        <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS
-     *        Cloud Map returns up to 100 instances.
+     *        The maximum number of instances that you want Cloud Map to return in the response to a
+     *        <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud
+     *        Map returns up to 100 instances.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -202,14 +202,14 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * The maximum number of instances that you want Cloud Map to return in the response to a
+     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
      * returns up to 100 instances.
      * </p>
      * 
-     * @return The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     *         <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS
-     *         Cloud Map returns up to 100 instances.
+     * @return The maximum number of instances that you want Cloud Map to return in the response to a
+     *         <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud
+     *         Map returns up to 100 instances.
      */
 
     public Integer getMaxResults() {
@@ -218,15 +218,15 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * The maximum number of instances that you want Cloud Map to return in the response to a
+     * <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
      * returns up to 100 instances.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of instances that you want AWS Cloud Map to return in the response to a
-     *        <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, AWS
-     *        Cloud Map returns up to 100 instances.
+     *        The maximum number of instances that you want Cloud Map to return in the response to a
+     *        <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud
+     *        Map returns up to 100 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

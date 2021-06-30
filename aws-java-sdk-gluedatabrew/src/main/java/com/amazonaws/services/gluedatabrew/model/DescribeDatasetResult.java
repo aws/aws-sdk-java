@@ -43,7 +43,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private String name;
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      */
     private String format;
@@ -65,13 +65,13 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private String lastModifiedBy;
     /**
      * <p>
-     * The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      */
     private PathOptions pathOptions;
@@ -210,11 +210,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @see InputFormat
      */
 
@@ -224,10 +224,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
-     * @return The file format of a dataset that is created from an S3 file or folder.
+     * @return The file format of a dataset that is created from an Amazon S3 file or folder.
      * @see InputFormat
      */
 
@@ -237,11 +237,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -253,11 +253,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -401,11 +401,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
      * @param source
-     *        The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     *        The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * @see Source
      */
 
@@ -415,10 +415,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
-     * @return The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     * @return The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * @see Source
      */
 
@@ -428,11 +428,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
      * @param source
-     *        The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     *        The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Source
      */
@@ -444,11 +444,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     * The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * </p>
      * 
      * @param source
-     *        The location of the data for this dataset, Amazon S3 or the AWS Glue Data Catalog.
+     *        The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Source
      */
@@ -460,11 +460,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
      * @param pathOptions
-     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     *        A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      */
 
     public void setPathOptions(PathOptions pathOptions) {
@@ -473,10 +473,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
-     * @return A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * @return A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      */
 
     public PathOptions getPathOptions() {
@@ -485,11 +485,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
      * @param pathOptions
-     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     *        A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

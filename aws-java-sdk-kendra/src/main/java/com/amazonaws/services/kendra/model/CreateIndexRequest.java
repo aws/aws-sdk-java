@@ -41,6 +41,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
+     * <p>
+     * For more information on quota limits for enterprise and developer editions, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * </p>
      */
     private String edition;
     /**
@@ -157,6 +161,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
+     * <p>
+     * For more information on quota limits for enterprise and developer editions, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
@@ -165,6 +173,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *        <code>ENTERPRISE_EDITION</code>.
+     *        </p>
+     *        <p>
+     *        For more information on quota limits for enterprise and developer editions, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @see IndexEdition
      */
 
@@ -182,6 +194,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
+     * <p>
+     * For more information on quota limits for enterprise and developer editions, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * </p>
      * 
      * @return The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes
      *         intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
@@ -189,6 +205,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *         <code>ENTERPRISE_EDITION</code>.
+     *         </p>
+     *         <p>
+     *         For more information on quota limits for enterprise and developer editions, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @see IndexEdition
      */
 
@@ -206,6 +226,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
+     * <p>
+     * For more information on quota limits for enterprise and developer editions, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
@@ -214,6 +238,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *        <code>ENTERPRISE_EDITION</code>.
+     *        </p>
+     *        <p>
+     *        For more information on quota limits for enterprise and developer editions, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */
@@ -233,6 +261,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
+     * <p>
+     * For more information on quota limits for enterprise and developer editions, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
@@ -241,6 +273,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *        <code>ENTERPRISE_EDITION</code>.
+     *        </p>
+     *        <p>
+     *        For more information on quota limits for enterprise and developer editions, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */

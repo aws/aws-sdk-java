@@ -214,6 +214,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private Integer warmPoolSize;
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     */
+    private String context;
 
     /**
      * <p>
@@ -1751,6 +1757,46 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     */
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @return Reserved.
+     */
+
+    public String getContext() {
+        return this.context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withContext(String context) {
+        setContext(context);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1821,7 +1867,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getWarmPoolConfiguration() != null)
             sb.append("WarmPoolConfiguration: ").append(getWarmPoolConfiguration()).append(",");
         if (getWarmPoolSize() != null)
-            sb.append("WarmPoolSize: ").append(getWarmPoolSize());
+            sb.append("WarmPoolSize: ").append(getWarmPoolSize()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -1957,6 +2005,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return false;
         if (other.getWarmPoolSize() != null && other.getWarmPoolSize().equals(this.getWarmPoolSize()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -1995,6 +2047,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCapacityRebalance() == null) ? 0 : getCapacityRebalance().hashCode());
         hashCode = prime * hashCode + ((getWarmPoolConfiguration() == null) ? 0 : getWarmPoolConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWarmPoolSize() == null) ? 0 : getWarmPoolSize().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

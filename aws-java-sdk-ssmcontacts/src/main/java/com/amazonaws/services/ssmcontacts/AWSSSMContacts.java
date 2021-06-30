@@ -485,6 +485,8 @@ public interface AWSSSMContacts {
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @sample AWSSSMContacts.ListTagsForResource
@@ -587,6 +589,8 @@ public interface AWSSSMContacts {
      *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @sample AWSSSMContacts.StopEngagement
@@ -634,6 +638,8 @@ public interface AWSSSMContacts {
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
      *         Request references a resource that doesn't exist.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
      * @throws InternalServerException
      *         Unexpected error occurred while processing the request.
      * @sample AWSSSMContacts.UntagResource

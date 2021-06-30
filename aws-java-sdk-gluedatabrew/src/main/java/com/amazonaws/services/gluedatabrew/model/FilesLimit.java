@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a limit imposed on number of S3 files that should be selected for a dataset from a connected S3 path.
+ * Represents a limit imposed on number of Amazon S3 files that should be selected for a dataset from a connected Amazon
+ * S3 path.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FilesLimit" target="_top">AWS API
@@ -30,32 +31,32 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of S3 files to select.
+     * The number of Amazon S3 files to select.
      * </p>
      */
     private Integer maxFiles;
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting
-     * criteria. Currently it's the only allowed value.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
+     * sorting criteria. Currently it's the only allowed value.
      * </p>
      */
     private String orderedBy;
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent
-     * files are selected first. Anotherpossible value is ASCENDING.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
+     * recent files are selected first. Anotherpossible value is ASCENDING.
      * </p>
      */
     private String order;
 
     /**
      * <p>
-     * The number of S3 files to select.
+     * The number of Amazon S3 files to select.
      * </p>
      * 
      * @param maxFiles
-     *        The number of S3 files to select.
+     *        The number of Amazon S3 files to select.
      */
 
     public void setMaxFiles(Integer maxFiles) {
@@ -64,10 +65,10 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of S3 files to select.
+     * The number of Amazon S3 files to select.
      * </p>
      * 
-     * @return The number of S3 files to select.
+     * @return The number of Amazon S3 files to select.
      */
 
     public Integer getMaxFiles() {
@@ -76,11 +77,11 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of S3 files to select.
+     * The number of Amazon S3 files to select.
      * </p>
      * 
      * @param maxFiles
-     *        The number of S3 files to select.
+     *        The number of Amazon S3 files to select.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +92,13 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting
-     * criteria. Currently it's the only allowed value.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
+     * sorting criteria. Currently it's the only allowed value.
      * </p>
      * 
      * @param orderedBy
-     *        A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
-     *        sorting criteria. Currently it's the only allowed value.
+     *        A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE
+     *        as a sorting criteria. Currently it's the only allowed value.
      * @see OrderedBy
      */
 
@@ -107,12 +108,12 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting
-     * criteria. Currently it's the only allowed value.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
+     * sorting criteria. Currently it's the only allowed value.
      * </p>
      * 
-     * @return A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
-     *         sorting criteria. Currently it's the only allowed value.
+     * @return A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE
+     *         as a sorting criteria. Currently it's the only allowed value.
      * @see OrderedBy
      */
 
@@ -122,13 +123,13 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting
-     * criteria. Currently it's the only allowed value.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
+     * sorting criteria. Currently it's the only allowed value.
      * </p>
      * 
      * @param orderedBy
-     *        A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
-     *        sorting criteria. Currently it's the only allowed value.
+     *        A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE
+     *        as a sorting criteria. Currently it's the only allowed value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderedBy
      */
@@ -140,13 +141,13 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting
-     * criteria. Currently it's the only allowed value.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
+     * sorting criteria. Currently it's the only allowed value.
      * </p>
      * 
      * @param orderedBy
-     *        A criteria to use for S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a
-     *        sorting criteria. Currently it's the only allowed value.
+     *        A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE
+     *        as a sorting criteria. Currently it's the only allowed value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderedBy
      */
@@ -158,13 +159,13 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent
-     * files are selected first. Anotherpossible value is ASCENDING.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
+     * recent files are selected first. Anotherpossible value is ASCENDING.
      * </p>
      * 
      * @param order
-     *        A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
-     *        recent files are selected first. Anotherpossible value is ASCENDING.
+     *        A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order,
+     *        i.e. most recent files are selected first. Anotherpossible value is ASCENDING.
      * @see Order
      */
 
@@ -174,12 +175,12 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent
-     * files are selected first. Anotherpossible value is ASCENDING.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
+     * recent files are selected first. Anotherpossible value is ASCENDING.
      * </p>
      * 
-     * @return A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e.
-     *         most recent files are selected first. Anotherpossible value is ASCENDING.
+     * @return A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order,
+     *         i.e. most recent files are selected first. Anotherpossible value is ASCENDING.
      * @see Order
      */
 
@@ -189,13 +190,13 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent
-     * files are selected first. Anotherpossible value is ASCENDING.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
+     * recent files are selected first. Anotherpossible value is ASCENDING.
      * </p>
      * 
      * @param order
-     *        A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
-     *        recent files are selected first. Anotherpossible value is ASCENDING.
+     *        A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order,
+     *        i.e. most recent files are selected first. Anotherpossible value is ASCENDING.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -207,13 +208,13 @@ public class FilesLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent
-     * files are selected first. Anotherpossible value is ASCENDING.
+     * A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
+     * recent files are selected first. Anotherpossible value is ASCENDING.
      * </p>
      * 
      * @param order
-     *        A criteria to use for S3 files sorting before their selection. By default uses DESCENDING order, i.e. most
-     *        recent files are selected first. Anotherpossible value is ASCENDING.
+     *        A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order,
+     *        i.e. most recent files are selected first. Anotherpossible value is ASCENDING.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */

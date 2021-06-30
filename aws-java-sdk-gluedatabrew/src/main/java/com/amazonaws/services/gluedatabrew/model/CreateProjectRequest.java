@@ -48,8 +48,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Sample sample;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.
      * </p>
      */
     private String roleArn;
@@ -214,12 +213,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this
      *        request.
      */
 
@@ -229,12 +227,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for
-     *         this request.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this
+     *         request.
      */
 
     public String getRoleArn() {
@@ -243,12 +240,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
-     * request.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed for this
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -133,7 +133,22 @@ public class AbstractAWSServiceDiscovery implements AWSServiceDiscovery {
     }
 
     @Override
+    public UpdateHttpNamespaceResult updateHttpNamespace(UpdateHttpNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateInstanceCustomHealthStatusResult updateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePrivateDnsNamespaceResult updatePrivateDnsNamespace(UpdatePrivateDnsNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePublicDnsNamespaceResult updatePublicDnsNamespace(UpdatePublicDnsNamespaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

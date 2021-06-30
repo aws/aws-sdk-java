@@ -260,6 +260,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("CapacityRebalance", StringUtils.fromBoolean(updateAutoScalingGroupRequest.getCapacityRebalance()));
         }
 
+        if (updateAutoScalingGroupRequest.getContext() != null) {
+            request.addParameter("Context", StringUtils.fromString(updateAutoScalingGroupRequest.getContext()));
+        }
+
         return request;
     }
 

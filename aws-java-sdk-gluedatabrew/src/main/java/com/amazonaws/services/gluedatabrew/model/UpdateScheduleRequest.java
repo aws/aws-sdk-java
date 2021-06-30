@@ -34,8 +34,8 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The date or dates and time or times when the jobs are to be run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      */
     private String cronExpression;
@@ -119,14 +119,14 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The date or dates and time or times when the jobs are to be run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
      *        The date or dates and time or times when the jobs are to be run. For more information, see <a
-     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
-     *        Glue DataBrew Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue
+     *        DataBrew Developer Guide</i>.
      */
 
     public void setCronExpression(String cronExpression) {
@@ -136,13 +136,13 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The date or dates and time or times when the jobs are to be run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      * 
      * @return The date or dates and time or times when the jobs are to be run. For more information, see <a
-     *         href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
-     *         Glue DataBrew Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue
+     *         DataBrew Developer Guide</i>.
      */
 
     public String getCronExpression() {
@@ -152,14 +152,14 @@ public class UpdateScheduleRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The date or dates and time or times when the jobs are to be run. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
-     * DataBrew Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew
+     * Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
      *        The date or dates and time or times when the jobs are to be run. For more information, see <a
-     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
-     *        Glue DataBrew Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue
+     *        DataBrew Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

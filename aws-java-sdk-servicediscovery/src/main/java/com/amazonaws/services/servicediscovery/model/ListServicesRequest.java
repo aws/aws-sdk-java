@@ -35,7 +35,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
      * possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
      * subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.
      * </p>
@@ -44,9 +44,8 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * The maximum number of services that you want AWS Cloud Map to return in the response to a
-     * <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 services.
+     * The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.
      * </p>
      */
     private Integer maxResults;
@@ -71,7 +70,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
      * possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
      * subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.
      * </p>
@@ -86,7 +85,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria.
+     *        Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria.
      *        It's possible that no services in the first <code>MaxResults</code> services matched the specified
      *        criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the
      *        criteria.
@@ -107,7 +106,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
      * possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
      * subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.
      * </p>
@@ -121,10 +120,10 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <note>
      *         <p>
-     *         AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified
-     *         criteria. It's possible that no services in the first <code>MaxResults</code> services matched the
-     *         specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services
-     *         that match the criteria.
+     *         Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria.
+     *         It's possible that no services in the first <code>MaxResults</code> services matched the specified
+     *         criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match
+     *         the criteria.
      *         </p>
      */
 
@@ -142,7 +141,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
+     * Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
      * possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
      * subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.
      * </p>
@@ -157,7 +156,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <note>
      *        <p>
-     *        AWS Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria.
+     *        Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria.
      *        It's possible that no services in the first <code>MaxResults</code> services matched the specified
      *        criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the
      *        criteria.
@@ -172,14 +171,13 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of services that you want AWS Cloud Map to return in the response to a
-     * <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 services.
+     * The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of services that you want AWS Cloud Map to return in the response to a
-     *        <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     *        The maximum number of services that you want Cloud Map to return in the response to a
+     *        <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
      *        returns up to 100 services.
      */
 
@@ -189,14 +187,13 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of services that you want AWS Cloud Map to return in the response to a
-     * <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 services.
+     * The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.
      * </p>
      * 
-     * @return The maximum number of services that you want AWS Cloud Map to return in the response to a
-     *         <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
-     *         Map returns up to 100 services.
+     * @return The maximum number of services that you want Cloud Map to return in the response to a
+     *         <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
+     *         returns up to 100 services.
      */
 
     public Integer getMaxResults() {
@@ -205,14 +202,13 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of services that you want AWS Cloud Map to return in the response to a
-     * <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
-     * returns up to 100 services.
+     * The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of services that you want AWS Cloud Map to return in the response to a
-     *        <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     *        The maximum number of services that you want Cloud Map to return in the response to a
+     *        <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
      *        returns up to 100 services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

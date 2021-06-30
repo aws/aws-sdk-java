@@ -96,6 +96,12 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Output> outputs;
     /**
      * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     */
+    private java.util.List<DataCatalogOutput> dataCatalogOutputs;
+    /**
+     * <p>
      * The set of steps processed by the job.
      * </p>
      */
@@ -631,6 +637,76 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * 
+     * @return One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     */
+
+    public java.util.List<DataCatalogOutput> getDataCatalogOutputs() {
+        return dataCatalogOutputs;
+    }
+
+    /**
+     * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * 
+     * @param dataCatalogOutputs
+     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     */
+
+    public void setDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
+        if (dataCatalogOutputs == null) {
+            this.dataCatalogOutputs = null;
+            return;
+        }
+
+        this.dataCatalogOutputs = new java.util.ArrayList<DataCatalogOutput>(dataCatalogOutputs);
+    }
+
+    /**
+     * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataCatalogOutputs(java.util.Collection)} or {@link #withDataCatalogOutputs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param dataCatalogOutputs
+     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withDataCatalogOutputs(DataCatalogOutput... dataCatalogOutputs) {
+        if (this.dataCatalogOutputs == null) {
+            setDataCatalogOutputs(new java.util.ArrayList<DataCatalogOutput>(dataCatalogOutputs.length));
+        }
+        for (DataCatalogOutput ele : dataCatalogOutputs) {
+            this.dataCatalogOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * </p>
+     * 
+     * @param dataCatalogOutputs
+     *        One or more artifacts that represent the AWS Glue Data Catalog output from running the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withDataCatalogOutputs(java.util.Collection<DataCatalogOutput> dataCatalogOutputs) {
+        setDataCatalogOutputs(dataCatalogOutputs);
+        return this;
+    }
+
+    /**
+     * <p>
      * The set of steps processed by the job.
      * </p>
      * 
@@ -835,6 +911,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
+        if (getDataCatalogOutputs() != null)
+            sb.append("DataCatalogOutputs: ").append(getDataCatalogOutputs()).append(",");
         if (getRecipeReference() != null)
             sb.append("RecipeReference: ").append(getRecipeReference()).append(",");
         if (getStartedBy() != null)
@@ -901,6 +979,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false)
             return false;
+        if (other.getDataCatalogOutputs() == null ^ this.getDataCatalogOutputs() == null)
+            return false;
+        if (other.getDataCatalogOutputs() != null && other.getDataCatalogOutputs().equals(this.getDataCatalogOutputs()) == false)
+            return false;
         if (other.getRecipeReference() == null ^ this.getRecipeReference() == null)
             return false;
         if (other.getRecipeReference() != null && other.getRecipeReference().equals(this.getRecipeReference()) == false)
@@ -936,6 +1018,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLogSubscription() == null) ? 0 : getLogSubscription().hashCode());
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
+        hashCode = prime * hashCode + ((getDataCatalogOutputs() == null) ? 0 : getDataCatalogOutputs().hashCode());
         hashCode = prime * hashCode + ((getRecipeReference() == null) ? 0 : getRecipeReference().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());

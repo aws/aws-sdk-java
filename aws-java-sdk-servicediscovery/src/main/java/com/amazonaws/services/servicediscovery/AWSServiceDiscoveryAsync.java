@@ -25,12 +25,13 @@ import com.amazonaws.services.servicediscovery.model.*;
  * {@link com.amazonaws.services.servicediscovery.AbstractAWSServiceDiscoveryAsync} instead.
  * </p>
  * <p>
+ * <fullname>Cloud Map</fullname>
  * <p>
- * With AWS Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications
- * run in. When an instance becomes available, you can call the AWS Cloud Map API to register the instance with AWS
- * Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an optional
- * health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer
- * that contains up to eight healthy records.
+ * With Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications run
+ * in. When an instance becomes available, you can call the Cloud Map API to register the instance with Cloud Map. For
+ * public or private DNS namespaces, Cloud Map automatically creates DNS records and an optional health check. Clients
+ * that submit public or private DNS queries, or HTTP requests, for the service receive an answer that contains up to
+ * eight healthy records.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -42,9 +43,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
-     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map quotas</a> in the
-     * <i>AWS Cloud Map Developer Guide</i>.
+     * For the current quota on the number of namespaces that you can create using the same account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
+     * Map Developer Guide</i>.
      * </p>
      * 
      * @param createHttpNamespaceRequest
@@ -61,9 +62,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
-     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map quotas</a> in the
-     * <i>AWS Cloud Map Developer Guide</i>.
+     * For the current quota on the number of namespaces that you can create using the same account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
+     * Map Developer Guide</i>.
      * </p>
      * 
      * @param createHttpNamespaceRequest
@@ -86,9 +87,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
      * Service instances that are registered using a private DNS namespace can be discovered using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
-     * <i>AWS Cloud Map Developer Guide</i>.
+     * can create using the same account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
+     * Map Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -107,9 +108,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
      * Service instances that are registered using a private DNS namespace can be discovered using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
-     * <i>AWS Cloud Map Developer Guide</i>.
+     * can create using the same account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
+     * Map Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -133,9 +134,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can
      * discover instances that were registered with a public DNS namespace by using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Quotas</a>in the
-     * <i>AWS Cloud Map Developer Guide</i>.
+     * can create using the same account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
+     * Map Developer Guide</i>.
      * </p>
      * 
      * @param createPublicDnsNamespaceRequest
@@ -153,9 +154,9 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can
      * discover instances that were registered with a public DNS namespace by using either a
      * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
-     * can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Quotas</a>in the
-     * <i>AWS Cloud Map Developer Guide</i>.
+     * can create using the same account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud
+     * Map Developer Guide</i>.
      * </p>
      * 
      * @param createPublicDnsNamespaceRequest
@@ -178,7 +179,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
      * <ul>
      * <li>
@@ -217,12 +218,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * After you create the service, you can submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
-     * and AWS Cloud Map uses the values in the configuration to create the specified entities.
+     * and Cloud Map uses the values in the configuration to create the specified entities.
      * </p>
      * <p>
      * For the current quota on the number of instances that you can register using the same namespace and using the
-     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
-     * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
+     * quotas</a> in the <i>Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createServiceRequest
@@ -240,7 +241,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
      * <ul>
      * <li>
@@ -279,12 +280,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * After you create the service, you can submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
-     * and AWS Cloud Map uses the values in the configuration to create the specified entities.
+     * and Cloud Map uses the values in the configuration to create the specified entities.
      * </p>
      * <p>
      * For the current quota on the number of instances that you can register using the same namespace and using the
-     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
-     * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
+     * quotas</a> in the <i>Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createServiceRequest
@@ -366,7 +367,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
      * instance.
      * </p>
      * 
@@ -380,7 +381,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified
      * instance.
      * </p>
      * 
@@ -648,7 +649,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Lists summary information about the namespaces that were created by the current AWS account.
+     * Lists summary information about the namespaces that were created by the current account.
      * </p>
      * 
      * @param listNamespacesRequest
@@ -661,7 +662,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Lists summary information about the namespaces that were created by the current AWS account.
+     * Lists summary information about the namespaces that were created by the current account.
      * </p>
      * 
      * @param listNamespacesRequest
@@ -805,7 +806,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * </p>
      * <p>
-     * When AWS Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:
+     * When Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:
      * </p>
      * <ul>
      * <li>
@@ -826,8 +827,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </ul>
      * <p>
      * For the current quota on the number of instances that you can register using the same namespace and using the
-     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
-     * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
+     * quotas</a> in the <i>Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param registerInstanceRequest
@@ -873,7 +874,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.
      * </p>
      * <p>
-     * When AWS Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:
+     * When Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:
      * </p>
      * <ul>
      * <li>
@@ -894,8 +895,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </ul>
      * <p>
      * For the current quota on the number of instances that you can register using the same namespace and using the
-     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
-     * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+     * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map
+     * quotas</a> in the <i>Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param registerInstanceRequest
@@ -975,12 +976,43 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
+     * Updates an HTTP namespace.
+     * </p>
+     * 
+     * @param updateHttpNamespaceRequest
+     * @return A Java Future containing the result of the UpdateHttpNamespace operation returned by the service.
+     * @sample AWSServiceDiscoveryAsync.UpdateHttpNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateHttpNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHttpNamespaceResult> updateHttpNamespaceAsync(UpdateHttpNamespaceRequest updateHttpNamespaceRequest);
+
+    /**
+     * <p>
+     * Updates an HTTP namespace.
+     * </p>
+     * 
+     * @param updateHttpNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateHttpNamespace operation returned by the service.
+     * @sample AWSServiceDiscoveryAsyncHandler.UpdateHttpNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateHttpNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHttpNamespaceResult> updateHttpNamespaceAsync(UpdateHttpNamespaceRequest updateHttpNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateHttpNamespaceRequest, UpdateHttpNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
      * Submits a request to change the health status of a custom health check to healthy or unhealthy.
      * </p>
      * <p>
      * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
      * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
-     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1006,7 +1038,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
      * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
-     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1029,6 +1061,70 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
     java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
             UpdateInstanceCustomHealthStatusRequest updateInstanceCustomHealthStatusRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInstanceCustomHealthStatusRequest, UpdateInstanceCustomHealthStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a private DNS namespace.
+     * </p>
+     * 
+     * @param updatePrivateDnsNamespaceRequest
+     * @return A Java Future containing the result of the UpdatePrivateDnsNamespace operation returned by the service.
+     * @sample AWSServiceDiscoveryAsync.UpdatePrivateDnsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePrivateDnsNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePrivateDnsNamespaceResult> updatePrivateDnsNamespaceAsync(
+            UpdatePrivateDnsNamespaceRequest updatePrivateDnsNamespaceRequest);
+
+    /**
+     * <p>
+     * Updates a private DNS namespace.
+     * </p>
+     * 
+     * @param updatePrivateDnsNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePrivateDnsNamespace operation returned by the service.
+     * @sample AWSServiceDiscoveryAsyncHandler.UpdatePrivateDnsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePrivateDnsNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePrivateDnsNamespaceResult> updatePrivateDnsNamespaceAsync(
+            UpdatePrivateDnsNamespaceRequest updatePrivateDnsNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePrivateDnsNamespaceRequest, UpdatePrivateDnsNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a public DNS namespace.
+     * </p>
+     * 
+     * @param updatePublicDnsNamespaceRequest
+     * @return A Java Future containing the result of the UpdatePublicDnsNamespace operation returned by the service.
+     * @sample AWSServiceDiscoveryAsync.UpdatePublicDnsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePublicDnsNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePublicDnsNamespaceResult> updatePublicDnsNamespaceAsync(UpdatePublicDnsNamespaceRequest updatePublicDnsNamespaceRequest);
+
+    /**
+     * <p>
+     * Updates a public DNS namespace.
+     * </p>
+     * 
+     * @param updatePublicDnsNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePublicDnsNamespace operation returned by the service.
+     * @sample AWSServiceDiscoveryAsyncHandler.UpdatePublicDnsNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePublicDnsNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePublicDnsNamespaceResult> updatePublicDnsNamespaceAsync(UpdatePublicDnsNamespaceRequest updatePublicDnsNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePublicDnsNamespaceRequest, UpdatePublicDnsNamespaceResult> asyncHandler);
 
     /**
      * <p>
@@ -1068,8 +1164,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * </ul>
      * <p>
-     * When you update settings for a service, AWS Cloud Map also updates the corresponding settings in all the records
-     * and health checks that were created by using the specified service.
+     * When you update settings for a service, Cloud Map also updates the corresponding settings in all the records and
+     * health checks that were created by using the specified service.
      * </p>
      * 
      * @param updateServiceRequest
@@ -1118,8 +1214,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * </ul>
      * <p>
-     * When you update settings for a service, AWS Cloud Map also updates the corresponding settings in all the records
-     * and health checks that were created by using the specified service.
+     * When you update settings for a service, Cloud Map also updates the corresponding settings in all the records and
+     * health checks that were created by using the specified service.
      * </p>
      * 
      * @param updateServiceRequest

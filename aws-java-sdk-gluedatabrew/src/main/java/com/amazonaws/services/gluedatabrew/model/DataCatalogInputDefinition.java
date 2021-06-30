@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew dataset.
+ * Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DataCatalogInputDefinition"
@@ -30,7 +30,7 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     * The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
      * </p>
      */
     private String catalogId;
@@ -48,18 +48,18 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
     private String tableName;
     /**
      * <p>
-     * An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     * Represents an Amazon location where DataBrew can store intermediate results.
      * </p>
      */
     private S3Location tempDirectory;
 
     /**
      * <p>
-     * The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     * The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
      * </p>
      * 
      * @param catalogId
-     *        The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     *        The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
      */
 
     public void setCatalogId(String catalogId) {
@@ -68,10 +68,11 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     * The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
      * </p>
      * 
-     * @return The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     * @return The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the
+     *         data.
      */
 
     public String getCatalogId() {
@@ -80,11 +81,11 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     * The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
      * </p>
      * 
      * @param catalogId
-     *        The unique identifier of the AWS account that holds the Data Catalog that stores the data.
+     *        The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +176,11 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     * Represents an Amazon location where DataBrew can store intermediate results.
      * </p>
      * 
      * @param tempDirectory
-     *        An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     *        Represents an Amazon location where DataBrew can store intermediate results.
      */
 
     public void setTempDirectory(S3Location tempDirectory) {
@@ -188,10 +189,10 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     * Represents an Amazon location where DataBrew can store intermediate results.
      * </p>
      * 
-     * @return An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     * @return Represents an Amazon location where DataBrew can store intermediate results.
      */
 
     public S3Location getTempDirectory() {
@@ -200,11 +201,11 @@ public class DataCatalogInputDefinition implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     * Represents an Amazon location where DataBrew can store intermediate results.
      * </p>
      * 
      * @param tempDirectory
-     *        An Amazon location that AWS Glue Data Catalog can use as a temporary directory.
+     *        Represents an Amazon location where DataBrew can store intermediate results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

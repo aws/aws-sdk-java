@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
+ * Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Input" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private S3Location s3InputDefinition;
     /**
      * <p>
-     * The AWS Glue Data Catalog parameters for the data.
+     * The Glue Data Catalog parameters for the data.
      * </p>
      */
     private DataCatalogInputDefinition dataCatalogInputDefinition;
@@ -89,11 +89,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Glue Data Catalog parameters for the data.
+     * The Glue Data Catalog parameters for the data.
      * </p>
      * 
      * @param dataCatalogInputDefinition
-     *        The AWS Glue Data Catalog parameters for the data.
+     *        The Glue Data Catalog parameters for the data.
      */
 
     public void setDataCatalogInputDefinition(DataCatalogInputDefinition dataCatalogInputDefinition) {
@@ -102,10 +102,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Glue Data Catalog parameters for the data.
+     * The Glue Data Catalog parameters for the data.
      * </p>
      * 
-     * @return The AWS Glue Data Catalog parameters for the data.
+     * @return The Glue Data Catalog parameters for the data.
      */
 
     public DataCatalogInputDefinition getDataCatalogInputDefinition() {
@@ -114,11 +114,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Glue Data Catalog parameters for the data.
+     * The Glue Data Catalog parameters for the data.
      * </p>
      * 
      * @param dataCatalogInputDefinition
-     *        The AWS Glue Data Catalog parameters for the data.
+     *        The Glue Data Catalog parameters for the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

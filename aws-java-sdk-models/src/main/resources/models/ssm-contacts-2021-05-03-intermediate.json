@@ -1088,6 +1088,10 @@
         "documentation" : "<p>Request references a resource that doesn't exist.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>Unexpected error occurred while processing the request.</p>",
         "httpStatusCode" : null
@@ -1312,6 +1316,10 @@
         "documentation" : "<p>Request references a resource that doesn't exist.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>Unexpected error occurred while processing the request.</p>",
         "httpStatusCode" : null
@@ -1416,6 +1424,10 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>Request references a resource that doesn't exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",

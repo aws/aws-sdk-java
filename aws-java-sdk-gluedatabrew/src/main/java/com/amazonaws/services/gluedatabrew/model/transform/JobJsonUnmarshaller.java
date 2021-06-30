@@ -106,6 +106,12 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("DataCatalogOutputs", targetDepth)) {
+                    context.nextToken();
+                    job.setDataCatalogOutputs(new ListUnmarshaller<DataCatalogOutput>(DataCatalogOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ProjectName", targetDepth)) {
                     context.nextToken();
                     job.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));

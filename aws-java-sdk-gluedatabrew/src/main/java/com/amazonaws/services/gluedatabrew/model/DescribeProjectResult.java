@@ -75,7 +75,7 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
     private Sample sample;
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      */
     private String roleArn;
@@ -469,11 +469,11 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     *        The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -482,10 +482,10 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
-     * @return The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * @return The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      */
 
     public String getRoleArn() {
@@ -494,11 +494,11 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     * The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
+     *        The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

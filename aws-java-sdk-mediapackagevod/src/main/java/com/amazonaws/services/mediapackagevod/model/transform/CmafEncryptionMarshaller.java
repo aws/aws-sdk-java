@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CmafEncryptionMarshaller {
 
+    private static final MarshallingInfo<String> CONSTANTINITIALIZATIONVECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("constantInitializationVector").build();
     private static final MarshallingInfo<StructuredPojo> SPEKEKEYPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spekeKeyProvider").build();
 
@@ -46,6 +48,7 @@ public class CmafEncryptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(cmafEncryption.getConstantInitializationVector(), CONSTANTINITIALIZATIONVECTOR_BINDING);
             protocolMarshaller.marshall(cmafEncryption.getSpekeKeyProvider(), SPEKEKEYPROVIDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

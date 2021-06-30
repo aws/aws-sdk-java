@@ -39,16 +39,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
     /**
      * <p>
      * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
-     * request count served by your Auto Scaling group. You can't specify a resource label unless the target group is
-     * attached to the Auto Scaling group.
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
      * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
      * </p>
      * <p>
-     * <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     * .
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      * </p>
      * <p>
      * Where:
@@ -137,16 +136,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
     /**
      * <p>
      * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
-     * request count served by your Auto Scaling group. You can't specify a resource label unless the target group is
-     * attached to the Auto Scaling group.
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
      * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
      * </p>
      * <p>
-     * <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     * .
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      * </p>
      * <p>
      * Where:
@@ -173,16 +171,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
      * 
      * @param resourceLabel
      *        A label that uniquely identifies a specific Application Load Balancer target group from which to determine
-     *        the request count served by your Auto Scaling group. You can't specify a resource label unless the target
-     *        group is attached to the Auto Scaling group.</p>
+     *        the average request count served by your Auto Scaling group. You can't specify a resource label unless the
+     *        target group is attached to the Auto Scaling group.</p>
      *        <p>
      *        You create the resource label by appending the final portion of the load balancer ARN and the final
      *        portion of the target group ARN into a single value, separated by a forward slash (/). The format of the
      *        resource label is:
      *        </p>
      *        <p>
-     *        <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     *        .
+     *        <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      *        </p>
      *        <p>
      *        Where:
@@ -215,16 +212,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
     /**
      * <p>
      * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
-     * request count served by your Auto Scaling group. You can't specify a resource label unless the target group is
-     * attached to the Auto Scaling group.
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
      * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
      * </p>
      * <p>
-     * <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     * .
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      * </p>
      * <p>
      * Where:
@@ -250,16 +246,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
      * </p>
      * 
      * @return A label that uniquely identifies a specific Application Load Balancer target group from which to
-     *         determine the request count served by your Auto Scaling group. You can't specify a resource label unless
-     *         the target group is attached to the Auto Scaling group.</p>
+     *         determine the average request count served by your Auto Scaling group. You can't specify a resource label
+     *         unless the target group is attached to the Auto Scaling group.</p>
      *         <p>
      *         You create the resource label by appending the final portion of the load balancer ARN and the final
      *         portion of the target group ARN into a single value, separated by a forward slash (/). The format of the
      *         resource label is:
      *         </p>
      *         <p>
-     *         <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     *         .
+     *         <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      *         </p>
      *         <p>
      *         Where:
@@ -292,16 +287,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
     /**
      * <p>
      * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
-     * request count served by your Auto Scaling group. You can't specify a resource label unless the target group is
-     * attached to the Auto Scaling group.
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
      * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
      * </p>
      * <p>
-     * <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     * .
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      * </p>
      * <p>
      * Where:
@@ -328,16 +322,15 @@ public class PredictiveScalingPredefinedScalingMetric implements Serializable, C
      * 
      * @param resourceLabel
      *        A label that uniquely identifies a specific Application Load Balancer target group from which to determine
-     *        the request count served by your Auto Scaling group. You can't specify a resource label unless the target
-     *        group is attached to the Auto Scaling group.</p>
+     *        the average request count served by your Auto Scaling group. You can't specify a resource label unless the
+     *        target group is attached to the Auto Scaling group.</p>
      *        <p>
      *        You create the resource label by appending the final portion of the load balancer ARN and the final
      *        portion of the target group ARN into a single value, separated by a forward slash (/). The format of the
      *        resource label is:
      *        </p>
      *        <p>
-     *        <code>app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d</code>
-     *        .
+     *        <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
      *        </p>
      *        <p>
      *        Where:

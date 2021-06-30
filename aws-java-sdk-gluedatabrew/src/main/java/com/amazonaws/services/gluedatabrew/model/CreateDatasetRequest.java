@@ -34,7 +34,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      */
     private String format;
@@ -44,7 +44,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Input input;
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      */
     private PathOptions pathOptions;
@@ -103,11 +103,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @see InputFormat
      */
 
@@ -117,10 +117,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
-     * @return The file format of a dataset that is created from an S3 file or folder.
+     * @return The file format of a dataset that is created from an Amazon S3 file or folder.
      * @see InputFormat
      */
 
@@ -130,11 +130,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -146,11 +146,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The file format of a dataset that is created from an S3 file or folder.
+     * The file format of a dataset that is created from an Amazon S3 file or folder.
      * </p>
      * 
      * @param format
-     *        The file format of a dataset that is created from an S3 file or folder.
+     *        The file format of a dataset that is created from an Amazon S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -214,11 +214,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
      * @param pathOptions
-     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     *        A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      */
 
     public void setPathOptions(PathOptions pathOptions) {
@@ -227,10 +227,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
-     * @return A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * @return A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      */
 
     public PathOptions getPathOptions() {
@@ -239,11 +239,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * </p>
      * 
      * @param pathOptions
-     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     *        A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

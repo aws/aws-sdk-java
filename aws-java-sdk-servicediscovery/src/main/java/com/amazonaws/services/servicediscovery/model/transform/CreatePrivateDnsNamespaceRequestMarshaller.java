@@ -41,6 +41,8 @@ public class CreatePrivateDnsNamespaceRequestMarshaller {
             .marshallLocationName("Vpc").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Properties").build();
 
     private static final CreatePrivateDnsNamespaceRequestMarshaller instance = new CreatePrivateDnsNamespaceRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreatePrivateDnsNamespaceRequestMarshaller {
             protocolMarshaller.marshall(createPrivateDnsNamespaceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createPrivateDnsNamespaceRequest.getVpc(), VPC_BINDING);
             protocolMarshaller.marshall(createPrivateDnsNamespaceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createPrivateDnsNamespaceRequest.getProperties(), PROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

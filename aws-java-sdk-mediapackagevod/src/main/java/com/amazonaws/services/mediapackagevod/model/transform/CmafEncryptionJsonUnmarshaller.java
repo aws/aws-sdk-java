@@ -48,6 +48,10 @@ public class CmafEncryptionJsonUnmarshaller implements Unmarshaller<CmafEncrypti
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("constantInitializationVector", targetDepth)) {
+                    context.nextToken();
+                    cmafEncryption.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("spekeKeyProvider", targetDepth)) {
                     context.nextToken();
                     cmafEncryption.setSpekeKeyProvider(SpekeKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));

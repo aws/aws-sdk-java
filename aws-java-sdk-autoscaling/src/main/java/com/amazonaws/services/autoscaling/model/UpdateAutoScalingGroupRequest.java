@@ -181,6 +181,12 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean capacityRebalance;
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     */
+    private String context;
 
     /**
      * <p>
@@ -1298,6 +1304,46 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     */
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @return Reserved.
+     */
+
+    public String getContext() {
+        return this.context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAutoScalingGroupRequest withContext(String context) {
+        setContext(context);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1344,7 +1390,9 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (getMaxInstanceLifetime() != null)
             sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime()).append(",");
         if (getCapacityRebalance() != null)
-            sb.append("CapacityRebalance: ").append(getCapacityRebalance());
+            sb.append("CapacityRebalance: ").append(getCapacityRebalance()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -1432,6 +1480,10 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getCapacityRebalance() != null && other.getCapacityRebalance().equals(this.getCapacityRebalance()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -1458,6 +1510,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         hashCode = prime * hashCode + ((getMaxInstanceLifetime() == null) ? 0 : getMaxInstanceLifetime().hashCode());
         hashCode = prime * hashCode + ((getCapacityRebalance() == null) ? 0 : getCapacityRebalance().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

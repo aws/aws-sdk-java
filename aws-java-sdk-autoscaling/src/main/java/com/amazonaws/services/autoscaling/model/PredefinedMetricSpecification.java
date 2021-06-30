@@ -59,14 +59,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
     private String predefinedMetricType;
     /**
      * <p>
-     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
-     * the target group ARN into a single value, separated by a forward slash (/). The format is
-     * app/&lt;load-balancer-name
-     * &gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
+     * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
+     * </p>
+     * <p>
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     * </p>
+     * <p>
+     * Where:
      * </p>
      * <ul>
      * <li>
@@ -80,10 +85,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * This is an example:
-     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     * </p>
      * <p>
      * To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
@@ -414,14 +415,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
-     * the target group ARN into a single value, separated by a forward slash (/). The format is
-     * app/&lt;load-balancer-name
-     * &gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
+     * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
+     * </p>
+     * <p>
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     * </p>
+     * <p>
+     * Where:
      * </p>
      * <ul>
      * <li>
@@ -436,10 +442,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This is an example:
-     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     * </p>
-     * <p>
      * To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
@@ -448,15 +450,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceLabel
-     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
-     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
-     *        Scaling group.</p>
+     *        A label that uniquely identifies a specific Application Load Balancer target group from which to determine
+     *        the average request count served by your Auto Scaling group. You can't specify a resource label unless the
+     *        target group is attached to the Auto Scaling group.</p>
      *        <p>
      *        You create the resource label by appending the final portion of the load balancer ARN and the final
-     *        portion of the target group ARN into a single value, separated by a forward slash (/). The format is
-     *        app/&lt
-     *        ;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group
-     *        -id&gt;, where:
+     *        portion of the target group ARN into a single value, separated by a forward slash (/). The format of the
+     *        resource label is:
+     *        </p>
+     *        <p>
+     *        <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     *        </p>
+     *        <p>
+     *        Where:
      *        </p>
      *        <ul>
      *        <li>
@@ -472,10 +478,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        This is an example:
-     *        app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     *        </p>
-     *        <p>
      *        To find the ARN for an Application Load Balancer, use the <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href=
@@ -489,14 +491,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
-     * the target group ARN into a single value, separated by a forward slash (/). The format is
-     * app/&lt;load-balancer-name
-     * &gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
+     * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
+     * </p>
+     * <p>
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     * </p>
+     * <p>
+     * Where:
      * </p>
      * <ul>
      * <li>
@@ -511,10 +518,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This is an example:
-     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     * </p>
-     * <p>
      * To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
@@ -522,14 +525,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * >DescribeTargetGroups</a> API operation.
      * </p>
      * 
-     * @return Identifies the resource associated with the metric type. You can't specify a resource label unless the
-     *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
-     *         Scaling group.</p>
+     * @return A label that uniquely identifies a specific Application Load Balancer target group from which to
+     *         determine the average request count served by your Auto Scaling group. You can't specify a resource label
+     *         unless the target group is attached to the Auto Scaling group.</p>
      *         <p>
      *         You create the resource label by appending the final portion of the load balancer ARN and the final
-     *         portion of the target group ARN into a single value, separated by a forward slash (/). The format is
-     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-
-     *         group-id&gt;, where:
+     *         portion of the target group ARN into a single value, separated by a forward slash (/). The format of the
+     *         resource label is:
+     *         </p>
+     *         <p>
+     *         <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     *         </p>
+     *         <p>
+     *         Where:
      *         </p>
      *         <ul>
      *         <li>
@@ -545,10 +553,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         This is an example:
-     *         app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     *         </p>
-     *         <p>
      *         To find the ARN for an Application Load Balancer, use the <a href=
      *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *         >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a href=
@@ -562,14 +566,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * A label that uniquely identifies a specific Application Load Balancer target group from which to determine the
+     * average request count served by your Auto Scaling group. You can't specify a resource label unless the target
+     * group is attached to the Auto Scaling group.
      * </p>
      * <p>
      * You create the resource label by appending the final portion of the load balancer ARN and the final portion of
-     * the target group ARN into a single value, separated by a forward slash (/). The format is
-     * app/&lt;load-balancer-name
-     * &gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:
+     * the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:
+     * </p>
+     * <p>
+     * <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     * </p>
+     * <p>
+     * Where:
      * </p>
      * <ul>
      * <li>
@@ -584,10 +593,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * This is an example:
-     * app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     * </p>
-     * <p>
      * To find the ARN for an Application Load Balancer, use the <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use the <a
@@ -596,15 +601,19 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceLabel
-     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
-     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
-     *        Scaling group.</p>
+     *        A label that uniquely identifies a specific Application Load Balancer target group from which to determine
+     *        the average request count served by your Auto Scaling group. You can't specify a resource label unless the
+     *        target group is attached to the Auto Scaling group.</p>
      *        <p>
      *        You create the resource label by appending the final portion of the load balancer ARN and the final
-     *        portion of the target group ARN into a single value, separated by a forward slash (/). The format is
-     *        app/&lt
-     *        ;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group
-     *        -id&gt;, where:
+     *        portion of the target group ARN into a single value, separated by a forward slash (/). The format of the
+     *        resource label is:
+     *        </p>
+     *        <p>
+     *        <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+     *        </p>
+     *        <p>
+     *        Where:
      *        </p>
      *        <ul>
      *        <li>
@@ -619,10 +628,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        This is an example:
-     *        app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.
-     *        </p>
      *        <p>
      *        To find the ARN for an Application Load Balancer, use the <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"

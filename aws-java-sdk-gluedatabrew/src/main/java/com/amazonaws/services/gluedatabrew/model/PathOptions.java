@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a set of options that define how DataBrew selects files for a given S3 path in a dataset.
+ * Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PathOptions" target="_top">AWS API
@@ -30,8 +30,8 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     * attribute in S3.
+     * If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate
+     * attribute in Amazon S3.
      * </p>
      */
     private FilterExpression lastModifiedDateCondition;
@@ -43,20 +43,20 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
     private FilesLimit filesLimit;
     /**
      * <p>
-     * A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     * A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      * </p>
      */
     private java.util.Map<String, DatasetParameter> parameters;
 
     /**
      * <p>
-     * If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     * attribute in S3.
+     * If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate
+     * attribute in Amazon S3.
      * </p>
      * 
      * @param lastModifiedDateCondition
-     *        If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     *        attribute in S3.
+     *        If provided, this structure defines a date range for matching Amazon S3 objects based on their
+     *        LastModifiedDate attribute in Amazon S3.
      */
 
     public void setLastModifiedDateCondition(FilterExpression lastModifiedDateCondition) {
@@ -65,12 +65,12 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     * attribute in S3.
+     * If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate
+     * attribute in Amazon S3.
      * </p>
      * 
-     * @return If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     *         attribute in S3.
+     * @return If provided, this structure defines a date range for matching Amazon S3 objects based on their
+     *         LastModifiedDate attribute in Amazon S3.
      */
 
     public FilterExpression getLastModifiedDateCondition() {
@@ -79,13 +79,13 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     * attribute in S3.
+     * If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate
+     * attribute in Amazon S3.
      * </p>
      * 
      * @param lastModifiedDateCondition
-     *        If provided, this structure defines a date range for matching S3 objects based on their LastModifiedDate
-     *        attribute in S3.
+     *        If provided, this structure defines a date range for matching Amazon S3 objects based on their
+     *        LastModifiedDate attribute in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +136,10 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     * A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      * </p>
      * 
-     * @return A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     * @return A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      */
 
     public java.util.Map<String, DatasetParameter> getParameters() {
@@ -148,11 +148,11 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     * A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      * </p>
      * 
      * @param parameters
-     *        A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     *        A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      */
 
     public void setParameters(java.util.Map<String, DatasetParameter> parameters) {
@@ -161,11 +161,11 @@ public class PathOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     * A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      * </p>
      * 
      * @param parameters
-     *        A structure that maps names of parameters used in the S3 path of a dataset to their definitions.
+     *        A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

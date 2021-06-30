@@ -26,7 +26,7 @@ import com.amazonaws.services.gluedatabrew.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks,
+ * Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks,
  * targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical
  * levels to visualize the data and perform one-click data transformations, with no coding required.
  * </p>
@@ -311,7 +311,7 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
 
     /**
      * <p>
-     * Creates a new job to transform input data, using steps defined in an existing AWS Glue DataBrew recipe
+     * Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe
      * </p>
      * 
      * @param createRecipeJobRequest
@@ -324,7 +324,7 @@ public interface AWSGlueDataBrewAsync extends AWSGlueDataBrew {
 
     /**
      * <p>
-     * Creates a new job to transform input data, using steps defined in an existing AWS Glue DataBrew recipe
+     * Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe
      * </p>
      * 
      * @param createRecipeJobRequest

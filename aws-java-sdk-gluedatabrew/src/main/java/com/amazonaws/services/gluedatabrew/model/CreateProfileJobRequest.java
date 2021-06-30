@@ -44,7 +44,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      * </p>
      * </li>
      * <li>
@@ -85,8 +85,8 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
     private S3Location outputLocation;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
-     * runs the job.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs
+     * the job.
      * </p>
      */
     private String roleArn;
@@ -199,7 +199,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      * </p>
      * </li>
      * <li>
@@ -214,7 +214,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      *        </p>
      *        </li>
      *        <li>
@@ -236,7 +236,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      * </p>
      * </li>
      * <li>
@@ -250,7 +250,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *         <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      *         </p>
      *         </li>
      *         <li>
@@ -272,7 +272,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      * </p>
      * </li>
      * <li>
@@ -287,7 +287,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      *        </p>
      *        </li>
      *        <li>
@@ -311,7 +311,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      * </p>
      * </li>
      * <li>
@@ -326,7 +326,7 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.
      *        </p>
      *        </li>
      *        <li>
@@ -564,12 +564,12 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
-     * runs the job.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs
+     * the job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when
      *        DataBrew runs the job.
      */
 
@@ -579,11 +579,11 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
-     * runs the job.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs
+     * the job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when
      *         DataBrew runs the job.
      */
 
@@ -593,12 +593,12 @@ public class CreateProfileJobRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
-     * runs the job.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs
+     * the job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role to be assumed when
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when
      *        DataBrew runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

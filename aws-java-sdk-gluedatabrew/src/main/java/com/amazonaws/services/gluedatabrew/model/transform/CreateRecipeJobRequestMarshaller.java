@@ -45,6 +45,8 @@ public class CreateRecipeJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRetries").build();
     private static final MarshallingInfo<List> OUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Outputs").build();
+    private static final MarshallingInfo<List> DATACATALOGOUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCatalogOutputs").build();
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProjectName").build();
     private static final MarshallingInfo<StructuredPojo> RECIPEREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -80,6 +82,7 @@ public class CreateRecipeJobRequestMarshaller {
             protocolMarshaller.marshall(createRecipeJobRequest.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(createRecipeJobRequest.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(createRecipeJobRequest.getOutputs(), OUTPUTS_BINDING);
+            protocolMarshaller.marshall(createRecipeJobRequest.getDataCatalogOutputs(), DATACATALOGOUTPUTS_BINDING);
             protocolMarshaller.marshall(createRecipeJobRequest.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(createRecipeJobRequest.getRecipeReference(), RECIPEREFERENCE_BINDING);
             protocolMarshaller.marshall(createRecipeJobRequest.getRoleArn(), ROLEARN_BINDING);

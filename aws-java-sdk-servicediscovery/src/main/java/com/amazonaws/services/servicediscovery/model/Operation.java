@@ -54,7 +54,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>PENDING</dt>
      * <dd>
      * <p>
-     * AWS Cloud Map is performing the operation.
+     * Cloud Map is performing the operation.
      * </p>
      * </dd>
      * <dt>SUCCESS</dt>
@@ -277,7 +277,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>PENDING</dt>
      * <dd>
      * <p>
-     * AWS Cloud Map is performing the operation.
+     * Cloud Map is performing the operation.
      * </p>
      * </dd>
      * <dt>SUCCESS</dt>
@@ -306,7 +306,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        <dt>PENDING</dt>
      *        <dd>
      *        <p>
-     *        AWS Cloud Map is performing the operation.
+     *        Cloud Map is performing the operation.
      *        </p>
      *        </dd>
      *        <dt>SUCCESS</dt>
@@ -342,7 +342,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>PENDING</dt>
      * <dd>
      * <p>
-     * AWS Cloud Map is performing the operation.
+     * Cloud Map is performing the operation.
      * </p>
      * </dd>
      * <dt>SUCCESS</dt>
@@ -370,7 +370,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *         <dt>PENDING</dt>
      *         <dd>
      *         <p>
-     *         AWS Cloud Map is performing the operation.
+     *         Cloud Map is performing the operation.
      *         </p>
      *         </dd>
      *         <dt>SUCCESS</dt>
@@ -406,7 +406,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>PENDING</dt>
      * <dd>
      * <p>
-     * AWS Cloud Map is performing the operation.
+     * Cloud Map is performing the operation.
      * </p>
      * </dd>
      * <dt>SUCCESS</dt>
@@ -435,7 +435,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        <dt>PENDING</dt>
      *        <dd>
      *        <p>
-     *        AWS Cloud Map is performing the operation.
+     *        Cloud Map is performing the operation.
      *        </p>
      *        </dd>
      *        <dt>SUCCESS</dt>
@@ -473,7 +473,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>PENDING</dt>
      * <dd>
      * <p>
-     * AWS Cloud Map is performing the operation.
+     * Cloud Map is performing the operation.
      * </p>
      * </dd>
      * <dt>SUCCESS</dt>
@@ -502,7 +502,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        <dt>PENDING</dt>
      *        <dd>
      *        <p>
-     *        AWS Cloud Map is performing the operation.
+     *        Cloud Map is performing the operation.
      *        </p>
      *        </dd>
      *        <dt>SUCCESS</dt>

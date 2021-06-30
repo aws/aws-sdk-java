@@ -30,13 +30,13 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that AWS Cloud Map assigned to the service when you created it.
+     * The ID that Cloud Map assigned to the service when you created it.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      * </p>
      */
     private String arn;
@@ -89,15 +89,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     private Integer instanceCount;
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      */
     private DnsConfig dnsConfig;
     /**
      * <p>
      * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.
+     * health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
@@ -137,11 +136,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that AWS Cloud Map assigned to the service when you created it.
+     * The ID that Cloud Map assigned to the service when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that AWS Cloud Map assigned to the service when you created it.
+     *        The ID that Cloud Map assigned to the service when you created it.
      */
 
     public void setId(String id) {
@@ -150,10 +149,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that AWS Cloud Map assigned to the service when you created it.
+     * The ID that Cloud Map assigned to the service when you created it.
      * </p>
      * 
-     * @return The ID that AWS Cloud Map assigned to the service when you created it.
+     * @return The ID that Cloud Map assigned to the service when you created it.
      */
 
     public String getId() {
@@ -162,11 +161,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that AWS Cloud Map assigned to the service when you created it.
+     * The ID that Cloud Map assigned to the service when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that AWS Cloud Map assigned to the service when you created it.
+     *        The ID that Cloud Map assigned to the service when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +176,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     *        The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      */
 
     public void setArn(String arn) {
@@ -190,10 +189,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     * @return The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      */
 
     public String getArn() {
@@ -202,11 +201,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
+     *        The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,11 +571,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *        Information about the Route 53 DNS records that you want Cloud Map to create when you register an
      *        instance.
      */
 
@@ -586,10 +585,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      * 
-     * @return Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     * @return Information about the Route 53 DNS records that you want Cloud Map to create when you register an
      *         instance.
      */
 
@@ -599,11 +598,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *        Information about the Route 53 DNS records that you want Cloud Map to create when you register an
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -616,13 +615,12 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.
+     * health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
      * </p>
      * 
      * @param healthCheckConfig
      *        <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings
-     *        for a health check, AWS Cloud Map associates the health check with the records that you specify in
+     *        for a health check, Cloud Map associates the health check with the records that you specify in
      *        <code>DnsConfig</code>.
      */
 
@@ -633,13 +631,12 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.
+     * health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
      * </p>
      * 
      * @return <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify
-     *         settings for a health check, AWS Cloud Map associates the health check with the records that you specify
-     *         in <code>DnsConfig</code>.
+     *         settings for a health check, Cloud Map associates the health check with the records that you specify in
+     *         <code>DnsConfig</code>.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -649,13 +646,12 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.
+     * health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
      * </p>
      * 
      * @param healthCheckConfig
      *        <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings
-     *        for a health check, AWS Cloud Map associates the health check with the records that you specify in
+     *        for a health check, Cloud Map associates the health check with the records that you specify in
      *        <code>DnsConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

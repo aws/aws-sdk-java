@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents additional options for correct interpretation of datetime parameters used in the S3 path of a dataset.
+ * Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a
+ * dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatetimeOptions" target="_top">AWS API
@@ -30,16 +31,16 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Required option, that defines the datetime format used for a date parameter in the S3 path. Should use only
-     * supported datetime specifiers and separation characters, all litera a-z or A-Z character should be escaped with
-     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     * Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use
+     * only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped
+     * with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      * </p>
      */
     private String format;
     /**
      * <p>
-     * Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if Format
-     * for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     * Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if
+     * Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      * </p>
      */
     private String timezoneOffset;
@@ -52,15 +53,15 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Required option, that defines the datetime format used for a date parameter in the S3 path. Should use only
-     * supported datetime specifiers and separation characters, all litera a-z or A-Z character should be escaped with
-     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     * Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use
+     * only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped
+     * with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      * </p>
      * 
      * @param format
-     *        Required option, that defines the datetime format used for a date parameter in the S3 path. Should use
-     *        only supported datetime specifiers and separation characters, all litera a-z or A-Z character should be
-     *        escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     *        Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should
+     *        use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should
+     *        be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      */
 
     public void setFormat(String format) {
@@ -69,14 +70,14 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Required option, that defines the datetime format used for a date parameter in the S3 path. Should use only
-     * supported datetime specifiers and separation characters, all litera a-z or A-Z character should be escaped with
-     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     * Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use
+     * only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped
+     * with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      * </p>
      * 
-     * @return Required option, that defines the datetime format used for a date parameter in the S3 path. Should use
-     *         only supported datetime specifiers and separation characters, all litera a-z or A-Z character should be
-     *         escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     * @return Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should
+     *         use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters
+     *         should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      */
 
     public String getFormat() {
@@ -85,15 +86,15 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Required option, that defines the datetime format used for a date parameter in the S3 path. Should use only
-     * supported datetime specifiers and separation characters, all litera a-z or A-Z character should be escaped with
-     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     * Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use
+     * only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped
+     * with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      * </p>
      * 
      * @param format
-     *        Required option, that defines the datetime format used for a date parameter in the S3 path. Should use
-     *        only supported datetime specifiers and separation characters, all litera a-z or A-Z character should be
-     *        escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
+     *        Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should
+     *        use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should
+     *        be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,13 +105,13 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if Format
-     * for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     * Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if
+     * Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      * </p>
      * 
      * @param timezoneOffset
-     *        Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if
-     *        Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     *        Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be
+     *        used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      */
 
     public void setTimezoneOffset(String timezoneOffset) {
@@ -119,12 +120,12 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if Format
-     * for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     * Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if
+     * Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      * </p>
      * 
-     * @return Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if
-     *         Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     * @return Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be
+     *         used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      */
 
     public String getTimezoneOffset() {
@@ -133,13 +134,13 @@ public class DatetimeOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if Format
-     * for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     * Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if
+     * Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      * </p>
      * 
      * @param timezoneOffset
-     *        Optional value for a timezone offset of the datetime parameter value in the S3 path. Shouldn't be used if
-     *        Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
+     *        Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be
+     *        used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
