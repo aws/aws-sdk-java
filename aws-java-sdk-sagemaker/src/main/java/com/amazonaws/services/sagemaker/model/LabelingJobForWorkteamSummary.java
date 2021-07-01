@@ -42,7 +42,7 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
     private String jobReferenceCode;
     /**
      * <p>
-     * The AWS account ID of the account used to start the labeling job.
+     * The Amazon Web Services account ID of the account used to start the labeling job.
      * </p>
      */
     private String workRequesterAccountId;
@@ -147,11 +147,11 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS account ID of the account used to start the labeling job.
+     * The Amazon Web Services account ID of the account used to start the labeling job.
      * </p>
      * 
      * @param workRequesterAccountId
-     *        The AWS account ID of the account used to start the labeling job.
+     *        The Amazon Web Services account ID of the account used to start the labeling job.
      */
 
     public void setWorkRequesterAccountId(String workRequesterAccountId) {
@@ -160,10 +160,10 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS account ID of the account used to start the labeling job.
+     * The Amazon Web Services account ID of the account used to start the labeling job.
      * </p>
      * 
-     * @return The AWS account ID of the account used to start the labeling job.
+     * @return The Amazon Web Services account ID of the account used to start the labeling job.
      */
 
     public String getWorkRequesterAccountId() {
@@ -172,11 +172,11 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS account ID of the account used to start the labeling job.
+     * The Amazon Web Services account ID of the account used to start the labeling job.
      * </p>
      * 
      * @param workRequesterAccountId
-     *        The AWS account ID of the account used to start the labeling job.
+     *        The Amazon Web Services account ID of the account used to start the labeling job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

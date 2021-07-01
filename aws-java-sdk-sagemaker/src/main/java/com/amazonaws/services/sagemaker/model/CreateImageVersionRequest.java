@@ -37,8 +37,8 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
     private String baseImage;
     /**
      * <p>
-     * A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique value
-     * to the call.
+     * A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for
+     * Python (Boto3), add a unique value to the call.
      * </p>
      */
     private String clientToken;
@@ -112,13 +112,13 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique value
-     * to the call.
+     * A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for
+     * Python (Boto3), add a unique value to the call.
      * </p>
      * 
      * @param clientToken
-     *        A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique
-     *        value to the call.
+     *        A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK
+     *        for Python (Boto3), add a unique value to the call.
      */
 
     public void setClientToken(String clientToken) {
@@ -127,12 +127,12 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique value
-     * to the call.
+     * A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for
+     * Python (Boto3), add a unique value to the call.
      * </p>
      * 
-     * @return A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique
-     *         value to the call.
+     * @return A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK
+     *         for Python (Boto3), add a unique value to the call.
      */
 
     public String getClientToken() {
@@ -141,13 +141,13 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique value
-     * to the call.
+     * A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for
+     * Python (Boto3), add a unique value to the call.
      * </p>
      * 
      * @param clientToken
-     *        A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python (Boto3), add a unique
-     *        value to the call.
+     *        A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK
+     *        for Python (Boto3), add a unique value to the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

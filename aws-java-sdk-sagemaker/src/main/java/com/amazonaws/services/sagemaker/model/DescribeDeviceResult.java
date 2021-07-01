@@ -49,7 +49,7 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
     private String deviceFleetName;
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device.
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      * </p>
      */
     private String iotThingName;
@@ -246,11 +246,11 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device.
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      * </p>
      * 
      * @param iotThingName
-     *        The AWS Internet of Things (IoT) object thing name associated with the device.
+     *        The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      */
 
     public void setIotThingName(String iotThingName) {
@@ -259,10 +259,10 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device.
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      * </p>
      * 
-     * @return The AWS Internet of Things (IoT) object thing name associated with the device.
+     * @return The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      */
 
     public String getIotThingName() {
@@ -271,11 +271,11 @@ public class DescribeDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device.
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      * </p>
      * 
      * @param iotThingName
-     *        The AWS Internet of Things (IoT) object thing name associated with the device.
+     *        The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

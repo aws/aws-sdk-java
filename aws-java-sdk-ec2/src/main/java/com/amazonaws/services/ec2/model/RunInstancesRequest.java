@@ -141,7 +141,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
-     * AWS Resource Center and search for the kernel ID.
+     * Amazon Web Services Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -362,7 +362,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * </p>
      */
     private HibernationOptionsRequest hibernationOptions;
@@ -382,12 +382,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private InstanceMetadataOptionsRequest metadataOptions;
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      */
     private EnclaveOptionsRequest enclaveOptions;
@@ -1271,7 +1271,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
-     * AWS Resource Center and search for the kernel ID.
+     * Amazon Web Services Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -1284,7 +1284,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param ramdiskId
      *        The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      *        requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go
-     *        to the AWS Resource Center and search for the kernel ID.</p> <important>
+     *        to the Amazon Web Services Resource Center and search for the kernel ID.</p> <important>
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
@@ -1300,7 +1300,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
-     * AWS Resource Center and search for the kernel ID.
+     * Amazon Web Services Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -1312,7 +1312,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      *         requirements for information about whether you need to specify a RAM disk. To find kernel requirements,
-     *         go to the AWS Resource Center and search for the kernel ID.</p> <important>
+     *         go to the Amazon Web Services Resource Center and search for the kernel ID.</p> <important>
      *         <p>
      *         We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
@@ -1328,7 +1328,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
-     * AWS Resource Center and search for the kernel ID.
+     * Amazon Web Services Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -1341,7 +1341,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param ramdiskId
      *        The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
      *        requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go
-     *        to the AWS Resource Center and search for the kernel ID.</p> <important>
+     *        to the Amazon Web Services Resource Center and search for the kernel ID.</p> <important>
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
@@ -2978,7 +2978,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * </p>
      * 
      * @param hibernationOptions
@@ -2986,7 +2986,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     *        You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      */
 
     public void setHibernationOptions(HibernationOptionsRequest hibernationOptions) {
@@ -3000,14 +3000,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * </p>
      * 
      * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *         the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
-     *         You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     *         You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      */
 
     public HibernationOptionsRequest getHibernationOptions() {
@@ -3021,7 +3021,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     * You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * </p>
      * 
      * @param hibernationOptions
@@ -3029,7 +3029,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        You can't enable hibernation and AWS Nitro Enclaves on the same instance.
+     *        You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3165,20 +3165,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
-     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
-     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      */
 
     public void setEnclaveOptions(EnclaveOptionsRequest enclaveOptions) {
@@ -3187,19 +3187,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
-     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *         href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
-     *         Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     * @return Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
+     *         see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *         Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *         <p>
-     *         You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     *         You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      */
 
     public EnclaveOptionsRequest getEnclaveOptions() {
@@ -3208,20 +3208,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
-     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
-     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
-     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
-     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

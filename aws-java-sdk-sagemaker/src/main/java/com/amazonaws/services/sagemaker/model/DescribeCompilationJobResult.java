@@ -68,7 +68,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private StoppingCondition stoppingCondition;
-
+    /**
+     * <p>
+     * The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     * instance.
+     * </p>
+     */
     private String inferenceImage;
     /**
      * <p>
@@ -441,7 +446,14 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     * instance.
+     * </p>
+     * 
      * @param inferenceImage
+     *        The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     *        instance.
      */
 
     public void setInferenceImage(String inferenceImage) {
@@ -449,7 +461,13 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     * instance.
+     * </p>
+     * 
+     * @return The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     *         instance.
      */
 
     public String getInferenceImage() {
@@ -457,7 +475,14 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     * instance.
+     * </p>
+     * 
      * @param inferenceImage
+     *        The inference image to use when compiling a model. Specify an image only if the target device is a cloud
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

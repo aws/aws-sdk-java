@@ -25,7 +25,7 @@ public class ConfirmProductInstanceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID of the instance owner. This is only present if the product code is attached to the instance.
+     * The account ID of the instance owner. This is only present if the product code is attached to the instance.
      * </p>
      */
     private String ownerId;
@@ -39,11 +39,11 @@ public class ConfirmProductInstanceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID of the instance owner. This is only present if the product code is attached to the instance.
+     * The account ID of the instance owner. This is only present if the product code is attached to the instance.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the instance owner. This is only present if the product code is attached to the
+     *        The account ID of the instance owner. This is only present if the product code is attached to the
      *        instance.
      */
 
@@ -53,10 +53,10 @@ public class ConfirmProductInstanceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID of the instance owner. This is only present if the product code is attached to the instance.
+     * The account ID of the instance owner. This is only present if the product code is attached to the instance.
      * </p>
      * 
-     * @return The AWS account ID of the instance owner. This is only present if the product code is attached to the
+     * @return The account ID of the instance owner. This is only present if the product code is attached to the
      *         instance.
      */
 
@@ -66,11 +66,11 @@ public class ConfirmProductInstanceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID of the instance owner. This is only present if the product code is attached to the instance.
+     * The account ID of the instance owner. This is only present if the product code is attached to the instance.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the instance owner. This is only present if the product code is attached to the
+     *        The account ID of the instance owner. This is only present if the product code is attached to the
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

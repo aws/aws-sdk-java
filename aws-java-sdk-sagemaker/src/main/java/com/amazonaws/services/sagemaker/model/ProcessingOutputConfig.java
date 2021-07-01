@@ -36,9 +36,9 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
     private java.util.List<ProcessingOutput> outputs;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job output.
-     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      * </p>
      */
     private String kmsKeyId;
@@ -115,15 +115,15 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job output.
-     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job
-     *        output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of
-     *        a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key,
+     *        alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -132,14 +132,14 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job output.
-     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job
-     *         output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias
-     *         of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key,
+     *         alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      */
 
     public String getKmsKeyId() {
@@ -148,15 +148,15 @@ public class ProcessingOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job output.
-     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing job
-     *        output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of
-     *        a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key,
+     *        alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

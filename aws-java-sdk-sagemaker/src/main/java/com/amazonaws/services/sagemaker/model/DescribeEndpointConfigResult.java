@@ -45,8 +45,8 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
     private DataCaptureConfig dataCaptureConfig;
     /**
      * <p>
-     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
-     * instance.
+     * Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * attached to the instance.
      * </p>
      */
     private String kmsKeyId;
@@ -239,13 +239,13 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
-     * instance.
+     * Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * attached to the instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to
-     *        the instance.
+     *        Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+     *        volume attached to the instance.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -254,12 +254,12 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
-     * instance.
+     * Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * attached to the instance.
      * </p>
      * 
-     * @return AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to
-     *         the instance.
+     * @return Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+     *         volume attached to the instance.
      */
 
     public String getKmsKeyId() {
@@ -268,13 +268,13 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
-     * instance.
+     * Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume
+     * attached to the instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to
-     *        the instance.
+     *        Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+     *        volume attached to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -44,8 +44,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     private Integer instanceCount;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
-     * volume attached to the ML compute instance(s) that run the batch transform job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
      * </p>
      * <note>
      * <p>
@@ -207,8 +207,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
-     * volume attached to the ML compute instance(s) that run the batch transform job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
      * </p>
      * <note>
      * <p>
@@ -254,8 +254,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the
-     *        storage volume attached to the ML compute instance(s) that run the batch transform job.</p> <note>
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch
+     *        transform job.</p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>
@@ -304,8 +305,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
-     * volume attached to the ML compute instance(s) that run the batch transform job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
      * </p>
      * <note>
      * <p>
@@ -350,8 +351,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </li>
      * </ul>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the
-     *         storage volume attached to the ML compute instance(s) that run the batch transform job.</p> <note>
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch
+     *         transform job.</p> <note>
      *         <p>
      *         Certain Nitro-based instances include local storage, dependent on the instance type. Local storage
      *         volumes are encrypted using a hardware module on the instance. You can't request a
@@ -400,8 +402,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
-     * volume attached to the ML compute instance(s) that run the batch transform job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
      * </p>
      * <note>
      * <p>
@@ -447,8 +449,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the
-     *        storage volume attached to the ML compute instance(s) that run the batch transform job.</p> <note>
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch
+     *        transform job.</p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>

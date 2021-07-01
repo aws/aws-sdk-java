@@ -36,8 +36,8 @@ public class MonitoringOutputConfig implements Serializable, Cloneable, Structur
     private java.util.List<MonitoringOutput> monitoringOutputs;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
-     * using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      * </p>
      */
     private String kmsKeyId;
@@ -118,13 +118,13 @@ public class MonitoringOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
-     * using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
-     *        rest using Amazon S3 server-side encryption.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -133,12 +133,12 @@ public class MonitoringOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
-     * using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
-     *         rest using Amazon S3 server-side encryption.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      */
 
     public String getKmsKeyId() {
@@ -147,13 +147,13 @@ public class MonitoringOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest
-     * using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
-     *        rest using Amazon S3 server-side encryption.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt the model artifacts at rest using Amazon S3 server-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

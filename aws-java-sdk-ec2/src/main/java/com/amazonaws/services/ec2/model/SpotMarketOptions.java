@@ -55,8 +55,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
      * <p>
-     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
-     * defined duration (also known as Spot blocks).
+     * New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for Spot
+     * Instances with a defined duration (also known as Spot blocks).
      * </p>
      */
     private Integer blockDurationMinutes;
@@ -226,8 +226,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
      * <p>
-     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
-     * defined duration (also known as Spot blocks).
+     * New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for Spot
+     * Instances with a defined duration (also known as Spot blocks).
      * </p>
      * 
      * @param blockDurationMinutes
@@ -242,8 +242,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      *        You can't specify an Availability Zone group or a launch group if you specify a duration.
      *        </p>
      *        <p>
-     *        New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
-     *        with a defined duration (also known as Spot blocks).
+     *        New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for
+     *        Spot Instances with a defined duration (also known as Spot blocks).
      */
 
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
@@ -264,8 +264,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
      * <p>
-     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
-     * defined duration (also known as Spot blocks).
+     * New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for Spot
+     * Instances with a defined duration (also known as Spot blocks).
      * </p>
      * 
      * @return The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be
@@ -279,8 +279,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      *         You can't specify an Availability Zone group or a launch group if you specify a duration.
      *         </p>
      *         <p>
-     *         New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
-     *         with a defined duration (also known as Spot blocks).
+     *         New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for
+     *         Spot Instances with a defined duration (also known as Spot blocks).
      */
 
     public Integer getBlockDurationMinutes() {
@@ -301,8 +301,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
      * <p>
-     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
-     * defined duration (also known as Spot blocks).
+     * New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for Spot
+     * Instances with a defined duration (also known as Spot blocks).
      * </p>
      * 
      * @param blockDurationMinutes
@@ -317,8 +317,8 @@ public class SpotMarketOptions implements Serializable, Cloneable {
      *        You can't specify an Availability Zone group or a launch group if you specify a duration.
      *        </p>
      *        <p>
-     *        New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
-     *        with a defined duration (also known as Spot blocks).
+     *        New accounts or accounts with no previous billing history with Amazon Web Services are not eligible for
+     *        Spot Instances with a defined duration (also known as Spot blocks).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

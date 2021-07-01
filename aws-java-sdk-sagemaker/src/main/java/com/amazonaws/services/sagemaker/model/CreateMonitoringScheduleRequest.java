@@ -27,7 +27,8 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      */
     private String monitoringScheduleName;
@@ -41,18 +42,20 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      * 
      * @param monitoringScheduleName
-     *        The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     *        The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+     *        an Amazon Web Services account.
      */
 
     public void setMonitoringScheduleName(String monitoringScheduleName) {
@@ -61,10 +64,12 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * @return The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+     *         an Amazon Web Services account.
      */
 
     public String getMonitoringScheduleName() {
@@ -73,11 +78,13 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      * 
      * @param monitoringScheduleName
-     *        The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     *        The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+     *        an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,12 +137,12 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return (Optional) An array of key-value pairs. For more information, see <a
      *         href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *         >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -146,13 +153,13 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a href=
      *        " https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -168,7 +175,7 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -179,7 +186,7 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a href=
      *        " https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +204,13 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a href=
      *        " https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

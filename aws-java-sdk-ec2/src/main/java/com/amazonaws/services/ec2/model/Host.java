@@ -117,7 +117,7 @@ public class Host implements Serializable, Cloneable {
     private String allowsMultipleInstanceTypes;
     /**
      * <p>
-     * The ID of the AWS account that owns the Dedicated Host.
+     * The ID of the account that owns the Dedicated Host.
      * </p>
      */
     private String ownerId;
@@ -939,11 +939,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Dedicated Host.
+     * The ID of the account that owns the Dedicated Host.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the Dedicated Host.
+     *        The ID of the account that owns the Dedicated Host.
      */
 
     public void setOwnerId(String ownerId) {
@@ -952,10 +952,10 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Dedicated Host.
+     * The ID of the account that owns the Dedicated Host.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the Dedicated Host.
+     * @return The ID of the account that owns the Dedicated Host.
      */
 
     public String getOwnerId() {
@@ -964,11 +964,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Dedicated Host.
+     * The ID of the account that owns the Dedicated Host.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the Dedicated Host.
+     *        The ID of the account that owns the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

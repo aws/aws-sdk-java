@@ -27,7 +27,7 @@ public class CreateArtifactRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the artifact. Must be unique to your account in an AWS Region.
+     * The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      */
     private String artifactName;
@@ -60,11 +60,11 @@ public class CreateArtifactRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the artifact. Must be unique to your account in an AWS Region.
+     * The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
      * @param artifactName
-     *        The name of the artifact. Must be unique to your account in an AWS Region.
+     *        The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      */
 
     public void setArtifactName(String artifactName) {
@@ -73,10 +73,10 @@ public class CreateArtifactRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the artifact. Must be unique to your account in an AWS Region.
+     * The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
-     * @return The name of the artifact. Must be unique to your account in an AWS Region.
+     * @return The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      */
 
     public String getArtifactName() {
@@ -85,11 +85,11 @@ public class CreateArtifactRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the artifact. Must be unique to your account in an AWS Region.
+     * The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
      * @param artifactName
-     *        The name of the artifact. Must be unique to your account in an AWS Region.
+     *        The name of the artifact. Must be unique to your account in an Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

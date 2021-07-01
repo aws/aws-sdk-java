@@ -31,14 +31,14 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String fleetId;
     /**
      * <p>
-     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that could not be launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CreateFleetError> errors;
     /**
      * <p>
-     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that were launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      */
@@ -86,12 +86,12 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that could not be launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * 
-     * @return Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
-     *         set to <code>instant</code>.
+     * @return Information about the instances that could not be launched by the fleet. Supported only for fleets of
+     *         type <code>instant</code>.
      */
 
     public java.util.List<CreateFleetError> getErrors() {
@@ -103,13 +103,13 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that could not be launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * 
      * @param errors
-     *        Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
-     *        set to <code>instant</code>.
+     *        Information about the instances that could not be launched by the fleet. Supported only for fleets of type
+     *        <code>instant</code>.
      */
 
     public void setErrors(java.util.Collection<CreateFleetError> errors) {
@@ -123,7 +123,7 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that could not be launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * <p>
@@ -133,8 +133,8 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param errors
-     *        Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
-     *        set to <code>instant</code>.
+     *        Information about the instances that could not be launched by the fleet. Supported only for fleets of type
+     *        <code>instant</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,13 +150,13 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that could not be launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * 
      * @param errors
-     *        Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is
-     *        set to <code>instant</code>.
+     *        Information about the instances that could not be launched by the fleet. Supported only for fleets of type
+     *        <code>instant</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +167,11 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that were launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * 
-     * @return Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * @return Information about the instances that were launched by the fleet. Supported only for fleets of type
      *         <code>instant</code>.
      */
 
@@ -184,12 +184,12 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that were launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * 
      * @param instances
-     *        Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *        Information about the instances that were launched by the fleet. Supported only for fleets of type
      *        <code>instant</code>.
      */
 
@@ -204,7 +204,7 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that were launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * <p>
@@ -214,7 +214,7 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param instances
-     *        Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *        Information about the instances that were launched by the fleet. Supported only for fleets of type
      *        <code>instant</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -231,12 +231,12 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     * Information about the instances that were launched by the fleet. Supported only for fleets of type
      * <code>instant</code>.
      * </p>
      * 
      * @param instances
-     *        Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to
+     *        Information about the instances that were launched by the fleet. Supported only for fleets of type
      *        <code>instant</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

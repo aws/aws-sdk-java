@@ -63,8 +63,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <li>
      * <p>
      * <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved Instance
-     * Marketplace are listed.
+     * this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the
+     * Reserved Instance Marketplace are listed.
      * </p>
      * </li>
      * <li>
@@ -267,8 +267,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <li>
      * <p>
      * <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved Instance
-     * Marketplace are listed.
+     * this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the
+     * Reserved Instance Marketplace are listed.
      * </p>
      * </li>
      * <li>
@@ -327,8 +327,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         <li>
      *         <p>
      *         <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings.
-     *         When this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved
-     *         Instance Marketplace are listed.
+     *         When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services
+     *         and the Reserved Instance Marketplace are listed.
      *         </p>
      *         </li>
      *         <li>
@@ -399,8 +399,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <li>
      * <p>
      * <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved Instance
-     * Marketplace are listed.
+     * this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the
+     * Reserved Instance Marketplace are listed.
      * </p>
      * </li>
      * <li>
@@ -460,8 +460,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings.
-     *        When this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved
-     *        Instance Marketplace are listed.
+     *        When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services
+     *        and the Reserved Instance Marketplace are listed.
      *        </p>
      *        </li>
      *        <li>
@@ -534,8 +534,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <li>
      * <p>
      * <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved Instance
-     * Marketplace are listed.
+     * this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the
+     * Reserved Instance Marketplace are listed.
      * </p>
      * </li>
      * <li>
@@ -600,8 +600,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings.
-     *        When this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved
-     *        Instance Marketplace are listed.
+     *        When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services
+     *        and the Reserved Instance Marketplace are listed.
      *        </p>
      *        </li>
      *        <li>
@@ -676,8 +676,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <li>
      * <p>
      * <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved Instance
-     * Marketplace are listed.
+     * this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the
+     * Reserved Instance Marketplace are listed.
      * </p>
      * </li>
      * <li>
@@ -737,8 +737,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings.
-     *        When this filter is not used, which is the default behavior, all offerings from both AWS and the Reserved
-     *        Instance Marketplace are listed.
+     *        When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services
+     *        and the Reserved Instance Marketplace are listed.
      *        </p>
      *        </li>
      *        <li>

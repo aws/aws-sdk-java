@@ -27,21 +27,21 @@ public class DeleteFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS Region in an
-     * AWS account.
+     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account.
      * </p>
      */
     private String featureGroupName;
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS Region in an
-     * AWS account.
+     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS Region
-     *        in an AWS account.
+     *        The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web
+     *        Services Region in an Amazon Web Services account.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -50,12 +50,12 @@ public class DeleteFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS Region in an
-     * AWS account.
+     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS
-     *         Region in an AWS account.
+     * @return The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon
+     *         Web Services Region in an Amazon Web Services account.
      */
 
     public String getFeatureGroupName() {
@@ -64,13 +64,13 @@ public class DeleteFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS Region in an
-     * AWS account.
+     * The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an AWS Region
-     *        in an AWS account.
+     *        The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web
+     *        Services Region in an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

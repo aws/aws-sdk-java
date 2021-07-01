@@ -30,8 +30,8 @@ public class EdgePresetDeploymentOutput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass
+     * Version 2 components.
      * </p>
      */
     private String type;
@@ -56,13 +56,13 @@ public class EdgePresetDeploymentOutput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass
+     * Version 2 components.
      * </p>
      * 
      * @param type
-     *        The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version
-     *        2 components.
+     *        The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT
+     *        Greengrass Version 2 components.
      * @see EdgePresetDeploymentType
      */
 
@@ -72,12 +72,12 @@ public class EdgePresetDeploymentOutput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass
+     * Version 2 components.
      * </p>
      * 
-     * @return The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version
-     *         2 components.
+     * @return The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT
+     *         Greengrass Version 2 components.
      * @see EdgePresetDeploymentType
      */
 
@@ -87,13 +87,13 @@ public class EdgePresetDeploymentOutput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass
+     * Version 2 components.
      * </p>
      * 
      * @param type
-     *        The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version
-     *        2 components.
+     *        The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT
+     *        Greengrass Version 2 components.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EdgePresetDeploymentType
      */
@@ -105,13 +105,13 @@ public class EdgePresetDeploymentOutput implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass
+     * Version 2 components.
      * </p>
      * 
      * @param type
-     *        The deployment type created by SageMaker Edge Manager. Currently only supports AWS IoT Greengrass Version
-     *        2 components.
+     *        The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT
+     *        Greengrass Version 2 components.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EdgePresetDeploymentType
      */

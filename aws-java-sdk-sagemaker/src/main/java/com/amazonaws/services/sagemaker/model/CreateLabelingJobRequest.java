@@ -28,8 +28,8 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
-     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
-     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
+     * names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case
+     * sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      */
     private String labelingJobName;
@@ -132,8 +132,8 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private LabelingJobInputConfig inputConfig;
     /**
      * <p>
-     * The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the output
-     * data, if any.
+     * The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to
+     * encrypt the output data, if any.
      * </p>
      */
     private LabelingJobOutputConfig outputConfig;
@@ -226,7 +226,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An array of key/value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -234,15 +234,15 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
-     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
-     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
+     * names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case
+     * sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      * 
      * @param labelingJobName
      *        The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling
-     *        job names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case
-     *        sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground
-     *        Truth.
+     *        job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is
+     *        not case sensitive. For example, Example-job and example-job are considered the same labeling job name by
+     *        Ground Truth.
      */
 
     public void setLabelingJobName(String labelingJobName) {
@@ -252,14 +252,14 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
-     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
-     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
+     * names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case
+     * sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      * 
      * @return The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling
-     *         job names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case
-     *         sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground
-     *         Truth.
+     *         job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code>
+     *         is not case sensitive. For example, Example-job and example-job are considered the same labeling job name
+     *         by Ground Truth.
      */
 
     public String getLabelingJobName() {
@@ -269,15 +269,15 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job
-     * names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case sensitive. For
-     * example, Example-job and example-job are considered the same labeling job name by Ground Truth.
+     * names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case
+     * sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.
      * </p>
      * 
      * @param labelingJobName
      *        The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling
-     *        job names must be unique within an AWS account and region. <code>LabelingJobName</code> is not case
-     *        sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground
-     *        Truth.
+     *        job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is
+     *        not case sensitive. For example, Example-job and example-job are considered the same labeling job name by
+     *        Ground Truth.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -875,13 +875,13 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the output
-     * data, if any.
+     * The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to
+     * encrypt the output data, if any.
      * </p>
      * 
      * @param outputConfig
-     *        The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the
-     *        output data, if any.
+     *        The location of the output data and the Amazon Web Services Key Management Service key ID for the key used
+     *        to encrypt the output data, if any.
      */
 
     public void setOutputConfig(LabelingJobOutputConfig outputConfig) {
@@ -890,12 +890,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the output
-     * data, if any.
+     * The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to
+     * encrypt the output data, if any.
      * </p>
      * 
-     * @return The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the
-     *         output data, if any.
+     * @return The location of the output data and the Amazon Web Services Key Management Service key ID for the key
+     *         used to encrypt the output data, if any.
      */
 
     public LabelingJobOutputConfig getOutputConfig() {
@@ -904,13 +904,13 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the output
-     * data, if any.
+     * The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to
+     * encrypt the output data, if any.
      * </p>
      * 
      * @param outputConfig
-     *        The location of the output data and the AWS Key Management Service key ID for the key used to encrypt the
-     *        output data, if any.
+     *        The location of the output data and the Amazon Web Services Key Management Service key ID for the key used
+     *        to encrypt the output data, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1450,12 +1450,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An array of key/value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return An array of key/value pairs. For more information, see <a
      *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *         >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1466,13 +1466,13 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An array of key/value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key/value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1488,7 +1488,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An array of key/value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1499,7 +1499,7 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param tags
      *        An array of key/value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1517,13 +1517,13 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An array of key/value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key/value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an
+     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an
      * extended period of time.
      * </p>
      */
@@ -112,20 +112,20 @@ public class Message implements Serializable, Cloneable {
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue> messageAttributes;
 
     /**
      * <p>
-     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an
+     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an
      * extended period of time.
      * </p>
      * 
      * @param messageId
-     *        A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts
-     *        for an extended period of time.
+     *        A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for
+     *        an extended period of time.
      */
 
     public void setMessageId(String messageId) {
@@ -134,12 +134,12 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an
+     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an
      * extended period of time.
      * </p>
      * 
-     * @return A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts
-     *         for an extended period of time.
+     * @return A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for
+     *         an extended period of time.
      */
 
     public String getMessageId() {
@@ -148,13 +148,13 @@ public class Message implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an
+     * A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an
      * extended period of time.
      * </p>
      * 
      * @param messageId
-     *        A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts
-     *        for an extended period of time.
+     *        A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for
+     *        an extended period of time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,13 +669,13 @@ public class Message implements Serializable, Cloneable {
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -690,14 +690,14 @@ public class Message implements Serializable, Cloneable {
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -709,14 +709,14 @@ public class Message implements Serializable, Cloneable {
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

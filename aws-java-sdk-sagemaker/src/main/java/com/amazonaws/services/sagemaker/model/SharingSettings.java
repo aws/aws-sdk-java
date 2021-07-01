@@ -46,8 +46,8 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
     private String s3OutputPath;
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS) encryption
-     * key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service
+     * (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      * </p>
      */
     private String s3KmsKeyId;
@@ -163,13 +163,13 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS) encryption
-     * key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service
+     * (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      * </p>
      * 
      * @param s3KmsKeyId
-     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS)
-     *        encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management
+     *        Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      */
 
     public void setS3KmsKeyId(String s3KmsKeyId) {
@@ -178,12 +178,12 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS) encryption
-     * key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service
+     * (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      * </p>
      * 
-     * @return When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS)
-     *         encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     * @return When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management
+     *         Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      */
 
     public String getS3KmsKeyId() {
@@ -192,13 +192,13 @@ public class SharingSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS) encryption
-     * key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     * When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service
+     * (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      * </p>
      * 
      * @param s3KmsKeyId
-     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS)
-     *        encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
+     *        When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management
+     *        Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

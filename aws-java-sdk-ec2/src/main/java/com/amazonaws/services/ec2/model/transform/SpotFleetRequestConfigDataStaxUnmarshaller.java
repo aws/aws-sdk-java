@@ -170,6 +170,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("context", targetDepth)) {
+                    spotFleetRequestConfigData.setContext(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TagSpecification", targetDepth)) {
                     spotFleetRequestConfigData.withTagSpecifications(new ArrayList<TagSpecification>());
                     continue;

@@ -91,7 +91,7 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     private ModelPackageStatusDetails modelPackageStatusDetails;
     /**
      * <p>
-     * Whether the model package is certified for listing on AWS Marketplace.
+     * Whether the model package is certified for listing on Amazon Web Services Marketplace.
      * </p>
      */
     private Boolean certifyForMarketplace;
@@ -587,11 +587,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether the model package is certified for listing on AWS Marketplace.
+     * Whether the model package is certified for listing on Amazon Web Services Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether the model package is certified for listing on AWS Marketplace.
+     *        Whether the model package is certified for listing on Amazon Web Services Marketplace.
      */
 
     public void setCertifyForMarketplace(Boolean certifyForMarketplace) {
@@ -600,10 +600,10 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether the model package is certified for listing on AWS Marketplace.
+     * Whether the model package is certified for listing on Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether the model package is certified for listing on AWS Marketplace.
+     * @return Whether the model package is certified for listing on Amazon Web Services Marketplace.
      */
 
     public Boolean getCertifyForMarketplace() {
@@ -612,11 +612,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether the model package is certified for listing on AWS Marketplace.
+     * Whether the model package is certified for listing on Amazon Web Services Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether the model package is certified for listing on AWS Marketplace.
+     *        Whether the model package is certified for listing on Amazon Web Services Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,10 +627,10 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Whether the model package is certified for listing on AWS Marketplace.
+     * Whether the model package is certified for listing on Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether the model package is certified for listing on AWS Marketplace.
+     * @return Whether the model package is certified for listing on Amazon Web Services Marketplace.
      */
 
     public Boolean isCertifyForMarketplace() {

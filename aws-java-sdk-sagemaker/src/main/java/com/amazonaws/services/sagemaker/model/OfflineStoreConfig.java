@@ -26,8 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>OfflineStore</code>.
  * </p>
  * <p>
- * To encrypt an <code>OfflineStore</code> using at rest data encryption, specify AWS Key Management Service (KMS) key
- * ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.
+ * To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key Management
+ * Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OfflineStoreConfig" target="_top">AWS API
@@ -44,8 +44,8 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
     private S3StorageConfig s3StorageConfig;
     /**
      * <p>
-     * Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     * <code>OfflineStore</code>.
+     * Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when configuring
+     * an <code>OfflineStore</code>.
      * </p>
      */
     private Boolean disableGlueTableCreation;
@@ -98,13 +98,13 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     * <code>OfflineStore</code>.
+     * Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when configuring
+     * an <code>OfflineStore</code>.
      * </p>
      * 
      * @param disableGlueTableCreation
-     *        Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     *        <code>OfflineStore</code>.
+     *        Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when
+     *        configuring an <code>OfflineStore</code>.
      */
 
     public void setDisableGlueTableCreation(Boolean disableGlueTableCreation) {
@@ -113,12 +113,12 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     * <code>OfflineStore</code>.
+     * Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when configuring
+     * an <code>OfflineStore</code>.
      * </p>
      * 
-     * @return Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     *         <code>OfflineStore</code>.
+     * @return Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when
+     *         configuring an <code>OfflineStore</code>.
      */
 
     public Boolean getDisableGlueTableCreation() {
@@ -127,13 +127,13 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     * <code>OfflineStore</code>.
+     * Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when configuring
+     * an <code>OfflineStore</code>.
      * </p>
      * 
      * @param disableGlueTableCreation
-     *        Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     *        <code>OfflineStore</code>.
+     *        Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when
+     *        configuring an <code>OfflineStore</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,12 +144,12 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     * <code>OfflineStore</code>.
+     * Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when configuring
+     * an <code>OfflineStore</code>.
      * </p>
      * 
-     * @return Set to <code>True</code> to disable the automatic creation of an AWS Glue table when configuring an
-     *         <code>OfflineStore</code>.
+     * @return Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when
+     *         configuring an <code>OfflineStore</code>.
      */
 
     public Boolean isDisableGlueTableCreation() {

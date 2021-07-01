@@ -40,7 +40,7 @@ public class HostInstance implements Serializable, Cloneable {
     private String instanceType;
     /**
      * <p>
-     * The ID of the AWS account that owns the instance.
+     * The ID of the account that owns the instance.
      * </p>
      */
     private String ownerId;
@@ -127,11 +127,11 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the instance.
+     * The ID of the account that owns the instance.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the instance.
+     *        The ID of the account that owns the instance.
      */
 
     public void setOwnerId(String ownerId) {
@@ -140,10 +140,10 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the instance.
+     * The ID of the account that owns the instance.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the instance.
+     * @return The ID of the account that owns the instance.
      */
 
     public String getOwnerId() {
@@ -152,11 +152,11 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the instance.
+     * The ID of the account that owns the instance.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the instance.
+     *        The ID of the account that owns the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

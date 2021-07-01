@@ -27,7 +27,8 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      */
     private String trainingJobName;
@@ -134,9 +135,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private StoppingCondition stoppingCondition;
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -214,11 +215,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      * 
      * @param trainingJobName
-     *        The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     *        The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon
+     *        Web Services account.
      */
 
     public void setTrainingJobName(String trainingJobName) {
@@ -227,10 +230,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      * 
-     * @return The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     * @return The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon
+     *         Web Services account.
      */
 
     public String getTrainingJobName() {
@@ -239,11 +244,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      * 
      * @param trainingJobName
-     *        The name of the training job. The name must be unique within an AWS Region in an AWS account.
+     *        The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon
+     *        Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -970,14 +977,15 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
-     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *         example, by purpose, owner, or environment. For more information, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * @return An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *         different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -986,15 +994,16 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1008,9 +1017,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1019,9 +1028,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1037,15 +1047,16 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

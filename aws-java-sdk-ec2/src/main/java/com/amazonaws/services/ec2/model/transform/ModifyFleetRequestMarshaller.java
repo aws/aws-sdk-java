@@ -186,6 +186,10 @@ public class ModifyFleetRequestMarshaller implements Marshaller<Request<ModifyFl
             }
         }
 
+        if (modifyFleetRequest.getContext() != null) {
+            request.addParameter("Context", StringUtils.fromString(modifyFleetRequest.getContext()));
+        }
+
         return request;
     }
 

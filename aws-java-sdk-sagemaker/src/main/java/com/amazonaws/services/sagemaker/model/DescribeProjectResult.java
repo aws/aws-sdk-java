@@ -50,8 +50,8 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Information used to provision a service catalog product. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      */
     private ServiceCatalogProvisioningDetails serviceCatalogProvisioningDetails;
@@ -239,14 +239,14 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Information used to provision a service catalog product. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      * 
      * @param serviceCatalogProvisioningDetails
      *        Information used to provision a service catalog product. For information, see <a
-     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     *        Catalog</a>.
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web
+     *        Services Service Catalog</a>.
      */
 
     public void setServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails serviceCatalogProvisioningDetails) {
@@ -256,13 +256,13 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Information used to provision a service catalog product. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      * 
      * @return Information used to provision a service catalog product. For information, see <a
-     *         href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     *         Catalog</a>.
+     *         href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web
+     *         Services Service Catalog</a>.
      */
 
     public ServiceCatalogProvisioningDetails getServiceCatalogProvisioningDetails() {
@@ -272,14 +272,14 @@ public class DescribeProjectResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Information used to provision a service catalog product. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      * 
      * @param serviceCatalogProvisioningDetails
      *        Information used to provision a service catalog product. For information, see <a
-     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     *        Catalog</a>.
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web
+     *        Services Service Catalog</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

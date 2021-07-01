@@ -50,8 +50,8 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
     private Integer volumeSizeInGB;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the model monitoring job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
      * </p>
      */
     private String volumeKmsKeyId;
@@ -209,13 +209,14 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the model monitoring job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
      * </p>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the model monitoring job.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring
+     *        job.
      */
 
     public void setVolumeKmsKeyId(String volumeKmsKeyId) {
@@ -224,12 +225,13 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the model monitoring job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *         volume attached to the ML compute instance(s) that run the model monitoring job.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt data on the storage volume attached to the ML compute instance(s) that run the model
+     *         monitoring job.
      */
 
     public String getVolumeKmsKeyId() {
@@ -238,13 +240,14 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the model monitoring job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
      * </p>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the model monitoring job.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring
+     *        job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,13 +41,13 @@ public class Reservation implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Instance> instances;
     /**
      * <p>
-     * The ID of the AWS account that owns the reservation.
+     * The ID of the account that owns the reservation.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * The ID of the requester that launched the instances on your behalf (for example, Management Console or Auto
      * Scaling).
      * </p>
      */
@@ -213,11 +213,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the reservation.
+     * The ID of the account that owns the reservation.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the reservation.
+     *        The ID of the account that owns the reservation.
      */
 
     public void setOwnerId(String ownerId) {
@@ -226,10 +226,10 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the reservation.
+     * The ID of the account that owns the reservation.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the reservation.
+     * @return The ID of the account that owns the reservation.
      */
 
     public String getOwnerId() {
@@ -238,11 +238,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the reservation.
+     * The ID of the account that owns the reservation.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the reservation.
+     *        The ID of the account that owns the reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,12 +253,12 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * The ID of the requester that launched the instances on your behalf (for example, Management Console or Auto
      * Scaling).
      * </p>
      * 
      * @param requesterId
-     *        The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or
+     *        The ID of the requester that launched the instances on your behalf (for example, Management Console or
      *        Auto Scaling).
      */
 
@@ -268,12 +268,12 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * The ID of the requester that launched the instances on your behalf (for example, Management Console or Auto
      * Scaling).
      * </p>
      * 
-     * @return The ID of the requester that launched the instances on your behalf (for example, AWS Management Console
-     *         or Auto Scaling).
+     * @return The ID of the requester that launched the instances on your behalf (for example, Management Console or
+     *         Auto Scaling).
      */
 
     public String getRequesterId() {
@@ -282,12 +282,12 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * The ID of the requester that launched the instances on your behalf (for example, Management Console or Auto
      * Scaling).
      * </p>
      * 
      * @param requesterId
-     *        The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or
+     *        The ID of the requester that launched the instances on your behalf (for example, Management Console or
      *        Auto Scaling).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

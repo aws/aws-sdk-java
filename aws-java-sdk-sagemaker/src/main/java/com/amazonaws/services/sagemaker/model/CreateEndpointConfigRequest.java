@@ -41,16 +41,16 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     private DataCaptureConfig dataCaptureConfig;
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
-     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -79,9 +79,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>,
-     * <code>UpdateEndpoint</code> requests. For more information, refer to the AWS Key Management Service section<a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS KMS
-     * </a>
+     * <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management
+     * Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
+     * Policies in Amazon Web Services KMS </a>
      * </p>
      * <note>
      * <p>
@@ -248,14 +248,15 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
-     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *         example, by purpose, owner, or environment. For more information, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * @return An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *         different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -264,15 +265,16 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -286,9 +288,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -297,9 +299,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,15 +318,16 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,8 +338,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
-     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -364,9 +368,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>,
-     * <code>UpdateEndpoint</code> requests. For more information, refer to the AWS Key Management Service section<a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS KMS
-     * </a>
+     * <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management
+     * Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
+     * Policies in Amazon Web Services KMS </a>
      * </p>
      * <note>
      * <p>
@@ -390,8 +394,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
-     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
+     *        uses to encrypt data on the storage volume attached to the ML compute instance that hosts the
+     *        endpoint.</p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>
@@ -419,10 +424,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      *        </ul>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the AWS
-     *        Key Management Service section<a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS
-     *        KMS </a>
+     *        <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the
+     *        Amazon Web Services Key Management Service section<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in
+     *        Amazon Web Services KMS </a>
      *        </p>
      *        <note>
      *        <p>
@@ -451,8 +456,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
-     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -481,9 +486,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>,
-     * <code>UpdateEndpoint</code> requests. For more information, refer to the AWS Key Management Service section<a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS KMS
-     * </a>
+     * <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management
+     * Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
+     * Policies in Amazon Web Services KMS </a>
      * </p>
      * <note>
      * <p>
@@ -506,8 +511,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
-     *         data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
+     *         uses to encrypt data on the storage volume attached to the ML compute instance that hosts the
+     *         endpoint.</p>
      *         <p>
      *         The KmsKeyId can be any of the following formats:
      *         </p>
@@ -535,10 +541,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      *         </ul>
      *         <p>
      *         The KMS key policy must grant permission to the IAM role that you specify in your
-     *         <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the AWS
-     *         Key Management Service section<a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS
-     *         KMS </a>
+     *         <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the
+     *         Amazon Web Services Key Management Service section<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in
+     *         Amazon Web Services KMS </a>
      *         </p>
      *         <note>
      *         <p>
@@ -567,8 +573,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
-     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -597,9 +603,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>,
-     * <code>UpdateEndpoint</code> requests. For more information, refer to the AWS Key Management Service section<a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS KMS
-     * </a>
+     * <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management
+     * Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
+     * Policies in Amazon Web Services KMS </a>
      * </p>
      * <note>
      * <p>
@@ -623,8 +629,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
-     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker
+     *        uses to encrypt data on the storage volume attached to the ML compute instance that hosts the
+     *        endpoint.</p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>
@@ -652,10 +659,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      *        </ul>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the AWS
-     *        Key Management Service section<a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in AWS
-     *        KMS </a>
+     *        <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the
+     *        Amazon Web Services Key Management Service section<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in
+     *        Amazon Web Services KMS </a>
      *        </p>
      *        <note>
      *        <p>

@@ -27,21 +27,21 @@ public class DescribeModelExplainabilityJobDefinitionRequest extends com.amazona
 
     /**
      * <p>
-     * The name of the model explainability job definition. The name must be unique within an AWS Region in the AWS
-     * account.
+     * The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region
+     * in the Amazon Web Services account.
      * </p>
      */
     private String jobDefinitionName;
 
     /**
      * <p>
-     * The name of the model explainability job definition. The name must be unique within an AWS Region in the AWS
-     * account.
+     * The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region
+     * in the Amazon Web Services account.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the model explainability job definition. The name must be unique within an AWS Region in the
-     *        AWS account.
+     *        The name of the model explainability job definition. The name must be unique within an Amazon Web Services
+     *        Region in the Amazon Web Services account.
      */
 
     public void setJobDefinitionName(String jobDefinitionName) {
@@ -50,12 +50,12 @@ public class DescribeModelExplainabilityJobDefinitionRequest extends com.amazona
 
     /**
      * <p>
-     * The name of the model explainability job definition. The name must be unique within an AWS Region in the AWS
-     * account.
+     * The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region
+     * in the Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the model explainability job definition. The name must be unique within an AWS Region in the
-     *         AWS account.
+     * @return The name of the model explainability job definition. The name must be unique within an Amazon Web
+     *         Services Region in the Amazon Web Services account.
      */
 
     public String getJobDefinitionName() {
@@ -64,13 +64,13 @@ public class DescribeModelExplainabilityJobDefinitionRequest extends com.amazona
 
     /**
      * <p>
-     * The name of the model explainability job definition. The name must be unique within an AWS Region in the AWS
-     * account.
+     * The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region
+     * in the Amazon Web Services account.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the model explainability job definition. The name must be unique within an AWS Region in the
-     *        AWS account.
+     *        The name of the model explainability job definition. The name must be unique within an Amazon Web Services
+     *        Region in the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

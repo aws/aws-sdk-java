@@ -31,21 +31,21 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Welcome to the <i>Amazon Simple Queue Service API Reference</i>.
+ * Welcome to the <i>Amazon SQS API Reference</i>.
  * </p>
  * <p>
- * Amazon Simple Queue Service (Amazon SQS) is a reliable, highly-scalable hosted queue for storing messages as they
- * travel between applications or microservices. Amazon SQS moves data between distributed application components and
- * helps you decouple these components.
+ * Amazon SQS is a reliable, highly-scalable hosted queue for storing messages as they travel between applications or
+ * microservices. Amazon SQS moves data between distributed application components and helps you decouple these
+ * components.
  * </p>
  * <p>
  * For information on the permissions you need to use this API, see <a href=
  * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-authentication-and-access-control.html"
- * >Identity and access management</a> in the <i>Amazon Simple Queue Service Developer Guide.</i>
+ * >Identity and access management</a> in the <i>Amazon SQS Developer Guide.</i>
  * </p>
  * <p>
- * You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon SQS using your favorite
- * programming language. The SDKs perform tasks such as the following automatically:
+ * You can use <a href="http://aws.amazon.com/tools/#sdk">Amazon Web Services SDKs</a> to access Amazon SQS using your
+ * favorite programming language. The SDKs perform tasks such as the following automatically:
  * </p>
  * <ul>
  * <li>
@@ -75,7 +75,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <i>Amazon Simple Queue Service Developer Guide</i>
+ * <i>Amazon SQS Developer Guide</i>
  * </p>
  * <ul>
  * <li>
@@ -101,8 +101,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS in the <i>AWS CLI Command
- * Reference</i> </a>
+ * <a href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS in the <i>Command Line
+ * Interface</i> </a>
  * </p>
  * </li>
  * <li>

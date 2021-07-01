@@ -27,14 +27,15 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      */
     private String transformJobName;
     /**
      * <p>
      * The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an
-     * existing Amazon SageMaker model within an AWS Region in an AWS account.
+     * existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.
      * </p>
      */
     private String modelName;
@@ -130,7 +131,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -139,11 +140,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      * 
      * @param transformJobName
-     *        The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     *        The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon
+     *        Web Services account.
      */
 
     public void setTransformJobName(String transformJobName) {
@@ -152,10 +155,12 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      * 
-     * @return The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     * @return The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon
+     *         Web Services account.
      */
 
     public String getTransformJobName() {
@@ -164,11 +169,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     * The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web
+     * Services account.
      * </p>
      * 
      * @param transformJobName
-     *        The name of the transform job. The name must be unique within an AWS Region in an AWS account.
+     *        The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon
+     *        Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,12 +187,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an
-     * existing Amazon SageMaker model within an AWS Region in an AWS account.
+     * existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.
      * </p>
      * 
      * @param modelName
      *        The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name
-     *        of an existing Amazon SageMaker model within an AWS Region in an AWS account.
+     *        of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services
+     *        account.
      */
 
     public void setModelName(String modelName) {
@@ -195,11 +203,12 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an
-     * existing Amazon SageMaker model within an AWS Region in an AWS account.
+     * existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.
      * </p>
      * 
      * @return The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name
-     *         of an existing Amazon SageMaker model within an AWS Region in an AWS account.
+     *         of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services
+     *         account.
      */
 
     public String getModelName() {
@@ -209,12 +218,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an
-     * existing Amazon SageMaker model within an AWS Region in an AWS account.
+     * existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.
      * </p>
      * 
      * @param modelName
      *        The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name
-     *        of an existing Amazon SageMaker model within an AWS Region in an AWS account.
+     *        of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -867,12 +877,12 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return (Optional) An array of key-value pairs. For more information, see <a
      *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *         >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -883,13 +893,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -905,7 +915,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -916,7 +926,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -934,13 +944,13 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        >Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

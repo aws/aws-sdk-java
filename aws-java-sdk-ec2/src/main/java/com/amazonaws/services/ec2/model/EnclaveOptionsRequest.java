@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
- * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in the
- * <i>AWS Nitro Enclaves User Guide</i>.
+ * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
+ * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+ * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnclaveOptionsRequest" target="_top">AWS API
@@ -30,18 +30,18 @@ public class EnclaveOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      * </p>
      * 
      * @param enabled
-     *        To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     *        To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -50,10 +50,10 @@ public class EnclaveOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      * </p>
      * 
-     * @return To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * @return To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      */
 
     public Boolean getEnabled() {
@@ -62,11 +62,11 @@ public class EnclaveOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      * </p>
      * 
      * @param enabled
-     *        To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     *        To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class EnclaveOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      * </p>
      * 
-     * @return To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.
+     * @return To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.
      */
 
     public Boolean isEnabled() {

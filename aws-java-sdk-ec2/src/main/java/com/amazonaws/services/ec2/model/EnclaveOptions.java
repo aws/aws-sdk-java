@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+ * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnclaveOptions" target="_top">AWS API
@@ -28,21 +28,21 @@ public class EnclaveOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise, it is
-     * not enabled for AWS Nitro Enclaves.
+     * If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+     * otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise, it is
-     * not enabled for AWS Nitro Enclaves.
+     * If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+     * otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
      * @param enabled
-     *        If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise,
-     *        it is not enabled for AWS Nitro Enclaves.
+     *        If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro
+     *        Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -51,12 +51,12 @@ public class EnclaveOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise, it is
-     * not enabled for AWS Nitro Enclaves.
+     * If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+     * otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
-     * @return If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise,
-     *         it is not enabled for AWS Nitro Enclaves.
+     * @return If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro
+     *         Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public Boolean getEnabled() {
@@ -65,13 +65,13 @@ public class EnclaveOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise, it is
-     * not enabled for AWS Nitro Enclaves.
+     * If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+     * otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
      * @param enabled
-     *        If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise,
-     *        it is not enabled for AWS Nitro Enclaves.
+     *        If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro
+     *        Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,12 +82,12 @@ public class EnclaveOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise, it is
-     * not enabled for AWS Nitro Enclaves.
+     * If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+     * otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
-     * @return If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves; otherwise,
-     *         it is not enabled for AWS Nitro Enclaves.
+     * @return If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro
+     *         Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public Boolean isEnabled() {

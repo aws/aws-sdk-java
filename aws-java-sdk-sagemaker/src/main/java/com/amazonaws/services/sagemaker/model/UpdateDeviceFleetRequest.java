@@ -51,8 +51,8 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
     private EdgeOutputConfig outputConfig;
     /**
      * <p>
-     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
-     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias
+     * generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
      * </p>
      * <p>
      * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
@@ -223,8 +223,8 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
-     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias
+     * generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
      * </p>
      * <p>
      * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
@@ -232,8 +232,8 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param enableIotRoleAlias
-     *        Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated
-     *        will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     *        Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role
+     *        alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
      *        <p>
      *        For example, if your device fleet is called "demo-fleet", the name of the role alias will be
      *        "SageMakerEdge-demo-fleet".
@@ -245,16 +245,16 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
-     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias
+     * generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
      * </p>
      * <p>
      * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".
      * </p>
      * 
-     * @return Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias
-     *         generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     * @return Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the
+     *         role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
      *         <p>
      *         For example, if your device fleet is called "demo-fleet", the name of the role alias will be
      *         "SageMakerEdge-demo-fleet".
@@ -266,8 +266,8 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
-     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias
+     * generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
      * </p>
      * <p>
      * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
@@ -275,8 +275,8 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param enableIotRoleAlias
-     *        Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated
-     *        will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     *        Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role
+     *        alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
      *        <p>
      *        For example, if your device fleet is called "demo-fleet", the name of the role alias will be
      *        "SageMakerEdge-demo-fleet".
@@ -290,16 +290,16 @@ public class UpdateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
-     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias
+     * generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".
      * </p>
      * <p>
      * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".
      * </p>
      * 
-     * @return Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias
-     *         generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     * @return Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the
+     *         role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
      *         <p>
      *         For example, if your device fleet is called "demo-fleet", the name of the role alias will be
      *         "SageMakerEdge-demo-fleet".

@@ -27,8 +27,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
+     * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
+     * matched in .
      * </p>
      */
     private String endpointName;
@@ -40,22 +41,24 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointConfigName;
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
+     * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
+     * matched in .
      * </p>
      * 
      * @param endpointName
-     *        The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     *        case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     *        The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web
+     *        Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved
+     *        and must be matched in .
      */
 
     public void setEndpointName(String endpointName) {
@@ -64,12 +67,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
+     * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
+     * matched in .
      * </p>
      * 
-     * @return The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     *         case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     * @return The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web
+     *         Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved
+     *         and must be matched in .
      */
 
     public String getEndpointName() {
@@ -78,13 +83,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
+     * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
+     * matched in .
      * </p>
      * 
      * @param endpointName
-     *        The name of the endpoint.The name must be unique within an AWS Region in your AWS account. The name is
-     *        case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .
+     *        The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web
+     *        Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved
+     *        and must be matched in .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,14 +142,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
-     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *         example, by purpose, owner, or environment. For more information, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * @return An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *         different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -151,15 +159,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -173,9 +182,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -184,9 +193,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,15 +212,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

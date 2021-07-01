@@ -322,7 +322,7 @@ public class Instance implements Serializable, Cloneable {
     private InstanceMetadataOptionsResponse metadataOptions;
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      */
     private EnclaveOptions enclaveOptions;
@@ -2840,11 +2840,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public void setEnclaveOptions(EnclaveOptions enclaveOptions) {
@@ -2853,10 +2853,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
-     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * @return Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      */
 
     public EnclaveOptions getEnclaveOptions() {
@@ -2865,11 +2865,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * </p>
      * 
      * @param enclaveOptions
-     *        Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

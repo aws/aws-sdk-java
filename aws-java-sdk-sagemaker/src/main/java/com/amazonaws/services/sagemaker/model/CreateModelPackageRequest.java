@@ -88,7 +88,7 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     private SourceAlgorithmSpecification sourceAlgorithmSpecification;
     /**
      * <p>
-     * Whether to certify the model package for listing on AWS Marketplace.
+     * Whether to certify the model package for listing on Amazon Web Services Marketplace.
      * </p>
      * <p>
      * This parameter is optional for unversioned models, and does not apply to versioned models.
@@ -98,8 +98,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of key value pairs associated with the model. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -519,14 +519,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Whether to certify the model package for listing on AWS Marketplace.
+     * Whether to certify the model package for listing on Amazon Web Services Marketplace.
      * </p>
      * <p>
      * This parameter is optional for unversioned models, and does not apply to versioned models.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the model package for listing on AWS Marketplace.</p>
+     *        Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
      *        <p>
      *        This parameter is optional for unversioned models, and does not apply to versioned models.
      */
@@ -537,13 +537,13 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Whether to certify the model package for listing on AWS Marketplace.
+     * Whether to certify the model package for listing on Amazon Web Services Marketplace.
      * </p>
      * <p>
      * This parameter is optional for unversioned models, and does not apply to versioned models.
      * </p>
      * 
-     * @return Whether to certify the model package for listing on AWS Marketplace.</p>
+     * @return Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
      *         <p>
      *         This parameter is optional for unversioned models, and does not apply to versioned models.
      */
@@ -554,14 +554,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Whether to certify the model package for listing on AWS Marketplace.
+     * Whether to certify the model package for listing on Amazon Web Services Marketplace.
      * </p>
      * <p>
      * This parameter is optional for unversioned models, and does not apply to versioned models.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the model package for listing on AWS Marketplace.</p>
+     *        Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
      *        <p>
      *        This parameter is optional for unversioned models, and does not apply to versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -574,13 +574,13 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Whether to certify the model package for listing on AWS Marketplace.
+     * Whether to certify the model package for listing on Amazon Web Services Marketplace.
      * </p>
      * <p>
      * This parameter is optional for unversioned models, and does not apply to versioned models.
      * </p>
      * 
-     * @return Whether to certify the model package for listing on AWS Marketplace.</p>
+     * @return Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
      *         <p>
      *         This parameter is optional for unversioned models, and does not apply to versioned models.
      */
@@ -592,13 +592,13 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of key value pairs associated with the model. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @return A list of key value pairs associated with the model. For more information, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *         <i>AWS General Reference Guide</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -608,14 +608,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of key value pairs associated with the model. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference Guide</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -630,8 +630,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of key value pairs associated with the model. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -641,8 +641,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference Guide</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,14 +659,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of key value pairs associated with the model. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference Guide</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

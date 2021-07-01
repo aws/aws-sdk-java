@@ -34,7 +34,7 @@ public class CapacityReservationGroup implements Serializable, Cloneable {
     private String groupArn;
     /**
      * <p>
-     * The ID of the AWS account that owns the resource group.
+     * The ID of the account that owns the resource group.
      * </p>
      */
     private String ownerId;
@@ -81,11 +81,11 @@ public class CapacityReservationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the resource group.
+     * The ID of the account that owns the resource group.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the resource group.
+     *        The ID of the account that owns the resource group.
      */
 
     public void setOwnerId(String ownerId) {
@@ -94,10 +94,10 @@ public class CapacityReservationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the resource group.
+     * The ID of the account that owns the resource group.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the resource group.
+     * @return The ID of the account that owns the resource group.
      */
 
     public String getOwnerId() {
@@ -106,11 +106,11 @@ public class CapacityReservationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the resource group.
+     * The ID of the account that owns the resource group.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the resource group.
+     *        The ID of the account that owns the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,6 +50,12 @@ public class ModifyFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private TargetCapacitySpecificationRequest targetCapacitySpecification;
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     */
+    private String context;
 
     /**
      * <p>
@@ -272,6 +278,46 @@ public class ModifyFleetRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     */
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @return Reserved.
+     */
+
+    public String getContext() {
+        return this.context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyFleetRequest withContext(String context) {
+        setContext(context);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -301,7 +347,9 @@ public class ModifyFleetRequest extends AmazonWebServiceRequest implements Seria
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getTargetCapacitySpecification() != null)
-            sb.append("TargetCapacitySpecification: ").append(getTargetCapacitySpecification());
+            sb.append("TargetCapacitySpecification: ").append(getTargetCapacitySpecification()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -333,6 +381,10 @@ public class ModifyFleetRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getTargetCapacitySpecification() != null && other.getTargetCapacitySpecification().equals(this.getTargetCapacitySpecification()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +397,7 @@ public class ModifyFleetRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getLaunchTemplateConfigs() == null) ? 0 : getLaunchTemplateConfigs().hashCode());
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacitySpecification() == null) ? 0 : getTargetCapacitySpecification().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

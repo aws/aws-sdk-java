@@ -63,7 +63,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private String dataType;
@@ -335,7 +335,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param dataType
@@ -344,7 +344,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setDataType(String dataType) {
@@ -359,7 +359,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
@@ -367,7 +367,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      *         <p>
      *         You can also append custom labels. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public String getDataType() {
@@ -382,7 +382,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      * <p>
      * You can also append custom labels. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param dataType
@@ -391,7 +391,7 @@ public class MessageSystemAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

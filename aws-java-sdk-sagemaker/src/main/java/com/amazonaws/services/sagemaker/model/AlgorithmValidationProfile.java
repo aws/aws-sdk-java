@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
  * </p>
  * <p>
- * The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+ * The data provided in the validation profile is made available to your buyers on Amazon Web Services Marketplace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmValidationProfile"

@@ -26,21 +26,21 @@ import com.amazonaws.services.sqs.model.*;
  * </p>
  * <p>
  * <p>
- * Welcome to the <i>Amazon Simple Queue Service API Reference</i>.
+ * Welcome to the <i>Amazon SQS API Reference</i>.
  * </p>
  * <p>
- * Amazon Simple Queue Service (Amazon SQS) is a reliable, highly-scalable hosted queue for storing messages as they
- * travel between applications or microservices. Amazon SQS moves data between distributed application components and
- * helps you decouple these components.
+ * Amazon SQS is a reliable, highly-scalable hosted queue for storing messages as they travel between applications or
+ * microservices. Amazon SQS moves data between distributed application components and helps you decouple these
+ * components.
  * </p>
  * <p>
  * For information on the permissions you need to use this API, see <a href=
  * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-authentication-and-access-control.html"
- * >Identity and access management</a> in the <i>Amazon Simple Queue Service Developer Guide.</i>
+ * >Identity and access management</a> in the <i>Amazon SQS Developer Guide.</i>
  * </p>
  * <p>
- * You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon SQS using your favorite
- * programming language. The SDKs perform tasks such as the following automatically:
+ * You can use <a href="http://aws.amazon.com/tools/#sdk">Amazon Web Services SDKs</a> to access Amazon SQS using your
+ * favorite programming language. The SDKs perform tasks such as the following automatically:
  * </p>
  * <ul>
  * <li>
@@ -70,7 +70,7 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * <li>
  * <p>
- * <i>Amazon Simple Queue Service Developer Guide</i>
+ * <i>Amazon SQS Developer Guide</i>
  * </p>
  * <ul>
  * <li>
@@ -96,8 +96,8 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS in the <i>AWS CLI Command
- * Reference</i> </a>
+ * <a href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS in the <i>Command Line
+ * Interface</i> </a>
  * </p>
  * </li>
  * <li>
@@ -127,8 +127,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * When you create a queue, you have full control access rights for the queue. Only you, the owner of the queue, can
      * grant or deny permissions to the queue. For more information about these permissions, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue"
-     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <ul>
@@ -137,8 +136,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <code>AddPermission</code> generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code> to
      * upload your policy. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html"
-     * >Using Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.
+     * >Using Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -168,8 +166,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -191,8 +188,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * When you create a queue, you have full control access rights for the queue. Only you, the owner of the queue, can
      * grant or deny permissions to the queue. For more information about these permissions, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue"
-     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <ul>
@@ -201,8 +197,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <code>AddPermission</code> generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code> to
      * upload your policy. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html"
-     * >Using Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.
+     * >Using Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -232,8 +227,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -271,7 +265,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Changes the visibility timeout of a specified message in a queue to a new value. The default visibility timeout
      * for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">
-     * Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
@@ -348,7 +342,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Changes the visibility timeout of a specified message in a queue to a new value. The default visibility timeout
      * for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">
-     * Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
@@ -546,7 +540,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * queue. You must either create a new FIFO queue for your application or delete your existing standard queue and
      * recreate it as a FIFO queue. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving"
-     * >Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note></li>
      * <li>
@@ -603,8 +597,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -632,7 +625,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * queue. You must either create a new FIFO queue for your application or delete your existing standard queue and
      * recreate it as a FIFO queue. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving"
-     * >Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note></li>
      * <li>
@@ -689,8 +682,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -912,8 +904,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -947,8 +938,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -1049,8 +1039,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For
      * more information about shared queue access, see <code> <a>AddPermission</a> </code> or see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue"
-     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param getQueueUrlRequest
@@ -1070,8 +1059,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For
      * more information about shared queue access, see <code> <a>AddPermission</a> </code> or see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue"
-     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param getQueueUrlRequest
@@ -1118,7 +1106,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * For more information about using dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1146,7 +1134,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * For more information about using dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1167,14 +1155,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -1190,14 +1177,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -1246,8 +1232,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -1276,8 +1261,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -1393,7 +1377,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
      * parameter enables long-poll support. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-     * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of machines is sampled on a
@@ -1442,14 +1426,14 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
-     * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your request. The parameter is applied to the
      * messages that Amazon SQS returns in the response. If you don't include the parameter, the overall visibility
      * timeout for the queue is used for the returned messages. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
@@ -1476,7 +1460,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
      * parameter enables long-poll support. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-     * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of machines is sampled on a
@@ -1525,14 +1509,14 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
-     * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your request. The parameter is applied to the
      * messages that Amazon SQS returns in the response. If you don't include the parameter, the overall visibility
      * timeout for the queue is used for the returned messages. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
@@ -1589,8 +1573,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1625,8 +1608,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1876,8 +1858,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1915,8 +1896,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1960,7 +1940,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * When you use queue tags, keep the following guidelines in mind:
@@ -1990,14 +1970,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * For a full list of tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
-     * >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -2013,7 +1992,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * When you use queue tags, keep the following guidelines in mind:
@@ -2043,14 +2022,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * For a full list of tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
-     * >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -2086,14 +2064,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -2109,14 +2086,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 

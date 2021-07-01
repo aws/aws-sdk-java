@@ -44,6 +44,7 @@ public enum ResourceType {
     NetworkAcl("network-acl"),
     NetworkInterface("network-interface"),
     NetworkInsightsAnalysis("network-insights-analysis"),
+    NetworkInsightsBoundary("network-insights-boundary"),
     NetworkInsightsPath("network-insights-path"),
     PlacementGroup("placement-group"),
     ReservedInstances("reserved-instances"),

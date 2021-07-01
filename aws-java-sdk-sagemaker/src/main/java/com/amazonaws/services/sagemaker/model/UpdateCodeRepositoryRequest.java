@@ -33,9 +33,9 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
     private String codeRepositoryName;
     /**
      * <p>
-     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS Secrets
-     * Manager secret that contains the credentials used to access the repository. The secret must have a staging label
-     * of <code>AWSCURRENT</code> and must be in the following format:
+     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have
+     * a staging label of <code>AWSCURRENT</code> and must be in the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
@@ -85,18 +85,18 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS Secrets
-     * Manager secret that contains the credentials used to access the repository. The secret must have a staging label
-     * of <code>AWSCURRENT</code> and must be in the following format:
+     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have
+     * a staging label of <code>AWSCURRENT</code> and must be in the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * </p>
      * 
      * @param gitConfig
-     *        The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS
-     *        Secrets Manager secret that contains the credentials used to access the repository. The secret must have a
-     *        staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+     *        The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the
+     *        Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.
+     *        The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
      *        <p>
      *        <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      */
@@ -107,17 +107,17 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS Secrets
-     * Manager secret that contains the credentials used to access the repository. The secret must have a staging label
-     * of <code>AWSCURRENT</code> and must be in the following format:
+     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have
+     * a staging label of <code>AWSCURRENT</code> and must be in the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * </p>
      * 
-     * @return The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS
-     *         Secrets Manager secret that contains the credentials used to access the repository. The secret must have
-     *         a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+     * @return The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the
+     *         Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.
+     *         The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
      *         <p>
      *         <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      */
@@ -128,18 +128,18 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS Secrets
-     * Manager secret that contains the credentials used to access the repository. The secret must have a staging label
-     * of <code>AWSCURRENT</code> and must be in the following format:
+     * The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have
+     * a staging label of <code>AWSCURRENT</code> and must be in the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * </p>
      * 
      * @param gitConfig
-     *        The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the AWS
-     *        Secrets Manager secret that contains the credentials used to access the repository. The secret must have a
-     *        staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+     *        The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the
+     *        Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.
+     *        The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
      *        <p>
      *        <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * @return Returns a reference to this object so that method calls can be chained together.

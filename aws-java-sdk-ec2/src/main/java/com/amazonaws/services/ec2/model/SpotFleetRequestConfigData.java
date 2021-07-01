@@ -97,7 +97,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private Double onDemandFulfilledCapacity;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
@@ -234,8 +234,22 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and
      * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
      * </p>
+     * <p>
+     * Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort
+     * basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will continue to
+     * fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the
+     * pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that
+     * you specified.
+     * </p>
      */
     private Integer instancePoolsToUseCount;
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     */
+    private String context;
     /**
      * <p>
      * The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must
@@ -894,7 +908,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
@@ -905,9 +919,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      * 
      * @param iamFleetRole
-     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
-     *        Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
-     *        information, see <a href=
+     *        The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet
+     *        the permission to request, launch, terminate, and tag instances on your behalf. For more information, see
+     *        <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
      *        >Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
      *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a
@@ -922,7 +936,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
@@ -932,9 +946,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
-     *         Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
-     *         information, see <a href=
+     * @return The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet
+     *         the permission to request, launch, terminate, and tag instances on your behalf. For more information, see
+     *         <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
      *         >Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
      *         terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a
@@ -949,7 +963,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
@@ -960,9 +974,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      * 
      * @param iamFleetRole
-     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
-     *        Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
-     *        information, see <a href=
+     *        The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet
+     *        the permission to request, launch, terminate, and tag instances on your behalf. For more information, see
+     *        <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
      *        >Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
      *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a
@@ -1947,11 +1961,26 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and
      * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
      * </p>
+     * <p>
+     * Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort
+     * basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will continue to
+     * fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the
+     * pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that
+     * you specified.
+     * </p>
      * 
      * @param instancePoolsToUseCount
      *        The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
      *        <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools
-     *        and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     *        and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
+     *        <p>
+     *        Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best
+     *        effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will
+     *        continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target
+     *        capacity is met, you might receive Spot Instances from more than the number of pools that you specified.
+     *        Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from
+     *        fewer than the number of pools that you specified.
      */
 
     public void setInstancePoolsToUseCount(Integer instancePoolsToUseCount) {
@@ -1964,10 +1993,25 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and
      * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
      * </p>
+     * <p>
+     * Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort
+     * basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will continue to
+     * fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the
+     * pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that
+     * you specified.
+     * </p>
      * 
      * @return The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
      *         <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools
-     *         and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     *         and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
+     *         <p>
+     *         Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best
+     *         effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will
+     *         continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target
+     *         capacity is met, you might receive Spot Instances from more than the number of pools that you specified.
+     *         Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from
+     *         fewer than the number of pools that you specified.
      */
 
     public Integer getInstancePoolsToUseCount() {
@@ -1980,16 +2024,71 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and
      * evenly allocates your target Spot capacity across the number of Spot pools that you specify.
      * </p>
+     * <p>
+     * Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best effort
+     * basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will continue to
+     * fulfill your request by drawing from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you specified. Similarly, if most of the
+     * pools have no Spot capacity, you might receive your full target capacity from fewer than the number of pools that
+     * you specified.
+     * </p>
      * 
      * @param instancePoolsToUseCount
      *        The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot
      *        <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools
-     *        and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
+     *        and evenly allocates your target Spot capacity across the number of Spot pools that you specify.</p>
+     *        <p>
+     *        Note that Spot Fleet attempts to draw Spot Instances from the number of pools that you specify on a best
+     *        effort basis. If a pool runs out of Spot capacity before fulfilling your target capacity, Spot Fleet will
+     *        continue to fulfill your request by drawing from the next cheapest pool. To ensure that your target
+     *        capacity is met, you might receive Spot Instances from more than the number of pools that you specified.
+     *        Similarly, if most of the pools have no Spot capacity, you might receive your full target capacity from
+     *        fewer than the number of pools that you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetRequestConfigData withInstancePoolsToUseCount(Integer instancePoolsToUseCount) {
         setInstancePoolsToUseCount(instancePoolsToUseCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     */
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @return Reserved.
+     */
+
+    public String getContext() {
+        return this.context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetRequestConfigData withContext(String context) {
+        setContext(context);
         return this;
     }
 
@@ -2196,6 +2295,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             sb.append("LoadBalancersConfig: ").append(getLoadBalancersConfig()).append(",");
         if (getInstancePoolsToUseCount() != null)
             sb.append("InstancePoolsToUseCount: ").append(getInstancePoolsToUseCount()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
@@ -2306,6 +2407,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             return false;
         if (other.getInstancePoolsToUseCount() != null && other.getInstancePoolsToUseCount().equals(this.getInstancePoolsToUseCount()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -2341,6 +2446,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancersConfig() == null) ? 0 : getLoadBalancersConfig().hashCode());
         hashCode = prime * hashCode + ((getInstancePoolsToUseCount() == null) ? 0 : getInstancePoolsToUseCount().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }

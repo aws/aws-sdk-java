@@ -74,8 +74,8 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
     private FlowDefinitionOutputConfig outputConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow
-     * definition.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for
+     * the flow definition.
      * </p>
      */
     private String roleArn;
@@ -436,13 +436,13 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow
-     * definition.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for
+     * the flow definition.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow
-     *        definition.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution
+     *        role for the flow definition.
      */
 
     public void setRoleArn(String roleArn) {
@@ -451,12 +451,12 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow
-     * definition.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for
+     * the flow definition.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the
-     *         flow definition.
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution
+     *         role for the flow definition.
      */
 
     public String getRoleArn() {
@@ -465,13 +465,13 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow
-     * definition.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for
+     * the flow definition.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow
-     *        definition.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution
+     *        role for the flow definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

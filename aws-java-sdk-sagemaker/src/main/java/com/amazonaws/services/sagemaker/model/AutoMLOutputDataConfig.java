@@ -30,7 +30,7 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS KMS encryption key ID.
+     * The Amazon Web Services KMS encryption key ID.
      * </p>
      */
     private String kmsKeyId;
@@ -43,11 +43,11 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS KMS encryption key ID.
+     * The Amazon Web Services KMS encryption key ID.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS encryption key ID.
+     *        The Amazon Web Services KMS encryption key ID.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -56,10 +56,10 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS KMS encryption key ID.
+     * The Amazon Web Services KMS encryption key ID.
      * </p>
      * 
-     * @return The AWS KMS encryption key ID.
+     * @return The Amazon Web Services KMS encryption key ID.
      */
 
     public String getKmsKeyId() {
@@ -68,11 +68,11 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS KMS encryption key ID.
+     * The Amazon Web Services KMS encryption key ID.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS encryption key ID.
+     *        The Amazon Web Services KMS encryption key ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

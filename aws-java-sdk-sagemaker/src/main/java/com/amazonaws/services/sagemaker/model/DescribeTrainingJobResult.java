@@ -240,7 +240,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private AlgorithmSpecification algorithmSpecification;
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) role configured for the training job.
+     * The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      * </p>
      */
     private String roleArn;
@@ -2122,11 +2122,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) role configured for the training job.
+     * The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      * </p>
      * 
      * @param roleArn
-     *        The AWS Identity and Access Management (IAM) role configured for the training job.
+     *        The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -2135,10 +2135,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) role configured for the training job.
+     * The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      * </p>
      * 
-     * @return The AWS Identity and Access Management (IAM) role configured for the training job.
+     * @return The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      */
 
     public String getRoleArn() {
@@ -2147,11 +2147,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) role configured for the training job.
+     * The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      * </p>
      * 
      * @param roleArn
-     *        The AWS Identity and Access Management (IAM) role configured for the training job.
+     *        The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

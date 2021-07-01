@@ -84,8 +84,8 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private String instanceTenancy;
     /**
      * <p>
-     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If it's a
-     * Reserved Instance Marketplace offering, this is <code>true</code>.
+     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon Web
+     * Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      * </p>
      */
     private Boolean marketplace;
@@ -631,13 +631,13 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If it's a
-     * Reserved Instance Marketplace offering, this is <code>true</code>.
+     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon Web
+     * Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      * </p>
      * 
      * @param marketplace
-     *        Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If
-     *        it's a Reserved Instance Marketplace offering, this is <code>true</code>.
+     *        Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon
+     *        Web Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      */
 
     public void setMarketplace(Boolean marketplace) {
@@ -646,12 +646,12 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If it's a
-     * Reserved Instance Marketplace offering, this is <code>true</code>.
+     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon Web
+     * Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If
-     *         it's a Reserved Instance Marketplace offering, this is <code>true</code>.
+     * @return Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon
+     *         Web Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      */
 
     public Boolean getMarketplace() {
@@ -660,13 +660,13 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If it's a
-     * Reserved Instance Marketplace offering, this is <code>true</code>.
+     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon Web
+     * Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      * </p>
      * 
      * @param marketplace
-     *        Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If
-     *        it's a Reserved Instance Marketplace offering, this is <code>true</code>.
+     *        Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon
+     *        Web Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -677,12 +677,12 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If it's a
-     * Reserved Instance Marketplace offering, this is <code>true</code>.
+     * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon Web
+     * Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If
-     *         it's a Reserved Instance Marketplace offering, this is <code>true</code>.
+     * @return Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon
+     *         Web Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.
      */
 
     public Boolean isMarketplace() {

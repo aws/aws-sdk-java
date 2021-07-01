@@ -64,8 +64,8 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
     private Integer volumeSizeInGB;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the processing job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
      * </p>
      * <note>
      * <p>
@@ -318,8 +318,8 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the processing job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
      * </p>
      * <note>
      * <p>
@@ -340,8 +340,9 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the processing job. </p> <note>
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
+     *        </p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>
@@ -365,8 +366,8 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the processing job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
      * </p>
      * <note>
      * <p>
@@ -386,8 +387,9 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * </p>
      * </note>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *         volume attached to the ML compute instance(s) that run the processing job. </p> <note>
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
+     *         </p> <note>
      *         <p>
      *         Certain Nitro-based instances include local storage, dependent on the instance type. Local storage
      *         volumes are encrypted using a hardware module on the instance. You can't request a
@@ -411,8 +413,8 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the processing job.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
      * </p>
      * <note>
      * <p>
@@ -433,8 +435,9 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the processing job. </p> <note>
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job.
+     *        </p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>

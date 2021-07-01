@@ -43,8 +43,8 @@ public class AthenaDatasetDefinition implements Serializable, Cloneable, Structu
     private String outputS3Uri;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena
-     * query execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data generated from an Athena query execution.
      * </p>
      */
     private String kmsKeyId;
@@ -199,13 +199,13 @@ public class AthenaDatasetDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena
-     * query execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data generated from an Athena query execution.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an
-     *        Athena query execution.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data generated from an Athena query execution.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -214,12 +214,12 @@ public class AthenaDatasetDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena
-     * query execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data generated from an Athena query execution.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an
-     *         Athena query execution.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt data generated from an Athena query execution.
      */
 
     public String getKmsKeyId() {
@@ -228,13 +228,13 @@ public class AthenaDatasetDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena
-     * query execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data generated from an Athena query execution.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from an
-     *        Athena query execution.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data generated from an Athena query execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

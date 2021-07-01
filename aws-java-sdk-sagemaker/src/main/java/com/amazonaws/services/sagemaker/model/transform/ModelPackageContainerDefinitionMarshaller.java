@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class ModelPackageContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataUrl").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Environment").build();
 
     private static final ModelPackageContainerDefinitionMarshaller instance = new ModelPackageContainerDefinitionMarshaller();
 
@@ -59,6 +63,7 @@ public class ModelPackageContainerDefinitionMarshaller {
             protocolMarshaller.marshall(modelPackageContainerDefinition.getImageDigest(), IMAGEDIGEST_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getModelDataUrl(), MODELDATAURL_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(modelPackageContainerDefinition.getEnvironment(), ENVIRONMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

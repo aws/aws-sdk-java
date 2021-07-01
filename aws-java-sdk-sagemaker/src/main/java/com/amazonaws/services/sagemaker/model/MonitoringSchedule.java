@@ -106,8 +106,8 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A list of the tags associated with the monitoring schedlue. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -697,13 +697,13 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A list of the tags associated with the monitoring schedlue. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @return A list of the tags associated with the monitoring schedlue. For more information, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *         <i>AWS General Reference Guide</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -713,14 +713,14 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A list of the tags associated with the monitoring schedlue. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of the tags associated with the monitoring schedlue. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference Guide</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -735,8 +735,8 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A list of the tags associated with the monitoring schedlue. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -746,8 +746,8 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
      * 
      * @param tags
      *        A list of the tags associated with the monitoring schedlue. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference Guide</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -764,14 +764,14 @@ public class MonitoringSchedule implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A list of the tags associated with the monitoring schedlue. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
-     * General Reference Guide</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of the tags associated with the monitoring schedlue. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
-     *        <i>AWS General Reference Guide</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

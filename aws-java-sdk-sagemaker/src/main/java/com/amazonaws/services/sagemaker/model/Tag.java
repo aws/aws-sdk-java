@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag object that consists of a key and an optional value, used to manage metadata for Amazon SageMaker AWS
- * resources.
+ * A tag object that consists of a key and an optional value, used to manage metadata for Amazon SageMaker Amazon Web
+ * Services resources.
  * </p>
  * <p>
  * You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models,
@@ -28,11 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * SageMaker resources, see <a>AddTags</a>.
  * </p>
  * <p>
- * For more information on adding metadata to your AWS resources with tagging, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>. For advice on best
- * practices for managing AWS resources with tagging, see <a
+ * For more information on adding metadata to your Amazon Web Services resources with tagging, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For
+ * advice on best practices for managing Amazon Web Services resources with tagging, see <a
  * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging Best Practices: Implement an
- * Effective AWS Resource Tagging Strategy</a>.
+ * Effective Amazon Web Services Resource Tagging Strategy</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Tag" target="_top">AWS API

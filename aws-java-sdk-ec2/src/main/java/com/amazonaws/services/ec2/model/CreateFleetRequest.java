@@ -73,7 +73,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private Boolean terminateInstancesWithExpiration;
     /**
      * <p>
-     * The type of request. The default value is <code>maintain</code>.
+     * The fleet type. The default value is <code>maintain</code>.
      * </p>
      * <ul>
      * <li>
@@ -130,16 +130,29 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private Boolean replaceUnhealthyInstances;
     /**
      * <p>
-     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
-     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href
-     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
      * resources</a>.
      * </p>
+     * <p>
+     * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
+     * <code>instance</code> to tag the instances at launch.
+     * </p>
+     * <p>
+     * If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code>
+     * to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch,
+     * specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     * >launch template</a>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     */
+    private String context;
 
     /**
      * <p>
@@ -513,7 +526,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. The default value is <code>maintain</code>.
+     * The fleet type. The default value is <code>maintain</code>.
      * </p>
      * <ul>
      * <li>
@@ -543,7 +556,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param type
-     *        The type of request. The default value is <code>maintain</code>.</p>
+     *        The fleet type. The default value is <code>maintain</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -578,7 +591,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. The default value is <code>maintain</code>.
+     * The fleet type. The default value is <code>maintain</code>.
      * </p>
      * <ul>
      * <li>
@@ -607,7 +620,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * >EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
-     * @return The type of request. The default value is <code>maintain</code>.</p>
+     * @return The fleet type. The default value is <code>maintain</code>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -642,7 +655,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. The default value is <code>maintain</code>.
+     * The fleet type. The default value is <code>maintain</code>.
      * </p>
      * <ul>
      * <li>
@@ -672,7 +685,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param type
-     *        The type of request. The default value is <code>maintain</code>.</p>
+     *        The fleet type. The default value is <code>maintain</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -709,7 +722,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The type of request. The default value is <code>maintain</code>.
+     * The fleet type. The default value is <code>maintain</code>.
      * </p>
      * <ul>
      * <li>
@@ -739,7 +752,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param type
-     *        The type of request. The default value is <code>maintain</code>.</p>
+     *        The fleet type. The default value is <code>maintain</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -959,22 +972,35 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
-     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href
-     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
      * resources</a>.
      * </p>
+     * <p>
+     * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
+     * <code>instance</code> to tag the instances at launch.
+     * </p>
+     * <p>
+     * If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code>
+     * to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch,
+     * specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     * >launch template</a>.
+     * </p>
      * 
-     * @return The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
-     *         must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
-     *         tags in the <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *         >launch template</a>. For information about tagging after launch, see <a
+     * @return The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     *         resources</a>.
+     *         resources</a>.</p>
+     *         <p>
+     *         If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
+     *         or <code>instance</code> to tag the instances at launch.
+     *         </p>
+     *         <p>
+     *         If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of
+     *         <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     *         instances at launch, specify the tags in a <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *         >launch template</a>.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -986,23 +1012,36 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
-     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href
-     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
      * resources</a>.
      * </p>
+     * <p>
+     * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
+     * <code>instance</code> to tag the instances at launch.
+     * </p>
+     * <p>
+     * If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code>
+     * to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch,
+     * specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     * >launch template</a>.
+     * </p>
      * 
      * @param tagSpecifications
-     *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
-     *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
-     *        tags in the <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a>. For information about tagging after launch, see <a
+     *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     *        resources</a>.
+     *        resources</a>.</p>
+     *        <p>
+     *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
+     *        or <code>instance</code> to tag the instances at launch.
+     *        </p>
+     *        <p>
+     *        If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of
+     *        <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     *        instances at launch, specify the tags in a <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        >launch template</a>.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -1016,13 +1055,20 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
-     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href
-     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
      * resources</a>.
+     * </p>
+     * <p>
+     * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
+     * <code>instance</code> to tag the instances at launch.
+     * </p>
+     * <p>
+     * If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code>
+     * to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch,
+     * specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     * >launch template</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1031,13 +1077,19 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param tagSpecifications
-     *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
-     *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
-     *        tags in the <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a>. For information about tagging after launch, see <a
+     *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     *        resources</a>.
+     *        resources</a>.</p>
+     *        <p>
+     *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
+     *        or <code>instance</code> to tag the instances at launch.
+     *        </p>
+     *        <p>
+     *        If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of
+     *        <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     *        instances at launch, specify the tags in a <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        >launch template</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1053,28 +1105,81 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
-     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href
-     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a>. For information about tagging after launch, see <a
+     * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
      * resources</a>.
      * </p>
+     * <p>
+     * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
+     * <code>instance</code> to tag the instances at launch.
+     * </p>
+     * <p>
+     * If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code>
+     * to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch,
+     * specify the tags in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     * >launch template</a>.
+     * </p>
      * 
      * @param tagSpecifications
-     *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
-     *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
-     *        tags in the <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a>. For information about tagging after launch, see <a
+     *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     *        resources</a>.
+     *        resources</a>.</p>
+     *        <p>
+     *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
+     *        or <code>instance</code> to tag the instances at launch.
+     *        </p>
+     *        <p>
+     *        If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of
+     *        <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag
+     *        instances at launch, specify the tags in a <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        >launch template</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
         setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     */
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @return Reserved.
+     */
+
+    public String getContext() {
+        return this.context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withContext(String context) {
+        setContext(context);
         return this;
     }
 
@@ -1124,7 +1229,9 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
         if (getReplaceUnhealthyInstances() != null)
             sb.append("ReplaceUnhealthyInstances: ").append(getReplaceUnhealthyInstances()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -1189,6 +1296,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -1209,6 +1320,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
         hashCode = prime * hashCode + ((getReplaceUnhealthyInstances() == null) ? 0 : getReplaceUnhealthyInstances().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

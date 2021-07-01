@@ -38,7 +38,7 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String queueName;
     /**
      * <p>
-     * The AWS account ID of the account that created the queue.
+     * The account ID of the account that created the queue.
      * </p>
      */
     private String queueOwnerAWSAccountId;
@@ -127,11 +127,11 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS account ID of the account that created the queue.
+     * The account ID of the account that created the queue.
      * </p>
      * 
      * @param queueOwnerAWSAccountId
-     *        The AWS account ID of the account that created the queue.
+     *        The account ID of the account that created the queue.
      */
 
     public void setQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
@@ -140,10 +140,10 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS account ID of the account that created the queue.
+     * The account ID of the account that created the queue.
      * </p>
      * 
-     * @return The AWS account ID of the account that created the queue.
+     * @return The account ID of the account that created the queue.
      */
 
     public String getQueueOwnerAWSAccountId() {
@@ -152,11 +152,11 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The AWS account ID of the account that created the queue.
+     * The account ID of the account that created the queue.
      * </p>
      * 
      * @param queueOwnerAWSAccountId
-     *        The AWS account ID of the account that created the queue.
+     *        The account ID of the account that created the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -85,7 +85,7 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
     private String productId;
     /**
      * <p>
-     * Whether the algorithm is certified to be listed in AWS Marketplace.
+     * Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      * </p>
      */
     private Boolean certifyForMarketplace;
@@ -514,11 +514,11 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the algorithm is certified to be listed in AWS Marketplace.
+     * Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether the algorithm is certified to be listed in AWS Marketplace.
+     *        Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      */
 
     public void setCertifyForMarketplace(Boolean certifyForMarketplace) {
@@ -527,10 +527,10 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the algorithm is certified to be listed in AWS Marketplace.
+     * Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether the algorithm is certified to be listed in AWS Marketplace.
+     * @return Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      */
 
     public Boolean getCertifyForMarketplace() {
@@ -539,11 +539,11 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the algorithm is certified to be listed in AWS Marketplace.
+     * Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether the algorithm is certified to be listed in AWS Marketplace.
+     *        Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,10 +554,10 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the algorithm is certified to be listed in AWS Marketplace.
+     * Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether the algorithm is certified to be listed in AWS Marketplace.
+     * @return Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.
      */
 
     public Boolean isCertifyForMarketplace() {

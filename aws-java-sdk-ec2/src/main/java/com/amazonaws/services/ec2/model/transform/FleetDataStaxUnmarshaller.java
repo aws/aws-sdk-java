@@ -165,6 +165,10 @@ public class FleetDataStaxUnmarshaller implements Unmarshaller<FleetData, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("context", targetDepth)) {
+                    fleetData.setContext(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return fleetData;

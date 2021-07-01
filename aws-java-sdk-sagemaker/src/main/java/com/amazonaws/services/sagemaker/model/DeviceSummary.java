@@ -54,7 +54,7 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
     private String deviceFleetName;
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device..
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      * </p>
      */
     private String iotThingName;
@@ -239,11 +239,11 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device..
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      * </p>
      * 
      * @param iotThingName
-     *        The AWS Internet of Things (IoT) object thing name associated with the device..
+     *        The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      */
 
     public void setIotThingName(String iotThingName) {
@@ -252,10 +252,10 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device..
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      * </p>
      * 
-     * @return The AWS Internet of Things (IoT) object thing name associated with the device..
+     * @return The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      */
 
     public String getIotThingName() {
@@ -264,11 +264,11 @@ public class DeviceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Internet of Things (IoT) object thing name associated with the device..
+     * The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      * </p>
      * 
      * @param iotThingName
-     *        The AWS Internet of Things (IoT) object thing name associated with the device..
+     *        The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

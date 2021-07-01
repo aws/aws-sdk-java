@@ -37,7 +37,8 @@ public class DescribeProcessingJobResult extends com.amazonaws.AmazonWebServiceR
     private ProcessingOutputConfig processingOutputConfig;
     /**
      * <p>
-     * The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     * The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web
+     * Services account.
      * </p>
      */
     private String processingJobName;
@@ -264,11 +265,13 @@ public class DescribeProcessingJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     * The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web
+     * Services account.
      * </p>
      * 
      * @param processingJobName
-     *        The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     *        The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon
+     *        Web Services account.
      */
 
     public void setProcessingJobName(String processingJobName) {
@@ -277,10 +280,12 @@ public class DescribeProcessingJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     * The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web
+     * Services account.
      * </p>
      * 
-     * @return The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     * @return The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+     *         Amazon Web Services account.
      */
 
     public String getProcessingJobName() {
@@ -289,11 +294,13 @@ public class DescribeProcessingJobResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     * The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web
+     * Services account.
      * </p>
      * 
      * @param processingJobName
-     *        The name of the processing job. The name must be unique within an AWS Region in the AWS account.
+     *        The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon
+     *        Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource
- * in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+ * in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SourceAlgorithm" target="_top">AWS API
@@ -44,7 +44,8 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm
-     * resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+     * resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are
+     * subscribed to.
      * </p>
      */
     private String algorithmName;
@@ -122,13 +123,14 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm
-     * resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+     * resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are
+     * subscribed to.
      * </p>
      * 
      * @param algorithmName
      *        The name of an algorithm that was used to create the model package. The algorithm must be either an
-     *        algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are
-     *        subscribed to.
+     *        algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace
+     *        that you are subscribed to.
      */
 
     public void setAlgorithmName(String algorithmName) {
@@ -138,12 +140,13 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm
-     * resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+     * resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are
+     * subscribed to.
      * </p>
      * 
      * @return The name of an algorithm that was used to create the model package. The algorithm must be either an
-     *         algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are
-     *         subscribed to.
+     *         algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace
+     *         that you are subscribed to.
      */
 
     public String getAlgorithmName() {
@@ -153,13 +156,14 @@ public class SourceAlgorithm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm
-     * resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+     * resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are
+     * subscribed to.
      * </p>
      * 
      * @param algorithmName
      *        The name of an algorithm that was used to create the model package. The algorithm must be either an
-     *        algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are
-     *        subscribed to.
+     *        algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace
+     *        that you are subscribed to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

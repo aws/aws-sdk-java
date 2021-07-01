@@ -53,8 +53,8 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
-     * <code>false</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     * otherwise, set it to <code>false</code>.
      * </p>
      */
     private EnclaveOptions enclaveOptions;
@@ -390,13 +390,13 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
-     * <code>false</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     * otherwise, set it to <code>false</code>.
      * </p>
      * 
      * @param enclaveOptions
-     *        To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it
-     *        to <code>false</code>.
+     *        To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     *        otherwise, set it to <code>false</code>.
      */
 
     public void setEnclaveOptions(EnclaveOptions enclaveOptions) {
@@ -405,12 +405,12 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
-     * <code>false</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     * otherwise, set it to <code>false</code>.
      * </p>
      * 
-     * @return To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it
-     *         to <code>false</code>.
+     * @return To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     *         otherwise, set it to <code>false</code>.
      */
 
     public EnclaveOptions getEnclaveOptions() {
@@ -419,13 +419,13 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
-     * <code>false</code>.
+     * To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     * otherwise, set it to <code>false</code>.
      * </p>
      * 
      * @param enclaveOptions
-     *        To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it
-     *        to <code>false</code>.
+     *        To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>;
+     *        otherwise, set it to <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

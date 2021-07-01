@@ -120,8 +120,8 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
-     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
-     * Center and search for the kernel ID.
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web
+     * Services Resource Center and search for the kernel ID.
      * </p>
      */
     private String ramdiskId;
@@ -920,14 +920,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
-     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
-     * Center and search for the kernel ID.
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web
+     * Services Resource Center and search for the kernel ID.
      * </p>
      * 
      * @param ramdiskId
      *        The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
      *        for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
-     *        AWS Resource Center and search for the kernel ID.
+     *        Amazon Web Services Resource Center and search for the kernel ID.
      */
 
     public void setRamdiskId(String ramdiskId) {
@@ -937,13 +937,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
-     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
-     * Center and search for the kernel ID.
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web
+     * Services Resource Center and search for the kernel ID.
      * </p>
      * 
      * @return The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
      *         for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
-     *         AWS Resource Center and search for the kernel ID.
+     *         Amazon Web Services Resource Center and search for the kernel ID.
      */
 
     public String getRamdiskId() {
@@ -953,14 +953,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
-     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
-     * Center and search for the kernel ID.
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the Amazon Web
+     * Services Resource Center and search for the kernel ID.
      * </p>
      * 
      * @param ramdiskId
      *        The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
      *        for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
-     *        AWS Resource Center and search for the kernel ID.
+     *        Amazon Web Services Resource Center and search for the kernel ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

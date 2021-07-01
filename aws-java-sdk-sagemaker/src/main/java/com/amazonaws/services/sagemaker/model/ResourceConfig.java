@@ -74,8 +74,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
     private Integer volumeSizeInGB;
     /**
      * <p>
-     * The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that run the training job.
+     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -412,8 +412,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that run the training job.
+     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -455,8 +455,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
-     *        compute instance(s) that run the training job.</p> <note>
+     *        The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
+     *        to the ML compute instance(s) that run the training job.</p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>
@@ -501,8 +501,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that run the training job.
+     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -543,8 +543,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
-     *         compute instance(s) that run the training job.</p> <note>
+     * @return The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
+     *         to the ML compute instance(s) that run the training job.</p> <note>
      *         <p>
      *         Certain Nitro-based instances include local storage, dependent on the instance type. Local storage
      *         volumes are encrypted using a hardware module on the instance. You can't request a
@@ -589,8 +589,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that run the training job.
+     * The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the
+     * ML compute instance(s) that run the training job.
      * </p>
      * <note>
      * <p>
@@ -632,8 +632,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
-     *        compute instance(s) that run the training job.</p> <note>
+     *        The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached
+     *        to the ML compute instance(s) that run the training job.</p> <note>
      *        <p>
      *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
      *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>

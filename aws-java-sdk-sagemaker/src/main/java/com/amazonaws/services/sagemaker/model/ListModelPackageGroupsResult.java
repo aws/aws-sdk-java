@@ -25,7 +25,7 @@ public class ListModelPackageGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of summaries of the model groups in your AWS account.
+     * A list of summaries of the model groups in your Amazon Web Services account.
      * </p>
      */
     private java.util.List<ModelPackageGroupSummary> modelPackageGroupSummaryList;
@@ -39,10 +39,10 @@ public class ListModelPackageGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of summaries of the model groups in your AWS account.
+     * A list of summaries of the model groups in your Amazon Web Services account.
      * </p>
      * 
-     * @return A list of summaries of the model groups in your AWS account.
+     * @return A list of summaries of the model groups in your Amazon Web Services account.
      */
 
     public java.util.List<ModelPackageGroupSummary> getModelPackageGroupSummaryList() {
@@ -51,11 +51,11 @@ public class ListModelPackageGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of summaries of the model groups in your AWS account.
+     * A list of summaries of the model groups in your Amazon Web Services account.
      * </p>
      * 
      * @param modelPackageGroupSummaryList
-     *        A list of summaries of the model groups in your AWS account.
+     *        A list of summaries of the model groups in your Amazon Web Services account.
      */
 
     public void setModelPackageGroupSummaryList(java.util.Collection<ModelPackageGroupSummary> modelPackageGroupSummaryList) {
@@ -69,7 +69,7 @@ public class ListModelPackageGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of summaries of the model groups in your AWS account.
+     * A list of summaries of the model groups in your Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListModelPackageGroupsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param modelPackageGroupSummaryList
-     *        A list of summaries of the model groups in your AWS account.
+     *        A list of summaries of the model groups in your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListModelPackageGroupsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of summaries of the model groups in your AWS account.
+     * A list of summaries of the model groups in your Amazon Web Services account.
      * </p>
      * 
      * @param modelPackageGroupSummaryList
-     *        A list of summaries of the model groups in your AWS account.
+     *        A list of summaries of the model groups in your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

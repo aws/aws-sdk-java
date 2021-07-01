@@ -40,7 +40,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
     private SpotInstanceStateFault fault;
     /**
      * <p>
-     * The AWS account ID of the account.
+     * The account ID of the account.
      * </p>
      */
     private String ownerId;
@@ -139,11 +139,11 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the account.
+     * The account ID of the account.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the account.
+     *        The account ID of the account.
      */
 
     public void setOwnerId(String ownerId) {
@@ -152,10 +152,10 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the account.
+     * The account ID of the account.
      * </p>
      * 
-     * @return The AWS account ID of the account.
+     * @return The account ID of the account.
      */
 
     public String getOwnerId() {
@@ -164,11 +164,11 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the account.
+     * The account ID of the account.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the account.
+     *        The account ID of the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

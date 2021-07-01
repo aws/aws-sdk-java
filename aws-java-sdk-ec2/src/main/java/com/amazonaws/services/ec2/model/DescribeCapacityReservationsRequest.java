@@ -58,7 +58,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     * <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      * </p>
      * </li>
      * <li>
@@ -85,13 +85,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -372,7 +372,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     * <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      * </p>
      * </li>
      * <li>
@@ -399,13 +399,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -516,7 +516,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     *         <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      *         </p>
      *         </li>
      *         <li>
@@ -543,14 +543,14 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
+     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other
      *         accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *         to a single AWS account.
+     *         to a single account.
      *         </p>
      *         </li>
      *         </ul>
@@ -672,7 +672,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     * <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      * </p>
      * </li>
      * <li>
@@ -699,13 +699,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -817,7 +817,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     *        <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      *        </p>
      *        </li>
      *        <li>
@@ -844,14 +844,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
-     *        accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single AWS account.
+     *        to a single account.
      *        </p>
      *        </li>
      *        </ul>
@@ -975,7 +974,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     * <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      * </p>
      * </li>
      * <li>
@@ -1002,13 +1001,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -1125,7 +1124,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     *        <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      *        </p>
      *        </li>
      *        <li>
@@ -1152,14 +1151,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
-     *        accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single AWS account.
+     *        to a single account.
      *        </p>
      *        </li>
      *        </ul>
@@ -1285,7 +1283,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     * <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      * </p>
      * </li>
      * <li>
@@ -1312,13 +1310,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -1430,7 +1428,7 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.
+     *        <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.
      *        </p>
      *        </li>
      *        <li>
@@ -1457,14 +1455,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
-     *        accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single AWS account.
+     *        to a single account.
      *        </p>
      *        </li>
      *        </ul>

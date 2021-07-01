@@ -39,6 +39,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * A list of attributes for which to retrieve information.
      * </p>
+     * <p>
+     * The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the
+     * request returns empty results.
+     * </p>
      * <note>
      * <p>
      * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
@@ -133,7 +137,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -156,7 +160,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -168,8 +172,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
-     * custom CMK. For more information, see <a href=
+     * <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for
+     * Amazon SQS or a custom CMK. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      * >Key Terms</a>.
      * </p>
@@ -177,7 +181,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can
-     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href=
+     * reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -193,7 +197,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     * >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -207,7 +211,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -254,7 +258,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For information on throughput quotas, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
@@ -289,6 +293,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        Queue URLs and names are case-sensitive.
      * @param attributeNames
      *        A list of attributes for which to retrieve information.
+     *        </p>
+     *        <p>
+     *        The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this
+     *        parameter, the request returns empty results.
      *        </p>
      *        <note>
      *        <p>
@@ -384,7 +392,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue as a JSON object. For more information about the redrive policy and
      *        dead-letter queues, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -407,7 +415,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -419,8 +427,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
-     *        a custom CMK. For more information, see <a href=
+     *        <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK)
+     *        for Amazon SQS or a custom CMK. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      *        >Key Terms</a>.
      *        </p>
@@ -428,8 +436,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS
-     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information,
-     *        see <a href=
+     *        can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -446,7 +454,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     *        >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -460,7 +468,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -507,7 +515,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For information on throughput quotas, see <a
      *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
-     *        >Quotas related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      */
     public GetQueueAttributesRequest(String queueUrl, java.util.List<String> attributeNames) {
         setQueueUrl(queueUrl);
@@ -572,6 +580,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of attributes for which to retrieve information.
+     * </p>
+     * <p>
+     * The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the
+     * request returns empty results.
      * </p>
      * <note>
      * <p>
@@ -667,7 +679,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -690,7 +702,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -702,8 +714,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
-     * custom CMK. For more information, see <a href=
+     * <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for
+     * Amazon SQS or a custom CMK. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      * >Key Terms</a>.
      * </p>
@@ -711,7 +723,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can
-     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href=
+     * reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -727,7 +739,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     * >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -741,7 +753,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -788,10 +800,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For information on throughput quotas, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
-     * @return A list of attributes for which to retrieve information.</p> <note>
+     * @return A list of attributes for which to retrieve information.</p>
+     *         <p>
+     *         The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this
+     *         parameter, the request returns empty results.
+     *         </p>
+     *         <note>
      *         <p>
      *         In the future, new attributes might be added. If you write code that calls this action, we recommend that
      *         you structure your code so that it can handle new attributes gracefully.
@@ -885,7 +902,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         functionality of the source queue as a JSON object. For more information about the redrive policy and
      *         dead-letter queues, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *         >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -908,7 +925,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about
      *         the visibility timeout, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *         >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -920,8 +937,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS
-     *         or a custom CMK. For more information, see <a href=
+     *         <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK)
+     *         for Amazon SQS or a custom CMK. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      *         >Key Terms</a>.
      *         </p>
@@ -929,8 +946,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS
-     *         can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information,
-     *         see <a href=
+     *         can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see
+     *         <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *         >How Does the Data Key Reuse Period Work?</a>.
      *         </p>
@@ -947,7 +964,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see
      *         <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     *         >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -961,7 +978,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the
      *         queue. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *         >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -1008,7 +1025,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         For information on throughput quotas, see <a
      *         href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
-     *         >Quotas related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * @see QueueAttributeName
      */
 
@@ -1022,6 +1039,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of attributes for which to retrieve information.
+     * </p>
+     * <p>
+     * The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the
+     * request returns empty results.
      * </p>
      * <note>
      * <p>
@@ -1117,7 +1138,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1140,7 +1161,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1152,8 +1173,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
-     * custom CMK. For more information, see <a href=
+     * <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for
+     * Amazon SQS or a custom CMK. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      * >Key Terms</a>.
      * </p>
@@ -1161,7 +1182,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can
-     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href=
+     * reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -1177,7 +1198,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     * >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1191,7 +1212,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1238,11 +1259,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For information on throughput quotas, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param attributeNames
-     *        A list of attributes for which to retrieve information.</p> <note>
+     *        A list of attributes for which to retrieve information.</p>
+     *        <p>
+     *        The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this
+     *        parameter, the request returns empty results.
+     *        </p>
+     *        <note>
      *        <p>
      *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
      *        you structure your code so that it can handle new attributes gracefully.
@@ -1336,7 +1362,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue as a JSON object. For more information about the redrive policy and
      *        dead-letter queues, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1359,7 +1385,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1371,8 +1397,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
-     *        a custom CMK. For more information, see <a href=
+     *        <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK)
+     *        for Amazon SQS or a custom CMK. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      *        >Key Terms</a>.
      *        </p>
@@ -1380,8 +1406,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS
-     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information,
-     *        see <a href=
+     *        can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -1398,7 +1424,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     *        >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1412,7 +1438,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1459,7 +1485,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For information on throughput quotas, see <a
      *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
-     *        >Quotas related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * @see QueueAttributeName
      */
 
@@ -1476,6 +1502,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * A list of attributes for which to retrieve information.
      * </p>
+     * <p>
+     * The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the
+     * request returns empty results.
+     * </p>
      * <note>
      * <p>
      * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
@@ -1570,7 +1600,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1593,7 +1623,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1605,8 +1635,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
-     * custom CMK. For more information, see <a href=
+     * <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for
+     * Amazon SQS or a custom CMK. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      * >Key Terms</a>.
      * </p>
@@ -1614,7 +1644,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can
-     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href=
+     * reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -1630,7 +1660,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     * >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1644,7 +1674,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1691,7 +1721,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For information on throughput quotas, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1700,7 +1730,12 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param attributeNames
-     *        A list of attributes for which to retrieve information.</p> <note>
+     *        A list of attributes for which to retrieve information.</p>
+     *        <p>
+     *        The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this
+     *        parameter, the request returns empty results.
+     *        </p>
+     *        <note>
      *        <p>
      *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
      *        you structure your code so that it can handle new attributes gracefully.
@@ -1794,7 +1829,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue as a JSON object. For more information about the redrive policy and
      *        dead-letter queues, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1817,7 +1852,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1829,8 +1864,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
-     *        a custom CMK. For more information, see <a href=
+     *        <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK)
+     *        for Amazon SQS or a custom CMK. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      *        >Key Terms</a>.
      *        </p>
@@ -1838,8 +1873,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS
-     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information,
-     *        see <a href=
+     *        can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -1856,7 +1891,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     *        >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1870,7 +1905,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1917,7 +1952,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For information on throughput quotas, see <a
      *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
-     *        >Quotas related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueAttributeName
      */
@@ -1936,6 +1971,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * A list of attributes for which to retrieve information.
      * </p>
+     * <p>
+     * The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the
+     * request returns empty results.
+     * </p>
      * <note>
      * <p>
      * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
@@ -2030,7 +2069,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -2053,7 +2092,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2065,8 +2104,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
-     * custom CMK. For more information, see <a href=
+     * <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for
+     * Amazon SQS or a custom CMK. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      * >Key Terms</a>.
      * </p>
@@ -2074,7 +2113,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can
-     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href=
+     * reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -2090,7 +2129,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     * >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2104,7 +2143,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2151,11 +2190,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For information on throughput quotas, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param attributeNames
-     *        A list of attributes for which to retrieve information.</p> <note>
+     *        A list of attributes for which to retrieve information.</p>
+     *        <p>
+     *        The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this
+     *        parameter, the request returns empty results.
+     *        </p>
+     *        <note>
      *        <p>
      *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
      *        you structure your code so that it can handle new attributes gracefully.
@@ -2249,7 +2293,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue as a JSON object. For more information about the redrive policy and
      *        dead-letter queues, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -2272,7 +2316,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2284,8 +2328,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
-     *        a custom CMK. For more information, see <a href=
+     *        <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK)
+     *        for Amazon SQS or a custom CMK. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      *        >Key Terms</a>.
      *        </p>
@@ -2293,8 +2337,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS
-     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information,
-     *        see <a href=
+     *        can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -2311,7 +2355,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     *        >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -2325,7 +2369,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2372,7 +2416,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For information on throughput quotas, see <a
      *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
-     *        >Quotas related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueAttributeName
      */
@@ -2386,6 +2430,10 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * A list of attributes for which to retrieve information.
      * </p>
+     * <p>
+     * The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the
+     * request returns empty results.
+     * </p>
      * <note>
      * <p>
      * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
@@ -2480,7 +2528,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a
      * href
      * ="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -2503,7 +2551,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2515,8 +2563,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a
-     * custom CMK. For more information, see <a href=
+     * <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for
+     * Amazon SQS or a custom CMK. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      * >Key Terms</a>.
      * </p>
@@ -2524,7 +2572,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can
-     * reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href=
+     * reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      * >How Does the Data Key Reuse Period Work?</a>.
      * </p>
@@ -2540,7 +2588,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     * >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2554,7 +2602,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2601,11 +2649,16 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For information on throughput quotas, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas
-     * related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param attributeNames
-     *        A list of attributes for which to retrieve information.</p> <note>
+     *        A list of attributes for which to retrieve information.</p>
+     *        <p>
+     *        The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this
+     *        parameter, the request returns empty results.
+     *        </p>
+     *        <note>
      *        <p>
      *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
      *        you structure your code so that it can handle new attributes gracefully.
@@ -2699,7 +2752,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue as a JSON object. For more information about the redrive policy and
      *        dead-letter queues, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -2722,7 +2775,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2734,8 +2787,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or
-     *        a custom CMK. For more information, see <a href=
+     *        <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK)
+     *        for Amazon SQS or a custom CMK. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms"
      *        >Key Terms</a>.
      *        </p>
@@ -2743,8 +2796,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS
-     *        can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information,
-     *        see <a href=
+     *        can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a
+     *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work"
      *        >How Does the Data Key Reuse Period Work?</a>.
      *        </p>
@@ -2761,7 +2814,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html"
-     *        >FIFO queue logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -2775,7 +2828,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        >Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2822,7 +2875,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For information on throughput quotas, see <a
      *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html"
-     *        >Quotas related to messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueAttributeName
      */

@@ -136,7 +136,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String vpcId;
     /**
      * <p>
-     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      * </p>
      */
     private String kmsKeyId;
@@ -976,11 +976,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     *        The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -989,10 +989,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      * </p>
      * 
-     * @return The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * @return The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      */
 
     public String getKmsKeyId() {
@@ -1001,11 +1001,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     *        The Amazon Web Services KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

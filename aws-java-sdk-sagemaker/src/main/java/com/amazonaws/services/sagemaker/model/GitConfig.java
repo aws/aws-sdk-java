@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies configuration details for a Git repository in your AWS account.
+ * Specifies configuration details for a Git repository in your Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GitConfig" target="_top">AWS API
@@ -42,9 +42,9 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
     private String branch;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to access the
-     * git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
+     * the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
@@ -134,18 +134,18 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to access the
-     * git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
+     * the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to
-     *        access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
-     *        the following format:</p>
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
+     *        credentials used to access the git repository. The secret must have a staging label of
+     *        <code>AWSCURRENT</code> and must be in the following format:</p>
      *        <p>
      *        <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      */
@@ -156,17 +156,17 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to access the
-     * git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
+     * the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to
-     *         access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
-     *         the following format:</p>
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
+     *         credentials used to access the git repository. The secret must have a staging label of
+     *         <code>AWSCURRENT</code> and must be in the following format:</p>
      *         <p>
      *         <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      */
@@ -177,18 +177,18 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to access the
-     * git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following
-     * format:
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials
+     * used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
+     * the following format:
      * </p>
      * <p>
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to
-     *        access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in
-     *        the following format:</p>
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
+     *        credentials used to access the git repository. The secret must have a staging label of
+     *        <code>AWSCURRENT</code> and must be in the following format:</p>
      *        <p>
      *        <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code>
      * @return Returns a reference to this object so that method calls can be chained together.

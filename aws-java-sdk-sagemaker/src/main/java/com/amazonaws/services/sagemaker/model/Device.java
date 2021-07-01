@@ -42,7 +42,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * AWS Internet of Things (IoT) object name.
+     * Amazon Web Services Internet of Things (IoT) object name.
      * </p>
      */
     private String iotThingName;
@@ -129,11 +129,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * AWS Internet of Things (IoT) object name.
+     * Amazon Web Services Internet of Things (IoT) object name.
      * </p>
      * 
      * @param iotThingName
-     *        AWS Internet of Things (IoT) object name.
+     *        Amazon Web Services Internet of Things (IoT) object name.
      */
 
     public void setIotThingName(String iotThingName) {
@@ -142,10 +142,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * AWS Internet of Things (IoT) object name.
+     * Amazon Web Services Internet of Things (IoT) object name.
      * </p>
      * 
-     * @return AWS Internet of Things (IoT) object name.
+     * @return Amazon Web Services Internet of Things (IoT) object name.
      */
 
     public String getIotThingName() {
@@ -154,11 +154,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * AWS Internet of Things (IoT) object name.
+     * Amazon Web Services Internet of Things (IoT) object name.
      * </p>
      * 
      * @param iotThingName
-     *        AWS Internet of Things (IoT) object name.
+     *        Amazon Web Services Internet of Things (IoT) object name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -61,6 +61,12 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private Integer onDemandTargetCapacity;
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     */
+    private String context;
 
     /**
      * <p>
@@ -355,6 +361,46 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     */
+
+    public void setContext(String context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @return Reserved.
+     */
+
+    public String getContext() {
+        return this.context;
+    }
+
+    /**
+     * <p>
+     * Reserved.
+     * </p>
+     * 
+     * @param context
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySpotFleetRequestRequest withContext(String context) {
+        setContext(context);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -386,7 +432,9 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         if (getTargetCapacity() != null)
             sb.append("TargetCapacity: ").append(getTargetCapacity()).append(",");
         if (getOnDemandTargetCapacity() != null)
-            sb.append("OnDemandTargetCapacity: ").append(getOnDemandTargetCapacity());
+            sb.append("OnDemandTargetCapacity: ").append(getOnDemandTargetCapacity()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -422,6 +470,10 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getOnDemandTargetCapacity() != null && other.getOnDemandTargetCapacity().equals(this.getOnDemandTargetCapacity()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -435,6 +487,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
         hashCode = prime * hashCode + ((getOnDemandTargetCapacity() == null) ? 0 : getOnDemandTargetCapacity().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

@@ -99,8 +99,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String homeEfsFileSystemKmsKeyId;
     /**
      * <p>
-     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
-     * (CMK) by default. For more control, specify a customer managed CMK.
+     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * Services managed customer master key (CMK) by default. For more control, specify a customer managed CMK.
      * </p>
      */
     private String kmsKeyId;
@@ -686,13 +686,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
-     * (CMK) by default. For more control, specify a customer managed CMK.
+     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * Services managed customer master key (CMK) by default. For more control, specify a customer managed CMK.
      * </p>
      * 
      * @param kmsKeyId
-     *        SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
-     *        master key (CMK) by default. For more control, specify a customer managed CMK.
+     *        SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     *        Services managed customer master key (CMK) by default. For more control, specify a customer managed CMK.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -701,12 +701,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
-     * (CMK) by default. For more control, specify a customer managed CMK.
+     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * Services managed customer master key (CMK) by default. For more control, specify a customer managed CMK.
      * </p>
      * 
-     * @return SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
-     *         master key (CMK) by default. For more control, specify a customer managed CMK.
+     * @return SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon
+     *         Web Services managed customer master key (CMK) by default. For more control, specify a customer managed
+     *         CMK.
      */
 
     public String getKmsKeyId() {
@@ -715,13 +716,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
-     * (CMK) by default. For more control, specify a customer managed CMK.
+     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * Services managed customer master key (CMK) by default. For more control, specify a customer managed CMK.
      * </p>
      * 
      * @param kmsKeyId
-     *        SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
-     *        master key (CMK) by default. For more control, specify a customer managed CMK.
+     *        SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     *        Services managed customer master key (CMK) by default. For more control, specify a customer managed CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

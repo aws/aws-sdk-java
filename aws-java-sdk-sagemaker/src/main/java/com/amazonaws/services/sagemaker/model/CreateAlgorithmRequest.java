@@ -114,15 +114,15 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
     private AlgorithmValidationSpecification validationSpecification;
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      * </p>
      */
     private Boolean certifyForMarketplace;
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -669,11 +669,11 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     *        Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      */
 
     public void setCertifyForMarketplace(Boolean certifyForMarketplace) {
@@ -682,10 +682,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * @return Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      */
 
     public Boolean getCertifyForMarketplace() {
@@ -694,11 +694,11 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     *        Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -709,10 +709,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return Whether to certify the algorithm so that it can be listed in AWS Marketplace.
+     * @return Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
      */
 
     public Boolean isCertifyForMarketplace() {
@@ -721,14 +721,15 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
-     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *         example, by purpose, owner, or environment. For more information, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * @return An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *         different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -737,15 +738,16 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -759,9 +761,9 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -770,9 +772,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -788,15 +791,16 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
-     * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways,
+     * for example, by purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     *        An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
+     *        different ways, for example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

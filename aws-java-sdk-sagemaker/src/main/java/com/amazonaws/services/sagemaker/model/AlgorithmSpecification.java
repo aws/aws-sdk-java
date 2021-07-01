@@ -49,8 +49,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
-     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
-     * for <code>TrainingImage</code>.
+     * created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't
+     * specify a value for <code>TrainingImage</code>.
      * </p>
      */
     private String algorithmName;
@@ -208,14 +208,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
-     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
-     * for <code>TrainingImage</code>.
+     * created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't
+     * specify a value for <code>TrainingImage</code>.
      * </p>
      * 
      * @param algorithmName
      *        The name of the algorithm resource to use for the training job. This must be an algorithm resource that
-     *        you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
-     *        specify a value for <code>TrainingImage</code>.
+     *        you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter,
+     *        you can't specify a value for <code>TrainingImage</code>.
      */
 
     public void setAlgorithmName(String algorithmName) {
@@ -225,13 +225,13 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
-     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
-     * for <code>TrainingImage</code>.
+     * created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't
+     * specify a value for <code>TrainingImage</code>.
      * </p>
      * 
      * @return The name of the algorithm resource to use for the training job. This must be an algorithm resource that
-     *         you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
-     *         specify a value for <code>TrainingImage</code>.
+     *         you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this
+     *         parameter, you can't specify a value for <code>TrainingImage</code>.
      */
 
     public String getAlgorithmName() {
@@ -241,14 +241,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
-     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
-     * for <code>TrainingImage</code>.
+     * created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter, you can't
+     * specify a value for <code>TrainingImage</code>.
      * </p>
      * 
      * @param algorithmName
      *        The name of the algorithm resource to use for the training job. This must be an algorithm resource that
-     *        you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
-     *        specify a value for <code>TrainingImage</code>.
+     *        you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for this parameter,
+     *        you can't specify a value for <code>TrainingImage</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

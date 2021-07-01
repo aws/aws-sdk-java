@@ -27,7 +27,7 @@ public class CreateContextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the context. Must be unique to your account in an AWS Region.
+     * The name of the context. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      */
     private String contextName;
@@ -64,11 +64,11 @@ public class CreateContextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the context. Must be unique to your account in an AWS Region.
+     * The name of the context. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
      * @param contextName
-     *        The name of the context. Must be unique to your account in an AWS Region.
+     *        The name of the context. Must be unique to your account in an Amazon Web Services Region.
      */
 
     public void setContextName(String contextName) {
@@ -77,10 +77,10 @@ public class CreateContextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the context. Must be unique to your account in an AWS Region.
+     * The name of the context. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
-     * @return The name of the context. Must be unique to your account in an AWS Region.
+     * @return The name of the context. Must be unique to your account in an Amazon Web Services Region.
      */
 
     public String getContextName() {
@@ -89,11 +89,11 @@ public class CreateContextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the context. Must be unique to your account in an AWS Region.
+     * The name of the context. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
      * @param contextName
-     *        The name of the context. Must be unique to your account in an AWS Region.
+     *        The name of the context. Must be unique to your account in an Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

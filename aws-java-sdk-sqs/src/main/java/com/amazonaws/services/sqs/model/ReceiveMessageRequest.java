@@ -59,7 +59,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     * <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -220,7 +220,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -257,8 +257,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private String receiveRequestAttemptId;
@@ -362,7 +361,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     * <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -429,7 +428,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     *         <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -507,7 +506,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     * <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -575,7 +574,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     *        <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -655,7 +654,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     * <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -728,7 +727,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     *        <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -810,7 +809,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     * <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -878,7 +877,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     *        <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -955,7 +954,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     * <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -1023,7 +1022,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWSTraceHeader</code> – Returns the AWS X-Ray trace header string.
+     *        <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -1680,7 +1679,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1717,8 +1716,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param receiveRequestAttemptId
@@ -1761,7 +1759,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the
      *        visibility timeout. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>
@@ -1799,8 +1797,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     *        >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     *        Guide</i>.
+     *        >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setReceiveRequestAttemptId(String receiveRequestAttemptId) {
@@ -1847,7 +1844,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1884,8 +1881,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -1927,7 +1923,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the
      *         visibility timeout. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *         >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         <important>
      *         <p>
@@ -1966,8 +1962,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     *         >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     *         Guide</i>.
+     *         >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public String getReceiveRequestAttemptId() {
@@ -2014,7 +2009,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility
      * timeout. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2051,8 +2046,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.
+     * >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param receiveRequestAttemptId
@@ -2095,7 +2089,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the
      *        visibility timeout. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>
@@ -2133,8 +2127,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html"
-     *        >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue Service Developer
-     *        Guide</i>.
+     *        >Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

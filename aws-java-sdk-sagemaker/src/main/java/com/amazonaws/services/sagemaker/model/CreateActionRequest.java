@@ -27,7 +27,7 @@ public class CreateActionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the action. Must be unique to your account in an AWS Region.
+     * The name of the action. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      */
     private String actionName;
@@ -72,11 +72,11 @@ public class CreateActionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the action. Must be unique to your account in an AWS Region.
+     * The name of the action. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
      * @param actionName
-     *        The name of the action. Must be unique to your account in an AWS Region.
+     *        The name of the action. Must be unique to your account in an Amazon Web Services Region.
      */
 
     public void setActionName(String actionName) {
@@ -85,10 +85,10 @@ public class CreateActionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the action. Must be unique to your account in an AWS Region.
+     * The name of the action. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
-     * @return The name of the action. Must be unique to your account in an AWS Region.
+     * @return The name of the action. Must be unique to your account in an Amazon Web Services Region.
      */
 
     public String getActionName() {
@@ -97,11 +97,11 @@ public class CreateActionRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the action. Must be unique to your account in an AWS Region.
+     * The name of the action. Must be unique to your account in an Amazon Web Services Region.
      * </p>
      * 
      * @param actionName
-     *        The name of the action. Must be unique to your account in an AWS Region.
+     *        The name of the action. Must be unique to your account in an Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

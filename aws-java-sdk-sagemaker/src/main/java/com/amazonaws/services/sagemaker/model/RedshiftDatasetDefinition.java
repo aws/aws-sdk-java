@@ -49,8 +49,8 @@ public class RedshiftDatasetDefinition implements Serializable, Cloneable, Struc
     private String outputS3Uri;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     * execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data from a Redshift execution.
      * </p>
      */
     private String kmsKeyId;
@@ -245,13 +245,13 @@ public class RedshiftDatasetDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     * execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data from a Redshift execution.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     *        execution.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data from a Redshift execution.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -260,12 +260,12 @@ public class RedshiftDatasetDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     * execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data from a Redshift execution.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     *         execution.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt data from a Redshift execution.
      */
 
     public String getKmsKeyId() {
@@ -274,13 +274,13 @@ public class RedshiftDatasetDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     * execution.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data from a Redshift execution.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a Redshift
-     *        execution.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data from a Redshift execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

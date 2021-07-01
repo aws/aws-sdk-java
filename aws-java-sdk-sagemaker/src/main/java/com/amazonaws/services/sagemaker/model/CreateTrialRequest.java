@@ -27,7 +27,7 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     * The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.
      * </p>
      */
     private String trialName;
@@ -55,11 +55,12 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     * The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.
      * </p>
      * 
      * @param trialName
-     *        The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     *        The name of the trial. The name must be unique in your Amazon Web Services account and is not
+     *        case-sensitive.
      */
 
     public void setTrialName(String trialName) {
@@ -68,10 +69,11 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     * The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.
      * </p>
      * 
-     * @return The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     * @return The name of the trial. The name must be unique in your Amazon Web Services account and is not
+     *         case-sensitive.
      */
 
     public String getTrialName() {
@@ -80,11 +82,12 @@ public class CreateTrialRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     * The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.
      * </p>
      * 
      * @param trialName
-     *        The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
+     *        The name of the trial. The name must be unique in your Amazon Web Services account and is not
+     *        case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -319,6 +319,10 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
             }
         }
 
+        if (createFleetRequest.getContext() != null) {
+            request.addParameter("Context", StringUtils.fromString(createFleetRequest.getContext()));
+        }
+
         return request;
     }
 

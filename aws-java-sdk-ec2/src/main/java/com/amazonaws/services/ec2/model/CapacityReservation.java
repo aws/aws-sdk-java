@@ -34,7 +34,7 @@ public class CapacityReservation implements Serializable, Cloneable {
     private String capacityReservationId;
     /**
      * <p>
-     * The ID of the AWS account that owns the Capacity Reservation.
+     * The ID of the account that owns the Capacity Reservation.
      * </p>
      */
     private String ownerId;
@@ -76,13 +76,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -268,11 +268,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Capacity Reservation.
+     * The ID of the account that owns the Capacity Reservation.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the Capacity Reservation.
+     *        The ID of the account that owns the Capacity Reservation.
      */
 
     public void setOwnerId(String ownerId) {
@@ -281,10 +281,10 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Capacity Reservation.
+     * The ID of the account that owns the Capacity Reservation.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the Capacity Reservation.
+     * @return The ID of the account that owns the Capacity Reservation.
      */
 
     public String getOwnerId() {
@@ -293,11 +293,11 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Capacity Reservation.
+     * The ID of the account that owns the Capacity Reservation.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account that owns the Capacity Reservation.
+     *        The ID of the account that owns the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,13 +533,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -550,14 +550,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
-     *        accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single AWS account.
+     *        to a single account.
      *        </p>
      *        </li>
      * @see CapacityReservationTenancy
@@ -575,13 +574,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -591,14 +590,14 @@ public class CapacityReservation implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
+     *         <code>default</code> - The Capacity Reservation is created on hardware that is shared with other
      *         accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *         to a single AWS account.
+     *         to a single account.
      *         </p>
      *         </li>
      * @see CapacityReservationTenancy
@@ -616,13 +615,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -633,14 +632,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
-     *        accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single AWS account.
+     *        to a single account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -660,13 +658,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.
+     * <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single AWS account.
+     * single account.
      * </p>
      * </li>
      * </ul>
@@ -677,14 +675,13 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS
-     *        accounts.
+     *        <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated
-     *        to a single AWS account.
+     *        to a single account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -28,24 +28,24 @@ public class InstanceUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that is making use of the Capacity Reservation.
+     * The ID of the account that is making use of the Capacity Reservation.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The number of instances the AWS account currently has in the Capacity Reservation.
+     * The number of instances the account currently has in the Capacity Reservation.
      * </p>
      */
     private Integer usedInstanceCount;
 
     /**
      * <p>
-     * The ID of the AWS account that is making use of the Capacity Reservation.
+     * The ID of the account that is making use of the Capacity Reservation.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that is making use of the Capacity Reservation.
+     *        The ID of the account that is making use of the Capacity Reservation.
      */
 
     public void setAccountId(String accountId) {
@@ -54,10 +54,10 @@ public class InstanceUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that is making use of the Capacity Reservation.
+     * The ID of the account that is making use of the Capacity Reservation.
      * </p>
      * 
-     * @return The ID of the AWS account that is making use of the Capacity Reservation.
+     * @return The ID of the account that is making use of the Capacity Reservation.
      */
 
     public String getAccountId() {
@@ -66,11 +66,11 @@ public class InstanceUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that is making use of the Capacity Reservation.
+     * The ID of the account that is making use of the Capacity Reservation.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account that is making use of the Capacity Reservation.
+     *        The ID of the account that is making use of the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class InstanceUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances the AWS account currently has in the Capacity Reservation.
+     * The number of instances the account currently has in the Capacity Reservation.
      * </p>
      * 
      * @param usedInstanceCount
-     *        The number of instances the AWS account currently has in the Capacity Reservation.
+     *        The number of instances the account currently has in the Capacity Reservation.
      */
 
     public void setUsedInstanceCount(Integer usedInstanceCount) {
@@ -94,10 +94,10 @@ public class InstanceUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances the AWS account currently has in the Capacity Reservation.
+     * The number of instances the account currently has in the Capacity Reservation.
      * </p>
      * 
-     * @return The number of instances the AWS account currently has in the Capacity Reservation.
+     * @return The number of instances the account currently has in the Capacity Reservation.
      */
 
     public Integer getUsedInstanceCount() {
@@ -106,11 +106,11 @@ public class InstanceUsage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances the AWS account currently has in the Capacity Reservation.
+     * The number of instances the account currently has in the Capacity Reservation.
      * </p>
      * 
      * @param usedInstanceCount
-     *        The number of instances the AWS account currently has in the Capacity Reservation.
+     *        The number of instances the account currently has in the Capacity Reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

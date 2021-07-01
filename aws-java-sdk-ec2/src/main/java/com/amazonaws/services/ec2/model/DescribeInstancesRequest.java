@@ -355,7 +355,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * </li>
      * <li>
@@ -389,7 +389,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the instance owner.
+     * <code>owner-id</code> - The account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -440,7 +440,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
      * Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
@@ -879,7 +879,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * </li>
      * <li>
@@ -913,7 +913,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the instance owner.
+     * <code>owner-id</code> - The account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -964,7 +964,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
      * Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
@@ -1379,7 +1379,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>network-interface.requester-managed</code> - Indicates whether the network interface is being
-     *         managed by AWS.
+     *         managed by Amazon Web Services.
      *         </p>
      *         </li>
      *         <li>
@@ -1413,7 +1413,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The AWS account ID of the instance owner.
+     *         <code>owner-id</code> - The account ID of the instance owner.
      *         </p>
      *         </li>
      *         <li>
@@ -1467,7 +1467,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *         AWS Management Console, Auto Scaling, and so on).
+     *         Management Console, Auto Scaling, and so on).
      *         </p>
      *         </li>
      *         <li>
@@ -1889,7 +1889,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * </li>
      * <li>
@@ -1923,7 +1923,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the instance owner.
+     * <code>owner-id</code> - The account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -1974,7 +1974,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
      * Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
@@ -2390,7 +2390,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-interface.requester-managed</code> - Indicates whether the network interface is being
-     *        managed by AWS.
+     *        managed by Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
@@ -2424,7 +2424,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the instance owner.
+     *        <code>owner-id</code> - The account ID of the instance owner.
      *        </p>
      *        </li>
      *        <li>
@@ -2477,7 +2477,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>
@@ -2901,7 +2901,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * </li>
      * <li>
@@ -2935,7 +2935,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the instance owner.
+     * <code>owner-id</code> - The account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -2986,7 +2986,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
      * Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
@@ -3407,7 +3407,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-interface.requester-managed</code> - Indicates whether the network interface is being
-     *        managed by AWS.
+     *        managed by Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
@@ -3441,7 +3441,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the instance owner.
+     *        <code>owner-id</code> - The account ID of the instance owner.
      *        </p>
      *        </li>
      *        <li>
@@ -3494,7 +3494,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>
@@ -3920,7 +3920,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-interface.requester-managed</code> - Indicates whether the network interface is being managed by
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * </li>
      * <li>
@@ -3954,7 +3954,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the instance owner.
+     * <code>owner-id</code> - The account ID of the instance owner.
      * </p>
      * </li>
      * <li>
@@ -4005,7 +4005,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
+     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
      * Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
@@ -4421,7 +4421,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-interface.requester-managed</code> - Indicates whether the network interface is being
-     *        managed by AWS.
+     *        managed by Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
@@ -4455,7 +4455,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the instance owner.
+     *        <code>owner-id</code> - The account ID of the instance owner.
      *        </p>
      *        </li>
      *        <li>
@@ -4508,7 +4508,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>

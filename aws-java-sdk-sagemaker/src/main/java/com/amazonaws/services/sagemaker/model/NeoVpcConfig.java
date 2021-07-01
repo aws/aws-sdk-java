@@ -18,6 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The <a>VpcConfig</a> configuration object that specifies the VPC that you want the compilation jobs to connect to.
+ * For more information on controlling access to your Amazon S3 buckets used for compilation job, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Give Amazon SageMaker Compilation Jobs Access to
+ * Resources in Your Amazon VPC</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NeoVpcConfig" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +31,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the
+     * VPC that is specified in the <code>Subnets</code> field.
+     * </p>
+     */
     private java.util.List<String> securityGroupIds;
-
+    /**
+     * <p>
+     * The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in
+     * Amazon S3.
+     * </p>
+     */
     private java.util.List<String> subnets;
 
     /**
-     * @return
+     * <p>
+     * The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the
+     * VPC that is specified in the <code>Subnets</code> field.
+     * </p>
+     * 
+     * @return The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups
+     *         for the VPC that is specified in the <code>Subnets</code> field.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -38,7 +61,14 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the
+     * VPC that is specified in the <code>Subnets</code> field.
+     * </p>
+     * 
      * @param securityGroupIds
+     *        The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for
+     *        the VPC that is specified in the <code>Subnets</code> field.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -52,12 +82,18 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the
+     * VPC that is specified in the <code>Subnets</code> field.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param securityGroupIds
+     *        The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for
+     *        the VPC that is specified in the <code>Subnets</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,7 +108,14 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the
+     * VPC that is specified in the <code>Subnets</code> field.
+     * </p>
+     * 
      * @param securityGroupIds
+     *        The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for
+     *        the VPC that is specified in the <code>Subnets</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +125,13 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in
+     * Amazon S3.
+     * </p>
+     * 
+     * @return The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model
+     *         in Amazon S3.
      */
 
     public java.util.List<String> getSubnets() {
@@ -90,7 +139,14 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in
+     * Amazon S3.
+     * </p>
+     * 
      * @param subnets
+     *        The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model
+     *        in Amazon S3.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -104,12 +160,18 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in
+     * Amazon S3.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param subnets
+     *        The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model
+     *        in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,7 +186,14 @@ public class NeoVpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in
+     * Amazon S3.
+     * </p>
+     * 
      * @param subnets
+     *        The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model
+     *        in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

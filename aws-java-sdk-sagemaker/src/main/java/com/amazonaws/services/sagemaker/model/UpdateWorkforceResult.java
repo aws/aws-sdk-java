@@ -25,9 +25,9 @@ public class UpdateWorkforceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A single private workforce. You can create one private work force in each AWS Region. By default, any
-     * workforce-related API operation used in a specific region will apply to the workforce created in that region. To
-     * learn how to create a private workforce, see <a
+     * A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
+     * any workforce-related API operation used in a specific region will apply to the workforce created in that region.
+     * To learn how to create a private workforce, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      * Workforce</a>.
      * </p>
@@ -36,17 +36,17 @@ public class UpdateWorkforceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A single private workforce. You can create one private work force in each AWS Region. By default, any
-     * workforce-related API operation used in a specific region will apply to the workforce created in that region. To
-     * learn how to create a private workforce, see <a
+     * A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
+     * any workforce-related API operation used in a specific region will apply to the workforce created in that region.
+     * To learn how to create a private workforce, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      * Workforce</a>.
      * </p>
      * 
      * @param workforce
-     *        A single private workforce. You can create one private work force in each AWS Region. By default, any
-     *        workforce-related API operation used in a specific region will apply to the workforce created in that
-     *        region. To learn how to create a private workforce, see <a
+     *        A single private workforce. You can create one private work force in each Amazon Web Services Region. By
+     *        default, any workforce-related API operation used in a specific region will apply to the workforce created
+     *        in that region. To learn how to create a private workforce, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      *        Workforce</a>.
      */
@@ -57,16 +57,16 @@ public class UpdateWorkforceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A single private workforce. You can create one private work force in each AWS Region. By default, any
-     * workforce-related API operation used in a specific region will apply to the workforce created in that region. To
-     * learn how to create a private workforce, see <a
+     * A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
+     * any workforce-related API operation used in a specific region will apply to the workforce created in that region.
+     * To learn how to create a private workforce, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      * Workforce</a>.
      * </p>
      * 
-     * @return A single private workforce. You can create one private work force in each AWS Region. By default, any
-     *         workforce-related API operation used in a specific region will apply to the workforce created in that
-     *         region. To learn how to create a private workforce, see <a
+     * @return A single private workforce. You can create one private work force in each Amazon Web Services Region. By
+     *         default, any workforce-related API operation used in a specific region will apply to the workforce
+     *         created in that region. To learn how to create a private workforce, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      *         Workforce</a>.
      */
@@ -77,17 +77,17 @@ public class UpdateWorkforceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A single private workforce. You can create one private work force in each AWS Region. By default, any
-     * workforce-related API operation used in a specific region will apply to the workforce created in that region. To
-     * learn how to create a private workforce, see <a
+     * A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
+     * any workforce-related API operation used in a specific region will apply to the workforce created in that region.
+     * To learn how to create a private workforce, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      * Workforce</a>.
      * </p>
      * 
      * @param workforce
-     *        A single private workforce. You can create one private work force in each AWS Region. By default, any
-     *        workforce-related API operation used in a specific region will apply to the workforce created in that
-     *        region. To learn how to create a private workforce, see <a
+     *        A single private workforce. You can create one private work force in each Amazon Web Services Region. By
+     *        default, any workforce-related API operation used in a specific region will apply to the workforce created
+     *        in that region. To learn how to create a private workforce, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
      *        Workforce</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

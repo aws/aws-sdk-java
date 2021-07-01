@@ -653,6 +653,10 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                         StringUtils.fromInteger(spotFleetRequestConfig.getInstancePoolsToUseCount()));
             }
 
+            if (spotFleetRequestConfig.getContext() != null) {
+                request.addParameter("SpotFleetRequestConfig.Context", StringUtils.fromString(spotFleetRequestConfig.getContext()));
+            }
+
             com.amazonaws.internal.SdkInternalList<TagSpecification> spotFleetRequestConfigDataTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) spotFleetRequestConfig
                     .getTagSpecifications();
             if (!spotFleetRequestConfigDataTagSpecificationsList.isEmpty() || !spotFleetRequestConfigDataTagSpecificationsList.isAutoConstruct()) {

@@ -27,8 +27,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS account. The
-     * name:
+     * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
+     * Amazon Web Services account. The name:
      * </p>
      * <ul>
      * <li>
@@ -125,7 +125,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
      * </p>
      * <p>
-     * You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
      */
@@ -142,7 +142,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * A configuration for an AWS Glue or AWS Hive data cataolgue.
+     * A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      * </p>
      * </li>
      * <li>
@@ -178,8 +178,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS account. The
-     * name:
+     * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
+     * Amazon Web Services account. The name:
      * </p>
      * <ul>
      * <li>
@@ -195,8 +195,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param featureGroupName
-     *        The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS account.
-     *        The name:</p>
+     *        The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in
+     *        an Amazon Web Services account. The name:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -216,8 +216,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS account. The
-     * name:
+     * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
+     * Amazon Web Services account. The name:
      * </p>
      * <ul>
      * <li>
@@ -232,8 +232,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS
-     *         account. The name:</p>
+     * @return The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
+     *         in an Amazon Web Services account. The name:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -253,8 +253,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS account. The
-     * name:
+     * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
+     * Amazon Web Services account. The name:
      * </p>
      * <ul>
      * <li>
@@ -270,8 +270,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param featureGroupName
-     *        The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region in an AWS account.
-     *        The name:</p>
+     *        The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in
+     *        an Amazon Web Services account. The name:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -806,7 +806,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
      * </p>
      * <p>
-     * You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
      * 
@@ -815,8 +815,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is
      *        <code>False</code>.</p>
      *        <p>
-     *        You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
-     *        <code>OnlineStore</code>.
+     *        You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
+     *        the <code>OnlineStore</code>.
      */
 
     public void setOnlineStoreConfig(OnlineStoreConfig onlineStoreConfig) {
@@ -829,7 +829,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
      * </p>
      * <p>
-     * You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
      * 
@@ -837,8 +837,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is
      *         <code>False</code>.</p>
      *         <p>
-     *         You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
-     *         <code>OnlineStore</code>.
+     *         You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
+     *         the <code>OnlineStore</code>.
      */
 
     public OnlineStoreConfig getOnlineStoreConfig() {
@@ -851,7 +851,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
      * </p>
      * <p>
-     * You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
      * 
@@ -860,8 +860,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is
      *        <code>False</code>.</p>
      *        <p>
-     *        You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
-     *        <code>OnlineStore</code>.
+     *        You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
+     *        the <code>OnlineStore</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -882,7 +882,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * A configuration for an AWS Glue or AWS Hive data cataolgue.
+     * A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      * </p>
      * </li>
      * <li>
@@ -905,7 +905,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        A configuration for an AWS Glue or AWS Hive data cataolgue.
+     *        A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      *        </p>
      *        </li>
      *        <li>
@@ -934,7 +934,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * A configuration for an AWS Glue or AWS Hive data cataolgue.
+     * A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      * </p>
      * </li>
      * <li>
@@ -956,7 +956,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         A configuration for an AWS Glue or AWS Hive data cataolgue.
+     *         A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      *         </p>
      *         </li>
      *         <li>
@@ -985,7 +985,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * A configuration for an AWS Glue or AWS Hive data cataolgue.
+     * A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      * </p>
      * </li>
      * <li>
@@ -1008,7 +1008,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        A configuration for an AWS Glue or AWS Hive data cataolgue.
+     *        A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue.
      *        </p>
      *        </li>
      *        <li>

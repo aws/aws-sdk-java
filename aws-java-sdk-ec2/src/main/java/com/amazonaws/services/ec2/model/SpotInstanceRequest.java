@@ -28,8 +28,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot Instance while it runs.
+     * Deprecated.
      * </p>
      */
     private String actualBlockHourlyPrice;
@@ -42,7 +41,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private String availabilityZoneGroup;
     /**
      * <p>
-     * The duration for the Spot Instance, in minutes.
+     * Deprecated.
      * </p>
      */
     private Integer blockDurationMinutes;
@@ -165,13 +164,11 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot Instance while it runs.
+     * Deprecated.
      * </p>
      * 
      * @param actualBlockHourlyPrice
-     *        If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price
-     *        in effect for the Spot Instance while it runs.
+     *        Deprecated.
      */
 
     public void setActualBlockHourlyPrice(String actualBlockHourlyPrice) {
@@ -180,12 +177,10 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot Instance while it runs.
+     * Deprecated.
      * </p>
      * 
-     * @return If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price
-     *         in effect for the Spot Instance while it runs.
+     * @return Deprecated.
      */
 
     public String getActualBlockHourlyPrice() {
@@ -194,13 +189,11 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot Instance while it runs.
+     * Deprecated.
      * </p>
      * 
      * @param actualBlockHourlyPrice
-     *        If you specified a duration and your Spot Instance request was fulfilled, this is the fixed hourly price
-     *        in effect for the Spot Instance while it runs.
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +250,11 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The duration for the Spot Instance, in minutes.
+     * Deprecated.
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The duration for the Spot Instance, in minutes.
+     *        Deprecated.
      */
 
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
@@ -270,10 +263,10 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The duration for the Spot Instance, in minutes.
+     * Deprecated.
      * </p>
      * 
-     * @return The duration for the Spot Instance, in minutes.
+     * @return Deprecated.
      */
 
     public Integer getBlockDurationMinutes() {
@@ -282,11 +275,11 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The duration for the Spot Instance, in minutes.
+     * Deprecated.
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The duration for the Spot Instance, in minutes.
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

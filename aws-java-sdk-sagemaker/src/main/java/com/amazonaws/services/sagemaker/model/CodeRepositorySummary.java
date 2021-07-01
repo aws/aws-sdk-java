@@ -54,8 +54,8 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
-     * Secrets Manager secret that contains the credentials used to access the repository.
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      */
     private GitConfig gitConfig;
@@ -222,13 +222,13 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
-     * Secrets Manager secret that contains the credentials used to access the repository.
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      * 
      * @param gitConfig
-     *        Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
-     *        Secrets Manager secret that contains the credentials used to access the repository.
+     *        Configuration details for the Git repository, including the URL where it is located and the ARN of the
+     *        Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.
      */
 
     public void setGitConfig(GitConfig gitConfig) {
@@ -237,12 +237,12 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
-     * Secrets Manager secret that contains the credentials used to access the repository.
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      * 
      * @return Configuration details for the Git repository, including the URL where it is located and the ARN of the
-     *         AWS Secrets Manager secret that contains the credentials used to access the repository.
+     *         Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.
      */
 
     public GitConfig getGitConfig() {
@@ -251,13 +251,13 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
-     * Secrets Manager secret that contains the credentials used to access the repository.
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web
+     * Services Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      * 
      * @param gitConfig
-     *        Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
-     *        Secrets Manager secret that contains the credentials used to access the repository.
+     *        Configuration details for the Git repository, including the URL where it is located and the ARN of the
+     *        Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

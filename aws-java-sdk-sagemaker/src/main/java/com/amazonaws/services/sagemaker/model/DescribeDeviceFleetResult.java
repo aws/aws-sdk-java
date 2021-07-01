@@ -61,13 +61,13 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      * </p>
      */
     private String iotRoleAlias;
@@ -314,11 +314,11 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     *        The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      */
 
     public void setRoleArn(String roleArn) {
@@ -327,10 +327,10 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     * @return The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      */
 
     public String getRoleArn() {
@@ -339,11 +339,11 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).
+     *        The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,11 +354,11 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      * </p>
      * 
      * @param iotRoleAlias
-     *        The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     *        The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      */
 
     public void setIotRoleAlias(String iotRoleAlias) {
@@ -367,10 +367,10 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     * @return The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      */
 
     public String getIotRoleAlias() {
@@ -379,11 +379,11 @@ public class DescribeDeviceFleetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     * The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      * </p>
      * 
      * @param iotRoleAlias
-     *        The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).
+     *        The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,16 +40,16 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      */
     private ServiceCatalogProvisioningDetails serviceCatalogProvisioningDetails;
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference Guide</i>.
+     * An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -137,14 +137,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      * 
      * @param serviceCatalogProvisioningDetails
      *        The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     *        Catalog</a>.
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web
+     *        Services Service Catalog</a>.
      */
 
     public void setServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails serviceCatalogProvisioningDetails) {
@@ -154,13 +154,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      * 
      * @return The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     *         href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     *         Catalog</a>.
+     *         href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web
+     *         Services Service Catalog</a>.
      */
 
     public ServiceCatalogProvisioningDetails getServiceCatalogProvisioningDetails() {
@@ -170,14 +170,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     * Catalog</a>.
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services
+     * Service Catalog</a>.
      * </p>
      * 
      * @param serviceCatalogProvisioningDetails
      *        The product ID and provisioning artifact ID to provision a service catalog. For information, see <a
-     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
-     *        Catalog</a>.
+     *        href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web
+     *        Services Service Catalog</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,14 +188,15 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference Guide</i>.
+     * An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
-     * @return An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *         information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     *         resources</a> in the <i>AWS General Reference Guide</i>.
+     * @return An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource
+     *         costs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -204,15 +205,16 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference Guide</i>.
+     * An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     *        resources</a> in the <i>AWS General Reference Guide</i>.
+     *        An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource
+     *        costs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -226,9 +228,9 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference Guide</i>.
+     * An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -237,9 +239,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     *        resources</a> in the <i>AWS General Reference Guide</i>.
+     *        An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource
+     *        costs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,15 +258,16 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     * resources</a> in the <i>AWS General Reference Guide</i>.
+     * An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that you want to use to organize and track your AWS resource costs. For more
-     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-     *        resources</a> in the <i>AWS General Reference Guide</i>.
+     *        An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource
+     *        costs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

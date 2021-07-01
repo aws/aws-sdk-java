@@ -36,16 +36,16 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
     private String s3OutputLocation;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker
+     * uses the default KMS key for Amazon S3 for your role's account.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     * Greengrass Version 2 components.
      * </p>
      */
     private String presetDeploymentType;
@@ -72,9 +72,9 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
-     * number system. For example, version 1.0.0 represents the first major release for a component. For more
-     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     * component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
      * </p>
      * </note></li>
      * <li>
@@ -140,15 +140,15 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker
+     * uses the default KMS key for Amazon S3 for your role's account.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     *        for Amazon S3 for your role's account.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon
+     *        SageMaker uses the default KMS key for Amazon S3 for your role's account.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -157,14 +157,14 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker
+     * uses the default KMS key for Amazon S3 for your role's account.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *         volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS
-     *         key for Amazon S3 for your role's account.
+     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
+     *         to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon
+     *         SageMaker uses the default KMS key for Amazon S3 for your role's account.
      */
 
     public String getKmsKeyId() {
@@ -173,15 +173,15 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3
-     * for your role's account.
+     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker
+     * uses the default KMS key for Amazon S3 for your role's account.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key
-     *        for Amazon S3 for your role's account.
+     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
+     *        encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon
+     *        SageMaker uses the default KMS key for Amazon S3 for your role's account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,13 +192,13 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     * Greengrass Version 2 components.
      * </p>
      * 
      * @param presetDeploymentType
-     *        The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version
-     *        2 components.
+     *        The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     *        Greengrass Version 2 components.
      * @see EdgePresetDeploymentType
      */
 
@@ -208,12 +208,12 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     * Greengrass Version 2 components.
      * </p>
      * 
-     * @return The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass
-     *         Version 2 components.
+     * @return The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     *         Greengrass Version 2 components.
      * @see EdgePresetDeploymentType
      */
 
@@ -223,13 +223,13 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     * Greengrass Version 2 components.
      * </p>
      * 
      * @param presetDeploymentType
-     *        The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version
-     *        2 components.
+     *        The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     *        Greengrass Version 2 components.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EdgePresetDeploymentType
      */
@@ -241,13 +241,13 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
-     * components.
+     * The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     * Greengrass Version 2 components.
      * </p>
      * 
      * @param presetDeploymentType
-     *        The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version
-     *        2 components.
+     *        The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT
+     *        Greengrass Version 2 components.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EdgePresetDeploymentType
      */
@@ -280,9 +280,9 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
-     * number system. For example, version 1.0.0 represents the first major release for a component. For more
-     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     * component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
      * </p>
      * </note></li>
      * <li>
@@ -326,7 +326,7 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <note>
      *        <p>
-     *        AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     *        Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
      *        major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
      *        component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
      *        </p>
@@ -377,9 +377,9 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
-     * number system. For example, version 1.0.0 represents the first major release for a component. For more
-     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     * component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
      * </p>
      * </note></li>
      * <li>
@@ -422,7 +422,7 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <note>
      *         <p>
-     *         AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     *         Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
      *         major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
      *         component. For more information, see the <a href="https://semver.org/">semantic version
      *         specification</a>.
@@ -474,9 +474,9 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
-     * number system. For example, version 1.0.0 represents the first major release for a component. For more
-     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     * component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
      * </p>
      * </note></li>
      * <li>
@@ -520,7 +520,7 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <note>
      *        <p>
-     *        AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     *        Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
      *        major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
      *        component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
      *        </p>

@@ -28,18 +28,27 @@ public class PurchaseReservedInstancesOfferingResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final
+     * Reserved Instances IDs might change. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     * >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String reservedInstancesId;
 
     /**
      * <p>
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final
+     * Reserved Instances IDs might change. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     * >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param reservedInstancesId
-     *        The IDs of the purchased Reserved Instances.
+     *        The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the
+     *        final Reserved Instances IDs might change. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     *        >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setReservedInstancesId(String reservedInstancesId) {
@@ -48,10 +57,16 @@ public class PurchaseReservedInstancesOfferingResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final
+     * Reserved Instances IDs might change. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     * >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The IDs of the purchased Reserved Instances.
+     * @return The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the
+     *         final Reserved Instances IDs might change. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     *         >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getReservedInstancesId() {
@@ -60,11 +75,17 @@ public class PurchaseReservedInstancesOfferingResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The IDs of the purchased Reserved Instances.
+     * The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final
+     * Reserved Instances IDs might change. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     * >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param reservedInstancesId
-     *        The IDs of the purchased Reserved Instances.
+     *        The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the
+     *        final Reserved Instances IDs might change. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers"
+     *        >Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

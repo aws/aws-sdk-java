@@ -75,7 +75,8 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * AWS Glue or AWS Hive data catalogue configurations, and the security configuration.
+     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
+     * configuration.
      * </p>
      */
     private OfflineStoreConfig offlineStoreConfig;
@@ -488,13 +489,14 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * AWS Glue or AWS Hive data catalogue configurations, and the security configuration.
+     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
+     * configuration.
      * </p>
      * 
      * @param offlineStoreConfig
      *        The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-     *        <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue configurations, and the security
-     *        configuration.
+     *        <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue
+     *        configurations, and the security configuration.
      */
 
     public void setOfflineStoreConfig(OfflineStoreConfig offlineStoreConfig) {
@@ -504,12 +506,13 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * AWS Glue or AWS Hive data catalogue configurations, and the security configuration.
+     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
+     * configuration.
      * </p>
      * 
      * @return The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-     *         <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue configurations, and the security
-     *         configuration.
+     *         <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue
+     *         configurations, and the security configuration.
      */
 
     public OfflineStoreConfig getOfflineStoreConfig() {
@@ -519,13 +522,14 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * AWS Glue or AWS Hive data catalogue configurations, and the security configuration.
+     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
+     * configuration.
      * </p>
      * 
      * @param offlineStoreConfig
      *        The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-     *        <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue configurations, and the security
-     *        configuration.
+     *        <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue
+     *        configurations, and the security configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,28 +33,30 @@ public class RepositoryAuthConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the private
-     * Docker registry where your model image is hosted. For information about how to create an AWS Lambda function, see
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     * function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     * authenticate to the private Docker registry where your model image is hosted. For information about how to create
+     * an Amazon Web Services Lambda function, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
+     * with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      * </p>
      */
     private String repositoryCredentialsProviderArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the private
-     * Docker registry where your model image is hosted. For information about how to create an AWS Lambda function, see
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     * function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     * authenticate to the private Docker registry where your model image is hosted. For information about how to create
+     * an Amazon Web Services Lambda function, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
+     * with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      * </p>
      * 
      * @param repositoryCredentialsProviderArn
-     *        The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the
-     *        private Docker registry where your model image is hosted. For information about how to create an AWS
-     *        Lambda function, see <a
+     *        The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     *        authenticate to the private Docker registry where your model image is hosted. For information about how to
+     *        create an Amazon Web Services Lambda function, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     *        function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     *        function with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      */
 
     public void setRepositoryCredentialsProviderArn(String repositoryCredentialsProviderArn) {
@@ -63,17 +65,18 @@ public class RepositoryAuthConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the private
-     * Docker registry where your model image is hosted. For information about how to create an AWS Lambda function, see
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     * function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     * authenticate to the private Docker registry where your model image is hosted. For information about how to create
+     * an Amazon Web Services Lambda function, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
+     * with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the
-     *         private Docker registry where your model image is hosted. For information about how to create an AWS
-     *         Lambda function, see <a
+     * @return The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     *         authenticate to the private Docker registry where your model image is hosted. For information about how
+     *         to create an Amazon Web Services Lambda function, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     *         function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     *         function with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      */
 
     public String getRepositoryCredentialsProviderArn() {
@@ -82,18 +85,19 @@ public class RepositoryAuthConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the private
-     * Docker registry where your model image is hosted. For information about how to create an AWS Lambda function, see
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     * function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     * authenticate to the private Docker registry where your model image is hosted. For information about how to create
+     * an Amazon Web Services Lambda function, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
+     * with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      * </p>
      * 
      * @param repositoryCredentialsProviderArn
-     *        The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to authenticate to the
-     *        private Docker registry where your model image is hosted. For information about how to create an AWS
-     *        Lambda function, see <a
+     *        The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
+     *        authenticate to the private Docker registry where your model image is hosted. For information about how to
+     *        create an Amazon Web Services Lambda function, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda
-     *        function with the console</a> in the <i>AWS Lambda Developer Guide</i>.
+     *        function with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

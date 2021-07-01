@@ -73,7 +73,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue> messageAttributes;
@@ -87,7 +87,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     * <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -109,7 +109,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -180,7 +180,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      */
     private String messageDeduplicationId;
@@ -217,7 +217,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -520,13 +520,13 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -541,14 +541,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -560,14 +560,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
-     *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,7 +614,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     * <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -631,7 +631,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     *         <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -659,7 +659,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     * <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -677,7 +677,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     *        <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -703,7 +703,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     * <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -721,7 +721,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
+     *        <code>String</code> and its value must be a correctly formatted X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -776,7 +776,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -847,7 +847,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageDeduplicationId
@@ -858,7 +858,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -931,7 +931,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public void setMessageDeduplicationId(String messageDeduplicationId) {
@@ -948,7 +948,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1019,7 +1019,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -1029,7 +1029,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *         deduplication interval. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *         > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1103,7 +1103,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     *         >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      */
 
     public String getMessageDeduplicationId() {
@@ -1120,7 +1120,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1191,7 +1191,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageDeduplicationId
@@ -1202,7 +1202,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
-     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        > Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1275,7 +1275,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
-     *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1317,7 +1317,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1357,7 +1357,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>
@@ -1402,7 +1402,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1441,7 +1441,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For best practices of using <code>MessageGroupId</code>, see <a href=
      *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     *         >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         <important>
      *         <p>
@@ -1486,7 +1486,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For best practices of using <code>MessageGroupId</code>, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1526,7 +1526,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
      *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html"
-     *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        >Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <important>
      *        <p>

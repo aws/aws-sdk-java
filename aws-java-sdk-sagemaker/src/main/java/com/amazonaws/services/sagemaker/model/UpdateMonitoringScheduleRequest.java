@@ -27,7 +27,8 @@ public class UpdateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      */
     private String monitoringScheduleName;
@@ -40,11 +41,13 @@ public class UpdateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      * 
      * @param monitoringScheduleName
-     *        The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     *        The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+     *        an Amazon Web Services account.
      */
 
     public void setMonitoringScheduleName(String monitoringScheduleName) {
@@ -53,10 +56,12 @@ public class UpdateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * @return The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+     *         an Amazon Web Services account.
      */
 
     public String getMonitoringScheduleName() {
@@ -65,11 +70,13 @@ public class UpdateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     * The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an
+     * Amazon Web Services account.
      * </p>
      * 
      * @param monitoringScheduleName
-     *        The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account.
+     *        The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+     *        an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

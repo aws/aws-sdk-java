@@ -32,7 +32,8 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
     private String jobDefinitionArn;
     /**
      * <p>
-     * The name of the explainability job definition. The name must be unique within an AWS Region in the AWS account.
+     * The name of the explainability job definition. The name must be unique within an Amazon Web Services Region in
+     * the Amazon Web Services account.
      * </p>
      */
     private String jobDefinitionName;
@@ -72,8 +73,8 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
     private MonitoringNetworkConfig networkConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
-     * the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
+     * permission to the input data location and write permission to the output data location in Amazon S3.
      * </p>
      */
     private String roleArn;
@@ -122,12 +123,13 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
 
     /**
      * <p>
-     * The name of the explainability job definition. The name must be unique within an AWS Region in the AWS account.
+     * The name of the explainability job definition. The name must be unique within an Amazon Web Services Region in
+     * the Amazon Web Services account.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the explainability job definition. The name must be unique within an AWS Region in the AWS
-     *        account.
+     *        The name of the explainability job definition. The name must be unique within an Amazon Web Services
+     *        Region in the Amazon Web Services account.
      */
 
     public void setJobDefinitionName(String jobDefinitionName) {
@@ -136,11 +138,12 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
 
     /**
      * <p>
-     * The name of the explainability job definition. The name must be unique within an AWS Region in the AWS account.
+     * The name of the explainability job definition. The name must be unique within an Amazon Web Services Region in
+     * the Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the explainability job definition. The name must be unique within an AWS Region in the AWS
-     *         account.
+     * @return The name of the explainability job definition. The name must be unique within an Amazon Web Services
+     *         Region in the Amazon Web Services account.
      */
 
     public String getJobDefinitionName() {
@@ -149,12 +152,13 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
 
     /**
      * <p>
-     * The name of the explainability job definition. The name must be unique within an AWS Region in the AWS account.
+     * The name of the explainability job definition. The name must be unique within an Amazon Web Services Region in
+     * the Amazon Web Services account.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the explainability job definition. The name must be unique within an AWS Region in the AWS
-     *        account.
+     *        The name of the explainability job definition. The name must be unique within an Amazon Web Services
+     *        Region in the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,13 +423,14 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
-     * the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
+     * permission to the input data location and write permission to the output data location in Amazon S3.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read
-     *        permission to the input data location and write permission to the output data location in Amazon S3.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     *        has read permission to the input data location and write permission to the output data location in Amazon
+     *        S3.
      */
 
     public void setRoleArn(String roleArn) {
@@ -434,12 +439,13 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
-     * the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
+     * permission to the input data location and write permission to the output data location in Amazon S3.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read
-     *         permission to the input data location and write permission to the output data location in Amazon S3.
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     *         has read permission to the input data location and write permission to the output data location in Amazon
+     *         S3.
      */
 
     public String getRoleArn() {
@@ -448,13 +454,14 @@ public class DescribeModelExplainabilityJobDefinitionResult extends com.amazonaw
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
-     * the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
+     * permission to the input data location and write permission to the output data location in Amazon S3.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read
-     *        permission to the input data location and write permission to the output data location in Amazon S3.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     *        has read permission to the input data location and write permission to the output data location in Amazon
+     *        S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
