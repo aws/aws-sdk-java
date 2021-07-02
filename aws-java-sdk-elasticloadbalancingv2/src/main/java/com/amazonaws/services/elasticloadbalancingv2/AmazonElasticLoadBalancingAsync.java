@@ -666,7 +666,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * Describes the current Elastic Load Balancing resource limits for your Amazon Web Services account.
      * </p>
      * <p>
      * For more information, see the following:
@@ -702,7 +702,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * Describes the current Elastic Load Balancing resource limits for your Amazon Web Services account.
      * </p>
      * <p>
      * For more information, see the following:

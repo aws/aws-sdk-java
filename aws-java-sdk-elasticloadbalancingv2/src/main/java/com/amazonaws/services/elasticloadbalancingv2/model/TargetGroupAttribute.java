@@ -82,8 +82,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
-     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
-     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      * </p>
      * </li>
      * <li>
@@ -207,8 +207,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
-     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
-     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      * </p>
      * </li>
      * <li>
@@ -324,8 +324,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names
-     *        that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
-     *        <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *        that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     *        <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      *        </p>
      *        </li>
      *        <li>
@@ -447,8 +447,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
-     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
-     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      * </p>
      * </li>
      * <li>
@@ -563,8 +563,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie.
-     *         Names that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>,
-     *         and <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *         Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>
+     *         , and <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      *         </p>
      *         </li>
      *         <li>
@@ -686,8 +686,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
-     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
-     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      * </p>
      * </li>
      * <li>
@@ -803,8 +803,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names
-     *        that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
-     *        <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *        that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     *        <code>AWSALBTG</code>; they're reserved for use by the load balancer.
      *        </p>
      *        </li>
      *        <li>

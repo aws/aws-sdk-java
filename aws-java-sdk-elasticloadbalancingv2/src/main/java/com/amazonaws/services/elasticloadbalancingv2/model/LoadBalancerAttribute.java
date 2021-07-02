@@ -98,8 +98,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
-     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.
+     * targets if it is unable to forward the request to Amazon Web Services WAF. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -195,8 +195,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
-     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.
+     * targets if it is unable to forward the request to Amazon Web Services WAF. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -282,8 +282,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
-     *        requests to targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or
-     *        <code>false</code>. The default is <code>false</code>.
+     *        requests to targets if it is unable to forward the request to Amazon Web Services WAF. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -375,8 +375,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
-     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.
+     * targets if it is unable to forward the request to Amazon Web Services WAF. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -461,8 +461,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
-     *         requests to targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or
-     *         <code>false</code>. The default is <code>false</code>.
+     *         requests to targets if it is unable to forward the request to Amazon Web Services WAF. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -554,8 +554,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
-     * targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.
+     * targets if it is unable to forward the request to Amazon Web Services WAF. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -641,8 +641,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
-     *        requests to targets if it is unable to forward the request to AWS WAF. The value is <code>true</code> or
-     *        <code>false</code>. The default is <code>false</code>.
+     *        requests to targets if it is unable to forward the request to Amazon Web Services WAF. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>

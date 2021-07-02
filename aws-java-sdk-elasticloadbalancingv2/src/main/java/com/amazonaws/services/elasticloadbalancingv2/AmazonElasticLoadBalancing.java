@@ -302,7 +302,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws DuplicateLoadBalancerNameException
      *         A load balancer with the specified name already exists.
      * @throws TooManyLoadBalancersException
-     *         You've reached the limit on the number of load balancers for your AWS account.
+     *         You've reached the limit on the number of load balancers for your Amazon Web Services account.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration is not valid.
      * @throws SubnetNotFoundException
@@ -349,7 +349,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws PriorityInUseException
      *         The specified priority is in use.
      * @throws TooManyTargetGroupsException
-     *         You've reached the limit on the number of target groups for your AWS account.
+     *         You've reached the limit on the number of target groups for your Amazon Web Services account.
      * @throws TooManyRulesException
      *         You've reached the limit on the number of rules per load balancer.
      * @throws TargetGroupAssociationLimitException
@@ -420,7 +420,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws DuplicateTargetGroupNameException
      *         A target group with the specified name already exists.
      * @throws TooManyTargetGroupsException
-     *         You've reached the limit on the number of target groups for your AWS account.
+     *         You've reached the limit on the number of target groups for your Amazon Web Services account.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration is not valid.
      * @throws TooManyTagsException
@@ -539,7 +539,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * Describes the current Elastic Load Balancing resource limits for your Amazon Web Services account.
      * </p>
      * <p>
      * For more information, see the following:

@@ -101,7 +101,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
-     * default is /AWS.ALB/healthcheck.
+     * default is /Amazon Web Services.ALB/healthcheck.
      * </p>
      */
     private String healthCheckPath;
@@ -726,7 +726,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
-     * default is /AWS.ALB/healthcheck.
+     * default is /Amazon Web Services.ALB/healthcheck.
      * </p>
      * 
      * @param healthCheckPath
@@ -736,7 +736,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
-     *        The default is /AWS.ALB/healthcheck.
+     *        The default is /Amazon Web Services.ALB/healthcheck.
      */
 
     public void setHealthCheckPath(String healthCheckPath) {
@@ -752,7 +752,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
-     * default is /AWS.ALB/healthcheck.
+     * default is /Amazon Web Services.ALB/healthcheck.
      * </p>
      * 
      * @return [HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
@@ -761,7 +761,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         <p>
      *         [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
-     *         The default is /AWS.ALB/healthcheck.
+     *         The default is /Amazon Web Services.ALB/healthcheck.
      */
 
     public String getHealthCheckPath() {
@@ -777,7 +777,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * [GRPC protocol version] The path of a custom health check method with the format /package.service/method. The
-     * default is /AWS.ALB/healthcheck.
+     * default is /Amazon Web Services.ALB/healthcheck.
      * </p>
      * 
      * @param healthCheckPath
@@ -787,7 +787,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        [GRPC protocol version] The path of a custom health check method with the format /package.service/method.
-     *        The default is /AWS.ALB/healthcheck.
+     *        The default is /Amazon Web Services.ALB/healthcheck.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

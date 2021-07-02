@@ -1,3 +1,12 @@
+# __1.12.17__ __2021-07-02__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release removes network-insights-boundary
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Documentation updates for elasticloadbalancingv2
+
 # __1.12.16__ __2021-07-01__
 ## __Amazon Elastic Compute Cloud__
   - ### Features
