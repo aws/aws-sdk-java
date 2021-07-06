@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an AWS account and entity that performed an action on an affected resource. The action was
- * performed using the credentials for an AWS account other than your own account.
+ * Provides information about an Amazon Web Services account and entity that performed an action on an affected
+ * resource. The action was performed using the credentials for an Amazon Web Services account other than your own
+ * account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AwsAccount" target="_top">AWS API
@@ -31,7 +32,7 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      */
     private String accountId;
@@ -44,11 +45,11 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account.
+     *        The unique identifier for the Amazon Web Services account.
      */
 
     public void setAccountId(String accountId) {
@@ -57,10 +58,10 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      * 
-     * @return The unique identifier for the AWS account.
+     * @return The unique identifier for the Amazon Web Services account.
      */
 
     public String getAccountId() {
@@ -69,11 +70,11 @@ public class AwsAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account.
+     *        The unique identifier for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

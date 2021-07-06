@@ -75,6 +75,8 @@ public interface AWSmgn {
      *         Unitialized account exception.
      * @throws ValidationException
      *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
      * @sample AWSmgn.CreateReplicationConfigurationTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateReplicationConfigurationTemplate"
      *      target="_top">AWS API Documentation</a>
@@ -526,6 +528,8 @@ public interface AWSmgn {
      *         Resource not found exception.
      * @throws ValidationException
      *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @sample AWSmgn.UpdateReplicationConfiguration
@@ -547,6 +551,8 @@ public interface AWSmgn {
      *         Resource not found exception.
      * @throws ValidationException
      *         Validate exception.
+     * @throws AccessDeniedException
+     *         Operating denied due to a file permission or access check error.
      * @sample AWSmgn.UpdateReplicationConfigurationTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfigurationTemplate"
      *      target="_top">AWS API Documentation</a>

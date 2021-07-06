@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies details for an account to associate with an Amazon Macie administrator account.
+ * Specifies the details of an account to associate with an Amazon Macie administrator account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccountDetail" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      */
     private String accountId;
@@ -43,11 +43,11 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account.
+     *        The Amazon Web Services account ID for the account.
      */
 
     public void setAccountId(String accountId) {
@@ -56,10 +56,10 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
-     * @return The AWS account ID for the account.
+     * @return The Amazon Web Services account ID for the account.
      */
 
     public String getAccountId() {
@@ -68,11 +68,11 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account.
+     *        The Amazon Web Services account ID for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

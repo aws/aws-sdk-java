@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
+ * A mapping between an Amazon Web Services resource and an Lambda function. See <a>CreateEventSourceMapping</a> for
+ * details.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration"
@@ -62,7 +63,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     * (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      */
     private Integer parallelizationFactor;
@@ -86,7 +87,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private java.util.Date lastModified;
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last Lambda invocation of your Lambda function.
      * </p>
      */
     private String lastProcessingResult;
@@ -106,7 +107,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private String stateTransitionReason;
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      */
     private DestinationConfig destinationConfig;
@@ -136,33 +137,34 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private SelfManagedEventSource selfManagedEventSource;
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
-     * (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age
+     * to infinite. When the value is set to infinite, Lambda never discards old records.
      * </p>
      */
     private Integer maximumRecordAgeInSeconds;
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * (Streams only) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      */
     private Boolean bisectBatchOnFunctionError;
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is -1, which sets the
+     * maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until
+     * the record expires in the event source.
      * </p>
      */
     private Integer maximumRetryAttempts;
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      */
     private Integer tumblingWindowInSeconds;
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
@@ -403,11 +405,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     * (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     *        (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      */
 
     public void setParallelizationFactor(Integer parallelizationFactor) {
@@ -416,10 +418,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     * (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
-     * @return (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     * @return (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      */
 
     public Integer getParallelizationFactor() {
@@ -428,11 +430,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     * (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently. The default value is 1.
+     *        (Streams only) The number of batches to process from each shard concurrently. The default value is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,11 +565,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last Lambda invocation of your Lambda function.
      * </p>
      * 
      * @param lastProcessingResult
-     *        The result of the last AWS Lambda invocation of your Lambda function.
+     *        The result of the last Lambda invocation of your Lambda function.
      */
 
     public void setLastProcessingResult(String lastProcessingResult) {
@@ -576,10 +578,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last Lambda invocation of your Lambda function.
      * </p>
      * 
-     * @return The result of the last AWS Lambda invocation of your Lambda function.
+     * @return The result of the last Lambda invocation of your Lambda function.
      */
 
     public String getLastProcessingResult() {
@@ -588,11 +590,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The result of the last AWS Lambda invocation of your Lambda function.
+     * The result of the last Lambda invocation of your Lambda function.
      * </p>
      * 
      * @param lastProcessingResult
-     *        The result of the last AWS Lambda invocation of your Lambda function.
+     *        The result of the last Lambda invocation of your Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,11 +700,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      * 
      * @param destinationConfig
-     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     *        (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      */
 
     public void setDestinationConfig(DestinationConfig destinationConfig) {
@@ -711,10 +713,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      * 
-     * @return (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * @return (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      */
 
     public DestinationConfig getDestinationConfig() {
@@ -723,11 +725,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      * 
      * @param destinationConfig
-     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     *        (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -997,13 +999,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
-     * (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age
+     * to infinite. When the value is set to infinite, Lambda never discards old records.
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
-     *        infinite (-1), failed records are retried until the record expires.
+     *        (Streams only) Discard records older than the specified age. The default value is -1, which sets the
+     *        maximum age to infinite. When the value is set to infinite, Lambda never discards old records.
      */
 
     public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
@@ -1012,12 +1014,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
-     * (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age
+     * to infinite. When the value is set to infinite, Lambda never discards old records.
      * </p>
      * 
-     * @return (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
-     *         infinite (-1), failed records are retried until the record expires.
+     * @return (Streams only) Discard records older than the specified age. The default value is -1, which sets the
+     *         maximum age to infinite. When the value is set to infinite, Lambda never discards old records.
      */
 
     public Integer getMaximumRecordAgeInSeconds() {
@@ -1026,13 +1028,13 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
-     * (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age
+     * to infinite. When the value is set to infinite, Lambda never discards old records.
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
-     *        infinite (-1), failed records are retried until the record expires.
+     *        (Streams only) Discard records older than the specified age. The default value is -1, which sets the
+     *        maximum age to infinite. When the value is set to infinite, Lambda never discards old records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1043,11 +1045,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * (Streams only) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     *        (Streams only) If the function returns an error, split the batch in two and retry. The default value is
+     *        false.
      */
 
     public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
@@ -1056,10 +1059,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * (Streams only) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * @return (Streams only) If the function returns an error, split the batch in two and retry. The default value is
+     *         false.
      */
 
     public Boolean getBisectBatchOnFunctionError() {
@@ -1068,11 +1072,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * (Streams only) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     *        (Streams only) If the function returns an error, split the batch in two and retry. The default value is
+     *        false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1083,10 +1088,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * (Streams only) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
+     * @return (Streams only) If the function returns an error, split the batch in two and retry. The default value is
+     *         false.
      */
 
     public Boolean isBisectBatchOnFunctionError() {
@@ -1095,13 +1101,15 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is -1, which sets the
+     * maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until
+     * the record expires in the event source.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
-     *        set to infinite (-1), failed records are retried until the record expires.
+     *        (Streams only) Discard records after the specified number of retries. The default value is -1, which sets
+     *        the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed
+     *        records until the record expires in the event source.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -1110,12 +1118,14 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is -1, which sets the
+     * maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until
+     * the record expires in the event source.
      * </p>
      * 
-     * @return (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
-     *         set to infinite (-1), failed records are retried until the record expires.
+     * @return (Streams only) Discard records after the specified number of retries. The default value is -1, which sets
+     *         the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed
+     *         records until the record expires in the event source.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -1124,13 +1134,15 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records are retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is -1, which sets the
+     * maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until
+     * the record expires in the event source.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
-     *        set to infinite (-1), failed records are retried until the record expires.
+     *        (Streams only) Discard records after the specified number of retries. The default value is -1, which sets
+     *        the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed
+     *        records until the record expires in the event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1141,11 +1153,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        seconds.
      */
 
     public void setTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
@@ -1154,10 +1167,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
-     * @return (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900
+     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
      *         seconds.
      */
 
@@ -1167,11 +1180,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1182,10 +1196,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
-     * @return (Streams) A list of current response type enums applied to the event source mapping.
+     * @return (Streams only) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1198,11 +1212,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1217,7 +1231,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1226,7 +1240,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1243,11 +1257,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1259,11 +1273,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */

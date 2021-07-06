@@ -76,7 +76,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      * </p>
      * </li>
      * <li>
@@ -129,7 +129,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -147,7 +147,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * <code>Subscribe</code> action uses:
      * </p>
      * <ul>
      * <li>
@@ -280,7 +280,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *        <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      *        </p>
      *        </li>
      *        <li>
@@ -329,7 +329,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      *        </p>
      *        </li>
      *        <li>
@@ -427,7 +427,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      * </p>
      * </li>
      * <li>
@@ -477,7 +477,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *        <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      *        </p>
      *        </li>
      *        <li>
@@ -534,7 +534,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      * </p>
      * </li>
      * <li>
@@ -583,7 +583,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *         <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      *         </p>
      *         </li>
      *         <li>
@@ -640,7 +640,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      * </p>
      * </li>
      * <li>
@@ -690,7 +690,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *        <code>lambda</code> – delivery of JSON-encoded message to an Lambda function
      *        </p>
      *        </li>
      *        <li>
@@ -749,7 +749,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -800,7 +800,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      *        </p>
      *        </li>
      *        <li>
@@ -857,7 +857,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -907,7 +907,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *         For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      *         </p>
      *         </li>
      *         <li>
@@ -964,7 +964,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      * </p>
      * </li>
      * <li>
@@ -1015,7 +1015,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.
      *        </p>
      *        </li>
      *        <li>
@@ -1038,7 +1038,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * <code>Subscribe</code> action uses:
      * </p>
      * <ul>
      * <li>
@@ -1101,7 +1101,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
      *         The following lists the names, descriptions, and values of the special request parameters that the
-     *         <code>SetTopicAttributes</code> action uses:
+     *         <code>Subscribe</code> action uses:
      *         </p>
      *         <ul>
      *         <li>
@@ -1175,7 +1175,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * <code>Subscribe</code> action uses:
      * </p>
      * <ul>
      * <li>
@@ -1239,7 +1239,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        A map of attributes with their corresponding values.</p>
      *        <p>
      *        The following lists the names, descriptions, and values of the special request parameters that the
-     *        <code>SetTopicAttributes</code> action uses:
+     *        <code>Subscribe</code> action uses:
      *        </p>
      *        <ul>
      *        <li>
@@ -1309,7 +1309,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <p>
      * The following lists the names, descriptions, and values of the special request parameters that the
-     * <code>SetTopicAttributes</code> action uses:
+     * <code>Subscribe</code> action uses:
      * </p>
      * <ul>
      * <li>
@@ -1373,7 +1373,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        A map of attributes with their corresponding values.</p>
      *        <p>
      *        The following lists the names, descriptions, and values of the special request parameters that the
-     *        <code>SetTopicAttributes</code> action uses:
+     *        <code>Subscribe</code> action uses:
      *        </p>
      *        <ul>
      *        <li>

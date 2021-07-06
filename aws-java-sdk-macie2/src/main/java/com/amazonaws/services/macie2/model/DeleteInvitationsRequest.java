@@ -27,17 +27,18 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.
      * </p>
      * 
-     * @return An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     * @return An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *         delete.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +47,12 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     *        An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *        delete.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +66,7 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +75,8 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     *        An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *        delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +92,12 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account that sent an invitation to delete.
+     *        An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *        delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

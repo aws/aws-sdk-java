@@ -78,7 +78,7 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
     private Logging logging;
     /**
      * <p>
-     * The EC2 key pair of the infrastructure configuration.
+     * The Amazon EC2 key pair of the infrastructure configuration.
      * </p>
      */
     private String keyPair;
@@ -501,11 +501,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The EC2 key pair of the infrastructure configuration.
+     * The Amazon EC2 key pair of the infrastructure configuration.
      * </p>
      * 
      * @param keyPair
-     *        The EC2 key pair of the infrastructure configuration.
+     *        The Amazon EC2 key pair of the infrastructure configuration.
      */
 
     public void setKeyPair(String keyPair) {
@@ -514,10 +514,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The EC2 key pair of the infrastructure configuration.
+     * The Amazon EC2 key pair of the infrastructure configuration.
      * </p>
      * 
-     * @return The EC2 key pair of the infrastructure configuration.
+     * @return The Amazon EC2 key pair of the infrastructure configuration.
      */
 
     public String getKeyPair() {
@@ -526,11 +526,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The EC2 key pair of the infrastructure configuration.
+     * The Amazon EC2 key pair of the infrastructure configuration.
      * </p>
      * 
      * @param keyPair
-     *        The EC2 key pair of the infrastructure configuration.
+     *        The Amazon EC2 key pair of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

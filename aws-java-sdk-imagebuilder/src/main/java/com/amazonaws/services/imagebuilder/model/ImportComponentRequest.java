@@ -78,9 +78,9 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String data;
     /**
      * <p>
-     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
-     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.
+     * The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3
+     * bucket. If you use Amazon S3, you can specify component content up to your service quota. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * </p>
      */
     private String uri;
@@ -500,14 +500,14 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
-     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.
+     * The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3
+     * bucket. If you use Amazon S3, you can specify component content up to your service quota. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
      * @param uri
-     *        The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
-     *        bucket. If you use S3, you can specify component content up to your service quota. Either
+     *        The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the
+     *        Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either
      *        <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      */
 
@@ -517,14 +517,14 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
-     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.
+     * The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3
+     * bucket. If you use Amazon S3, you can specify component content up to your service quota. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
-     * @return The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
-     *         bucket. If you use S3, you can specify component content up to your service quota. Either
-     *         <code>data</code> or <code>uri</code> can be used to specify the data within the component.
+     * @return The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the
+     *         Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota.
+     *         Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      */
 
     public String getUri() {
@@ -533,14 +533,14 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
-     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
-     * <code>uri</code> can be used to specify the data within the component.
+     * The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3
+     * bucket. If you use Amazon S3, you can specify component content up to your service quota. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
      * @param uri
-     *        The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
-     *        bucket. If you use S3, you can specify component content up to your service quota. Either
+     *        The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the
+     *        Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either
      *        <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The current status of an account as the delegated Amazon Macie administrator account for an AWS organization.
- * Possible values are:
+ * The current status of an account as the delegated Amazon Macie administrator account for an Amazon Web Services
+ * organization. Possible values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

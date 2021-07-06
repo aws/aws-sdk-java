@@ -30,7 +30,7 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      */
     private String accountId;
@@ -118,11 +118,11 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the bucket.
+     *        The unique identifier for the Amazon Web Services account that owns the bucket.
      */
 
     public void setAccountId(String accountId) {
@@ -131,10 +131,10 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns the bucket.
+     * @return The unique identifier for the Amazon Web Services account that owns the bucket.
      */
 
     public String getAccountId() {
@@ -143,11 +143,11 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the bucket.
+     *        The unique identifier for the Amazon Web Services account that owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

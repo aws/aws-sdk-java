@@ -30,7 +30,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      */
     private String accountId;
@@ -134,14 +134,14 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private BucketPublicAccess publicAccess;
     /**
      * <p>
-     * The AWS Region that hosts the bucket.
+     * The Amazon Web Services Region that hosts the bucket.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS accounts
-     * and, if so, which accounts.
+     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web
+     * Services accounts and, if so, which accounts.
      * </p>
      */
     private ReplicationDetails replicationDetails;
@@ -154,22 +154,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private BucketServerSideEncryption serverSideEncryption;
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      * </p>
      * </li>
      * <li>
@@ -231,11 +233,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the bucket.
+     *        The unique identifier for the Amazon Web Services account that owns the bucket.
      */
 
     public void setAccountId(String accountId) {
@@ -244,10 +246,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns the bucket.
+     * @return The unique identifier for the Amazon Web Services account that owns the bucket.
      */
 
     public String getAccountId() {
@@ -256,11 +258,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the bucket.
+     * The unique identifier for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the bucket.
+     *        The unique identifier for the Amazon Web Services account that owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -968,11 +970,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region that hosts the bucket.
+     * The Amazon Web Services Region that hosts the bucket.
      * </p>
      * 
      * @param region
-     *        The AWS Region that hosts the bucket.
+     *        The Amazon Web Services Region that hosts the bucket.
      */
 
     public void setRegion(String region) {
@@ -981,10 +983,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region that hosts the bucket.
+     * The Amazon Web Services Region that hosts the bucket.
      * </p>
      * 
-     * @return The AWS Region that hosts the bucket.
+     * @return The Amazon Web Services Region that hosts the bucket.
      */
 
     public String getRegion() {
@@ -993,11 +995,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region that hosts the bucket.
+     * The Amazon Web Services Region that hosts the bucket.
      * </p>
      * 
      * @param region
-     *        The AWS Region that hosts the bucket.
+     *        The Amazon Web Services Region that hosts the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1008,13 +1010,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS accounts
-     * and, if so, which accounts.
+     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web
+     * Services accounts and, if so, which accounts.
      * </p>
      * 
      * @param replicationDetails
-     *        Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS
-     *        accounts and, if so, which accounts.
+     *        Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon
+     *        Web Services accounts and, if so, which accounts.
      */
 
     public void setReplicationDetails(ReplicationDetails replicationDetails) {
@@ -1023,12 +1025,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS accounts
-     * and, if so, which accounts.
+     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web
+     * Services accounts and, if so, which accounts.
      * </p>
      * 
-     * @return Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS
-     *         accounts and, if so, which accounts.
+     * @return Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon
+     *         Web Services accounts and, if so, which accounts.
      */
 
     public ReplicationDetails getReplicationDetails() {
@@ -1037,13 +1039,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS accounts
-     * and, if so, which accounts.
+     * Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web
+     * Services accounts and, if so, which accounts.
      * </p>
      * 
      * @param replicationDetails
-     *        Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS
-     *        accounts and, if so, which accounts.
+     *        Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon
+     *        Web Services accounts and, if so, which accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,22 +1102,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      * </p>
      * </li>
      * <li>
@@ -1127,22 +1131,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param sharedAccess
      *        <p>
-     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
+     *        Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *        organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
@@ -1160,22 +1166,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      * </p>
      * </li>
      * <li>
@@ -1186,23 +1194,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return <p>
-     *         Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *         Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie
+     *         EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
+     *         Macie organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
      *         organization.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     *         NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      *         </p>
      *         </li>
      *         <li>
@@ -1220,22 +1229,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      * </p>
      * </li>
      * <li>
@@ -1247,22 +1258,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param sharedAccess
      *        <p>
-     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
+     *        Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *        organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      *        </p>
      *        </li>
      *        <li>
@@ -1282,22 +1295,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      * </p>
      * </li>
      * <li>
@@ -1309,22 +1324,24 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param sharedAccess
      *        <p>
-     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
+     *        Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *        organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
      *        </p>
      *        </li>
      *        <li>

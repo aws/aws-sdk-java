@@ -41,8 +41,8 @@ public class UserPausedDetails implements Serializable, Cloneable, StructuredPoj
     private java.util.Date jobExpiresAt;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or job
-     * run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
+     * The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's
+     * pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
      * </p>
      */
     private String jobImminentExpirationHealthEventArn;
@@ -101,14 +101,14 @@ public class UserPausedDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or job
-     * run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
+     * The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's
+     * pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
      * </p>
      * 
      * @param jobImminentExpirationHealthEventArn
-     *        The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or
-     *        job run's pending expiration and cancellation. This value is null if a job has been paused for less than
-     *        23 days.
+     *        The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job
+     *        run's pending expiration and cancellation. This value is null if a job has been paused for less than 23
+     *        days.
      */
 
     public void setJobImminentExpirationHealthEventArn(String jobImminentExpirationHealthEventArn) {
@@ -117,13 +117,13 @@ public class UserPausedDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or job
-     * run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
+     * The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's
+     * pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or
-     *         job run's pending expiration and cancellation. This value is null if a job has been paused for less than
-     *         23 days.
+     * @return The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job
+     *         run's pending expiration and cancellation. This value is null if a job has been paused for less than 23
+     *         days.
      */
 
     public String getJobImminentExpirationHealthEventArn() {
@@ -132,14 +132,14 @@ public class UserPausedDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or job
-     * run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
+     * The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's
+     * pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.
      * </p>
      * 
      * @param jobImminentExpirationHealthEventArn
-     *        The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or
-     *        job run's pending expiration and cancellation. This value is null if a job has been paused for less than
-     *        23 days.
+     *        The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job
+     *        run's pending expiration and cancellation. This value is null if a job has been paused for less than 23
+     *        days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

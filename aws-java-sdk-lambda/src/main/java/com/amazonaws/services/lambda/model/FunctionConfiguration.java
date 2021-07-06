@@ -115,7 +115,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private DeadLetterConfig deadLetterConfig;
     /**
      * <p>
-     * The function's environment variables.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.
      * </p>
      */
     private EnvironmentResponse environment;
@@ -128,7 +129,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private String kMSKeyArn;
     /**
      * <p>
-     * The function's AWS X-Ray tracing configuration.
+     * The function's X-Ray tracing configuration.
      * </p>
      */
     private TracingConfigResponse tracingConfig;
@@ -191,7 +192,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private String lastUpdateStatusReasonCode;
     /**
      * <p>
-     * Connection settings for an Amazon EFS file system.
+     * Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
@@ -822,11 +824,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's environment variables.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.
      * </p>
      * 
      * @param environment
-     *        The function's environment variables.
+     *        The function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.
      */
 
     public void setEnvironment(EnvironmentResponse environment) {
@@ -835,10 +839,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's environment variables.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.
      * </p>
      * 
-     * @return The function's environment variables.
+     * @return The function's <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.
      */
 
     public EnvironmentResponse getEnvironment() {
@@ -847,11 +853,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's environment variables.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.
      * </p>
      * 
      * @param environment
-     *        The function's environment variables.
+     *        The function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -908,11 +916,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's AWS X-Ray tracing configuration.
+     * The function's X-Ray tracing configuration.
      * </p>
      * 
      * @param tracingConfig
-     *        The function's AWS X-Ray tracing configuration.
+     *        The function's X-Ray tracing configuration.
      */
 
     public void setTracingConfig(TracingConfigResponse tracingConfig) {
@@ -921,10 +929,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's AWS X-Ray tracing configuration.
+     * The function's X-Ray tracing configuration.
      * </p>
      * 
-     * @return The function's AWS X-Ray tracing configuration.
+     * @return The function's X-Ray tracing configuration.
      */
 
     public TracingConfigResponse getTracingConfig() {
@@ -933,11 +941,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's AWS X-Ray tracing configuration.
+     * The function's X-Ray tracing configuration.
      * </p>
      * 
      * @param tracingConfig
-     *        The function's AWS X-Ray tracing configuration.
+     *        The function's X-Ray tracing configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1507,10 +1515,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Connection settings for an Amazon EFS file system.
+     * Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.
      * </p>
      * 
-     * @return Connection settings for an Amazon EFS file system.
+     * @return Connection settings for an <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file
+     *         system</a>.
      */
 
     public java.util.List<FileSystemConfig> getFileSystemConfigs() {
@@ -1522,11 +1533,14 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Connection settings for an Amazon EFS file system.
+     * Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.
      * </p>
      * 
      * @param fileSystemConfigs
-     *        Connection settings for an Amazon EFS file system.
+     *        Connection settings for an <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file
+     *        system</a>.
      */
 
     public void setFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
@@ -1540,7 +1554,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Connection settings for an Amazon EFS file system.
+     * Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1549,7 +1564,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param fileSystemConfigs
-     *        Connection settings for an Amazon EFS file system.
+     *        Connection settings for an <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file
+     *        system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1565,11 +1582,14 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Connection settings for an Amazon EFS file system.
+     * Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.
      * </p>
      * 
      * @param fileSystemConfigs
-     *        Connection settings for an Amazon EFS file system.
+     *        Connection settings for an <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file
+     *        system</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

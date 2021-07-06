@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies configuration settings that determine which findings are published to AWS Security Hub automatically. For
+ * Specifies configuration settings that determine which findings are published to Security Hub automatically. For
  * information about how Macie publishes findings to Security Hub, see <a
  * href="https://docs.aws.amazon.com/macie/latest/user/securityhub-integration.html">Amazon Macie integration with
  * Security Hub</a> in the <i>Amazon Macie User Guide</i>.
@@ -33,15 +33,15 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon
-     * Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The
-     * default value is false.
+     * Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie
+     * automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default
+     * value is false.
      * </p>
      */
     private Boolean publishClassificationFindings;
     /**
      * <p>
-     * Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie
+     * Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
      * automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The
      * default value is true.
      * </p>
@@ -50,13 +50,13 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon
-     * Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The
-     * default value is false.
+     * Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie
+     * automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default
+     * value is false.
      * </p>
      * 
      * @param publishClassificationFindings
-     *        Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true,
+     *        Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true,
      *        Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings
      *        filter. The default value is false.
      */
@@ -67,12 +67,12 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon
-     * Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The
-     * default value is false.
+     * Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie
+     * automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default
+     * value is false.
      * </p>
      * 
-     * @return Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true,
+     * @return Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true,
      *         Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings
      *         filter. The default value is false.
      */
@@ -83,13 +83,13 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon
-     * Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The
-     * default value is false.
+     * Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie
+     * automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default
+     * value is false.
      * </p>
      * 
      * @param publishClassificationFindings
-     *        Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true,
+     *        Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true,
      *        Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings
      *        filter. The default value is false.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -102,12 +102,12 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon
-     * Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The
-     * default value is false.
+     * Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie
+     * automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default
+     * value is false.
      * </p>
      * 
-     * @return Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true,
+     * @return Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true,
      *         Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings
      *         filter. The default value is false.
      */
@@ -118,15 +118,15 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie
+     * Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
      * automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The
      * default value is true.
      * </p>
      * 
      * @param publishPolicyFindings
-     *        Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon
-     *        Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings
-     *        filter. The default value is true.
+     *        Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
+     *        automatically publishes all new and updated policy findings that weren't suppressed by a findings filter.
+     *        The default value is true.
      */
 
     public void setPublishPolicyFindings(Boolean publishPolicyFindings) {
@@ -135,14 +135,14 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie
+     * Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
      * automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The
      * default value is true.
      * </p>
      * 
-     * @return Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon
-     *         Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings
-     *         filter. The default value is true.
+     * @return Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
+     *         automatically publishes all new and updated policy findings that weren't suppressed by a findings filter.
+     *         The default value is true.
      */
 
     public Boolean getPublishPolicyFindings() {
@@ -151,15 +151,15 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie
+     * Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
      * automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The
      * default value is true.
      * </p>
      * 
      * @param publishPolicyFindings
-     *        Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon
-     *        Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings
-     *        filter. The default value is true.
+     *        Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
+     *        automatically publishes all new and updated policy findings that weren't suppressed by a findings filter.
+     *        The default value is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,14 +170,14 @@ public class SecurityHubConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie
+     * Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
      * automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The
      * default value is true.
      * </p>
      * 
-     * @return Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon
-     *         Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings
-     *         filter. The default value is true.
+     * @return Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie
+     *         automatically publishes all new and updated policy findings that weren't suppressed by a findings filter.
+     *         The default value is true.
      */
 
     public Boolean isPublishPolicyFindings() {

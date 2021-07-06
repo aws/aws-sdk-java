@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Lambda could not unzip the deployment package.
+ * Lambda could not unzip the deployment package.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -27,18 +27,18 @@ public class DisableOrganizationAdminAccountRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The AWS account ID of the delegated Amazon Macie administrator account.
+     * The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      * </p>
      */
     private String adminAccountId;
 
     /**
      * <p>
-     * The AWS account ID of the delegated Amazon Macie administrator account.
+     * The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      * </p>
      * 
      * @param adminAccountId
-     *        The AWS account ID of the delegated Amazon Macie administrator account.
+     *        The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      */
 
     public void setAdminAccountId(String adminAccountId) {
@@ -47,10 +47,10 @@ public class DisableOrganizationAdminAccountRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The AWS account ID of the delegated Amazon Macie administrator account.
+     * The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      * </p>
      * 
-     * @return The AWS account ID of the delegated Amazon Macie administrator account.
+     * @return The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      */
 
     public String getAdminAccountId() {
@@ -59,11 +59,11 @@ public class DisableOrganizationAdminAccountRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The AWS account ID of the delegated Amazon Macie administrator account.
+     * The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      * </p>
      * 
      * @param adminAccountId
-     *        The AWS account ID of the delegated Amazon Macie administrator account.
+     *        The Amazon Web Services account ID of the delegated Amazon Macie administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

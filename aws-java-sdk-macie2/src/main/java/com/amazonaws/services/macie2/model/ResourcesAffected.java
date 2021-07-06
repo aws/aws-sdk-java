@@ -30,28 +30,24 @@ public class ResourcesAffected implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 bucket.
+     * The details of the S3 bucket that the finding applies to.
      * </p>
      */
     private S3Bucket s3Bucket;
     /**
      * <p>
-     * An array of objects, one for each S3 object that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 object.
+     * The details of the S3 object that the finding applies to.
      * </p>
      */
     private S3Object s3Object;
 
     /**
      * <p>
-     * An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 bucket.
+     * The details of the S3 bucket that the finding applies to.
      * </p>
      * 
      * @param s3Bucket
-     *        An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of
-     *        metadata about an affected S3 bucket.
+     *        The details of the S3 bucket that the finding applies to.
      */
 
     public void setS3Bucket(S3Bucket s3Bucket) {
@@ -60,12 +56,10 @@ public class ResourcesAffected implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 bucket.
+     * The details of the S3 bucket that the finding applies to.
      * </p>
      * 
-     * @return An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of
-     *         metadata about an affected S3 bucket.
+     * @return The details of the S3 bucket that the finding applies to.
      */
 
     public S3Bucket getS3Bucket() {
@@ -74,13 +68,11 @@ public class ResourcesAffected implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 bucket.
+     * The details of the S3 bucket that the finding applies to.
      * </p>
      * 
      * @param s3Bucket
-     *        An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of
-     *        metadata about an affected S3 bucket.
+     *        The details of the S3 bucket that the finding applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +83,11 @@ public class ResourcesAffected implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 object.
+     * The details of the S3 object that the finding applies to.
      * </p>
      * 
      * @param s3Object
-     *        An array of objects, one for each S3 object that the finding applies to. Each object provides a set of
-     *        metadata about an affected S3 object.
+     *        The details of the S3 object that the finding applies to.
      */
 
     public void setS3Object(S3Object s3Object) {
@@ -106,12 +96,10 @@ public class ResourcesAffected implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 object.
+     * The details of the S3 object that the finding applies to.
      * </p>
      * 
-     * @return An array of objects, one for each S3 object that the finding applies to. Each object provides a set of
-     *         metadata about an affected S3 object.
+     * @return The details of the S3 object that the finding applies to.
      */
 
     public S3Object getS3Object() {
@@ -120,13 +108,11 @@ public class ResourcesAffected implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that the finding applies to. Each object provides a set of metadata
-     * about an affected S3 object.
+     * The details of the S3 object that the finding applies to.
      * </p>
      * 
      * @param s3Object
-     *        An array of objects, one for each S3 object that the finding applies to. Each object provides a set of
-     *        metadata about an affected S3 object.
+     *        The details of the S3 object that the finding applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

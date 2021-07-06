@@ -30,7 +30,8 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      */
     private String accountId;
@@ -62,11 +63,13 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     *        The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     *        credentials.
      */
 
     public void setAccountId(String accountId) {
@@ -75,10 +78,12 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * @return The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     *         credentials.
      */
 
     public String getAccountId() {
@@ -87,11 +92,13 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     *        The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     *        credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

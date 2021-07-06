@@ -25,13 +25,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The AWS account ID for the administrator account.
+     * The Amazon Web Services account ID for the administrator account.
      * </p>
      */
     private String administratorAccountId;
@@ -56,8 +56,8 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private java.util.Date invitedAt;
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by
+     * the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      */
     private String masterAccountId;
@@ -84,11 +84,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account.
+     *        The Amazon Web Services account ID for the account.
      */
 
     public void setAccountId(String accountId) {
@@ -97,10 +97,10 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
-     * @return The AWS account ID for the account.
+     * @return The Amazon Web Services account ID for the account.
      */
 
     public String getAccountId() {
@@ -109,11 +109,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account.
+     *        The Amazon Web Services account ID for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the administrator account.
+     * The Amazon Web Services account ID for the administrator account.
      * </p>
      * 
      * @param administratorAccountId
-     *        The AWS account ID for the administrator account.
+     *        The Amazon Web Services account ID for the administrator account.
      */
 
     public void setAdministratorAccountId(String administratorAccountId) {
@@ -137,10 +137,10 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the administrator account.
+     * The Amazon Web Services account ID for the administrator account.
      * </p>
      * 
-     * @return The AWS account ID for the administrator account.
+     * @return The Amazon Web Services account ID for the administrator account.
      */
 
     public String getAdministratorAccountId() {
@@ -149,11 +149,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the administrator account.
+     * The Amazon Web Services account ID for the administrator account.
      * </p>
      * 
      * @param administratorAccountId
-     *        The AWS account ID for the administrator account.
+     *        The Amazon Web Services account ID for the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,13 +290,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by
+     * the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccountId
-     *        (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     *        administratorAccountId property and is retained only for backward compatibility.
+     *        (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been
+     *        replaced by the administratorAccountId property and is retained only for backward compatibility.
      */
 
     public void setMasterAccountId(String masterAccountId) {
@@ -305,12 +305,12 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by
+     * the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
-     * @return (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     *         administratorAccountId property and is retained only for backward compatibility.
+     * @return (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been
+     *         replaced by the administratorAccountId property and is retained only for backward compatibility.
      */
 
     public String getMasterAccountId() {
@@ -319,13 +319,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by
+     * the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccountId
-     *        (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
-     *        administratorAccountId property and is retained only for backward compatibility.
+     *        (Deprecated) The Amazon Web Services account ID for the administrator account. This property has been
+     *        replaced by the administratorAccountId property and is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

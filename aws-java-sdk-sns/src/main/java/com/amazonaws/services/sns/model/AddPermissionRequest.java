@@ -39,8 +39,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String label;
     /**
      * <p>
-     * The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-     * have AWS accounts, but do not need to be signed up for this service.
+     * The account IDs of the users (principals) who will be given access to the specified actions. The users must have
+     * account, but do not need to be signed up for this service.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> aWSAccountIds;
@@ -70,8 +70,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param label
      *        A unique identifier for the new policy statement.
      * @param aWSAccountIds
-     *        The AWS account IDs of the users (principals) who will be given access to the specified actions. The users
-     *        must have AWS accounts, but do not need to be signed up for this service.
+     *        The account IDs of the users (principals) who will be given access to the specified actions. The users
+     *        must have account, but do not need to be signed up for this service.
      * @param actionNames
      *        The action you want to allow for the specified principal(s).</p>
      *        <p>
@@ -166,12 +166,12 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-     * have AWS accounts, but do not need to be signed up for this service.
+     * The account IDs of the users (principals) who will be given access to the specified actions. The users must have
+     * account, but do not need to be signed up for this service.
      * </p>
      * 
-     * @return The AWS account IDs of the users (principals) who will be given access to the specified actions. The
-     *         users must have AWS accounts, but do not need to be signed up for this service.
+     * @return The account IDs of the users (principals) who will be given access to the specified actions. The users
+     *         must have account, but do not need to be signed up for this service.
      */
 
     public java.util.List<String> getAWSAccountIds() {
@@ -183,13 +183,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-     * have AWS accounts, but do not need to be signed up for this service.
+     * The account IDs of the users (principals) who will be given access to the specified actions. The users must have
+     * account, but do not need to be signed up for this service.
      * </p>
      * 
      * @param aWSAccountIds
-     *        The AWS account IDs of the users (principals) who will be given access to the specified actions. The users
-     *        must have AWS accounts, but do not need to be signed up for this service.
+     *        The account IDs of the users (principals) who will be given access to the specified actions. The users
+     *        must have account, but do not need to be signed up for this service.
      */
 
     public void setAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
@@ -203,8 +203,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-     * have AWS accounts, but do not need to be signed up for this service.
+     * The account IDs of the users (principals) who will be given access to the specified actions. The users must have
+     * account, but do not need to be signed up for this service.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -213,8 +213,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param aWSAccountIds
-     *        The AWS account IDs of the users (principals) who will be given access to the specified actions. The users
-     *        must have AWS accounts, but do not need to be signed up for this service.
+     *        The account IDs of the users (principals) who will be given access to the specified actions. The users
+     *        must have account, but do not need to be signed up for this service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,13 +230,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-     * have AWS accounts, but do not need to be signed up for this service.
+     * The account IDs of the users (principals) who will be given access to the specified actions. The users must have
+     * account, but do not need to be signed up for this service.
      * </p>
      * 
      * @param aWSAccountIds
-     *        The AWS account IDs of the users (principals) who will be given access to the specified actions. The users
-     *        must have AWS accounts, but do not need to be signed up for this service.
+     *        The account IDs of the users (principals) who will be given access to the specified actions. The users
+     *        must have account, but do not need to be signed up for this service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

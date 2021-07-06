@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AWS Lambda service encountered an internal error.
+ * The Lambda service encountered an internal error.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

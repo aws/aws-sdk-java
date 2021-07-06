@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of an EC2 AMI.
+ * Details of an Amazon EC2 AMI.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Ami" target="_top">AWS API
@@ -30,25 +30,25 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region of the EC2 AMI.
+     * The Region of the Amazon EC2 AMI.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The AMI ID of the EC2 AMI.
+     * The AMI ID of the Amazon EC2 AMI.
      * </p>
      */
     private String image;
     /**
      * <p>
-     * The name of the EC2 AMI.
+     * The name of the Amazon EC2 AMI.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the EC2 AMI. Minimum and maximum length are in characters.
+     * The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      */
     private String description;
@@ -63,11 +63,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region of the EC2 AMI.
+     * The Region of the Amazon EC2 AMI.
      * </p>
      * 
      * @param region
-     *        The AWS Region of the EC2 AMI.
+     *        The Region of the Amazon EC2 AMI.
      */
 
     public void setRegion(String region) {
@@ -76,10 +76,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region of the EC2 AMI.
+     * The Region of the Amazon EC2 AMI.
      * </p>
      * 
-     * @return The AWS Region of the EC2 AMI.
+     * @return The Region of the Amazon EC2 AMI.
      */
 
     public String getRegion() {
@@ -88,11 +88,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region of the EC2 AMI.
+     * The Region of the Amazon EC2 AMI.
      * </p>
      * 
      * @param region
-     *        The AWS Region of the EC2 AMI.
+     *        The Region of the Amazon EC2 AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI ID of the EC2 AMI.
+     * The AMI ID of the Amazon EC2 AMI.
      * </p>
      * 
      * @param image
-     *        The AMI ID of the EC2 AMI.
+     *        The AMI ID of the Amazon EC2 AMI.
      */
 
     public void setImage(String image) {
@@ -116,10 +116,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI ID of the EC2 AMI.
+     * The AMI ID of the Amazon EC2 AMI.
      * </p>
      * 
-     * @return The AMI ID of the EC2 AMI.
+     * @return The AMI ID of the Amazon EC2 AMI.
      */
 
     public String getImage() {
@@ -128,11 +128,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI ID of the EC2 AMI.
+     * The AMI ID of the Amazon EC2 AMI.
      * </p>
      * 
      * @param image
-     *        The AMI ID of the EC2 AMI.
+     *        The AMI ID of the Amazon EC2 AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the EC2 AMI.
+     * The name of the Amazon EC2 AMI.
      * </p>
      * 
      * @param name
-     *        The name of the EC2 AMI.
+     *        The name of the Amazon EC2 AMI.
      */
 
     public void setName(String name) {
@@ -156,10 +156,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the EC2 AMI.
+     * The name of the Amazon EC2 AMI.
      * </p>
      * 
-     * @return The name of the EC2 AMI.
+     * @return The name of the Amazon EC2 AMI.
      */
 
     public String getName() {
@@ -168,11 +168,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the EC2 AMI.
+     * The name of the Amazon EC2 AMI.
      * </p>
      * 
      * @param name
-     *        The name of the EC2 AMI.
+     *        The name of the Amazon EC2 AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI. Minimum and maximum length are in characters.
+     * The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the EC2 AMI. Minimum and maximum length are in characters.
+     *        The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      */
 
     public void setDescription(String description) {
@@ -196,10 +196,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI. Minimum and maximum length are in characters.
+     * The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
-     * @return The description of the EC2 AMI. Minimum and maximum length are in characters.
+     * @return The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      */
 
     public String getDescription() {
@@ -208,11 +208,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI. Minimum and maximum length are in characters.
+     * The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the EC2 AMI. Minimum and maximum length are in characters.
+     *        The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

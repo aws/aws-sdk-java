@@ -37,9 +37,8 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
     private String encryptionType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
-     * this value is null.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.
      * </p>
      */
     private String kmsMasterKeyId;
@@ -117,15 +116,14 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
-     * this value is null.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     *        customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't
-     *        used, this value is null.
+     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer
+     *        master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this
+     *        value is null.
      */
 
     public void setKmsMasterKeyId(String kmsMasterKeyId) {
@@ -134,14 +132,13 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
-     * this value is null.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     *         customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK
-     *         isn't used, this value is null.
+     * @return The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS)
+     *         customer master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't
+     *         used, this value is null.
      */
 
     public String getKmsMasterKeyId() {
@@ -150,15 +147,14 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
-     * this value is null.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     *        customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't
-     *        used, this value is null.
+     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer
+     *        master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this
+     *        value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

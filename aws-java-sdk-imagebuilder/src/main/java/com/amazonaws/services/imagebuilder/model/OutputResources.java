@@ -30,7 +30,7 @@ public class OutputResources implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 AMIs created by this image.
+     * The Amazon EC2 AMIs created by this image.
      * </p>
      */
     private java.util.List<Ami> amis;
@@ -43,10 +43,10 @@ public class OutputResources implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 AMIs created by this image.
+     * The Amazon EC2 AMIs created by this image.
      * </p>
      * 
-     * @return The EC2 AMIs created by this image.
+     * @return The Amazon EC2 AMIs created by this image.
      */
 
     public java.util.List<Ami> getAmis() {
@@ -55,11 +55,11 @@ public class OutputResources implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 AMIs created by this image.
+     * The Amazon EC2 AMIs created by this image.
      * </p>
      * 
      * @param amis
-     *        The EC2 AMIs created by this image.
+     *        The Amazon EC2 AMIs created by this image.
      */
 
     public void setAmis(java.util.Collection<Ami> amis) {
@@ -73,7 +73,7 @@ public class OutputResources implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 AMIs created by this image.
+     * The Amazon EC2 AMIs created by this image.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class OutputResources implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param amis
-     *        The EC2 AMIs created by this image.
+     *        The Amazon EC2 AMIs created by this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class OutputResources implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 AMIs created by this image.
+     * The Amazon EC2 AMIs created by this image.
      * </p>
      * 
      * @param amis
-     *        The EC2 AMIs created by this image.
+     *        The Amazon EC2 AMIs created by this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

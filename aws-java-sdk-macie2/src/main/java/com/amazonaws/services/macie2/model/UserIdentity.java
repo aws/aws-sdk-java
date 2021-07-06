@@ -32,41 +32,43 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the AssumeRole operation
-     * of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the
-     * identity.
+     * of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.
      * </p>
      */
     private AssumedRole assumedRole;
     /**
      * <p>
-     * If the action was performed using the credentials for another AWS account, the details of that account.
+     * If the action was performed using the credentials for another Amazon Web Services account, the details of that
+     * account.
      * </p>
      */
     private AwsAccount awsAccount;
     /**
      * <p>
-     * If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     * If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of
+     * the service.
      * </p>
      */
     private AwsService awsService;
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the GetFederationToken
-     * operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details
-     * about the identity.
+     * operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the
+     * identity.
      * </p>
      */
     private FederatedUser federatedUser;
     /**
      * <p>
-     * If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user, the name
-     * and other details about the user.
+     * If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and
+     * other details about the user.
      * </p>
      */
     private IamUser iamUser;
     /**
      * <p>
-     * If the action was performed using the credentials for your AWS account, the details of your account.
+     * If the action was performed using the credentials for your Amazon Web Services account, the details of your
+     * account.
      * </p>
      */
     private UserIdentityRoot root;
@@ -80,14 +82,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the AssumeRole operation
-     * of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the
-     * identity.
+     * of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.
      * </p>
      * 
      * @param assumedRole
      *        If the action was performed with temporary security credentials that were obtained using the AssumeRole
-     *        operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other
-     *        details about the identity.
+     *        operation of the Security Token Service (STS) API, the identifiers, session context, and other details
+     *        about the identity.
      */
 
     public void setAssumedRole(AssumedRole assumedRole) {
@@ -97,13 +98,12 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the AssumeRole operation
-     * of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the
-     * identity.
+     * of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.
      * </p>
      * 
      * @return If the action was performed with temporary security credentials that were obtained using the AssumeRole
-     *         operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other
-     *         details about the identity.
+     *         operation of the Security Token Service (STS) API, the identifiers, session context, and other details
+     *         about the identity.
      */
 
     public AssumedRole getAssumedRole() {
@@ -113,14 +113,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the AssumeRole operation
-     * of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the
-     * identity.
+     * of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.
      * </p>
      * 
      * @param assumedRole
      *        If the action was performed with temporary security credentials that were obtained using the AssumeRole
-     *        operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other
-     *        details about the identity.
+     *        operation of the Security Token Service (STS) API, the identifiers, session context, and other details
+     *        about the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +130,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for another AWS account, the details of that account.
+     * If the action was performed using the credentials for another Amazon Web Services account, the details of that
+     * account.
      * </p>
      * 
      * @param awsAccount
-     *        If the action was performed using the credentials for another AWS account, the details of that account.
+     *        If the action was performed using the credentials for another Amazon Web Services account, the details of
+     *        that account.
      */
 
     public void setAwsAccount(AwsAccount awsAccount) {
@@ -144,10 +145,12 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for another AWS account, the details of that account.
+     * If the action was performed using the credentials for another Amazon Web Services account, the details of that
+     * account.
      * </p>
      * 
-     * @return If the action was performed using the credentials for another AWS account, the details of that account.
+     * @return If the action was performed using the credentials for another Amazon Web Services account, the details of
+     *         that account.
      */
 
     public AwsAccount getAwsAccount() {
@@ -156,11 +159,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for another AWS account, the details of that account.
+     * If the action was performed using the credentials for another Amazon Web Services account, the details of that
+     * account.
      * </p>
      * 
      * @param awsAccount
-     *        If the action was performed using the credentials for another AWS account, the details of that account.
+     *        If the action was performed using the credentials for another Amazon Web Services account, the details of
+     *        that account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +176,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     * If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of
+     * the service.
      * </p>
      * 
      * @param awsService
-     *        If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     *        If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the
+     *        name of the service.
      */
 
     public void setAwsService(AwsService awsService) {
@@ -184,10 +191,12 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     * If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of
+     * the service.
      * </p>
      * 
-     * @return If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     * @return If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the
+     *         name of the service.
      */
 
     public AwsService getAwsService() {
@@ -196,11 +205,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     * If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of
+     * the service.
      * </p>
      * 
      * @param awsService
-     *        If the action was performed by an AWS account that belongs to an AWS service, the name of the service.
+     *        If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the
+     *        name of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,14 +223,14 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the GetFederationToken
-     * operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details
-     * about the identity.
+     * operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the
+     * identity.
      * </p>
      * 
      * @param federatedUser
      *        If the action was performed with temporary security credentials that were obtained using the
-     *        GetFederationToken operation of the AWS Security Token Service (AWS STS) API, the identifiers, session
-     *        context, and other details about the identity.
+     *        GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context,
+     *        and other details about the identity.
      */
 
     public void setFederatedUser(FederatedUser federatedUser) {
@@ -229,13 +240,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the GetFederationToken
-     * operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details
-     * about the identity.
+     * operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the
+     * identity.
      * </p>
      * 
      * @return If the action was performed with temporary security credentials that were obtained using the
-     *         GetFederationToken operation of the AWS Security Token Service (AWS STS) API, the identifiers, session
-     *         context, and other details about the identity.
+     *         GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context,
+     *         and other details about the identity.
      */
 
     public FederatedUser getFederatedUser() {
@@ -245,14 +256,14 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the action was performed with temporary security credentials that were obtained using the GetFederationToken
-     * operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details
-     * about the identity.
+     * operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the
+     * identity.
      * </p>
      * 
      * @param federatedUser
      *        If the action was performed with temporary security credentials that were obtained using the
-     *        GetFederationToken operation of the AWS Security Token Service (AWS STS) API, the identifiers, session
-     *        context, and other details about the identity.
+     *        GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context,
+     *        and other details about the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,13 +274,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user, the name
-     * and other details about the user.
+     * If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and
+     * other details about the user.
      * </p>
      * 
      * @param iamUser
-     *        If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user,
-     *        the name and other details about the user.
+     *        If the action was performed using the credentials for an Identity and Access Management (IAM) user, the
+     *        name and other details about the user.
      */
 
     public void setIamUser(IamUser iamUser) {
@@ -278,12 +289,12 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user, the name
-     * and other details about the user.
+     * If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and
+     * other details about the user.
      * </p>
      * 
-     * @return If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user,
-     *         the name and other details about the user.
+     * @return If the action was performed using the credentials for an Identity and Access Management (IAM) user, the
+     *         name and other details about the user.
      */
 
     public IamUser getIamUser() {
@@ -292,13 +303,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user, the name
-     * and other details about the user.
+     * If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and
+     * other details about the user.
      * </p>
      * 
      * @param iamUser
-     *        If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user,
-     *        the name and other details about the user.
+     *        If the action was performed using the credentials for an Identity and Access Management (IAM) user, the
+     *        name and other details about the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +320,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for your AWS account, the details of your account.
+     * If the action was performed using the credentials for your Amazon Web Services account, the details of your
+     * account.
      * </p>
      * 
      * @param root
-     *        If the action was performed using the credentials for your AWS account, the details of your account.
+     *        If the action was performed using the credentials for your Amazon Web Services account, the details of
+     *        your account.
      */
 
     public void setRoot(UserIdentityRoot root) {
@@ -322,10 +335,12 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for your AWS account, the details of your account.
+     * If the action was performed using the credentials for your Amazon Web Services account, the details of your
+     * account.
      * </p>
      * 
-     * @return If the action was performed using the credentials for your AWS account, the details of your account.
+     * @return If the action was performed using the credentials for your Amazon Web Services account, the details of
+     *         your account.
      */
 
     public UserIdentityRoot getRoot() {
@@ -334,11 +349,13 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the action was performed using the credentials for your AWS account, the details of your account.
+     * If the action was performed using the credentials for your Amazon Web Services account, the details of your
+     * account.
      * </p>
      * 
      * @param root
-     *        If the action was performed using the credentials for your AWS account, the details of your account.
+     *        If the action was performed using the credentials for your Amazon Web Services account, the details of
+     *        your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

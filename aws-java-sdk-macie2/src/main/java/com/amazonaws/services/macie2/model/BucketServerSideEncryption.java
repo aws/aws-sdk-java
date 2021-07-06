@@ -33,10 +33,9 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is
-     * null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects
-     * by default.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the
+     * bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.
      * </p>
      */
     private String kmsMasterKeyId;
@@ -53,8 +52,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS
-     * managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web
+     * Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      * </p>
      * </li>
      * <li>
@@ -68,17 +67,16 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is
-     * null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects
-     * by default.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the
+     * bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     *        customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This
-     *        value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't
-     *        encrypt new objects by default.
+     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer
+     *        master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is
+     *        null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new
+     *        objects by default.
      */
 
     public void setKmsMasterKeyId(String kmsMasterKeyId) {
@@ -87,13 +85,12 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is
-     * null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects
-     * by default.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the
+     * bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     * @return The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS)
      *         customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This
      *         value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't
      *         encrypt new objects by default.
@@ -105,17 +102,16 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is
-     * null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects
-     * by default.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master
+     * key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the
+     * bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
-     *        customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This
-     *        value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't
-     *        encrypt new objects by default.
+     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer
+     *        master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is
+     *        null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new
+     *        objects by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,8 +133,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS
-     * managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web
+     * Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      * </p>
      * </li>
      * <li>
@@ -160,8 +156,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use
-     *        AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     *        aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use
+     *        Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      *        </p>
      *        </li>
      *        <li>
@@ -189,8 +185,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS
-     * managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web
+     * Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      * </p>
      * </li>
      * <li>
@@ -211,8 +207,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and
-     *         use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     *         aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use
+     *         Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      *         </p>
      *         </li>
      *         <li>
@@ -240,8 +236,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS
-     * managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web
+     * Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      * </p>
      * </li>
      * <li>
@@ -263,8 +259,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use
-     *        AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     *        aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use
+     *        Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      *        </p>
      *        </li>
      *        <li>
@@ -294,8 +290,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS
-     * managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web
+     * Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      * </p>
      * </li>
      * <li>
@@ -317,8 +313,8 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use
-     *        AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     *        aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use
+     *        Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).
      *        </p>
      *        </li>
      *        <li>

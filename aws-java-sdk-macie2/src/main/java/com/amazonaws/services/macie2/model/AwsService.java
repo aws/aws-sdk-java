@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an AWS service that performed an action on an affected resource.
+ * Provides information about an Amazon Web Service that performed an action on an affected resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AwsService" target="_top">AWS API
@@ -30,18 +30,18 @@ public class AwsService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that performed the action.
+     * The name of the Amazon Web Service that performed the action.
      * </p>
      */
     private String invokedBy;
 
     /**
      * <p>
-     * The name of the AWS service that performed the action.
+     * The name of the Amazon Web Service that performed the action.
      * </p>
      * 
      * @param invokedBy
-     *        The name of the AWS service that performed the action.
+     *        The name of the Amazon Web Service that performed the action.
      */
 
     public void setInvokedBy(String invokedBy) {
@@ -50,10 +50,10 @@ public class AwsService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that performed the action.
+     * The name of the Amazon Web Service that performed the action.
      * </p>
      * 
-     * @return The name of the AWS service that performed the action.
+     * @return The name of the Amazon Web Service that performed the action.
      */
 
     public String getInvokedBy() {
@@ -62,11 +62,11 @@ public class AwsService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS service that performed the action.
+     * The name of the Amazon Web Service that performed the action.
      * </p>
      * 
      * @param invokedBy
-     *        The name of the AWS service that performed the action.
+     *        The name of the Amazon Web Service that performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

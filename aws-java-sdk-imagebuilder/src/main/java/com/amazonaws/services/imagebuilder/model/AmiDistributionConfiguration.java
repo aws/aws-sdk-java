@@ -60,7 +60,7 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
     private String kmsKeyId;
     /**
      * <p>
-     * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     * Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      * </p>
      */
     private LaunchPermissionConfiguration launchPermission;
@@ -325,11 +325,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     * Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      * </p>
      * 
      * @param launchPermission
-     *        Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     *        Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      */
 
     public void setLaunchPermission(LaunchPermissionConfiguration launchPermission) {
@@ -338,10 +338,10 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     * Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      * </p>
      * 
-     * @return Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     * @return Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      */
 
     public LaunchPermissionConfiguration getLaunchPermission() {
@@ -350,11 +350,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     * Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      * </p>
      * 
      * @param launchPermission
-     *        Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
+     *        Launch permissions can be used to configure which accounts can use the AMI to launch instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

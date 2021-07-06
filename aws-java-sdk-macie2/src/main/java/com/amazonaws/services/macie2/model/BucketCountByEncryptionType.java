@@ -33,9 +33,9 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
-     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
-     * encryption (SSE-KMS) by default.
+     * The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new
+     * objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed
+     * KMS encryption (SSE-KMS) by default.
      * </p>
      */
     private Long kmsManaged;
@@ -63,16 +63,16 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
-     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
-     * encryption (SSE-KMS) by default.
+     * The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new
+     * objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed
+     * KMS encryption (SSE-KMS) by default.
      * </p>
      * 
      * @param kmsManaged
      *        <p>
-     *        The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
-     *        encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer
-     *        managed AWS KMS encryption (SSE-KMS) by default.
+     *        The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt
+     *        new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer
+     *        managed KMS encryption (SSE-KMS) by default.
      *        </p>
      */
 
@@ -82,15 +82,15 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
-     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
-     * encryption (SSE-KMS) by default.
+     * The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new
+     * objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed
+     * KMS encryption (SSE-KMS) by default.
      * </p>
      * 
      * @return <p>
-     *         The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
-     *         encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer
-     *         managed AWS KMS encryption (SSE-KMS) by default.
+     *         The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt
+     *         new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or
+     *         customer managed KMS encryption (SSE-KMS) by default.
      *         </p>
      */
 
@@ -100,16 +100,16 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
-     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
-     * encryption (SSE-KMS) by default.
+     * The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new
+     * objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed
+     * KMS encryption (SSE-KMS) by default.
      * </p>
      * 
      * @param kmsManaged
      *        <p>
-     *        The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
-     *        encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer
-     *        managed AWS KMS encryption (SSE-KMS) by default.
+     *        The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt
+     *        new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer
+     *        managed KMS encryption (SSE-KMS) by default.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

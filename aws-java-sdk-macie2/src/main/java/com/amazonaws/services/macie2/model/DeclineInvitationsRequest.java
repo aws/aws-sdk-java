@@ -27,17 +27,18 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.
      * </p>
      * 
-     * @return An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     * @return An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *         decline.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +47,12 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     *        An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *        decline.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +66,7 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +75,8 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     *        An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *        decline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +92,12 @@ public class DeclineInvitationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     * An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account that sent an invitation to decline.
+     *        An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to
+     *        decline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

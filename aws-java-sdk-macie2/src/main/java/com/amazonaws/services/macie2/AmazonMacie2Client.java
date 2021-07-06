@@ -1214,7 +1214,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -1357,7 +1357,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -1717,7 +1717,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an Amazon Web Services
+     * organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -2286,7 +2287,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * Retrieves the configuration settings for publishing findings to Security Hub.
      * </p>
      * 
      * @param getFindingsPublicationConfigurationRequest
@@ -3203,7 +3204,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an Amazon Web Services
+     * organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -3404,7 +3406,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * Updates the configuration settings for publishing findings to Security Hub.
      * </p>
      * 
      * @param putFindingsPublicationConfigurationRequest
@@ -3477,8 +3479,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
-     * analyzes.
+     * Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie
+     * monitors and analyzes.
      * </p>
      * 
      * @param searchResourcesRequest
@@ -4014,7 +4016,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Updates the Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

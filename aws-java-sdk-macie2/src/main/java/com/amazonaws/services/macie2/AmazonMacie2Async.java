@@ -516,7 +516,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -531,7 +531,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -582,7 +582,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -597,7 +597,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -753,7 +753,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an Amazon Web Services
+     * organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -768,7 +769,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an Amazon Web Services
+     * organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -1009,7 +1011,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * Retrieves the configuration settings for publishing findings to Security Hub.
      * </p>
      * 
      * @param getFindingsPublicationConfigurationRequest
@@ -1024,7 +1026,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * Retrieves the configuration settings for publishing findings to Security Hub.
      * </p>
      * 
      * @param getFindingsPublicationConfigurationRequest
@@ -1420,7 +1422,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an Amazon Web Services
+     * organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -1435,7 +1438,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an Amazon Web Services
+     * organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -1523,7 +1527,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * Updates the configuration settings for publishing findings to Security Hub.
      * </p>
      * 
      * @param putFindingsPublicationConfigurationRequest
@@ -1538,7 +1542,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * Updates the configuration settings for publishing findings to Security Hub.
      * </p>
      * 
      * @param putFindingsPublicationConfigurationRequest
@@ -1558,8 +1562,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
-     * analyzes.
+     * Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie
+     * monitors and analyzes.
      * </p>
      * 
      * @param searchResourcesRequest
@@ -1572,8 +1576,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
-     * analyzes.
+     * Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie
+     * monitors and analyzes.
      * </p>
      * 
      * @param searchResourcesRequest
@@ -1812,7 +1816,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates the Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest
@@ -1827,7 +1831,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates the Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

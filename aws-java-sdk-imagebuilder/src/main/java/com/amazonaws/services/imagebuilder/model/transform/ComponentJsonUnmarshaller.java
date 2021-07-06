@@ -82,6 +82,12 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("parameters", targetDepth)) {
+                    context.nextToken();
+                    component.setParameters(new ListUnmarshaller<ComponentParameterDetail>(ComponentParameterDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("owner", targetDepth)) {
                     context.nextToken();
                     component.setOwner(context.getUnmarshaller(String.class).unmarshall(context));

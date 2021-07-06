@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no
+ * Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no
  * available IP addresses.
  * </p>
  */

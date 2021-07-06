@@ -115,32 +115,32 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      */
     private DestinationConfig destinationConfig;
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      */
     private Integer maximumRecordAgeInSeconds;
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      */
     private Boolean bisectBatchOnFunctionError;
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records will be retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
+     * set to infinite (-1), failed records will be retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams only) The number of batches to process from each shard concurrently.
      * </p>
      */
     private Integer parallelizationFactor;
@@ -152,13 +152,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      */
     private Integer tumblingWindowInSeconds;
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
@@ -720,11 +720,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      * 
      * @param destinationConfig
-     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     *        (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      */
 
     public void setDestinationConfig(DestinationConfig destinationConfig) {
@@ -733,10 +733,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      * 
-     * @return (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * @return (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      */
 
     public DestinationConfig getDestinationConfig() {
@@ -745,11 +745,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * </p>
      * 
      * @param destinationConfig
-     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     *        (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -760,11 +760,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     *        (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      */
 
     public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
@@ -773,10 +773,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      * 
-     * @return (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     * @return (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      */
 
     public Integer getMaximumRecordAgeInSeconds() {
@@ -785,11 +785,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) Discard records older than the specified age. The default value is infinite (-1).
+     *        (Streams only) Discard records older than the specified age. The default value is infinite (-1).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -800,11 +800,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry.
+     *        (Streams only) If the function returns an error, split the batch in two and retry.
      */
 
     public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
@@ -813,10 +813,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     * @return (Streams only) If the function returns an error, split the batch in two and retry.
      */
 
     public Boolean getBisectBatchOnFunctionError() {
@@ -825,11 +825,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry.
+     *        (Streams only) If the function returns an error, split the batch in two and retry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -840,10 +840,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     * @return (Streams only) If the function returns an error, split the batch in two and retry.
      */
 
     public Boolean isBisectBatchOnFunctionError() {
@@ -852,13 +852,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records will be retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
+     * set to infinite (-1), failed records will be retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
-     *        set to infinite (-1), failed records will be retried until the record expires.
+     *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
+     *        When set to infinite (-1), failed records will be retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -867,12 +867,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records will be retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
+     * set to infinite (-1), failed records will be retried until the record expires.
      * </p>
      * 
-     * @return (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
-     *         set to infinite (-1), failed records will be retried until the record expires.
+     * @return (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
+     *         When set to infinite (-1), failed records will be retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -881,13 +881,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
-     * infinite (-1), failed records will be retried until the record expires.
+     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
+     * set to infinite (-1), failed records will be retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
-     *        set to infinite (-1), failed records will be retried until the record expires.
+     *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
+     *        When set to infinite (-1), failed records will be retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -898,11 +898,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams only) The number of batches to process from each shard concurrently.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently.
+     *        (Streams only) The number of batches to process from each shard concurrently.
      */
 
     public void setParallelizationFactor(Integer parallelizationFactor) {
@@ -911,10 +911,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams only) The number of batches to process from each shard concurrently.
      * </p>
      * 
-     * @return (Streams) The number of batches to process from each shard concurrently.
+     * @return (Streams only) The number of batches to process from each shard concurrently.
      */
 
     public Integer getParallelizationFactor() {
@@ -923,11 +923,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams only) The number of batches to process from each shard concurrently.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently.
+     *        (Streams only) The number of batches to process from each shard concurrently.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1011,11 +1011,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        seconds.
      */
 
     public void setTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
@@ -1024,10 +1025,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
-     * @return (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900
+     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
      *         seconds.
      */
 
@@ -1037,11 +1038,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *        seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1052,10 +1054,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
-     * @return (Streams) A list of current response type enums applied to the event source mapping.
+     * @return (Streams only) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1068,11 +1070,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @see FunctionResponseType
      */
 
@@ -1087,7 +1089,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1096,7 +1098,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1113,11 +1115,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1129,11 +1131,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) A list of current response type enums applied to the event source mapping.
+     * (Streams only) A list of current response type enums applied to the event source mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams) A list of current response type enums applied to the event source mapping.
+     *        (Streams only) A list of current response type enums applied to the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the number of filter polices in your AWS account exceeds the limit. To add more filter polices, submit
- * an SNS Limit Increase case in the AWS Support Center.
+ * Indicates that the number of filter polices in your account exceeds the limit. To add more filter polices, submit an
+ * SNS Limit Increase case in the Amazon Web Services Support Center.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

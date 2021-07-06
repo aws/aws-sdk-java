@@ -29,41 +29,41 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell
-     * C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     * The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5
+     * for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      * </p>
      */
     private String cellReference;
     /**
      * <p>
-     * The column number of the column that contains the data. For a Microsoft Excel workbook, this value correlates to
-     * the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for column B, and so on.
+     * The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value
+     * correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B,
+     * and so on.
      * </p>
      */
     private Long column;
     /**
      * <p>
-     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
-     * sensitive data in the name of any column in the file.
+     * The name of the column that contains the sensitive data, if available.
      * </p>
      */
     private String columnName;
     /**
      * <p>
-     * The row number of the row that contains the data.
+     * The row number of the row that contains the sensitive data.
      * </p>
      */
     private Long row;
 
     /**
      * <p>
-     * The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell
-     * C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     * The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5
+     * for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      * </p>
      * 
      * @param cellReference
-     *        The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5
-     *        for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     *        The location of the cell, as an absolute cell reference, that contains the sensitive data, for example
+     *        Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      */
 
     public void setCellReference(String cellReference) {
@@ -72,12 +72,12 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell
-     * C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     * The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5
+     * for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      * </p>
      * 
-     * @return The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5
-     *         for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     * @return The location of the cell, as an absolute cell reference, that contains the sensitive data, for example
+     *         Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      */
 
     public String getCellReference() {
@@ -86,13 +86,13 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell
-     * C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     * The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5
+     * for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      * </p>
      * 
      * @param cellReference
-     *        The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5
-     *        for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
+     *        The location of the cell, as an absolute cell reference, that contains the sensitive data, for example
+     *        Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,14 +103,15 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column number of the column that contains the data. For a Microsoft Excel workbook, this value correlates to
-     * the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for column B, and so on.
+     * The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value
+     * correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B,
+     * and so on.
      * </p>
      * 
      * @param column
-     *        The column number of the column that contains the data. For a Microsoft Excel workbook, this value
-     *        correlates to the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for
-     *        column B, and so on.
+     *        The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this
+     *        value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2
+     *        for column B, and so on.
      */
 
     public void setColumn(Long column) {
@@ -119,13 +120,14 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column number of the column that contains the data. For a Microsoft Excel workbook, this value correlates to
-     * the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for column B, and so on.
+     * The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value
+     * correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B,
+     * and so on.
      * </p>
      * 
-     * @return The column number of the column that contains the data. For a Microsoft Excel workbook, this value
-     *         correlates to the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for
-     *         column B, and so on.
+     * @return The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this
+     *         value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2
+     *         for column B, and so on.
      */
 
     public Long getColumn() {
@@ -134,14 +136,15 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column number of the column that contains the data. For a Microsoft Excel workbook, this value correlates to
-     * the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for column B, and so on.
+     * The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value
+     * correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B,
+     * and so on.
      * </p>
      * 
      * @param column
-     *        The column number of the column that contains the data. For a Microsoft Excel workbook, this value
-     *        correlates to the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for
-     *        column B, and so on.
+     *        The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this
+     *        value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2
+     *        for column B, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,13 +155,11 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
-     * sensitive data in the name of any column in the file.
+     * The name of the column that contains the sensitive data, if available.
      * </p>
      * 
      * @param columnName
-     *        The name of the column that contains the data, if available. This value is also null if Amazon Macie
-     *        detects sensitive data in the name of any column in the file.
+     *        The name of the column that contains the sensitive data, if available.
      */
 
     public void setColumnName(String columnName) {
@@ -167,12 +168,10 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
-     * sensitive data in the name of any column in the file.
+     * The name of the column that contains the sensitive data, if available.
      * </p>
      * 
-     * @return The name of the column that contains the data, if available. This value is also null if Amazon Macie
-     *         detects sensitive data in the name of any column in the file.
+     * @return The name of the column that contains the sensitive data, if available.
      */
 
     public String getColumnName() {
@@ -181,13 +180,11 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
-     * sensitive data in the name of any column in the file.
+     * The name of the column that contains the sensitive data, if available.
      * </p>
      * 
      * @param columnName
-     *        The name of the column that contains the data, if available. This value is also null if Amazon Macie
-     *        detects sensitive data in the name of any column in the file.
+     *        The name of the column that contains the sensitive data, if available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +195,11 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The row number of the row that contains the data.
+     * The row number of the row that contains the sensitive data.
      * </p>
      * 
      * @param row
-     *        The row number of the row that contains the data.
+     *        The row number of the row that contains the sensitive data.
      */
 
     public void setRow(Long row) {
@@ -211,10 +208,10 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The row number of the row that contains the data.
+     * The row number of the row that contains the sensitive data.
      * </p>
      * 
-     * @return The row number of the row that contains the data.
+     * @return The row number of the row that contains the sensitive data.
      */
 
     public Long getRow() {
@@ -223,11 +220,11 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The row number of the row that contains the data.
+     * The row number of the row that contains the sensitive data.
      * </p>
      * 
      * @param row
-     *        The row number of the row that contains the data.
+     *        The row number of the row that contains the sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

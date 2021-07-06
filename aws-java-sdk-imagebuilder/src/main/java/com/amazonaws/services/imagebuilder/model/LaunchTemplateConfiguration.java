@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies an EC2 launch template to use for a specific account.
+ * Identifies an Amazon EC2 launch template to use for a specific account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchTemplateConfiguration"
@@ -30,7 +30,7 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies the EC2 launch template to use.
+     * Identifies the Amazon EC2 launch template to use.
      * </p>
      */
     private String launchTemplateId;
@@ -42,18 +42,18 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
     private String accountId;
     /**
      * <p>
-     * Set the specified EC2 launch template as the default launch template for the specified account.
+     * Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      * </p>
      */
     private Boolean setDefaultVersion;
 
     /**
      * <p>
-     * Identifies the EC2 launch template to use.
+     * Identifies the Amazon EC2 launch template to use.
      * </p>
      * 
      * @param launchTemplateId
-     *        Identifies the EC2 launch template to use.
+     *        Identifies the Amazon EC2 launch template to use.
      */
 
     public void setLaunchTemplateId(String launchTemplateId) {
@@ -62,10 +62,10 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies the EC2 launch template to use.
+     * Identifies the Amazon EC2 launch template to use.
      * </p>
      * 
-     * @return Identifies the EC2 launch template to use.
+     * @return Identifies the Amazon EC2 launch template to use.
      */
 
     public String getLaunchTemplateId() {
@@ -74,11 +74,11 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies the EC2 launch template to use.
+     * Identifies the Amazon EC2 launch template to use.
      * </p>
      * 
      * @param launchTemplateId
-     *        Identifies the EC2 launch template to use.
+     *        Identifies the Amazon EC2 launch template to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Set the specified EC2 launch template as the default launch template for the specified account.
+     * Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      * </p>
      * 
      * @param setDefaultVersion
-     *        Set the specified EC2 launch template as the default launch template for the specified account.
+     *        Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      */
 
     public void setSetDefaultVersion(Boolean setDefaultVersion) {
@@ -142,10 +142,10 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Set the specified EC2 launch template as the default launch template for the specified account.
+     * Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      * </p>
      * 
-     * @return Set the specified EC2 launch template as the default launch template for the specified account.
+     * @return Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      */
 
     public Boolean getSetDefaultVersion() {
@@ -154,11 +154,11 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Set the specified EC2 launch template as the default launch template for the specified account.
+     * Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      * </p>
      * 
      * @param setDefaultVersion
-     *        Set the specified EC2 launch template as the default launch template for the specified account.
+     *        Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,10 +169,10 @@ public class LaunchTemplateConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Set the specified EC2 launch template as the default launch template for the specified account.
+     * Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      * </p>
      * 
-     * @return Set the specified EC2 launch template as the default launch template for the specified account.
+     * @return Set the specified Amazon EC2 launch template as the default launch template for the specified account.
      */
 
     public Boolean isSetDefaultVersion() {

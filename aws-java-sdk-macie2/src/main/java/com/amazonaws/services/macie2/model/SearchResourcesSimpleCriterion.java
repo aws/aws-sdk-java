@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a property-based filter condition that determines which AWS resources are included or excluded from the
- * query results.
+ * Specifies a property-based filter condition that determines which Amazon Web Services resources are included or
+ * excluded from the query results.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesSimpleCriterion"
@@ -49,7 +49,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * resource.
      * </p>
      * </li>
      * <li>
@@ -204,7 +205,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * resource.
      * </p>
      * </li>
      * <li>
@@ -236,7 +238,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     *         ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *         the resource.
      *         </p>
      *         </li>
      *         <li>
@@ -278,7 +281,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * resource.
      * </p>
      * </li>
      * <li>
@@ -311,7 +315,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     *        ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *        the resource.
      *        </p>
      *        </li>
      *        <li>
@@ -357,7 +362,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * resource.
      * </p>
      * </li>
      * <li>
@@ -395,7 +401,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     *        ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *        the resource.
      *        </p>
      *        </li>
      *        <li>
@@ -443,7 +450,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * resource.
      * </p>
      * </li>
      * <li>
@@ -476,7 +484,8 @@ public class SearchResourcesSimpleCriterion implements Serializable, Cloneable, 
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.
+     *        ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *        the resource.
      *        </p>
      *        </li>
      *        <li>

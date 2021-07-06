@@ -20,7 +20,6 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReplicationConfigurationEbsEncryption {
 
-    NONE("NONE"),
     DEFAULT("DEFAULT"),
     CUSTOM("CUSTOM");
 

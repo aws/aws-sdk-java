@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AWS access key ID needs a subscription for the service.
+ * The Amazon Web Services access key ID needs a subscription for the service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

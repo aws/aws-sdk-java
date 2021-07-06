@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the specified phone number opted out of receiving SMS messages from your AWS account. You can't send
- * SMS messages to phone numbers that opt out.
+ * Indicates that the specified phone number opted out of receiving SMS messages from your account. You can't send SMS
+ * messages to phone numbers that opt out.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

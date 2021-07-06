@@ -33,7 +33,7 @@ public class PutFindingsPublicationConfigurationRequest extends com.amazonaws.Am
     private String clientToken;
     /**
      * <p>
-     * The configuration settings that determine which findings to publish to AWS Security Hub.
+     * The configuration settings that determine which findings to publish to Security Hub.
      * </p>
      */
     private SecurityHubConfiguration securityHubConfiguration;
@@ -80,11 +80,11 @@ public class PutFindingsPublicationConfigurationRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The configuration settings that determine which findings to publish to AWS Security Hub.
+     * The configuration settings that determine which findings to publish to Security Hub.
      * </p>
      * 
      * @param securityHubConfiguration
-     *        The configuration settings that determine which findings to publish to AWS Security Hub.
+     *        The configuration settings that determine which findings to publish to Security Hub.
      */
 
     public void setSecurityHubConfiguration(SecurityHubConfiguration securityHubConfiguration) {
@@ -93,10 +93,10 @@ public class PutFindingsPublicationConfigurationRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The configuration settings that determine which findings to publish to AWS Security Hub.
+     * The configuration settings that determine which findings to publish to Security Hub.
      * </p>
      * 
-     * @return The configuration settings that determine which findings to publish to AWS Security Hub.
+     * @return The configuration settings that determine which findings to publish to Security Hub.
      */
 
     public SecurityHubConfiguration getSecurityHubConfiguration() {
@@ -105,11 +105,11 @@ public class PutFindingsPublicationConfigurationRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The configuration settings that determine which findings to publish to AWS Security Hub.
+     * The configuration settings that determine which findings to publish to Security Hub.
      * </p>
      * 
      * @param securityHubConfiguration
-     *        The configuration settings that determine which findings to publish to AWS Security Hub.
+     *        The configuration settings that determine which findings to publish to Security Hub.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

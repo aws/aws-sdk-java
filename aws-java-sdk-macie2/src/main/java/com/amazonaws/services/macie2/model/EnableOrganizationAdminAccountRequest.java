@@ -27,8 +27,8 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
-     * organization.
+     * The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator
+     * account for the organization.
      * </p>
      */
     private String adminAccountId;
@@ -41,13 +41,13 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
-     * organization.
+     * The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator
+     * account for the organization.
      * </p>
      * 
      * @param adminAccountId
-     *        The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for
-     *        the organization.
+     *        The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie
+     *        administrator account for the organization.
      */
 
     public void setAdminAccountId(String adminAccountId) {
@@ -56,12 +56,12 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
-     * organization.
+     * The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator
+     * account for the organization.
      * </p>
      * 
-     * @return The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for
-     *         the organization.
+     * @return The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie
+     *         administrator account for the organization.
      */
 
     public String getAdminAccountId() {
@@ -70,13 +70,13 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
-     * organization.
+     * The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator
+     * account for the organization.
      * </p>
      * 
      * @param adminAccountId
-     *        The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for
-     *        the organization.
+     *        The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie
+     *        administrator account for the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

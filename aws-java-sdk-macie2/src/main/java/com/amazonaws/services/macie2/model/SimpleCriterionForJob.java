@@ -49,7 +49,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * bucket.
      * </p>
      * </li>
      * <li>
@@ -205,7 +206,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * bucket.
      * </p>
      * </li>
      * <li>
@@ -238,7 +240,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     *         ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *         the bucket.
      *         </p>
      *         </li>
      *         <li>
@@ -280,7 +283,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * bucket.
      * </p>
      * </li>
      * <li>
@@ -314,7 +318,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     *        ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *        the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -360,7 +365,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * bucket.
      * </p>
      * </li>
      * <li>
@@ -399,7 +405,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     *        ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *        the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -447,7 +454,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     * ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the
+     * bucket.
      * </p>
      * </li>
      * <li>
@@ -481,7 +489,8 @@ public class SimpleCriterionForJob implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.
+     *        ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns
+     *        the bucket.
      *        </p>
      *        </li>
      *        <li>

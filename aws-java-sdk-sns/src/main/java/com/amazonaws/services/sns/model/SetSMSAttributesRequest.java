@@ -134,7 +134,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to perform the
+     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      * </p>
      * <p>
@@ -251,7 +251,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to perform the
+     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      * </p>
      * <p>
@@ -364,7 +364,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         </ul>
      *         <p>
-     *         To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to
+     *         To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to
      *         perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      *         </p>
      *         <p>
@@ -486,7 +486,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to perform the
+     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      * </p>
      * <p>
@@ -600,7 +600,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to
+     *        To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to
      *        perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      *        </p>
      *        <p>
@@ -719,7 +719,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to perform the
+     * To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      * </p>
      * <p>
@@ -833,7 +833,7 @@ public class SetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        To receive the report, the bucket must have a policy that allows the Amazon SNS service principle to
+     *        To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to
      *        perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.
      *        </p>
      *        <p>

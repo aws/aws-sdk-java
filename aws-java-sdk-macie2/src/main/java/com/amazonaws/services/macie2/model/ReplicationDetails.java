@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about settings that define whether one or more objects in an S3 bucket are replicated to S3
- * buckets for other AWS accounts and, if so, which accounts.
+ * buckets for other Amazon Web Services accounts and, if so, which accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ReplicationDetails" target="_top">AWS API
@@ -37,15 +37,15 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
     private Boolean replicated;
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the same Amazon Macie organization.
+     * Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account
+     * that isn't part of the same Amazon Macie organization.
      * </p>
      */
     private Boolean replicatedExternally;
     /**
      * <p>
-     * An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or more
-     * objects to.
+     * An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     * configured to replicate one or more objects to.
      * </p>
      */
     private java.util.List<String> replicationAccounts;
@@ -104,13 +104,13 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the same Amazon Macie organization.
+     * Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account
+     * that isn't part of the same Amazon Macie organization.
      * </p>
      * 
      * @param replicatedExternally
-     *        Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *        part of the same Amazon Macie organization.
+     *        Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services
+     *        account that isn't part of the same Amazon Macie organization.
      */
 
     public void setReplicatedExternally(Boolean replicatedExternally) {
@@ -119,12 +119,12 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the same Amazon Macie organization.
+     * Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account
+     * that isn't part of the same Amazon Macie organization.
      * </p>
      * 
-     * @return Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *         part of the same Amazon Macie organization.
+     * @return Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services
+     *         account that isn't part of the same Amazon Macie organization.
      */
 
     public Boolean getReplicatedExternally() {
@@ -133,13 +133,13 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the same Amazon Macie organization.
+     * Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account
+     * that isn't part of the same Amazon Macie organization.
      * </p>
      * 
      * @param replicatedExternally
-     *        Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *        part of the same Amazon Macie organization.
+     *        Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services
+     *        account that isn't part of the same Amazon Macie organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +150,12 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the same Amazon Macie organization.
+     * Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account
+     * that isn't part of the same Amazon Macie organization.
      * </p>
      * 
-     * @return Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *         part of the same Amazon Macie organization.
+     * @return Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services
+     *         account that isn't part of the same Amazon Macie organization.
      */
 
     public Boolean isReplicatedExternally() {
@@ -164,12 +164,12 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or more
-     * objects to.
+     * An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     * configured to replicate one or more objects to.
      * </p>
      * 
-     * @return An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or
-     *         more objects to.
+     * @return An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     *         configured to replicate one or more objects to.
      */
 
     public java.util.List<String> getReplicationAccounts() {
@@ -178,13 +178,13 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or more
-     * objects to.
+     * An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     * configured to replicate one or more objects to.
      * </p>
      * 
      * @param replicationAccounts
-     *        An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or
-     *        more objects to.
+     *        An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     *        configured to replicate one or more objects to.
      */
 
     public void setReplicationAccounts(java.util.Collection<String> replicationAccounts) {
@@ -198,8 +198,8 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or more
-     * objects to.
+     * An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     * configured to replicate one or more objects to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -208,8 +208,8 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param replicationAccounts
-     *        An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or
-     *        more objects to.
+     *        An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     *        configured to replicate one or more objects to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,13 +225,13 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or more
-     * objects to.
+     * An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     * configured to replicate one or more objects to.
      * </p>
      * 
      * @param replicationAccounts
-     *        An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or
-     *        more objects to.
+     *        An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is
+     *        configured to replicate one or more objects to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

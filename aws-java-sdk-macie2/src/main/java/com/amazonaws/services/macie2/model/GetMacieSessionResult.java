@@ -32,14 +32,14 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
-     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      */
     private String findingPublishingFrequency;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
-     * resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon
+     * Web Services resources for the account.
      * </p>
      */
     private String serviceRole;
@@ -102,12 +102,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
-     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        The frequency with which Macie publishes updates to policy findings for the account. This includes
-     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -118,11 +118,11 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
-     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @return The frequency with which Macie publishes updates to policy findings for the account. This includes
-     *         publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *         publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -133,12 +133,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
-     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        The frequency with which Macie publishes updates to policy findings for the account. This includes
-     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -151,12 +151,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
-     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     * updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
      *        The frequency with which Macie publishes updates to policy findings for the account. This includes
-     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
+     *        publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -168,13 +168,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
-     * resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon
+     * Web Services resources for the account.
      * </p>
      * 
      * @param serviceRole
      *        The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in
-     *        AWS resources for the account.
+     *        Amazon Web Services resources for the account.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -183,12 +183,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
-     * resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon
+     * Web Services resources for the account.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data
-     *         in AWS resources for the account.
+     *         in Amazon Web Services resources for the account.
      */
 
     public String getServiceRole() {
@@ -197,13 +197,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
-     * resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in Amazon
+     * Web Services resources for the account.
      * </p>
      * 
      * @param serviceRole
      *        The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in
-     *        AWS resources for the account.
+     *        Amazon Web Services resources for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

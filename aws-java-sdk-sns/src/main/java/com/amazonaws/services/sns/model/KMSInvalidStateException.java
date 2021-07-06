@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * The request was rejected because the state of the specified resource isn't valid for this request. For more
  * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects
- * Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+ * Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

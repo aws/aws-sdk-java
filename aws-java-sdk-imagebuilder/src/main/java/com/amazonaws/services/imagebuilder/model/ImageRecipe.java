@@ -106,6 +106,14 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String workingDirectory;
+    /**
+     * <p>
+     * Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image
+     * configuration. Instance configuration adds a layer of control over those instances. You can define settings and
+     * add scripts to run when an instance is launched from your AMI.
+     * </p>
+     */
+    private AdditionalInstanceConfiguration additionalInstanceConfiguration;
 
     /**
      * <p>
@@ -754,6 +762,58 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image
+     * configuration. Instance configuration adds a layer of control over those instances. You can define settings and
+     * add scripts to run when an instance is launched from your AMI.
+     * </p>
+     * 
+     * @param additionalInstanceConfiguration
+     *        Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your
+     *        image configuration. Instance configuration adds a layer of control over those instances. You can define
+     *        settings and add scripts to run when an instance is launched from your AMI.
+     */
+
+    public void setAdditionalInstanceConfiguration(AdditionalInstanceConfiguration additionalInstanceConfiguration) {
+        this.additionalInstanceConfiguration = additionalInstanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image
+     * configuration. Instance configuration adds a layer of control over those instances. You can define settings and
+     * add scripts to run when an instance is launched from your AMI.
+     * </p>
+     * 
+     * @return Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your
+     *         image configuration. Instance configuration adds a layer of control over those instances. You can define
+     *         settings and add scripts to run when an instance is launched from your AMI.
+     */
+
+    public AdditionalInstanceConfiguration getAdditionalInstanceConfiguration() {
+        return this.additionalInstanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image
+     * configuration. Instance configuration adds a layer of control over those instances. You can define settings and
+     * add scripts to run when an instance is launched from your AMI.
+     * </p>
+     * 
+     * @param additionalInstanceConfiguration
+     *        Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your
+     *        image configuration. Instance configuration adds a layer of control over those instances. You can define
+     *        settings and add scripts to run when an instance is launched from your AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageRecipe withAdditionalInstanceConfiguration(AdditionalInstanceConfiguration additionalInstanceConfiguration) {
+        setAdditionalInstanceConfiguration(additionalInstanceConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -790,7 +850,9 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getWorkingDirectory() != null)
-            sb.append("WorkingDirectory: ").append(getWorkingDirectory());
+            sb.append("WorkingDirectory: ").append(getWorkingDirectory()).append(",");
+        if (getAdditionalInstanceConfiguration() != null)
+            sb.append("AdditionalInstanceConfiguration: ").append(getAdditionalInstanceConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -857,6 +919,11 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkingDirectory() != null && other.getWorkingDirectory().equals(this.getWorkingDirectory()) == false)
             return false;
+        if (other.getAdditionalInstanceConfiguration() == null ^ this.getAdditionalInstanceConfiguration() == null)
+            return false;
+        if (other.getAdditionalInstanceConfiguration() != null
+                && other.getAdditionalInstanceConfiguration().equals(this.getAdditionalInstanceConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -878,6 +945,7 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalInstanceConfiguration() == null) ? 0 : getAdditionalInstanceConfiguration().hashCode());
         return hashCode;
     }
 

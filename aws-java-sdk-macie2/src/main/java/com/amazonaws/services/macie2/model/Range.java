@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details about the location of an occurrence of sensitive data in a Microsoft Word document or non-binary
- * text file.
+ * Specifies the location of an occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML
+ * file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range" target="_top">AWS API Documentation</a>
@@ -42,7 +42,8 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
     private Long start;
     /**
      * <p>
-     * The column number for the column that contains the data, if the file contains structured data.
+     * The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the
+     * sensitive data (start) to the beginning of the sensitive data.
      * </p>
      */
     private Long startColumn;
@@ -129,11 +130,13 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column number for the column that contains the data, if the file contains structured data.
+     * The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the
+     * sensitive data (start) to the beginning of the sensitive data.
      * </p>
      * 
      * @param startColumn
-     *        The column number for the column that contains the data, if the file contains structured data.
+     *        The number of characters, with spaces and starting from 1, from the beginning of the first line that
+     *        contains the sensitive data (start) to the beginning of the sensitive data.
      */
 
     public void setStartColumn(Long startColumn) {
@@ -142,10 +145,12 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column number for the column that contains the data, if the file contains structured data.
+     * The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the
+     * sensitive data (start) to the beginning of the sensitive data.
      * </p>
      * 
-     * @return The column number for the column that contains the data, if the file contains structured data.
+     * @return The number of characters, with spaces and starting from 1, from the beginning of the first line that
+     *         contains the sensitive data (start) to the beginning of the sensitive data.
      */
 
     public Long getStartColumn() {
@@ -154,11 +159,13 @@ public class Range implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column number for the column that contains the data, if the file contains structured data.
+     * The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the
+     * sensitive data (start) to the beginning of the sensitive data.
      * </p>
      * 
      * @param startColumn
-     *        The column number for the column that contains the data, if the file contains structured data.
+     *        The number of characters, with spaces and starting from 1, from the beginning of the first line that
+     *        contains the sensitive data (start) to the beginning of the sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,26 +55,20 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * accountId - The unique identifier for an AWS account.
+     * accountId - The unique identifier for an Amazon Web Services account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
      * account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * total - A string that represents the current estimated cost for an account.
@@ -230,26 +224,20 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * accountId - The unique identifier for an AWS account.
+     * accountId - The unique identifier for an Amazon Web Services account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
      * account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * total - A string that represents the current estimated cost for an account.
@@ -266,27 +254,21 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *         <ul>
      *         <li>
      *         <p>
-     *         accountId - The unique identifier for an AWS account.
+     *         accountId - The unique identifier for an Amazon Web Services account.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <ul>
      *         <li>
      *         <p>
      *         freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
      *         for an account.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <ul>
      *         <li>
      *         <p>
      *         serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
      *         quota.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <ul>
      *         <li>
      *         <p>
      *         total - A string that represents the current estimated cost for an account.
@@ -310,26 +292,20 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * accountId - The unique identifier for an AWS account.
+     * accountId - The unique identifier for an Amazon Web Services account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
      * account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * total - A string that represents the current estimated cost for an account.
@@ -347,27 +323,21 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        accountId - The unique identifier for an AWS account.
+     *        accountId - The unique identifier for an Amazon Web Services account.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
      *        for an account.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
      *        quota.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        total - A string that represents the current estimated cost for an account.
@@ -396,26 +366,20 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * accountId - The unique identifier for an AWS account.
+     * accountId - The unique identifier for an Amazon Web Services account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
      * account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * total - A string that represents the current estimated cost for an account.
@@ -438,27 +402,21 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        accountId - The unique identifier for an AWS account.
+     *        accountId - The unique identifier for an Amazon Web Services account.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
      *        for an account.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
      *        quota.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        total - A string that represents the current estimated cost for an account.
@@ -489,26 +447,20 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * accountId - The unique identifier for an AWS account.
+     * accountId - The unique identifier for an Amazon Web Services account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
      * account.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
      * total - A string that represents the current estimated cost for an account.
@@ -526,27 +478,21 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        accountId - The unique identifier for an AWS account.
+     *        accountId - The unique identifier for an Amazon Web Services account.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
      *        for an account.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
      *        quota.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <ul>
      *        <li>
      *        <p>
      *        total - A string that represents the current estimated cost for an account.

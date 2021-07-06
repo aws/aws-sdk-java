@@ -63,6 +63,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this host as
+     * the event source.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -109,6 +115,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this host as
+     * the event source.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -142,6 +154,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <p>
      *        <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
      *        authentication of your Self-Managed Apache Kafka brokers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this
+     *        host as the event source.
      *        </p>
      *        </li>
      * @see SourceAccessType
@@ -186,6 +204,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this host as
+     * the event source.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of authentication protocol or the VPC components for your event source. For example:
@@ -218,6 +242,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *         <p>
      *         <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
      *         authentication of your Self-Managed Apache Kafka brokers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this
+     *         host as the event source.
      *         </p>
      *         </li>
      * @see SourceAccessType
@@ -262,6 +292,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this host as
+     * the event source.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -295,6 +331,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <p>
      *        <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
      *        authentication of your Self-Managed Apache Kafka brokers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this
+     *        host as the event source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -341,6 +383,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      * authentication of your Self-Managed Apache Kafka brokers.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this host as
+     * the event source.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -374,6 +422,12 @@ public class SourceAccessConfiguration implements Serializable, Cloneable, Struc
      *        <p>
      *        <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512
      *        authentication of your Self-Managed Apache Kafka brokers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VIRTUAL_HOST</code> - The name of the virtual host in your RabbitMQ broker. Lambda will use this
+     *        host as the event source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

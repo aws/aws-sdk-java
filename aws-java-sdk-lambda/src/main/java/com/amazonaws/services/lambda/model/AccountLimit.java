@@ -42,8 +42,7 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     private Long codeSizeUnzipped;
     /**
      * <p>
-     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
-     * files.
+     * The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.
      * </p>
      */
     private Long codeSizeZipped;
@@ -143,13 +142,12 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
-     * files.
+     * The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.
      * </p>
      * 
      * @param codeSizeZipped
-     *        The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
-     *        larger files.
+     *        The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
+     *        files.
      */
 
     public void setCodeSizeZipped(Long codeSizeZipped) {
@@ -158,12 +156,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
-     * files.
+     * The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.
      * </p>
      * 
-     * @return The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
-     *         larger files.
+     * @return The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
+     *         files.
      */
 
     public Long getCodeSizeZipped() {
@@ -172,13 +169,12 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
-     * files.
+     * The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.
      * </p>
      * 
      * @param codeSizeZipped
-     *        The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
-     *        larger files.
+     *        The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger
+     *        files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

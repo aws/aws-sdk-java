@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an AWS Identity and Access Management (IAM) user who performed an action on an affected
+ * Provides information about an Identity and Access Management (IAM) user who performed an action on an affected
  * resource.
  * </p>
  * 
@@ -31,7 +31,8 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     * The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the
+     * action.
      * </p>
      */
     private String accountId;
@@ -57,11 +58,13 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     * The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the
+     * action.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     *        The unique identifier for the Amazon Web Services account that's associated with the IAM user who
+     *        performed the action.
      */
 
     public void setAccountId(String accountId) {
@@ -70,10 +73,12 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     * The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the
+     * action.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     * @return The unique identifier for the Amazon Web Services account that's associated with the IAM user who
+     *         performed the action.
      */
 
     public String getAccountId() {
@@ -82,11 +87,13 @@ public class IamUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     * The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the
+     * action.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that's associated with the IAM user who performed the action.
+     *        The unique identifier for the Amazon Web Services account that's associated with the IAM user who
+     *        performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

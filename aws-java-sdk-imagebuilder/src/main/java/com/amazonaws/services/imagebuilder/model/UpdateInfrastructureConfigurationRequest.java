@@ -46,19 +46,19 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
     private java.util.List<String> instanceTypes;
     /**
      * <p>
-     * The instance profile to associate with the instance used to customize your EC2 AMI.
+     * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      */
     private String instanceProfileName;
     /**
      * <p>
-     * The security group IDs to associate with the instance used to customize your EC2 AMI.
+     * The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The subnet ID to place the instance used to customize your EC2 AMI in.
+     * The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      * </p>
      */
     private String subnetId;
@@ -261,11 +261,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance profile to associate with the instance used to customize your EC2 AMI.
+     * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * 
      * @param instanceProfileName
-     *        The instance profile to associate with the instance used to customize your EC2 AMI.
+     *        The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      */
 
     public void setInstanceProfileName(String instanceProfileName) {
@@ -274,10 +274,10 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance profile to associate with the instance used to customize your EC2 AMI.
+     * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * 
-     * @return The instance profile to associate with the instance used to customize your EC2 AMI.
+     * @return The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      */
 
     public String getInstanceProfileName() {
@@ -286,11 +286,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance profile to associate with the instance used to customize your EC2 AMI.
+     * The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * 
      * @param instanceProfileName
-     *        The instance profile to associate with the instance used to customize your EC2 AMI.
+     *        The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,10 +301,10 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The security group IDs to associate with the instance used to customize your EC2 AMI.
+     * The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * 
-     * @return The security group IDs to associate with the instance used to customize your EC2 AMI.
+     * @return The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -313,11 +313,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The security group IDs to associate with the instance used to customize your EC2 AMI.
+     * The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security group IDs to associate with the instance used to customize your EC2 AMI.
+     *        The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -331,7 +331,7 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The security group IDs to associate with the instance used to customize your EC2 AMI.
+     * The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -340,7 +340,7 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param securityGroupIds
-     *        The security group IDs to associate with the instance used to customize your EC2 AMI.
+     *        The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,11 +356,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The security group IDs to associate with the instance used to customize your EC2 AMI.
+     * The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security group IDs to associate with the instance used to customize your EC2 AMI.
+     *        The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,11 +371,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The subnet ID to place the instance used to customize your EC2 AMI in.
+     * The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      * </p>
      * 
      * @param subnetId
-     *        The subnet ID to place the instance used to customize your EC2 AMI in.
+     *        The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      */
 
     public void setSubnetId(String subnetId) {
@@ -384,10 +384,10 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The subnet ID to place the instance used to customize your EC2 AMI in.
+     * The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      * </p>
      * 
-     * @return The subnet ID to place the instance used to customize your EC2 AMI in.
+     * @return The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      */
 
     public String getSubnetId() {
@@ -396,11 +396,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The subnet ID to place the instance used to customize your EC2 AMI in.
+     * The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      * </p>
      * 
      * @param subnetId
-     *        The subnet ID to place the instance used to customize your EC2 AMI in.
+     *        The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
     private String api;
     /**
      * <p>
-     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     * The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      */
     private String apiServiceName;
@@ -97,11 +97,11 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     * The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      * 
      * @param apiServiceName
-     *        The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     *        The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      */
 
     public void setApiServiceName(String apiServiceName) {
@@ -110,10 +110,10 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     * The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      * 
-     * @return The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     * @return The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      */
 
     public String getApiServiceName() {
@@ -122,11 +122,11 @@ public class ApiCallDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     * The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      * </p>
      * 
      * @param apiServiceName
-     *        The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.
+     *        The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

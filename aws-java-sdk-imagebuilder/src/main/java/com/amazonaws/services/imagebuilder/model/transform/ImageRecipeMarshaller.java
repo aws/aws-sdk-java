@@ -55,6 +55,8 @@ public class ImageRecipeMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> WORKINGDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workingDirectory").build();
+    private static final MarshallingInfo<StructuredPojo> ADDITIONALINSTANCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalInstanceConfiguration").build();
 
     private static final ImageRecipeMarshaller instance = new ImageRecipeMarshaller();
 
@@ -85,6 +87,7 @@ public class ImageRecipeMarshaller {
             protocolMarshaller.marshall(imageRecipe.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(imageRecipe.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(imageRecipe.getWorkingDirectory(), WORKINGDIRECTORY_BINDING);
+            protocolMarshaller.marshall(imageRecipe.getAdditionalInstanceConfiguration(), ADDITIONALINSTANCECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

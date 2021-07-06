@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.imagebuilder.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class ComponentConfigurationMarshaller {
 
     private static final MarshallingInfo<String> COMPONENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentArn").build();
+    private static final MarshallingInfo<List> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("parameters").build();
 
     private static final ComponentConfigurationMarshaller instance = new ComponentConfigurationMarshaller();
 
@@ -47,6 +50,7 @@ public class ComponentConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(componentConfiguration.getComponentArn(), COMPONENTARN_BINDING);
+            protocolMarshaller.marshall(componentConfiguration.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

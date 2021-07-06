@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A function's environment variable settings.
+ * A function's environment variable settings. You can use environment variables to adjust your function's behavior
+ * without updating code. An environment variable is a pair of strings that are stored in a function's version-specific
+ * configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment" target="_top">AWS API
@@ -30,17 +32,23 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Environment variable key-value pairs.
+     * Environment variable key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     * variables</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
 
     /**
      * <p>
-     * Environment variable key-value pairs.
+     * Environment variable key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     * variables</a>.
      * </p>
      * 
-     * @return Environment variable key-value pairs.
+     * @return Environment variable key-value pairs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     *         variables</a>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -52,11 +60,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Environment variable key-value pairs.
+     * Environment variable key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     * variables</a>.
      * </p>
      * 
      * @param variables
-     *        Environment variable key-value pairs.
+     *        Environment variable key-value pairs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     *        variables</a>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -65,11 +77,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Environment variable key-value pairs.
+     * Environment variable key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     * variables</a>.
      * </p>
      * 
      * @param variables
-     *        Environment variable key-value pairs.
+     *        Environment variable key-value pairs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using Lambda environment
+     *        variables</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

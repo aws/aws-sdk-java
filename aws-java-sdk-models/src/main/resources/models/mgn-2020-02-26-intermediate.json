@@ -154,6 +154,10 @@
         "exceptionName" : "ValidationException",
         "documentation" : "<p>Validate exception.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>Operating denied due to a file permission or access check error.</p>",
+        "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1153,6 +1157,10 @@
         "documentation" : "<p>Validate exception.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>Operating denied due to a file permission or access check error.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request could not be completed due to a conflict with the current state of the target resource.</p>",
         "httpStatusCode" : 409
@@ -1201,6 +1209,10 @@
         "exceptionName" : "ValidationException",
         "documentation" : "<p>Validate exception.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>Operating denied due to a file permission or access check error.</p>",
+        "httpStatusCode" : 403
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -37083,9 +37095,6 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "NONE",
-        "value" : "NONE"
-      }, {
         "name" : "DEFAULT",
         "value" : "DEFAULT"
       }, {

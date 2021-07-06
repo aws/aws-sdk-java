@@ -80,12 +80,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
-     * For more information, see <a
+     * <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS
+     * or a custom CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
      * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * >KeyId</a> in the <i>Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -282,12 +282,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
-     * For more information, see <a
+     * <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS
+     * or a custom CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
      * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * >KeyId</a> in the <i>Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -365,12 +365,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a
-     *         custom CMK. For more information, see <a
+     *         <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for
+     *         Amazon SNS or a custom CMK. For more information, see <a
      *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      *         Terms</a>. For more examples, see <a href=
      *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     *         >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     *         >KeyId</a> in the <i>Key Management Service API Reference</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -458,12 +458,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
-     * For more information, see <a
+     * <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS
+     * or a custom CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
      * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * >KeyId</a> in the <i>Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -542,12 +542,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a
-     *        custom CMK. For more information, see <a
+     *        <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for
+     *        Amazon SNS or a custom CMK. For more information, see <a
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      *        Terms</a>. For more examples, see <a href=
      *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     *        >KeyId</a> in the <i>Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -632,12 +632,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
-     * For more information, see <a
+     * <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS
+     * or a custom CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
      * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * >KeyId</a> in the <i>Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -716,12 +716,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a
-     *        custom CMK. For more information, see <a
+     *        <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for
+     *        Amazon SNS or a custom CMK. For more information, see <a
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      *        Terms</a>. For more examples, see <a href=
      *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
-     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     *        >KeyId</a> in the <i>Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      *        </ul>

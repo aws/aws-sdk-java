@@ -79,6 +79,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> supportedOsVersions;
     /**
      * <p>
+     * Contains parameter details for each of the parameters that are defined for the component.
+     * </p>
+     */
+    private java.util.List<ComponentParameterDetail> parameters;
+    /**
+     * <p>
      * The owner of the component.
      * </p>
      */
@@ -512,6 +518,76 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Contains parameter details for each of the parameters that are defined for the component.
+     * </p>
+     * 
+     * @return Contains parameter details for each of the parameters that are defined for the component.
+     */
+
+    public java.util.List<ComponentParameterDetail> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * Contains parameter details for each of the parameters that are defined for the component.
+     * </p>
+     * 
+     * @param parameters
+     *        Contains parameter details for each of the parameters that are defined for the component.
+     */
+
+    public void setParameters(java.util.Collection<ComponentParameterDetail> parameters) {
+        if (parameters == null) {
+            this.parameters = null;
+            return;
+        }
+
+        this.parameters = new java.util.ArrayList<ComponentParameterDetail>(parameters);
+    }
+
+    /**
+     * <p>
+     * Contains parameter details for each of the parameters that are defined for the component.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param parameters
+     *        Contains parameter details for each of the parameters that are defined for the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Component withParameters(ComponentParameterDetail... parameters) {
+        if (this.parameters == null) {
+            setParameters(new java.util.ArrayList<ComponentParameterDetail>(parameters.length));
+        }
+        for (ComponentParameterDetail ele : parameters) {
+            this.parameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains parameter details for each of the parameters that are defined for the component.
+     * </p>
+     * 
+     * @param parameters
+     *        Contains parameter details for each of the parameters that are defined for the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Component withParameters(java.util.Collection<ComponentParameterDetail> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The owner of the component.
      * </p>
      * 
@@ -818,6 +894,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
             sb.append("Platform: ").append(getPlatform()).append(",");
         if (getSupportedOsVersions() != null)
             sb.append("SupportedOsVersions: ").append(getSupportedOsVersions()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getData() != null)
@@ -876,6 +954,10 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSupportedOsVersions() != null && other.getSupportedOsVersions().equals(this.getSupportedOsVersions()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
@@ -916,6 +998,7 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getSupportedOsVersions() == null) ? 0 : getSupportedOsVersions().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());

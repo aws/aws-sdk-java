@@ -30,9 +30,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each object
-     * specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition
-     * can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     * An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     * analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account.
+     * A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      */
     private java.util.List<S3BucketDefinitionForJob> bucketDefinitions;
@@ -142,14 +142,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each object
-     * specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition
-     * can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     * An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     * analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account.
+     * A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * 
-     * @return An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each
-     *         object specifies the account ID for an account and one or more buckets to analyze for that account. A
-     *         job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     * @return An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job
+     *         to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for
+     *         that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     *         both.
      */
 
     public java.util.List<S3BucketDefinitionForJob> getBucketDefinitions() {
@@ -158,15 +159,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each object
-     * specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition
-     * can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     * An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     * analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account.
+     * A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each
-     *        object specifies the account ID for an account and one or more buckets to analyze for that account. A
-     *        job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     *        An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     *        analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that
+     *        account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      */
 
     public void setBucketDefinitions(java.util.Collection<S3BucketDefinitionForJob> bucketDefinitions) {
@@ -180,9 +181,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each object
-     * specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition
-     * can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     * An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     * analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account.
+     * A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -191,9 +192,9 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each
-     *        object specifies the account ID for an account and one or more buckets to analyze for that account. A
-     *        job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     *        An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     *        analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that
+     *        account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,15 +210,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each object
-     * specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition
-     * can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     * An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     * analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account.
+     * A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each
-     *        object specifies the account ID for an account and one or more buckets to analyze for that account. A
-     *        job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
+     *        An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to
+     *        analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that
+     *        account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,13 +31,15 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
+     * clients handle the encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
+     * Amazon Web Services account.
      * </p>
      */
     private String s3Bucket;
@@ -55,14 +57,16 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
     private String s3ObjectVersion;
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the
+     * Amazon ECR registry.
      * </p>
      */
     private String imageUri;
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
+     * clients handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -76,8 +80,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
-     *        you.
+     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
+     *        clients handle the encoding for you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -86,7 +90,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
+     * clients handle the encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -96,8 +101,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding
-     *         for you.
+     * @return The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services
+     *         CLI clients handle the encoding for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -106,7 +111,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
+     * clients handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -120,8 +126,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
-     *        you.
+     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
+     *        clients handle the encoding for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +138,13 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
+     * Amazon Web Services account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
+     *        An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a
+     *        different Amazon Web Services account.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -145,11 +153,12 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
+     * Amazon Web Services account.
      * </p>
      * 
-     * @return An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS
-     *         account.
+     * @return An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a
+     *         different Amazon Web Services account.
      */
 
     public String getS3Bucket() {
@@ -158,11 +167,13 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different
+     * Amazon Web Services account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
+     *        An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a
+     *        different Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,11 +264,13 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the
+     * Amazon ECR registry.
      * </p>
      * 
      * @param imageUri
-     *        URI of a container image in the Amazon ECR registry.
+     *        URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in
+     *        the Amazon ECR registry.
      */
 
     public void setImageUri(String imageUri) {
@@ -266,10 +279,12 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the
+     * Amazon ECR registry.
      * </p>
      * 
-     * @return URI of a container image in the Amazon ECR registry.
+     * @return URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in
+     *         the Amazon ECR registry.
      */
 
     public String getImageUri() {
@@ -278,11 +293,13 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * URI of a container image in the Amazon ECR registry.
+     * URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the
+     * Amazon ECR registry.
      * </p>
      * 
      * @param imageUri
-     *        URI of a container image in the Amazon ECR registry.
+     *        URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in
+     *        the Amazon ECR registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

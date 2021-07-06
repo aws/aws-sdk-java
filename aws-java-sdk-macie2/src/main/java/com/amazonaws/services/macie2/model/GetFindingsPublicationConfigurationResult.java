@@ -26,18 +26,18 @@ public class GetFindingsPublicationConfigurationResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The configuration settings that determine which findings are published to AWS Security Hub.
+     * The configuration settings that determine which findings are published to Security Hub.
      * </p>
      */
     private SecurityHubConfiguration securityHubConfiguration;
 
     /**
      * <p>
-     * The configuration settings that determine which findings are published to AWS Security Hub.
+     * The configuration settings that determine which findings are published to Security Hub.
      * </p>
      * 
      * @param securityHubConfiguration
-     *        The configuration settings that determine which findings are published to AWS Security Hub.
+     *        The configuration settings that determine which findings are published to Security Hub.
      */
 
     public void setSecurityHubConfiguration(SecurityHubConfiguration securityHubConfiguration) {
@@ -46,10 +46,10 @@ public class GetFindingsPublicationConfigurationResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The configuration settings that determine which findings are published to AWS Security Hub.
+     * The configuration settings that determine which findings are published to Security Hub.
      * </p>
      * 
-     * @return The configuration settings that determine which findings are published to AWS Security Hub.
+     * @return The configuration settings that determine which findings are published to Security Hub.
      */
 
     public SecurityHubConfiguration getSecurityHubConfiguration() {
@@ -58,11 +58,11 @@ public class GetFindingsPublicationConfigurationResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The configuration settings that determine which findings are published to AWS Security Hub.
+     * The configuration settings that determine which findings are published to Security Hub.
      * </p>
      * 
      * @param securityHubConfiguration
-     *        The configuration settings that determine which findings are published to AWS Security Hub.
+     *        The configuration settings that determine which findings are published to Security Hub.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

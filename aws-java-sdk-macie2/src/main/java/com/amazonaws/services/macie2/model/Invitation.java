@@ -30,7 +30,7 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      */
     private String accountId;
@@ -57,11 +57,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account that sent the invitation.
+     *        The Amazon Web Services account ID for the account that sent the invitation.
      */
 
     public void setAccountId(String accountId) {
@@ -70,10 +70,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      * 
-     * @return The AWS account ID for the account that sent the invitation.
+     * @return The Amazon Web Services account ID for the account that sent the invitation.
      */
 
     public String getAccountId() {
@@ -82,11 +82,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account that sent the invitation.
+     *        The Amazon Web Services account ID for the account that sent the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

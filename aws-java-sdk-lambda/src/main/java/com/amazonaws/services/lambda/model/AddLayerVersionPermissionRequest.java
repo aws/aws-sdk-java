@@ -51,7 +51,9 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
     private String action;
     /**
      * <p>
-     * An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     * An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all
+     * Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to this layer.
      * </p>
      */
     private String principal;
@@ -231,11 +233,15 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     * An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all
+     * Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to this layer.
      * </p>
      * 
      * @param principal
-     *        An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     *        An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or
+     *        all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case,
+     *        make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
      */
 
     public void setPrincipal(String principal) {
@@ -244,10 +250,15 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     * An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all
+     * Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to this layer.
      * </p>
      * 
-     * @return An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     * @return An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or
+     *         all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case,
+     *         make sure that you really do want all Amazon Web Services accounts to have usage permission to this
+     *         layer.
      */
 
     public String getPrincipal() {
@@ -256,11 +267,15 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     * An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all
+     * Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that
+     * you really do want all Amazon Web Services accounts to have usage permission to this layer.
      * </p>
      * 
      * @param principal
-     *        An account ID, or <code>*</code> to grant permission to all AWS accounts.
+     *        An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or
+     *        all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case,
+     *        make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

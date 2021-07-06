@@ -47,6 +47,8 @@ public class CreateImageRecipeRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> WORKINGDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workingDirectory").build();
+    private static final MarshallingInfo<StructuredPojo> ADDITIONALINSTANCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalInstanceConfiguration").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -75,6 +77,7 @@ public class CreateImageRecipeRequestMarshaller {
             protocolMarshaller.marshall(createImageRecipeRequest.getBlockDeviceMappings(), BLOCKDEVICEMAPPINGS_BINDING);
             protocolMarshaller.marshall(createImageRecipeRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createImageRecipeRequest.getWorkingDirectory(), WORKINGDIRECTORY_BINDING);
+            protocolMarshaller.marshall(createImageRecipeRequest.getAdditionalInstanceConfiguration(), ADDITIONALINSTANCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createImageRecipeRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

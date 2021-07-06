@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing
- * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information,
- * see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing
- * findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are:
+ * updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see
+ * <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing findings</a>
+ * in the <i>Amazon Macie User Guide</i>. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

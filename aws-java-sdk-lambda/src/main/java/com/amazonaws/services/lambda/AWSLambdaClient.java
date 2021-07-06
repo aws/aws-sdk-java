@@ -51,16 +51,16 @@ import com.amazonaws.services.lambda.model.transform.*;
  * Client for accessing AWS Lambda. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * <fullname>AWS Lambda</fullname>
+ * <fullname>Lambda</fullname>
  * <p>
  * <b>Overview</b>
  * </p>
  * <p>
- * This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional information. For the
- * service overview, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a>, and
- * for information about how the service works, see <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the
- * <b>AWS Lambda Developer Guide</b>.
+ * This is the <i>Lambda API Reference</i>. The Lambda Developer Guide provides additional information. For the service
+ * overview, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is Lambda</a>, and for
+ * information about how the service works, see <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda: How it Works</a> in the
+ * <b>Lambda Developer Guide</b>.
  * </p>
  */
 @ThreadSafe
@@ -393,9 +393,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Adds permissions to the resource-based policy of a version of an <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. Use this
-     * action to grant layer usage permission to other accounts. You can grant permission to a single account, all AWS
-     * accounts, or all accounts in an organization.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Use this action
+     * to grant layer usage permission to other accounts. You can grant permission to a single account, all accounts in
+     * an organization, or all Amazon Web Services accounts.
      * </p>
      * <p>
      * To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you
@@ -405,7 +405,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param addLayerVersionPermissionRequest
      * @return Result of the AddLayerVersionPermission operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ResourceConflictException
@@ -473,16 +473,18 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Grants an AWS service or another account permission to use a function. You can apply the policy at the function
-     * level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the
-     * invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
+     * Grants an Amazon Web Services service or another account permission to use a function. You can apply the policy
+     * at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a
+     * qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
+     * function.
      * </p>
      * <p>
-     * To grant permission to another account, specify the account ID as the <code>Principal</code>. For AWS services,
-     * the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or
-     * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN of the associated resource as the
-     * <code>SourceArn</code>. If you grant permission to a service principal without specifying the source, other
-     * accounts could potentially configure resources in their account to invoke your Lambda function.
+     * To grant permission to another account, specify the account ID as the <code>Principal</code>. For Amazon Web
+     * Services services, the principal is a domain-style identifier defined by the service, like
+     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also
+     * specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service
+     * principal without specifying the source, other accounts could potentially configure resources in their account to
+     * invoke your Lambda function.
      * </p>
      * <p>
      * This action adds a statement to a resource-based permissions policy for the function. For more information about
@@ -494,7 +496,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param addPermissionRequest
      * @return Result of the AddPermission operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ResourceConflictException
@@ -572,7 +574,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param createAliasRequest
      * @return Result of the CreateAlias operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ResourceConflictException
@@ -640,7 +642,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param createCodeSigningConfigRequest
      * @return Result of the CreateCodeSigningConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @sample AWSLambda.CreateCodeSigningConfig
@@ -695,42 +697,47 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source
-     * and triggers the function.
+     * Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source and
+     * triggers the function.
      * </p>
      * <p>
-     * For details about each event source type, see the following topics.
+     * For details about each event source type, see the following topics. In particular, each of the topics describes
+     * the required and optional parameters for the specific event source.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda with Amazon DynamoDB</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+     * Configuring a Dynamo DB stream as an event source</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS Lambda with Amazon Kinesis</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+     * Configuring a Kinesis stream as an event source</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource"> Configuring an SQS
+     * queue as an event source</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda with Amazon MQ</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping"> Configuring
+     * an MQ broker as an event source</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring MSK as an event source</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
-     * Kafka</a>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring Self-Managed Apache Kafka as
+     * an event source</a>
      * </p>
      * </li>
      * </ul>
@@ -770,7 +777,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param createEventSourceMappingRequest
      * @return Result of the CreateEventSourceMapping operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceConflictException
@@ -835,8 +842,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
      * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
-     * code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for
-     * log streaming and AWS X-Ray for request tracing.
+     * code. The execution role grants the function permission to use Amazon Web Services services, such as Amazon
+     * CloudWatch Logs for log streaming and X-Ray for request tracing.
+     * </p>
+     * <p>
+     * You set the package type to <code>Image</code> if the deployment package is a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>. For a container
+     * image, the code property must include the URI of a container image in the Amazon ECR registry. You do not need to
+     * specify the handler and runtime properties.
+     * </p>
+     * <p>
+     * You set the package type to <code>Zip</code> if the deployment package is a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+     * file archive</a>. For a .zip file archive, the code property specifies the location of the .zip file. You must
+     * also specify the handler and runtime properties.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -867,21 +886,21 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * function.
      * </p>
      * <p>
-     * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
-     * creating a resource-based IAM policy. You can grant permissions at the function level, on a version, or on an
-     * alias.
+     * If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a> to grant
+     * permission by creating a resource-based IAM policy. You can grant permissions at the function level, on a
+     * version, or on an alias.
      * </p>
      * <p>
-     * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other AWS
-     * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a function trigger in
-     * the other service. For more information, see <a
+     * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other
+     * Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
+     * function trigger in the other service. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.
      * </p>
      * 
      * @param createFunctionRequest
      * @return Result of the CreateFunction operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -958,7 +977,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteAliasRequest
      * @return Result of the DeleteAlias operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceConflictException
@@ -1022,7 +1041,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteCodeSigningConfigRequest
      * @return Result of the DeleteCodeSigningConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -1092,7 +1111,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteEventSourceMappingRequest
      * @return Result of the DeleteEventSourceMapping operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -1159,15 +1178,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * Otherwise, all versions and aliases are deleted.
      * </p>
      * <p>
-     * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For AWS
-     * services and resources that invoke your function directly, delete the trigger in the service where you originally
-     * configured it.
+     * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For Amazon
+     * Web Services services and resources that invoke your function directly, delete the trigger in the service where
+     * you originally configured it.
      * </p>
      * 
      * @param deleteFunctionRequest
      * @return Result of the DeleteFunction operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -1238,7 +1257,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ResourceConflictException
@@ -1302,7 +1321,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteFunctionConcurrencyRequest
      * @return Result of the DeleteFunctionConcurrency operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -1372,7 +1391,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteFunctionEventInvokeConfigRequest
      * @return Result of the DeleteFunctionEventInvokeConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -1432,15 +1451,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-     * Lambda layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a
-     * copy of the version remains in Lambda until no functions refer to it.
+     * Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+     * layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a copy of
+     * the version remains in Lambda until no functions refer to it.
      * </p>
      * 
      * @param deleteLayerVersionRequest
      * @return Result of the DeleteLayerVersion operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @sample AWSLambda.DeleteLayerVersion
@@ -1507,7 +1526,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @sample AWSLambda.DeleteProvisionedConcurrencyConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1562,7 +1581,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Retrieves details about your account's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param getAccountSettingsRequest
@@ -1570,7 +1590,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @sample AWSLambda.GetAccountSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings" target="_top">AWS API
      *      Documentation</a>
@@ -1628,7 +1648,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getAliasRequest
      * @return Result of the GetAlias operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -1691,7 +1711,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getCodeSigningConfigRequest
      * @return Result of the GetCodeSigningConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -1753,7 +1773,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getEventSourceMappingRequest
      * @return Result of the GetEventSourceMapping operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -1819,7 +1839,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getFunctionRequest
      * @return Result of the GetFunction operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -1886,7 +1906,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @sample AWSLambda.GetFunctionCodeSigningConfig
@@ -1954,7 +1974,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @sample AWSLambda.GetFunctionConcurrency
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency" target="_top">AWS
      *      API Documentation</a>
@@ -2016,7 +2036,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getFunctionConfigurationRequest
      * @return Result of the GetFunctionConfiguration operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -2084,7 +2104,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getFunctionEventInvokeConfigRequest
      * @return Result of the GetFunctionEventInvokeConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -2144,14 +2164,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Returns information about a version of an <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
-     * to download the layer archive that's valid for 10 minutes.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>, with a link to
+     * download the layer archive that's valid for 10 minutes.
      * </p>
      * 
      * @param getLayerVersionRequest
      * @return Result of the GetLayerVersion operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws TooManyRequestsException
@@ -2209,14 +2229,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Returns information about a version of an <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
-     * to download the layer archive that's valid for 10 minutes.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>, with a link to
+     * download the layer archive that's valid for 10 minutes.
      * </p>
      * 
      * @param getLayerVersionByArnRequest
      * @return Result of the GetLayerVersionByArn operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws TooManyRequestsException
@@ -2274,14 +2294,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Returns the permission policy for a version of an <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more
      * information, see <a>AddLayerVersionPermission</a>.
      * </p>
      * 
      * @param getLayerVersionPolicyRequest
      * @return Result of the GetLayerVersionPolicy operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -2347,7 +2367,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getPolicyRequest
      * @return Result of the GetPolicy operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -2416,7 +2436,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ProvisionedConcurrencyConfigNotFoundException
      *         The specified configuration does not exist.
      * @sample AWSLambda.GetProvisionedConcurrencyConfig
@@ -2517,7 +2537,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param invokeRequest
      * @return Result of the Invoke operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidRequestContentException
@@ -2532,12 +2552,12 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws EC2UnexpectedException
-     *         AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda function.
+     *         Lambda received an unexpected EC2 client exception while setting up for the Lambda function.
      * @throws SubnetIPAddressLimitReachedException
-     *         AWS Lambda was not able to set up VPC access for the Lambda function because one or more configured
-     *         subnets has no available IP addresses.
+     *         Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
+     *         has no available IP addresses.
      * @throws ENILimitReachedException
-     *         AWS Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
+     *         Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
      *         function configuration, because the limit for network interfaces has been reached.
      * @throws EFSMountConnectivityException
      *         The function couldn't make a network connection to the configured file system.
@@ -2549,7 +2569,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws EFSIOException
      *         An error occured when reading from or writing to a connected file system.
      * @throws EC2ThrottledException
-     *         AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role
+     *         Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role
      *         provided for the Lambda function.
      * @throws EC2AccessDeniedException
      *         Need additional permissions to configure VPC settings.
@@ -2558,7 +2578,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidSecurityGroupIDException
      *         The Security Group ID provided in the Lambda function VPC configuration is invalid.
      * @throws InvalidZipFileException
-     *         AWS Lambda could not unzip the deployment package.
+     *         Lambda could not unzip the deployment package.
      * @throws KMSDisabledException
      *         Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the
      *         Lambda function's KMS key settings.
@@ -2639,7 +2659,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param invokeAsyncRequest
      * @return Result of the InvokeAsync operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidRequestContentException
@@ -2708,7 +2728,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listAliasesRequest
      * @return Result of the ListAliases operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -2773,7 +2793,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listCodeSigningConfigsRequest
      * @return Result of the ListCodeSigningConfigs operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @sample AWSLambda.ListCodeSigningConfigs
@@ -2834,7 +2854,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listEventSourceMappingsRequest
      * @return Result of the ListEventSourceMappings operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -2913,7 +2933,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @sample AWSLambda.ListFunctionEventInvokeConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -2984,7 +3004,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listFunctionsRequest
      * @return Result of the ListFunctions operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws InvalidParameterValueException
@@ -3051,7 +3071,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listFunctionsByCodeSigningConfigRequest
      * @return Result of the ListFunctionsByCodeSigningConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -3109,8 +3129,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-     * Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a
+     * Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+     * layer</a>. Versions that have been deleted aren't listed. Specify a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
      * versions that indicate that they're compatible with that runtime.
      * </p>
@@ -3118,7 +3138,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listLayerVersionsRequest
      * @return Result of the ListLayerVersions operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -3175,7 +3195,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layers</a> and
+     * Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layers</a> and
      * shows information about the latest version of each. Specify a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
      * layers that indicate that they're compatible with that runtime.
@@ -3184,7 +3204,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listLayersRequest
      * @return Result of the ListLayers operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws TooManyRequestsException
@@ -3251,7 +3271,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @sample AWSLambda.ListProvisionedConcurrencyConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -3312,7 +3332,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -3376,7 +3396,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listVersionsByFunctionRequest
      * @return Result of the ListVersionsByFunction operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -3434,9 +3454,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>
-     * from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same layer name, a new version
-     * is created.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a> from
+     * a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same layer name, a new version is
+     * created.
      * </p>
      * <p>
      * Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
@@ -3445,7 +3465,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param publishLayerVersionRequest
      * @return Result of the PublishLayerVersion operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
@@ -3510,9 +3530,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * configuration that doesn't change.
      * </p>
      * <p>
-     * AWS Lambda doesn't publish a version if the function's configuration and code haven't changed since the last
-     * version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a> to update the function before
-     * publishing a version.
+     * Lambda doesn't publish a version if the function's configuration and code haven't changed since the last version.
+     * Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a> to update the function before publishing a
+     * version.
      * </p>
      * <p>
      * Clients can invoke versions directly or with an alias. To create an alias, use <a>CreateAlias</a>.
@@ -3521,7 +3541,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param publishVersionRequest
      * @return Result of the PublishVersion operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -3594,7 +3614,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param putFunctionCodeSigningConfigRequest
      * @return Result of the PutFunctionCodeSigningConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -3676,7 +3696,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param putFunctionConcurrencyRequest
      * @return Result of the PutFunctionConcurrency operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -3758,7 +3778,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param putFunctionEventInvokeConfigRequest
      * @return Result of the PutFunctionEventInvokeConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -3831,7 +3851,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @sample AWSLambda.PutProvisionedConcurrencyConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig"
      *      target="_top">AWS API Documentation</a>
@@ -3886,14 +3906,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Removes a statement from the permissions policy for a version of an <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more
      * information, see <a>AddLayerVersionPermission</a>.
      * </p>
      * 
      * @param removeLayerVersionPermissionRequest
      * @return Result of the RemoveLayerVersionPermission operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -3956,14 +3976,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Revokes function-use permission from an AWS service or another account. You can get the ID of the statement from
-     * the output of <a>GetPolicy</a>.
+     * Revokes function-use permission from an Amazon Web Services service or another account. You can get the ID of the
+     * statement from the output of <a>GetPolicy</a>.
      * </p>
      * 
      * @param removePermissionRequest
      * @return Result of the RemovePermission operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4030,7 +4050,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4095,7 +4115,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4161,7 +4181,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param updateAliasRequest
      * @return Result of the UpdateAlias operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4231,7 +4251,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param updateCodeSigningConfigRequest
      * @return Result of the UpdateCodeSigningConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
      * @throws ResourceNotFoundException
@@ -4288,8 +4308,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and
-     * resume later from the same location.
+     * Updates an event source mapping. You can change the function that Lambda invokes, or pause invocation and resume
+     * later from the same location.
      * </p>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -4327,7 +4347,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param updateEventSourceMappingRequest
      * @return Result of the UpdateEventSourceMapping operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4410,7 +4430,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param updateFunctionCodeRequest
      * @return Result of the UpdateFunctionCode operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4500,13 +4520,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </p>
      * <p>
      * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account
-     * or AWS service, use <a>AddPermission</a>.
+     * or Amazon Web Services service, use <a>AddPermission</a>.
      * </p>
      * 
      * @param updateFunctionConfigurationRequest
      * @return Result of the UpdateFunctionConfiguration operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
@@ -4588,7 +4608,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param updateFunctionEventInvokeConfigRequest
      * @return Result of the UpdateFunctionEventInvokeConfig operation returned by the service.
      * @throws ServiceException
-     *         The AWS Lambda service encountered an internal error.
+     *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException

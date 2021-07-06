@@ -30,18 +30,18 @@ public class AccountLevelPermissions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The block public access settings for the AWS account that owns the bucket.
+     * The block public access settings for the Amazon Web Services account that owns the bucket.
      * </p>
      */
     private BlockPublicAccess blockPublicAccess;
 
     /**
      * <p>
-     * The block public access settings for the AWS account that owns the bucket.
+     * The block public access settings for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param blockPublicAccess
-     *        The block public access settings for the AWS account that owns the bucket.
+     *        The block public access settings for the Amazon Web Services account that owns the bucket.
      */
 
     public void setBlockPublicAccess(BlockPublicAccess blockPublicAccess) {
@@ -50,10 +50,10 @@ public class AccountLevelPermissions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The block public access settings for the AWS account that owns the bucket.
+     * The block public access settings for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
-     * @return The block public access settings for the AWS account that owns the bucket.
+     * @return The block public access settings for the Amazon Web Services account that owns the bucket.
      */
 
     public BlockPublicAccess getBlockPublicAccess() {
@@ -62,11 +62,11 @@ public class AccountLevelPermissions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The block public access settings for the AWS account that owns the bucket.
+     * The block public access settings for the Amazon Web Services account that owns the bucket.
      * </p>
      * 
      * @param blockPublicAccess
-     *        The block public access settings for the AWS account that owns the bucket.
+     *        The block public access settings for the Amazon Web Services account that owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

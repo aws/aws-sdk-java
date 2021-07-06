@@ -38,8 +38,9 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
     private Long customerManaged;
     /**
      * <p>
-     * The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK).
+     * The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption
+     * (SSE-KMS).
      * </p>
      */
     private Long kmsManaged;
@@ -112,13 +113,14 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK).
+     * The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption
+     * (SSE-KMS).
      * </p>
      * 
      * @param kmsManaged
-     *        The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer
-     *        master key (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     *        The total number of objects that are encrypted with an Key Management Service (KMS) customer master key
+     *        (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS
      *        encryption (SSE-KMS).
      */
 
@@ -128,12 +130,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK).
+     * The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption
+     * (SSE-KMS).
      * </p>
      * 
-     * @return The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer
-     *         master key (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     * @return The total number of objects that are encrypted with an Key Management Service (KMS) customer master key
+     *         (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS
      *         encryption (SSE-KMS).
      */
 
@@ -143,13 +146,14 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer master key
-     * (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
+     * The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK).
+     * The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption
+     * (SSE-KMS).
      * </p>
      * 
      * @param kmsManaged
-     *        The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer
-     *        master key (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     *        The total number of objects that are encrypted with an Key Management Service (KMS) customer master key
+     *        (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS
      *        encryption (SSE-KMS).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies an AWS account that owns S3 buckets for a classification job to analyze, and one or more specific buckets
- * to analyze for that account.
+ * Specifies an Amazon Web Services account that owns S3 buckets for a classification job to analyze, and one or more
+ * specific buckets to analyze for that account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketDefinitionForJob" target="_top">AWS
@@ -31,7 +31,7 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets.
+     * The unique identifier for the Amazon Web Services account that owns the buckets.
      * </p>
      */
     private String accountId;
@@ -44,11 +44,11 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets.
+     * The unique identifier for the Amazon Web Services account that owns the buckets.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the buckets.
+     *        The unique identifier for the Amazon Web Services account that owns the buckets.
      */
 
     public void setAccountId(String accountId) {
@@ -57,10 +57,10 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets.
+     * The unique identifier for the Amazon Web Services account that owns the buckets.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns the buckets.
+     * @return The unique identifier for the Amazon Web Services account that owns the buckets.
      */
 
     public String getAccountId() {
@@ -69,11 +69,11 @@ public class S3BucketDefinitionForJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the buckets.
+     * The unique identifier for the Amazon Web Services account that owns the buckets.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the buckets.
+     *        The unique identifier for the Amazon Web Services account that owns the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

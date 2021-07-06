@@ -25,24 +25,24 @@ public class GetAdministratorAccountResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     * invitation, this object also provides details about the invitation that was sent to establish the relationship
-     * between the accounts.
+     * The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      */
     private Invitation administrator;
 
     /**
      * <p>
-     * The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     * invitation, this object also provides details about the invitation that was sent to establish the relationship
-     * between the accounts.
+     * The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      * 
      * @param administrator
-     *        The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     *        invitation, this object also provides details about the invitation that was sent to establish the
-     *        relationship between the accounts.
+     *        The Amazon Web Services account ID for the administrator account. If the accounts are associated by a
+     *        Macie membership invitation, this object also provides details about the invitation that was sent to
+     *        establish the relationship between the accounts.
      */
 
     public void setAdministrator(Invitation administrator) {
@@ -51,14 +51,14 @@ public class GetAdministratorAccountResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     * invitation, this object also provides details about the invitation that was sent to establish the relationship
-     * between the accounts.
+     * The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      * 
-     * @return The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     *         invitation, this object also provides details about the invitation that was sent to establish the
-     *         relationship between the accounts.
+     * @return The Amazon Web Services account ID for the administrator account. If the accounts are associated by a
+     *         Macie membership invitation, this object also provides details about the invitation that was sent to
+     *         establish the relationship between the accounts.
      */
 
     public Invitation getAdministrator() {
@@ -67,15 +67,15 @@ public class GetAdministratorAccountResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     * invitation, this object also provides details about the invitation that was sent to establish the relationship
-     * between the accounts.
+     * The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      * 
      * @param administrator
-     *        The AWS account ID for the administrator account. If the accounts are associated by a Macie membership
-     *        invitation, this object also provides details about the invitation that was sent to establish the
-     *        relationship between the accounts.
+     *        The Amazon Web Services account ID for the administrator account. If the accounts are associated by a
+     *        Macie membership invitation, this object also provides details about the invitation that was sent to
+     *        establish the relationship between the accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

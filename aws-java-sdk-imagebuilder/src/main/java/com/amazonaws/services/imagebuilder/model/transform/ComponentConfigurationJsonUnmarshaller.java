@@ -52,6 +52,12 @@ public class ComponentConfigurationJsonUnmarshaller implements Unmarshaller<Comp
                     context.nextToken();
                     componentConfiguration.setComponentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("parameters", targetDepth)) {
+                    context.nextToken();
+                    componentConfiguration.setParameters(new ListUnmarshaller<ComponentParameter>(ComponentParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

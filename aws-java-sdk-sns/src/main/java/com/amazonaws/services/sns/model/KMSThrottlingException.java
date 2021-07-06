@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request was denied due to request throttling. For more information about throttling, see <a
- * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS
- * Key Management Service Developer Guide.</i>
+ * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key
+ * Management Service Developer Guide.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

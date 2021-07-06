@@ -41,7 +41,8 @@
       "output":{"shape":"ReplicationConfigurationTemplate"},
       "errors":[
         {"shape":"UninitializedAccountException"},
-        {"shape":"ValidationException"}
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
       ],
       "documentation":"<p>Creates a new ReplicationConfigurationTemplate.</p>"
     },
@@ -400,6 +401,7 @@
         {"shape":"UninitializedAccountException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"}
       ],
       "documentation":"<p>Allows you to update multiple ReplicationConfigurations by Source Server ID.</p>",
@@ -417,7 +419,8 @@
       "errors":[
         {"shape":"UninitializedAccountException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ValidationException"}
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
       ],
       "documentation":"<p>Updates multiple ReplicationConfigurationTemplates by ID.</p>"
     }
@@ -1675,7 +1678,6 @@
     "ReplicationConfigurationEbsEncryption":{
       "type":"string",
       "enum":[
-        "NONE",
         "DEFAULT",
         "CUSTOM"
       ]

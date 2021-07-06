@@ -70,15 +70,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String action;
     /**
      * <p>
-     * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-     * <code>SourceAccount</code> to limit who can invoke the function through that service.
+     * The Amazon Web Services service or account that invokes the function. If you specify a service, use
+     * <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
      * </p>
      */
     private String principal;
     /**
      * <p>
-     * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or
-     * Amazon SNS topic.
+     * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
      */
     private String sourceArn;
@@ -379,13 +379,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-     * <code>SourceAccount</code> to limit who can invoke the function through that service.
+     * The Amazon Web Services service or account that invokes the function. If you specify a service, use
+     * <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
      * </p>
      * 
      * @param principal
-     *        The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code>
-     *        or <code>SourceAccount</code> to limit who can invoke the function through that service.
+     *        The Amazon Web Services service or account that invokes the function. If you specify a service, use
+     *        <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that
+     *        service.
      */
 
     public void setPrincipal(String principal) {
@@ -394,11 +395,11 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-     * <code>SourceAccount</code> to limit who can invoke the function through that service.
+     * The Amazon Web Services service or account that invokes the function. If you specify a service, use
+     * <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
      * </p>
      * 
-     * @return The AWS service or account that invokes the function. If you specify a service, use
+     * @return The Amazon Web Services service or account that invokes the function. If you specify a service, use
      *         <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that
      *         service.
      */
@@ -409,13 +410,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-     * <code>SourceAccount</code> to limit who can invoke the function through that service.
+     * The Amazon Web Services service or account that invokes the function. If you specify a service, use
+     * <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
      * </p>
      * 
      * @param principal
-     *        The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code>
-     *        or <code>SourceAccount</code> to limit who can invoke the function through that service.
+     *        The Amazon Web Services service or account that invokes the function. If you specify a service, use
+     *        <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,13 +428,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or
-     * Amazon SNS topic.
+     * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
      * 
      * @param sourceArn
-     *        For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket
-     *        or Amazon SNS topic.
+     *        For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function.
+     *        For example, an Amazon S3 bucket or Amazon SNS topic.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -441,12 +443,12 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or
-     * Amazon SNS topic.
+     * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
      * 
-     * @return For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket
-     *         or Amazon SNS topic.
+     * @return For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function.
+     *         For example, an Amazon S3 bucket or Amazon SNS topic.
      */
 
     public String getSourceArn() {
@@ -455,13 +457,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or
-     * Amazon SNS topic.
+     * For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.
      * </p>
      * 
      * @param sourceArn
-     *        For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket
-     *        or Amazon SNS topic.
+     *        For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function.
+     *        For example, an Amazon S3 bucket or Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an S3 bucket that a finding applies to.
+ * Provides information about the S3 bucket that a finding applies to.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Bucket" target="_top">AWS API
@@ -81,7 +81,7 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The display name and AWS account ID for the user who owns the bucket.
+     * The display name and Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      */
     private S3BucketOwner owner;
@@ -491,11 +491,11 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The display name and AWS account ID for the user who owns the bucket.
+     * The display name and Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      * 
      * @param owner
-     *        The display name and AWS account ID for the user who owns the bucket.
+     *        The display name and Amazon Web Services account ID for the user who owns the bucket.
      */
 
     public void setOwner(S3BucketOwner owner) {
@@ -504,10 +504,10 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The display name and AWS account ID for the user who owns the bucket.
+     * The display name and Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      * 
-     * @return The display name and AWS account ID for the user who owns the bucket.
+     * @return The display name and Amazon Web Services account ID for the user who owns the bucket.
      */
 
     public S3BucketOwner getOwner() {
@@ -516,11 +516,11 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The display name and AWS account ID for the user who owns the bucket.
+     * The display name and Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      * 
      * @param owner
-     *        The display name and AWS account ID for the user who owns the bucket.
+     *        The display name and Amazon Web Services account ID for the user who owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

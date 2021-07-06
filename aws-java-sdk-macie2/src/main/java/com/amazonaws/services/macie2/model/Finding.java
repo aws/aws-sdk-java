@@ -30,14 +30,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
-     * the affected resource.
+     * The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the
+     * account that owns the affected resource.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Specifies whether the finding is archived.
+     * Specifies whether the finding is archived (suppressed).
      * </p>
      */
     private Boolean archived;
@@ -82,7 +82,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The AWS partition that Amazon Macie created the finding in.
+     * The Amazon Web Services partition that Amazon Macie created the finding in.
      * </p>
      */
     private String partition;
@@ -94,7 +94,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private PolicyDetails policyDetails;
     /**
      * <p>
-     * The AWS Region that Amazon Macie created the finding in.
+     * The Amazon Web Services Region that Amazon Macie created the finding in.
      * </p>
      */
     private String region;
@@ -146,13 +146,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
-     * the affected resource.
+     * The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the
+     * account that owns the affected resource.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that the finding applies to. This is typically the account that
-     *        owns the affected resource.
+     *        The unique identifier for the Amazon Web Services account that the finding applies to. This is typically
+     *        the account that owns the affected resource.
      */
 
     public void setAccountId(String accountId) {
@@ -161,12 +161,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
-     * the affected resource.
+     * The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the
+     * account that owns the affected resource.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that the finding applies to. This is typically the account that
-     *         owns the affected resource.
+     * @return The unique identifier for the Amazon Web Services account that the finding applies to. This is typically
+     *         the account that owns the affected resource.
      */
 
     public String getAccountId() {
@@ -175,13 +175,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that the finding applies to. This is typically the account that owns
-     * the affected resource.
+     * The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the
+     * account that owns the affected resource.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that the finding applies to. This is typically the account that
-     *        owns the affected resource.
+     *        The unique identifier for the Amazon Web Services account that the finding applies to. This is typically
+     *        the account that owns the affected resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the finding is archived.
+     * Specifies whether the finding is archived (suppressed).
      * </p>
      * 
      * @param archived
-     *        Specifies whether the finding is archived.
+     *        Specifies whether the finding is archived (suppressed).
      */
 
     public void setArchived(Boolean archived) {
@@ -205,10 +205,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the finding is archived.
+     * Specifies whether the finding is archived (suppressed).
      * </p>
      * 
-     * @return Specifies whether the finding is archived.
+     * @return Specifies whether the finding is archived (suppressed).
      */
 
     public Boolean getArchived() {
@@ -217,11 +217,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the finding is archived.
+     * Specifies whether the finding is archived (suppressed).
      * </p>
      * 
      * @param archived
-     *        Specifies whether the finding is archived.
+     *        Specifies whether the finding is archived (suppressed).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,10 +232,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the finding is archived.
+     * Specifies whether the finding is archived (suppressed).
      * </p>
      * 
-     * @return Specifies whether the finding is archived.
+     * @return Specifies whether the finding is archived (suppressed).
      */
 
     public Boolean isArchived() {
@@ -526,11 +526,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS partition that Amazon Macie created the finding in.
+     * The Amazon Web Services partition that Amazon Macie created the finding in.
      * </p>
      * 
      * @param partition
-     *        The AWS partition that Amazon Macie created the finding in.
+     *        The Amazon Web Services partition that Amazon Macie created the finding in.
      */
 
     public void setPartition(String partition) {
@@ -539,10 +539,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS partition that Amazon Macie created the finding in.
+     * The Amazon Web Services partition that Amazon Macie created the finding in.
      * </p>
      * 
-     * @return The AWS partition that Amazon Macie created the finding in.
+     * @return The Amazon Web Services partition that Amazon Macie created the finding in.
      */
 
     public String getPartition() {
@@ -551,11 +551,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS partition that Amazon Macie created the finding in.
+     * The Amazon Web Services partition that Amazon Macie created the finding in.
      * </p>
      * 
      * @param partition
-     *        The AWS partition that Amazon Macie created the finding in.
+     *        The Amazon Web Services partition that Amazon Macie created the finding in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -606,11 +606,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region that Amazon Macie created the finding in.
+     * The Amazon Web Services Region that Amazon Macie created the finding in.
      * </p>
      * 
      * @param region
-     *        The AWS Region that Amazon Macie created the finding in.
+     *        The Amazon Web Services Region that Amazon Macie created the finding in.
      */
 
     public void setRegion(String region) {
@@ -619,10 +619,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region that Amazon Macie created the finding in.
+     * The Amazon Web Services Region that Amazon Macie created the finding in.
      * </p>
      * 
-     * @return The AWS Region that Amazon Macie created the finding in.
+     * @return The Amazon Web Services Region that Amazon Macie created the finding in.
      */
 
     public String getRegion() {
@@ -631,11 +631,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region that Amazon Macie created the finding in.
+     * The Amazon Web Services Region that Amazon Macie created the finding in.
      * </p>
      * 
      * @param region
-     *        The AWS Region that Amazon Macie created the finding in.
+     *        The Amazon Web Services Region that Amazon Macie created the finding in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,7 +52,7 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountPolicyAllowsUnencryptedObjectUploads bucketCountByObjectEncryptionRequirement;
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
      * </p>
      */
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
@@ -306,11 +306,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are or aren't shared with another AWS account.
+     *        The total number of buckets that are or aren't shared with another Amazon Web Services account.
      */
 
     public void setBucketCountBySharedAccessType(BucketCountBySharedAccessType bucketCountBySharedAccessType) {
@@ -319,10 +319,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
      * </p>
      * 
-     * @return The total number of buckets that are or aren't shared with another AWS account.
+     * @return The total number of buckets that are or aren't shared with another Amazon Web Services account.
      */
 
     public BucketCountBySharedAccessType getBucketCountBySharedAccessType() {
@@ -331,11 +331,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are or aren't shared with another AWS account.
+     *        The total number of buckets that are or aren't shared with another Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

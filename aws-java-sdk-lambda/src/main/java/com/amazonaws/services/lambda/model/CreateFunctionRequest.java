@@ -91,14 +91,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum
-     * allowed value is 900 seconds.
+     * allowed value is 900 seconds. For additional information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
-     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
+     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
+     * value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      */
     private Integer memorySize;
@@ -110,9 +112,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean publish;
     /**
      * <p>
-     * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
-     * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
+     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
+     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+     * Settings</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -139,14 +142,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private Environment environment;
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-     * variables. If it's not provided, AWS Lambda uses a default service key.
+     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
+     * environment variables. If it's not provided, Lambda uses a default service key.
      * </p>
      */
     private String kMSKeyArn;
     /**
      * <p>
-     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      * </p>
      */
     private TracingConfig tracingConfig;
@@ -171,8 +175,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
     /**
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * Container image <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     * >configuration values</a> that override the values in the container image Dockerfile.
      * </p>
      */
     private ImageConfig imageConfig;
@@ -626,12 +631,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum
-     * allowed value is 900 seconds.
+     * allowed value is 900 seconds. For additional information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      * 
      * @param timeout
      *        The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-     *        maximum allowed value is 900 seconds.
+     *        maximum allowed value is 900 seconds. For additional information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution
+     *        environment</a>.
      */
 
     public void setTimeout(Integer timeout) {
@@ -641,11 +649,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum
-     * allowed value is 900 seconds.
+     * allowed value is 900 seconds. For additional information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      * 
      * @return The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-     *         maximum allowed value is 900 seconds.
+     *         maximum allowed value is 900 seconds. For additional information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution
+     *         environment</a>.
      */
 
     public Integer getTimeout() {
@@ -655,12 +666,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum
-     * allowed value is 900 seconds.
+     * allowed value is 900 seconds. For additional information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      * 
      * @param timeout
      *        The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-     *        maximum allowed value is 900 seconds.
+     *        maximum allowed value is 900 seconds. For additional information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution
+     *        environment</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,13 +685,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
-     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
+     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
+     * value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
-     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     *        The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
+     *        available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     *        allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -686,12 +702,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
-     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
+     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
+     * value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
-     * @return The amount of memory available to the function at runtime. Increasing the function's memory also
-     *         increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     * @return The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
+     *         available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     *         allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public Integer getMemorySize() {
@@ -700,13 +718,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
-     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
+     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
+     * value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
-     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
+     *        The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
+     *        available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     *        allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -769,15 +789,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
-     * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
+     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
+     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+     * Settings</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the
-     *        VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     *        For more information, see <a
+     *        For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and
+     *        subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet
+     *        through that VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      */
 
@@ -787,14 +808,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
-     * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
+     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
+     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+     * Settings</a>.
      * </p>
      * 
-     * @return For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the
-     *         VPC. When you connect a function to a VPC, it can only access resources and the internet through that
-     *         VPC. For more information, see <a
+     * @return For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and
+     *         subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet
+     *         through that VPC. For more information, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      */
 
@@ -804,15 +826,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
-     * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
+     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
+     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+     * Settings</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the
-     *        VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     *        For more information, see <a
+     *        For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and
+     *        subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet
+     *        through that VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -999,13 +1022,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-     * variables. If it's not provided, AWS Lambda uses a default service key.
+     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
+     * environment variables. If it's not provided, Lambda uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-     *        variables. If it's not provided, AWS Lambda uses a default service key.
+     *        The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
+     *        environment variables. If it's not provided, Lambda uses a default service key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -1014,12 +1037,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-     * variables. If it's not provided, AWS Lambda uses a default service key.
+     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
+     * environment variables. If it's not provided, Lambda uses a default service key.
      * </p>
      * 
-     * @return The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's
-     *         environment variables. If it's not provided, AWS Lambda uses a default service key.
+     * @return The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your
+     *         function's environment variables. If it's not provided, Lambda uses a default service key.
      */
 
     public String getKMSKeyArn() {
@@ -1028,13 +1051,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-     * variables. If it's not provided, AWS Lambda uses a default service key.
+     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
+     * environment variables. If it's not provided, Lambda uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-     *        variables. If it's not provided, AWS Lambda uses a default service key.
+     *        The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
+     *        environment variables. If it's not provided, Lambda uses a default service key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1045,12 +1068,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      * </p>
      * 
      * @param tracingConfig
-     *        Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
-     *        X-Ray.
+     *        Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      */
 
     public void setTracingConfig(TracingConfig tracingConfig) {
@@ -1059,11 +1083,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      * </p>
      * 
-     * @return Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
-     *         X-Ray.
+     * @return Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      */
 
     public TracingConfig getTracingConfig() {
@@ -1072,12 +1097,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS X-Ray.
+     * Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      * </p>
      * 
      * @param tracingConfig
-     *        Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
-     *        X-Ray.
+     *        Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1320,13 +1346,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * Container image <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     * >configuration values</a> that override the values in the container image Dockerfile.
      * </p>
      * 
      * @param imageConfig
-     *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-     *        values</a> that override the values in the container image Dockerfile.
+     *        Container image <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     *        >configuration values</a> that override the values in the container image Dockerfile.
      */
 
     public void setImageConfig(ImageConfig imageConfig) {
@@ -1335,12 +1363,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * Container image <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     * >configuration values</a> that override the values in the container image Dockerfile.
      * </p>
      * 
-     * @return <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-     *         values</a> that override the values in the container image Dockerfile.
+     * @return Container image <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     *         >configuration values</a> that override the values in the container image Dockerfile.
      */
 
     public ImageConfig getImageConfig() {
@@ -1349,13 +1379,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
-     * that override the values in the container image Dockerfile.
+     * Container image <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     * >configuration values</a> that override the values in the container image Dockerfile.
      * </p>
      * 
      * @param imageConfig
-     *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-     *        values</a> that override the values in the container image Dockerfile.
+     *        Container image <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings"
+     *        >configuration values</a> that override the values in the container image Dockerfile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

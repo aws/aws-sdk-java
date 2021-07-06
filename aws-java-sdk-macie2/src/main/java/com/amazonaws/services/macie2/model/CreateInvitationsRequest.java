@@ -27,14 +27,14 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account to send the invitation to.
+     * An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * </p>
      */
     private java.util.List<String> accountIds;
     /**
      * <p>
      * Specifies whether to send an email notification to the root user of each account that the invitation will be sent
-     * to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To
+     * to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To
      * send an email notification to the root user of each account, set this value to true.
      * </p>
      */
@@ -49,10 +49,10 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account to send the invitation to.
+     * An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * </p>
      * 
-     * @return An array that lists AWS account IDs, one for each account to send the invitation to.
+     * @return An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -61,11 +61,11 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account to send the invitation to.
+     * An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account to send the invitation to.
+     *        An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -79,7 +79,7 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account to send the invitation to.
+     * An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account to send the invitation to.
+     *        An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array that lists AWS account IDs, one for each account to send the invitation to.
+     * An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * </p>
      * 
      * @param accountIds
-     *        An array that lists AWS account IDs, one for each account to send the invitation to.
+     *        An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,14 +120,14 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to send an email notification to the root user of each account that the invitation will be sent
-     * to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To
+     * to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To
      * send an email notification to the root user of each account, set this value to true.
      * </p>
      * 
      * @param disableEmailNotification
      *        Specifies whether to send an email notification to the root user of each account that the invitation will
-     *        be sent to. This notification is in addition to an alert that the root user receives in AWS Personal
-     *        Health Dashboard. To send an email notification to the root user of each account, set this value to true.
+     *        be sent to. This notification is in addition to an alert that the root user receives in Personal Health
+     *        Dashboard. To send an email notification to the root user of each account, set this value to true.
      */
 
     public void setDisableEmailNotification(Boolean disableEmailNotification) {
@@ -137,13 +137,13 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to send an email notification to the root user of each account that the invitation will be sent
-     * to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To
+     * to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To
      * send an email notification to the root user of each account, set this value to true.
      * </p>
      * 
      * @return Specifies whether to send an email notification to the root user of each account that the invitation will
-     *         be sent to. This notification is in addition to an alert that the root user receives in AWS Personal
-     *         Health Dashboard. To send an email notification to the root user of each account, set this value to true.
+     *         be sent to. This notification is in addition to an alert that the root user receives in Personal Health
+     *         Dashboard. To send an email notification to the root user of each account, set this value to true.
      */
 
     public Boolean getDisableEmailNotification() {
@@ -153,14 +153,14 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to send an email notification to the root user of each account that the invitation will be sent
-     * to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To
+     * to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To
      * send an email notification to the root user of each account, set this value to true.
      * </p>
      * 
      * @param disableEmailNotification
      *        Specifies whether to send an email notification to the root user of each account that the invitation will
-     *        be sent to. This notification is in addition to an alert that the root user receives in AWS Personal
-     *        Health Dashboard. To send an email notification to the root user of each account, set this value to true.
+     *        be sent to. This notification is in addition to an alert that the root user receives in Personal Health
+     *        Dashboard. To send an email notification to the root user of each account, set this value to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,13 +172,13 @@ public class CreateInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to send an email notification to the root user of each account that the invitation will be sent
-     * to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To
+     * to. This notification is in addition to an alert that the root user receives in Personal Health Dashboard. To
      * send an email notification to the root user of each account, set this value to true.
      * </p>
      * 
      * @return Specifies whether to send an email notification to the root user of each account that the invitation will
-     *         be sent to. This notification is in addition to an alert that the root user receives in AWS Personal
-     *         Health Dashboard. To send an email notification to the root user of each account, set this value to true.
+     *         be sent to. This notification is in addition to an alert that the root user receives in Personal Health
+     *         Dashboard. To send an email notification to the root user of each account, set this value to true.
      */
 
     public Boolean isDisableEmailNotification() {

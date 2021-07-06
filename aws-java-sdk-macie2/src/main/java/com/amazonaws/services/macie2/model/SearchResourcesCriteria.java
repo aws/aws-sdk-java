@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a property- or tag-based filter condition for including or excluding AWS resources from the query results.
+ * Specifies a property- or tag-based filter condition for including or excluding Amazon Web Services resources from the
+ * query results.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesCriteria" target="_top">AWS API

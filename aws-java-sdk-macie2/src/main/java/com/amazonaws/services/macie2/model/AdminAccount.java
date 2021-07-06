@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the delegated Amazon Macie administrator account for an AWS organization.
+ * Provides information about the delegated Amazon Macie administrator account for an Amazon Web Services organization.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AdminAccount" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      */
     private String accountId;
@@ -43,11 +43,11 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account.
+     *        The Amazon Web Services account ID for the account.
      */
 
     public void setAccountId(String accountId) {
@@ -56,10 +56,10 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
-     * @return The AWS account ID for the account.
+     * @return The Amazon Web Services account ID for the account.
      */
 
     public String getAccountId() {
@@ -68,11 +68,11 @@ public class AdminAccount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The Amazon Web Services account ID for the account.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account.
+     *        The Amazon Web Services account ID for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

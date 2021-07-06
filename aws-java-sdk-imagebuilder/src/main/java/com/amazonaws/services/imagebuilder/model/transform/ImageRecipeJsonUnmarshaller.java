@@ -106,6 +106,10 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                     context.nextToken();
                     imageRecipe.setWorkingDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("additionalInstanceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    imageRecipe.setAdditionalInstanceConfiguration(AdditionalInstanceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

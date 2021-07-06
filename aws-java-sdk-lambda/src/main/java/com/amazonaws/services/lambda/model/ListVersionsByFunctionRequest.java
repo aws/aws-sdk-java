@@ -63,7 +63,8 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
     private String marker;
     /**
      * <p>
-     * The maximum number of versions to return.
+     * The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50
+     * items in each response, even if you set the number higher.
      * </p>
      */
     private Integer maxItems;
@@ -291,11 +292,13 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of versions to return.
+     * The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50
+     * items in each response, even if you set the number higher.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of versions to return.
+     *        The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum
+     *        of 50 items in each response, even if you set the number higher.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -304,10 +307,12 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of versions to return.
+     * The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50
+     * items in each response, even if you set the number higher.
      * </p>
      * 
-     * @return The maximum number of versions to return.
+     * @return The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum
+     *         of 50 items in each response, even if you set the number higher.
      */
 
     public Integer getMaxItems() {
@@ -316,11 +321,13 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of versions to return.
+     * The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50
+     * items in each response, even if you set the number higher.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of versions to return.
+     *        The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum
+     *        of 50 items in each response, even if you set the number higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

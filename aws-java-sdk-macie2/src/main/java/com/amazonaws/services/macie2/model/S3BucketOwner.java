@@ -36,7 +36,7 @@ public class S3BucketOwner implements Serializable, Cloneable, StructuredPojo {
     private String displayName;
     /**
      * <p>
-     * The AWS account ID for the user who owns the bucket.
+     * The Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      */
     private String id;
@@ -83,11 +83,11 @@ public class S3BucketOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the user who owns the bucket.
+     * The Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      * 
      * @param id
-     *        The AWS account ID for the user who owns the bucket.
+     *        The Amazon Web Services account ID for the user who owns the bucket.
      */
 
     public void setId(String id) {
@@ -96,10 +96,10 @@ public class S3BucketOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the user who owns the bucket.
+     * The Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      * 
-     * @return The AWS account ID for the user who owns the bucket.
+     * @return The Amazon Web Services account ID for the user who owns the bucket.
      */
 
     public String getId() {
@@ -108,11 +108,11 @@ public class S3BucketOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the user who owns the bucket.
+     * The Amazon Web Services account ID for the user who owns the bucket.
      * </p>
      * 
      * @param id
-     *        The AWS account ID for the user who owns the bucket.
+     *        The Amazon Web Services account ID for the user who owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

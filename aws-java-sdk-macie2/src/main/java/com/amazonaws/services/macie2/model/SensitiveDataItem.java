@@ -32,8 +32,8 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
-     * keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
-     * PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
+     * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
+     * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
      * personally identifiable information, such as driver's license identification numbers.
      * </p>
      */
@@ -56,16 +56,17 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
-     * keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
-     * PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
+     * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
+     * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
      * personally identifiable information, such as driver's license identification numbers.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
-     *        private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
-     *        or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification
-     *        numbers, or personally identifiable information, such as driver's license identification numbers.
+     *        private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
+     *        card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
+     *        identification numbers, or personally identifiable information, such as driver's license identification
+     *        numbers.
      * @see SensitiveDataItemCategory
      */
 
@@ -76,15 +77,16 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
-     * keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
-     * PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
+     * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
+     * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
      * personally identifiable information, such as driver's license identification numbers.
      * </p>
      * 
      * @return The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
-     *         private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
-     *         or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification
-     *         numbers, or personally identifiable information, such as driver's license identification numbers.
+     *         private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
+     *         card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
+     *         identification numbers, or personally identifiable information, such as driver's license identification
+     *         numbers.
      * @see SensitiveDataItemCategory
      */
 
@@ -95,16 +97,17 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
-     * keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
-     * PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
+     * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
+     * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
      * personally identifiable information, such as driver's license identification numbers.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
-     *        private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
-     *        or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification
-     *        numbers, or personally identifiable information, such as driver's license identification numbers.
+     *        private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
+     *        card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
+     *        identification numbers, or personally identifiable information, such as driver's license identification
+     *        numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */
@@ -117,16 +120,17 @@ public class SensitiveDataItem implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private
-     * keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or,
-     * PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
+     * keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
+     * or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or
      * personally identifiable information, such as driver's license identification numbers.
      * </p>
      * 
      * @param category
      *        The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as
-     *        private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers;
-     *        or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification
-     *        numbers, or personally identifiable information, such as driver's license identification numbers.
+     *        private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit
+     *        card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance
+     *        identification numbers, or personally identifiable information, such as driver's license identification
+     *        numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SensitiveDataItemCategory
      */

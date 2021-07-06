@@ -57,7 +57,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.
+     * <code>Owner</code> – The account ID of the subscription's owner.
      * </p>
      * </li>
      * <li>
@@ -153,7 +153,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.
+     * <code>Owner</code> – The account ID of the subscription's owner.
      * </p>
      * </li>
      * <li>
@@ -244,7 +244,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Owner</code> – The AWS account ID of the subscription's owner.
+     *         <code>Owner</code> – The account ID of the subscription's owner.
      *         </p>
      *         </li>
      *         <li>
@@ -348,7 +348,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.
+     * <code>Owner</code> – The account ID of the subscription's owner.
      * </p>
      * </li>
      * <li>
@@ -440,7 +440,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Owner</code> – The AWS account ID of the subscription's owner.
+     *        <code>Owner</code> – The account ID of the subscription's owner.
      *        </p>
      *        </li>
      *        <li>
@@ -538,7 +538,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.
+     * <code>Owner</code> – The account ID of the subscription's owner.
      * </p>
      * </li>
      * <li>
@@ -630,7 +630,7 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Owner</code> – The AWS account ID of the subscription's owner.
+     *        <code>Owner</code> – The account ID of the subscription's owner.
      *        </p>
      *        </li>
      *        <li>

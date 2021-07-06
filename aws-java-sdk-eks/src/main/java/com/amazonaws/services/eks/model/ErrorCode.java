@@ -34,7 +34,8 @@ public enum ErrorCode {
     ClusterUnreachable("ClusterUnreachable"),
     InsufficientNumberOfReplicas("InsufficientNumberOfReplicas"),
     ConfigurationConflict("ConfigurationConflict"),
-    AdmissionRequestDenied("AdmissionRequestDenied");
+    AdmissionRequestDenied("AdmissionRequestDenied"),
+    UnsupportedAddonModification("UnsupportedAddonModification");
 
     private String value;
 

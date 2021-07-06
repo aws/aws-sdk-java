@@ -74,10 +74,16 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The working directory to be used during build and test workflows.
+     * The working directory used during build and test workflows.
      * </p>
      */
     private String workingDirectory;
+    /**
+     * <p>
+     * Specify additional settings and launch scripts for your build instances.
+     * </p>
+     */
+    private AdditionalInstanceConfiguration additionalInstanceConfiguration;
     /**
      * <p>
      * The idempotency token used to make this request idempotent.
@@ -485,11 +491,11 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The working directory to be used during build and test workflows.
+     * The working directory used during build and test workflows.
      * </p>
      * 
      * @param workingDirectory
-     *        The working directory to be used during build and test workflows.
+     *        The working directory used during build and test workflows.
      */
 
     public void setWorkingDirectory(String workingDirectory) {
@@ -498,10 +504,10 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The working directory to be used during build and test workflows.
+     * The working directory used during build and test workflows.
      * </p>
      * 
-     * @return The working directory to be used during build and test workflows.
+     * @return The working directory used during build and test workflows.
      */
 
     public String getWorkingDirectory() {
@@ -510,16 +516,56 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The working directory to be used during build and test workflows.
+     * The working directory used during build and test workflows.
      * </p>
      * 
      * @param workingDirectory
-     *        The working directory to be used during build and test workflows.
+     *        The working directory used during build and test workflows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageRecipeRequest withWorkingDirectory(String workingDirectory) {
         setWorkingDirectory(workingDirectory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify additional settings and launch scripts for your build instances.
+     * </p>
+     * 
+     * @param additionalInstanceConfiguration
+     *        Specify additional settings and launch scripts for your build instances.
+     */
+
+    public void setAdditionalInstanceConfiguration(AdditionalInstanceConfiguration additionalInstanceConfiguration) {
+        this.additionalInstanceConfiguration = additionalInstanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specify additional settings and launch scripts for your build instances.
+     * </p>
+     * 
+     * @return Specify additional settings and launch scripts for your build instances.
+     */
+
+    public AdditionalInstanceConfiguration getAdditionalInstanceConfiguration() {
+        return this.additionalInstanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specify additional settings and launch scripts for your build instances.
+     * </p>
+     * 
+     * @param additionalInstanceConfiguration
+     *        Specify additional settings and launch scripts for your build instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRecipeRequest withAdditionalInstanceConfiguration(AdditionalInstanceConfiguration additionalInstanceConfiguration) {
+        setAdditionalInstanceConfiguration(additionalInstanceConfiguration);
         return this;
     }
 
@@ -591,6 +637,8 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Tags: ").append(getTags()).append(",");
         if (getWorkingDirectory() != null)
             sb.append("WorkingDirectory: ").append(getWorkingDirectory()).append(",");
+        if (getAdditionalInstanceConfiguration() != null)
+            sb.append("AdditionalInstanceConfiguration: ").append(getAdditionalInstanceConfiguration()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -639,6 +687,11 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getWorkingDirectory() != null && other.getWorkingDirectory().equals(this.getWorkingDirectory()) == false)
             return false;
+        if (other.getAdditionalInstanceConfiguration() == null ^ this.getAdditionalInstanceConfiguration() == null)
+            return false;
+        if (other.getAdditionalInstanceConfiguration() != null
+                && other.getAdditionalInstanceConfiguration().equals(this.getAdditionalInstanceConfiguration()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -659,6 +712,7 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalInstanceConfiguration() == null) ? 0 : getAdditionalInstanceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

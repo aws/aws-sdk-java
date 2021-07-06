@@ -34,6 +34,12 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private String componentArn;
+    /**
+     * <p>
+     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * </p>
+     */
+    private java.util.List<ComponentParameter> parameters;
 
     /**
      * <p>
@@ -76,6 +82,76 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * </p>
+     * 
+     * @return A group of parameter settings that are used to configure the component for a specific recipe.
+     */
+
+    public java.util.List<ComponentParameter> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * </p>
+     * 
+     * @param parameters
+     *        A group of parameter settings that are used to configure the component for a specific recipe.
+     */
+
+    public void setParameters(java.util.Collection<ComponentParameter> parameters) {
+        if (parameters == null) {
+            this.parameters = null;
+            return;
+        }
+
+        this.parameters = new java.util.ArrayList<ComponentParameter>(parameters);
+    }
+
+    /**
+     * <p>
+     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param parameters
+     *        A group of parameter settings that are used to configure the component for a specific recipe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentConfiguration withParameters(ComponentParameter... parameters) {
+        if (this.parameters == null) {
+            setParameters(new java.util.ArrayList<ComponentParameter>(parameters.length));
+        }
+        for (ComponentParameter ele : parameters) {
+            this.parameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * </p>
+     * 
+     * @param parameters
+     *        A group of parameter settings that are used to configure the component for a specific recipe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentConfiguration withParameters(java.util.Collection<ComponentParameter> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +164,9 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComponentArn() != null)
-            sb.append("ComponentArn: ").append(getComponentArn());
+            sb.append("ComponentArn: ").append(getComponentArn()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +185,10 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getComponentArn() != null && other.getComponentArn().equals(this.getComponentArn()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +198,7 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getComponentArn() == null) ? 0 : getComponentArn().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         return hashCode;
     }
 

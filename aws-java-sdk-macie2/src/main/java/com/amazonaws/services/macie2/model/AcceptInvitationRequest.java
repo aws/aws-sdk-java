@@ -27,7 +27,7 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      */
     private String administratorAccountId;
@@ -39,19 +39,19 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     private String invitationId;
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been
+     * replaced by the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      */
     private String masterAccount;
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      * 
      * @param administratorAccountId
-     *        The AWS account ID for the account that sent the invitation.
+     *        The Amazon Web Services account ID for the account that sent the invitation.
      */
 
     public void setAdministratorAccountId(String administratorAccountId) {
@@ -60,10 +60,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      * 
-     * @return The AWS account ID for the account that sent the invitation.
+     * @return The Amazon Web Services account ID for the account that sent the invitation.
      */
 
     public String getAdministratorAccountId() {
@@ -72,11 +72,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID for the account that sent the invitation.
+     * The Amazon Web Services account ID for the account that sent the invitation.
      * </p>
      * 
      * @param administratorAccountId
-     *        The AWS account ID for the account that sent the invitation.
+     *        The Amazon Web Services account ID for the account that sent the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +127,13 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been
+     * replaced by the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccount
-     *        (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced
-     *        by the administratorAccountId property and is retained only for backward compatibility.
+     *        (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property
+     *        has been replaced by the administratorAccountId property and is retained only for backward compatibility.
      */
 
     public void setMasterAccount(String masterAccount) {
@@ -142,12 +142,12 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been
+     * replaced by the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
-     * @return (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced
-     *         by the administratorAccountId property and is retained only for backward compatibility.
+     * @return (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property
+     *         has been replaced by the administratorAccountId property and is retained only for backward compatibility.
      */
 
     public String getMasterAccount() {
@@ -156,13 +156,13 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced by the
-     * administratorAccountId property and is retained only for backward compatibility.
+     * (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been
+     * replaced by the administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccount
-     *        (Deprecated) The AWS account ID for the account that sent the invitation. This property has been replaced
-     *        by the administratorAccountId property and is retained only for backward compatibility.
+     *        (Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property
+     *        has been replaced by the administratorAccountId property and is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

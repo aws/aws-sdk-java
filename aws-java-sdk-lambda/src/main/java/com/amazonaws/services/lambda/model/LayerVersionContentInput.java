@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A ZIP archive that contains the contents of an <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. You can specify
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. You can specify
  * either an Amazon S3 location, or upload a layer archive directly.
  * </p>
  * 
@@ -50,7 +50,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
     private String s3ObjectVersion;
     /**
      * <p>
-     * The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients
+     * handle the encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
@@ -177,7 +178,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients
+     * handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -191,7 +193,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for you.
+     *        The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI
+     *        clients handle the encoding for you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -200,7 +203,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients
+     * handle the encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -210,8 +214,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
      * {@code position}.
      * </p>
      * 
-     * @return The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for
-     *         you.
+     * @return The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI
+     *         clients handle the encoding for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -220,7 +224,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for you.
+     * The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients
+     * handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -234,7 +239,8 @@ public class LayerVersionContentInput implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for you.
+     *        The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI
+     *        clients handle the encoding for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class GetBucketStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account.
+     *        The unique identifier for the Amazon Web Services account.
      */
 
     public void setAccountId(String accountId) {
@@ -47,10 +47,10 @@ public class GetBucketStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      * 
-     * @return The unique identifier for the AWS account.
+     * @return The unique identifier for the Amazon Web Services account.
      */
 
     public String getAccountId() {
@@ -59,11 +59,11 @@ public class GetBucketStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique identifier for the AWS account.
+     * The unique identifier for the Amazon Web Services account.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account.
+     *        The unique identifier for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

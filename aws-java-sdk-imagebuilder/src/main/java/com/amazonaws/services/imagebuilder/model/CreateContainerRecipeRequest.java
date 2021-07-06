@@ -69,7 +69,7 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
     private String dockerfileTemplateData;
     /**
      * <p>
-     * The S3 URI for the Dockerfile that will be used to build your container image.
+     * The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      * </p>
      */
     private String dockerfileTemplateUri;
@@ -453,11 +453,11 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The S3 URI for the Dockerfile that will be used to build your container image.
+     * The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      * </p>
      * 
      * @param dockerfileTemplateUri
-     *        The S3 URI for the Dockerfile that will be used to build your container image.
+     *        The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      */
 
     public void setDockerfileTemplateUri(String dockerfileTemplateUri) {
@@ -466,10 +466,10 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The S3 URI for the Dockerfile that will be used to build your container image.
+     * The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      * </p>
      * 
-     * @return The S3 URI for the Dockerfile that will be used to build your container image.
+     * @return The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      */
 
     public String getDockerfileTemplateUri() {
@@ -478,11 +478,11 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The S3 URI for the Dockerfile that will be used to build your container image.
+     * The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      * </p>
      * 
      * @param dockerfileTemplateUri
-     *        The S3 URI for the Dockerfile that will be used to build your container image.
+     *        The Amazon S3 URI for the Dockerfile that will be used to build your container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

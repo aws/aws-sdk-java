@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies criteria for sorting the results of a query for information about AWS resources that Amazon Macie monitors
- * and analyzes.
+ * Specifies criteria for sorting the results of a query for information about Amazon Web Services resources that Amazon
+ * Macie monitors and analyzes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesSortCriteria" target="_top">AWS

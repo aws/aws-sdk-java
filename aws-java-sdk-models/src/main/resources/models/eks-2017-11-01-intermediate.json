@@ -5071,6 +5071,9 @@
       }, {
         "name" : "AdmissionRequestDenied",
         "value" : "AdmissionRequestDenied"
+      }, {
+        "name" : "UnsupportedAddonModification",
+        "value" : "UnsupportedAddonModification"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.AddonIssueCode",
@@ -28196,6 +28199,9 @@
       }, {
         "name" : "AdmissionRequestDenied",
         "value" : "AdmissionRequestDenied"
+      }, {
+        "name" : "UnsupportedAddonModification",
+        "value" : "UnsupportedAddonModification"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.ErrorCode",

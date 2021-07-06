@@ -41,7 +41,7 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
     private Range offsetRange;
     /**
      * <p>
-     * The page number of the page that contains the data.
+     * The page number of the page that contains the sensitive data.
      * </p>
      */
     private Long pageNumber;
@@ -140,11 +140,11 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The page number of the page that contains the data.
+     * The page number of the page that contains the sensitive data.
      * </p>
      * 
      * @param pageNumber
-     *        The page number of the page that contains the data.
+     *        The page number of the page that contains the sensitive data.
      */
 
     public void setPageNumber(Long pageNumber) {
@@ -153,10 +153,10 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The page number of the page that contains the data.
+     * The page number of the page that contains the sensitive data.
      * </p>
      * 
-     * @return The page number of the page that contains the data.
+     * @return The page number of the page that contains the sensitive data.
      */
 
     public Long getPageNumber() {
@@ -165,11 +165,11 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The page number of the page that contains the data.
+     * The page number of the page that contains the sensitive data.
      * </p>
      * 
      * @param pageNumber
-     *        The page number of the page that contains the data.
+     *        The page number of the page that contains the sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

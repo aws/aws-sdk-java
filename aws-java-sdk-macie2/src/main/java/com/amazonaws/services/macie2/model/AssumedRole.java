@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about an identity that performed an action on an affected resource by using temporary security
- * credentials. The credentials were obtained using the AssumeRole operation of the AWS Security Token Service (AWS STS)
- * API.
+ * credentials. The credentials were obtained using the AssumeRole operation of the Security Token Service (STS) API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AssumedRole" target="_top">AWS API
@@ -32,13 +31,14 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS access key ID that identifies the credentials.
+     * The Amazon Web Services access key ID that identifies the credentials.
      * </p>
      */
     private String accessKeyId;
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      */
     private String accountId;
@@ -63,11 +63,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS access key ID that identifies the credentials.
+     * The Amazon Web Services access key ID that identifies the credentials.
      * </p>
      * 
      * @param accessKeyId
-     *        The AWS access key ID that identifies the credentials.
+     *        The Amazon Web Services access key ID that identifies the credentials.
      */
 
     public void setAccessKeyId(String accessKeyId) {
@@ -76,10 +76,10 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS access key ID that identifies the credentials.
+     * The Amazon Web Services access key ID that identifies the credentials.
      * </p>
      * 
-     * @return The AWS access key ID that identifies the credentials.
+     * @return The Amazon Web Services access key ID that identifies the credentials.
      */
 
     public String getAccessKeyId() {
@@ -88,11 +88,11 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS access key ID that identifies the credentials.
+     * The Amazon Web Services access key ID that identifies the credentials.
      * </p>
      * 
      * @param accessKeyId
-     *        The AWS access key ID that identifies the credentials.
+     *        The Amazon Web Services access key ID that identifies the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,13 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     *        The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     *        credentials.
      */
 
     public void setAccountId(String accountId) {
@@ -116,10 +118,12 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * @return The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     *         credentials.
      */
 
     public String getAccountId() {
@@ -128,11 +132,13 @@ public class AssumedRole implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     * The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     * credentials.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that owns the entity that was used to get the credentials.
+     *        The unique identifier for the Amazon Web Services account that owns the entity that was used to get the
+     *        credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

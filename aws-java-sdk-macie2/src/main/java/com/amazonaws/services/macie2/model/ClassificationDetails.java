@@ -50,7 +50,7 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
     private String jobId;
     /**
      * <p>
-     * The status and other details for the finding.
+     * The status and other details of the finding.
      * </p>
      */
     private ClassificationResult result;
@@ -189,11 +189,11 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status and other details for the finding.
+     * The status and other details of the finding.
      * </p>
      * 
      * @param result
-     *        The status and other details for the finding.
+     *        The status and other details of the finding.
      */
 
     public void setResult(ClassificationResult result) {
@@ -202,10 +202,10 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status and other details for the finding.
+     * The status and other details of the finding.
      * </p>
      * 
-     * @return The status and other details for the finding.
+     * @return The status and other details of the finding.
      */
 
     public ClassificationResult getResult() {
@@ -214,11 +214,11 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status and other details for the finding.
+     * The status and other details of the finding.
      * </p>
      * 
      * @param result
-     *        The status and other details for the finding.
+     *        The status and other details of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

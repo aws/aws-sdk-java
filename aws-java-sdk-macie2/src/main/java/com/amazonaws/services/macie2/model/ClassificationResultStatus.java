@@ -35,19 +35,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the
      * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that uses an unsupported format.
+     * SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a
+     * file in an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -68,19 +68,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the
      * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that uses an unsupported format.
+     * SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a
+     * file in an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -92,19 +92,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     *        COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example,
-     *        the object is an archive file that contains files in an unsupported format.
+     *        PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For
+     *        example, the object is an archive file that contains files in an unsupported format.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
-     *        a malformed file or a file that uses an unsupported format.
+     *        SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object
+     *        is a file in an unsupported format.
      *        </p>
      *        </li>
      *        </ul>
@@ -121,19 +121,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the
      * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that uses an unsupported format.
+     * SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a
+     * file in an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -144,19 +144,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         <ul>
      *         <li>
      *         <p>
-     *         COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     *         COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For
+     *         PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For
      *         example, the object is an archive file that contains files in an unsupported format.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
-     *         a malformed file or a file that uses an unsupported format.
+     *         SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object
+     *         is a file in an unsupported format.
      *         </p>
      *         </li>
      *         </ul>
@@ -173,19 +173,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the
      * object is an archive file that contains files in an unsupported format.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
-     * malformed file or a file that uses an unsupported format.
+     * SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a
+     * file in an unsupported format.
      * </p>
      * </li>
      * </ul>
@@ -197,19 +197,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     *        COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example,
-     *        the object is an archive file that contains files in an unsupported format.
+     *        PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For
+     *        example, the object is an archive file that contains files in an unsupported format.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
-     *        a malformed file or a file that uses an unsupported format.
+     *        SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object
+     *        is a file in an unsupported format.
      *        </p>
      *        </li>
      *        </ul>
