@@ -28,13 +28,12 @@ import com.amazonaws.services.iotsitewise.waiters.AWSIoTSiteWiseWaiters;
  * </p>
  * <p>
  * <p>
- * Welcome to the AWS IoT SiteWise API Reference. AWS IoT SiteWise is an AWS service that connects <a
+ * Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a
  * href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things
- * (IIoT)</a> devices to the power of the AWS Cloud. For more information, see the <a
- * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">AWS IoT SiteWise User Guide</a>. For information
- * about AWS IoT SiteWise quotas, see <a
- * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise
- * User Guide</i>.
+ * (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a
+ * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about
+ * IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+ * in the <i>IoT SiteWise User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -53,7 +52,7 @@ public interface AWSIoTSiteWise {
      * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-     * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * assets</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param associateAssetsRequest
@@ -64,22 +63,22 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
      *         than the allowed number of child assets or attempting to create more than the allowed number of
      *         properties for an asset model.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -92,7 +91,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Associates a group (batch) of assets with an AWS IoT SiteWise Monitor project.
+     * Associates a group (batch) of assets with an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param batchAssociateProjectAssetsRequest
@@ -103,13 +102,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -118,7 +117,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.BatchAssociateProjectAssets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets"
@@ -128,7 +127,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor project.
+     * Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param batchDisassociateProjectAssetsRequest
@@ -139,13 +138,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.BatchDisassociateProjectAssets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets"
@@ -155,10 +154,10 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value (TQV) data
-     * point. For more information, see <a
+     * Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.
+     * in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -180,21 +179,21 @@ public interface AWSIoTSiteWise {
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
-     * in the past and no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days in
+     * the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the inclusive
+     * range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
-     * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
+     * For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
      * different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>, then storing
      * <code>{T1, GOOD, V2}</code> replaces the existing TQV.
      * </p>
      * </important>
      * <p>
-     * AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
+     * IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action"
-     * >BatchPutAssetPropertyValue authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >BatchPutAssetPropertyValue authorization</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param batchPutAssetPropertyValueRequest
@@ -205,13 +204,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -220,7 +219,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ServiceUnavailableException
      *         The requested service is unavailable.
@@ -235,8 +234,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM user) access to
-     * the specified AWS IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
+     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -247,13 +246,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -262,7 +261,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.CreateAccessPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy" target="_top">AWS
@@ -274,7 +273,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Creates an asset from an existing asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createAssetRequest
@@ -287,13 +286,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -302,7 +301,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -319,7 +318,7 @@ public interface AWSIoTSiteWise {
      * With asset models, you can easily create assets of the same type that have standardized definitions. Each asset
      * created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createAssetModelRequest
@@ -332,13 +331,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -347,7 +346,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -360,7 +359,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a dashboard in an AWS IoT SiteWise Monitor project.
+     * Creates a dashboard in an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param createDashboardRequest
@@ -371,13 +370,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -386,7 +385,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.CreateDashboard
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard" target="_top">AWS
@@ -397,9 +396,9 @@ public interface AWSIoTSiteWise {
     /**
      * <p>
      * Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to
-     * AWS IoT SiteWise. For more information, see <a
+     * IoT SiteWise. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a
-     * gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * gateway</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createGatewayRequest
@@ -410,13 +409,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -425,7 +424,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.CreateGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway" target="_top">AWS API
@@ -435,15 +434,15 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor uses AWS SSO or IAM to
-     * authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
+     * IAM to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
      * Before you can sign in to a new portal, you must add at least one identity to that portal. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
-     * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * </note>
      * 
@@ -455,13 +454,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -470,7 +469,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.CreatePortal
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal" target="_top">AWS API
@@ -491,13 +490,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -506,7 +505,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.CreateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject" target="_top">AWS API
@@ -516,8 +515,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes an access policy that grants the specified identity access to the specified AWS IoT SiteWise Monitor
-     * resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
+     * Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor
+     * resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource.
      * </p>
      * 
      * @param deleteAccessPolicyRequest
@@ -528,13 +527,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DeleteAccessPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy" target="_top">AWS
@@ -546,7 +545,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Deletes an asset. This action can't be undone. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -564,13 +563,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -588,7 +587,7 @@ public interface AWSIoTSiteWise {
      * contains a property formula expression that depends on the asset model that you want to delete. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param deleteAssetModelRequest
@@ -599,13 +598,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -618,7 +617,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a dashboard from AWS IoT SiteWise Monitor.
+     * Deletes a dashboard from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deleteDashboardRequest
@@ -629,13 +628,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DeleteDashboard
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard" target="_top">AWS
@@ -645,7 +644,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
+     * Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
      * gateway's file system.
      * </p>
      * 
@@ -657,13 +656,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DeleteGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway" target="_top">AWS API
@@ -673,7 +672,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a portal from AWS IoT SiteWise Monitor.
+     * Deletes a portal from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deletePortalRequest
@@ -684,13 +683,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -703,7 +702,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a project from AWS IoT SiteWise Monitor.
+     * Deletes a project from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -714,13 +713,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DeleteProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject" target="_top">AWS API
@@ -730,8 +729,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise Monitor portal or
-     * project.
+     * Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.
      * </p>
      * 
      * @param describeAccessPolicyRequest
@@ -742,13 +740,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeAccessPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy"
@@ -769,13 +767,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeAsset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAsset" target="_top">AWS API
@@ -796,13 +794,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeAssetModel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel" target="_top">AWS
@@ -835,13 +833,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeAssetProperty
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty"
@@ -862,13 +860,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeDashboard
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDashboard" target="_top">AWS
@@ -878,10 +876,10 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
-     * region. For more information, see <a
+     * Retrieves information about the default encryption configuration for the Amazon Web Services account in the
+     * default or specified Region. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param describeDefaultEncryptionConfigurationRequest
@@ -890,13 +888,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeDefaultEncryptionConfiguration
      * @see <a
@@ -919,13 +917,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGateway" target="_top">AWS
@@ -937,7 +935,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for
      * a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA
-     * sources for a gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored in one capability
+     * sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability
      * configuration. To list all capability configurations for a gateway, use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
      * </p>
@@ -950,13 +948,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeGatewayCapabilityConfiguration
      * @see <a
@@ -968,7 +966,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves the current AWS IoT SiteWise logging options.
+     * Retrieves the current IoT SiteWise logging options.
      * </p>
      * 
      * @param describeLoggingOptionsRequest
@@ -977,14 +975,14 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @sample AWSIoTSiteWise.DescribeLoggingOptions
@@ -1006,13 +1004,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribePortal
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribePortal" target="_top">AWS API
@@ -1033,19 +1031,58 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.DescribeProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeProject" target="_top">AWS
      *      API Documentation</a>
      */
     DescribeProjectResult describeProject(DescribeProjectRequest describeProjectRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the storage configuration for IoT SiteWise.
+     * </p>
+     * 
+     * @param describeStorageConfigurationRequest
+     * @return Result of the DescribeStorageConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.DescribeStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeStorageConfigurationResult describeStorageConfiguration(DescribeStorageConfigurationRequest describeStorageConfigurationRequest);
 
     /**
      * <p>
@@ -1060,13 +1097,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -1081,7 +1118,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-     * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * aggregates</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1110,13 +1147,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ServiceUnavailableException
      *         The requested service is unavailable.
@@ -1130,7 +1167,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Gets an asset property's current value. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values"
-     * >Querying current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying current values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1159,13 +1196,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ServiceUnavailableException
      *         The requested service is unavailable.
@@ -1179,7 +1216,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Gets the history of an asset property's values. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values"
-     * >Querying historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1208,13 +1245,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ServiceUnavailableException
      *         The requested service is unavailable.
@@ -1230,11 +1267,6 @@ public interface AWSIoTSiteWise {
      * example, you can use the this operation to return the interpolated temperature values for a wind turbine every 24
      * hours over a duration of 7 days.
      * </p>
-     * <note>
-     * <p>
-     * This API isn't available in China (Beijing).
-     * </p>
-     * </note>
      * <p>
      * To identify an asset property, you must specify one of the following:
      * </p>
@@ -1262,13 +1294,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ServiceUnavailableException
      *         The requested service is unavailable.
@@ -1281,8 +1313,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group, or an IAM user)
-     * or an AWS IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
+     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1291,13 +1323,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListAccessPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies" target="_top">AWS
@@ -1316,13 +1348,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListAssetModels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModels" target="_top">AWS
@@ -1342,15 +1374,15 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListAssetRelationships
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships"
@@ -1389,15 +1421,15 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListAssets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets" target="_top">AWS API
@@ -1431,15 +1463,15 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListAssociatedAssets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets"
@@ -1449,7 +1481,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.
+     * Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param listDashboardsRequest
@@ -1458,13 +1490,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListDashboards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards" target="_top">AWS API
@@ -1483,13 +1515,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListGateways
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListGateways" target="_top">AWS API
@@ -1499,7 +1531,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of AWS IoT SiteWise Monitor portals.
+     * Retrieves a paginated list of IoT SiteWise Monitor portals.
      * </p>
      * 
      * @param listPortalsRequest
@@ -1508,13 +1540,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListPortals
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals" target="_top">AWS API
@@ -1524,7 +1556,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of assets associated with an AWS IoT SiteWise Monitor project.
+     * Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param listProjectAssetsRequest
@@ -1533,13 +1565,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListProjectAssets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets" target="_top">AWS
@@ -1549,7 +1581,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.
+     * Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.
      * </p>
      * 
      * @param listProjectsRequest
@@ -1558,13 +1590,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.ListProjects
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects" target="_top">AWS API
@@ -1574,7 +1606,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves the list of tags for an AWS IoT SiteWise resource.
+     * Retrieves the list of tags for an IoT SiteWise resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1583,13 +1615,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
@@ -1603,7 +1635,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws UnauthorizedException
      *         You are not authorized.
@@ -1615,9 +1647,9 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param putDefaultEncryptionConfigurationRequest
@@ -1626,13 +1658,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -1641,7 +1673,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -1654,7 +1686,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sets logging options for AWS IoT SiteWise.
+     * Sets logging options for IoT SiteWise.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -1663,14 +1695,14 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
      *         operation on the same resource at the same time.
@@ -1684,8 +1716,49 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Adds tags to an AWS IoT SiteWise resource. If a tag already exists for the resource, this operation updates the
-     * tag's value.
+     * Configures storage settings for IoT SiteWise.
+     * </p>
+     * 
+     * @param putStorageConfigurationRequest
+     * @return Result of the PutStorageConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.PutStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutStorageConfigurationResult putStorageConfiguration(PutStorageConfigurationRequest putStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's
+     * value.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1694,13 +1767,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
@@ -1714,14 +1787,14 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws UnauthorizedException
      *         You are not authorized.
      * @throws TooManyTagsException
      *         You've reached the limit for the number of tags allowed for a resource. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits
-     *         and requirements</a> in the <i>AWS General Reference</i>.
+     *         and requirements</a> in the <i>Amazon Web Services General Reference</i>.
      * @sample AWSIoTSiteWise.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1730,7 +1803,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Removes a tag from an AWS IoT SiteWise resource.
+     * Removes a tag from an IoT SiteWise resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1739,13 +1812,13 @@ public interface AWSIoTSiteWise {
      *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
      *         characters. Check your request and try again.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
@@ -1759,7 +1832,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws UnauthorizedException
      *         You are not authorized.
@@ -1771,7 +1844,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an existing access policy that specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or
      * project resource.
      * </p>
      * 
@@ -1783,13 +1856,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.UpdateAccessPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy" target="_top">AWS
@@ -1801,7 +1874,7 @@ public interface AWSIoTSiteWise {
      * <p>
      * Updates an asset's name. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param updateAssetRequest
@@ -1814,13 +1887,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -1836,7 +1909,7 @@ public interface AWSIoTSiteWise {
      * Updates an asset model and all of the assets that were created from the model. Each asset created from the model
      * inherits the updated asset model's property and hierarchy definitions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1847,9 +1920,9 @@ public interface AWSIoTSiteWise {
      * >DescribeAssetModel</a>.
      * </p>
      * <p>
-     * If you remove a property from an asset model, AWS IoT SiteWise deletes all previous data for that property. If
-     * you remove a hierarchy definition from an asset model, AWS IoT SiteWise disassociates every asset associated with
-     * that hierarchy. You can't change the type or data type of an existing property.
+     * If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you
+     * remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that
+     * hierarchy. You can't change the type or data type of an existing property.
      * </p>
      * </important>
      * 
@@ -1863,22 +1936,22 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
      *         than the allowed number of child assets or attempting to create more than the allowed number of
      *         properties for an asset model.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -1911,13 +1984,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -1930,7 +2003,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor dashboard.
+     * Updates an IoT SiteWise Monitor dashboard.
      * </p>
      * 
      * @param updateDashboardRequest
@@ -1941,13 +2014,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.UpdateDashboard
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard" target="_top">AWS
@@ -1971,13 +2044,13 @@ public interface AWSIoTSiteWise {
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
      *         operation on the same resource at the same time.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.UpdateGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGateway" target="_top">AWS API
@@ -1989,8 +2062,8 @@ public interface AWSIoTSiteWise {
      * <p>
      * Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability
      * defines data sources for a gateway. A capability configuration can contain multiple data source configurations.
-     * If you define OPC-UA sources for a gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored
-     * in one capability configuration. To list all capability configurations for a gateway, use <a
+     * If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in
+     * one capability configuration. To list all capability configurations for a gateway, use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
      * </p>
      * 
@@ -2005,13 +2078,13 @@ public interface AWSIoTSiteWise {
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
      *         operation on the same resource at the same time.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws LimitExceededException
      *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
@@ -2020,7 +2093,7 @@ public interface AWSIoTSiteWise {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.UpdateGatewayCapabilityConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGatewayCapabilityConfiguration"
@@ -2031,7 +2104,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor portal.
+     * Updates an IoT SiteWise Monitor portal.
      * </p>
      * 
      * @param updatePortalRequest
@@ -2042,13 +2115,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @throws ConflictingOperationException
      *         Your request has conflicting operations. This can occur if you're trying to perform more than one
@@ -2061,7 +2134,7 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor project.
+     * Updates an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param updateProjectRequest
@@ -2072,13 +2145,13 @@ public interface AWSIoTSiteWise {
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
      * @throws InternalFailureException
-     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     *         IoT SiteWise can't process your request right now. Try again later.
      * @throws ThrottlingException
-     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
      *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      * @sample AWSIoTSiteWise.UpdateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject" target="_top">AWS API

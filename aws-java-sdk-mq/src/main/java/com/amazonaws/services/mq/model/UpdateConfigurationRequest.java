@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Updates the specified configuration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +28,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String configurationId;
-    /** Required. The base64-encoded XML configuration. */
+    /**
+     * <p>
+     * Required. The base64-encoded XML configuration.
+     * </p>
+     */
     private String data;
-    /** The description of the configuration. */
+    /**
+     * <p>
+     * The description of the configuration.
+     * </p>
+     */
     private String description;
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        The unique ID that Amazon MQ generates for the configuration.
@@ -45,7 +61,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the configuration.
      */
@@ -55,7 +73,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        The unique ID that Amazon MQ generates for the configuration.
@@ -68,7 +88,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * Required. The base64-encoded XML configuration.
+     * </p>
      * 
      * @param data
      *        Required. The base64-encoded XML configuration.
@@ -79,7 +101,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * Required. The base64-encoded XML configuration.
+     * </p>
      * 
      * @return Required. The base64-encoded XML configuration.
      */
@@ -89,7 +113,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * Required. The base64-encoded XML configuration.
+     * </p>
      * 
      * @param data
      *        Required. The base64-encoded XML configuration.
@@ -102,7 +128,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The description of the configuration.
+     * </p>
      * 
      * @param description
      *        The description of the configuration.
@@ -113,7 +141,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The description of the configuration.
+     * </p>
      * 
      * @return The description of the configuration.
      */
@@ -123,7 +153,9 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The description of the configuration.
+     * </p>
      * 
      * @param description
      *        The description of the configuration.

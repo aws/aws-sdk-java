@@ -39,10 +39,10 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     private String propertyId;
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the alias is removed from the property.
@@ -52,9 +52,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     * enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
+     * enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the notification state is set to <code>DISABLED</code>.
@@ -151,20 +151,20 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the alias is removed from the property.
      * </p>
      * 
      * @param propertyAlias
-     *        The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     *        The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *        <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *        industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        If you omit this parameter, the alias is removed from the property.
      */
@@ -175,19 +175,19 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the alias is removed from the property.
      * </p>
      * 
-     * @return The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * @return The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *         <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *         industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *         industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         If you omit this parameter, the alias is removed from the property.
      */
@@ -198,20 +198,20 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the alias is removed from the property.
      * </p>
      * 
      * @param propertyAlias
-     *        The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     *        The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *        <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *        industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        If you omit this parameter, the alias is removed from the property.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -225,9 +225,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     * enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
+     * enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the notification state is set to <code>DISABLED</code>.
@@ -235,9 +235,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param propertyNotificationState
      *        The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     *        enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information,
-     *        see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
-     *        Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see
+     *        <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
+     *        Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        If you omit this parameter, the notification state is set to <code>DISABLED</code>.
      * @see PropertyNotificationState
@@ -250,19 +250,18 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     * enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
+     * enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the notification state is set to <code>DISABLED</code>.
      * </p>
      * 
      * @return The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     *         enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information,
-     *         see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
-     *         Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *         enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see
+     *         <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
+     *         Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         If you omit this parameter, the notification state is set to <code>DISABLED</code>.
      * @see PropertyNotificationState
@@ -275,9 +274,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     * enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
+     * enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the notification state is set to <code>DISABLED</code>.
@@ -285,9 +284,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param propertyNotificationState
      *        The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     *        enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information,
-     *        see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
-     *        Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see
+     *        <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
+     *        Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        If you omit this parameter, the notification state is set to <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -302,9 +301,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     * enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
+     * enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * with other services</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * If you omit this parameter, the notification state is set to <code>DISABLED</code>.
@@ -312,9 +311,9 @@ public class UpdateAssetPropertyRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param propertyNotificationState
      *        The MQTT notification state (enabled or disabled) for this asset property. When the notification state is
-     *        enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information,
-     *        see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
-     *        Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see
+     *        <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">
+     *        Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        If you omit this parameter, the notification state is set to <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

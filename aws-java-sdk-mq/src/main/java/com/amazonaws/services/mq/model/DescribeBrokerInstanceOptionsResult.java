@@ -24,21 +24,31 @@ import javax.annotation.Generated;
 public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** List of available broker instance options. */
+    /**
+     * <p>
+     * List of available broker instance options.
+     * </p>
+     */
     private java.util.List<BrokerInstanceOption> brokerInstanceOptions;
     /**
+     * <p>
      * Required. The maximum number of instance options that can be returned per page (20 by default). This value must
      * be an integer from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * List of available broker instance options.
+     * </p>
      * 
      * @return List of available broker instance options.
      */
@@ -48,7 +58,9 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * List of available broker instance options.
+     * </p>
      * 
      * @param brokerInstanceOptions
      *        List of available broker instance options.
@@ -64,7 +76,9 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * List of available broker instance options.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBrokerInstanceOptions(java.util.Collection)} or
@@ -87,7 +101,9 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * List of available broker instance options.
+     * </p>
      * 
      * @param brokerInstanceOptions
      *        List of available broker instance options.
@@ -100,8 +116,10 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The maximum number of instance options that can be returned per page (20 by default). This value must
      * be an integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        Required. The maximum number of instance options that can be returned per page (20 by default). This value
@@ -113,8 +131,10 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The maximum number of instance options that can be returned per page (20 by default). This value must
      * be an integer from 5 to 100.
+     * </p>
      * 
      * @return Required. The maximum number of instance options that can be returned per page (20 by default). This
      *         value must be an integer from 5 to 100.
@@ -125,8 +145,10 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The maximum number of instance options that can be returned per page (20 by default). This value must
      * be an integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        Required. The maximum number of instance options that can be returned per page (20 by default). This value
@@ -140,8 +162,10 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -153,8 +177,10 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -165,8 +191,10 @@ public class DescribeBrokerInstanceOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,

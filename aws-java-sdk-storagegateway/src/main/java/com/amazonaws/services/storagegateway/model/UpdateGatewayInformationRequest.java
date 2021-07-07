@@ -46,6 +46,12 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String cloudWatchLogGroupARN;
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     */
+    private String gatewayCapacity;
 
     /**
      * @param gatewayARN
@@ -213,6 +219,65 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @param gatewayCapacity
+     *        Specifies the size of the gateway's metadata cache.
+     * @see GatewayCapacity
+     */
+
+    public void setGatewayCapacity(String gatewayCapacity) {
+        this.gatewayCapacity = gatewayCapacity;
+    }
+
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @return Specifies the size of the gateway's metadata cache.
+     * @see GatewayCapacity
+     */
+
+    public String getGatewayCapacity() {
+        return this.gatewayCapacity;
+    }
+
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @param gatewayCapacity
+     *        Specifies the size of the gateway's metadata cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public UpdateGatewayInformationRequest withGatewayCapacity(String gatewayCapacity) {
+        setGatewayCapacity(gatewayCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @param gatewayCapacity
+     *        Specifies the size of the gateway's metadata cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public UpdateGatewayInformationRequest withGatewayCapacity(GatewayCapacity gatewayCapacity) {
+        this.gatewayCapacity = gatewayCapacity.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -231,7 +296,9 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
         if (getGatewayTimezone() != null)
             sb.append("GatewayTimezone: ").append(getGatewayTimezone()).append(",");
         if (getCloudWatchLogGroupARN() != null)
-            sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN());
+            sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN()).append(",");
+        if (getGatewayCapacity() != null)
+            sb.append("GatewayCapacity: ").append(getGatewayCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +329,10 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getCloudWatchLogGroupARN() != null && other.getCloudWatchLogGroupARN().equals(this.getCloudWatchLogGroupARN()) == false)
             return false;
+        if (other.getGatewayCapacity() == null ^ this.getGatewayCapacity() == null)
+            return false;
+        if (other.getGatewayCapacity() != null && other.getGatewayCapacity().equals(this.getGatewayCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +345,7 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
         hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
+        hashCode = prime * hashCode + ((getGatewayCapacity() == null) ? 0 : getGatewayCapacity().hashCode());
         return hashCode;
     }
 

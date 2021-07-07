@@ -41,9 +41,9 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
     private String portalArn;
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      */
     private String portalStartUrl;
@@ -56,7 +56,7 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
     private PortalStatus portalStatus;
     /**
      * <p>
-     * The associated AWS SSO application ID, if the portal uses AWS SSO.
+     * The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      * </p>
      */
     private String ssoApplicationId;
@@ -164,15 +164,15 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
-     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
-     *        to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
+     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
+     *        SiteWise console to get a URL that you can use to access the portal.
      */
 
     public void setPortalStartUrl(String portalStartUrl) {
@@ -181,14 +181,14 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      * 
-     * @return The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *         for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise
-     *         console to get a URL that you can use to access the portal.
+     * @return The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
+     *         Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
+     *         SiteWise console to get a URL that you can use to access the portal.
      */
 
     public String getPortalStartUrl() {
@@ -197,15 +197,15 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
-     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
-     *        to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
+     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
+     *        SiteWise console to get a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +262,11 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The associated AWS SSO application ID, if the portal uses AWS SSO.
+     * The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      * </p>
      * 
      * @param ssoApplicationId
-     *        The associated AWS SSO application ID, if the portal uses AWS SSO.
+     *        The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      */
 
     public void setSsoApplicationId(String ssoApplicationId) {
@@ -275,10 +275,10 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The associated AWS SSO application ID, if the portal uses AWS SSO.
+     * The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      * </p>
      * 
-     * @return The associated AWS SSO application ID, if the portal uses AWS SSO.
+     * @return The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      */
 
     public String getSsoApplicationId() {
@@ -287,11 +287,11 @@ public class CreatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The associated AWS SSO application ID, if the portal uses AWS SSO.
+     * The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      * </p>
      * 
      * @param ssoApplicationId
-     *        The associated AWS SSO application ID, if the portal uses AWS SSO.
+     *        The associated Amazon Web Services SSO application ID, if the portal uses Amazon Web Services SSO.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
+ * A list of accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
  * signatures of signed URLs and signed cookies.
  * </p>
  * 
@@ -29,7 +29,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
      * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      * <code>false</code>.
      * </p>
@@ -37,14 +37,14 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * The number of AWS accounts in the list.
+     * The number of accounts in the list.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
-     * to verify the signatures of signed URLs and signed cookies.
+     * A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to
+     * verify the signatures of signed URLs and signed cookies.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Signer> items;
@@ -61,8 +61,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param items
-     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
-     *        can use to verify the signatures of signed URLs and signed cookies.
+     *        A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can
+     *        use to verify the signatures of signed URLs and signed cookies.
      */
     public ActiveTrustedSigners(java.util.List<Signer> items) {
         setItems(items);
@@ -70,14 +70,14 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
      * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      * <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
-     *        that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     *        This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
+     *        CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *        <code>false</code>.
      */
 
@@ -87,13 +87,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
      * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      * <code>false</code>.
      * </p>
      * 
-     * @return This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
-     *         that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * @return This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
+     *         CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *         <code>false</code>.
      */
 
@@ -103,14 +103,14 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
      * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      * <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
-     *        that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     *        This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
+     *        CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -122,13 +122,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs that
+     * This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
      * CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      * <code>false</code>.
      * </p>
      * 
-     * @return This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront key pairs
-     *         that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
+     * @return This field is <code>true</code> if any of the accounts in the list have active CloudFront key pairs that
+     *         CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
      *         <code>false</code>.
      */
 
@@ -138,11 +138,11 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of AWS accounts in the list.
+     * The number of accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of AWS accounts in the list.
+     *        The number of accounts in the list.
      */
 
     public void setQuantity(Integer quantity) {
@@ -151,10 +151,10 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of AWS accounts in the list.
+     * The number of accounts in the list.
      * </p>
      * 
-     * @return The number of AWS accounts in the list.
+     * @return The number of accounts in the list.
      */
 
     public Integer getQuantity() {
@@ -163,11 +163,11 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of AWS accounts in the list.
+     * The number of accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of AWS accounts in the list.
+     *        The number of accounts in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,12 +178,12 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
-     * to verify the signatures of signed URLs and signed cookies.
+     * A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to
+     * verify the signatures of signed URLs and signed cookies.
      * </p>
      * 
-     * @return A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
-     *         can use to verify the signatures of signed URLs and signed cookies.
+     * @return A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can
+     *         use to verify the signatures of signed URLs and signed cookies.
      */
 
     public java.util.List<Signer> getItems() {
@@ -195,13 +195,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
-     * to verify the signatures of signed URLs and signed cookies.
+     * A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to
+     * verify the signatures of signed URLs and signed cookies.
      * </p>
      * 
      * @param items
-     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
-     *        can use to verify the signatures of signed URLs and signed cookies.
+     *        A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can
+     *        use to verify the signatures of signed URLs and signed cookies.
      */
 
     public void setItems(java.util.Collection<Signer> items) {
@@ -215,8 +215,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
-     * to verify the signatures of signed URLs and signed cookies.
+     * A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to
+     * verify the signatures of signed URLs and signed cookies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -225,8 +225,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
-     *        can use to verify the signatures of signed URLs and signed cookies.
+     *        A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can
+     *        use to verify the signatures of signed URLs and signed cookies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,13 +242,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use
-     * to verify the signatures of signed URLs and signed cookies.
+     * A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to
+     * verify the signatures of signed URLs and signed cookies.
      * </p>
      * 
      * @param items
-     *        A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that CloudFront
-     *        can use to verify the signatures of signed URLs and signed cookies.
+     *        A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can
+     *        use to verify the signatures of signed URLs and signed cookies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

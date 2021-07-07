@@ -139,6 +139,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateMediaCapturePipelineResult createMediaCapturePipeline(CreateMediaCapturePipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMeetingResult createMeeting(CreateMeetingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -260,6 +265,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public DeleteEventsConfigurationResult deleteEventsConfiguration(DeleteEventsConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMediaCapturePipelineResult deleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -453,6 +463,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetMediaCapturePipelineResult getMediaCapturePipeline(GetMediaCapturePipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMeetingResult getMeeting(GetMeetingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -635,6 +650,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public ListChannelsModeratedByAppInstanceUserResult listChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMediaCapturePipelinesResult listMediaCapturePipelines(ListMediaCapturePipelinesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

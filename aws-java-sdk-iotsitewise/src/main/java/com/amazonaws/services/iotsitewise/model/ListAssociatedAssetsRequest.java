@@ -42,7 +42,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String hierarchyId;
@@ -76,7 +76,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
@@ -135,7 +135,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
@@ -149,7 +149,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setHierarchyId(String hierarchyId) {
@@ -167,7 +167,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use
@@ -179,7 +179,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getHierarchyId() {
@@ -197,7 +197,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
@@ -211,7 +211,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,14 +445,14 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.</p>
+     *        The maximum number of results to return for each paginated request.</p>
      *        <p>
      *        Default: 50
      */
@@ -463,13 +463,13 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
      * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.</p>
+     * @return The maximum number of results to return for each paginated request.</p>
      *         <p>
      *         Default: 50
      */
@@ -480,14 +480,14 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.</p>
+     *        The maximum number of results to return for each paginated request.</p>
      *        <p>
      *        Default: 50
      * @return Returns a reference to this object so that method calls can be chained together.

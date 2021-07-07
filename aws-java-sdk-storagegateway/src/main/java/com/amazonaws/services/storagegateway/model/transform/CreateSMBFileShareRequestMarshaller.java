@@ -74,6 +74,12 @@ public class CreateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
     private static final MarshallingInfo<String> NOTIFICATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationPolicy").build();
+    private static final MarshallingInfo<String> VPCENDPOINTDNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCEndpointDNSName").build();
+    private static final MarshallingInfo<String> BUCKETREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketRegion").build();
+    private static final MarshallingInfo<Boolean> OPLOCKSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OplocksEnabled").build();
 
     private static final CreateSMBFileShareRequestMarshaller instance = new CreateSMBFileShareRequestMarshaller();
 
@@ -114,6 +120,9 @@ public class CreateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(createSMBFileShareRequest.getFileShareName(), FILESHARENAME_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getNotificationPolicy(), NOTIFICATIONPOLICY_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getVPCEndpointDNSName(), VPCENDPOINTDNSNAME_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getBucketRegion(), BUCKETREGION_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getOplocksEnabled(), OPLOCKSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

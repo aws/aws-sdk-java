@@ -38,7 +38,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the service. AWS does not report unauthenticated requests.
+     * authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -54,18 +55,19 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * To learn the service namespace of a service, see <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
-     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
-     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization
+     * Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the
+     * service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String serviceNamespace;
     /**
      * <p>
-     * The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does not report
-     * unauthenticated requests.
+     * The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services
+     * does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -76,8 +78,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
     private String lastAuthenticatedEntity;
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the service. AWS does not
-     * report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon Web
+     * Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -156,7 +158,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the service. AWS does not report unauthenticated requests.
+     * authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -166,8 +169,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * 
      * @param lastAuthenticated
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     *        authenticated entity most recently attempted to access the service. AWS does not report unauthenticated
-     *        requests.</p>
+     *        authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     *        unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -181,7 +184,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the service. AWS does not report unauthenticated requests.
+     * authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -190,8 +194,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     *         authenticated entity most recently attempted to access the service. AWS does not report unauthenticated
-     *         requests.</p>
+     *         authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     *         unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -205,7 +209,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the service. AWS does not report unauthenticated requests.
+     * authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -215,8 +220,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * 
      * @param lastAuthenticated
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     *        authenticated entity most recently attempted to access the service. AWS does not report unauthenticated
-     *        requests.</p>
+     *        authenticated entity most recently attempted to access the service. Amazon Web Services does not report
+     *        unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -236,11 +241,12 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * To learn the service namespace of a service, see <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
-     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
-     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization
+     * Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the
+     * service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
@@ -248,12 +254,12 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        To learn the service namespace of a service, see <a href=
      *        "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     *        >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization
-     *        Reference</i>. Choose the name of the service to view details for that service. In the first paragraph,
-     *        find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about
-     *        service namespaces, see <a href=
+     *        >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service
+     *        Authorization Reference</i>. Choose the name of the service to view details for that service. In the first
+     *        paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information
+     *        about service namespaces, see <a href=
      *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setServiceNamespace(String serviceNamespace) {
@@ -267,23 +273,24 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * To learn the service namespace of a service, see <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
-     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
-     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization
+     * Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the
+     * service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The namespace of the service in which access was attempted.</p>
      *         <p>
      *         To learn the service namespace of a service, see <a href=
      *         "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     *         >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization
-     *         Reference</i>. Choose the name of the service to view details for that service. In the first paragraph,
-     *         find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about
-     *         service namespaces, see <a href=
+     *         >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service
+     *         Authorization Reference</i>. Choose the name of the service to view details for that service. In the
+     *         first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more
+     *         information about service namespaces, see <a href=
      *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *         >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getServiceNamespace() {
@@ -297,11 +304,12 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * <p>
      * To learn the service namespace of a service, see <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     * >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization Reference</i>.
-     * Choose the name of the service to view details for that service. In the first paragraph, find the service prefix.
-     * For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a
+     * >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization
+     * Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the
+     * service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
@@ -309,12 +317,12 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      *        <p>
      *        To learn the service namespace of a service, see <a href=
      *        "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
-     *        >Actions, resources, and condition keys for AWS services</a> in the <i>Service Authorization
-     *        Reference</i>. Choose the name of the service to view details for that service. In the first paragraph,
-     *        find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about
-     *        service namespaces, see <a href=
+     *        >Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service
+     *        Authorization Reference</i>. Choose the name of the service to view details for that service. In the first
+     *        paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information
+     *        about service namespaces, see <a href=
      *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        >Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,8 +333,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does not report
-     * unauthenticated requests.
+     * The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services
+     * does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -335,8 +343,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastAuthenticatedEntity
-     *        The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does not
-     *        report unauthenticated requests.</p>
+     *        The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web
+     *        Services does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -349,8 +357,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does not report
-     * unauthenticated requests.
+     * The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services
+     * does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -358,8 +366,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * >reporting period</a>.
      * </p>
      * 
-     * @return The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does
-     *         not report unauthenticated requests.</p>
+     * @return The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web
+     *         Services does not report unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -372,8 +380,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does not report
-     * unauthenticated requests.
+     * The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services
+     * does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -382,8 +390,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastAuthenticatedEntity
-     *        The ARN of the authenticated entity (user or role) that last attempted to access the service. AWS does not
-     *        report unauthenticated requests.</p>
+     *        The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web
+     *        Services does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -398,8 +406,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the service. AWS does not
-     * report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon Web
+     * Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -408,8 +416,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastAuthenticatedRegion
-     *        The Region from which the authenticated entity (user or role) last attempted to access the service. AWS
-     *        does not report unauthenticated requests.</p>
+     *        The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon
+     *        Web Services does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -422,8 +430,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the service. AWS does not
-     * report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon Web
+     * Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -431,8 +439,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * >reporting period</a>.
      * </p>
      * 
-     * @return The Region from which the authenticated entity (user or role) last attempted to access the service. AWS
-     *         does not report unauthenticated requests.</p>
+     * @return The Region from which the authenticated entity (user or role) last attempted to access the service.
+     *         Amazon Web Services does not report unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -445,8 +453,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the service. AWS does not
-     * report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon Web
+     * Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -455,8 +463,8 @@ public class ServiceLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @param lastAuthenticatedRegion
-     *        The Region from which the authenticated entity (user or role) last attempted to access the service. AWS
-     *        does not report unauthenticated requests.</p>
+     *        The Region from which the authenticated entity (user or role) last attempted to access the service. Amazon
+     *        Web Services does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"

@@ -1457,6 +1457,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeSecurityGroupRulesResult describeSecurityGroupRules(DescribeSecurityGroupRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSecurityGroupsResult describeSecurityGroups(DescribeSecurityGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2197,6 +2202,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyReservedInstancesResult modifyReservedInstances(ModifyReservedInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifySecurityGroupRulesResult modifySecurityGroupRules(ModifySecurityGroupRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

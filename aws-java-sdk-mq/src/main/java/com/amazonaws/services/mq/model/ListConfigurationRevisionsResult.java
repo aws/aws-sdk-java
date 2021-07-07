@@ -23,23 +23,37 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String configurationId;
     /**
+     * <p>
      * The maximum number of configuration revisions that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
-    /** The list of all revisions for the specified configuration. */
+    /**
+     * <p>
+     * The list of all revisions for the specified configuration.
+     * </p>
+     */
     private java.util.List<ConfigurationRevision> revisions;
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        The unique ID that Amazon MQ generates for the configuration.
@@ -50,7 +64,9 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the configuration.
      */
@@ -60,7 +76,9 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        The unique ID that Amazon MQ generates for the configuration.
@@ -73,8 +91,10 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The maximum number of configuration revisions that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of configuration revisions that can be returned per page (20 by default). This value
@@ -86,8 +106,10 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The maximum number of configuration revisions that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      * 
      * @return The maximum number of configuration revisions that can be returned per page (20 by default). This value
      *         must be an integer from 5 to 100.
@@ -98,8 +120,10 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The maximum number of configuration revisions that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of configuration revisions that can be returned per page (20 by default). This value
@@ -113,8 +137,10 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -126,8 +152,10 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -138,8 +166,10 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -153,7 +183,9 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The list of all revisions for the specified configuration.
+     * </p>
      * 
      * @return The list of all revisions for the specified configuration.
      */
@@ -163,7 +195,9 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The list of all revisions for the specified configuration.
+     * </p>
      * 
      * @param revisions
      *        The list of all revisions for the specified configuration.
@@ -179,7 +213,9 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The list of all revisions for the specified configuration.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRevisions(java.util.Collection)} or {@link #withRevisions(java.util.Collection)} if you want to
@@ -202,7 +238,9 @@ public class ListConfigurationRevisionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The list of all revisions for the specified configuration.
+     * </p>
      * 
      * @param revisions
      *        The list of all revisions for the specified configuration.

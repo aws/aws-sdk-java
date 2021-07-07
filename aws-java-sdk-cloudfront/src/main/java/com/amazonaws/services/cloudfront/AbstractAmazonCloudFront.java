@@ -39,6 +39,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public AssociateAliasResult associateAlias(AssociateAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCachePolicyResult createCachePolicy(CreateCachePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -295,6 +300,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConflictingAliasesResult listConflictingAliases(ListConflictingAliasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

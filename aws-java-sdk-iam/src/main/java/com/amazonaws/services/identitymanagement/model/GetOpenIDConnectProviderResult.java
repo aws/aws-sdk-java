@@ -49,7 +49,7 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> thumbprintList;
     /**
      * <p>
-     * The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     * The date and time when the IAM OIDC provider resource object was created in the account.
      * </p>
      */
     private java.util.Date createDate;
@@ -273,11 +273,11 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     * The date and time when the IAM OIDC provider resource object was created in the account.
      * </p>
      * 
      * @param createDate
-     *        The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     *        The date and time when the IAM OIDC provider resource object was created in the account.
      */
 
     public void setCreateDate(java.util.Date createDate) {
@@ -286,10 +286,10 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     * The date and time when the IAM OIDC provider resource object was created in the account.
      * </p>
      * 
-     * @return The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     * @return The date and time when the IAM OIDC provider resource object was created in the account.
      */
 
     public java.util.Date getCreateDate() {
@@ -298,11 +298,11 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     * The date and time when the IAM OIDC provider resource object was created in the account.
      * </p>
      * 
      * @param createDate
-     *        The date and time when the IAM OIDC provider resource object was created in the AWS account.
+     *        The date and time when the IAM OIDC provider resource object was created in the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,8 +36,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String fileShareARN;
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -54,7 +54,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String kMSKey;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -65,8 +65,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String defaultStorageClass;
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      */
     private String objectACL;
@@ -116,7 +116,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-     * control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -214,6 +214,21 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String notificationPolicy;
+    /**
+     * <p>
+     * Specifies whether opportunistic locking is enabled for the SMB file share.
+     * </p>
+     * <note>
+     * <p>
+     * Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to
+     * files with the same name in different case.
+     * </p>
+     * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     */
+    private Boolean oplocksEnabled;
 
     /**
      * <p>
@@ -257,15 +272,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -277,14 +292,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -296,15 +311,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -318,14 +333,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -389,7 +404,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -398,8 +413,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -411,7 +426,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -419,8 +434,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *         is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     * @return The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *         value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *         <p>
      *         Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
      *         <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -432,7 +447,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -441,8 +456,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -456,13 +471,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -472,12 +487,12 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *         gateway puts objects into. The default value is <code>private</code>.
+     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *         Gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -487,13 +502,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -505,13 +520,13 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -829,7 +844,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-     * control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -841,7 +856,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows
-     *        ACLs to control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *        ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      *        </p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -859,7 +874,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-     * control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -870,7 +885,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows
-     *         ACLs to control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *         ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      *         </p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -888,7 +903,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-     * control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -900,7 +915,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows
-     *        ACLs to control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *        ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      *        </p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -920,7 +935,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-     * control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -931,7 +946,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows
-     *         ACLs to control access to an SMB file share</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *         ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.
      *         </p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -1670,6 +1685,122 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies whether opportunistic locking is enabled for the SMB file share.
+     * </p>
+     * <note>
+     * <p>
+     * Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to
+     * files with the same name in different case.
+     * </p>
+     * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @param oplocksEnabled
+     *        Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+     *        <p>
+     *        Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+     *        access to files with the same name in different case.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
+     */
+
+    public void setOplocksEnabled(Boolean oplocksEnabled) {
+        this.oplocksEnabled = oplocksEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether opportunistic locking is enabled for the SMB file share.
+     * </p>
+     * <note>
+     * <p>
+     * Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to
+     * files with the same name in different case.
+     * </p>
+     * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @return Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+     *         <p>
+     *         Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+     *         access to files with the same name in different case.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
+     */
+
+    public Boolean getOplocksEnabled() {
+        return this.oplocksEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether opportunistic locking is enabled for the SMB file share.
+     * </p>
+     * <note>
+     * <p>
+     * Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to
+     * files with the same name in different case.
+     * </p>
+     * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @param oplocksEnabled
+     *        Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+     *        <p>
+     *        Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+     *        access to files with the same name in different case.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSMBFileShareRequest withOplocksEnabled(Boolean oplocksEnabled) {
+        setOplocksEnabled(oplocksEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether opportunistic locking is enabled for the SMB file share.
+     * </p>
+     * <note>
+     * <p>
+     * Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to
+     * files with the same name in different case.
+     * </p>
+     * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @return Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>
+     *         <p>
+     *         Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+     *         access to files with the same name in different case.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
+     */
+
+    public Boolean isOplocksEnabled() {
+        return this.oplocksEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1716,7 +1847,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getCacheAttributes() != null)
             sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
         if (getNotificationPolicy() != null)
-            sb.append("NotificationPolicy: ").append(getNotificationPolicy());
+            sb.append("NotificationPolicy: ").append(getNotificationPolicy()).append(",");
+        if (getOplocksEnabled() != null)
+            sb.append("OplocksEnabled: ").append(getOplocksEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -1803,6 +1936,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNotificationPolicy() != null && other.getNotificationPolicy().equals(this.getNotificationPolicy()) == false)
             return false;
+        if (other.getOplocksEnabled() == null ^ this.getOplocksEnabled() == null)
+            return false;
+        if (other.getOplocksEnabled() != null && other.getOplocksEnabled().equals(this.getOplocksEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -1829,6 +1966,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
         hashCode = prime * hashCode + ((getNotificationPolicy() == null) ? 0 : getNotificationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getOplocksEnabled() == null) ? 0 : getOplocksEnabled().hashCode());
         return hashCode;
     }
 

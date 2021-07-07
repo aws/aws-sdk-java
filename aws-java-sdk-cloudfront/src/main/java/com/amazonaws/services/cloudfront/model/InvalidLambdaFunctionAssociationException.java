@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified Lambda function association is invalid.
+ * The specified Lambda@Edge function association is invalid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

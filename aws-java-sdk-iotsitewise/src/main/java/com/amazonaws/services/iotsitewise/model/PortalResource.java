@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies an AWS IoT SiteWise Monitor portal.
+ * Identifies an IoT SiteWise Monitor portal.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PortalResource" target="_top">AWS API

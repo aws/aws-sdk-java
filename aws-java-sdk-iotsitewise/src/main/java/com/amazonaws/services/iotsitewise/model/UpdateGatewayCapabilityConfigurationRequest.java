@@ -34,7 +34,7 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
     /**
      * <p>
      * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources
-     * from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     * from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
      * </p>
      */
@@ -43,7 +43,7 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
      * <p>
      * The JSON document that defines the configuration for the gateway capability. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String capabilityConfiguration;
@@ -91,13 +91,13 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
     /**
      * <p>
      * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources
-     * from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     * from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
      * </p>
      * 
      * @param capabilityNamespace
      *        The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA
-     *        sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     *        sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      *        <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
      *        <code>1</code>.
      */
@@ -109,12 +109,12 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
     /**
      * <p>
      * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources
-     * from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     * from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
      * </p>
      * 
      * @return The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA
-     *         sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     *         sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      *         <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
      *         <code>1</code>.
      */
@@ -126,13 +126,13 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
     /**
      * <p>
      * The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources
-     * from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     * from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
      * </p>
      * 
      * @param capabilityNamespace
      *        The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA
-     *        sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     *        sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
      *        <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
      *        <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -147,14 +147,14 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
      * <p>
      * The JSON document that defines the configuration for the gateway capability. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param capabilityConfiguration
      *        The JSON document that defines the configuration for the gateway capability. For more information, see <a
      *        href
      *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     *        >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setCapabilityConfiguration(String capabilityConfiguration) {
@@ -165,13 +165,13 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
      * <p>
      * The JSON document that defines the configuration for the gateway capability. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The JSON document that defines the configuration for the gateway capability. For more information, see <a
      *         href
      *         ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     *         >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getCapabilityConfiguration() {
@@ -182,14 +182,14 @@ public class UpdateGatewayCapabilityConfigurationRequest extends com.amazonaws.A
      * <p>
      * The JSON document that defines the configuration for the gateway capability. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param capabilityConfiguration
      *        The JSON document that defines the configuration for the gateway capability. For more information, see <a
      *        href
      *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     *        >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

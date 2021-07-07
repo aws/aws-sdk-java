@@ -41,10 +41,9 @@ public class CreateTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String storageClass;
     /**
      * <p>
-     * Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
-     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock can be configured in two modes. When configured in governance mode, accounts with specific
+     * IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in
+     * compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      */
     private String retentionLockType;
@@ -185,17 +184,16 @@ public class CreateTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
-     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock can be configured in two modes. When configured in governance mode, accounts with specific
+     * IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in
+     * compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
      * @param retentionLockType
-     *        Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
+     *        Tape retention lock can be configured in two modes. When configured in governance mode, accounts with
      *        specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes.
      *        When configured in compliance mode, the tape retention lock cannot be removed by any user, including the
-     *        root AWS account.
+     *        root account.
      * @see RetentionLockType
      */
 
@@ -205,16 +203,15 @@ public class CreateTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
-     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock can be configured in two modes. When configured in governance mode, accounts with specific
+     * IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in
+     * compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
-     * @return Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
+     * @return Tape retention lock can be configured in two modes. When configured in governance mode, accounts with
      *         specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes.
      *         When configured in compliance mode, the tape retention lock cannot be removed by any user, including the
-     *         root AWS account.
+     *         root account.
      * @see RetentionLockType
      */
 
@@ -224,17 +221,16 @@ public class CreateTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
-     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock can be configured in two modes. When configured in governance mode, accounts with specific
+     * IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in
+     * compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
      * @param retentionLockType
-     *        Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
+     *        Tape retention lock can be configured in two modes. When configured in governance mode, accounts with
      *        specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes.
      *        When configured in compliance mode, the tape retention lock cannot be removed by any user, including the
-     *        root AWS account.
+     *        root account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionLockType
      */
@@ -246,17 +242,16 @@ public class CreateTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
-     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock can be configured in two modes. When configured in governance mode, accounts with specific
+     * IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in
+     * compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
      * @param retentionLockType
-     *        Tape retention lock can be configured in two modes. When configured in governance mode, AWS accounts with
+     *        Tape retention lock can be configured in two modes. When configured in governance mode, accounts with
      *        specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes.
      *        When configured in compliance mode, the tape retention lock cannot be removed by any user, including the
-     *        root AWS account.
+     *        root account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionLockType
      */

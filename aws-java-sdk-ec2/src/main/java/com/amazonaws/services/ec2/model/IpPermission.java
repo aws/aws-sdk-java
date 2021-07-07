@@ -68,7 +68,7 @@ public class IpPermission implements Serializable, Cloneable {
     private Integer toPort;
     /**
      * <p>
-     * The security group and AWS account ID pairs.
+     * The security group and Amazon Web Services account ID pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairs;
@@ -413,10 +413,10 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group and AWS account ID pairs.
+     * The security group and Amazon Web Services account ID pairs.
      * </p>
      * 
-     * @return The security group and AWS account ID pairs.
+     * @return The security group and Amazon Web Services account ID pairs.
      */
 
     public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
@@ -428,11 +428,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group and AWS account ID pairs.
+     * The security group and Amazon Web Services account ID pairs.
      * </p>
      * 
      * @param userIdGroupPairs
-     *        The security group and AWS account ID pairs.
+     *        The security group and Amazon Web Services account ID pairs.
      */
 
     public void setUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
@@ -446,7 +446,7 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group and AWS account ID pairs.
+     * The security group and Amazon Web Services account ID pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -455,7 +455,7 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param userIdGroupPairs
-     *        The security group and AWS account ID pairs.
+     *        The security group and Amazon Web Services account ID pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,11 +471,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group and AWS account ID pairs.
+     * The security group and Amazon Web Services account ID pairs.
      * </p>
      * 
      * @param userIdGroupPairs
-     *        The security group and AWS account ID pairs.
+     *        The security group and Amazon Web Services account ID pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

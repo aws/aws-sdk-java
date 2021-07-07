@@ -26,9 +26,11 @@ import com.amazonaws.services.mq.model.*;
  * {@link com.amazonaws.services.mq.AbstractAmazonMQ} instead.
  * </p>
  * <p>
+ * <p>
  * Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and
  * operate message brokers in the cloud. A message broker allows software applications and components to communicate
  * using various programming languages, operating systems, and formal messaging protocols.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonMQ {
@@ -42,7 +44,89 @@ public interface AmazonMQ {
     String ENDPOINT_PREFIX = "mq";
 
     /**
+     * <p>
      * Creates a broker. Note: This API is asynchronous.
+     * </p>
+     * <p>
+     * To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2
+     * permissions in your IAM policy.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ec2:CreateNetworkInterface
+     * </p>
+     * <p>
+     * This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your
+     * account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:CreateNetworkInterfacePermission
+     * </p>
+     * <p>
+     * This permission is required to attach the ENI to the broker instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DeleteNetworkInterface
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DeleteNetworkInterfacePermission
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DetachNetworkInterface
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeInternetGateways
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeNetworkInterfaces
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeNetworkInterfacePermissions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeRouteTables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeSecurityGroups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeSubnets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ec2:DescribeVpcs
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user"
+     * >Create an IAM User and Get Your AWS Credentials</a> and <a href=
+     * "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
+     * >Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.
+     * </p>
      * 
      * @param createBrokerRequest
      *        Creates a broker using the specified properties.
@@ -64,8 +148,10 @@ public interface AmazonMQ {
     CreateBrokerResult createBroker(CreateBrokerRequest createBrokerRequest);
 
     /**
+     * <p>
      * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the
      * engine type and version).
+     * </p>
      * 
      * @param createConfigurationRequest
      *        Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
@@ -76,10 +162,9 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. This configuration name already exists. Retry your request with another
-     *         configuration name.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
-     *         HTTP Status Code 403: Access forbidden. Correct your input and then retry your request.
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.CreateConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration" target="_top">AWS API
      *      Documentation</a>
@@ -87,7 +172,9 @@ public interface AmazonMQ {
     CreateConfigurationResult createConfiguration(CreateConfigurationRequest createConfigurationRequest);
 
     /**
+     * <p>
      * Add a tag to a resource.
+     * </p>
      * 
      * @param createTagsRequest
      *        A map of the key-value pairs for the resource tag.
@@ -107,7 +194,9 @@ public interface AmazonMQ {
     CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
 
     /**
+     * <p>
      * Creates an ActiveMQ user.
+     * </p>
      * 
      * @param createUserRequest
      *        Creates a new ActiveMQ user.
@@ -119,7 +208,7 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Retrying your request might resolve the issue.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.CreateUser
@@ -129,7 +218,9 @@ public interface AmazonMQ {
     CreateUserResult createUser(CreateUserRequest createUserRequest);
 
     /**
+     * <p>
      * Deletes a broker. Note: This API is asynchronous.
+     * </p>
      * 
      * @param deleteBrokerRequest
      * @return Result of the DeleteBroker operation returned by the service.
@@ -148,7 +239,9 @@ public interface AmazonMQ {
     DeleteBrokerResult deleteBroker(DeleteBrokerRequest deleteBrokerRequest);
 
     /**
+     * <p>
      * Removes a tag from a resource.
+     * </p>
      * 
      * @param deleteTagsRequest
      * @return Result of the DeleteTags operation returned by the service.
@@ -167,7 +260,9 @@ public interface AmazonMQ {
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
+     * <p>
      * Deletes an ActiveMQ user.
+     * </p>
      * 
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
@@ -186,7 +281,9 @@ public interface AmazonMQ {
     DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
 
     /**
+     * <p>
      * Returns information about the specified broker.
+     * </p>
      * 
      * @param describeBrokerRequest
      * @return Result of the DescribeBroker operation returned by the service.
@@ -205,7 +302,9 @@ public interface AmazonMQ {
     DescribeBrokerResult describeBroker(DescribeBrokerRequest describeBrokerRequest);
 
     /**
+     * <p>
      * Describe available engine types and versions.
+     * </p>
      * 
      * @param describeBrokerEngineTypesRequest
      * @return Result of the DescribeBrokerEngineTypes operation returned by the service.
@@ -222,7 +321,9 @@ public interface AmazonMQ {
     DescribeBrokerEngineTypesResult describeBrokerEngineTypes(DescribeBrokerEngineTypesRequest describeBrokerEngineTypesRequest);
 
     /**
+     * <p>
      * Describe available broker instance options.
+     * </p>
      * 
      * @param describeBrokerInstanceOptionsRequest
      * @return Result of the DescribeBrokerInstanceOptions operation returned by the service.
@@ -239,7 +340,9 @@ public interface AmazonMQ {
     DescribeBrokerInstanceOptionsResult describeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest describeBrokerInstanceOptionsRequest);
 
     /**
+     * <p>
      * Returns information about the specified configuration.
+     * </p>
      * 
      * @param describeConfigurationRequest
      * @return Result of the DescribeConfiguration operation returned by the service.
@@ -258,7 +361,9 @@ public interface AmazonMQ {
     DescribeConfigurationResult describeConfiguration(DescribeConfigurationRequest describeConfigurationRequest);
 
     /**
+     * <p>
      * Returns the specified configuration revision for the specified configuration.
+     * </p>
      * 
      * @param describeConfigurationRevisionRequest
      * @return Result of the DescribeConfigurationRevision operation returned by the service.
@@ -277,7 +382,9 @@ public interface AmazonMQ {
     DescribeConfigurationRevisionResult describeConfigurationRevision(DescribeConfigurationRevisionRequest describeConfigurationRevisionRequest);
 
     /**
+     * <p>
      * Returns information about an ActiveMQ user.
+     * </p>
      * 
      * @param describeUserRequest
      * @return Result of the DescribeUser operation returned by the service.
@@ -296,7 +403,9 @@ public interface AmazonMQ {
     DescribeUserResult describeUser(DescribeUserRequest describeUserRequest);
 
     /**
+     * <p>
      * Returns a list of all brokers.
+     * </p>
      * 
      * @param listBrokersRequest
      * @return Result of the ListBrokers operation returned by the service.
@@ -313,7 +422,9 @@ public interface AmazonMQ {
     ListBrokersResult listBrokers(ListBrokersRequest listBrokersRequest);
 
     /**
+     * <p>
      * Returns a list of all revisions for the specified configuration.
+     * </p>
      * 
      * @param listConfigurationRevisionsRequest
      * @return Result of the ListConfigurationRevisions operation returned by the service.
@@ -332,7 +443,9 @@ public interface AmazonMQ {
     ListConfigurationRevisionsResult listConfigurationRevisions(ListConfigurationRevisionsRequest listConfigurationRevisionsRequest);
 
     /**
+     * <p>
      * Returns a list of all configurations.
+     * </p>
      * 
      * @param listConfigurationsRequest
      * @return Result of the ListConfigurations operation returned by the service.
@@ -349,7 +462,9 @@ public interface AmazonMQ {
     ListConfigurationsResult listConfigurations(ListConfigurationsRequest listConfigurationsRequest);
 
     /**
+     * <p>
      * Lists tags for a resource.
+     * </p>
      * 
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
@@ -368,7 +483,9 @@ public interface AmazonMQ {
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
 
     /**
+     * <p>
      * Returns a list of all ActiveMQ users.
+     * </p>
      * 
      * @param listUsersRequest
      * @return Result of the ListUsers operation returned by the service.
@@ -387,7 +504,9 @@ public interface AmazonMQ {
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
 
     /**
+     * <p>
      * Reboots a broker. Note: This API is asynchronous.
+     * </p>
      * 
      * @param rebootBrokerRequest
      * @return Result of the RebootBroker operation returned by the service.
@@ -406,7 +525,9 @@ public interface AmazonMQ {
     RebootBrokerResult rebootBroker(RebootBrokerRequest rebootBrokerRequest);
 
     /**
+     * <p>
      * Adds a pending configuration change to a broker.
+     * </p>
      * 
      * @param updateBrokerRequest
      *        Updates the broker using the specified properties.
@@ -418,8 +539,7 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Concurrent broker update detected. Retrying your request might resolve
-     *         the issue.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateBroker
@@ -429,7 +549,9 @@ public interface AmazonMQ {
     UpdateBrokerResult updateBroker(UpdateBrokerRequest updateBrokerRequest);
 
     /**
+     * <p>
      * Updates the specified configuration.
+     * </p>
      * 
      * @param updateConfigurationRequest
      *        Updates the specified configuration.
@@ -441,9 +563,9 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Concurrent update to configuration. Retry to create a new revision.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
-     *         HTTP Status Code 403: Access forbidden. Correct your input and then retry your request.
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration" target="_top">AWS API
      *      Documentation</a>
@@ -451,7 +573,9 @@ public interface AmazonMQ {
     UpdateConfigurationResult updateConfiguration(UpdateConfigurationRequest updateConfigurationRequest);
 
     /**
+     * <p>
      * Updates the information for an ActiveMQ user.
+     * </p>
      * 
      * @param updateUserRequest
      *        Updates the information for an ActiveMQ user.
@@ -463,7 +587,7 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Retrying your request might resolve the issue.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateUser

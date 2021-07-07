@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains an asset attribute property. For more information, see <a
  * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in
- * the <i>AWS IoT SiteWise User Guide</i>.
+ * the <i>IoT SiteWise User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Attribute" target="_top">AWS API
@@ -35,7 +35,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * The default value of the asset model property attribute. All assets that you create from the asset model contain
      * this attribute value. You can update an attribute's value after you create an asset. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute
-     * values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String defaultValue;
@@ -45,7 +45,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * The default value of the asset model property attribute. All assets that you create from the asset model contain
      * this attribute value. You can update an attribute's value after you create an asset. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute
-     * values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param defaultValue
@@ -53,7 +53,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      *        contain this attribute value. You can update an attribute's value after you create an asset. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating
-     *        attribute values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        attribute values</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setDefaultValue(String defaultValue) {
@@ -65,14 +65,14 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * The default value of the asset model property attribute. All assets that you create from the asset model contain
      * this attribute value. You can update an attribute's value after you create an asset. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute
-     * values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The default value of the asset model property attribute. All assets that you create from the asset model
      *         contain this attribute value. You can update an attribute's value after you create an asset. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating
-     *         attribute values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         attribute values</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getDefaultValue() {
@@ -84,7 +84,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * The default value of the asset model property attribute. All assets that you create from the asset model contain
      * this attribute value. You can update an attribute's value after you create an asset. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute
-     * values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param defaultValue
@@ -92,7 +92,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      *        contain this attribute value. You can update an attribute's value after you create an asset. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating
-     *        attribute values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        attribute values</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

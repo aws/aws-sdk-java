@@ -26,13 +26,12 @@ import com.amazonaws.services.iotsitewise.model.*;
  * </p>
  * <p>
  * <p>
- * Welcome to the AWS IoT SiteWise API Reference. AWS IoT SiteWise is an AWS service that connects <a
+ * Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services service that connects <a
  * href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things
- * (IIoT)</a> devices to the power of the AWS Cloud. For more information, see the <a
- * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">AWS IoT SiteWise User Guide</a>. For information
- * about AWS IoT SiteWise quotas, see <a
- * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise
- * User Guide</i>.
+ * (IIoT)</a> devices to the power of the Amazon Web Services Cloud. For more information, see the <a
+ * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise User Guide</a>. For information about
+ * IoT SiteWise quotas, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+ * in the <i>IoT SiteWise User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,7 +42,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-     * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * assets</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param associateAssetsRequest
@@ -59,7 +58,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-     * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * assets</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param associateAssetsRequest
@@ -77,7 +76,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Associates a group (batch) of assets with an AWS IoT SiteWise Monitor project.
+     * Associates a group (batch) of assets with an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param batchAssociateProjectAssetsRequest
@@ -91,7 +90,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Associates a group (batch) of assets with an AWS IoT SiteWise Monitor project.
+     * Associates a group (batch) of assets with an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param batchAssociateProjectAssetsRequest
@@ -110,7 +109,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor project.
+     * Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param batchDisassociateProjectAssetsRequest
@@ -125,7 +124,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor project.
+     * Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param batchDisassociateProjectAssetsRequest
@@ -145,10 +144,10 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value (TQV) data
-     * point. For more information, see <a
+     * Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.
+     * in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -170,21 +169,21 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
-     * in the past and no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days in
+     * the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the inclusive
+     * range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
-     * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
+     * For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
      * different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>, then storing
      * <code>{T1, GOOD, V2}</code> replaces the existing TQV.
      * </p>
      * </important>
      * <p>
-     * AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
+     * IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action"
-     * >BatchPutAssetPropertyValue authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >BatchPutAssetPropertyValue authorization</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param batchPutAssetPropertyValueRequest
@@ -198,10 +197,10 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value (TQV) data
-     * point. For more information, see <a
+     * Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.
+     * in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -223,21 +222,21 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
-     * in the past and no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days in
+     * the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the inclusive
+     * range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
-     * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
+     * For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
      * different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>, then storing
      * <code>{T1, GOOD, V2}</code> replaces the existing TQV.
      * </p>
      * </important>
      * <p>
-     * AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
+     * IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action"
-     * >BatchPutAssetPropertyValue authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >BatchPutAssetPropertyValue authorization</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param batchPutAssetPropertyValueRequest
@@ -256,8 +255,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM user) access to
-     * the specified AWS IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
+     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -270,8 +269,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM user) access to
-     * the specified AWS IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
+     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -291,7 +290,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Creates an asset from an existing asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createAssetRequest
@@ -306,7 +305,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Creates an asset from an existing asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createAssetRequest
@@ -328,7 +327,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * With asset models, you can easily create assets of the same type that have standardized definitions. Each asset
      * created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createAssetModelRequest
@@ -345,7 +344,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * With asset models, you can easily create assets of the same type that have standardized definitions. Each asset
      * created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createAssetModelRequest
@@ -363,7 +362,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a dashboard in an AWS IoT SiteWise Monitor project.
+     * Creates a dashboard in an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param createDashboardRequest
@@ -376,7 +375,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a dashboard in an AWS IoT SiteWise Monitor project.
+     * Creates a dashboard in an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param createDashboardRequest
@@ -395,9 +394,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to
-     * AWS IoT SiteWise. For more information, see <a
+     * IoT SiteWise. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a
-     * gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * gateway</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createGatewayRequest
@@ -411,9 +410,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to
-     * AWS IoT SiteWise. For more information, see <a
+     * IoT SiteWise. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a
-     * gateway</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * gateway</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param createGatewayRequest
@@ -431,15 +430,15 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor uses AWS SSO or IAM to
-     * authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
+     * IAM to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
      * Before you can sign in to a new portal, you must add at least one identity to that portal. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
-     * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * </note>
      * 
@@ -453,15 +452,15 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor uses AWS SSO or IAM to
-     * authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
+     * IAM to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
      * Before you can sign in to a new portal, you must add at least one identity to that portal. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
-     * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * </note>
      * 
@@ -511,8 +510,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes an access policy that grants the specified identity access to the specified AWS IoT SiteWise Monitor
-     * resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
+     * Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor
+     * resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource.
      * </p>
      * 
      * @param deleteAccessPolicyRequest
@@ -525,8 +524,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes an access policy that grants the specified identity access to the specified AWS IoT SiteWise Monitor
-     * resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
+     * Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor
+     * resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource.
      * </p>
      * 
      * @param deleteAccessPolicyRequest
@@ -546,7 +545,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Deletes an asset. This action can't be undone. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -568,7 +567,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Deletes an asset. This action can't be undone. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -598,7 +597,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * contains a property formula expression that depends on the asset model that you want to delete. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param deleteAssetModelRequest
@@ -616,7 +615,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * contains a property formula expression that depends on the asset model that you want to delete. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param deleteAssetModelRequest
@@ -634,7 +633,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a dashboard from AWS IoT SiteWise Monitor.
+     * Deletes a dashboard from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deleteDashboardRequest
@@ -647,7 +646,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a dashboard from AWS IoT SiteWise Monitor.
+     * Deletes a dashboard from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deleteDashboardRequest
@@ -665,7 +664,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
+     * Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
      * gateway's file system.
      * </p>
      * 
@@ -679,7 +678,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
+     * Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
      * gateway's file system.
      * </p>
      * 
@@ -698,7 +697,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a portal from AWS IoT SiteWise Monitor.
+     * Deletes a portal from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deletePortalRequest
@@ -711,7 +710,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a portal from AWS IoT SiteWise Monitor.
+     * Deletes a portal from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deletePortalRequest
@@ -729,7 +728,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a project from AWS IoT SiteWise Monitor.
+     * Deletes a project from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -742,7 +741,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes a project from AWS IoT SiteWise Monitor.
+     * Deletes a project from IoT SiteWise Monitor.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -760,8 +759,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise Monitor portal or
-     * project.
+     * Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.
      * </p>
      * 
      * @param describeAccessPolicyRequest
@@ -774,8 +772,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise Monitor portal or
-     * project.
+     * Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.
      * </p>
      * 
      * @param describeAccessPolicyRequest
@@ -941,10 +938,10 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
-     * region. For more information, see <a
+     * Retrieves information about the default encryption configuration for the Amazon Web Services account in the
+     * default or specified Region. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param describeDefaultEncryptionConfigurationRequest
@@ -960,10 +957,10 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
-     * region. For more information, see <a
+     * Retrieves information about the default encryption configuration for the Amazon Web Services account in the
+     * default or specified Region. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param describeDefaultEncryptionConfigurationRequest
@@ -1017,7 +1014,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for
      * a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA
-     * sources for a gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored in one capability
+     * sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability
      * configuration. To list all capability configurations for a gateway, use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
      * </p>
@@ -1037,7 +1034,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for
      * a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA
-     * sources for a gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored in one capability
+     * sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability
      * configuration. To list all capability configurations for a gateway, use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
      * </p>
@@ -1060,7 +1057,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves the current AWS IoT SiteWise logging options.
+     * Retrieves the current IoT SiteWise logging options.
      * </p>
      * 
      * @param describeLoggingOptionsRequest
@@ -1073,7 +1070,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves the current AWS IoT SiteWise logging options.
+     * Retrieves the current IoT SiteWise logging options.
      * </p>
      * 
      * @param describeLoggingOptionsRequest
@@ -1153,6 +1150,41 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves information about the storage configuration for IoT SiteWise.
+     * </p>
+     * 
+     * @param describeStorageConfigurationRequest
+     * @return A Java Future containing the result of the DescribeStorageConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.DescribeStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStorageConfigurationResult> describeStorageConfigurationAsync(
+            DescribeStorageConfigurationRequest describeStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the storage configuration for IoT SiteWise.
+     * </p>
+     * 
+     * @param describeStorageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStorageConfiguration operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DescribeStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStorageConfigurationResult> describeStorageConfigurationAsync(
+            DescribeStorageConfigurationRequest describeStorageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStorageConfigurationRequest, DescribeStorageConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset's model.
      * </p>
      * 
@@ -1186,7 +1218,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-     * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * aggregates</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1220,7 +1252,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-     * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * aggregates</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1259,7 +1291,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets an asset property's current value. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values"
-     * >Querying current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying current values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1292,7 +1324,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets an asset property's current value. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values"
-     * >Querying current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying current values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1330,7 +1362,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets the history of an asset property's values. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values"
-     * >Querying historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1365,7 +1397,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets the history of an asset property's values. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values"
-     * >Querying historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1407,11 +1439,6 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * example, you can use the this operation to return the interpolated temperature values for a wind turbine every 24
      * hours over a duration of 7 days.
      * </p>
-     * <note>
-     * <p>
-     * This API isn't available in China (Beijing).
-     * </p>
-     * </note>
      * <p>
      * To identify an asset property, you must specify one of the following:
      * </p>
@@ -1447,11 +1474,6 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * example, you can use the this operation to return the interpolated temperature values for a wind turbine every 24
      * hours over a duration of 7 days.
      * </p>
-     * <note>
-     * <p>
-     * This API isn't available in China (Beijing).
-     * </p>
-     * </note>
      * <p>
      * To identify an asset property, you must specify one of the following:
      * </p>
@@ -1488,8 +1510,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group, or an IAM user)
-     * or an AWS IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
+     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1502,8 +1524,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group, or an IAM user)
-     * or an AWS IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
+     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1717,7 +1739,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.
+     * Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param listDashboardsRequest
@@ -1730,7 +1752,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.
+     * Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param listDashboardsRequest
@@ -1779,7 +1801,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of AWS IoT SiteWise Monitor portals.
+     * Retrieves a paginated list of IoT SiteWise Monitor portals.
      * </p>
      * 
      * @param listPortalsRequest
@@ -1792,7 +1814,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of AWS IoT SiteWise Monitor portals.
+     * Retrieves a paginated list of IoT SiteWise Monitor portals.
      * </p>
      * 
      * @param listPortalsRequest
@@ -1810,7 +1832,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of assets associated with an AWS IoT SiteWise Monitor project.
+     * Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param listProjectAssetsRequest
@@ -1823,7 +1845,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of assets associated with an AWS IoT SiteWise Monitor project.
+     * Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param listProjectAssetsRequest
@@ -1841,7 +1863,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.
+     * Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.
      * </p>
      * 
      * @param listProjectsRequest
@@ -1854,7 +1876,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.
+     * Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.
      * </p>
      * 
      * @param listProjectsRequest
@@ -1872,7 +1894,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves the list of tags for an AWS IoT SiteWise resource.
+     * Retrieves the list of tags for an IoT SiteWise resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1885,7 +1907,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves the list of tags for an AWS IoT SiteWise resource.
+     * Retrieves the list of tags for an IoT SiteWise resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1903,9 +1925,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param putDefaultEncryptionConfigurationRequest
@@ -1920,9 +1942,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param putDefaultEncryptionConfigurationRequest
@@ -1942,7 +1964,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sets logging options for AWS IoT SiteWise.
+     * Sets logging options for IoT SiteWise.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -1955,7 +1977,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Sets logging options for AWS IoT SiteWise.
+     * Sets logging options for IoT SiteWise.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -1973,8 +1995,39 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Adds tags to an AWS IoT SiteWise resource. If a tag already exists for the resource, this operation updates the
-     * tag's value.
+     * Configures storage settings for IoT SiteWise.
+     * </p>
+     * 
+     * @param putStorageConfigurationRequest
+     * @return A Java Future containing the result of the PutStorageConfiguration operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.PutStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutStorageConfigurationResult> putStorageConfigurationAsync(PutStorageConfigurationRequest putStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Configures storage settings for IoT SiteWise.
+     * </p>
+     * 
+     * @param putStorageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutStorageConfiguration operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.PutStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutStorageConfigurationResult> putStorageConfigurationAsync(PutStorageConfigurationRequest putStorageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutStorageConfigurationRequest, PutStorageConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's
+     * value.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1987,8 +2040,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Adds tags to an AWS IoT SiteWise resource. If a tag already exists for the resource, this operation updates the
-     * tag's value.
+     * Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's
+     * value.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2006,7 +2059,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Removes a tag from an AWS IoT SiteWise resource.
+     * Removes a tag from an IoT SiteWise resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2019,7 +2072,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Removes a tag from an AWS IoT SiteWise resource.
+     * Removes a tag from an IoT SiteWise resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2037,7 +2090,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an existing access policy that specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or
      * project resource.
      * </p>
      * 
@@ -2051,7 +2104,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an existing access policy that specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or
      * project resource.
      * </p>
      * 
@@ -2072,7 +2125,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Updates an asset's name. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param updateAssetRequest
@@ -2087,7 +2140,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Updates an asset's name. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param updateAssetRequest
@@ -2108,7 +2161,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Updates an asset model and all of the assets that were created from the model. Each asset created from the model
      * inherits the updated asset model's property and hierarchy definitions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2119,9 +2172,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * >DescribeAssetModel</a>.
      * </p>
      * <p>
-     * If you remove a property from an asset model, AWS IoT SiteWise deletes all previous data for that property. If
-     * you remove a hierarchy definition from an asset model, AWS IoT SiteWise disassociates every asset associated with
-     * that hierarchy. You can't change the type or data type of an existing property.
+     * If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you
+     * remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that
+     * hierarchy. You can't change the type or data type of an existing property.
      * </p>
      * </important>
      * 
@@ -2138,7 +2191,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Updates an asset model and all of the assets that were created from the model. Each asset created from the model
      * inherits the updated asset model's property and hierarchy definitions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
-     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -2149,9 +2202,9 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * >DescribeAssetModel</a>.
      * </p>
      * <p>
-     * If you remove a property from an asset model, AWS IoT SiteWise deletes all previous data for that property. If
-     * you remove a hierarchy definition from an asset model, AWS IoT SiteWise disassociates every asset associated with
-     * that hierarchy. You can't change the type or data type of an existing property.
+     * If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you
+     * remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that
+     * hierarchy. You can't change the type or data type of an existing property.
      * </p>
      * </important>
      * 
@@ -2219,7 +2272,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor dashboard.
+     * Updates an IoT SiteWise Monitor dashboard.
      * </p>
      * 
      * @param updateDashboardRequest
@@ -2232,7 +2285,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor dashboard.
+     * Updates an IoT SiteWise Monitor dashboard.
      * </p>
      * 
      * @param updateDashboardRequest
@@ -2283,8 +2336,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability
      * defines data sources for a gateway. A capability configuration can contain multiple data source configurations.
-     * If you define OPC-UA sources for a gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored
-     * in one capability configuration. To list all capability configurations for a gateway, use <a
+     * If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in
+     * one capability configuration. To list all capability configurations for a gateway, use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
      * </p>
      * 
@@ -2302,8 +2355,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability
      * defines data sources for a gateway. A capability configuration can contain multiple data source configurations.
-     * If you define OPC-UA sources for a gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored
-     * in one capability configuration. To list all capability configurations for a gateway, use <a
+     * If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in
+     * one capability configuration. To list all capability configurations for a gateway, use <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.
      * </p>
      * 
@@ -2324,7 +2377,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor portal.
+     * Updates an IoT SiteWise Monitor portal.
      * </p>
      * 
      * @param updatePortalRequest
@@ -2337,7 +2390,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor portal.
+     * Updates an IoT SiteWise Monitor portal.
      * </p>
      * 
      * @param updatePortalRequest
@@ -2355,7 +2408,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor project.
+     * Updates an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param updateProjectRequest
@@ -2368,7 +2421,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an AWS IoT SiteWise Monitor project.
+     * Updates an IoT SiteWise Monitor project.
      * </p>
      * 
      * @param updateProjectRequest

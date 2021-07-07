@@ -30,7 +30,7 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with AWS IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise APIs).
      * </p>
      */
     private String id;
@@ -77,11 +77,11 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with AWS IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise APIs).
      * </p>
      * 
      * @param id
-     *        The ID of the asset model (used with AWS IoT SiteWise APIs).
+     *        The ID of the asset model (used with IoT SiteWise APIs).
      */
 
     public void setId(String id) {
@@ -90,10 +90,10 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with AWS IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise APIs).
      * </p>
      * 
-     * @return The ID of the asset model (used with AWS IoT SiteWise APIs).
+     * @return The ID of the asset model (used with IoT SiteWise APIs).
      */
 
     public String getId() {
@@ -102,11 +102,11 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with AWS IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise APIs).
      * </p>
      * 
      * @param id
-     *        The ID of the asset model (used with AWS IoT SiteWise APIs).
+     *        The ID of the asset model (used with IoT SiteWise APIs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

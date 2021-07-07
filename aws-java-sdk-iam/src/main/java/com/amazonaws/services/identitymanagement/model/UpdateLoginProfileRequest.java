@@ -65,7 +65,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * However, the format can be further restricted by the account administrator by setting a password policy on the
-     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      */
     private String password;
@@ -195,7 +195,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * However, the format can be further restricted by the account administrator by setting a password policy on the
-     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @param password
@@ -226,7 +226,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      *        </ul>
      *        <p>
      *        However, the format can be further restricted by the account administrator by setting a password policy on
-     *        the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     *        the account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      */
 
     public void setPassword(String password) {
@@ -262,7 +262,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * However, the format can be further restricted by the account administrator by setting a password policy on the
-     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @return The new password for the specified IAM user.</p>
@@ -292,7 +292,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      *         </ul>
      *         <p>
      *         However, the format can be further restricted by the account administrator by setting a password policy
-     *         on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     *         on the account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      */
 
     public String getPassword() {
@@ -328,7 +328,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * <p>
      * However, the format can be further restricted by the account administrator by setting a password policy on the
-     * AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     * account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * </p>
      * 
      * @param password
@@ -359,7 +359,7 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      *        </ul>
      *        <p>
      *        However, the format can be further restricted by the account administrator by setting a password policy on
-     *        the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+     *        the account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

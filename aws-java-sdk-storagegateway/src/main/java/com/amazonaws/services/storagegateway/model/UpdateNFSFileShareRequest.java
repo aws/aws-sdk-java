@@ -36,8 +36,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String fileShareARN;
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -60,7 +60,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private NFSFileShareDefaults nFSFileShareDefaults;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -71,15 +71,15 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String defaultStorageClass;
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      */
     private String objectACL;
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> clientList;
@@ -234,15 +234,15 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -254,14 +254,14 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -273,15 +273,15 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -295,14 +295,14 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -406,7 +406,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -415,8 +415,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -428,7 +428,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -436,8 +436,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *         is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     * @return The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *         value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *         <p>
      *         Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
      *         <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -449,7 +449,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -458,8 +458,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -473,13 +473,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -489,12 +489,12 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *         gateway puts objects into. The default value is <code>private</code>.
+     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *         Gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -504,13 +504,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -522,13 +522,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -540,11 +540,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * 
-     * @return The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     * @return The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *         addresses or valid CIDR blocks.
      */
 
@@ -557,12 +557,12 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * 
      * @param clientList
-     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *        addresses or valid CIDR blocks.
      */
 
@@ -577,8 +577,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -587,7 +587,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param clientList
-     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *        addresses or valid CIDR blocks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -604,12 +604,12 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * 
      * @param clientList
-     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *        addresses or valid CIDR blocks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -183,6 +183,27 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller impleme
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription> updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList = (com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription>) updateSecurityGroupRuleDescriptionsIngressRequest
+                .getSecurityGroupRuleDescriptions();
+        if (!updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList.isEmpty()
+                || !updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList.isAutoConstruct()) {
+            int securityGroupRuleDescriptionsListIndex = 1;
+
+            for (SecurityGroupRuleDescription updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue : updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList) {
+
+                if (updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getSecurityGroupRuleId() != null) {
+                    request.addParameter("SecurityGroupRuleDescription." + securityGroupRuleDescriptionsListIndex + ".SecurityGroupRuleId", StringUtils
+                            .fromString(updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getSecurityGroupRuleId()));
+                }
+
+                if (updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getDescription() != null) {
+                    request.addParameter("SecurityGroupRuleDescription." + securityGroupRuleDescriptionsListIndex + ".Description",
+                            StringUtils.fromString(updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getDescription()));
+                }
+                securityGroupRuleDescriptionsListIndex++;
+            }
+        }
+
         return request;
     }
 

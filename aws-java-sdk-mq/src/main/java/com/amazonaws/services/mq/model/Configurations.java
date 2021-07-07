@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Broker configuration information
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Configurations" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Configurations implements Serializable, Cloneable, StructuredPojo {
 
-    /** The current configuration of the broker. */
+    /**
+     * <p>
+     * The broker's current configuration.
+     * </p>
+     */
     private ConfigurationId current;
-    /** The history of configurations applied to the broker. */
+    /**
+     * <p>
+     * The history of configurations applied to the broker.
+     * </p>
+     */
     private java.util.List<ConfigurationId> history;
-    /** The pending configuration of the broker. */
+    /**
+     * <p>
+     * The broker's pending configuration.
+     * </p>
+     */
     private ConfigurationId pending;
 
     /**
-     * The current configuration of the broker.
+     * <p>
+     * The broker's current configuration.
+     * </p>
      * 
      * @param current
-     *        The current configuration of the broker.
+     *        The broker's current configuration.
      */
 
     public void setCurrent(ConfigurationId current) {
@@ -45,9 +61,11 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The current configuration of the broker.
+     * <p>
+     * The broker's current configuration.
+     * </p>
      * 
-     * @return The current configuration of the broker.
+     * @return The broker's current configuration.
      */
 
     public ConfigurationId getCurrent() {
@@ -55,10 +73,12 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The current configuration of the broker.
+     * <p>
+     * The broker's current configuration.
+     * </p>
      * 
      * @param current
-     *        The current configuration of the broker.
+     *        The broker's current configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +88,9 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The history of configurations applied to the broker.
+     * </p>
      * 
      * @return The history of configurations applied to the broker.
      */
@@ -78,7 +100,9 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The history of configurations applied to the broker.
+     * </p>
      * 
      * @param history
      *        The history of configurations applied to the broker.
@@ -94,7 +118,9 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The history of configurations applied to the broker.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHistory(java.util.Collection)} or {@link #withHistory(java.util.Collection)} if you want to override
@@ -117,7 +143,9 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The history of configurations applied to the broker.
+     * </p>
      * 
      * @param history
      *        The history of configurations applied to the broker.
@@ -130,10 +158,12 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The pending configuration of the broker.
+     * <p>
+     * The broker's pending configuration.
+     * </p>
      * 
      * @param pending
-     *        The pending configuration of the broker.
+     *        The broker's pending configuration.
      */
 
     public void setPending(ConfigurationId pending) {
@@ -141,9 +171,11 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The pending configuration of the broker.
+     * <p>
+     * The broker's pending configuration.
+     * </p>
      * 
-     * @return The pending configuration of the broker.
+     * @return The broker's pending configuration.
      */
 
     public ConfigurationId getPending() {
@@ -151,10 +183,12 @@ public class Configurations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The pending configuration of the broker.
+     * <p>
+     * The broker's pending configuration.
+     * </p>
      * 
      * @param pending
-     *        The pending configuration of the broker.
+     *        The broker's pending configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,23 +26,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must
-     *        be an integer from 5 to 100.
+     *        The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
+     *        integer from 5 to 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -50,11 +56,13 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      * 
-     * @return The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must
-     *         be an integer from 5 to 100.
+     * @return The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
+     *         integer from 5 to 100.
      */
 
     public Integer getMaxResults() {
@@ -62,12 +70,14 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must
-     *        be an integer from 5 to 100.
+     *        The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
+     *        integer from 5 to 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,8 +87,10 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -90,8 +102,10 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -102,8 +116,10 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,

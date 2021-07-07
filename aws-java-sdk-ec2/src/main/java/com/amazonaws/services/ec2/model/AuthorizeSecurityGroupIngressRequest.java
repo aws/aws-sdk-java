@@ -94,11 +94,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String sourceSecurityGroupName;
     /**
      * <p>
-     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
-     * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
-     * permissions instead.
+     * [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group
+     * is in a different account. You can't specify this parameter in combination with the following parameters: the
+     * CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules
+     * that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set
+     * of IP permissions instead.
      * </p>
      */
     private String sourceSecurityGroupOwnerId;
@@ -112,6 +112,12 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * </p>
      */
     private Integer toPort;
+    /**
+     * <p>
+     * [VPC Only] The tags applied to the security group rule.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * Default constructor for AuthorizeSecurityGroupIngressRequest object. Callers should use the setter or fluent
@@ -585,19 +591,19 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
-     * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
-     * permissions instead.
+     * [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group
+     * is in a different account. You can't specify this parameter in combination with the following parameters: the
+     * CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules
+     * that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set
+     * of IP permissions instead.
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
-     *        different account. You can't specify this parameter in combination with the following parameters: the CIDR
-     *        IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates
-     *        rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port
-     *        range, use a set of IP permissions instead.
+     *        [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security
+     *        group is in a different account. You can't specify this parameter in combination with the following
+     *        parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the
+     *        port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP
+     *        protocol and port range, use a set of IP permissions instead.
      */
 
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
@@ -606,18 +612,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
-     * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
-     * permissions instead.
+     * [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group
+     * is in a different account. You can't specify this parameter in combination with the following parameters: the
+     * CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules
+     * that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set
+     * of IP permissions instead.
      * </p>
      * 
-     * @return [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
-     *         different account. You can't specify this parameter in combination with the following parameters: the
-     *         CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range.
-     *         Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and
-     *         port range, use a set of IP permissions instead.
+     * @return [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security
+     *         group is in a different account. You can't specify this parameter in combination with the following
+     *         parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the
+     *         port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP
+     *         protocol and port range, use a set of IP permissions instead.
      */
 
     public String getSourceSecurityGroupOwnerId() {
@@ -626,19 +632,19 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
-     * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
-     * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
-     * permissions instead.
+     * [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group
+     * is in a different account. You can't specify this parameter in combination with the following parameters: the
+     * CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules
+     * that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set
+     * of IP permissions instead.
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
-     *        different account. You can't specify this parameter in combination with the following parameters: the CIDR
-     *        IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates
-     *        rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port
-     *        range, use a set of IP permissions instead.
+     *        [nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security
+     *        group is in a different account. You can't specify this parameter in combination with the following
+     *        parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the
+     *        port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP
+     *        protocol and port range, use a set of IP permissions instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -709,6 +715,79 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * [VPC Only] The tags applied to the security group rule.
+     * </p>
+     * 
+     * @return [VPC Only] The tags applied to the security group rule.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * [VPC Only] The tags applied to the security group rule.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        [VPC Only] The tags applied to the security group rule.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * [VPC Only] The tags applied to the security group rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        [VPC Only] The tags applied to the security group rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [VPC Only] The tags applied to the security group rule.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        [VPC Only] The tags applied to the security group rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -748,7 +827,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
         if (getSourceSecurityGroupOwnerId() != null)
             sb.append("SourceSecurityGroupOwnerId: ").append(getSourceSecurityGroupOwnerId()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: ").append(getToPort());
+            sb.append("ToPort: ").append(getToPort()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -799,6 +880,10 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
             return false;
         if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -816,6 +901,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
         hashCode = prime * hashCode + ((getSourceSecurityGroupName() == null) ? 0 : getSourceSecurityGroupName().hashCode());
         hashCode = prime * hashCode + ((getSourceSecurityGroupOwnerId() == null) ? 0 : getSourceSecurityGroupOwnerId().hashCode());
         hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

@@ -28,8 +28,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can use to
-     * send real-time log data to your Kinesis data stream.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send
+     * real-time log data to your Kinesis data stream.
      * </p>
      * <p>
      * For more information the IAM role, see <a href=
@@ -47,8 +47,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can use to
-     * send real-time log data to your Kinesis data stream.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send
+     * real-time log data to your Kinesis data stream.
      * </p>
      * <p>
      * For more information the IAM role, see <a href=
@@ -57,8 +57,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can use
-     *        to send real-time log data to your Kinesis data stream.</p>
+     *        The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to
+     *        send real-time log data to your Kinesis data stream.</p>
      *        <p>
      *        For more information the IAM role, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role"
@@ -71,8 +71,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can use to
-     * send real-time log data to your Kinesis data stream.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send
+     * real-time log data to your Kinesis data stream.
      * </p>
      * <p>
      * For more information the IAM role, see <a href=
@@ -80,8 +80,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
      * >Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can
-     *         use to send real-time log data to your Kinesis data stream.</p>
+     * @return The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to
+     *         send real-time log data to your Kinesis data stream.</p>
      *         <p>
      *         For more information the IAM role, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role"
@@ -94,8 +94,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can use to
-     * send real-time log data to your Kinesis data stream.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send
+     * real-time log data to your Kinesis data stream.
      * </p>
      * <p>
      * For more information the IAM role, see <a href=
@@ -104,8 +104,8 @@ public class KinesisStreamConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFront can use
-     *        to send real-time log data to your Kinesis data stream.</p>
+     *        The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to
+     *        send real-time log data to your Kinesis data stream.</p>
      *        <p>
      *        For more information the IAM role, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role"

@@ -82,8 +82,8 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private String clientToken;
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -488,15 +488,15 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -508,14 +508,14 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -527,15 +527,15 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -549,14 +549,14 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>

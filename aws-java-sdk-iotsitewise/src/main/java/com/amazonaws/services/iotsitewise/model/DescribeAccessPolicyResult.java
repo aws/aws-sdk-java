@@ -41,13 +41,14 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
     private String accessPolicyArn;
     /**
      * <p>
-     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
+     * policy applies.
      * </p>
      */
     private Identity accessPolicyIdentity;
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     * The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      * </p>
      */
     private Resource accessPolicyResource;
@@ -173,11 +174,13 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
+     * policy applies.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     *        The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this
+     *        access policy applies.
      */
 
     public void setAccessPolicyIdentity(Identity accessPolicyIdentity) {
@@ -186,10 +189,12 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
+     * policy applies.
      * </p>
      * 
-     * @return The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     * @return The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this
+     *         access policy applies.
      */
 
     public Identity getAccessPolicyIdentity() {
@@ -198,11 +203,13 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     * The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this access
+     * policy applies.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
+     *        The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) to which this
+     *        access policy applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +220,11 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     * The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      * </p>
      * 
      * @param accessPolicyResource
-     *        The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     *        The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      */
 
     public void setAccessPolicyResource(Resource accessPolicyResource) {
@@ -226,10 +233,10 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     * The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      * </p>
      * 
-     * @return The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     * @return The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      */
 
     public Resource getAccessPolicyResource() {
@@ -238,11 +245,11 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     * The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      * </p>
      * 
      * @param accessPolicyResource
-     *        The AWS IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
+     *        The IoT SiteWise Monitor resource (portal or project) to which this access policy provides access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

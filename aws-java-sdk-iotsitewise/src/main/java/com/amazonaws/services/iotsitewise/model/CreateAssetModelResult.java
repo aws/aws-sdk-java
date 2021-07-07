@@ -25,7 +25,7 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      * </p>
      */
     private String assetModelId;
@@ -49,11 +49,11 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     *        The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      */
 
     public void setAssetModelId(String assetModelId) {
@@ -62,10 +62,10 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      * </p>
      * 
-     * @return The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     * @return The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      */
 
     public String getAssetModelId() {
@@ -74,11 +74,11 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model. You can use this ID when you call other AWS IoT SiteWise APIs.
+     *        The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

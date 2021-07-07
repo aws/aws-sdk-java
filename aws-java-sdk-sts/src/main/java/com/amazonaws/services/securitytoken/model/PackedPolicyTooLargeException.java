@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request was rejected because the total packed size of the session policies and session tags combined was too
- * large. An AWS conversion compresses the session policy document, session policy ARNs, and session tags into a packed
- * binary format that has a separate limit. The error message indicates by percentage how close the policies and tags
- * are to the upper size limit. For more information, see <a
+ * large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session
+ * tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the
+ * policies and tags are to the upper size limit. For more information, see <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the
  * <i>IAM User Guide</i>.
  * </p>

@@ -85,8 +85,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an outbound
-     * security group rule.
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     * an outbound security group rule.
      * </p>
      * </li>
      * <li>
@@ -147,13 +147,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound security
-     * group rule.
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in an
+     * inbound security group rule.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * </li>
      * <li>
@@ -183,7 +183,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * The IDs of the security groups. Required for security groups in a nondefault VPC.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupIds;
@@ -194,7 +194,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * describe security groups by name.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
@@ -272,8 +272,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an outbound
-     * security group rule.
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     * an outbound security group rule.
      * </p>
      * </li>
      * <li>
@@ -334,13 +334,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound security
-     * group rule.
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in an
+     * inbound security group rule.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * </li>
      * <li>
@@ -420,8 +420,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
-     *         <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an
-     *         outbound security group rule.
+     *         <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been
+     *         referenced in an outbound security group rule.
      *         </p>
      *         </li>
      *         <li>
@@ -482,13 +482,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound
-     *         security group rule.
+     *         <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     *         an inbound security group rule.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     *         <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      *         </p>
      *         </li>
      *         <li>
@@ -578,8 +578,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an outbound
-     * security group rule.
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     * an outbound security group rule.
      * </p>
      * </li>
      * <li>
@@ -640,13 +640,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound security
-     * group rule.
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in an
+     * inbound security group rule.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * </li>
      * <li>
@@ -727,8 +727,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an
-     *        outbound security group rule.
+     *        <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been
+     *        referenced in an outbound security group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -789,13 +789,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound
-     *        security group rule.
+     *        <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     *        an inbound security group rule.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      *        </p>
      *        </li>
      *        <li>
@@ -887,8 +887,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an outbound
-     * security group rule.
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     * an outbound security group rule.
      * </p>
      * </li>
      * <li>
@@ -949,13 +949,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound security
-     * group rule.
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in an
+     * inbound security group rule.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * </li>
      * <li>
@@ -1041,8 +1041,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an
-     *        outbound security group rule.
+     *        <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been
+     *        referenced in an outbound security group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -1103,13 +1103,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound
-     *        security group rule.
+     *        <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     *        an inbound security group rule.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      *        </p>
      *        </li>
      *        <li>
@@ -1203,8 +1203,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an outbound
-     * security group rule.
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     * an outbound security group rule.
      * </p>
      * </li>
      * <li>
@@ -1265,13 +1265,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound security
-     * group rule.
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in an
+     * inbound security group rule.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * </li>
      * <li>
@@ -1352,8 +1352,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an
-     *        outbound security group rule.
+     *        <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been
+     *        referenced in an outbound security group rule.
      *        </p>
      *        </li>
      *        <li>
@@ -1414,13 +1414,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ip-permission.user-id</code> - The ID of an AWS account that has been referenced in an inbound
-     *        security group rule.
+     *        <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account that has been referenced in
+     *        an inbound security group rule.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the owner of the security group.
+     *        <code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.
      *        </p>
      *        </li>
      *        <li>
@@ -1455,12 +1455,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * The IDs of the security groups. Required for security groups in a nondefault VPC.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * 
      * @return The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
      *         <p>
-     *         Default: Describes all your security groups.
+     *         Default: Describes all of your security groups.
      */
 
     public java.util.List<String> getGroupIds() {
@@ -1475,13 +1475,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * The IDs of the security groups. Required for security groups in a nondefault VPC.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupIds
      *        The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
      *        <p>
-     *        Default: Describes all your security groups.
+     *        Default: Describes all of your security groups.
      */
 
     public void setGroupIds(java.util.Collection<String> groupIds) {
@@ -1498,7 +1498,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * The IDs of the security groups. Required for security groups in a nondefault VPC.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1509,7 +1509,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * @param groupIds
      *        The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
      *        <p>
-     *        Default: Describes all your security groups.
+     *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1528,13 +1528,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * The IDs of the security groups. Required for security groups in a nondefault VPC.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupIds
      *        The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
      *        <p>
-     *        Default: Describes all your security groups.
+     *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1550,14 +1550,14 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * describe security groups by name.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * 
      * @return [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
      *         group name or the security group ID. For security groups in a nondefault VPC, use the
      *         <code>group-name</code> filter to describe security groups by name.</p>
      *         <p>
-     *         Default: Describes all your security groups.
+     *         Default: Describes all of your security groups.
      */
 
     public java.util.List<String> getGroupNames() {
@@ -1574,7 +1574,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * describe security groups by name.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupNames
@@ -1582,7 +1582,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        group name or the security group ID. For security groups in a nondefault VPC, use the
      *        <code>group-name</code> filter to describe security groups by name.</p>
      *        <p>
-     *        Default: Describes all your security groups.
+     *        Default: Describes all of your security groups.
      */
 
     public void setGroupNames(java.util.Collection<String> groupNames) {
@@ -1601,7 +1601,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * describe security groups by name.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1614,7 +1614,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        group name or the security group ID. For security groups in a nondefault VPC, use the
      *        <code>group-name</code> filter to describe security groups by name.</p>
      *        <p>
-     *        Default: Describes all your security groups.
+     *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1635,7 +1635,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * describe security groups by name.
      * </p>
      * <p>
-     * Default: Describes all your security groups.
+     * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupNames
@@ -1643,7 +1643,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *        group name or the security group ID. For security groups in a nondefault VPC, use the
      *        <code>group-name</code> filter to describe security groups by name.</p>
      *        <p>
-     *        Default: Describes all your security groups.
+     *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

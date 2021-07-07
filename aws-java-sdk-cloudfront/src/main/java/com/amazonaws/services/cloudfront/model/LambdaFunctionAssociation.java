@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains a Lambda function association.
+ * A complex type that contains a Lambda@Edge function association.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LambdaFunctionAssociation"
@@ -28,14 +28,14 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
      * or $LATEST.
      * </p>
      */
     private String lambdaFunctionARN;
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
+     * Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
@@ -71,21 +71,22 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     private String eventType;
     /**
      * <p>
-     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
-     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      */
     private Boolean includeBody;
 
     /**
      * <p>
-     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
      * or $LATEST.
      * </p>
      * 
      * @param lambdaFunctionARN
-     *        The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda
+     *        The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an
      *        alias or $LATEST.
      */
 
@@ -95,12 +96,12 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
      * or $LATEST.
      * </p>
      * 
-     * @return The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a
-     *         Lambda alias or $LATEST.
+     * @return The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an
+     *         alias or $LATEST.
      */
 
     public String getLambdaFunctionARN() {
@@ -109,12 +110,12 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
      * or $LATEST.
      * </p>
      * 
      * @param lambdaFunctionARN
-     *        The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda
+     *        The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an
      *        alias or $LATEST.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -126,7 +127,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
+     * Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
@@ -160,7 +161,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following
      *        values:</p>
      *        <ul>
      *        <li>
@@ -200,7 +201,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
+     * Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
@@ -233,7 +234,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     * @return Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following
      *         values:</p>
      *         <ul>
      *         <li>
@@ -273,7 +274,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
+     * Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
@@ -307,7 +308,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following
      *        values:</p>
      *        <ul>
      *        <li>
@@ -349,7 +350,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
+     * Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
@@ -383,7 +384,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following
      *        values:</p>
      *        <ul>
      *        <li>
@@ -423,7 +424,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
+     * Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
@@ -457,7 +458,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following
      *        values:</p>
      *        <ul>
      *        <li>
@@ -499,15 +500,17 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
-     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
      * @param includeBody
-     *        A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
-     *        Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
+     *        A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     *        >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *        Guide.
      */
 
@@ -517,13 +520,14 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
-     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
-     * @return A flag that allows a Lambda function to have read access to the body content. For more information, see
-     *         <a href=
+     * @return A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
+     *         see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      *         >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *         Guide.
@@ -535,15 +539,17 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
-     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
      * @param includeBody
-     *        A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
-     *        Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
+     *        A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     *        >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *        Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -555,13 +561,14 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
-     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
-     * @return A flag that allows a Lambda function to have read access to the body content. For more information, see
-     *         <a href=
+     * @return A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
+     *         see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      *         >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *         Guide.

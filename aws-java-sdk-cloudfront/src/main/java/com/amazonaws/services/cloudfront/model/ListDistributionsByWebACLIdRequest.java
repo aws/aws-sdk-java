@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The request to list distributions that are associated with a specified AWS WAF web ACL.
+ * The request to list distributions that are associated with a specified WAF web ACL.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"
@@ -46,8 +46,8 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
     private String maxItems;
     /**
      * <p>
-     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
-     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
+     * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
      */
     private String webACLId;
@@ -161,13 +161,13 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
-     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
+     * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
      * 
      * @param webACLId
-     *        The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null"
-     *        for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     *        The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for
+     *        the ID, the request returns a list of the distributions that aren't associated with a web ACL.
      */
 
     public void setWebACLId(String webACLId) {
@@ -176,12 +176,12 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
-     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
+     * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
      * 
-     * @return The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null"
-     *         for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * @return The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for
+     *         the ID, the request returns a list of the distributions that aren't associated with a web ACL.
      */
 
     public String getWebACLId() {
@@ -190,13 +190,13 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the
-     * ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
+     * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
      * 
      * @param webACLId
-     *        The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null"
-     *        for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     *        The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for
+     *        the ID, the request returns a list of the distributions that aren't associated with a web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,7 +50,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
     private java.util.Date lastUsedDate;
     /**
      * <p>
-     * The name of the AWS Region in which the role was last used.
+     * The name of the Region in which the role was last used.
      * </p>
      */
     private String region;
@@ -136,11 +136,11 @@ public class RoleLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS Region in which the role was last used.
+     * The name of the Region in which the role was last used.
      * </p>
      * 
      * @param region
-     *        The name of the AWS Region in which the role was last used.
+     *        The name of the Region in which the role was last used.
      */
 
     public void setRegion(String region) {
@@ -149,10 +149,10 @@ public class RoleLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS Region in which the role was last used.
+     * The name of the Region in which the role was last used.
      * </p>
      * 
-     * @return The name of the AWS Region in which the role was last used.
+     * @return The name of the Region in which the role was last used.
      */
 
     public String getRegion() {
@@ -161,11 +161,11 @@ public class RoleLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS Region in which the role was last used.
+     * The name of the Region in which the role was last used.
      * </p>
      * 
      * @param region
-     *        The name of the AWS Region in which the role was last used.
+     *        The name of the Region in which the role was last used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

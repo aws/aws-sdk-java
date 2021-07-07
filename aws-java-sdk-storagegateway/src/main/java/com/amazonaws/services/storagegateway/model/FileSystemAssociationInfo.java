@@ -46,8 +46,7 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      */
     private String fileSystemAssociationStatus;
@@ -68,6 +67,18 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     private CacheAttributes cacheAttributes;
+    /**
+     * <p>
+     * Specifies network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     */
+    private EndpointNetworkConfiguration endpointNetworkConfiguration;
 
     /**
      * <p>
@@ -164,14 +175,12 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      * 
      * @param fileSystemAssociationStatus
      *        The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     *        <code>UNAVAILABLE</code>
+     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      */
 
     public void setFileSystemAssociationStatus(String fileSystemAssociationStatus) {
@@ -181,13 +190,11 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      * 
      * @return The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     *         <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     *         | <code>UNAVAILABLE</code>
+     *         <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      */
 
     public String getFileSystemAssociationStatus() {
@@ -197,14 +204,12 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      * 
      * @param fileSystemAssociationStatus
      *        The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     *        <code>UNAVAILABLE</code>
+     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,6 +392,79 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Specifies network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     * 
+     * @param endpointNetworkConfiguration
+     *        Specifies network configuration information for the gateway associated with the Amazon FSx file
+     *        system.</p> <note>
+     *        <p>
+     *        If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field
+     *        is required.
+     *        </p>
+     */
+
+    public void setEndpointNetworkConfiguration(EndpointNetworkConfiguration endpointNetworkConfiguration) {
+        this.endpointNetworkConfiguration = endpointNetworkConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies network configuration information for the gateway associated with the Amazon FSx file
+     *         system.</p> <note>
+     *         <p>
+     *         If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+     *         field is required.
+     *         </p>
+     */
+
+    public EndpointNetworkConfiguration getEndpointNetworkConfiguration() {
+        return this.endpointNetworkConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     * 
+     * @param endpointNetworkConfiguration
+     *        Specifies network configuration information for the gateway associated with the Amazon FSx file
+     *        system.</p> <note>
+     *        <p>
+     *        If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field
+     *        is required.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemAssociationInfo withEndpointNetworkConfiguration(EndpointNetworkConfiguration endpointNetworkConfiguration) {
+        setEndpointNetworkConfiguration(endpointNetworkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -411,7 +489,9 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCacheAttributes() != null)
-            sb.append("CacheAttributes: ").append(getCacheAttributes());
+            sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
+        if (getEndpointNetworkConfiguration() != null)
+            sb.append("EndpointNetworkConfiguration: ").append(getEndpointNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +534,10 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
             return false;
         if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
             return false;
+        if (other.getEndpointNetworkConfiguration() == null ^ this.getEndpointNetworkConfiguration() == null)
+            return false;
+        if (other.getEndpointNetworkConfiguration() != null && other.getEndpointNetworkConfiguration().equals(this.getEndpointNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +553,7 @@ public class FileSystemAssociationInfo implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
+        hashCode = prime * hashCode + ((getEndpointNetworkConfiguration() == null) ? 0 : getEndpointNetworkConfiguration().hashCode());
         return hashCode;
     }
 

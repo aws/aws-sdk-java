@@ -15,7 +15,9 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The authentication strategy used to secure the broker.
+ * <p>
+ * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AuthenticationStrategy {

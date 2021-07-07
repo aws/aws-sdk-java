@@ -160,6 +160,18 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                     context.nextToken();
                     sMBFileShareInfo.setNotificationPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VPCEndpointDNSName", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setVPCEndpointDNSName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BucketRegion", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setBucketRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OplocksEnabled", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setOplocksEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

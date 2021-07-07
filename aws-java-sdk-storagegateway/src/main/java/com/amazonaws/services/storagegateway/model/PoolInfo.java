@@ -31,7 +31,7 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list
-     * of custom tape pools for your account and AWS Region.
+     * of custom tape pools for your account and Region.
      * </p>
      */
     private String poolARN;
@@ -51,10 +51,9 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
     private String storageClass;
     /**
      * <p>
-     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS accounts
-     * with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, accounts with
+     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      */
     private String retentionLockType;
@@ -74,12 +73,12 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list
-     * of custom tape pools for your account and AWS Region.
+     * of custom tape pools for your account and Region.
      * </p>
      * 
      * @param poolARN
      *        The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a
-     *        list of custom tape pools for your account and AWS Region.
+     *        list of custom tape pools for your account and Region.
      */
 
     public void setPoolARN(String poolARN) {
@@ -89,11 +88,11 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list
-     * of custom tape pools for your account and AWS Region.
+     * of custom tape pools for your account and Region.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return
-     *         a list of custom tape pools for your account and AWS Region.
+     *         a list of custom tape pools for your account and Region.
      */
 
     public String getPoolARN() {
@@ -103,12 +102,12 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list
-     * of custom tape pools for your account and AWS Region.
+     * of custom tape pools for your account and Region.
      * </p>
      * 
      * @param poolARN
      *        The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a
-     *        list of custom tape pools for your account and AWS Region.
+     *        list of custom tape pools for your account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,17 +233,16 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS accounts
-     * with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, accounts with
+     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
      * @param retentionLockType
-     *        Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS
+     *        Tape retention lock type, which can be configured in two modes. When configured in governance mode,
      *        accounts with specific IAM permissions are authorized to remove the tape retention lock from archived
      *        virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user,
-     *        including the root AWS account.
+     *        including the root account.
      * @see RetentionLockType
      */
 
@@ -254,16 +252,15 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS accounts
-     * with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, accounts with
+     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
-     * @return Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS
+     * @return Tape retention lock type, which can be configured in two modes. When configured in governance mode,
      *         accounts with specific IAM permissions are authorized to remove the tape retention lock from archived
      *         virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user,
-     *         including the root AWS account.
+     *         including the root account.
      * @see RetentionLockType
      */
 
@@ -273,17 +270,16 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS accounts
-     * with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, accounts with
+     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
      * @param retentionLockType
-     *        Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS
+     *        Tape retention lock type, which can be configured in two modes. When configured in governance mode,
      *        accounts with specific IAM permissions are authorized to remove the tape retention lock from archived
      *        virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user,
-     *        including the root AWS account.
+     *        including the root account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionLockType
      */
@@ -295,17 +291,16 @@ public class PoolInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS accounts
-     * with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root AWS
-     * account.
+     * Tape retention lock type, which can be configured in two modes. When configured in governance mode, accounts with
+     * specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any user, including the root account.
      * </p>
      * 
      * @param retentionLockType
-     *        Tape retention lock type, which can be configured in two modes. When configured in governance mode, AWS
+     *        Tape retention lock type, which can be configured in two modes. When configured in governance mode,
      *        accounts with specific IAM permissions are authorized to remove the tape retention lock from archived
      *        virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user,
-     *        including the root AWS account.
+     *        including the root account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionLockType
      */

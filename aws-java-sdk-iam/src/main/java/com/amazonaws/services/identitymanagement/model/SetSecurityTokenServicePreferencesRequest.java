@@ -27,7 +27,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are available by
+     * The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
      * default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens
      * are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily
      * store tokens.
@@ -35,14 +35,14 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String globalEndpointTokenVersion;
 
     /**
      * <p>
-     * The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are available by
+     * The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
      * default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens
      * are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily
      * store tokens.
@@ -50,18 +50,18 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param globalEndpointTokenVersion
-     *        The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are
-     *        available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong
-     *        Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect
-     *        systems where you temporarily store tokens.</p>
+     *        The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
+     *        default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2
+     *        tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you
+     *        temporarily store tokens.</p>
      *        <p>
      *        For information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     *        and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * @see GlobalEndpointTokenVersion
      */
 
@@ -71,7 +71,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are available by
+     * The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
      * default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens
      * are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily
      * store tokens.
@@ -79,17 +79,17 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are
-     *         available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong
-     *         Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect
-     *         systems where you temporarily store tokens.</p>
+     * @return The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available
+     *         by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
+     *         Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems
+     *         where you temporarily store tokens.</p>
      *         <p>
      *         For information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
-     *         >Activating and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     *         >Activating and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * @see GlobalEndpointTokenVersion
      */
 
@@ -99,7 +99,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are available by
+     * The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
      * default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens
      * are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily
      * store tokens.
@@ -107,18 +107,18 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param globalEndpointTokenVersion
-     *        The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are
-     *        available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong
-     *        Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect
-     *        systems where you temporarily store tokens.</p>
+     *        The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
+     *        default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2
+     *        tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you
+     *        temporarily store tokens.</p>
      *        <p>
      *        For information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     *        and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalEndpointTokenVersion
      */
@@ -130,7 +130,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are available by
+     * The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
      * default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens
      * are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily
      * store tokens.
@@ -138,18 +138,18 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param globalEndpointTokenVersion
-     *        The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are
-     *        available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong
-     *        Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect
-     *        systems where you temporarily store tokens.</p>
+     *        The version of the global endpoint token. Version 1 tokens are valid only in Regions that are available by
+     *        default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2
+     *        tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you
+     *        temporarily store tokens.</p>
      *        <p>
      *        For information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
+     *        and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalEndpointTokenVersion
      */

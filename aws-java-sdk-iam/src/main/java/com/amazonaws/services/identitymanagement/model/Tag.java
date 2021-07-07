@@ -43,8 +43,8 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store
-     * comma-separated values in the string. However, you must interpret the value in your code.
+     * Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store an
+     * array, you can store comma-separated values in the string. However, you must interpret the value in your code.
      * </p>
      * </note>
      */
@@ -105,8 +105,8 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store
-     * comma-separated values in the string. However, you must interpret the value in your code.
+     * Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store an
+     * array, you can store comma-separated values in the string. However, you must interpret the value in your code.
      * </p>
      * </note>
      * 
@@ -117,8 +117,9 @@ public class Tag implements Serializable, Cloneable {
      *        the different cost centers in your company. Typically, many resources have tags with the same key name but
      *        with different values.</p> <note>
      *        <p>
-     *        AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you
-     *        can store comma-separated values in the string. However, you must interpret the value in your code.
+     *        Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store
+     *        an array, you can store comma-separated values in the string. However, you must interpret the value in
+     *        your code.
      *        </p>
      */
 
@@ -135,8 +136,8 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store
-     * comma-separated values in the string. However, you must interpret the value in your code.
+     * Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store an
+     * array, you can store comma-separated values in the string. However, you must interpret the value in your code.
      * </p>
      * </note>
      * 
@@ -146,8 +147,9 @@ public class Tag implements Serializable, Cloneable {
      *         the different cost centers in your company. Typically, many resources have tags with the same key name
      *         but with different values.</p> <note>
      *         <p>
-     *         AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you
-     *         can store comma-separated values in the string. However, you must interpret the value in your code.
+     *         Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store
+     *         an array, you can store comma-separated values in the string. However, you must interpret the value in
+     *         your code.
      *         </p>
      */
 
@@ -164,8 +166,8 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store
-     * comma-separated values in the string. However, you must interpret the value in your code.
+     * Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store an
+     * array, you can store comma-separated values in the string. However, you must interpret the value in your code.
      * </p>
      * </note>
      * 
@@ -176,8 +178,9 @@ public class Tag implements Serializable, Cloneable {
      *        the different cost centers in your company. Typically, many resources have tags with the same key name but
      *        with different values.</p> <note>
      *        <p>
-     *        AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you
-     *        can store comma-separated values in the string. However, you must interpret the value in your code.
+     *        Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to store
+     *        an array, you can store comma-separated values in the string. However, you must interpret the value in
+     *        your code.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

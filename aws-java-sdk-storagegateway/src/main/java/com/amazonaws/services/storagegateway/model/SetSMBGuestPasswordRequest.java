@@ -30,7 +30,7 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      * </p>
      */
     private String gatewayARN;
@@ -43,11 +43,11 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     *        The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -56,10 +56,10 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     * @return The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      */
 
     public String getGatewayARN() {
@@ -68,11 +68,11 @@ public class SetSMBGuestPasswordRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated with.
+     *        The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,7 +15,14 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The broker's storage type. <important>EFS is currently not Supported for RabbitMQ engine type.</important>
+ * <p>
+ * The broker's storage type.
+ * </p>
+ * <important>
+ * <p>
+ * EFS is not supported for RabbitMQ engine type.
+ * </p>
+ * </important>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BrokerStorageType {

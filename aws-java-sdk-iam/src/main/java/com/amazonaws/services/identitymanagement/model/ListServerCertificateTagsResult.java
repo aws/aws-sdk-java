@@ -32,10 +32,11 @@ public class ListServerCertificateTagsResult extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your results were truncated, you can use the
-     * <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note
-     * that IAM might return fewer than the <code>MaxItems</code> number of results even when more results are
-     * available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      */
     private Boolean isTruncated;
@@ -134,18 +135,19 @@ public class ListServerCertificateTagsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your results were truncated, you can use the
-     * <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note
-     * that IAM might return fewer than the <code>MaxItems</code> number of results even when more results are
-     * available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If your results were truncated, you can use
-     *        the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more
-     *        items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when more
-     *        results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of
-     *        your results.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all your results.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -154,17 +156,18 @@ public class ListServerCertificateTagsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your results were truncated, you can use the
-     * <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note
-     * that IAM might return fewer than the <code>MaxItems</code> number of results even when more results are
-     * available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can use
-     *         the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more
-     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when more
-     *         results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of
-     *         your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all your results.
      */
 
     public Boolean getIsTruncated() {
@@ -173,18 +176,19 @@ public class ListServerCertificateTagsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your results were truncated, you can use the
-     * <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note
-     * that IAM might return fewer than the <code>MaxItems</code> number of results even when more results are
-     * available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more items to return. If your results were truncated, you can use
-     *        the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more
-     *        items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when more
-     *        results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of
-     *        your results.
+     *        A flag that indicates whether there are more items to return. If your results were truncated, you can make
+     *        a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items.
+     *        Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more
+     *        results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that
+     *        you receive all your results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,17 +199,18 @@ public class ListServerCertificateTagsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A flag that indicates whether there are more items to return. If your results were truncated, you can use the
-     * <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note
-     * that IAM might return fewer than the <code>MaxItems</code> number of results even when more results are
-     * available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your results.
+     * A flag that indicates whether there are more items to return. If your results were truncated, you can make a
+     * subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that
+     * IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results
+     * available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all
+     * your results.
      * </p>
      * 
-     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can use
-     *         the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more
-     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when more
-     *         results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of
-     *         your results.
+     * @return A flag that indicates whether there are more items to return. If your results were truncated, you can
+     *         make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more
+     *         items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there
+     *         are more results available. We recommend that you check <code>IsTruncated</code> after every call to
+     *         ensure that you receive all your results.
      */
 
     public Boolean isTruncated() {

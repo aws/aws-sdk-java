@@ -30,9 +30,9 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
      * The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String sAMLProviderArn;
@@ -46,15 +46,15 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
     private String marker;
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items that you want in the
-     * response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * more results are available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>
-     * , and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -64,17 +64,17 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
      * The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param sAMLProviderArn
      *        The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>
      *        <p>
-     *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setSAMLProviderArn(String sAMLProviderArn) {
@@ -86,17 +86,17 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
      * The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to
      *         see.</p>
      *         <p>
-     *         This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getSAMLProviderArn() {
@@ -108,17 +108,17 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
      * The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param sAMLProviderArn
      *        The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>
      *        <p>
-     *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,26 +181,26 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items that you want in the
-     * response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * more results are available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>
-     * , and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items that you want in
-     *        the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when more results are available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -209,25 +209,25 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items that you want in the
-     * response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * more results are available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>
-     * , and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return (Optional) Use this only when paginating results to indicate the maximum number of items that you want in
-     *         the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code>
-     *         response element is <code>true</code>.</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *         when more results are available. In that case, the <code>IsTruncated</code> response element returns
-     *         <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *         the service where to continue from.
+     *         If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -236,26 +236,26 @@ public class ListSAMLProviderTagsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items that you want in the
-     * response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * more results are available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>
-     * , and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to
-     * continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items that you want in
-     *        the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code>
-     *        response element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when more results are available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,7 +40,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * for different reasons. In cross-account scenarios, the role session name is visible to, and can be logged by the
      * account that owns the role. The role session name is also used in the ARN of the assumed role principal. This
      * means that subsequent cross-account API requests that use the temporary security credentials will expose the role
-     * session name to the external account in their AWS CloudTrail logs.
+     * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -57,22 +57,22 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the AWS General Reference.
+     * and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
      * Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
-     * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a
+     * credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role.
+     * You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the
+     * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -85,9 +85,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
-     * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
-     * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a
+     * use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the
+     * account that owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -98,10 +98,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      */
@@ -127,8 +127,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
-     * Guide</i>.
+     * >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      */
@@ -137,7 +136,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of session tags that you want to pass. Each session tag consists of a key name and an associated value.
      * For more information about session tags, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -148,10 +147,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -168,7 +167,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      * transitive session tags from the calling session. If you pass a session tag with the same key as an inherited
-     * tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs. For more
+     * tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session
      * Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
@@ -201,7 +200,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * trusting account might send an external ID to the administrator of the trusted account. That way, only someone
      * with the ID can assume the role, rather than everyone in the account. For more information about the external ID,
      * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     * Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     * Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -243,17 +243,17 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * You can require users to specify a source identity when they assume a role. You do this by using the
      * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
-     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
-     * condition key to further control access to AWS resources based on the value of source identity. For more
-     * information about using source identity, see <a
+     * CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to Amazon Web Services resources based on the value of source identity.
+     * For more information about using source identity, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
      * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
-     * internal use.
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web
+     * Services internal use.
      * </p>
      */
     private String sourceIdentity;
@@ -307,7 +307,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * for different reasons. In cross-account scenarios, the role session name is visible to, and can be logged by the
      * account that owns the role. The role session name is also used in the ARN of the assumed role principal. This
      * means that subsequent cross-account API requests that use the temporary security credentials will expose the role
-     * session name to the external account in their AWS CloudTrail logs.
+     * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -321,8 +321,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        principals or for different reasons. In cross-account scenarios, the role session name is visible to, and
      *        can be logged by the account that owns the role. The role session name is also used in the ARN of the
      *        assumed role principal. This means that subsequent cross-account API requests that use the temporary
-     *        security credentials will expose the role session name to the external account in their AWS CloudTrail
-     *        logs.
+     *        security credentials will expose the role session name to the external account in their CloudTrail logs.
      *        </p>
      *        <p>
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -343,7 +342,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * for different reasons. In cross-account scenarios, the role session name is visible to, and can be logged by the
      * account that owns the role. The role session name is also used in the ARN of the assumed role principal. This
      * means that subsequent cross-account API requests that use the temporary security credentials will expose the role
-     * session name to the external account in their AWS CloudTrail logs.
+     * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -356,8 +355,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         principals or for different reasons. In cross-account scenarios, the role session name is visible to, and
      *         can be logged by the account that owns the role. The role session name is also used in the ARN of the
      *         assumed role principal. This means that subsequent cross-account API requests that use the temporary
-     *         security credentials will expose the role session name to the external account in their AWS CloudTrail
-     *         logs.
+     *         security credentials will expose the role session name to the external account in their CloudTrail logs.
      *         </p>
      *         <p>
      *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -378,7 +376,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * for different reasons. In cross-account scenarios, the role session name is visible to, and can be logged by the
      * account that owns the role. The role session name is also used in the ARN of the assumed role principal. This
      * means that subsequent cross-account API requests that use the temporary security credentials will expose the role
-     * session name to the external account in their AWS CloudTrail logs.
+     * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -392,8 +390,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        principals or for different reasons. In cross-account scenarios, the role session name is visible to, and
      *        can be logged by the account that owns the role. The role session name is also used in the ARN of the
      *        assumed role principal. This means that subsequent cross-account API requests that use the temporary
-     *        security credentials will expose the role session name to the external account in their AWS CloudTrail
-     *        logs.
+     *        security credentials will expose the role session name to the external account in their CloudTrail logs.
      *        </p>
      *        <p>
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -416,22 +413,22 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the AWS General Reference.
+     * and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
      * Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
-     * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a
+     * credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role.
+     * You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the
+     * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -443,22 +440,22 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         use for both inline and managed session policies can't exceed 2,048 characters. For more information
      *         about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.
      *         </p>
      *         <note>
      *         <p>
-     *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *         policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
+     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
+     *         how close the policies and tags for your request are to the upper size limit.
      *         </p>
      *         </note>
      *         <p>
      *         Passing policies to this operation returns new temporary credentials. The resulting session's permissions
      *         are the intersection of the role's identity-based policy and the session policies. You can use the role's
-     *         temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
-     *         You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *         of the role that is being assumed. For more information, see <a
+     *         temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that
+     *         owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     *         identity-based policy of the role that is being assumed. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *         Policies</a> in the <i>IAM User Guide</i>.
      */
@@ -476,22 +473,22 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the AWS General Reference.
+     * and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
      * Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
-     * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a
+     * credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role.
+     * You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the
+     * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -503,22 +500,23 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     *        Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General
+     *        Reference.
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
      *        Passing policies to this operation returns new temporary credentials. The resulting session's permissions
      *        are the intersection of the role's identity-based policy and the session policies. You can use the role's
-     *        temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
-     *        You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *        of the role that is being assumed. For more information, see <a
+     *        temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that
+     *        owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     *        identity-based policy of the role that is being assumed. For more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *        Policies</a> in the <i>IAM User Guide</i>.
      */
@@ -541,22 +539,22 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the AWS General Reference.
+     * and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
      * Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
-     * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a
+     * credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role.
+     * You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the
+     * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -573,22 +571,23 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     *        Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General
+     *        Reference.
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
      *        Passing policies to this operation returns new temporary credentials. The resulting session's permissions
      *        are the intersection of the role's identity-based policy and the session policies. You can use the role's
-     *        temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
-     *        You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *        of the role that is being assumed. For more information, see <a
+     *        temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that
+     *        owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     *        identity-based policy of the role that is being assumed. For more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *        Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -613,22 +612,22 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the AWS General Reference.
+     * and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
      * Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
-     * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a
+     * credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role.
+     * You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the
+     * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -640,22 +639,23 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
+     *        Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General
+     *        Reference.
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
      *        Passing policies to this operation returns new temporary credentials. The resulting session's permissions
      *        are the intersection of the role's identity-based policy and the session policies. You can use the role's
-     *        temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
-     *        You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *        of the role that is being assumed. For more information, see <a
+     *        temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that
+     *        owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     *        identity-based policy of the role that is being assumed. For more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *        Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -673,9 +673,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
-     * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
-     * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a
+     * use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the
+     * account that owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -686,10 +686,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -698,9 +698,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter is optional. Passing policies to this operation returns new temporary credentials. The
      *        resulting session's permissions are the intersection of the role's identity-based policy and the session
-     *        policies. You can use the role's temporary credentials in subsequent AWS API calls to access resources in
-     *        the account that owns the role. You cannot use session policies to grant more permissions than those
-     *        allowed by the identity-based policy of the role that is being assumed. For more information, see <a
+     *        policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to
+     *        access resources in the account that owns the role. You cannot use session policies to grant more
+     *        permissions than those allowed by the identity-based policy of the role that is being assumed. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -712,10 +713,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      */
 
@@ -730,9 +731,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
-     * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
-     * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a
+     * use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the
+     * account that owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -743,10 +744,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -754,9 +755,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         This parameter is optional. Passing policies to this operation returns new temporary credentials. The
      *         resulting session's permissions are the intersection of the role's identity-based policy and the session
-     *         policies. You can use the role's temporary credentials in subsequent AWS API calls to access resources in
-     *         the account that owns the role. You cannot use session policies to grant more permissions than those
-     *         allowed by the identity-based policy of the role that is being assumed. For more information, see <a
+     *         policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to
+     *         access resources in the account that owns the role. You cannot use session policies to grant more
+     *         permissions than those allowed by the identity-based policy of the role that is being assumed. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *         Policies</a> in the <i>IAM User Guide</i>.
      *         </p>
@@ -768,10 +770,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <note>
      *         <p>
-     *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *         policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
+     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
+     *         how close the policies and tags for your request are to the upper size limit.
      *         </p>
      */
 
@@ -786,9 +788,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
-     * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
-     * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a
+     * use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the
+     * account that owns the role. You cannot use session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -799,10 +801,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -811,9 +813,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter is optional. Passing policies to this operation returns new temporary credentials. The
      *        resulting session's permissions are the intersection of the role's identity-based policy and the session
-     *        policies. You can use the role's temporary credentials in subsequent AWS API calls to access resources in
-     *        the account that owns the role. You cannot use session policies to grant more permissions than those
-     *        allowed by the identity-based policy of the role that is being assumed. For more information, see <a
+     *        policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to
+     *        access resources in the account that owns the role. You cannot use session policies to grant more
+     *        permissions than those allowed by the identity-based policy of the role that is being assumed. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -825,10 +828,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -859,8 +862,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
-     * Guide</i>.
+     * >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -883,7 +885,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the console
      *        session. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     *        >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     *        >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User
      *        Guide</i>.
      *        </p>
      */
@@ -913,8 +915,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
-     * Guide</i>.
+     * >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -936,7 +937,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         sign-in token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the
      *         console session. For more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     *         >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     *         >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User
      *         Guide</i>.
      *         </p>
      */
@@ -966,8 +967,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
-     * Guide</i>.
+     * >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -990,7 +990,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the console
      *        session. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
-     *        >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     *        >Creating a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM User
      *        Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1005,7 +1005,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of session tags that you want to pass. Each session tag consists of a key name and an associated value.
      * For more information about session tags, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -1016,10 +1016,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1036,7 +1036,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      * transitive session tags from the calling session. If you pass a session tag with the same key as an inherited
-     * tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs. For more
+     * tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session
      * Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
@@ -1044,8 +1044,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return A list of session tags that you want to pass. Each session tag consists of a key name and an associated
      *         value. For more information about session tags, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
-     *         in the <i>IAM User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in
+     *         the <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *         exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see
@@ -1055,10 +1055,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <note>
      *         <p>
-     *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *         policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
+     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
+     *         how close the policies and tags for your request are to the upper size limit.
      *         </p>
      *         </note>
      *         <p>
@@ -1075,8 +1075,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      *         transitive session tags from the calling session. If you pass a session tag with the same key as an
-     *         inherited tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail
-     *         logs. For more information, see <a
+     *         inherited tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs.
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
      *         Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
      */
@@ -1089,7 +1089,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of session tags that you want to pass. Each session tag consists of a key name and an associated value.
      * For more information about session tags, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -1100,10 +1100,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1120,7 +1120,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      * transitive session tags from the calling session. If you pass a session tag with the same key as an inherited
-     * tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs. For more
+     * tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session
      * Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
@@ -1129,8 +1129,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of session tags that you want to pass. Each session tag consists of a key name and an associated
      *        value. For more information about session tags, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
-     *        in the <i>IAM User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in
+     *        the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see <a
@@ -1140,10 +1140,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -1160,8 +1160,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      *        transitive session tags from the calling session. If you pass a session tag with the same key as an
-     *        inherited tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs.
-     *        For more information, see <a
+     *        inherited tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
      *        Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
      */
@@ -1179,7 +1179,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of session tags that you want to pass. Each session tag consists of a key name and an associated value.
      * For more information about session tags, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -1190,10 +1190,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1210,7 +1210,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      * transitive session tags from the calling session. If you pass a session tag with the same key as an inherited
-     * tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs. For more
+     * tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session
      * Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
@@ -1224,8 +1224,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of session tags that you want to pass. Each session tag consists of a key name and an associated
      *        value. For more information about session tags, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
-     *        in the <i>IAM User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in
+     *        the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see <a
@@ -1235,10 +1235,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -1255,8 +1255,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      *        transitive session tags from the calling session. If you pass a session tag with the same key as an
-     *        inherited tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs.
-     *        For more information, see <a
+     *        inherited tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
      *        Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1276,7 +1276,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of session tags that you want to pass. Each session tag consists of a key name and an associated value.
      * For more information about session tags, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -1287,10 +1287,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
-     * request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
+     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
+     * and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1307,7 +1307,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      * transitive session tags from the calling session. If you pass a session tag with the same key as an inherited
-     * tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs. For more
+     * tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session
      * Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
@@ -1316,8 +1316,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param tags
      *        A list of session tags that you want to pass. Each session tag consists of a key name and an associated
      *        value. For more information about session tags, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
-     *        in the <i>IAM User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in
+     *        the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see <a
@@ -1327,10 +1327,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
-     *        policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
+     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
+     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
+     *        close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -1347,8 +1347,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        Additionally, if you used temporary credentials to perform this operation, the new session inherits any
      *        transitive session tags from the calling session. If you pass a session tag with the same key as an
-     *        inherited tag, the operation fails. To view the inherited tags for a session, see the AWS CloudTrail logs.
-     *        For more information, see <a
+     *        inherited tag, the operation fails. To view the inherited tags for a session, see the CloudTrail logs. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
      *        Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1526,7 +1526,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * trusting account might send an external ID to the administrator of the trusted account. That way, only someone
      * with the ID can assume the role, rather than everyone in the account. For more information about the external ID,
      * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     * Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     * Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -1543,8 +1544,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        someone with the ID can assume the role, rather than everyone in the account. For more information about
      *        the external ID, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     *        Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User
-     *        Guide</i>.</p>
+     *        Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the
+     *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
@@ -1564,7 +1565,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * trusting account might send an external ID to the administrator of the trusted account. That way, only someone
      * with the ID can assume the role, rather than everyone in the account. For more information about the external ID,
      * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     * Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     * Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -1580,8 +1582,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         account. That way, only someone with the ID can assume the role, rather than everyone in the account. For
      *         more information about the external ID, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     *         Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User
-     *         Guide</i>.</p>
+     *         Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the
+     *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *         alphanumeric characters with no spaces. You can also include underscores or any of the following
@@ -1601,7 +1603,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * trusting account might send an external ID to the administrator of the trusted account. That way, only someone
      * with the ID can assume the role, rather than everyone in the account. For more information about the external ID,
      * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     * Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     * Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
@@ -1618,8 +1621,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        someone with the ID can assume the role, rather than everyone in the account. For more information about
      *        the external ID, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to
-     *        Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User
-     *        Guide</i>.</p>
+     *        Use an External ID When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the
+     *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
@@ -1800,17 +1803,17 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * You can require users to specify a source identity when they assume a role. You do this by using the
      * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
-     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
-     * condition key to further control access to AWS resources based on the value of source identity. For more
-     * information about using source identity, see <a
+     * CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to Amazon Web Services resources based on the value of source identity.
+     * For more information about using source identity, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
      * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
-     * internal use.
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web
+     * Services internal use.
      * </p>
      * 
      * @param sourceIdentity
@@ -1818,9 +1821,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        You can require users to specify a source identity when they assume a role. You do this by using the
      *        <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
-     *        information in AWS CloudTrail logs to determine who took actions with a role. You can use the
-     *        <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
-     *        value of source identity. For more information about using source identity, see <a
+     *        information in CloudTrail logs to determine who took actions with a role. You can use the
+     *        <code>aws:SourceIdentity</code> condition key to further control access to Amazon Web Services resources
+     *        based on the value of source identity. For more information about using source identity, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
      *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -1828,7 +1831,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
      *        characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is
-     *        reserved for AWS internal use.
+     *        reserved for Amazon Web Services internal use.
      */
 
     public void setSourceIdentity(String sourceIdentity) {
@@ -1842,26 +1845,26 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * You can require users to specify a source identity when they assume a role. You do this by using the
      * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
-     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
-     * condition key to further control access to AWS resources based on the value of source identity. For more
-     * information about using source identity, see <a
+     * CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to Amazon Web Services resources based on the value of source identity.
+     * For more information about using source identity, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
      * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
-     * internal use.
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web
+     * Services internal use.
      * </p>
      * 
      * @return The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
      *         <p>
      *         You can require users to specify a source identity when they assume a role. You do this by using the
      *         <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
-     *         information in AWS CloudTrail logs to determine who took actions with a role. You can use the
-     *         <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
-     *         value of source identity. For more information about using source identity, see <a
+     *         information in CloudTrail logs to determine who took actions with a role. You can use the
+     *         <code>aws:SourceIdentity</code> condition key to further control access to Amazon Web Services resources
+     *         based on the value of source identity. For more information about using source identity, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
      *         >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      *         </p>
@@ -1869,7 +1872,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *         alphanumeric characters with no spaces. You can also include underscores or any of the following
      *         characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is
-     *         reserved for AWS internal use.
+     *         reserved for Amazon Web Services internal use.
      */
 
     public String getSourceIdentity() {
@@ -1883,17 +1886,17 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * You can require users to specify a source identity when they assume a role. You do this by using the
      * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
-     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
-     * condition key to further control access to AWS resources based on the value of source identity. For more
-     * information about using source identity, see <a
+     * CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to Amazon Web Services resources based on the value of source identity.
+     * For more information about using source identity, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
      * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
-     * internal use.
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web
+     * Services internal use.
      * </p>
      * 
      * @param sourceIdentity
@@ -1901,9 +1904,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        You can require users to specify a source identity when they assume a role. You do this by using the
      *        <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
-     *        information in AWS CloudTrail logs to determine who took actions with a role. You can use the
-     *        <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
-     *        value of source identity. For more information about using source identity, see <a
+     *        information in CloudTrail logs to determine who took actions with a role. You can use the
+     *        <code>aws:SourceIdentity</code> condition key to further control access to Amazon Web Services resources
+     *        based on the value of source identity. For more information about using source identity, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
      *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -1911,7 +1914,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
      *        characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is
-     *        reserved for AWS internal use.
+     *        reserved for Amazon Web Services internal use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

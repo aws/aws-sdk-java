@@ -30,7 +30,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique string value that you supply that is used by file gateway to ensure idempotent file share creation.
+     * A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.
      * </p>
      */
     private String clientToken;
@@ -42,14 +42,14 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private NFSFileShareDefaults nFSFileShareDefaults;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      * </p>
      */
     private String gatewayARN;
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -66,7 +66,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String kMSKey;
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the
+     * The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the
      * underlying storage.
      * </p>
      */
@@ -76,11 +76,26 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
      * must end with a "/".
      * </p>
+     * <note>
+     * <p>
+     * You can specify a bucket attached to an access point using a complete ARN that includes the bucket region as
+     * shown:
+     * </p>
+     * <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     * </p>
+     * <p>
+     * If you specify a bucket attached to an access point, the bucket policy must be configured to delegate access
+     * control to the access point. For information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     * >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * </note>
      */
     private String locationARN;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -91,15 +106,15 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String defaultStorageClass;
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      */
     private String objectACL;
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> clientList;
@@ -224,14 +239,38 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String notificationPolicy;
+    /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     */
+    private String vPCEndpointDNSName;
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     */
+    private String bucketRegion;
 
     /**
      * <p>
-     * A unique string value that you supply that is used by file gateway to ensure idempotent file share creation.
+     * A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.
      * </p>
      * 
      * @param clientToken
-     *        A unique string value that you supply that is used by file gateway to ensure idempotent file share
+     *        A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share
      *        creation.
      */
 
@@ -241,10 +280,10 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique string value that you supply that is used by file gateway to ensure idempotent file share creation.
+     * A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.
      * </p>
      * 
-     * @return A unique string value that you supply that is used by file gateway to ensure idempotent file share
+     * @return A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share
      *         creation.
      */
 
@@ -254,11 +293,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique string value that you supply that is used by file gateway to ensure idempotent file share creation.
+     * A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.
      * </p>
      * 
      * @param clientToken
-     *        A unique string value that you supply that is used by file gateway to ensure idempotent file share
+     *        A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share
      *        creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -310,11 +349,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     *        The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -323,10 +362,10 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * @return The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      */
 
     public String getGatewayARN() {
@@ -335,11 +374,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     *        The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,15 +389,15 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -370,14 +409,14 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -389,15 +428,15 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -411,14 +450,14 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -482,12 +521,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the
+     * The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the
      * underlying storage.
      * </p>
      * 
      * @param role
-     *        The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses
+     *        The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses
      *        the underlying storage.
      */
 
@@ -497,11 +536,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the
+     * The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the
      * underlying storage.
      * </p>
      * 
-     * @return The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses
+     * @return The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses
      *         the underlying storage.
      */
 
@@ -511,12 +550,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the
+     * The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the
      * underlying storage.
      * </p>
      * 
      * @param role
-     *        The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses
+     *        The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses
      *        the underlying storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -531,10 +570,38 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
      * must end with a "/".
      * </p>
+     * <note>
+     * <p>
+     * You can specify a bucket attached to an access point using a complete ARN that includes the bucket region as
+     * shown:
+     * </p>
+     * <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     * </p>
+     * <p>
+     * If you specify a bucket attached to an access point, the bucket policy must be configured to delegate access
+     * control to the access point. For information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     * >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param locationARN
      *        The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket
-     *        name. It must end with a "/".
+     *        name. It must end with a "/".</p> <note>
+     *        <p>
+     *        You can specify a bucket attached to an access point using a complete ARN that includes the bucket region
+     *        as shown:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     *        </p>
+     *        <p>
+     *        If you specify a bucket attached to an access point, the bucket policy must be configured to delegate
+     *        access control to the access point. For information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     *        >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
      */
 
     public void setLocationARN(String locationARN) {
@@ -546,9 +613,37 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
      * must end with a "/".
      * </p>
+     * <note>
+     * <p>
+     * You can specify a bucket attached to an access point using a complete ARN that includes the bucket region as
+     * shown:
+     * </p>
+     * <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     * </p>
+     * <p>
+     * If you specify a bucket attached to an access point, the bucket policy must be configured to delegate access
+     * control to the access point. For information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     * >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @return The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket
-     *         name. It must end with a "/".
+     *         name. It must end with a "/".</p> <note>
+     *         <p>
+     *         You can specify a bucket attached to an access point using a complete ARN that includes the bucket region
+     *         as shown:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     *         </p>
+     *         <p>
+     *         If you specify a bucket attached to an access point, the bucket policy must be configured to delegate
+     *         access control to the access point. For information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     *         >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     *         </p>
      */
 
     public String getLocationARN() {
@@ -560,10 +655,38 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
      * must end with a "/".
      * </p>
+     * <note>
+     * <p>
+     * You can specify a bucket attached to an access point using a complete ARN that includes the bucket region as
+     * shown:
+     * </p>
+     * <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     * </p>
+     * <p>
+     * If you specify a bucket attached to an access point, the bucket policy must be configured to delegate access
+     * control to the access point. For information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     * >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param locationARN
      *        The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket
-     *        name. It must end with a "/".
+     *        name. It must end with a "/".</p> <note>
+     *        <p>
+     *        You can specify a bucket attached to an access point using a complete ARN that includes the bucket region
+     *        as shown:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i> </code>
+     *        </p>
+     *        <p>
+     *        If you specify a bucket attached to an access point, the bucket policy must be configured to delegate
+     *        access control to the access point. For information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control"
+     *        >Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,7 +697,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -583,8 +706,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -596,7 +719,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -604,8 +727,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *         is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     * @return The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *         value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *         <p>
      *         Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
      *         <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -617,7 +740,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -626,8 +749,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -641,13 +764,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -657,12 +780,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *         gateway puts objects into. The default value is <code>private</code>.
+     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *         Gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -672,13 +795,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -690,13 +813,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is <code>private</code>.
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway
+     * puts objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
-     *        gateway puts objects into. The default value is <code>private</code>.
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File
+     *        Gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -708,11 +831,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * 
-     * @return The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     * @return The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *         addresses or valid CIDR blocks.
      */
 
@@ -725,12 +848,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * 
      * @param clientList
-     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *        addresses or valid CIDR blocks.
      */
 
@@ -745,8 +868,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -755,7 +878,7 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param clientList
-     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *        addresses or valid CIDR blocks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -772,12 +895,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses
-     * or valid CIDR blocks.
+     * The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
+     * addresses or valid CIDR blocks.
      * </p>
      * 
      * @param clientList
-     *        The list of clients that are allowed to access the file gateway. The list must contain either valid IP
+     *        The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP
      *        addresses or valid CIDR blocks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1640,6 +1763,149 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param vPCEndpointDNSName
+     *        Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+     *        <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     */
+
+    public void setVPCEndpointDNSName(String vPCEndpointDNSName) {
+        this.vPCEndpointDNSName = vPCEndpointDNSName;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+     *         <note>
+     *         <p>
+     *         This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *         access point, or an access point alias that points to a VPC access point.
+     *         </p>
+     */
+
+    public String getVPCEndpointDNSName() {
+        return this.vPCEndpointDNSName;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param vPCEndpointDNSName
+     *        Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+     *        <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNFSFileShareRequest withVPCEndpointDNSName(String vPCEndpointDNSName) {
+        setVPCEndpointDNSName(vPCEndpointDNSName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param bucketRegion
+     *        Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     */
+
+    public void setBucketRegion(String bucketRegion) {
+        this.bucketRegion = bucketRegion;
+    }
+
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
+     *         <p>
+     *         This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *         access point, or an access point alias that points to a VPC access point.
+     *         </p>
+     */
+
+    public String getBucketRegion() {
+        return this.bucketRegion;
+    }
+
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param bucketRegion
+     *        Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNFSFileShareRequest withBucketRegion(String bucketRegion) {
+        setBucketRegion(bucketRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1686,7 +1952,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getCacheAttributes() != null)
             sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
         if (getNotificationPolicy() != null)
-            sb.append("NotificationPolicy: ").append(getNotificationPolicy());
+            sb.append("NotificationPolicy: ").append(getNotificationPolicy()).append(",");
+        if (getVPCEndpointDNSName() != null)
+            sb.append("VPCEndpointDNSName: ").append(getVPCEndpointDNSName()).append(",");
+        if (getBucketRegion() != null)
+            sb.append("BucketRegion: ").append(getBucketRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -1773,6 +2043,14 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNotificationPolicy() != null && other.getNotificationPolicy().equals(this.getNotificationPolicy()) == false)
             return false;
+        if (other.getVPCEndpointDNSName() == null ^ this.getVPCEndpointDNSName() == null)
+            return false;
+        if (other.getVPCEndpointDNSName() != null && other.getVPCEndpointDNSName().equals(this.getVPCEndpointDNSName()) == false)
+            return false;
+        if (other.getBucketRegion() == null ^ this.getBucketRegion() == null)
+            return false;
+        if (other.getBucketRegion() != null && other.getBucketRegion().equals(this.getBucketRegion()) == false)
+            return false;
         return true;
     }
 
@@ -1799,6 +2077,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
         hashCode = prime * hashCode + ((getNotificationPolicy() == null) ? 0 : getNotificationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getVPCEndpointDNSName() == null) ? 0 : getVPCEndpointDNSName().hashCode());
+        hashCode = prime * hashCode + ((getBucketRegion() == null) ? 0 : getBucketRegion().hashCode());
         return hashCode;
     }
 

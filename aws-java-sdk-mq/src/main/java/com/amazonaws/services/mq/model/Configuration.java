@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Returns information about all configurations.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Configuration" target="_top">AWS API
  *      Documentation</a>
@@ -26,35 +28,73 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
-    /** Required. The ARN of the configuration. */
+    /**
+     * <p>
+     * Required. The ARN of the configuration.
+     * </p>
+     */
     private String arn;
-    /** The authentication strategy associated with the configuration. */
+    /**
+     * <p>
+     * Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
+     * </p>
+     */
     private String authenticationStrategy;
-    /** Required. The date and time of the configuration revision. */
+    /**
+     * <p>
+     * Required. The date and time of the configuration revision.
+     * </p>
+     */
     private java.util.Date created;
-    /** Required. The description of the configuration. */
+    /**
+     * <p>
+     * Required. The description of the configuration.
+     * </p>
+     */
     private String description;
-    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ. */
+    /**
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
+     */
     private String engineType;
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see, <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      */
     private String engineVersion;
-    /** Required. The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String id;
-    /** Required. The latest revision of the configuration. */
+    /**
+     * <p>
+     * Required. The latest revision of the configuration.
+     * </p>
+     */
     private ConfigurationRevision latestRevision;
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      */
     private String name;
-    /** The list of all tags associated with this configuration. */
+    /**
+     * <p>
+     * The list of all tags associated with this configuration.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
+     * <p>
      * Required. The ARN of the configuration.
+     * </p>
      * 
      * @param arn
      *        Required. The ARN of the configuration.
@@ -65,7 +105,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The ARN of the configuration.
+     * </p>
      * 
      * @return Required. The ARN of the configuration.
      */
@@ -75,7 +117,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The ARN of the configuration.
+     * </p>
      * 
      * @param arn
      *        Required. The ARN of the configuration.
@@ -88,10 +132,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The authentication strategy associated with the configuration.
+     * <p>
+     * Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy associated with the configuration.
+     *        Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
      * @see AuthenticationStrategy
      */
 
@@ -100,9 +146,11 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The authentication strategy associated with the configuration.
+     * <p>
+     * Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
+     * </p>
      * 
-     * @return The authentication strategy associated with the configuration.
+     * @return Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
      * @see AuthenticationStrategy
      */
 
@@ -111,10 +159,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The authentication strategy associated with the configuration.
+     * <p>
+     * Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy associated with the configuration.
+     *        Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationStrategy
      */
@@ -125,10 +175,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The authentication strategy associated with the configuration.
+     * <p>
+     * Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy associated with the configuration.
+     *        Optional. The authentication strategy associated with the configuration. The default is SIMPLE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationStrategy
      */
@@ -139,7 +191,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration revision.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration revision.
@@ -150,7 +204,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration revision.
+     * </p>
      * 
      * @return Required. The date and time of the configuration revision.
      */
@@ -160,7 +216,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration revision.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration revision.
@@ -173,7 +231,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The description of the configuration.
+     * </p>
      * 
      * @param description
      *        Required. The description of the configuration.
@@ -184,7 +244,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The description of the configuration.
+     * </p>
      * 
      * @return Required. The description of the configuration.
      */
@@ -194,7 +256,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The description of the configuration.
+     * </p>
      * 
      * @param description
      *        Required. The description of the configuration.
@@ -207,10 +271,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     *        Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -219,9 +285,11 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
-     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * @return Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -230,10 +298,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     *        Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -244,10 +314,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     *        Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -258,12 +330,15 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see, <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. For a list of supported engine versions, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     *        Required. The broker engine's version. For a list of supported engine versions, see, <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *        engines</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -271,11 +346,14 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see, <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
-     * @return Required. The version of the broker engine. For a list of supported engine versions, see
-     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * @return Required. The broker engine's version. For a list of supported engine versions, see, <a
+     *         href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *         engines</a>.
      */
 
     public String getEngineVersion() {
@@ -283,12 +361,15 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see, <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. For a list of supported engine versions, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     *        Required. The broker engine's version. For a list of supported engine versions, see, <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *        engines</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,7 +379,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param id
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -309,7 +392,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the configuration.
      */
@@ -319,7 +404,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param id
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -332,7 +419,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The latest revision of the configuration.
+     * </p>
      * 
      * @param latestRevision
      *        Required. The latest revision of the configuration.
@@ -343,7 +432,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The latest revision of the configuration.
+     * </p>
      * 
      * @return Required. The latest revision of the configuration.
      */
@@ -353,7 +444,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The latest revision of the configuration.
+     * </p>
      * 
      * @param latestRevision
      *        Required. The latest revision of the configuration.
@@ -366,8 +459,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      * 
      * @param name
      *        Required. The name of the configuration. This value can contain only alphanumeric characters, dashes,
@@ -379,8 +474,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      * 
      * @return Required. The name of the configuration. This value can contain only alphanumeric characters, dashes,
      *         periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
@@ -391,8 +488,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      * 
      * @param name
      *        Required. The name of the configuration. This value can contain only alphanumeric characters, dashes,
@@ -406,7 +505,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of all tags associated with this configuration.
+     * </p>
      * 
      * @return The list of all tags associated with this configuration.
      */
@@ -416,7 +517,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of all tags associated with this configuration.
+     * </p>
      * 
      * @param tags
      *        The list of all tags associated with this configuration.
@@ -427,7 +530,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of all tags associated with this configuration.
+     * </p>
      * 
      * @param tags
      *        The list of all tags associated with this configuration.

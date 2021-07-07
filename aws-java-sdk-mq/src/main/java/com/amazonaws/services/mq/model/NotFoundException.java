@@ -15,13 +15,19 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Returns information about an error.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQException {
     private static final long serialVersionUID = 1L;
 
-    /** The attribute which caused the error. */
+    /**
+     * <p>
+     * The attribute which caused the error.
+     * </p>
+     */
     private String errorAttribute;
 
     /**
@@ -35,7 +41,9 @@ public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQE
     }
 
     /**
+     * <p>
      * The attribute which caused the error.
+     * </p>
      * 
      * @param errorAttribute
      *        The attribute which caused the error.
@@ -47,7 +55,9 @@ public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQE
     }
 
     /**
+     * <p>
      * The attribute which caused the error.
+     * </p>
      * 
      * @return The attribute which caused the error.
      */
@@ -58,7 +68,9 @@ public class NotFoundException extends com.amazonaws.services.mq.model.AmazonMQE
     }
 
     /**
+     * <p>
      * The attribute which caused the error.
+     * </p>
      * 
      * @param errorAttribute
      *        The attribute which caused the error.

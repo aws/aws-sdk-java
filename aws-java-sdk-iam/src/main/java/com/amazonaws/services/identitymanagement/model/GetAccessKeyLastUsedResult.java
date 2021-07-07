@@ -29,7 +29,7 @@ public class GetAccessKeyLastUsedResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the AWS IAM user that owns this access key.
+     * The name of the IAM user that owns this access key.
      * </p>
      * <p/>
      */
@@ -43,12 +43,12 @@ public class GetAccessKeyLastUsedResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the AWS IAM user that owns this access key.
+     * The name of the IAM user that owns this access key.
      * </p>
      * <p/>
      * 
      * @param userName
-     *        The name of the AWS IAM user that owns this access key.
+     *        The name of the IAM user that owns this access key.
      *        </p>
      */
 
@@ -58,11 +58,11 @@ public class GetAccessKeyLastUsedResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the AWS IAM user that owns this access key.
+     * The name of the IAM user that owns this access key.
      * </p>
      * <p/>
      * 
-     * @return The name of the AWS IAM user that owns this access key.
+     * @return The name of the IAM user that owns this access key.
      *         </p>
      */
 
@@ -72,12 +72,12 @@ public class GetAccessKeyLastUsedResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the AWS IAM user that owns this access key.
+     * The name of the IAM user that owns this access key.
      * </p>
      * <p/>
      * 
      * @param userName
-     *        The name of the AWS IAM user that owns this access key.
+     *        The name of the IAM user that owns this access key.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

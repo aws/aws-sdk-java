@@ -48,9 +48,9 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      */
     private String startUrl;
@@ -69,10 +69,9 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String roleArn;
@@ -201,15 +200,15 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
-     *        to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
+     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
+     *        SiteWise console to get a URL that you can use to access the portal.
      */
 
     public void setStartUrl(String startUrl) {
@@ -218,14 +217,14 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      * 
-     * @return The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *         for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise
-     *         console to get a URL that you can use to access the portal.
+     * @return The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
+     *         Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
+     *         SiteWise console to get a URL that you can use to access the portal.
      */
 
     public String getStartUrl() {
@@ -234,15 +233,15 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
-     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
-     * URL that you can use to access the portal.
+     * The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services
+     * SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get
+     * a URL that you can use to access the portal.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
-     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
-     *        to get a URL that you can use to access the portal.
+     *        The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web
+     *        Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT
+     *        SiteWise console to get a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,18 +333,17 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param roleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
-     *        more information, see <a
+     *        service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *        roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -355,17 +353,16 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
+     *         service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *         roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getRoleArn() {
@@ -375,18 +372,17 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param roleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
-     *        more information, see <a
+     *        service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *        roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

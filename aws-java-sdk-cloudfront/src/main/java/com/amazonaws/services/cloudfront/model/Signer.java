@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
+ * A list of accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
  * signatures of signed URLs and signed cookies.
  * </p>
  * 
@@ -29,8 +29,8 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
-     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
+     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
      * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      */
@@ -44,15 +44,15 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
-     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
+     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
      * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      * 
      * @param awsAccountNumber
-     *        An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
-     *        signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same
-     *        account that owns the CloudFront distribution, the value of this field is <code>self</code>.
+     *        An account number that contains active CloudFront key pairs that CloudFront can use to verify the
+     *        signatures of signed URLs and signed cookies. If the account that owns the key pairs is the same account
+     *        that owns the CloudFront distribution, the value of this field is <code>self</code>.
      */
 
     public void setAwsAccountNumber(String awsAccountNumber) {
@@ -61,14 +61,14 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
-     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
+     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
      * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      * 
-     * @return An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
-     *         signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same
-     *         account that owns the CloudFront distribution, the value of this field is <code>self</code>.
+     * @return An account number that contains active CloudFront key pairs that CloudFront can use to verify the
+     *         signatures of signed URLs and signed cookies. If the account that owns the key pairs is the same account
+     *         that owns the CloudFront distribution, the value of this field is <code>self</code>.
      */
 
     public String getAwsAccountNumber() {
@@ -77,15 +77,15 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
-     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * An account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures of
+     * signed URLs and signed cookies. If the account that owns the key pairs is the same account that owns the
      * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
      * 
      * @param awsAccountNumber
-     *        An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
-     *        signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same
-     *        account that owns the CloudFront distribution, the value of this field is <code>self</code>.
+     *        An account number that contains active CloudFront key pairs that CloudFront can use to verify the
+     *        signatures of signed URLs and signed cookies. If the account that owns the key pairs is the same account
+     *        that owns the CloudFront distribution, the value of this field is <code>self</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

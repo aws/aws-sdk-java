@@ -32,12 +32,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>managed</code> – Returns only the managed policies created by AWS.
+     * <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your AWS account.
+     * <code>custom</code> – Returns only the custom policies created in your account.
      * </p>
      * </li>
      * </ul>
@@ -65,12 +65,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>managed</code> – Returns only the managed policies created by AWS.
+     * <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your AWS account.
+     * <code>custom</code> – Returns only the custom policies created in your account.
      * </p>
      * </li>
      * </ul>
@@ -80,12 +80,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>managed</code> – Returns only the managed policies created by AWS.
+     *        <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>custom</code> – Returns only the custom policies created in your AWS account.
+     *        <code>custom</code> – Returns only the custom policies created in your account.
      *        </p>
      *        </li>
      * @see OriginRequestPolicyType
@@ -102,12 +102,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>managed</code> – Returns only the managed policies created by AWS.
+     * <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your AWS account.
+     * <code>custom</code> – Returns only the custom policies created in your account.
      * </p>
      * </li>
      * </ul>
@@ -116,12 +116,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>managed</code> – Returns only the managed policies created by AWS.
+     *         <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>custom</code> – Returns only the custom policies created in your AWS account.
+     *         <code>custom</code> – Returns only the custom policies created in your account.
      *         </p>
      *         </li>
      * @see OriginRequestPolicyType
@@ -138,12 +138,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>managed</code> – Returns only the managed policies created by AWS.
+     * <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your AWS account.
+     * <code>custom</code> – Returns only the custom policies created in your account.
      * </p>
      * </li>
      * </ul>
@@ -153,12 +153,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>managed</code> – Returns only the managed policies created by AWS.
+     *        <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>custom</code> – Returns only the custom policies created in your AWS account.
+     *        <code>custom</code> – Returns only the custom policies created in your account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -177,12 +177,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>managed</code> – Returns only the managed policies created by AWS.
+     * <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>custom</code> – Returns only the custom policies created in your AWS account.
+     * <code>custom</code> – Returns only the custom policies created in your account.
      * </p>
      * </li>
      * </ul>
@@ -192,12 +192,12 @@ public class ListOriginRequestPoliciesRequest extends com.amazonaws.AmazonWebSer
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>managed</code> – Returns only the managed policies created by AWS.
+     *        <code>managed</code> – Returns only the managed policies created by Amazon Web Services.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>custom</code> – Returns only the custom policies created in your AWS account.
+     *        <code>custom</code> – Returns only the custom policies created in your account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -306,8 +306,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new InvalidForwardCookiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyPublicKeysInKeyGroupExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrustedKeyGroupDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
@@ -406,6 +406,84 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.
+     * </p>
+     * <p>
+     * With this operation you can move an alias that’s already in use on a CloudFront distribution to a different
+     * distribution in one step. This prevents the downtime that could occur if you first remove the alias from one
+     * distribution and then separately add the alias to another distribution.
+     * </p>
+     * <p>
+     * To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target
+     * distribution for the alias. For more information, including how to set up the target distribution, prerequisites
+     * that you must complete, and other restrictions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move"
+     * >Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateAliasRequest
+     * @return Result of the AssociateAlias operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws NoSuchDistributionException
+     *         The specified distribution does not exist.
+     * @throws TooManyDistributionCNAMEsException
+     *         Your request contains more CNAMEs than are allowed per distribution.
+     * @throws IllegalUpdateException
+     *         The update contains modifications that are not allowed.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.AssociateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateAliasResult associateAlias(AssociateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateAlias(request);
+    }
+
+    @SdkInternalApi
+    final AssociateAliasResult executeAssociateAlias(AssociateAliasRequest associateAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateAliasRequest> request = null;
+        Response<AssociateAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateAliasRequestMarshaller().marshall(super.beforeMarshalling(associateAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateAliasResult> responseHandler = new StaxResponseHandler<AssociateAliasResult>(
+                    new AssociateAliasResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a cache policy.
      * </p>
      * <p>
@@ -450,9 +528,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         A cache policy with this name already exists. You must provide a unique name. To modify an existing cache
      *         policy, use <code>UpdateCachePolicy</code>.
      * @throws TooManyCachePoliciesException
-     *         You have reached the maximum number of cache policies for this AWS account. For more information, see <a
-     *         href
-     *         ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         You have reached the maximum number of cache policies for this account. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
      *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TooManyHeadersInCachePolicyException
      *         The number of headers in the cache policy exceeds the maximum. For more information, see <a
@@ -690,10 +768,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTTLOrderException
      *         The TTL order specified is not valid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
-     *         use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use
+     *         the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
-     *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+     *         . To specify a web ACL created using WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
      * @throws TooManyOriginCustomHeadersException
      *         Your request contains too many origin custom headers.
@@ -702,14 +780,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidQueryStringParametersException
      *         The query string parameters specified are not valid.
      * @throws TooManyDistributionsWithLambdaAssociationsException
-     *         Processing your request would cause the maximum number of distributions with Lambda function associations
-     *         per owner to be exceeded.
+     *         Processing your request would cause the maximum number of distributions with Lambda@Edge function
+     *         associations per owner to be exceeded.
      * @throws TooManyDistributionsWithSingleFunctionARNException
-     *         The maximum number of distributions have been associated with the specified Lambda function.
+     *         The maximum number of distributions have been associated with the specified Lambda@Edge function.
      * @throws TooManyLambdaFunctionAssociationsException
-     *         Your request contains more Lambda function associations than are allowed per distribution.
+     *         Your request contains more Lambda@Edge function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
-     *         The specified Lambda function association is invalid.
+     *         The specified Lambda@Edge function association is invalid.
      * @throws TooManyDistributionsWithFunctionAssociationsException
      *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
      *         more information, see <a
@@ -763,7 +841,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchRealtimeLogConfigException
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
-     *         The specified real-time log configuration belongs to a different AWS account.
+     *         The specified real-time log configuration belongs to a different account.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -892,10 +970,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTTLOrderException
      *         The TTL order specified is not valid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
-     *         use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use
+     *         the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
-     *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+     *         . To specify a web ACL created using WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
      * @throws TooManyOriginCustomHeadersException
      *         Your request contains too many origin custom headers.
@@ -906,14 +984,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidQueryStringParametersException
      *         The query string parameters specified are not valid.
      * @throws TooManyDistributionsWithLambdaAssociationsException
-     *         Processing your request would cause the maximum number of distributions with Lambda function associations
-     *         per owner to be exceeded.
+     *         Processing your request would cause the maximum number of distributions with Lambda@Edge function
+     *         associations per owner to be exceeded.
      * @throws TooManyDistributionsWithSingleFunctionARNException
-     *         The maximum number of distributions have been associated with the specified Lambda function.
+     *         The maximum number of distributions have been associated with the specified Lambda@Edge function.
      * @throws TooManyLambdaFunctionAssociationsException
-     *         Your request contains more Lambda function associations than are allowed per distribution.
+     *         Your request contains more Lambda@Edge function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
-     *         The specified Lambda function association is invalid.
+     *         The specified Lambda@Edge function association is invalid.
      * @throws TooManyDistributionsWithFunctionAssociationsException
      *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
      *         more information, see <a
@@ -967,7 +1045,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchRealtimeLogConfigException
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
-     *         The specified real-time log configuration belongs to a different AWS account.
+     *         The specified real-time log configuration belongs to a different account.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -1184,19 +1262,21 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @param createFunctionRequest
      * @return Result of the CreateFunction operation returned by the service.
      * @throws TooManyFunctionsException
-     *         You have reached the maximum number of CloudFront functions for this AWS account. For more information,
-     *         see <a
+     *         You have reached the maximum number of CloudFront functions for this account. For more information, see
+     *         <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
      *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws FunctionAlreadyExistsException
-     *         A function with the same name already exists in this AWS account. To create a function, you must provide
-     *         a unique name. To update an existing function, use <code>UpdateFunction</code>.
+     *         A function with the same name already exists in this account. To create a function, you must provide a
+     *         unique name. To update an existing function, use <code>UpdateFunction</code>.
      * @throws FunctionSizeLimitExceededException
      *         The function is too large. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.CreateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1344,10 +1424,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         A key group with this name already exists. You must provide a unique name. To modify an existing key
      *         group, use <code>UpdateKeyGroup</code>.
      * @throws TooManyKeyGroupsException
-     *         You have reached the maximum number of key groups for this AWS account. For more information, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
-     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     *         You have reached the maximum number of key groups for this account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TooManyPublicKeysInKeyGroupException
      *         The number of public keys in this key group is more than the maximum allowed. For more information, see
      *         <a
@@ -1521,10 +1600,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         An origin request policy with this name already exists. You must provide a unique name. To modify an
      *         existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
      * @throws TooManyOriginRequestPoliciesException
-     *         You have reached the maximum number of origin request policies for this AWS account. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
-     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     *         You have reached the maximum number of origin request policies for this account. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TooManyHeadersInOriginRequestPolicyException
      *         The number of headers in the origin request policy exceeds the maximum. For more information, see <a
      *         href=
@@ -1676,7 +1755,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         A real-time log configuration with this name already exists. You must provide a unique name. To modify an
      *         existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
      * @throws TooManyRealtimeLogConfigsException
-     *         You have reached the maximum number of real-time log configurations for this AWS account. For more
+     *         You have reached the maximum number of real-time log configurations for this account. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
@@ -2337,6 +2416,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Cannot delete the function because it’s attached to one or more cache behaviors.
      * @throws PreconditionFailedException
      *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.DeleteFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction" target="_top">AWS API
      *      Documentation</a>
@@ -2880,6 +2961,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @return Result of the DescribeFunction operation returned by the service.
      * @throws NoSuchFunctionExistsException
      *         The function does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.DescribeFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction" target="_top">AWS
      *      API Documentation</a>
@@ -3579,6 +3662,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @return Result of the GetFunction operation returned by the service.
      * @throws NoSuchFunctionExistsException
      *         The function does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.GetFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction" target="_top">AWS API
      *      Documentation</a>
@@ -4338,8 +4423,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * Gets a list of cache policies.
      * </p>
      * <p>
-     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
-     * created in your AWS account.
+     * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -4455,6 +4540,91 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<ListCloudFrontOriginAccessIdentitiesResult> responseHandler = new StaxResponseHandler<ListCloudFrontOriginAccessIdentitiesResult>(
                     new ListCloudFrontOriginAccessIdentitiesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided
+     * alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias.
+     * In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the
+     * distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+     * </p>
+     * <p>
+     * Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided
+     * alias. For example, if you provide <code>www.example.com</code> as input, the returned list can include
+     * <code>www.example.com</code> and the overlapping wildcard alternate domain name (<code>*.example.com</code>), if
+     * they exist. If you provide <code>*.example.com</code> as input, the returned list can include
+     * <code>*.example.com</code> and any alternate domain names covered by that wildcard (for example,
+     * <code>www.example.com</code>, <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+     * exist.
+     * </p>
+     * <p>
+     * To list conflicting aliases, you provide the alias to search and the ID of a distribution in your account that
+     * has an attached SSL/TLS certificate that includes the provided alias. For more information, including how to set
+     * up the distribution and certificate, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move"
+     * >Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listConflictingAliasesRequest
+     * @return Result of the ListConflictingAliases operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws NoSuchDistributionException
+     *         The specified distribution does not exist.
+     * @sample AmazonCloudFront.ListConflictingAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListConflictingAliasesResult listConflictingAliases(ListConflictingAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConflictingAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListConflictingAliasesResult executeListConflictingAliases(ListConflictingAliasesRequest listConflictingAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConflictingAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConflictingAliasesRequest> request = null;
+        Response<ListConflictingAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConflictingAliasesRequestMarshaller().marshall(super.beforeMarshalling(listConflictingAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConflictingAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListConflictingAliasesResult> responseHandler = new StaxResponseHandler<ListConflictingAliasesResult>(
+                    new ListConflictingAliasesResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -4808,19 +4978,19 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * List the distributions that are associated with a specified AWS WAF web ACL.
+     * List the distributions that are associated with a specified WAF web ACL.
      * </p>
      * 
      * @param listDistributionsByWebACLIdRequest
-     *        The request to list distributions that are associated with a specified AWS WAF web ACL.
+     *        The request to list distributions that are associated with a specified WAF web ACL.
      * @return Result of the ListDistributionsByWebACLId operation returned by the service.
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
-     *         use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use
+     *         the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
-     *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+     *         . To specify a web ACL created using WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"
@@ -4991,7 +5161,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Gets a list of all CloudFront functions in your AWS account.
+     * Gets a list of all CloudFront functions in your account.
      * </p>
      * <p>
      * You can optionally apply a filter to return only the functions that are in the specified stage, either
@@ -5008,6 +5178,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @return Result of the ListFunctions operation returned by the service.
      * @throws InvalidArgumentException
      *         An argument is invalid.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.ListFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions" target="_top">AWS API
      *      Documentation</a>
@@ -5187,8 +5359,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * Gets a list of origin request policies.
      * </p>
      * <p>
-     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
-     * created in your AWS account.
+     * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -5529,6 +5701,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The function does not exist.
      * @throws PreconditionFailedException
      *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.PublishFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction" target="_top">AWS API
      *      Documentation</a>
@@ -5671,6 +5845,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The function does not exist.
      * @throws TestFunctionFailedException
      *         The CloudFront function failed.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.TestFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction" target="_top">AWS API
      *      Documentation</a>
@@ -6151,10 +6327,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTTLOrderException
      *         The TTL order specified is not valid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
-     *         use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use
+     *         the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
-     *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+     *         . To specify a web ACL created using WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
      * @throws TooManyOriginCustomHeadersException
      *         Your request contains too many origin custom headers.
@@ -6163,14 +6339,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidQueryStringParametersException
      *         The query string parameters specified are not valid.
      * @throws TooManyDistributionsWithLambdaAssociationsException
-     *         Processing your request would cause the maximum number of distributions with Lambda function associations
-     *         per owner to be exceeded.
+     *         Processing your request would cause the maximum number of distributions with Lambda@Edge function
+     *         associations per owner to be exceeded.
      * @throws TooManyDistributionsWithSingleFunctionARNException
-     *         The maximum number of distributions have been associated with the specified Lambda function.
+     *         The maximum number of distributions have been associated with the specified Lambda@Edge function.
      * @throws TooManyLambdaFunctionAssociationsException
-     *         Your request contains more Lambda function associations than are allowed per distribution.
+     *         Your request contains more Lambda@Edge function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
-     *         The specified Lambda function association is invalid.
+     *         The specified Lambda@Edge function association is invalid.
      * @throws TooManyDistributionsWithFunctionAssociationsException
      *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
      *         more information, see <a
@@ -6224,7 +6400,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchRealtimeLogConfigException
      *         The real-time log configuration does not exist.
      * @throws RealtimeLogConfigOwnerMismatchException
-     *         The specified real-time log configuration belongs to a different AWS account.
+     *         The specified real-time log configuration belongs to a different account.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -6461,6 +6637,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The function is too large. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.UpdateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction" target="_top">AWS API
      *      Documentation</a>

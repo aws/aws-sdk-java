@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access
- * the specified AWS service.
+ * the specified Amazon Web Services service.
  * </p>
  * <p>
  * This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
@@ -39,7 +39,8 @@ public class EntityDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     * authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.
+     * authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -92,7 +93,8 @@ public class EntityDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     * authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.
+     * authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -102,7 +104,8 @@ public class EntityDetails implements Serializable, Cloneable {
      * 
      * @param lastAuthenticated
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     *        authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.</p>
+     *        authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     *        unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -116,7 +119,8 @@ public class EntityDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     * authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.
+     * authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -125,7 +129,8 @@ public class EntityDetails implements Serializable, Cloneable {
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     *         authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.</p>
+     *         authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     *         unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -139,7 +144,8 @@ public class EntityDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     * authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.
+     * authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -149,7 +155,8 @@ public class EntityDetails implements Serializable, Cloneable {
      * 
      * @param lastAuthenticated
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     *        authenticated entity last attempted to access AWS. AWS does not report unauthenticated requests.</p>
+     *        authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does not report
+     *        unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"

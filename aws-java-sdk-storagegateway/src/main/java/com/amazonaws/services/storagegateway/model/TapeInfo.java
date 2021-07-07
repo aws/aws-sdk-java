@@ -55,7 +55,7 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and AWS Region.
+     * for your account and Region.
      * </p>
      */
     private String gatewayARN;
@@ -246,12 +246,12 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and AWS Region.
+     * for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *        gateways for your account and AWS Region.
+     *        gateways for your account and Region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -261,11 +261,11 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and AWS Region.
+     * for your account and Region.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *         gateways for your account and AWS Region.
+     *         gateways for your account and Region.
      */
 
     public String getGatewayARN() {
@@ -275,12 +275,12 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and AWS Region.
+     * for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *        gateways for your account and AWS Region.
+     *        gateways for your account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

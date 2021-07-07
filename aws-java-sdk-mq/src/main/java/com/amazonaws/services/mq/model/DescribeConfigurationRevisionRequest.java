@@ -25,13 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String configurationId;
-    /** The revision of the configuration. */
+    /**
+     * <p>
+     * The revision of the configuration.
+     * </p>
+     */
     private String configurationRevision;
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        The unique ID that Amazon MQ generates for the configuration.
@@ -42,7 +52,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the configuration.
      */
@@ -52,7 +64,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        The unique ID that Amazon MQ generates for the configuration.
@@ -65,7 +79,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The revision of the configuration.
+     * </p>
      * 
      * @param configurationRevision
      *        The revision of the configuration.
@@ -76,7 +92,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The revision of the configuration.
+     * </p>
      * 
      * @return The revision of the configuration.
      */
@@ -86,7 +104,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * The revision of the configuration.
+     * </p>
      * 
      * @param configurationRevision
      *        The revision of the configuration.

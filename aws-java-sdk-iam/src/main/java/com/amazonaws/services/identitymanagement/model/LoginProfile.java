@@ -31,7 +31,7 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS Management Console.
+     * The name of the user, which can be used for signing in to the Management Console.
      * </p>
      */
     private String userName;
@@ -60,7 +60,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param userName
-     *        The name of the user, which can be used for signing in to the AWS Management Console.
+     *        The name of the user, which can be used for signing in to the Management Console.
      * @param createDate
      *        The date when the password for the user was created.
      */
@@ -71,11 +71,11 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS Management Console.
+     * The name of the user, which can be used for signing in to the Management Console.
      * </p>
      * 
      * @param userName
-     *        The name of the user, which can be used for signing in to the AWS Management Console.
+     *        The name of the user, which can be used for signing in to the Management Console.
      */
 
     public void setUserName(String userName) {
@@ -84,10 +84,10 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS Management Console.
+     * The name of the user, which can be used for signing in to the Management Console.
      * </p>
      * 
-     * @return The name of the user, which can be used for signing in to the AWS Management Console.
+     * @return The name of the user, which can be used for signing in to the Management Console.
      */
 
     public String getUserName() {
@@ -96,11 +96,11 @@ public class LoginProfile implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the user, which can be used for signing in to the AWS Management Console.
+     * The name of the user, which can be used for signing in to the Management Console.
      * </p>
      * 
      * @param userName
-     *        The name of the user, which can be used for signing in to the AWS Management Console.
+     *        The name of the user, which can be used for signing in to the Management Console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

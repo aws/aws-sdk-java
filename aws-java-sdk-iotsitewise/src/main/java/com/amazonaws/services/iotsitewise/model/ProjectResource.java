@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies a specific AWS IoT SiteWise Monitor project.
+ * Identifies a specific IoT SiteWise Monitor project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ProjectResource" target="_top">AWS API

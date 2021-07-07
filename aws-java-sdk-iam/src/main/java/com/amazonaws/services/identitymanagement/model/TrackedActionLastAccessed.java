@@ -41,8 +41,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the tracked service. AWS does not report unauthenticated
-     * requests.
+     * authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -53,8 +53,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
     private java.util.Date lastAccessedTime;
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. AWS
-     * does not report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon
+     * Web Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -139,8 +139,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the tracked service. AWS does not report unauthenticated
-     * requests.
+     * authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -150,8 +150,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * 
      * @param lastAccessedTime
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     *        authenticated entity most recently attempted to access the tracked service. AWS does not report
-     *        unauthenticated requests.</p>
+     *        authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not
+     *        report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -165,8 +165,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the tracked service. AWS does not report unauthenticated
-     * requests.
+     * authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -175,8 +175,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     *         authenticated entity most recently attempted to access the tracked service. AWS does not report
-     *         unauthenticated requests.</p>
+     *         authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not
+     *         report unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -190,8 +190,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     * authenticated entity most recently attempted to access the tracked service. AWS does not report unauthenticated
-     * requests.
+     * authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not report
+     * unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -201,8 +201,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * 
      * @param lastAccessedTime
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an
-     *        authenticated entity most recently attempted to access the tracked service. AWS does not report
-     *        unauthenticated requests.</p>
+     *        authenticated entity most recently attempted to access the tracked service. Amazon Web Services does not
+     *        report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -217,8 +217,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. AWS
-     * does not report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon
+     * Web Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -228,7 +228,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * 
      * @param lastAccessedRegion
      *        The Region from which the authenticated entity (user or role) last attempted to access the tracked action.
-     *        AWS does not report unauthenticated requests.</p>
+     *        Amazon Web Services does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -241,8 +241,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. AWS
-     * does not report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon
+     * Web Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -251,7 +251,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * </p>
      * 
      * @return The Region from which the authenticated entity (user or role) last attempted to access the tracked
-     *         action. AWS does not report unauthenticated requests.</p>
+     *         action. Amazon Web Services does not report unauthenticated requests.</p>
      *         <p>
      *         This field is null if no IAM entities attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
@@ -264,8 +264,8 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. AWS
-     * does not report unauthenticated requests.
+     * The Region from which the authenticated entity (user or role) last attempted to access the tracked action. Amazon
+     * Web Services does not report unauthenticated requests.
      * </p>
      * <p>
      * This field is null if no IAM entities attempted to access the service within the <a href=
@@ -275,7 +275,7 @@ public class TrackedActionLastAccessed implements Serializable, Cloneable {
      * 
      * @param lastAccessedRegion
      *        The Region from which the authenticated entity (user or role) last attempted to access the tracked action.
-     *        AWS does not report unauthenticated requests.</p>
+     *        Amazon Web Services does not report unauthenticated requests.</p>
      *        <p>
      *        This field is null if no IAM entities attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"

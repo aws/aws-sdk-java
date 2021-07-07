@@ -23,16 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The Amazon Resource Name (ARN) of the broker. */
+    /**
+     * <p>
+     * The broker's Amazon Resource Name (ARN).
+     * </p>
+     */
     private String brokerArn;
-    /** The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>
+     * The broker's Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param brokerArn
-     *        The Amazon Resource Name (ARN) of the broker.
+     *        The broker's Amazon Resource Name (ARN).
      */
 
     public void setBrokerArn(String brokerArn) {
@@ -40,9 +50,11 @@ public class CreateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>
+     * The broker's Amazon Resource Name (ARN).
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the broker.
+     * @return The broker's Amazon Resource Name (ARN).
      */
 
     public String getBrokerArn() {
@@ -50,10 +62,12 @@ public class CreateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>
+     * The broker's Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param brokerArn
-     *        The Amazon Resource Name (ARN) of the broker.
+     *        The broker's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,7 +77,9 @@ public class CreateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -74,7 +90,9 @@ public class CreateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the broker.
      */
@@ -84,7 +102,9 @@ public class CreateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.

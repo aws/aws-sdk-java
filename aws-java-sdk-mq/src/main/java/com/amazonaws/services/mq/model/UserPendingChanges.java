@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Returns information about the status of the changes pending for the ActiveMQ user.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UserPendingChanges" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +28,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserPendingChanges implements Serializable, Cloneable, StructuredPojo {
 
-    /** Enables access to the the ActiveMQ Web Console for the ActiveMQ user. */
+    /**
+     * <p>
+     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
+     */
     private Boolean consoleAccess;
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private java.util.List<String> groups;
-    /** Required. The type of change pending for the ActiveMQ user. */
+    /**
+     * <p>
+     * Required. The type of change pending for the ActiveMQ user.
+     * </p>
+     */
     private String pendingChange;
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @param consoleAccess
      *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
@@ -48,7 +62,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
@@ -58,7 +74,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @param consoleAccess
      *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
@@ -71,7 +89,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
@@ -81,8 +101,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *         alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
@@ -94,8 +116,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
@@ -113,8 +137,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -139,8 +165,10 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
@@ -155,7 +183,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Required. The type of change pending for the ActiveMQ user.
+     * </p>
      * 
      * @param pendingChange
      *        Required. The type of change pending for the ActiveMQ user.
@@ -167,7 +197,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Required. The type of change pending for the ActiveMQ user.
+     * </p>
      * 
      * @return Required. The type of change pending for the ActiveMQ user.
      * @see ChangeType
@@ -178,7 +210,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Required. The type of change pending for the ActiveMQ user.
+     * </p>
      * 
      * @param pendingChange
      *        Required. The type of change pending for the ActiveMQ user.
@@ -192,7 +226,9 @@ public class UserPendingChanges implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
      * Required. The type of change pending for the ActiveMQ user.
+     * </p>
      * 
      * @param pendingChange
      *        Required. The type of change pending for the ActiveMQ user.

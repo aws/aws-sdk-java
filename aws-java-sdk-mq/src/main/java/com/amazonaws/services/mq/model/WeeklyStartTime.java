@@ -18,8 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the
  * broker.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/WeeklyStartTime" target="_top">AWS API
  *      Documentation</a>
@@ -27,15 +29,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo {
 
-    /** Required. The day of the week. */
+    /**
+     * <p>
+     * Required. The day of the week.
+     * </p>
+     */
     private String dayOfWeek;
-    /** Required. The time, in 24-hour format. */
+    /**
+     * <p>
+     * Required. The time, in 24-hour format.
+     * </p>
+     */
     private String timeOfDay;
-    /** The time zone, UTC by default, in either the Country/City format, or the UTC offset format. */
+    /**
+     * <p>
+     * The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
+     * </p>
+     */
     private String timeZone;
 
     /**
+     * <p>
      * Required. The day of the week.
+     * </p>
      * 
      * @param dayOfWeek
      *        Required. The day of the week.
@@ -47,7 +63,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The day of the week.
+     * </p>
      * 
      * @return Required. The day of the week.
      * @see DayOfWeek
@@ -58,7 +76,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The day of the week.
+     * </p>
      * 
      * @param dayOfWeek
      *        Required. The day of the week.
@@ -72,7 +92,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The day of the week.
+     * </p>
      * 
      * @param dayOfWeek
      *        Required. The day of the week.
@@ -86,7 +108,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The time, in 24-hour format.
+     * </p>
      * 
      * @param timeOfDay
      *        Required. The time, in 24-hour format.
@@ -97,7 +121,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The time, in 24-hour format.
+     * </p>
      * 
      * @return Required. The time, in 24-hour format.
      */
@@ -107,7 +133,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The time, in 24-hour format.
+     * </p>
      * 
      * @param timeOfDay
      *        Required. The time, in 24-hour format.
@@ -120,7 +148,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
+     * </p>
      * 
      * @param timeZone
      *        The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
@@ -131,7 +161,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
+     * </p>
      * 
      * @return The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
      */
@@ -141,7 +173,9 @@ public class WeeklyStartTime implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
+     * </p>
      * 
      * @param timeZone
      *        The time zone, UTC by default, in either the Country/City format, or the UTC offset format.

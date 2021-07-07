@@ -1120,6 +1120,39 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates a media capture pipeline.
+     * </p>
+     * 
+     * @param createMediaCapturePipelineRequest
+     * @return A Java Future containing the result of the CreateMediaCapturePipeline operation returned by the service.
+     * @sample AmazonChimeAsync.CreateMediaCapturePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMediaCapturePipelineResult> createMediaCapturePipelineAsync(
+            CreateMediaCapturePipelineRequest createMediaCapturePipelineRequest);
+
+    /**
+     * <p>
+     * Creates a media capture pipeline.
+     * </p>
+     * 
+     * @param createMediaCapturePipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMediaCapturePipeline operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateMediaCapturePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMediaCapturePipelineResult> createMediaCapturePipelineAsync(
+            CreateMediaCapturePipelineRequest createMediaCapturePipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMediaCapturePipelineRequest, CreateMediaCapturePipelineResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
      * information about specifying media Regions, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
@@ -2072,6 +2105,39 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(
             DeleteEventsConfigurationRequest deleteEventsConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventsConfigurationRequest, DeleteEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the media capture pipeline.
+     * </p>
+     * 
+     * @param deleteMediaCapturePipelineRequest
+     * @return A Java Future containing the result of the DeleteMediaCapturePipeline operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteMediaCapturePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMediaCapturePipelineResult> deleteMediaCapturePipelineAsync(
+            DeleteMediaCapturePipelineRequest deleteMediaCapturePipelineRequest);
+
+    /**
+     * <p>
+     * Deletes the media capture pipeline.
+     * </p>
+     * 
+     * @param deleteMediaCapturePipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMediaCapturePipeline operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteMediaCapturePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMediaCapturePipelineResult> deleteMediaCapturePipelineAsync(
+            DeleteMediaCapturePipelineRequest deleteMediaCapturePipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMediaCapturePipelineRequest, DeleteMediaCapturePipelineResult> asyncHandler);
 
     /**
      * <p>
@@ -3427,6 +3493,37 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetGlobalSettingsResult> getGlobalSettingsAsync(GetGlobalSettingsRequest getGlobalSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetGlobalSettingsRequest, GetGlobalSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an existing media capture pipeline.
+     * </p>
+     * 
+     * @param getMediaCapturePipelineRequest
+     * @return A Java Future containing the result of the GetMediaCapturePipeline operation returned by the service.
+     * @sample AmazonChimeAsync.GetMediaCapturePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMediaCapturePipelineResult> getMediaCapturePipelineAsync(GetMediaCapturePipelineRequest getMediaCapturePipelineRequest);
+
+    /**
+     * <p>
+     * Gets an existing media capture pipeline.
+     * </p>
+     * 
+     * @param getMediaCapturePipelineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMediaCapturePipeline operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetMediaCapturePipeline
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMediaCapturePipelineResult> getMediaCapturePipelineAsync(GetMediaCapturePipelineRequest getMediaCapturePipelineRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMediaCapturePipelineRequest, GetMediaCapturePipelineResult> asyncHandler);
 
     /**
      * <p>
@@ -4788,6 +4885,39 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<ListChannelsModeratedByAppInstanceUserResult> listChannelsModeratedByAppInstanceUserAsync(
             ListChannelsModeratedByAppInstanceUserRequest listChannelsModeratedByAppInstanceUserRequest,
             com.amazonaws.handlers.AsyncHandler<ListChannelsModeratedByAppInstanceUserRequest, ListChannelsModeratedByAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of media capture pipelines.
+     * </p>
+     * 
+     * @param listMediaCapturePipelinesRequest
+     * @return A Java Future containing the result of the ListMediaCapturePipelines operation returned by the service.
+     * @sample AmazonChimeAsync.ListMediaCapturePipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMediaCapturePipelinesResult> listMediaCapturePipelinesAsync(
+            ListMediaCapturePipelinesRequest listMediaCapturePipelinesRequest);
+
+    /**
+     * <p>
+     * Returns a list of media capture pipelines.
+     * </p>
+     * 
+     * @param listMediaCapturePipelinesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMediaCapturePipelines operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListMediaCapturePipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMediaCapturePipelinesResult> listMediaCapturePipelinesAsync(
+            ListMediaCapturePipelinesRequest listMediaCapturePipelinesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMediaCapturePipelinesRequest, ListMediaCapturePipelinesResult> asyncHandler);
 
     /**
      * <p>

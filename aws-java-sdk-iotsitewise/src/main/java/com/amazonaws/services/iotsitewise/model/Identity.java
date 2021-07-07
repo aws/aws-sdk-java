@@ -19,12 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an identity that can access an AWS IoT SiteWise Monitor resource.
+ * Contains an identity that can access an IoT SiteWise Monitor resource.
  * </p>
  * <note>
  * <p>
- * Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL
- * of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.
+ * Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the
+ * Amazon Web Services SSO identity IDs in the URL of user and group pages in the <a
+ * href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO console</a>.
  * </p>
  * </note>
  * 
@@ -36,13 +37,13 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO user identity.
+     * An Amazon Web Services SSO user identity.
      * </p>
      */
     private UserIdentity user;
     /**
      * <p>
-     * An AWS SSO group identity.
+     * An Amazon Web Services SSO group identity.
      * </p>
      */
     private GroupIdentity group;
@@ -61,11 +62,11 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO user identity.
+     * An Amazon Web Services SSO user identity.
      * </p>
      * 
      * @param user
-     *        An AWS SSO user identity.
+     *        An Amazon Web Services SSO user identity.
      */
 
     public void setUser(UserIdentity user) {
@@ -74,10 +75,10 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO user identity.
+     * An Amazon Web Services SSO user identity.
      * </p>
      * 
-     * @return An AWS SSO user identity.
+     * @return An Amazon Web Services SSO user identity.
      */
 
     public UserIdentity getUser() {
@@ -86,11 +87,11 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO user identity.
+     * An Amazon Web Services SSO user identity.
      * </p>
      * 
      * @param user
-     *        An AWS SSO user identity.
+     *        An Amazon Web Services SSO user identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +102,11 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO group identity.
+     * An Amazon Web Services SSO group identity.
      * </p>
      * 
      * @param group
-     *        An AWS SSO group identity.
+     *        An Amazon Web Services SSO group identity.
      */
 
     public void setGroup(GroupIdentity group) {
@@ -114,10 +115,10 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO group identity.
+     * An Amazon Web Services SSO group identity.
      * </p>
      * 
-     * @return An AWS SSO group identity.
+     * @return An Amazon Web Services SSO group identity.
      */
 
     public GroupIdentity getGroup() {
@@ -126,11 +127,11 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS SSO group identity.
+     * An Amazon Web Services SSO group identity.
      * </p>
      * 
      * @param group
-     *        An AWS SSO group identity.
+     *        An Amazon Web Services SSO group identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

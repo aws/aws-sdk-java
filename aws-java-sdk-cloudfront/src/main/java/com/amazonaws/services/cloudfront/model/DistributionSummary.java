@@ -36,7 +36,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your AWS account ID.
+     * your account ID.
      * </p>
      */
     private String aRN;
@@ -149,14 +149,14 @@ public class DistributionSummary implements Serializable, Cloneable {
     private Boolean isIPV6Enabled;
     /**
      * <p>
-     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
-     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
-     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they
+     * want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     * CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
      * </p>
      * <p>
      * For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
-     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AliasICPRecordal> aliasICPRecordals;
@@ -205,13 +205,13 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your AWS account ID.
+     * your account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your AWS account ID.
+     *        <code>123456789012</code> is your account ID.
      */
 
     public void setARN(String aRN) {
@@ -222,12 +222,12 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your AWS account ID.
+     * your account ID.
      * </p>
      * 
      * @return The ARN (Amazon Resource Name) for the distribution. For example:
      *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *         <code>123456789012</code> is your AWS account ID.
+     *         <code>123456789012</code> is your account ID.
      */
 
     public String getARN() {
@@ -238,13 +238,13 @@ public class DistributionSummary implements Serializable, Cloneable {
      * <p>
      * The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
-     * your AWS account ID.
+     * your account ID.
      * </p>
      * 
      * @param aRN
      *        The ARN (Amazon Resource Name) for the distribution. For example:
      *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-     *        <code>123456789012</code> is your AWS account ID.
+     *        <code>123456789012</code> is your account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1069,24 +1069,24 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
-     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
-     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they
+     * want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     * CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
      * </p>
      * <p>
      * For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
-     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * </p>
      * 
-     * @return AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
-     *         serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
-     *         CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     * @return Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal
+     *         if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've
+     *         added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
      *         distributions.</p>
      *         <p>
      *         For more information about ICP recordals, see <a
      *         href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
-     *         Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     *         Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      */
 
     public java.util.List<AliasICPRecordal> getAliasICPRecordals() {
@@ -1098,25 +1098,25 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
-     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
-     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they
+     * want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     * CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
      * </p>
      * <p>
      * For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
-     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * </p>
      * 
      * @param aliasICPRecordals
-     *        AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
-     *        serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
-     *        CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *        Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal
+     *        if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've
+     *        added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
      *        distributions.</p>
      *        <p>
      *        For more information about ICP recordals, see <a
      *        href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
-     *        Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     *        Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      */
 
     public void setAliasICPRecordals(java.util.Collection<AliasICPRecordal> aliasICPRecordals) {
@@ -1130,14 +1130,14 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
-     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
-     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they
+     * want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     * CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
      * </p>
      * <p>
      * For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
-     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1146,14 +1146,14 @@ public class DistributionSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param aliasICPRecordals
-     *        AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
-     *        serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
-     *        CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *        Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal
+     *        if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've
+     *        added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
      *        distributions.</p>
      *        <p>
      *        For more information about ICP recordals, see <a
      *        href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
-     *        Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     *        Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1169,25 +1169,25 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve
-     * content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront.
-     * AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
+     * Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they
+     * want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
+     * CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.
      * </p>
      * <p>
      * For more information about ICP recordals, see <a
      * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and
-     * Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     * Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * </p>
      * 
      * @param aliasICPRecordals
-     *        AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to
-     *        serve content publicly on an alternate domain name, also known as a CNAME, that they've added to
-     *        CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
+     *        Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal
+     *        if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've
+     *        added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with
      *        distributions.</p>
      *        <p>
      *        For more information about ICP recordals, see <a
      *        href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup,
-     *        Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.
+     *        Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

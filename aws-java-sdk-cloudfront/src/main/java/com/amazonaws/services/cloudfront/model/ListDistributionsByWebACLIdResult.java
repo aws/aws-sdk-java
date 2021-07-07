@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.
+ * The response to a request to list the distributions that are associated with a specified WAF web ACL.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"

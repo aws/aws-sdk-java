@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Types of broker engines.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerEngineType" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo {
 
-    /** The type of broker engine. */
+    /**
+     * <p>
+     * The broker's engine type.
+     * </p>
+     */
     private String engineType;
-    /** The list of engine versions. */
+    /**
+     * <p>
+     * The list of engine versions.
+     * </p>
+     */
     private java.util.List<EngineVersion> engineVersions;
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
      * @param engineType
-     *        The type of broker engine.
+     *        The broker's engine type.
      * @see EngineType
      */
 
@@ -44,9 +56,11 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
-     * @return The type of broker engine.
+     * @return The broker's engine type.
      * @see EngineType
      */
 
@@ -55,10 +69,12 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
      * @param engineType
-     *        The type of broker engine.
+     *        The broker's engine type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -69,10 +85,12 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
      * @param engineType
-     *        The type of broker engine.
+     *        The broker's engine type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -83,7 +101,9 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The list of engine versions.
+     * </p>
      * 
      * @return The list of engine versions.
      */
@@ -93,7 +113,9 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The list of engine versions.
+     * </p>
      * 
      * @param engineVersions
      *        The list of engine versions.
@@ -109,7 +131,9 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The list of engine versions.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEngineVersions(java.util.Collection)} or {@link #withEngineVersions(java.util.Collection)} if you want
@@ -132,7 +156,9 @@ public class BrokerEngineType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The list of engine versions.
+     * </p>
      * 
      * @param engineVersions
      *        The list of engine versions.

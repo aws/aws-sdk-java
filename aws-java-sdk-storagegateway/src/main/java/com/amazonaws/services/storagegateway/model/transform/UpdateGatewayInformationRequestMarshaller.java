@@ -35,6 +35,8 @@ public class UpdateGatewayInformationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayTimezone").build();
     private static final MarshallingInfo<String> CLOUDWATCHLOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogGroupARN").build();
+    private static final MarshallingInfo<String> GATEWAYCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayCapacity").build();
 
     private static final UpdateGatewayInformationRequestMarshaller instance = new UpdateGatewayInformationRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateGatewayInformationRequestMarshaller {
             protocolMarshaller.marshall(updateGatewayInformationRequest.getGatewayName(), GATEWAYNAME_BINDING);
             protocolMarshaller.marshall(updateGatewayInformationRequest.getGatewayTimezone(), GATEWAYTIMEZONE_BINDING);
             protocolMarshaller.marshall(updateGatewayInformationRequest.getCloudWatchLogGroupARN(), CLOUDWATCHLOGGROUPARN_BINDING);
+            protocolMarshaller.marshall(updateGatewayInformationRequest.getGatewayCapacity(), GATEWAYCAPACITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

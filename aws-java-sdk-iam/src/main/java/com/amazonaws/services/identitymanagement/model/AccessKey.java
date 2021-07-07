@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains information about an AWS access key.
+ * Contains information about an Amazon Web Services access key.
  * </p>
  * <p>
  * This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.

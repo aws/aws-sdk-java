@@ -42,10 +42,17 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
     private String groupName;
     /**
      * <p>
-     * The IP permissions for the security group rule.
+     * The IP permissions for the security group rule. You must specify either the IP permissions or the description.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
+    /**
+     * <p>
+     * The description for the egress security group rules. You must specify either the description or the IP
+     * permissions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription> securityGroupRuleDescriptions;
 
     /**
      * <p>
@@ -141,10 +148,11 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
 
     /**
      * <p>
-     * The IP permissions for the security group rule.
+     * The IP permissions for the security group rule. You must specify either the IP permissions or the description.
      * </p>
      * 
-     * @return The IP permissions for the security group rule.
+     * @return The IP permissions for the security group rule. You must specify either the IP permissions or the
+     *         description.
      */
 
     public java.util.List<IpPermission> getIpPermissions() {
@@ -156,11 +164,12 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
 
     /**
      * <p>
-     * The IP permissions for the security group rule.
+     * The IP permissions for the security group rule. You must specify either the IP permissions or the description.
      * </p>
      * 
      * @param ipPermissions
-     *        The IP permissions for the security group rule.
+     *        The IP permissions for the security group rule. You must specify either the IP permissions or the
+     *        description.
      */
 
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
@@ -174,7 +183,7 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
 
     /**
      * <p>
-     * The IP permissions for the security group rule.
+     * The IP permissions for the security group rule. You must specify either the IP permissions or the description.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -183,7 +192,8 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
      * </p>
      * 
      * @param ipPermissions
-     *        The IP permissions for the security group rule.
+     *        The IP permissions for the security group rule. You must specify either the IP permissions or the
+     *        description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,16 +209,99 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
 
     /**
      * <p>
-     * The IP permissions for the security group rule.
+     * The IP permissions for the security group rule. You must specify either the IP permissions or the description.
      * </p>
      * 
      * @param ipPermissions
-     *        The IP permissions for the security group rule.
+     *        The IP permissions for the security group rule. You must specify either the IP permissions or the
+     *        description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateSecurityGroupRuleDescriptionsEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description for the egress security group rules. You must specify either the description or the IP
+     * permissions.
+     * </p>
+     * 
+     * @return The description for the egress security group rules. You must specify either the description or the IP
+     *         permissions.
+     */
+
+    public java.util.List<SecurityGroupRuleDescription> getSecurityGroupRuleDescriptions() {
+        if (securityGroupRuleDescriptions == null) {
+            securityGroupRuleDescriptions = new com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription>();
+        }
+        return securityGroupRuleDescriptions;
+    }
+
+    /**
+     * <p>
+     * The description for the egress security group rules. You must specify either the description or the IP
+     * permissions.
+     * </p>
+     * 
+     * @param securityGroupRuleDescriptions
+     *        The description for the egress security group rules. You must specify either the description or the IP
+     *        permissions.
+     */
+
+    public void setSecurityGroupRuleDescriptions(java.util.Collection<SecurityGroupRuleDescription> securityGroupRuleDescriptions) {
+        if (securityGroupRuleDescriptions == null) {
+            this.securityGroupRuleDescriptions = null;
+            return;
+        }
+
+        this.securityGroupRuleDescriptions = new com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription>(securityGroupRuleDescriptions);
+    }
+
+    /**
+     * <p>
+     * The description for the egress security group rules. You must specify either the description or the IP
+     * permissions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupRuleDescriptions(java.util.Collection)} or
+     * {@link #withSecurityGroupRuleDescriptions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupRuleDescriptions
+     *        The description for the egress security group rules. You must specify either the description or the IP
+     *        permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityGroupRuleDescriptionsEgressRequest withSecurityGroupRuleDescriptions(SecurityGroupRuleDescription... securityGroupRuleDescriptions) {
+        if (this.securityGroupRuleDescriptions == null) {
+            setSecurityGroupRuleDescriptions(new com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription>(securityGroupRuleDescriptions.length));
+        }
+        for (SecurityGroupRuleDescription ele : securityGroupRuleDescriptions) {
+            this.securityGroupRuleDescriptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description for the egress security group rules. You must specify either the description or the IP
+     * permissions.
+     * </p>
+     * 
+     * @param securityGroupRuleDescriptions
+     *        The description for the egress security group rules. You must specify either the description or the IP
+     *        permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityGroupRuleDescriptionsEgressRequest withSecurityGroupRuleDescriptions(
+            java.util.Collection<SecurityGroupRuleDescription> securityGroupRuleDescriptions) {
+        setSecurityGroupRuleDescriptions(securityGroupRuleDescriptions);
         return this;
     }
 
@@ -240,7 +333,9 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getIpPermissions() != null)
-            sb.append("IpPermissions: ").append(getIpPermissions());
+            sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
+        if (getSecurityGroupRuleDescriptions() != null)
+            sb.append("SecurityGroupRuleDescriptions: ").append(getSecurityGroupRuleDescriptions());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +362,11 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
             return false;
         if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
             return false;
+        if (other.getSecurityGroupRuleDescriptions() == null ^ this.getSecurityGroupRuleDescriptions() == null)
+            return false;
+        if (other.getSecurityGroupRuleDescriptions() != null
+                && other.getSecurityGroupRuleDescriptions().equals(this.getSecurityGroupRuleDescriptions()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +378,7 @@ public class UpdateSecurityGroupRuleDescriptionsEgressRequest extends AmazonWebS
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupRuleDescriptions() == null) ? 0 : getSecurityGroupRuleDescriptions().hashCode());
         return hashCode;
     }
 

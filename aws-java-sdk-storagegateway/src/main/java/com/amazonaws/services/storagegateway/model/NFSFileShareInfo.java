@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway
- * discovers them in S3 buckets. This operation is only supported in file gateways.
+ * The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File
+ * Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo" target="_top">AWS
@@ -40,8 +40,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String gatewayARN;
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -58,7 +58,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String locationARN;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -163,6 +163,30 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String notificationPolicy;
+    /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     */
+    private String vPCEndpointDNSName;
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     */
+    private String bucketRegion;
 
     /**
      * @param nFSFileShareDefaults
@@ -296,15 +320,15 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -316,14 +340,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -335,15 +359,15 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -357,14 +381,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -480,7 +504,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -489,8 +513,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -502,7 +526,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -510,8 +534,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *         is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     * @return The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *         value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *         <p>
      *         Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
      *         <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -523,7 +547,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is
      * <code>S3_INTELLIGENT_TIERING</code>. Optional.
      * </p>
      * <p>
@@ -532,8 +556,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
-     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default
+     *        value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
      *        <p>
      *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
      *        | <code>S3_ONEZONE_IA</code>
@@ -1326,6 +1350,149 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param vPCEndpointDNSName
+     *        Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+     *        <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     */
+
+    public void setVPCEndpointDNSName(String vPCEndpointDNSName) {
+        this.vPCEndpointDNSName = vPCEndpointDNSName;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+     *         <note>
+     *         <p>
+     *         This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *         access point, or an access point alias that points to a VPC access point.
+     *         </p>
+     */
+
+    public String getVPCEndpointDNSName() {
+        return this.vPCEndpointDNSName;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param vPCEndpointDNSName
+     *        Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+     *        <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withVPCEndpointDNSName(String vPCEndpointDNSName) {
+        setVPCEndpointDNSName(vPCEndpointDNSName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param bucketRegion
+     *        Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     */
+
+    public void setBucketRegion(String bucketRegion) {
+        this.bucketRegion = bucketRegion;
+    }
+
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
+     *         <p>
+     *         This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *         access point, or an access point alias that points to a VPC access point.
+     *         </p>
+     */
+
+    public String getBucketRegion() {
+        return this.bucketRegion;
+    }
+
+    /**
+     * <p>
+     * Specifies the Region of the S3 bucket where the NFS file share stores files.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access
+     * point, or an access point alias that points to a VPC access point.
+     * </p>
+     * </note>
+     * 
+     * @param bucketRegion
+     *        Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>
+     *        <p>
+     *        This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC
+     *        access point, or an access point alias that points to a VPC access point.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withBucketRegion(String bucketRegion) {
+        setBucketRegion(bucketRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1378,7 +1545,11 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         if (getCacheAttributes() != null)
             sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
         if (getNotificationPolicy() != null)
-            sb.append("NotificationPolicy: ").append(getNotificationPolicy());
+            sb.append("NotificationPolicy: ").append(getNotificationPolicy()).append(",");
+        if (getVPCEndpointDNSName() != null)
+            sb.append("VPCEndpointDNSName: ").append(getVPCEndpointDNSName()).append(",");
+        if (getBucketRegion() != null)
+            sb.append("BucketRegion: ").append(getBucketRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -1477,6 +1648,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getNotificationPolicy() != null && other.getNotificationPolicy().equals(this.getNotificationPolicy()) == false)
             return false;
+        if (other.getVPCEndpointDNSName() == null ^ this.getVPCEndpointDNSName() == null)
+            return false;
+        if (other.getVPCEndpointDNSName() != null && other.getVPCEndpointDNSName().equals(this.getVPCEndpointDNSName()) == false)
+            return false;
+        if (other.getBucketRegion() == null ^ this.getBucketRegion() == null)
+            return false;
+        if (other.getBucketRegion() != null && other.getBucketRegion().equals(this.getBucketRegion()) == false)
+            return false;
         return true;
     }
 
@@ -1506,6 +1685,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
         hashCode = prime * hashCode + ((getNotificationPolicy() == null) ? 0 : getNotificationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getVPCEndpointDNSName() == null) ? 0 : getVPCEndpointDNSName().hashCode());
+        hashCode = prime * hashCode + ((getBucketRegion() == null) ? 0 : getBucketRegion().hashCode());
         return hashCode;
     }
 

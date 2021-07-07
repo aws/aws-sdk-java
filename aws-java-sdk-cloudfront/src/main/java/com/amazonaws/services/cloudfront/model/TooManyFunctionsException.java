@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the maximum number of CloudFront functions for this AWS account. For more information, see <a
+ * You have reached the maximum number of CloudFront functions for this account. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly
  * known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>

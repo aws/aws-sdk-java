@@ -96,7 +96,7 @@ public class CookiePreference implements Serializable, Cloneable {
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront
-     * Limits</a> in the <i>AWS General Reference</i>.
+     * Limits</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private CookieNames whitelistedNames;
@@ -399,7 +399,7 @@ public class CookiePreference implements Serializable, Cloneable {
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront
-     * Limits</a> in the <i>AWS General Reference</i>.
+     * Limits</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param whitelistedNames
@@ -430,7 +430,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *        <p>
      *        For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     *        CloudFront Limits</a> in the <i>AWS General Reference</i>.
+     *        CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setWhitelistedNames(CookieNames whitelistedNames) {
@@ -467,7 +467,7 @@ public class CookiePreference implements Serializable, Cloneable {
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront
-     * Limits</a> in the <i>AWS General Reference</i>.
+     * Limits</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
@@ -497,7 +497,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *         <p>
      *         For the current limit on the number of cookie names that you can whitelist for each cache behavior, see
      *         <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     *         CloudFront Limits</a> in the <i>AWS General Reference</i>.
+     *         CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public CookieNames getWhitelistedNames() {
@@ -534,7 +534,7 @@ public class CookiePreference implements Serializable, Cloneable {
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront
-     * Limits</a> in the <i>AWS General Reference</i>.
+     * Limits</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param whitelistedNames
@@ -565,7 +565,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *        <p>
      *        For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     *        CloudFront Limits</a> in the <i>AWS General Reference</i>.
+     *        CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

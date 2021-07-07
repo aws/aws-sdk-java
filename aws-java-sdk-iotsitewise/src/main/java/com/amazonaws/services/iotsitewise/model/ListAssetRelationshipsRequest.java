@@ -54,7 +54,7 @@ public class ListAssetRelationshipsRequest extends com.amazonaws.AmazonWebServic
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      */
     private Integer maxResults;
@@ -268,11 +268,11 @@ public class ListAssetRelationshipsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to return for each paginated request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -281,10 +281,10 @@ public class ListAssetRelationshipsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.
+     * @return The maximum number of results to return for each paginated request.
      */
 
     public Integer getMaxResults() {
@@ -293,11 +293,11 @@ public class ListAssetRelationshipsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to return for each paginated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

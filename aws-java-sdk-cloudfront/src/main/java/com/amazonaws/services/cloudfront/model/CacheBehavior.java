@@ -92,13 +92,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s AWS account. The signed URL or cookie contains information about which public
-     * key CloudFront should use to verify the signature. For more information, see <a
+     * key pair in the trusted signer’s account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -183,7 +183,7 @@ public class CacheBehavior implements Serializable, Cloneable {
     private Boolean compress;
     /**
      * <p>
-     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      * </p>
      */
     private LambdaFunctionAssociations lambdaFunctionAssociations;
@@ -527,13 +527,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s AWS account. The signed URL or cookie contains information about which public
-     * key CloudFront should use to verify the signature. For more information, see <a
+     * key pair in the trusted signer’s account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -544,13 +544,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        </p>
      *        </important>
      *        <p>
-     *        A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     *        A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      *        </p>
      *        <p>
      *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *        CloudFront key pair in the trusted signer’s AWS account. The signed URL or cookie contains information
-     *        about which public key CloudFront should use to verify the signature. For more information, see <a
+     *        CloudFront key pair in the trusted signer’s account. The signed URL or cookie contains information about
+     *        which public key CloudFront should use to verify the signature. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
@@ -566,13 +566,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s AWS account. The signed URL or cookie contains information about which public
-     * key CloudFront should use to verify the signature. For more information, see <a
+     * key pair in the trusted signer’s account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -582,13 +582,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         </p>
      *         </important>
      *         <p>
-     *         A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     *         A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      *         </p>
      *         <p>
      *         When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *         requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *         CloudFront key pair in the trusted signer’s AWS account. The signed URL or cookie contains information
-     *         about which public key CloudFront should use to verify the signature. For more information, see <a
+     *         CloudFront key pair in the trusted signer’s account. The signed URL or cookie contains information about
+     *         which public key CloudFront should use to verify the signature. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *         private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
@@ -604,13 +604,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * </important>
      * <p>
-     * A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     * A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      * </p>
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s AWS account. The signed URL or cookie contains information about which public
-     * key CloudFront should use to verify the signature. For more information, see <a
+     * key pair in the trusted signer’s account. The signed URL or cookie contains information about which public key
+     * CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
@@ -621,13 +621,13 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        </p>
      *        </important>
      *        <p>
-     *        A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
+     *        A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.
      *        </p>
      *        <p>
      *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *        CloudFront key pair in the trusted signer’s AWS account. The signed URL or cookie contains information
-     *        about which public key CloudFront should use to verify the signature. For more information, see <a
+     *        CloudFront key pair in the trusted signer’s account. The signed URL or cookie contains information about
+     *        which public key CloudFront should use to verify the signature. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1350,11 +1350,11 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      * </p>
      * 
      * @param lambdaFunctionAssociations
-     *        A complex type that contains zero or more Lambda function associations for a cache behavior.
+     *        A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      */
 
     public void setLambdaFunctionAssociations(LambdaFunctionAssociations lambdaFunctionAssociations) {
@@ -1363,10 +1363,10 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      * </p>
      * 
-     * @return A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * @return A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      */
 
     public LambdaFunctionAssociations getLambdaFunctionAssociations() {
@@ -1375,11 +1375,11 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains zero or more Lambda function associations for a cache behavior.
+     * A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      * </p>
      * 
      * @param lambdaFunctionAssociations
-     *        A complex type that contains zero or more Lambda function associations for a cache behavior.
+     *        A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

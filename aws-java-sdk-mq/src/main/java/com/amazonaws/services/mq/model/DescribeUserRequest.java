@@ -25,16 +25,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private String username;
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -45,7 +53,9 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the broker.
      */
@@ -55,7 +65,9 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -68,8 +80,10 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
@@ -81,8 +95,10 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      *         underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
@@ -93,8 +109,10 @@ public class DescribeUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,

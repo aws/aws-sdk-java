@@ -41,12 +41,12 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The property definitions of the asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 200 properties per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      */
     private java.util.List<AssetModelPropertyDefinition> assetModelProperties;
@@ -55,12 +55,12 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 10 hierarchies per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      */
     private java.util.List<AssetModelHierarchyDefinition> assetModelHierarchies;
@@ -82,8 +82,8 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -172,20 +172,20 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The property definitions of the asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 200 properties per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @return The property definitions of the asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *         properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *         properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         You can specify up to 200 properties per asset model. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      */
 
@@ -197,21 +197,21 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The property definitions of the asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 200 properties per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @param assetModelProperties
      *        The property definitions of the asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *        properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 200 properties per asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      */
 
@@ -228,12 +228,12 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The property definitions of the asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 200 properties per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -244,10 +244,10 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * @param assetModelProperties
      *        The property definitions of the asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *        properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 200 properties per asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -266,21 +266,21 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The property definitions of the asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 200 properties per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @param assetModelProperties
      *        The property definitions of the asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *        properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 200 properties per asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -295,21 +295,21 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 10 hierarchies per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @return The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *         children of any other assets created from this asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *         hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         You can specify up to 10 hierarchies per asset model. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      */
 
@@ -322,22 +322,22 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 10 hierarchies per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @param assetModelHierarchies
      *        The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *        children of any other assets created from this asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 10 hierarchies per asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      */
 
@@ -355,12 +355,12 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 10 hierarchies per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,10 +372,10 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      *        The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *        children of any other assets created from this asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 10 hierarchies per asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -395,22 +395,22 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You can specify up to 10 hierarchies per asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @param assetModelHierarchies
      *        The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *        children of any other assets created from this asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 10 hierarchies per asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -555,13 +555,13 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *         SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *         SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -571,14 +571,14 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *        SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *        SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -588,14 +588,14 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key-value pairs that contain metadata for the asset model. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *        SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *        SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

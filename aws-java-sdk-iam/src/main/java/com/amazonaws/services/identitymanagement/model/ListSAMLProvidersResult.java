@@ -28,17 +28,17 @@ public class ListSAMLProvidersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The list of SAML provider resource objects defined in IAM for this AWS account.
+     * The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SAMLProviderListEntry> sAMLProviderList;
 
     /**
      * <p>
-     * The list of SAML provider resource objects defined in IAM for this AWS account.
+     * The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * </p>
      * 
-     * @return The list of SAML provider resource objects defined in IAM for this AWS account.
+     * @return The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      */
 
     public java.util.List<SAMLProviderListEntry> getSAMLProviderList() {
@@ -50,11 +50,11 @@ public class ListSAMLProvidersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The list of SAML provider resource objects defined in IAM for this AWS account.
+     * The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * </p>
      * 
      * @param sAMLProviderList
-     *        The list of SAML provider resource objects defined in IAM for this AWS account.
+     *        The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      */
 
     public void setSAMLProviderList(java.util.Collection<SAMLProviderListEntry> sAMLProviderList) {
@@ -68,7 +68,7 @@ public class ListSAMLProvidersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The list of SAML provider resource objects defined in IAM for this AWS account.
+     * The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListSAMLProvidersResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param sAMLProviderList
-     *        The list of SAML provider resource objects defined in IAM for this AWS account.
+     *        The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListSAMLProvidersResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The list of SAML provider resource objects defined in IAM for this AWS account.
+     * The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * </p>
      * 
      * @param sAMLProviderList
-     *        The list of SAML provider resource objects defined in IAM for this AWS account.
+     *        The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

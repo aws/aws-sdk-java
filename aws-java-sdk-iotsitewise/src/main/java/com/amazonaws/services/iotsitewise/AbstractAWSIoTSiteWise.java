@@ -174,6 +174,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public DescribeStorageConfigurationResult describeStorageConfiguration(DescribeStorageConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateAssetsResult disassociateAssets(DisassociateAssetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -260,6 +265,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
 
     @Override
     public PutLoggingOptionsResult putLoggingOptions(PutLoggingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutStorageConfigurationResult putStorageConfiguration(PutStorageConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

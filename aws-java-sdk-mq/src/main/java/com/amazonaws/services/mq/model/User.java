@@ -18,36 +18,61 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A user associated with the broker.
+ * <p>
+ * A user associated with the broker. For RabbitMQ brokers, one and only one administrative user is accepted and created
+ * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to
+ * brokers or via the RabbitMQ web console.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/User" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class User implements Serializable, Cloneable, StructuredPojo {
 
-    /** Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers). */
+    /**
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
+     * </p>
+     */
     private Boolean consoleAccess;
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
-     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does
+     * not apply to RabbitMQ brokers.
+     * </p>
      */
     private java.util.List<String> groups;
     /**
-     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
-     * 4 unique characters, and must not contain commas.
+     * <p>
+     * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      */
     private String password;
     /**
-     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
-     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>
+     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+     * long.
+     * </p>
+     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
+     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
+     * must be 2-100 characters long.
+     * </p>
+     * </important></para>
      */
     private String username;
 
     /**
-     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param consoleAccess
-     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
      */
 
     public void setConsoleAccess(Boolean consoleAccess) {
@@ -55,9 +80,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
-     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
      */
 
     public Boolean getConsoleAccess() {
@@ -65,10 +92,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param consoleAccess
-     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,9 +107,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
-     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers).
+     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.
      */
 
     public Boolean isConsoleAccess() {
@@ -88,12 +119,15 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
-     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does
+     * not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @return The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *         alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *         characters long.
+     *         characters long. Does not apply to RabbitMQ brokers.
      */
 
     public java.util.List<String> getGroups() {
@@ -101,13 +135,16 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
-     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does
+     * not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *        characters long.
+     *        characters long. Does not apply to RabbitMQ brokers.
      */
 
     public void setGroups(java.util.Collection<String> groups) {
@@ -120,8 +157,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
-     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does
+     * not apply to RabbitMQ brokers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -131,7 +171,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *        characters long.
+     *        characters long. Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,13 +186,16 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
-     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does
+     * not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *        characters long.
+     *        characters long. Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,12 +205,14 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
-     * 4 unique characters, and must not contain commas.
+     * <p>
+     * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      * 
      * @param password
-     *        Required. The password of the broker user. This value must be at least 12 characters long, must contain at
-     *        least 4 unique characters, and must not contain commas.
+     *        Required. The password of the user. This value must be at least 12 characters long, must contain at least
+     *        4 unique characters, and must not contain commas, colons, or equal signs (,:=).
      */
 
     public void setPassword(String password) {
@@ -175,11 +220,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
-     * 4 unique characters, and must not contain commas.
+     * <p>
+     * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      * 
-     * @return Required. The password of the broker user. This value must be at least 12 characters long, must contain
-     *         at least 4 unique characters, and must not contain commas.
+     * @return Required. The password of the user. This value must be at least 12 characters long, must contain at least
+     *         4 unique characters, and must not contain commas, colons, or equal signs (,:=).
      */
 
     public String getPassword() {
@@ -187,12 +234,14 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The password of the broker user. This value must be at least 12 characters long, must contain at least
-     * 4 unique characters, and must not contain commas.
+     * <p>
+     * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      * 
      * @param password
-     *        Required. The password of the broker user. This value must be at least 12 characters long, must contain at
-     *        least 4 unique characters, and must not contain commas.
+     *        Required. The password of the user. This value must be at least 12 characters long, must contain at least
+     *        4 unique characters, and must not contain commas, colons, or equal signs (,:=).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,12 +251,29 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
-     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>
+     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+     * long.
+     * </p>
+     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
+     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
+     * must be 2-100 characters long.
+     * </p>
+     * </important></para>
      * 
      * @param username
-     *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
-     *        periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     *        important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     *        characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title>
+     *        <p>
+     *        For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (-
+     *        . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     *        usename. This value must be 2-100 characters long.
+     *        </p>
+     *        </important>
      */
 
     public void setUsername(String username) {
@@ -215,11 +281,28 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
-     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>
+     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+     * long.
+     * </p>
+     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
+     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
+     * must be 2-100 characters long.
+     * </p>
+     * </important></para>
      * 
-     * @return Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
-     *         periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * @return important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     *         alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     *         characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title>
+     *         <p>
+     *         For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores
+     *         (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     *         usename. This value must be 2-100 characters long.
+     *         </p>
+     *         </important>
      */
 
     public String getUsername() {
@@ -227,12 +310,29 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
-     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * <p>
+     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
+     * long.
+     * </p>
+     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
+     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
+     * must be 2-100 characters long.
+     * </p>
+     * </important></para>
      * 
      * @param username
-     *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
-     *        periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     *        important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
+     *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
+     *        characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title>
+     *        <p>
+     *        For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (-
+     *        . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     *        usename. This value must be 2-100 characters long.
+     *        </p>
+     *        </important>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,7 +31,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      */
     private String gatewayARN;
@@ -78,8 +78,8 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String tapeBarcodePrefix;
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -128,12 +128,12 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use
-     *        the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     *        the <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -143,11 +143,11 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      * 
      * @return The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with.
-     *         Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     *         Use the <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      */
 
     public String getGatewayARN() {
@@ -157,12 +157,12 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use
-     *        the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     *        the <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,15 +417,15 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -437,14 +437,14 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -456,15 +456,15 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -478,14 +478,14 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
-     * to use a key managed by Amazon S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to
+     * use a key managed by Amazon S3. Optional.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or
      *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>

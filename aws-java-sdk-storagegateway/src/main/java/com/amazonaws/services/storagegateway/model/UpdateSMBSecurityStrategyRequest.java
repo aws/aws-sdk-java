@@ -33,6 +33,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
      * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * Supported only in S3 File Gateway.
      * </p>
      * <p>
      * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
@@ -80,6 +81,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
      * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * Supported only in S3 File Gateway.
      * </p>
      * <p>
      * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
@@ -97,7 +99,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        ClientSpecified: if you use this option, requests are established based on what is negotiated by the
      *        client. This option is recommended when you want to maximize compatibility across different clients in
-     *        your environment.
+     *        your environment. Supported only in S3 File Gateway.
      *        </p>
      *        <p>
      *        MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients
@@ -122,6 +124,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
      * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * Supported only in S3 File Gateway.
      * </p>
      * <p>
      * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
@@ -138,7 +141,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         ClientSpecified: if you use this option, requests are established based on what is negotiated by the
      *         client. This option is recommended when you want to maximize compatibility across different clients in
-     *         your environment.
+     *         your environment. Supported only in S3 File Gateway.
      *         </p>
      *         <p>
      *         MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3
@@ -163,6 +166,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
      * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * Supported only in S3 File Gateway.
      * </p>
      * <p>
      * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
@@ -180,7 +184,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        ClientSpecified: if you use this option, requests are established based on what is negotiated by the
      *        client. This option is recommended when you want to maximize compatibility across different clients in
-     *        your environment.
+     *        your environment. Supported only in S3 File Gateway.
      *        </p>
      *        <p>
      *        MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients
@@ -207,6 +211,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This
      * option is recommended when you want to maximize compatibility across different clients in your environment.
+     * Supported only in S3 File Gateway.
      * </p>
      * <p>
      * MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that
@@ -224,7 +229,7 @@ public class UpdateSMBSecurityStrategyRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        ClientSpecified: if you use this option, requests are established based on what is negotiated by the
      *        client. This option is recommended when you want to maximize compatibility across different clients in
-     *        your environment.
+     *        your environment. Supported only in S3 File Gateway.
      *        </p>
      *        <p>
      *        MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients

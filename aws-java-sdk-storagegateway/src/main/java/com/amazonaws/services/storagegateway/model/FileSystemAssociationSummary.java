@@ -44,8 +44,7 @@ public class FileSystemAssociationSummary implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      */
     private String fileSystemAssociationStatus;
@@ -135,14 +134,12 @@ public class FileSystemAssociationSummary implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      * 
      * @param fileSystemAssociationStatus
      *        The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     *        <code>UNAVAILABLE</code>
+     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      */
 
     public void setFileSystemAssociationStatus(String fileSystemAssociationStatus) {
@@ -152,13 +149,11 @@ public class FileSystemAssociationSummary implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      * 
      * @return The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     *         <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     *         | <code>UNAVAILABLE</code>
+     *         <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      */
 
     public String getFileSystemAssociationStatus() {
@@ -168,14 +163,12 @@ public class FileSystemAssociationSummary implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     * <code>UNAVAILABLE</code>
+     * <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * </p>
      * 
      * @param fileSystemAssociationStatus
      *        The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> |
-     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> |
-     *        <code>UNAVAILABLE</code>
+     *        <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

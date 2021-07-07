@@ -62,10 +62,9 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * The location of the SSL/TLS certificate, <a
- * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a>
- * (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
- * Identity and Access Management (AWS IAM)</a>. You specify the location by setting a value in one of the following
- * fields (not both):
+ * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a> (recommended)
+ * or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access
+ * Management (IAM)</a>. You specify the location by setting a value in one of the following fields (not both):
  * </p>
  * <ul>
  * <li>
@@ -132,8 +131,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
+     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
      * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
@@ -144,7 +143,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager
+     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager
      * (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
@@ -177,7 +176,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
      * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -504,8 +504,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
+     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
      * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
@@ -515,8 +515,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @param iAMCertificateId
      *        If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
      *        certificate is stored in <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
-     *        Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and
+     *        Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
      *        <p>
      *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
      *        and <code>SSLSupportMethod</code>.
@@ -529,8 +529,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
+     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
      * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
@@ -539,8 +539,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * 
      * @return If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
      *         certificate is stored in <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
-     *         Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and
+     *         Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
      *         <p>
      *         If you specify an IAM certificate ID, you must also specify values for
      *         <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
@@ -553,8 +553,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-     * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
+     * stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+     * and Access Management (IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
      * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
@@ -564,8 +564,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @param iAMCertificateId
      *        If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
      *        certificate is stored in <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
-     *        Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and
+     *        Access Management (IAM)</a>, provide the ID of the IAM certificate.</p>
      *        <p>
      *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
      *        and <code>SSLSupportMethod</code>.
@@ -580,7 +580,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager
+     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager
      * (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
@@ -591,9 +591,10 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * 
      * @param aCMCertificateArn
      *        If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
-     *        certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     *        Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront
-     *        only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
+     *        certificate is stored in <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>,
+     *        provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates
+     *        in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *        <p>
      *        If you specify an ACM certificate ARN, you must also specify values for
      *        <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
@@ -606,7 +607,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager
+     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager
      * (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
@@ -616,9 +617,10 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * 
      * @return If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
-     *         certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     *         Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront
-     *         only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
+     *         certificate is stored in <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>,
+     *         provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates
+     *         in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *         <p>
      *         If you specify an ACM certificate ARN, you must also specify values for
      *         <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
@@ -631,7 +633,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
     /**
      * <p>
      * If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS certificate is
-     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager
+     * stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager
      * (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
@@ -642,9 +644,10 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * 
      * @param aCMCertificateArn
      *        If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and the SSL/TLS
-     *        certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-     *        Certificate Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront
-     *        only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
+     *        certificate is stored in <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>,
+     *        provide the Amazon Resource Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates
+     *        in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *        <p>
      *        If you specify an ACM certificate ARN, you must also specify values for
      *        <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
@@ -679,7 +682,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
      * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -709,8 +713,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
      *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
-     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     *        Support Center</a>.
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+     *        Web Services Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -747,7 +751,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
      * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -776,8 +781,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         <p>
      *         <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
      *         feature by the CloudFront team. If you have a use case that requires static IP addresses for a
-     *         distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     *         Support Center</a>.
+     *         distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+     *         Web Services Support Center</a>.
      *         </p>
      *         </li>
      *         </ul>
@@ -814,7 +819,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
      * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -844,8 +850,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
      *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
-     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     *        Support Center</a>.
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+     *        Web Services Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -884,7 +890,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
      * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -914,8 +921,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
      *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
-     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     *        Support Center</a>.
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+     *        Web Services Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -952,7 +959,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
      * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
-     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -982,8 +990,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
      *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
-     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
-     *        Support Center</a>.
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+     *        Web Services Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>

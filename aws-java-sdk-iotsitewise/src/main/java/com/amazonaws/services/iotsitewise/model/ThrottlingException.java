@@ -16,12 +16,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise assets that
- * can be created per second, the allowed number of messages per second, and so on.
+ * Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can
+ * be created per second, the allowed number of messages per second, and so on.
  * </p>
  * <p>
  * For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
- * in the <i>AWS IoT SiteWise User Guide</i>.
+ * in the <i>IoT SiteWise User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

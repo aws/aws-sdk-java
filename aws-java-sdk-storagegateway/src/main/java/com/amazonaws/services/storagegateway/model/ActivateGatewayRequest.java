@@ -76,7 +76,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
-     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * key</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      */
     private String activationKey;
@@ -97,15 +97,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String gatewayTimezone;
     /**
      * <p>
-     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
-     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
-     * <i>AWS General Reference</i>.
+     * A value that indicates the Region where you want to store your data. The gateway Region specified must be the
+     * same Region as the Region in your <code>Host</code> header in the request. For more information about available
+     * Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+     * Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
-     * and quotas</a> in the <i>AWS General Reference</i>.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String gatewayRegion;
@@ -115,7 +114,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB|</code>
      * </p>
      */
     private String gatewayType;
@@ -162,7 +162,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
-     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * key</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * 
      * @param activationKey
@@ -174,7 +174,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     *        activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *        activation key</a> in the <i>Storage Gateway User Guide</i>.
      */
 
     public void setActivationKey(String activationKey) {
@@ -192,7 +192,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
-     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * key</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * 
      * @return Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with
@@ -203,7 +203,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     *         activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *         activation key</a> in the <i>Storage Gateway User Guide</i>.
      */
 
     public String getActivationKey() {
@@ -221,7 +221,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation
-     * key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     * key</a> in the <i>Storage Gateway User Guide</i>.
      * </p>
      * 
      * @param activationKey
@@ -233,7 +233,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
-     *        activation key</a> in the <i>AWS Storage Gateway User Guide</i>.
+     *        activation key</a> in the <i>Storage Gateway User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,26 +342,25 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
-     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
-     * <i>AWS General Reference</i>.
+     * A value that indicates the Region where you want to store your data. The gateway Region specified must be the
+     * same Region as the Region in your <code>Host</code> header in the request. For more information about available
+     * Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+     * Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
-     * and quotas</a> in the <i>AWS General Reference</i>.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param gatewayRegion
-     *        A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
-     *        must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
-     *        information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>
-     *        in the <i>AWS General Reference</i>.</p>
+     *        A value that indicates the Region where you want to store your data. The gateway Region specified must be
+     *        the same Region as the Region in your <code>Host</code> header in the request. For more information about
+     *        available Regions and endpoints for Storage Gateway, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in
+     *        the <i>Amazon Web Services General Reference</i>.</p>
      *        <p>
-     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     *        endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     *        endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setGatewayRegion(String gatewayRegion) {
@@ -370,25 +369,24 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
-     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
-     * <i>AWS General Reference</i>.
+     * A value that indicates the Region where you want to store your data. The gateway Region specified must be the
+     * same Region as the Region in your <code>Host</code> header in the request. For more information about available
+     * Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+     * Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
-     * and quotas</a> in the <i>AWS General Reference</i>.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
-     *         must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
-     *         information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>
-     *         in the <i>AWS General Reference</i>.</p>
+     * @return A value that indicates the Region where you want to store your data. The gateway Region specified must be
+     *         the same Region as the Region in your <code>Host</code> header in the request. For more information about
+     *         available Regions and endpoints for Storage Gateway, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in
+     *         the <i>Amazon Web Services General Reference</i>.</p>
      *         <p>
-     *         Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     *         endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     *         Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     *         endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getGatewayRegion() {
@@ -397,26 +395,25 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
-     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
-     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a> in the
-     * <i>AWS General Reference</i>.
+     * A value that indicates the Region where you want to store your data. The gateway Region specified must be the
+     * same Region as the Region in your <code>Host</code> header in the request. For more information about available
+     * Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+     * Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
-     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints
-     * and quotas</a> in the <i>AWS General Reference</i>.
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param gatewayRegion
-     *        A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
-     *        must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
-     *        information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>
-     *        in the <i>AWS General Reference</i>.</p>
+     *        A value that indicates the Region where you want to store your data. The gateway Region specified must be
+     *        the same Region as the Region in your <code>Host</code> header in the request. For more information about
+     *        available Regions and endpoints for Storage Gateway, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in
+     *        the <i>Amazon Web Services General Reference</i>.</p>
      *        <p>
-     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
-     *        endpoints and quotas</a> in the <i>AWS General Reference</i>.
+     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway
+     *        endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,7 +428,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB|</code>
      * </p>
      * 
      * @param gatewayType
@@ -439,7 +437,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *        .</p>
      *        <p>
-     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     *        <code>FILE_FSX_SMB|</code>
      */
 
     public void setGatewayType(String gatewayType) {
@@ -452,14 +451,16 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB|</code>
      * </p>
      * 
      * @return A value that defines the type of gateway to activate. The type specified is critical to all later
      *         functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *         .</p>
      *         <p>
-     *         Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     *         Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     *         <code>FILE_FSX_SMB|</code>
      */
 
     public String getGatewayType() {
@@ -472,7 +473,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB|</code>
      * </p>
      * 
      * @param gatewayType
@@ -480,7 +482,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *        .</p>
      *        <p>
-     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
+     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     *        <code>FILE_FSX_SMB|</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

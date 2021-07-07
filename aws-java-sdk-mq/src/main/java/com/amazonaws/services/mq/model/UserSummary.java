@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Returns a list of all broker users.
+ * <p>
+ * Returns a list of all broker users. Does not apply to RabbitMQ brokers.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UserSummary" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +28,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
-    /** The type of change pending for the broker user. */
+    /**
+     * <p>
+     * The type of change pending for the broker user.
+     * </p>
+     */
     private String pendingChange;
     /**
+     * <p>
      * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private String username;
 
     /**
+     * <p>
      * The type of change pending for the broker user.
+     * </p>
      * 
      * @param pendingChange
      *        The type of change pending for the broker user.
@@ -47,7 +57,9 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of change pending for the broker user.
+     * </p>
      * 
      * @return The type of change pending for the broker user.
      * @see ChangeType
@@ -58,7 +70,9 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of change pending for the broker user.
+     * </p>
      * 
      * @param pendingChange
      *        The type of change pending for the broker user.
@@ -72,7 +86,9 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of change pending for the broker user.
+     * </p>
      * 
      * @param pendingChange
      *        The type of change pending for the broker user.
@@ -86,8 +102,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
@@ -99,8 +117,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *         periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
@@ -111,8 +131,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,

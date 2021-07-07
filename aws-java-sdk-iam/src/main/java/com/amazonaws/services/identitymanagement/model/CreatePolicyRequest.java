@@ -60,9 +60,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
+     * </p>
+     * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
      * </p>
      * <p>
      * To learn more about JSON policy grammar, see <a
@@ -313,9 +319,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
+     * </p>
+     * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
      * </p>
      * <p>
      * To learn more about JSON policy grammar, see <a
@@ -349,9 +361,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for the new policy.</p>
      *        <p>
-     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *        to JSON format before submitting it to IAM.
+     *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
+     *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
+     *        format before submitting it to IAM.
+     *        </p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
      *        </p>
      *        <p>
      *        To learn more about JSON policy grammar, see <a
@@ -392,9 +410,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
+     * </p>
+     * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
      * </p>
      * <p>
      * To learn more about JSON policy grammar, see <a
@@ -427,9 +451,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return The JSON policy document that you want to use as the content for the new policy.</p>
      *         <p>
-     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *         to JSON format before submitting it to IAM.
+     *         You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
+     *         you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
+     *         format before submitting it to IAM.
+     *         </p>
+     *         <p>
+     *         The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *         listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *         >IAM and STS character quotas</a>.
      *         </p>
      *         <p>
      *         To learn more about JSON policy grammar, see <a
@@ -470,9 +500,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
+     * </p>
+     * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
      * </p>
      * <p>
      * To learn more about JSON policy grammar, see <a
@@ -506,9 +542,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for the new policy.</p>
      *        <p>
-     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *        to JSON format before submitting it to IAM.
+     *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
+     *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
+     *        format before submitting it to IAM.
+     *        </p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
      *        </p>
      *        <p>
      *        To learn more about JSON policy grammar, see <a

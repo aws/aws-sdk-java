@@ -177,6 +177,41 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> authorizeSecurityGroupEgressRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) authorizeSecurityGroupEgressRequest
+                .getTagSpecifications();
+        if (!authorizeSecurityGroupEgressRequestTagSpecificationsList.isEmpty() || !authorizeSecurityGroupEgressRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification authorizeSecurityGroupEgressRequestTagSpecificationsListValue : authorizeSecurityGroupEgressRequestTagSpecificationsList) {
+
+                if (authorizeSecurityGroupEgressRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(authorizeSecurityGroupEgressRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) authorizeSecurityGroupEgressRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         if (authorizeSecurityGroupEgressRequest.getCidrIp() != null) {
             request.addParameter("CidrIp", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getCidrIp()));
         }

@@ -64,6 +64,8 @@ public class UpdateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
     private static final MarshallingInfo<String> NOTIFICATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationPolicy").build();
+    private static final MarshallingInfo<Boolean> OPLOCKSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OplocksEnabled").build();
 
     private static final UpdateSMBFileShareRequestMarshaller instance = new UpdateSMBFileShareRequestMarshaller();
 
@@ -99,6 +101,7 @@ public class UpdateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(updateSMBFileShareRequest.getFileShareName(), FILESHARENAME_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getNotificationPolicy(), NOTIFICATIONPOLICY_BINDING);
+            protocolMarshaller.marshall(updateSMBFileShareRequest.getOplocksEnabled(), OPLOCKSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

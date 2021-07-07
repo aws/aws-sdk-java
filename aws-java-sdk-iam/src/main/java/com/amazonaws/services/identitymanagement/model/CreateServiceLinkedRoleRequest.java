@@ -27,16 +27,16 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
-     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * The service principal for the Amazon Web Services service to which this role is attached. You use a string
+     * similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
      * </p>
      * <p>
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
-     * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web
+     * Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     * </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
+     * documentation for that service.
      * </p>
      */
     private String aWSServiceName;
@@ -63,28 +63,29 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
-     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * The service principal for the Amazon Web Services service to which this role is attached. You use a string
+     * similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
      * </p>
      * <p>
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
-     * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web
+     * Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     * </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
+     * documentation for that service.
      * </p>
      * 
      * @param aWSServiceName
-     *        The service principal for the AWS service to which this role is attached. You use a string similar to a
-     *        URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+     *        The service principal for the Amazon Web Services service to which this role is attached. You use a string
+     *        similar to a URL but without the http:// in front. For example:
+     *        <code>elasticbeanstalk.amazonaws.com</code>. </p>
      *        <p>
      *        Service principals are unique and case-sensitive. To find the exact service principal for your
      *        service-linked role, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     *        services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
-     *        </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
-     *        documentation for that service.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
+     *        >Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services
+     *        that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the
+     *        service-linked role documentation for that service.
      */
 
     public void setAWSServiceName(String aWSServiceName) {
@@ -93,27 +94,28 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
-     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * The service principal for the Amazon Web Services service to which this role is attached. You use a string
+     * similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
      * </p>
      * <p>
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
-     * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web
+     * Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     * </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
+     * documentation for that service.
      * </p>
      * 
-     * @return The service principal for the AWS service to which this role is attached. You use a string similar to a
-     *         URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+     * @return The service principal for the Amazon Web Services service to which this role is attached. You use a
+     *         string similar to a URL but without the http:// in front. For example:
+     *         <code>elasticbeanstalk.amazonaws.com</code>. </p>
      *         <p>
      *         Service principals are unique and case-sensitive. To find the exact service principal for your
      *         service-linked role, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
-     *         >AWS services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
-     *         </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
-     *         documentation for that service.
+     *         >Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services
+     *         that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the
+     *         service-linked role documentation for that service.
      */
 
     public String getAWSServiceName() {
@@ -122,28 +124,29 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
-     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * The service principal for the Amazon Web Services service to which this role is attached. You use a string
+     * similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
      * </p>
      * <p>
      * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
      * role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the
-     * <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web
+     * Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
+     * </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
+     * documentation for that service.
      * </p>
      * 
      * @param aWSServiceName
-     *        The service principal for the AWS service to which this role is attached. You use a string similar to a
-     *        URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+     *        The service principal for the Amazon Web Services service to which this role is attached. You use a string
+     *        similar to a URL but without the http:// in front. For example:
+     *        <code>elasticbeanstalk.amazonaws.com</code>. </p>
      *        <p>
      *        Service principals are unique and case-sensitive. To find the exact service principal for your
      *        service-linked role, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     *        services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes
-     *        </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
-     *        documentation for that service.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
+     *        >Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services
+     *        that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the
+     *        service-linked role documentation for that service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -57,9 +57,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
-     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
-     * converts a YAML policy to JSON format before submitting it to IAM.
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation templates
+     * formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML
+     * policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -102,7 +102,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 12 hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -307,9 +307,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
-     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
-     * converts a YAML policy to JSON format before submitting it to IAM.
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation templates
+     * formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML
+     * policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -341,9 +341,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
-     *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-     *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
+     *        In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation
+     *        templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always
+     *        converts a YAML policy to JSON format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -382,9 +382,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
-     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
-     * converts a YAML policy to JSON format before submitting it to IAM.
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation templates
+     * formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML
+     * policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -415,9 +415,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
      *         <p>
-     *         In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
-     *         CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-     *         CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
+     *         In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation
+     *         templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always
+     *         converts a YAML policy to JSON format before submitting it to IAM.
      *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -456,9 +456,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
-     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
-     * converts a YAML policy to JSON format before submitting it to IAM.
+     * In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation templates
+     * formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML
+     * policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -490,9 +490,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        In IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
-     *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
-     *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
+     *        In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation
+     *        templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always
+     *        converts a YAML policy to JSON format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -575,7 +575,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 12 hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -590,8 +590,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        specify a value for this setting, the default maximum of one hour is applied. This setting can have a
      *        value from 1 hour to 12 hours.</p>
      *        <p>
-     *        Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter
-     *        or the <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *        Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     *        <code>duration-seconds</code> CLI parameter to request a longer session. The
      *        <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
      *        <code>DurationSeconds</code> parameter. If users don't specify a value for the
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
@@ -612,7 +612,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 12 hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -626,8 +626,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         specify a value for this setting, the default maximum of one hour is applied. This setting can have a
      *         value from 1 hour to 12 hours.</p>
      *         <p>
-     *         Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API
-     *         parameter or the <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *         Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     *         <code>duration-seconds</code> CLI parameter to request a longer session. The
      *         <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
      *         <code>DurationSeconds</code> parameter. If users don't specify a value for the
      *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
@@ -648,7 +648,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 12 hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -663,8 +663,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        specify a value for this setting, the default maximum of one hour is applied. This setting can have a
      *        value from 1 hour to 12 hours.</p>
      *        <p>
-     *        Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter
-     *        or the <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *        Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     *        <code>duration-seconds</code> CLI parameter to request a longer session. The
      *        <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
      *        <code>DurationSeconds</code> parameter. If users don't specify a value for the
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This

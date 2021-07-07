@@ -50,7 +50,7 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
-     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
      * field.
      * </p>
      */
@@ -118,13 +118,13 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
-     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
      * field.
      * </p>
      * 
      * @param snapshotDescription
      *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
-     *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *        panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane,
      *        <b>Description</b> field.
      */
 
@@ -135,12 +135,12 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
-     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
      * field.
      * </p>
      * 
      * @return Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
-     *         panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *         panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane,
      *         <b>Description</b> field.
      */
 
@@ -151,13 +151,13 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
-     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
      * field.
      * </p>
      * 
      * @param snapshotDescription
      *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
-     *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *        panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane,
      *        <b>Description</b> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

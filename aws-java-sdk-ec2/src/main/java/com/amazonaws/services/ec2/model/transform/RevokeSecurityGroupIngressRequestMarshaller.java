@@ -204,6 +204,21 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
             request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getToPort()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> revokeSecurityGroupIngressRequestSecurityGroupRuleIdsList = (com.amazonaws.internal.SdkInternalList<String>) revokeSecurityGroupIngressRequest
+                .getSecurityGroupRuleIds();
+        if (!revokeSecurityGroupIngressRequestSecurityGroupRuleIdsList.isEmpty()
+                || !revokeSecurityGroupIngressRequestSecurityGroupRuleIdsList.isAutoConstruct()) {
+            int securityGroupRuleIdsListIndex = 1;
+
+            for (String revokeSecurityGroupIngressRequestSecurityGroupRuleIdsListValue : revokeSecurityGroupIngressRequestSecurityGroupRuleIdsList) {
+                if (revokeSecurityGroupIngressRequestSecurityGroupRuleIdsListValue != null) {
+                    request.addParameter("SecurityGroupRuleId." + securityGroupRuleIdsListIndex,
+                            StringUtils.fromString(revokeSecurityGroupIngressRequestSecurityGroupRuleIdsListValue));
+                }
+                securityGroupRuleIdsListIndex++;
+            }
+        }
+
         return request;
     }
 

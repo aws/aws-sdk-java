@@ -28,6 +28,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateAliasResult> associateAliasAsync(AssociateAliasRequest request) {
+
+        return associateAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateAliasResult> associateAliasAsync(AssociateAliasRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateAliasRequest, AssociateAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCachePolicyResult> createCachePolicyAsync(CreateCachePolicyRequest request) {
 
         return createCachePolicyAsync(request, null);
@@ -721,6 +734,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
             ListCloudFrontOriginAccessIdentitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConflictingAliasesResult> listConflictingAliasesAsync(ListConflictingAliasesRequest request) {
+
+        return listConflictingAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConflictingAliasesResult> listConflictingAliasesAsync(ListConflictingAliasesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConflictingAliasesRequest, ListConflictingAliasesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

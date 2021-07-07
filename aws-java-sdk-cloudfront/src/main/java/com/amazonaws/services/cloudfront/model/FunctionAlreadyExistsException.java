@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A function with the same name already exists in this AWS account. To create a function, you must provide a unique
- * name. To update an existing function, use <code>UpdateFunction</code>.
+ * A function with the same name already exists in this account. To create a function, you must provide a unique name.
+ * To update an existing function, use <code>UpdateFunction</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

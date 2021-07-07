@@ -409,6 +409,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStorageConfigurationResult> describeStorageConfigurationAsync(DescribeStorageConfigurationRequest request) {
+
+        return describeStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageConfigurationResult> describeStorageConfigurationAsync(DescribeStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStorageConfigurationRequest, DescribeStorageConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateAssetsResult> disassociateAssetsAsync(DisassociateAssetsRequest request) {
 
         return disassociateAssetsAsync(request, null);
@@ -642,6 +655,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<PutLoggingOptionsResult> putLoggingOptionsAsync(PutLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutLoggingOptionsRequest, PutLoggingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutStorageConfigurationResult> putStorageConfigurationAsync(PutStorageConfigurationRequest request) {
+
+        return putStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutStorageConfigurationResult> putStorageConfigurationAsync(PutStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutStorageConfigurationRequest, PutStorageConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

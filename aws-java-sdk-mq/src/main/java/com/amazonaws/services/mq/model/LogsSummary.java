@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * The list of information about logs currently enabled and pending to be deployed for the specified broker.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LogsSummary" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +28,41 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
 
-    /** Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. */
+    /**
+     * <p>
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
+     */
     private Boolean audit;
-    /** The location of the CloudWatch Logs log group where audit logs are sent. */
+    /**
+     * <p>
+     * The location of the CloudWatch Logs log group where audit logs are sent.
+     * </p>
+     */
     private String auditLogGroup;
-    /** Enables general logging. */
+    /**
+     * <p>
+     * Enables general logging.
+     * </p>
+     */
     private Boolean general;
-    /** The location of the CloudWatch Logs log group where general logs are sent. */
+    /**
+     * <p>
+     * The location of the CloudWatch Logs log group where general logs are sent.
+     * </p>
+     */
     private String generalLogGroup;
-    /** The list of information about logs pending to be deployed for the specified broker. */
+    /**
+     * <p>
+     * The list of information about logs pending to be deployed for the specified broker.
+     * </p>
+     */
     private PendingLogs pending;
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @param audit
      *        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
@@ -49,7 +73,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @return Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
      */
@@ -59,7 +85,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @param audit
      *        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
@@ -72,7 +100,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @return Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
      */
@@ -82,7 +112,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The location of the CloudWatch Logs log group where audit logs are sent.
+     * </p>
      * 
      * @param auditLogGroup
      *        The location of the CloudWatch Logs log group where audit logs are sent.
@@ -93,7 +125,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The location of the CloudWatch Logs log group where audit logs are sent.
+     * </p>
      * 
      * @return The location of the CloudWatch Logs log group where audit logs are sent.
      */
@@ -103,7 +137,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The location of the CloudWatch Logs log group where audit logs are sent.
+     * </p>
      * 
      * @param auditLogGroup
      *        The location of the CloudWatch Logs log group where audit logs are sent.
@@ -116,7 +152,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @param general
      *        Enables general logging.
@@ -127,7 +165,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @return Enables general logging.
      */
@@ -137,7 +177,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @param general
      *        Enables general logging.
@@ -150,7 +192,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @return Enables general logging.
      */
@@ -160,7 +204,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The location of the CloudWatch Logs log group where general logs are sent.
+     * </p>
      * 
      * @param generalLogGroup
      *        The location of the CloudWatch Logs log group where general logs are sent.
@@ -171,7 +217,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The location of the CloudWatch Logs log group where general logs are sent.
+     * </p>
      * 
      * @return The location of the CloudWatch Logs log group where general logs are sent.
      */
@@ -181,7 +229,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The location of the CloudWatch Logs log group where general logs are sent.
+     * </p>
      * 
      * @param generalLogGroup
      *        The location of the CloudWatch Logs log group where general logs are sent.
@@ -194,7 +244,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of information about logs pending to be deployed for the specified broker.
+     * </p>
      * 
      * @param pending
      *        The list of information about logs pending to be deployed for the specified broker.
@@ -205,7 +257,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of information about logs pending to be deployed for the specified broker.
+     * </p>
      * 
      * @return The list of information about logs pending to be deployed for the specified broker.
      */
@@ -215,7 +269,9 @@ public class LogsSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The list of information about logs pending to be deployed for the specified broker.
+     * </p>
      * 
      * @param pending
      *        The list of information about logs pending to be deployed for the specified broker.

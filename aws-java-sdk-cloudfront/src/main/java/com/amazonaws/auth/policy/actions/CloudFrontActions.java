@@ -25,6 +25,8 @@ public enum CloudFrontActions implements Action {
     /** Represents any action executed on CloudFront. */
     AllCloudFrontActions("cloudfront:*"),
 
+    /** Action for the AssociateAlias operation. */
+    AssociateAlias("cloudfront:AssociateAlias"),
     /** Action for the CreateCachePolicy operation. */
     CreateCachePolicy("cloudfront:CreateCachePolicy"),
     /** Action for the CreateCloudFrontOriginAccessIdentity operation. */
@@ -129,6 +131,8 @@ public enum CloudFrontActions implements Action {
     ListCachePolicies("cloudfront:ListCachePolicies"),
     /** Action for the ListCloudFrontOriginAccessIdentities operation. */
     ListCloudFrontOriginAccessIdentities("cloudfront:ListCloudFrontOriginAccessIdentities"),
+    /** Action for the ListConflictingAliases operation. */
+    ListConflictingAliases("cloudfront:ListConflictingAliases"),
     /** Action for the ListDistributions operation. */
     ListDistributions("cloudfront:ListDistributions"),
     /** Action for the ListDistributionsByCachePolicyId operation. */

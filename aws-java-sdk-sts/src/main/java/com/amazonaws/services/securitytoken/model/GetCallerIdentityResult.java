@@ -38,13 +38,13 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
     private String userId;
     /**
      * <p>
-     * The AWS account ID number of the account that owns or contains the calling entity.
+     * The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      * </p>
      */
     private String account;
     /**
      * <p>
-     * The AWS ARN associated with the calling entity.
+     * The Amazon Web Services ARN associated with the calling entity.
      * </p>
      */
     private String arn;
@@ -109,11 +109,11 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS account ID number of the account that owns or contains the calling entity.
+     * The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      * </p>
      * 
      * @param account
-     *        The AWS account ID number of the account that owns or contains the calling entity.
+     *        The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      */
 
     public void setAccount(String account) {
@@ -122,10 +122,10 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS account ID number of the account that owns or contains the calling entity.
+     * The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      * </p>
      * 
-     * @return The AWS account ID number of the account that owns or contains the calling entity.
+     * @return The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      */
 
     public String getAccount() {
@@ -134,11 +134,11 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS account ID number of the account that owns or contains the calling entity.
+     * The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      * </p>
      * 
      * @param account
-     *        The AWS account ID number of the account that owns or contains the calling entity.
+     *        The Amazon Web Services account ID number of the account that owns or contains the calling entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,11 +149,11 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS ARN associated with the calling entity.
+     * The Amazon Web Services ARN associated with the calling entity.
      * </p>
      * 
      * @param arn
-     *        The AWS ARN associated with the calling entity.
+     *        The Amazon Web Services ARN associated with the calling entity.
      */
 
     public void setArn(String arn) {
@@ -162,10 +162,10 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS ARN associated with the calling entity.
+     * The Amazon Web Services ARN associated with the calling entity.
      * </p>
      * 
-     * @return The AWS ARN associated with the calling entity.
+     * @return The Amazon Web Services ARN associated with the calling entity.
      */
 
     public String getArn() {
@@ -174,11 +174,11 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS ARN associated with the calling entity.
+     * The Amazon Web Services ARN associated with the calling entity.
      * </p>
      * 
      * @param arn
-     *        The AWS ARN associated with the calling entity.
+     *        The Amazon Web Services ARN associated with the calling entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

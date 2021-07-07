@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
- * alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For
- * more information, see .
+ * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm
+ * to monitor an asset property and get notified when the asset property value is outside a specified range. For more
+ * information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring
+ * with alarms</a> in the <i>IoT SiteWise Application Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Alarms" target="_top">AWS API
@@ -33,16 +34,17 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role
-     * that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     * that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT
+     * Events.
      * </p>
      */
     private String alarmRoleArn;
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS
-     * Lambda function that manages alarm notifications. For more information, see <a
-     * href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     * Guide</i>.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda
+     * function that manages alarm notifications. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     * notifications</a> in the <i>IoT Events Developer Guide</i>.
      * </p>
      */
     private String notificationLambdaArn;
@@ -50,12 +52,14 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role
-     * that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     * that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT
+     * Events.
      * </p>
      * 
      * @param alarmRoleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        IAM role that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     *        IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services,
+     *        such as IoT Events.
      */
 
     public void setAlarmRoleArn(String alarmRoleArn) {
@@ -65,11 +69,13 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role
-     * that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     * that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT
+     * Events.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         IAM role that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     *         IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services,
+     *         such as IoT Events.
      */
 
     public String getAlarmRoleArn() {
@@ -79,12 +85,14 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role
-     * that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     * that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT
+     * Events.
      * </p>
      * 
      * @param alarmRoleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        IAM role that allows the alarm to perform actions and access AWS resources, including AWS IoT Events.
+     *        IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services,
+     *        such as IoT Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,17 +103,17 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS
-     * Lambda function that manages alarm notifications. For more information, see <a
-     * href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     * Guide</i>.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda
+     * function that manages alarm notifications. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     * notifications</a> in the <i>IoT Events Developer Guide</i>.
      * </p>
      * 
      * @param notificationLambdaArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        AWS Lambda function that manages alarm notifications. For more information, see <a
-     *        href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     *        Guide</i>.
+     *        Lambda function that manages alarm notifications. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     *        notifications</a> in the <i>IoT Events Developer Guide</i>.
      */
 
     public void setNotificationLambdaArn(String notificationLambdaArn) {
@@ -114,16 +122,16 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS
-     * Lambda function that manages alarm notifications. For more information, see <a
-     * href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     * Guide</i>.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda
+     * function that manages alarm notifications. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     * notifications</a> in the <i>IoT Events Developer Guide</i>.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         AWS Lambda function that manages alarm notifications. For more information, see <a
-     *         href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     *         Guide</i>.
+     *         Lambda function that manages alarm notifications. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     *         notifications</a> in the <i>IoT Events Developer Guide</i>.
      */
 
     public String getNotificationLambdaArn() {
@@ -132,17 +140,17 @@ public class Alarms implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS
-     * Lambda function that manages alarm notifications. For more information, see <a
-     * href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     * Guide</i>.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda
+     * function that manages alarm notifications. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     * notifications</a> in the <i>IoT Events Developer Guide</i>.
      * </p>
      * 
      * @param notificationLambdaArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        AWS Lambda function that manages alarm notifications. For more information, see <a
-     *        href="https://docs.aws.amazon.com/">Managing alarm notifications</a> in the <i>AWS IoT Events Developer
-     *        Guide</i>.
+     *        Lambda function that manages alarm notifications. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
+     *        notifications</a> in the <i>IoT Events Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

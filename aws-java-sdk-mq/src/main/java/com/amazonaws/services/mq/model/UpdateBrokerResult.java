@@ -23,36 +23,79 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The authentication strategy used to secure the broker. */
+    /**
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
+     */
     private String authenticationStrategy;
-    /** The new value of automatic upgrades to new minor version for brokers. */
+    /**
+     * <p>
+     * The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new
+     * versions are released and supported by Amazon MQ.
+     * </p>
+     */
     private Boolean autoMinorVersionUpgrade;
-    /** Required. The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
-    /** The ID of the updated configuration. */
+    /**
+     * <p>
+     * The ID of the updated configuration.
+     * </p>
+     */
     private ConfigurationId configuration;
     /**
-     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      */
     private String engineVersion;
     /**
-     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * <p>
+     * The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
+     * instance types</a>.
+     * </p>
      */
     private String hostInstanceType;
-    /** The metadata of the LDAP server used to authenticate and authorize connections to the broker. */
+    /**
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
+     */
     private LdapServerMetadataOutput ldapServerMetadata;
-    /** The list of information about logs to be enabled for the specified broker. */
+    /**
+     * <p>
+     * The list of information about logs to be enabled for the specified broker.
+     * </p>
+     */
     private Logs logs;
-    /** The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers. */
+    /**
+     * <p>
+     * The parameters that determine the WeeklyStartTime.
+     * </p>
+     */
+    private WeeklyStartTime maintenanceWindowStartTime;
+    /**
+     * <p>
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * </p>
+     */
     private java.util.List<String> securityGroups;
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy used to secure the broker.
+     *        Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @see AuthenticationStrategy
      */
 
@@ -61,9 +104,11 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
-     * @return The authentication strategy used to secure the broker.
+     * @return Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @see AuthenticationStrategy
      */
 
@@ -72,10 +117,12 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy used to secure the broker.
+     *        Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationStrategy
      */
@@ -86,10 +133,12 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy used to secure the broker.
+     *        Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationStrategy
      */
@@ -100,10 +149,14 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The new value of automatic upgrades to new minor version for brokers.
+     * <p>
+     * The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new
+     * versions are released and supported by Amazon MQ.
+     * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        The new value of automatic upgrades to new minor version for brokers.
+     *        The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as
+     *        new versions are released and supported by Amazon MQ.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -111,9 +164,13 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The new value of automatic upgrades to new minor version for brokers.
+     * <p>
+     * The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new
+     * versions are released and supported by Amazon MQ.
+     * </p>
      * 
-     * @return The new value of automatic upgrades to new minor version for brokers.
+     * @return The new boolean value that specifies whether broker engines automatically upgrade to new minor versions
+     *         as new versions are released and supported by Amazon MQ.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -121,10 +178,14 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The new value of automatic upgrades to new minor version for brokers.
+     * <p>
+     * The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new
+     * versions are released and supported by Amazon MQ.
+     * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        The new value of automatic upgrades to new minor version for brokers.
+     *        The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as
+     *        new versions are released and supported by Amazon MQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,9 +195,13 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The new value of automatic upgrades to new minor version for brokers.
+     * <p>
+     * The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new
+     * versions are released and supported by Amazon MQ.
+     * </p>
      * 
-     * @return The new value of automatic upgrades to new minor version for brokers.
+     * @return The new boolean value that specifies whether broker engines automatically upgrade to new minor versions
+     *         as new versions are released and supported by Amazon MQ.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -144,7 +209,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        Required. The unique ID that Amazon MQ generates for the broker.
@@ -155,7 +222,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the broker.
      */
@@ -165,7 +234,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        Required. The unique ID that Amazon MQ generates for the broker.
@@ -178,7 +249,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The ID of the updated configuration.
+     * </p>
      * 
      * @param configuration
      *        The ID of the updated configuration.
@@ -189,7 +262,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The ID of the updated configuration.
+     * </p>
      * 
      * @return The ID of the updated configuration.
      */
@@ -199,7 +274,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The ID of the updated configuration.
+     * </p>
      * 
      * @param configuration
      *        The ID of the updated configuration.
@@ -212,12 +289,15 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
      * @param engineVersion
-     *        The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     *        The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *        engines</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -225,11 +305,14 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
-     * @return The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * @return The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     *         href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *         engines</a>.
      */
 
     public String getEngineVersion() {
@@ -237,12 +320,15 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
      * @param engineVersion
-     *        The version of the broker engine to upgrade to. For a list of supported engine versions, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     *        The broker engine version to upgrade to. For a list of supported engine versions, see <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *        engines</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,12 +338,16 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * <p>
+     * The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
+     * instance types</a>.
+     * </p>
      * 
      * @param hostInstanceType
-     *        The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     *        The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types"
+     *        >Broker instance types</a>.
      */
 
     public void setHostInstanceType(String hostInstanceType) {
@@ -265,11 +355,15 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * <p>
+     * The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
+     * instance types</a>.
+     * </p>
      * 
-     * @return The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * @return The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     *         href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types"
+     *         >Broker instance types</a>.
      */
 
     public String getHostInstanceType() {
@@ -277,12 +371,16 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * <p>
+     * The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
+     * instance types</a>.
+     * </p>
      * 
      * @param hostInstanceType
-     *        The host instance type of the broker to upgrade to. For a list of supported instance types, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     *        The broker's host instance type to upgrade to. For a list of supported instance types, see <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types"
+     *        >Broker instance types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,10 +390,14 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param ldapServerMetadata
-     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Does not apply to RabbitMQ brokers.
      */
 
     public void setLdapServerMetadata(LdapServerMetadataOutput ldapServerMetadata) {
@@ -303,9 +405,13 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
      * 
-     * @return The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * @return Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *         Does not apply to RabbitMQ brokers.
      */
 
     public LdapServerMetadataOutput getLdapServerMetadata() {
@@ -313,10 +419,14 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param ldapServerMetadata
-     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,7 +436,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of information about logs to be enabled for the specified broker.
+     * </p>
      * 
      * @param logs
      *        The list of information about logs to be enabled for the specified broker.
@@ -337,7 +449,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of information about logs to be enabled for the specified broker.
+     * </p>
      * 
      * @return The list of information about logs to be enabled for the specified broker.
      */
@@ -347,7 +461,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of information about logs to be enabled for the specified broker.
+     * </p>
      * 
      * @param logs
      *        The list of information about logs to be enabled for the specified broker.
@@ -360,7 +476,49 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The parameters that determine the WeeklyStartTime.
+     * </p>
+     * 
+     * @param maintenanceWindowStartTime
+     *        The parameters that determine the WeeklyStartTime.
+     */
+
+    public void setMaintenanceWindowStartTime(WeeklyStartTime maintenanceWindowStartTime) {
+        this.maintenanceWindowStartTime = maintenanceWindowStartTime;
+    }
+
+    /**
+     * <p>
+     * The parameters that determine the WeeklyStartTime.
+     * </p>
+     * 
+     * @return The parameters that determine the WeeklyStartTime.
+     */
+
+    public WeeklyStartTime getMaintenanceWindowStartTime() {
+        return this.maintenanceWindowStartTime;
+    }
+
+    /**
+     * <p>
+     * The parameters that determine the WeeklyStartTime.
+     * </p>
+     * 
+     * @param maintenanceWindowStartTime
+     *        The parameters that determine the WeeklyStartTime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withMaintenanceWindowStartTime(WeeklyStartTime maintenanceWindowStartTime) {
+        setMaintenanceWindowStartTime(maintenanceWindowStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * </p>
      * 
      * @return The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      */
@@ -370,7 +528,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * </p>
      * 
      * @param securityGroups
      *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
@@ -386,7 +546,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -409,7 +571,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * </p>
      * 
      * @param securityGroups
      *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
@@ -449,6 +613,8 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("LdapServerMetadata: ").append(getLdapServerMetadata()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs()).append(",");
+        if (getMaintenanceWindowStartTime() != null)
+            sb.append("MaintenanceWindowStartTime: ").append(getMaintenanceWindowStartTime()).append(",");
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
@@ -497,6 +663,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
             return false;
+        if (other.getMaintenanceWindowStartTime() == null ^ this.getMaintenanceWindowStartTime() == null)
+            return false;
+        if (other.getMaintenanceWindowStartTime() != null && other.getMaintenanceWindowStartTime().equals(this.getMaintenanceWindowStartTime()) == false)
+            return false;
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
@@ -517,6 +687,7 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
         hashCode = prime * hashCode + ((getLdapServerMetadata() == null) ? 0 : getLdapServerMetadata().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;
     }

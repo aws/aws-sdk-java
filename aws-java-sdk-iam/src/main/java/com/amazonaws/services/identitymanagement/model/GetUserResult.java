@@ -42,10 +42,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * <p>
      * You can use password last used information to identify unused credentials for deletion. For example, you might
-     * delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that you adjust
-     * your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to
-     * access AWS programmatically you can refer to access key last used information because it is accurate for all
-     * dates.
+     * delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend
+     * that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
+     * access keys to access Amazon Web Services programmatically you can refer to access key last used information
+     * because it is accurate for all dates.
      * </p>
      * </important>
      */
@@ -68,10 +68,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * <p>
      * You can use password last used information to identify unused credentials for deletion. For example, you might
-     * delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that you adjust
-     * your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to
-     * access AWS programmatically you can refer to access key last used information because it is accurate for all
-     * dates.
+     * delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend
+     * that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
+     * access keys to access Amazon Web Services programmatically you can refer to access key last used information
+     * because it is accurate for all dates.
      * </p>
      * </important>
      * 
@@ -89,10 +89,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        </p>
      *        <p>
      *        You can use password last used information to identify unused credentials for deletion. For example, you
-     *        might delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that
-     *        you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
-     *        access keys to access AWS programmatically you can refer to access key last used information because it is
-     *        accurate for all dates.
+     *        might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we
+     *        recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if
+     *        your users use access keys to access Amazon Web Services programmatically you can refer to access key last
+     *        used information because it is accurate for all dates.
      *        </p>
      */
 
@@ -117,10 +117,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * <p>
      * You can use password last used information to identify unused credentials for deletion. For example, you might
-     * delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that you adjust
-     * your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to
-     * access AWS programmatically you can refer to access key last used information because it is accurate for all
-     * dates.
+     * delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend
+     * that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
+     * access keys to access Amazon Web Services programmatically you can refer to access key last used information
+     * because it is accurate for all dates.
      * </p>
      * </important>
      * 
@@ -137,10 +137,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *         </p>
      *         <p>
      *         You can use password last used information to identify unused credentials for deletion. For example, you
-     *         might delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that
-     *         you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
-     *         access keys to access AWS programmatically you can refer to access key last used information because it
-     *         is accurate for all dates.
+     *         might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we
+     *         recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if
+     *         your users use access keys to access Amazon Web Services programmatically you can refer to access key
+     *         last used information because it is accurate for all dates.
      *         </p>
      */
 
@@ -165,10 +165,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * <p>
      * You can use password last used information to identify unused credentials for deletion. For example, you might
-     * delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that you adjust
-     * your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to
-     * access AWS programmatically you can refer to access key last used information because it is accurate for all
-     * dates.
+     * delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend
+     * that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
+     * access keys to access Amazon Web Services programmatically you can refer to access key last used information
+     * because it is accurate for all dates.
      * </p>
      * </important>
      * 
@@ -186,10 +186,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        </p>
      *        <p>
      *        You can use password last used information to identify unused credentials for deletion. For example, you
-     *        might delete users who did not sign in to AWS in the last 90 days. In cases like this, we recommend that
-     *        you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use
-     *        access keys to access AWS programmatically you can refer to access key last used information because it is
-     *        accurate for all dates.
+     *        might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we
+     *        recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if
+     *        your users use access keys to access Amazon Web Services programmatically you can refer to access key last
+     *        used information because it is accurate for all dates.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

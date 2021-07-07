@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS IoT SiteWise can't process your request right now. Try again later.
+ * IoT SiteWise can't process your request right now. Try again later.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

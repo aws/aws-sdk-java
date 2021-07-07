@@ -15,7 +15,9 @@ package com.amazonaws.services.mq.model;
 import javax.annotation.Generated;
 
 /**
- * The type of broker engine. Note: Currently, Amazon MQ supports ActiveMQ and RabbitMQ.
+ * <p>
+ * The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EngineType {

@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A document that contains additional information about the authorization status of a request from an encoded message
- * that is returned in response to an AWS request.
+ * that is returned in response to an Amazon Web Services request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage" target="_top">AWS API

@@ -31,7 +31,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the
- * <i>AWS IoT SiteWise User Guide</i>.
+ * <i>IoT SiteWise User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Metric" target="_top">AWS API
@@ -47,8 +47,8 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      */
     private String expression;
@@ -60,8 +60,8 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ExpressionVariable> variables;
     /**
      * <p>
-     * The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS IoT
-     * SiteWise computes one data point per <code>window</code>.
+     * The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise
+     * computes one data point per <code>window</code>.
      * </p>
      */
     private MetricWindow window;
@@ -73,8 +73,8 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @param expression
@@ -82,7 +82,7 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
      *        variables per expression. You can specify up to 10 functions per expression. </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      */
 
@@ -97,15 +97,15 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @return The mathematical expression that defines the metric aggregation function. You can specify up to 10
      *         variables per expression. You can specify up to 10 functions per expression. </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *         SiteWise User Guide</i>.
      */
 
@@ -120,8 +120,8 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise
+     * User Guide</i>.
      * </p>
      * 
      * @param expression
@@ -129,7 +129,7 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
      *        variables per expression. You can specify up to 10 functions per expression. </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
      *        SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -211,13 +211,13 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS IoT
-     * SiteWise computes one data point per <code>window</code>.
+     * The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise
+     * computes one data point per <code>window</code>.
      * </p>
      * 
      * @param window
-     *        The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS
-     *        IoT SiteWise computes one data point per <code>window</code>.
+     *        The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT
+     *        SiteWise computes one data point per <code>window</code>.
      */
 
     public void setWindow(MetricWindow window) {
@@ -226,12 +226,12 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS IoT
-     * SiteWise computes one data point per <code>window</code>.
+     * The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise
+     * computes one data point per <code>window</code>.
      * </p>
      * 
-     * @return The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS
-     *         IoT SiteWise computes one data point per <code>window</code>.
+     * @return The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT
+     *         SiteWise computes one data point per <code>window</code>.
      */
 
     public MetricWindow getWindow() {
@@ -240,13 +240,13 @@ public class Metric implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS IoT
-     * SiteWise computes one data point per <code>window</code>.
+     * The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise
+     * computes one data point per <code>window</code>.
      * </p>
      * 
      * @param window
-     *        The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression. AWS
-     *        IoT SiteWise computes one data point per <code>window</code>.
+     *        The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT
+     *        SiteWise computes one data point per <code>window</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

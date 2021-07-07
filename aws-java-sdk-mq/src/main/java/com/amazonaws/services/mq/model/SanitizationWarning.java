@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Returns information about the XML element or attribute that was sanitized in the configuration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/SanitizationWarning" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +28,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SanitizationWarning implements Serializable, Cloneable, StructuredPojo {
 
-    /** The name of the XML attribute that has been sanitized. */
+    /**
+     * <p>
+     * The name of the XML attribute that has been sanitized.
+     * </p>
+     */
     private String attributeName;
-    /** The name of the XML element that has been sanitized. */
+    /**
+     * <p>
+     * The name of the XML element that has been sanitized.
+     * </p>
+     */
     private String elementName;
-    /** Required. The reason for which the XML elements or attributes were sanitized. */
+    /**
+     * <p>
+     * Required. The reason for which the XML elements or attributes were sanitized.
+     * </p>
+     */
     private String reason;
 
     /**
+     * <p>
      * The name of the XML attribute that has been sanitized.
+     * </p>
      * 
      * @param attributeName
      *        The name of the XML attribute that has been sanitized.
@@ -45,7 +61,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The name of the XML attribute that has been sanitized.
+     * </p>
      * 
      * @return The name of the XML attribute that has been sanitized.
      */
@@ -55,7 +73,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The name of the XML attribute that has been sanitized.
+     * </p>
      * 
      * @param attributeName
      *        The name of the XML attribute that has been sanitized.
@@ -68,7 +88,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The name of the XML element that has been sanitized.
+     * </p>
      * 
      * @param elementName
      *        The name of the XML element that has been sanitized.
@@ -79,7 +101,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The name of the XML element that has been sanitized.
+     * </p>
      * 
      * @return The name of the XML element that has been sanitized.
      */
@@ -89,7 +113,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * The name of the XML element that has been sanitized.
+     * </p>
      * 
      * @param elementName
      *        The name of the XML element that has been sanitized.
@@ -102,7 +128,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * Required. The reason for which the XML elements or attributes were sanitized.
+     * </p>
      * 
      * @param reason
      *        Required. The reason for which the XML elements or attributes were sanitized.
@@ -114,7 +142,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * Required. The reason for which the XML elements or attributes were sanitized.
+     * </p>
      * 
      * @return Required. The reason for which the XML elements or attributes were sanitized.
      * @see SanitizationWarningReason
@@ -125,7 +155,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * Required. The reason for which the XML elements or attributes were sanitized.
+     * </p>
      * 
      * @param reason
      *        Required. The reason for which the XML elements or attributes were sanitized.
@@ -139,7 +171,9 @@ public class SanitizationWarning implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
      * Required. The reason for which the XML elements or attributes were sanitized.
+     * </p>
      * 
      * @param reason
      *        Required. The reason for which the XML elements or attributes were sanitized.

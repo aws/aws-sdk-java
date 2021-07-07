@@ -30,18 +30,18 @@ public class GroupIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS SSO ID of the group.
+     * The Amazon Web Services SSO ID of the group.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The AWS SSO ID of the group.
+     * The Amazon Web Services SSO ID of the group.
      * </p>
      * 
      * @param id
-     *        The AWS SSO ID of the group.
+     *        The Amazon Web Services SSO ID of the group.
      */
 
     public void setId(String id) {
@@ -50,10 +50,10 @@ public class GroupIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS SSO ID of the group.
+     * The Amazon Web Services SSO ID of the group.
      * </p>
      * 
-     * @return The AWS SSO ID of the group.
+     * @return The Amazon Web Services SSO ID of the group.
      */
 
     public String getId() {
@@ -62,11 +62,11 @@ public class GroupIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS SSO ID of the group.
+     * The Amazon Web Services SSO ID of the group.
      * </p>
      * 
      * @param id
-     *        The AWS SSO ID of the group.
+     *        The Amazon Web Services SSO ID of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

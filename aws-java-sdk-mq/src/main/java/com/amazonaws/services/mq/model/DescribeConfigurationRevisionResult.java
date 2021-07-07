@@ -24,17 +24,35 @@ import javax.annotation.Generated;
 public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Required. The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String configurationId;
-    /** Required. The date and time of the configuration. */
+    /**
+     * <p>
+     * Required. The date and time of the configuration.
+     * </p>
+     */
     private java.util.Date created;
-    /** Required. The base64-encoded XML configuration. */
+    /**
+     * <p>
+     * Required. The base64-encoded XML configuration.
+     * </p>
+     */
     private String data;
-    /** The description of the configuration. */
+    /**
+     * <p>
+     * The description of the configuration.
+     * </p>
+     */
     private String description;
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -45,7 +63,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the configuration.
      */
@@ -55,7 +75,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param configurationId
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -68,7 +90,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration.
@@ -79,7 +103,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration.
+     * </p>
      * 
      * @return Required. The date and time of the configuration.
      */
@@ -89,7 +115,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration.
@@ -102,7 +130,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The base64-encoded XML configuration.
+     * </p>
      * 
      * @param data
      *        Required. The base64-encoded XML configuration.
@@ -113,7 +143,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The base64-encoded XML configuration.
+     * </p>
      * 
      * @return Required. The base64-encoded XML configuration.
      */
@@ -123,7 +155,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * Required. The base64-encoded XML configuration.
+     * </p>
      * 
      * @param data
      *        Required. The base64-encoded XML configuration.
@@ -136,7 +170,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The description of the configuration.
+     * </p>
      * 
      * @param description
      *        The description of the configuration.
@@ -147,7 +183,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The description of the configuration.
+     * </p>
      * 
      * @return The description of the configuration.
      */
@@ -157,7 +195,9 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The description of the configuration.
+     * </p>
      * 
      * @param description
      *        The description of the configuration.

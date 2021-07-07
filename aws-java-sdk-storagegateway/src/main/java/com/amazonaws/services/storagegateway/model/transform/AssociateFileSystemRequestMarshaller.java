@@ -44,6 +44,8 @@ public class AssociateFileSystemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditDestinationARN").build();
     private static final MarshallingInfo<StructuredPojo> CACHEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTNETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointNetworkConfiguration").build();
 
     private static final AssociateFileSystemRequestMarshaller instance = new AssociateFileSystemRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class AssociateFileSystemRequestMarshaller {
             protocolMarshaller.marshall(associateFileSystemRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(associateFileSystemRequest.getAuditDestinationARN(), AUDITDESTINATIONARN_BINDING);
             protocolMarshaller.marshall(associateFileSystemRequest.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(associateFileSystemRequest.getEndpointNetworkConfiguration(), ENDPOINTNETWORKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

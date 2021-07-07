@@ -86,7 +86,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     private String ec2InstanceId;
     /**
      * <p>
-     * The AWS Region where the Amazon EC2 instance is located.
+     * The Region where the Amazon EC2 instance is located.
      * </p>
      */
     private String ec2InstanceRegion;
@@ -137,6 +137,18 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String deprecationDate;
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     */
+    private String gatewayCapacity;
+    /**
+     * <p>
+     * A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedGatewayCapacities;
 
     /**
      * @param gatewayARN
@@ -577,11 +589,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS Region where the Amazon EC2 instance is located.
+     * The Region where the Amazon EC2 instance is located.
      * </p>
      * 
      * @param ec2InstanceRegion
-     *        The AWS Region where the Amazon EC2 instance is located.
+     *        The Region where the Amazon EC2 instance is located.
      */
 
     public void setEc2InstanceRegion(String ec2InstanceRegion) {
@@ -590,10 +602,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS Region where the Amazon EC2 instance is located.
+     * The Region where the Amazon EC2 instance is located.
      * </p>
      * 
-     * @return The AWS Region where the Amazon EC2 instance is located.
+     * @return The Region where the Amazon EC2 instance is located.
      */
 
     public String getEc2InstanceRegion() {
@@ -602,11 +614,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS Region where the Amazon EC2 instance is located.
+     * The Region where the Amazon EC2 instance is located.
      * </p>
      * 
      * @param ec2InstanceRegion
-     *        The AWS Region where the Amazon EC2 instance is located.
+     *        The Region where the Amazon EC2 instance is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -982,6 +994,172 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @param gatewayCapacity
+     *        Specifies the size of the gateway's metadata cache.
+     * @see GatewayCapacity
+     */
+
+    public void setGatewayCapacity(String gatewayCapacity) {
+        this.gatewayCapacity = gatewayCapacity;
+    }
+
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @return Specifies the size of the gateway's metadata cache.
+     * @see GatewayCapacity
+     */
+
+    public String getGatewayCapacity() {
+        return this.gatewayCapacity;
+    }
+
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @param gatewayCapacity
+     *        Specifies the size of the gateway's metadata cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public DescribeGatewayInformationResult withGatewayCapacity(String gatewayCapacity) {
+        setGatewayCapacity(gatewayCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the size of the gateway's metadata cache.
+     * </p>
+     * 
+     * @param gatewayCapacity
+     *        Specifies the size of the gateway's metadata cache.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public DescribeGatewayInformationResult withGatewayCapacity(GatewayCapacity gatewayCapacity) {
+        this.gatewayCapacity = gatewayCapacity.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.
+     * </p>
+     * 
+     * @return A list of the metadata cache sizes that the gateway can support based on its current hardware
+     *         specifications.
+     * @see GatewayCapacity
+     */
+
+    public java.util.List<String> getSupportedGatewayCapacities() {
+        if (supportedGatewayCapacities == null) {
+            supportedGatewayCapacities = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedGatewayCapacities;
+    }
+
+    /**
+     * <p>
+     * A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.
+     * </p>
+     * 
+     * @param supportedGatewayCapacities
+     *        A list of the metadata cache sizes that the gateway can support based on its current hardware
+     *        specifications.
+     * @see GatewayCapacity
+     */
+
+    public void setSupportedGatewayCapacities(java.util.Collection<String> supportedGatewayCapacities) {
+        if (supportedGatewayCapacities == null) {
+            this.supportedGatewayCapacities = null;
+            return;
+        }
+
+        this.supportedGatewayCapacities = new com.amazonaws.internal.SdkInternalList<String>(supportedGatewayCapacities);
+    }
+
+    /**
+     * <p>
+     * A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedGatewayCapacities(java.util.Collection)} or
+     * {@link #withSupportedGatewayCapacities(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedGatewayCapacities
+     *        A list of the metadata cache sizes that the gateway can support based on its current hardware
+     *        specifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public DescribeGatewayInformationResult withSupportedGatewayCapacities(String... supportedGatewayCapacities) {
+        if (this.supportedGatewayCapacities == null) {
+            setSupportedGatewayCapacities(new com.amazonaws.internal.SdkInternalList<String>(supportedGatewayCapacities.length));
+        }
+        for (String ele : supportedGatewayCapacities) {
+            this.supportedGatewayCapacities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.
+     * </p>
+     * 
+     * @param supportedGatewayCapacities
+     *        A list of the metadata cache sizes that the gateway can support based on its current hardware
+     *        specifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public DescribeGatewayInformationResult withSupportedGatewayCapacities(java.util.Collection<String> supportedGatewayCapacities) {
+        setSupportedGatewayCapacities(supportedGatewayCapacities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.
+     * </p>
+     * 
+     * @param supportedGatewayCapacities
+     *        A list of the metadata cache sizes that the gateway can support based on its current hardware
+     *        specifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GatewayCapacity
+     */
+
+    public DescribeGatewayInformationResult withSupportedGatewayCapacities(GatewayCapacity... supportedGatewayCapacities) {
+        com.amazonaws.internal.SdkInternalList<String> supportedGatewayCapacitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                supportedGatewayCapacities.length);
+        for (GatewayCapacity value : supportedGatewayCapacities) {
+            supportedGatewayCapacitiesCopy.add(value.toString());
+        }
+        if (getSupportedGatewayCapacities() == null) {
+            setSupportedGatewayCapacities(supportedGatewayCapacitiesCopy);
+        } else {
+            getSupportedGatewayCapacities().addAll(supportedGatewayCapacitiesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1028,7 +1206,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getSoftwareUpdatesEndDate() != null)
             sb.append("SoftwareUpdatesEndDate: ").append(getSoftwareUpdatesEndDate()).append(",");
         if (getDeprecationDate() != null)
-            sb.append("DeprecationDate: ").append(getDeprecationDate());
+            sb.append("DeprecationDate: ").append(getDeprecationDate()).append(",");
+        if (getGatewayCapacity() != null)
+            sb.append("GatewayCapacity: ").append(getGatewayCapacity()).append(",");
+        if (getSupportedGatewayCapacities() != null)
+            sb.append("SupportedGatewayCapacities: ").append(getSupportedGatewayCapacities());
         sb.append("}");
         return sb.toString();
     }
@@ -1115,6 +1297,14 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDeprecationDate() != null && other.getDeprecationDate().equals(this.getDeprecationDate()) == false)
             return false;
+        if (other.getGatewayCapacity() == null ^ this.getGatewayCapacity() == null)
+            return false;
+        if (other.getGatewayCapacity() != null && other.getGatewayCapacity().equals(this.getGatewayCapacity()) == false)
+            return false;
+        if (other.getSupportedGatewayCapacities() == null ^ this.getSupportedGatewayCapacities() == null)
+            return false;
+        if (other.getSupportedGatewayCapacities() != null && other.getSupportedGatewayCapacities().equals(this.getSupportedGatewayCapacities()) == false)
+            return false;
         return true;
     }
 
@@ -1141,6 +1331,8 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getSoftwareUpdatesEndDate() == null) ? 0 : getSoftwareUpdatesEndDate().hashCode());
         hashCode = prime * hashCode + ((getDeprecationDate() == null) ? 0 : getDeprecationDate().hashCode());
+        hashCode = prime * hashCode + ((getGatewayCapacity() == null) ? 0 : getGatewayCapacity().hashCode());
+        hashCode = prime * hashCode + ((getSupportedGatewayCapacities() == null) ? 0 : getSupportedGatewayCapacities().hashCode());
         return hashCode;
     }
 

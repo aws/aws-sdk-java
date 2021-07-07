@@ -175,6 +175,20 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList = (com.amazonaws.internal.SdkInternalList<String>) revokeSecurityGroupEgressRequest
+                .getSecurityGroupRuleIds();
+        if (!revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList.isEmpty() || !revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList.isAutoConstruct()) {
+            int securityGroupRuleIdsListIndex = 1;
+
+            for (String revokeSecurityGroupEgressRequestSecurityGroupRuleIdsListValue : revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList) {
+                if (revokeSecurityGroupEgressRequestSecurityGroupRuleIdsListValue != null) {
+                    request.addParameter("SecurityGroupRuleId." + securityGroupRuleIdsListIndex,
+                            StringUtils.fromString(revokeSecurityGroupEgressRequestSecurityGroupRuleIdsListValue));
+                }
+                securityGroupRuleIdsListIndex++;
+            }
+        }
+
         if (revokeSecurityGroupEgressRequest.getCidrIp() != null) {
             request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupEgressRequest.getCidrIp()));
         }

@@ -39,8 +39,8 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
     private String userName;
     /**
      * <p>
-     * The name of the AWS service that is to be associated with the credentials. The service you specify here is the
-     * only service that can be accessed using these credentials.
+     * The name of the Amazon Web Services service that is to be associated with the credentials. The service you
+     * specify here is the only service that can be accessed using these credentials.
      * </p>
      */
     private String serviceName;
@@ -123,13 +123,13 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the AWS service that is to be associated with the credentials. The service you specify here is the
-     * only service that can be accessed using these credentials.
+     * The name of the Amazon Web Services service that is to be associated with the credentials. The service you
+     * specify here is the only service that can be accessed using these credentials.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service that is to be associated with the credentials. The service you specify here is
-     *        the only service that can be accessed using these credentials.
+     *        The name of the Amazon Web Services service that is to be associated with the credentials. The service you
+     *        specify here is the only service that can be accessed using these credentials.
      */
 
     public void setServiceName(String serviceName) {
@@ -138,12 +138,12 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the AWS service that is to be associated with the credentials. The service you specify here is the
-     * only service that can be accessed using these credentials.
+     * The name of the Amazon Web Services service that is to be associated with the credentials. The service you
+     * specify here is the only service that can be accessed using these credentials.
      * </p>
      * 
-     * @return The name of the AWS service that is to be associated with the credentials. The service you specify here
-     *         is the only service that can be accessed using these credentials.
+     * @return The name of the Amazon Web Services service that is to be associated with the credentials. The service
+     *         you specify here is the only service that can be accessed using these credentials.
      */
 
     public String getServiceName() {
@@ -152,13 +152,13 @@ public class CreateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the AWS service that is to be associated with the credentials. The service you specify here is the
-     * only service that can be accessed using these credentials.
+     * The name of the Amazon Web Services service that is to be associated with the credentials. The service you
+     * specify here is the only service that can be accessed using these credentials.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service that is to be associated with the credentials. The service you specify here is
-     *        the only service that can be accessed using these credentials.
+     *        The name of the Amazon Web Services service that is to be associated with the credentials. The service you
+     *        specify here is the only service that can be accessed using these credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

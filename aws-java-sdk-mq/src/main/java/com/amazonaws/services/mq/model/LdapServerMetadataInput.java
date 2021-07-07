@@ -18,7 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+ * <p>
+ * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+ * </p>
+ * <important>
+ * <p>
+ * Does not apply to RabbitMQ brokers.
+ * </p>
+ * </important>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LdapServerMetadataInput" target="_top">AWS API
  *      Documentation</a>
@@ -26,36 +33,96 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LdapServerMetadataInput implements Serializable, Cloneable, StructuredPojo {
 
-    /** Fully qualified domain name of the LDAP server. Optional failover server. */
+    /**
+     * <p>
+     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * failover server.
+     * </p>
+     */
     private java.util.List<String> hosts;
-    /** Fully qualified name of the directory to search for a user’s groups. */
+    /**
+     * <p>
+     * The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For
+     * example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
+     */
     private String roleBase;
     /**
+     * <p>
      * Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group
      * membership query.
+     * </p>
      */
     private String roleName;
-    /** The search criteria for groups. */
+    /**
+     * <p>
+     * The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by
+     * userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is
+     * substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user
+     * janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries
+     * that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.
+     * </p>
+     */
     private String roleSearchMatching;
-    /** The directory search scope for the role. If set to true, scope is to search the entire sub-tree. */
+    /**
+     * <p>
+     * The directory search scope for the role. If set to true, scope is to search the entire subtree.
+     * </p>
+     */
     private Boolean roleSearchSubtree;
-    /** Service account password. */
+    /**
+     * <p>
+     * Service account password. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
+     */
     private String serviceAccountPassword;
-    /** Service account username. */
+    /**
+     * <p>
+     * Service account username. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
+     */
     private String serviceAccountUsername;
-    /** Fully qualified name of the directory where you want to search for users. */
+    /**
+     * <p>
+     * Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is
+     * specified by a DN, which specifies the base node of the subtree. For example, by setting this option to
+     * ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath
+     * ou=Users, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
+     */
     private String userBase;
-    /** Specifies the name of the LDAP attribute for the user group membership. */
+    /**
+     * <p>
+     * Specifies the name of the LDAP attribute for the user group membership.
+     * </p>
+     */
     private String userRoleName;
-    /** The search criteria for users. */
+    /**
+     * <p>
+     * The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0}
+     * placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is
+     * janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry
+     * like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
+     */
     private String userSearchMatching;
-    /** The directory search scope for the user. If set to true, scope is to search the entire sub-tree. */
+    /**
+     * <p>
+     * The directory search scope for the user. If set to true, scope is to search the entire subtree.
+     * </p>
+     */
     private Boolean userSearchSubtree;
 
     /**
-     * Fully qualified domain name of the LDAP server. Optional failover server.
+     * <p>
+     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * failover server.
+     * </p>
      * 
-     * @return Fully qualified domain name of the LDAP server. Optional failover server.
+     * @return Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *         Optional failover server.
      */
 
     public java.util.List<String> getHosts() {
@@ -63,10 +130,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified domain name of the LDAP server. Optional failover server.
+     * <p>
+     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * failover server.
+     * </p>
      * 
      * @param hosts
-     *        Fully qualified domain name of the LDAP server. Optional failover server.
+     *        Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *        Optional failover server.
      */
 
     public void setHosts(java.util.Collection<String> hosts) {
@@ -79,7 +150,10 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified domain name of the LDAP server. Optional failover server.
+     * <p>
+     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * failover server.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHosts(java.util.Collection)} or {@link #withHosts(java.util.Collection)} if you want to override the
@@ -87,7 +161,8 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param hosts
-     *        Fully qualified domain name of the LDAP server. Optional failover server.
+     *        Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *        Optional failover server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +177,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified domain name of the LDAP server. Optional failover server.
+     * <p>
+     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * failover server.
+     * </p>
      * 
      * @param hosts
-     *        Fully qualified domain name of the LDAP server. Optional failover server.
+     *        Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *        Optional failover server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,10 +194,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified name of the directory to search for a user’s groups.
+     * <p>
+     * The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For
+     * example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param roleBase
-     *        Fully qualified name of the directory to search for a user’s groups.
+     *        The distinguished name of the node in the directory information tree (DIT) to search for roles or groups.
+     *        For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
      */
 
     public void setRoleBase(String roleBase) {
@@ -126,9 +209,13 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified name of the directory to search for a user’s groups.
+     * <p>
+     * The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For
+     * example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
-     * @return Fully qualified name of the directory to search for a user’s groups.
+     * @return The distinguished name of the node in the directory information tree (DIT) to search for roles or groups.
+     *         For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
      */
 
     public String getRoleBase() {
@@ -136,10 +223,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified name of the directory to search for a user’s groups.
+     * <p>
+     * The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For
+     * example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param roleBase
-     *        Fully qualified name of the directory to search for a user’s groups.
+     *        The distinguished name of the node in the directory information tree (DIT) to search for roles or groups.
+     *        For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,8 +240,10 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
      * Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group
      * membership query.
+     * </p>
      * 
      * @param roleName
      *        Specifies the LDAP attribute that identifies the group name attribute in the object returned from the
@@ -162,8 +255,10 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
      * Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group
      * membership query.
+     * </p>
      * 
      * @return Specifies the LDAP attribute that identifies the group name attribute in the object returned from the
      *         group membership query.
@@ -174,8 +269,10 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
      * Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group
      * membership query.
+     * </p>
      * 
      * @param roleName
      *        Specifies the LDAP attribute that identifies the group name attribute in the object returned from the
@@ -189,10 +286,20 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The search criteria for groups.
+     * <p>
+     * The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by
+     * userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is
+     * substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user
+     * janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries
+     * that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.
+     * </p>
      * 
      * @param roleSearchMatching
-     *        The search criteria for groups.
+     *        The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched
+     *        by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username
+     *        is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the
+     *        user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all
+     *        role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.
      */
 
     public void setRoleSearchMatching(String roleSearchMatching) {
@@ -200,9 +307,20 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The search criteria for groups.
+     * <p>
+     * The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by
+     * userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is
+     * substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user
+     * janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries
+     * that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.
+     * </p>
      * 
-     * @return The search criteria for groups.
+     * @return The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched
+     *         by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username
+     *         is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the
+     *         user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all
+     *         role entries that have a member attribute equal to uid=janedoe under the subtree selected by the
+     *         roleBase.
      */
 
     public String getRoleSearchMatching() {
@@ -210,10 +328,20 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The search criteria for groups.
+     * <p>
+     * The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched by
+     * userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username is
+     * substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the user
+     * janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all role entries
+     * that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.
+     * </p>
      * 
      * @param roleSearchMatching
-     *        The search criteria for groups.
+     *        The LDAP search filter used to find roles within the roleBase. The distinguished name of the user matched
+     *        by userSearchMatching is substituted into the {0} placeholder in the search filter. The client's username
+     *        is substituted into the {1} placeholder. For example, if you set this option to (member=uid={1})for the
+     *        user janedoe, the search filter becomes (member=uid=janedoe) after string substitution. It matches all
+     *        role entries that have a member attribute equal to uid=janedoe under the subtree selected by the roleBase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,10 +351,12 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the role. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
      * @param roleSearchSubtree
-     *        The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     *        The directory search scope for the role. If set to true, scope is to search the entire subtree.
      */
 
     public void setRoleSearchSubtree(Boolean roleSearchSubtree) {
@@ -234,9 +364,11 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the role. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
-     * @return The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     * @return The directory search scope for the role. If set to true, scope is to search the entire subtree.
      */
 
     public Boolean getRoleSearchSubtree() {
@@ -244,10 +376,12 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the role. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
      * @param roleSearchSubtree
-     *        The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     *        The directory search scope for the role. If set to true, scope is to search the entire subtree.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,9 +391,11 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the role. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
-     * @return The directory search scope for the role. If set to true, scope is to search the entire sub-tree.
+     * @return The directory search scope for the role. If set to true, scope is to search the entire subtree.
      */
 
     public Boolean isRoleSearchSubtree() {
@@ -267,10 +403,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Service account password.
+     * <p>
+     * Service account password. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param serviceAccountPassword
-     *        Service account password.
+     *        Service account password. A service account is an account in your LDAP server that has access to initiate
+     *        a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
      */
 
     public void setServiceAccountPassword(String serviceAccountPassword) {
@@ -278,9 +418,13 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Service account password.
+     * <p>
+     * Service account password. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
      * 
-     * @return Service account password.
+     * @return Service account password. A service account is an account in your LDAP server that has access to initiate
+     *         a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
      */
 
     public String getServiceAccountPassword() {
@@ -288,10 +432,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Service account password.
+     * <p>
+     * Service account password. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param serviceAccountPassword
-     *        Service account password.
+     *        Service account password. A service account is an account in your LDAP server that has access to initiate
+     *        a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,10 +449,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Service account username.
+     * <p>
+     * Service account username. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param serviceAccountUsername
-     *        Service account username.
+     *        Service account username. A service account is an account in your LDAP server that has access to initiate
+     *        a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
      */
 
     public void setServiceAccountUsername(String serviceAccountUsername) {
@@ -312,9 +464,13 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Service account username.
+     * <p>
+     * Service account username. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
      * 
-     * @return Service account username.
+     * @return Service account username. A service account is an account in your LDAP server that has access to initiate
+     *         a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
      */
 
     public String getServiceAccountUsername() {
@@ -322,10 +478,14 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Service account username.
+     * <p>
+     * Service account username. A service account is an account in your LDAP server that has access to initiate a
+     * connection. For example, cn=admin,dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param serviceAccountUsername
-     *        Service account username.
+     *        Service account username. A service account is an account in your LDAP server that has access to initiate
+     *        a connection. For example, cn=admin,dc=corp, dc=example, dc=com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,10 +495,18 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified name of the directory where you want to search for users.
+     * <p>
+     * Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is
+     * specified by a DN, which specifies the base node of the subtree. For example, by setting this option to
+     * ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath
+     * ou=Users, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param userBase
-     *        Fully qualified name of the directory where you want to search for users.
+     *        Select a particular subtree of the directory information tree (DIT) to search for user entries. The
+     *        subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this
+     *        option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the
+     *        subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.
      */
 
     public void setUserBase(String userBase) {
@@ -346,9 +514,17 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified name of the directory where you want to search for users.
+     * <p>
+     * Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is
+     * specified by a DN, which specifies the base node of the subtree. For example, by setting this option to
+     * ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath
+     * ou=Users, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
-     * @return Fully qualified name of the directory where you want to search for users.
+     * @return Select a particular subtree of the directory information tree (DIT) to search for user entries. The
+     *         subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this
+     *         option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the
+     *         subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.
      */
 
     public String getUserBase() {
@@ -356,10 +532,18 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Fully qualified name of the directory where you want to search for users.
+     * <p>
+     * Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is
+     * specified by a DN, which specifies the base node of the subtree. For example, by setting this option to
+     * ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath
+     * ou=Users, ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param userBase
-     *        Fully qualified name of the directory where you want to search for users.
+     *        Select a particular subtree of the directory information tree (DIT) to search for user entries. The
+     *        subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this
+     *        option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the
+     *        subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,7 +553,9 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
      * Specifies the name of the LDAP attribute for the user group membership.
+     * </p>
      * 
      * @param userRoleName
      *        Specifies the name of the LDAP attribute for the user group membership.
@@ -380,7 +566,9 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
      * Specifies the name of the LDAP attribute for the user group membership.
+     * </p>
      * 
      * @return Specifies the name of the LDAP attribute for the user group membership.
      */
@@ -390,7 +578,9 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
      * Specifies the name of the LDAP attribute for the user group membership.
+     * </p>
      * 
      * @param userRoleName
      *        Specifies the name of the LDAP attribute for the user group membership.
@@ -403,10 +593,18 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The search criteria for users.
+     * <p>
+     * The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0}
+     * placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is
+     * janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry
+     * like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param userSearchMatching
-     *        The search criteria for users.
+     *        The LDAP search filter used to find users within the userBase. The client's username is substituted into
+     *        the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received
+     *        username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in
+     *        matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
      */
 
     public void setUserSearchMatching(String userSearchMatching) {
@@ -414,9 +612,17 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The search criteria for users.
+     * <p>
+     * The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0}
+     * placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is
+     * janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry
+     * like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
-     * @return The search criteria for users.
+     * @return The LDAP search filter used to find users within the userBase. The client's username is substituted into
+     *         the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the
+     *         received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will
+     *         result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
      */
 
     public String getUserSearchMatching() {
@@ -424,10 +630,18 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The search criteria for users.
+     * <p>
+     * The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0}
+     * placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is
+     * janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry
+     * like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
+     * </p>
      * 
      * @param userSearchMatching
-     *        The search criteria for users.
+     *        The LDAP search filter used to find users within the userBase. The client's username is substituted into
+     *        the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received
+     *        username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in
+     *        matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,10 +651,12 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the user. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
      * @param userSearchSubtree
-     *        The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     *        The directory search scope for the user. If set to true, scope is to search the entire subtree.
      */
 
     public void setUserSearchSubtree(Boolean userSearchSubtree) {
@@ -448,9 +664,11 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the user. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
-     * @return The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     * @return The directory search scope for the user. If set to true, scope is to search the entire subtree.
      */
 
     public Boolean getUserSearchSubtree() {
@@ -458,10 +676,12 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the user. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
      * @param userSearchSubtree
-     *        The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     *        The directory search scope for the user. If set to true, scope is to search the entire subtree.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,9 +691,11 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     * <p>
+     * The directory search scope for the user. If set to true, scope is to search the entire subtree.
+     * </p>
      * 
-     * @return The directory search scope for the user. If set to true, scope is to search the entire sub-tree.
+     * @return The directory search scope for the user. If set to true, scope is to search the entire subtree.
      */
 
     public Boolean isUserSearchSubtree() {

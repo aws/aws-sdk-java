@@ -47,7 +47,7 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
-     * AWS. The sample is taken at the end of the reporting period.
+     * Amazon Web Services. The sample is taken at the end of the reporting period.
      * </p>
      */
     private Double cacheDirtyPercentage;
@@ -266,12 +266,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
-     * AWS. The sample is taken at the end of the reporting period.
+     * Amazon Web Services. The sample is taken at the end of the reporting period.
      * </p>
      * 
      * @param cacheDirtyPercentage
      *        The file share's contribution to the overall percentage of the gateway's cache that has not been persisted
-     *        to AWS. The sample is taken at the end of the reporting period.
+     *        to Amazon Web Services. The sample is taken at the end of the reporting period.
      */
 
     public void setCacheDirtyPercentage(Double cacheDirtyPercentage) {
@@ -281,11 +281,11 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
-     * AWS. The sample is taken at the end of the reporting period.
+     * Amazon Web Services. The sample is taken at the end of the reporting period.
      * </p>
      * 
      * @return The file share's contribution to the overall percentage of the gateway's cache that has not been
-     *         persisted to AWS. The sample is taken at the end of the reporting period.
+     *         persisted to Amazon Web Services. The sample is taken at the end of the reporting period.
      */
 
     public Double getCacheDirtyPercentage() {
@@ -295,12 +295,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
-     * AWS. The sample is taken at the end of the reporting period.
+     * Amazon Web Services. The sample is taken at the end of the reporting period.
      * </p>
      * 
      * @param cacheDirtyPercentage
      *        The file share's contribution to the overall percentage of the gateway's cache that has not been persisted
-     *        to AWS. The sample is taken at the end of the reporting period.
+     *        to Amazon Web Services. The sample is taken at the end of the reporting period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

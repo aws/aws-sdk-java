@@ -32,14 +32,13 @@ public class TumblingWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code> represents
-     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end
      * of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.
      * </p>
      * <p>
-     * When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and
-     * the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at the end of the
-     * interval.
+     * When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the
+     * end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.
      * </p>
      */
     private String interval;
@@ -47,26 +46,25 @@ public class TumblingWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code> represents
-     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end
      * of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.
      * </p>
      * <p>
-     * When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and
-     * the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at the end of the
-     * interval.
+     * When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the
+     * end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.
      * </p>
      * 
      * @param interval
      *        The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code>
-     *        represents days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise
+     *        represents days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise
      *        computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code>
      *        interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour,
      *        and so on. </p>
      *        <p>
-     *        When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is
-     *        exclusive and the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at
-     *        the end of the interval.
+     *        When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive
+     *        and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the
+     *        interval.
      */
 
     public void setInterval(String interval) {
@@ -76,25 +74,24 @@ public class TumblingWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code> represents
-     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end
      * of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.
      * </p>
      * <p>
-     * When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and
-     * the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at the end of the
-     * interval.
+     * When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the
+     * end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.
      * </p>
      * 
      * @return The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code>
-     *         represents days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise
+     *         represents days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise
      *         computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code>
      *         interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour,
      *         and so on. </p>
      *         <p>
-     *         When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is
-     *         exclusive and the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at
-     *         the end of the interval.
+     *         When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive
+     *         and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the
+     *         interval.
      */
 
     public String getInterval() {
@@ -104,26 +101,25 @@ public class TumblingWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code> represents
-     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end
      * of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.
      * </p>
      * <p>
-     * When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and
-     * the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at the end of the
-     * interval.
+     * When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the
+     * end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.
      * </p>
      * 
      * @param interval
      *        The time interval for the tumbling window. Note that <code>w</code> represents weeks, <code>d</code>
-     *        represents days, <code>h</code> represents hours, and <code>m</code> represents minutes. AWS IoT SiteWise
+     *        represents days, <code>h</code> represents hours, and <code>m</code> represents minutes. IoT SiteWise
      *        computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code>
      *        interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour,
      *        and so on. </p>
      *        <p>
-     *        When AWS IoT SiteWise aggregates data points for metric computations, the start of each interval is
-     *        exclusive and the end of each interval is inclusive. AWS IoT SiteWise places the computed data point at
-     *        the end of the interval.
+     *        When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive
+     *        and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the
+     *        interval.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -81,7 +81,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
     private Boolean requireLowercaseCharacters;
     /**
      * <p>
-     * Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more
+     * Allows all IAM users in your account to use the Management Console to change their own passwords. For more
      * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM
      * users change their own passwords</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -547,7 +547,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more
+     * Allows all IAM users in your account to use the Management Console to change their own passwords. For more
      * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM
      * users change their own passwords</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -557,10 +557,9 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param allowUsersToChangePassword
-     *        Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change
-     *        their own passwords</a> in the <i>IAM User Guide</i>.</p>
+     *        Allows all IAM users in your account to use the Management Console to change their own passwords. For more
+     *        information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     *        IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        If you do not specify a value for this parameter, then the operation uses the default value of
      *        <code>false</code>. The result is that IAM users in the account do not automatically have permissions to
@@ -573,7 +572,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more
+     * Allows all IAM users in your account to use the Management Console to change their own passwords. For more
      * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM
      * users change their own passwords</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -582,7 +581,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
      * . The result is that IAM users in the account do not automatically have permissions to change their own password.
      * </p>
      * 
-     * @return Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For
+     * @return Allows all IAM users in your account to use the Management Console to change their own passwords. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change
      *         their own passwords</a> in the <i>IAM User Guide</i>.</p>
@@ -598,7 +597,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more
+     * Allows all IAM users in your account to use the Management Console to change their own passwords. For more
      * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM
      * users change their own passwords</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -608,10 +607,9 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param allowUsersToChangePassword
-     *        Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change
-     *        their own passwords</a> in the <i>IAM User Guide</i>.</p>
+     *        Allows all IAM users in your account to use the Management Console to change their own passwords. For more
+     *        information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     *        IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        If you do not specify a value for this parameter, then the operation uses the default value of
      *        <code>false</code>. The result is that IAM users in the account do not automatically have permissions to
@@ -626,7 +624,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For more
+     * Allows all IAM users in your account to use the Management Console to change their own passwords. For more
      * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM
      * users change their own passwords</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -635,7 +633,7 @@ public class UpdateAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebS
      * . The result is that IAM users in the account do not automatically have permissions to change their own password.
      * </p>
      * 
-     * @return Allows all IAM users in your account to use the AWS Management Console to change their own passwords. For
+     * @return Allows all IAM users in your account to use the Management Console to change their own passwords. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change
      *         their own passwords</a> in the <i>IAM User Guide</i>.</p>

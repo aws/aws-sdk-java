@@ -40,7 +40,7 @@ public class DescribeGatewayCapabilityConfigurationResult extends com.amazonaws.
      * <p>
      * The JSON document that defines the gateway capability's configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String capabilityConfiguration;
@@ -152,13 +152,13 @@ public class DescribeGatewayCapabilityConfigurationResult extends com.amazonaws.
      * <p>
      * The JSON document that defines the gateway capability's configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param capabilityConfiguration
      *        The JSON document that defines the gateway capability's configuration. For more information, see <a href=
      *        "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     *        >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setCapabilityConfiguration(String capabilityConfiguration) {
@@ -169,12 +169,12 @@ public class DescribeGatewayCapabilityConfigurationResult extends com.amazonaws.
      * <p>
      * The JSON document that defines the gateway capability's configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The JSON document that defines the gateway capability's configuration. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     *         >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getCapabilityConfiguration() {
@@ -185,13 +185,13 @@ public class DescribeGatewayCapabilityConfigurationResult extends com.amazonaws.
      * <p>
      * The JSON document that defines the gateway capability's configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     * >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param capabilityConfiguration
      *        The JSON document that defines the gateway capability's configuration. For more information, see <a href=
      *        "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli"
-     *        >Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -80,6 +80,10 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                     context.nextToken();
                     updateBrokerResult.setLogs(LogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("maintenanceWindowStartTime", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setMaintenanceWindowStartTime(WeeklyStartTimeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

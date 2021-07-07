@@ -26,7 +26,7 @@ public class CreateTapePoolResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     * operation to return a list of tape pools for your account and AWS Region.
+     * operation to return a list of tape pools for your account and Region.
      * </p>
      */
     private String poolARN;
@@ -34,12 +34,12 @@ public class CreateTapePoolResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     * operation to return a list of tape pools for your account and AWS Region.
+     * operation to return a list of tape pools for your account and Region.
      * </p>
      * 
      * @param poolARN
      *        The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     *        operation to return a list of tape pools for your account and AWS Region.
+     *        operation to return a list of tape pools for your account and Region.
      */
 
     public void setPoolARN(String poolARN) {
@@ -49,11 +49,11 @@ public class CreateTapePoolResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     * operation to return a list of tape pools for your account and AWS Region.
+     * operation to return a list of tape pools for your account and Region.
      * </p>
      * 
      * @return The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     *         operation to return a list of tape pools for your account and AWS Region.
+     *         operation to return a list of tape pools for your account and Region.
      */
 
     public String getPoolARN() {
@@ -63,12 +63,12 @@ public class CreateTapePoolResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     * operation to return a list of tape pools for your account and AWS Region.
+     * operation to return a list of tape pools for your account and Region.
      * </p>
      * 
      * @param poolARN
      *        The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <a>ListTapePools</a>
-     *        operation to return a list of tape pools for your account and AWS Region.
+     *        operation to return a list of tape pools for your account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

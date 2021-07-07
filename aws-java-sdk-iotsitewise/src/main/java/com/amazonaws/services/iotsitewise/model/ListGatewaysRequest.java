@@ -33,7 +33,7 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
@@ -83,14 +83,14 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.</p>
+     *        The maximum number of results to return for each paginated request.</p>
      *        <p>
      *        Default: 50
      */
@@ -101,13 +101,13 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
      * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.</p>
+     * @return The maximum number of results to return for each paginated request.</p>
      *         <p>
      *         Default: 50
      */
@@ -118,14 +118,14 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 50
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.</p>
+     *        The maximum number of results to return for each paginated request.</p>
      *        <p>
      *        Default: 50
      * @return Returns a reference to this object so that method calls can be chained together.

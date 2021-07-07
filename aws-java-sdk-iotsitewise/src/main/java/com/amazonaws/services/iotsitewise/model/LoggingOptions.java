@@ -30,18 +30,18 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS IoT SiteWise logging verbosity level.
+     * The IoT SiteWise logging verbosity level.
      * </p>
      */
     private String level;
 
     /**
      * <p>
-     * The AWS IoT SiteWise logging verbosity level.
+     * The IoT SiteWise logging verbosity level.
      * </p>
      * 
      * @param level
-     *        The AWS IoT SiteWise logging verbosity level.
+     *        The IoT SiteWise logging verbosity level.
      * @see LoggingLevel
      */
 
@@ -51,10 +51,10 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS IoT SiteWise logging verbosity level.
+     * The IoT SiteWise logging verbosity level.
      * </p>
      * 
-     * @return The AWS IoT SiteWise logging verbosity level.
+     * @return The IoT SiteWise logging verbosity level.
      * @see LoggingLevel
      */
 
@@ -64,11 +64,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS IoT SiteWise logging verbosity level.
+     * The IoT SiteWise logging verbosity level.
      * </p>
      * 
      * @param level
-     *        The AWS IoT SiteWise logging verbosity level.
+     *        The IoT SiteWise logging verbosity level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */
@@ -80,11 +80,11 @@ public class LoggingOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS IoT SiteWise logging verbosity level.
+     * The IoT SiteWise logging verbosity level.
      * </p>
      * 
      * @param level
-     *        The AWS IoT SiteWise logging verbosity level.
+     *        The IoT SiteWise logging verbosity level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */

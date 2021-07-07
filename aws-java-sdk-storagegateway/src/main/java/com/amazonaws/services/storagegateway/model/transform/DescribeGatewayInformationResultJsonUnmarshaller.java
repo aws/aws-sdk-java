@@ -125,6 +125,16 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeGatewayInformationResult.setDeprecationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GatewayCapacity", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setGatewayCapacity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SupportedGatewayCapacities", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setSupportedGatewayCapacities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

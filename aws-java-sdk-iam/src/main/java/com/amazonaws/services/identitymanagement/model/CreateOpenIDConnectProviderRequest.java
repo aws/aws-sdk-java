@@ -33,8 +33,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <code>https://server.example.org</code> or <code>https://example.com</code>.
      * </p>
      * <p>
-     * You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     * You cannot register the same provider multiple times in a single account. If you try to submit a URL that has
+     * already been used for an OpenID Connect provider in the account, you will get an error.
      * </p>
      */
     private String url;
@@ -101,8 +101,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <code>https://server.example.org</code> or <code>https://example.com</code>.
      * </p>
      * <p>
-     * You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     * You cannot register the same provider multiple times in a single account. If you try to submit a URL that has
+     * already been used for an OpenID Connect provider in the account, you will get an error.
      * </p>
      * 
      * @param url
@@ -111,8 +111,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *        components are allowed but query parameters are not. Typically the URL consists of only a hostname, like
      *        <code>https://server.example.org</code> or <code>https://example.com</code>.</p>
      *        <p>
-     *        You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL
-     *        that has already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     *        You cannot register the same provider multiple times in a single account. If you try to submit a URL that
+     *        has already been used for an OpenID Connect provider in the account, you will get an error.
      */
 
     public void setUrl(String url) {
@@ -127,8 +127,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <code>https://server.example.org</code> or <code>https://example.com</code>.
      * </p>
      * <p>
-     * You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     * You cannot register the same provider multiple times in a single account. If you try to submit a URL that has
+     * already been used for an OpenID Connect provider in the account, you will get an error.
      * </p>
      * 
      * @return The URL of the identity provider. The URL must begin with <code>https://</code> and should correspond to
@@ -136,8 +136,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *         components are allowed but query parameters are not. Typically the URL consists of only a hostname, like
      *         <code>https://server.example.org</code> or <code>https://example.com</code>.</p>
      *         <p>
-     *         You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL
-     *         that has already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     *         You cannot register the same provider multiple times in a single account. If you try to submit a URL that
+     *         has already been used for an OpenID Connect provider in the account, you will get an error.
      */
 
     public String getUrl() {
@@ -152,8 +152,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <code>https://server.example.org</code> or <code>https://example.com</code>.
      * </p>
      * <p>
-     * You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     * You cannot register the same provider multiple times in a single account. If you try to submit a URL that has
+     * already been used for an OpenID Connect provider in the account, you will get an error.
      * </p>
      * 
      * @param url
@@ -162,8 +162,8 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *        components are allowed but query parameters are not. Typically the URL consists of only a hostname, like
      *        <code>https://server.example.org</code> or <code>https://example.com</code>.</p>
      *        <p>
-     *        You cannot register the same provider multiple times in a single AWS account. If you try to submit a URL
-     *        that has already been used for an OpenID Connect provider in the AWS account, you will get an error.
+     *        You cannot register the same provider multiple times in a single account. If you try to submit a URL that
+     *        has already been used for an OpenID Connect provider in the account, you will get an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

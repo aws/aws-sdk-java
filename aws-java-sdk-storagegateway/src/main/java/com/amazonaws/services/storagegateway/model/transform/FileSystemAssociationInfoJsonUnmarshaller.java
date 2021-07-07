@@ -78,6 +78,10 @@ public class FileSystemAssociationInfoJsonUnmarshaller implements Unmarshaller<F
                     context.nextToken();
                     fileSystemAssociationInfo.setCacheAttributes(CacheAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EndpointNetworkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    fileSystemAssociationInfo.setEndpointNetworkConfiguration(EndpointNetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

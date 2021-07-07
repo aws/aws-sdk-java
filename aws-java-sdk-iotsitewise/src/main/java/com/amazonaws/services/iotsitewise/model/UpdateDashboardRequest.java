@@ -47,7 +47,7 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String dashboardDefinition;
@@ -183,13 +183,13 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param dashboardDefinition
      *        The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html"
-     *        >Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setDashboardDefinition(String dashboardDefinition) {
@@ -200,12 +200,12 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html"
-     *         >Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         >Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getDashboardDefinition() {
@@ -216,13 +216,13 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param dashboardDefinition
      *        The new dashboard definition, as specified in a JSON literal. For detailed information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html"
-     *        >Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

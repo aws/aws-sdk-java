@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Creates a new ActiveMQ user.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser" target="_top">AWS API
  *      Documentation</a>
@@ -26,28 +28,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
-    /** Enables access to the the ActiveMQ Web Console for the ActiveMQ user. */
+    /**
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
+     */
     private Boolean consoleAccess;
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private java.util.List<String> groups;
     /**
+     * <p>
      * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
-     * unique characters, and must not contain commas.
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      */
     private String password;
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private String username;
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -58,7 +76,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the broker.
      */
@@ -68,7 +88,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -81,10 +103,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @param consoleAccess
-     *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user.
      */
 
     public void setConsoleAccess(Boolean consoleAccess) {
@@ -92,9 +116,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
-     * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user.
      */
 
     public Boolean getConsoleAccess() {
@@ -102,10 +128,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @param consoleAccess
-     *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     *        Enables access to the ActiveMQ Web Console for the ActiveMQ user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,9 +143,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * <p>
+     * Enables access to the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
-     * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * @return Enables access to the ActiveMQ Web Console for the ActiveMQ user.
      */
 
     public Boolean isConsoleAccess() {
@@ -125,8 +155,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *         alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
@@ -138,8 +170,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
@@ -157,8 +191,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -183,8 +219,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
@@ -199,12 +237,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
-     * unique characters, and must not contain commas.
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      * 
      * @param password
      *        Required. The password of the user. This value must be at least 12 characters long, must contain at least
-     *        4 unique characters, and must not contain commas.
+     *        4 unique characters, and must not contain commas, colons, or equal signs (,:=).
      */
 
     public void setPassword(String password) {
@@ -212,11 +252,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
-     * unique characters, and must not contain commas.
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      * 
      * @return Required. The password of the user. This value must be at least 12 characters long, must contain at least
-     *         4 unique characters, and must not contain commas.
+     *         4 unique characters, and must not contain commas, colons, or equal signs (,:=).
      */
 
     public String getPassword() {
@@ -224,12 +266,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * Required. The password of the user. This value must be at least 12 characters long, must contain at least 4
-     * unique characters, and must not contain commas.
+     * unique characters, and must not contain commas, colons, or equal signs (,:=).
+     * </p>
      * 
      * @param password
      *        Required. The password of the user. This value must be at least 12 characters long, must contain at least
-     *        4 unique characters, and must not contain commas.
+     *        4 unique characters, and must not contain commas, colons, or equal signs (,:=).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,8 +283,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
@@ -252,8 +298,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      *         underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
@@ -264,8 +312,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods,

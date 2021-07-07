@@ -1,3 +1,36 @@
+# __1.12.19__ __2021-07-07__
+## __AWS Identity and Access Management__
+  - ### Features
+    - Documentation updates for AWS Identity and Access Management (IAM).
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - This release add storage configuration APIs for AWS IoT SiteWise.
+
+## __AWS Security Token Service__
+  - ### Features
+    - Documentation updates for AWS Security Token Service.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Adding support for oplocks for SMB file shares,  S3 Access Point and S3 Private Link for all file shares and IP address support for file system associations
+
+## __Amazon Chime__
+  - ### Features
+    - Releasing new APIs for AWS Chime MediaCapturePipeline
+
+## __Amazon CloudFront__
+  - ### Features
+    - Amazon CloudFront now provides two new APIs, ListConflictingAliases and AssociateAlias, that help locate and move Alternate Domain Names (CNAMEs) if you encounter the CNAMEAlreadyExists error code.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds resource ids and tagging support for VPC security group rules.
+
+## __AmazonMQ__
+  - ### Features
+    - adds support for modifying the maintenance window for brokers.
+
 # __1.12.18__ __2021-07-06__
 ## __AWS Lambda__
   - ### Features

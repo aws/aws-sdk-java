@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise
+ * Contains asset property value notification information. When the notification state is enabled, IoT SiteWise
  * publishes property value updates to a unique MQTT topic. For more information, see <a
  * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with
- * other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+ * other services</a> in the <i>IoT SiteWise User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PropertyNotification" target="_top">AWS
@@ -33,7 +33,7 @@ public class PropertyNotification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     * The MQTT topic to which IoT SiteWise publishes property value update notifications.
      * </p>
      */
     private String topic;
@@ -46,11 +46,11 @@ public class PropertyNotification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     * The MQTT topic to which IoT SiteWise publishes property value update notifications.
      * </p>
      * 
      * @param topic
-     *        The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     *        The MQTT topic to which IoT SiteWise publishes property value update notifications.
      */
 
     public void setTopic(String topic) {
@@ -59,10 +59,10 @@ public class PropertyNotification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     * The MQTT topic to which IoT SiteWise publishes property value update notifications.
      * </p>
      * 
-     * @return The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     * @return The MQTT topic to which IoT SiteWise publishes property value update notifications.
      */
 
     public String getTopic() {
@@ -71,11 +71,11 @@ public class PropertyNotification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     * The MQTT topic to which IoT SiteWise publishes property value update notifications.
      * </p>
      * 
      * @param topic
-     *        The MQTT topic to which AWS IoT SiteWise publishes property value update notifications.
+     *        The MQTT topic to which IoT SiteWise publishes property value update notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

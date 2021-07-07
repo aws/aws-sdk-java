@@ -23,25 +23,43 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Required. The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
-    /** Enables access to the the ActiveMQ Web Console for the ActiveMQ user. */
+    /**
+     * <p>
+     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
+     */
     private Boolean consoleAccess;
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private java.util.List<String> groups;
-    /** The status of the changes pending for the ActiveMQ user. */
+    /**
+     * <p>
+     * The status of the changes pending for the ActiveMQ user.
+     * </p>
+     */
     private UserPendingChanges pending;
     /**
+     * <p>
      * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
      * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      */
     private String username;
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        Required. The unique ID that Amazon MQ generates for the broker.
@@ -52,7 +70,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the broker.
      */
@@ -62,7 +82,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        Required. The unique ID that Amazon MQ generates for the broker.
@@ -75,7 +97,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @param consoleAccess
      *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
@@ -86,7 +110,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
@@ -96,7 +122,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @param consoleAccess
      *        Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
@@ -109,7 +137,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     * </p>
      * 
      * @return Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
@@ -119,8 +149,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
      *         alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
@@ -132,8 +164,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
@@ -151,8 +185,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -177,8 +213,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param groups
      *        The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only
@@ -193,7 +231,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The status of the changes pending for the ActiveMQ user.
+     * </p>
      * 
      * @param pending
      *        The status of the changes pending for the ActiveMQ user.
@@ -204,7 +244,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The status of the changes pending for the ActiveMQ user.
+     * </p>
      * 
      * @return The status of the changes pending for the ActiveMQ user.
      */
@@ -214,7 +256,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * The status of the changes pending for the ActiveMQ user.
+     * </p>
      * 
      * @param pending
      *        The status of the changes pending for the ActiveMQ user.
@@ -227,8 +271,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
      * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
@@ -240,8 +286,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
      * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @return Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
      *         periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
@@ -252,8 +300,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
      * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
      * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * </p>
      * 
      * @param username
      *        Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,

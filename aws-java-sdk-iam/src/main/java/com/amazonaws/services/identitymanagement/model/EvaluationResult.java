@@ -92,14 +92,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      * resources (<code>*</code>), then the parameter is not returned.
      * </p>
      * <p>
-     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
-     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
-     * are evaluated, see <a href=
+     * When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the
+     * trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     * about how policies are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
-     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
      * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      */
@@ -570,14 +570,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      * resources (<code>*</code>), then the parameter is not returned.
      * </p>
      * <p>
-     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
-     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
-     * are evaluated, see <a href=
+     * When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the
+     * trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     * about how policies are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
-     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
      * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      * 
@@ -590,14 +590,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         account and specifies all resources (<code>*</code>), then the parameter is not returned.
      *         </p>
      *         <p>
-     *         When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted
-     *         account. The request is allowed only if both evaluations return <code>true</code>. For more information
-     *         about how policies are evaluated, see <a href=
+     *         When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account
+     *         and the trusted account. The request is allowed only if both evaluations return <code>true</code>. For
+     *         more information about how policies are evaluated, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      *         >Evaluating policies within a single account</a>.
      *         </p>
      *         <p>
-     *         If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
+     *         If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
      *         policy evaluation does not proceed any further and this parameter is not returned.
      */
 
@@ -620,14 +620,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      * resources (<code>*</code>), then the parameter is not returned.
      * </p>
      * <p>
-     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
-     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
-     * are evaluated, see <a href=
+     * When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the
+     * trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     * about how policies are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
-     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
      * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      * 
@@ -641,14 +641,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        account and specifies all resources (<code>*</code>), then the parameter is not returned.
      *        </p>
      *        <p>
-     *        When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted
-     *        account. The request is allowed only if both evaluations return <code>true</code>. For more information
-     *        about how policies are evaluated, see <a href=
+     *        When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account
+     *        and the trusted account. The request is allowed only if both evaluations return <code>true</code>. For
+     *        more information about how policies are evaluated, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      *        >Evaluating policies within a single account</a>.
      *        </p>
      *        <p>
-     *        If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
+     *        If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
      *        policy evaluation does not proceed any further and this parameter is not returned.
      */
 
@@ -668,14 +668,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      * resources (<code>*</code>), then the parameter is not returned.
      * </p>
      * <p>
-     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
-     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
-     * are evaluated, see <a href=
+     * When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the
+     * trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     * about how policies are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
-     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
      * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      * 
@@ -689,14 +689,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        account and specifies all resources (<code>*</code>), then the parameter is not returned.
      *        </p>
      *        <p>
-     *        When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted
-     *        account. The request is allowed only if both evaluations return <code>true</code>. For more information
-     *        about how policies are evaluated, see <a href=
+     *        When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account
+     *        and the trusted account. The request is allowed only if both evaluations return <code>true</code>. For
+     *        more information about how policies are evaluated, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
      *        >Evaluating policies within a single account</a>.
      *        </p>
      *        <p>
-     *        If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
+     *        If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
      *        policy evaluation does not proceed any further and this parameter is not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

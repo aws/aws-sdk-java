@@ -31,9 +31,9 @@ public class UntagMFADeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * the serial number is the same as the ARN.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String serialNumber;
@@ -51,18 +51,18 @@ public class UntagMFADeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * the serial number is the same as the ARN.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param serialNumber
      *        The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA
      *        devices, the serial number is the same as the ARN.</p>
      *        <p>
-     *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -75,17 +75,17 @@ public class UntagMFADeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * the serial number is the same as the ARN.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA
      *         devices, the serial number is the same as the ARN.</p>
      *         <p>
-     *         This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getSerialNumber() {
@@ -98,18 +98,18 @@ public class UntagMFADeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * the serial number is the same as the ARN.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param serialNumber
      *        The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA
      *        devices, the serial number is the same as the ARN.</p>
      *        <p>
-     *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

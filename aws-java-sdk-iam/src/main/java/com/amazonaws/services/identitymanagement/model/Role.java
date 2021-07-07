@@ -77,8 +77,8 @@ public class Role implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to assume
-     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to assume the
+     * role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.
      * </p>
      */
@@ -438,13 +438,13 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to assume
-     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to assume the
+     * role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.
      * </p>
      * 
      * @param maxSessionDuration
-     *        The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to
+     *        The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to
      *        assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      *        <code>duration-seconds</code> CLI parameter.
      */
@@ -455,12 +455,12 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to assume
-     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to assume the
+     * role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.
      * </p>
      * 
-     * @return The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to
+     * @return The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to
      *         assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      *         <code>duration-seconds</code> CLI parameter.
      */
@@ -471,13 +471,13 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to assume
-     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to assume the
+     * role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.
      * </p>
      * 
      * @param maxSessionDuration
-     *        The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI, or API to
+     *        The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to
      *        assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
      *        <code>duration-seconds</code> CLI parameter.
      * @return Returns a reference to this object so that method calls can be chained together.

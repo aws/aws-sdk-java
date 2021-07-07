@@ -30,18 +30,18 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS SSO ID of the user.
+     * The Amazon Web Services SSO ID of the user.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The AWS SSO ID of the user.
+     * The Amazon Web Services SSO ID of the user.
      * </p>
      * 
      * @param id
-     *        The AWS SSO ID of the user.
+     *        The Amazon Web Services SSO ID of the user.
      */
 
     public void setId(String id) {
@@ -50,10 +50,10 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS SSO ID of the user.
+     * The Amazon Web Services SSO ID of the user.
      * </p>
      * 
-     * @return The AWS SSO ID of the user.
+     * @return The Amazon Web Services SSO ID of the user.
      */
 
     public String getId() {
@@ -62,11 +62,11 @@ public class UserIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS SSO ID of the user.
+     * The Amazon Web Services SSO ID of the user.
      * </p>
      * 
      * @param id
-     *        The AWS SSO ID of the user.
+     *        The Amazon Web Services SSO ID of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

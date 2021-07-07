@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * The list of information about logs to be enabled for the specified broker.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/PendingLogs" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +28,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
 
-    /** Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. */
+    /**
+     * <p>
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
+     */
     private Boolean audit;
-    /** Enables general logging. */
+    /**
+     * <p>
+     * Enables general logging.
+     * </p>
+     */
     private Boolean general;
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @param audit
      *        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
@@ -43,7 +55,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @return Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
      */
@@ -53,7 +67,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @param audit
      *        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
@@ -66,7 +82,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * </p>
      * 
      * @return Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
      */
@@ -76,7 +94,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @param general
      *        Enables general logging.
@@ -87,7 +107,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @return Enables general logging.
      */
@@ -97,7 +119,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @param general
      *        Enables general logging.
@@ -110,7 +134,9 @@ public class PendingLogs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Enables general logging.
+     * </p>
      * 
      * @return Enables general logging.
      */

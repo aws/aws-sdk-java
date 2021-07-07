@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+ * Contains an IoT SiteWise Monitor resource ID for a portal or project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Resource" target="_top">AWS API

@@ -23,21 +23,31 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** List of available engine types and versions. */
+    /**
+     * <p>
+     * List of available engine types and versions.
+     * </p>
+     */
     private java.util.List<BrokerEngineType> brokerEngineTypes;
     /**
+     * <p>
      * Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an
      * integer from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * List of available engine types and versions.
+     * </p>
      * 
      * @return List of available engine types and versions.
      */
@@ -47,7 +57,9 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * List of available engine types and versions.
+     * </p>
      * 
      * @param brokerEngineTypes
      *        List of available engine types and versions.
@@ -63,7 +75,9 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * List of available engine types and versions.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBrokerEngineTypes(java.util.Collection)} or {@link #withBrokerEngineTypes(java.util.Collection)} if
@@ -86,7 +100,9 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * List of available engine types and versions.
+     * </p>
      * 
      * @param brokerEngineTypes
      *        List of available engine types and versions.
@@ -99,8 +115,10 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an
      * integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        Required. The maximum number of engine types that can be returned per page (20 by default). This value
@@ -112,8 +130,10 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an
      * integer from 5 to 100.
+     * </p>
      * 
      * @return Required. The maximum number of engine types that can be returned per page (20 by default). This value
      *         must be an integer from 5 to 100.
@@ -124,8 +144,10 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an
      * integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        Required. The maximum number of engine types that can be returned per page (20 by default). This value
@@ -139,8 +161,10 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -152,8 +176,10 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -164,8 +190,10 @@ public class DescribeBrokerEngineTypesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,

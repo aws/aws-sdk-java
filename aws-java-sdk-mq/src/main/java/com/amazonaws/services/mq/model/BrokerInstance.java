@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Returns information about all brokers.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerInstance" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
 
-    /** The URL of the broker's Web Console. */
+    /**
+     * <p>
+     * The brokers web console URL.
+     * </p>
+     */
     private String consoleURL;
-    /** The broker's wire-level protocol endpoints. */
+    /**
+     * <p>
+     * The broker's wire-level protocol endpoints.
+     * </p>
+     */
     private java.util.List<String> endpoints;
-    /** The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers */
+    /**
+     * <p>
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.
+     * </p>
+     */
     private String ipAddress;
 
     /**
-     * The URL of the broker's Web Console.
+     * <p>
+     * The brokers web console URL.
+     * </p>
      * 
      * @param consoleURL
-     *        The URL of the broker's Web Console.
+     *        The brokers web console URL.
      */
 
     public void setConsoleURL(String consoleURL) {
@@ -45,9 +61,11 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL of the broker's Web Console.
+     * <p>
+     * The brokers web console URL.
+     * </p>
      * 
-     * @return The URL of the broker's Web Console.
+     * @return The brokers web console URL.
      */
 
     public String getConsoleURL() {
@@ -55,10 +73,12 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL of the broker's Web Console.
+     * <p>
+     * The brokers web console URL.
+     * </p>
      * 
      * @param consoleURL
-     *        The URL of the broker's Web Console.
+     *        The brokers web console URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +88,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The broker's wire-level protocol endpoints.
+     * </p>
      * 
      * @return The broker's wire-level protocol endpoints.
      */
@@ -78,7 +100,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The broker's wire-level protocol endpoints.
+     * </p>
      * 
      * @param endpoints
      *        The broker's wire-level protocol endpoints.
@@ -94,7 +118,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The broker's wire-level protocol endpoints.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEndpoints(java.util.Collection)} or {@link #withEndpoints(java.util.Collection)} if you want to
@@ -117,7 +143,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The broker's wire-level protocol endpoints.
+     * </p>
      * 
      * @param endpoints
      *        The broker's wire-level protocol endpoints.
@@ -130,11 +158,13 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers
+     * <p>
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param ipAddress
      *        The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ
-     *        brokers
+     *        brokers.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -142,10 +172,12 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers
+     * <p>
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @return The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ
-     *         brokers
+     *         brokers.
      */
 
     public String getIpAddress() {
@@ -153,11 +185,13 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers
+     * <p>
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param ipAddress
      *        The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ
-     *        brokers
+     *        brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

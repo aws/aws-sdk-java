@@ -39,7 +39,7 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String portalDescription;
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      */
     private String portalContactEmail;
@@ -60,18 +60,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -82,16 +81,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
-     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
-     * China Regions.
+     * <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user
+     * permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web
+     * Services SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web
+     * Services Regions other than the China Regions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
      * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
@@ -110,7 +110,8 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
      * address in Amazon SES</a>.
      * </p>
@@ -119,9 +120,11 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String notificationSenderEmail;
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      */
     private Alarms alarms;
@@ -208,11 +211,11 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      * 
      * @param portalContactEmail
-     *        The AWS administrator's contact email address.
+     *        The Amazon Web Services administrator's contact email address.
      */
 
     public void setPortalContactEmail(String portalContactEmail) {
@@ -221,10 +224,10 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      * 
-     * @return The AWS administrator's contact email address.
+     * @return The Amazon Web Services administrator's contact email address.
      */
 
     public String getPortalContactEmail() {
@@ -233,11 +236,11 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      * 
      * @param portalContactEmail
-     *        The AWS administrator's contact email address.
+     *        The Amazon Web Services administrator's contact email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,18 +344,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param roleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a
-     *        service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
-     *        more information, see <a
+     *        service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *        roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -362,17 +364,16 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a
-     *         service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
+     *         service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *         roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getRoleArn() {
@@ -382,18 +383,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param roleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a
-     *        service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
-     *        more information, see <a
+     *        service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *        roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,13 +405,13 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *         SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *         SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -421,14 +421,14 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *        SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *        SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -438,14 +438,14 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key-value pairs that contain metadata for the portal. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *        SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *        SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,16 +489,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
-     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
-     * China Regions.
+     * <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user
+     * permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web
+     * Services SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web
+     * Services Regions other than the China Regions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
      * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
@@ -515,18 +516,18 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
-     *        Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     *        href
-     *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     *        AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other
-     *        than the China Regions.
+     *        <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+     *        user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon
+     *        Web Services SSO. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
+     *        >Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available
+     *        in Amazon Web Services Regions other than the China Regions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *        manage user permissions. This option is only available in the China Regions.
+     *        <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
+     *        permissions. This option is only available in the China Regions.
      *        </p>
      *        </li>
      *        </ul>
@@ -549,16 +550,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
-     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
-     * China Regions.
+     * <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user
+     * permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web
+     * Services SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web
+     * Services Regions other than the China Regions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
      * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
@@ -574,17 +576,18 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
-     *         Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">
-     *         Enabling AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS
-     *         Regions other than the China Regions.
+     *         <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+     *         user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable
+     *         Amazon Web Services SSO. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
+     *         >Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only
+     *         available in Amazon Web Services Regions other than the China Regions.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *         manage user permissions. This option is only available in the China Regions.
+     *         <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
+     *         permissions. This option is only available in the China Regions.
      *         </p>
      *         </li>
      *         </ul>
@@ -607,16 +610,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
-     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
-     * China Regions.
+     * <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user
+     * permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web
+     * Services SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web
+     * Services Regions other than the China Regions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
      * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
@@ -633,18 +637,18 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
-     *        Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     *        href
-     *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     *        AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other
-     *        than the China Regions.
+     *        <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+     *        user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon
+     *        Web Services SSO. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
+     *        >Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available
+     *        in Amazon Web Services Regions other than the China Regions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *        manage user permissions. This option is only available in the China Regions.
+     *        <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
+     *        permissions. This option is only available in the China Regions.
      *        </p>
      *        </li>
      *        </ul>
@@ -669,16 +673,17 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
-     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
-     * China Regions.
+     * <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user
+     * permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web
+     * Services SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web
+     * Services Regions other than the China Regions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
      * permissions. This option is only available in the China Regions.
      * </p>
      * </li>
@@ -695,18 +700,18 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
-     *        Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
-     *        href
-     *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     *        AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other
-     *        than the China Regions.
+     *        <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+     *        user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon
+     *        Web Services SSO. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
+     *        >Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available
+     *        in Amazon Web Services Regions other than the China Regions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
-     *        manage user permissions. This option is only available in the China Regions.
+     *        <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user
+     *        permissions. This option is only available in the China Regions.
      *        </p>
      *        </li>
      *        </ul>
@@ -730,7 +735,8 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
      * address in Amazon SES</a>.
      * </p>
@@ -739,7 +745,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param notificationSenderEmail
      *        The email address that sends alarm notifications.</p> <important>
      *        <p>
-     *        If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     *        If you use the <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed
+     *        Lambda function</a> to manage your emails, you must <a
      *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender
      *        email address in Amazon SES</a>.
      *        </p>
@@ -755,7 +763,8 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
      * address in Amazon SES</a>.
      * </p>
@@ -763,7 +772,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return The email address that sends alarm notifications.</p> <important>
      *         <p>
-     *         If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     *         If you use the <a
+     *         href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed
+     *         Lambda function</a> to manage your emails, you must <a
      *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the
      *         sender email address in Amazon SES</a>.
      *         </p>
@@ -779,7 +790,8 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT
+     * Events managed Lambda function</a> to manage your emails, you must <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
      * address in Amazon SES</a>.
      * </p>
@@ -788,7 +800,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param notificationSenderEmail
      *        The email address that sends alarm notifications.</p> <important>
      *        <p>
-     *        If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     *        If you use the <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed
+     *        Lambda function</a> to manage your emails, you must <a
      *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender
      *        email address in Amazon SES</a>.
      *        </p>
@@ -802,15 +816,19 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      * 
      * @param alarms
-     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
-     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
-     *        specified range. For more information, see .
+     *        Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use
+     *        the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with
+     *        alarms</a> in the <i>IoT SiteWise Application Guide</i>.
      */
 
     public void setAlarms(Alarms alarms) {
@@ -819,14 +837,18 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      * 
-     * @return Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
-     *         use the alarm to monitor an asset property and get notified when the asset property value is outside a
-     *         specified range. For more information, see .
+     * @return Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use
+     *         the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *         specified range. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with
+     *         alarms</a> in the <i>IoT SiteWise Application Guide</i>.
      */
 
     public Alarms getAlarms() {
@@ -835,15 +857,19 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      * 
      * @param alarms
-     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
-     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
-     *        specified range. For more information, see .
+     *        Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use
+     *        the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with
+     *        alarms</a> in the <i>IoT SiteWise Application Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

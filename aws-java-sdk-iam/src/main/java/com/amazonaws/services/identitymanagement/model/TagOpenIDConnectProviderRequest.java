@@ -30,9 +30,9 @@ public class TagOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * The ARN of the OIDC identity provider in IAM to which you want to add tags.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String openIDConnectProviderArn;
@@ -49,17 +49,17 @@ public class TagOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * The ARN of the OIDC identity provider in IAM to which you want to add tags.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
      *        <p>
-     *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
@@ -71,16 +71,16 @@ public class TagOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * The ARN of the OIDC identity provider in IAM to which you want to add tags.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
      *         <p>
-     *         This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getOpenIDConnectProviderArn() {
@@ -92,17 +92,17 @@ public class TagOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * The ARN of the OIDC identity provider in IAM to which you want to add tags.
      * </p>
      * <p>
-     * This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@-
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
      *        <p>
-     *        This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

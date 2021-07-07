@@ -39,10 +39,10 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
     private String propertyId;
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String propertyAlias;
@@ -93,7 +93,7 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 100
@@ -183,17 +183,17 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param propertyAlias
-     *        The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     *        The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *        <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *        industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setPropertyAlias(String propertyAlias) {
@@ -202,16 +202,16 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * @return The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *         <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *         industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getPropertyAlias() {
@@ -220,17 +220,17 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     * The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
-     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param propertyAlias
-     *        The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
+     *        The alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *        <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *        industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -682,14 +682,14 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 100
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.</p>
+     *        The maximum number of results to return for each paginated request.</p>
      *        <p>
      *        Default: 100
      */
@@ -700,13 +700,13 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 100
      * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.</p>
+     * @return The maximum number of results to return for each paginated request.</p>
      *         <p>
      *         Default: 100
      */
@@ -717,14 +717,14 @@ public class GetAssetPropertyAggregatesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results to be returned per paginated request.
+     * The maximum number of results to return for each paginated request.
      * </p>
      * <p>
      * Default: 100
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.</p>
+     *        The maximum number of results to return for each paginated request.</p>
      *        <p>
      *        Default: 100
      * @return Returns a reference to this object so that method calls can be chained together.

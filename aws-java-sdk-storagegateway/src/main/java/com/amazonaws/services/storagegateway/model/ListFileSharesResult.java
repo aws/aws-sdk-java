@@ -41,7 +41,7 @@ public class ListFileSharesResult extends com.amazonaws.AmazonWebServiceResult<c
     private String nextMarker;
     /**
      * <p>
-     * An array of information about the file gateway's file shares.
+     * An array of information about the S3 File Gateway's file shares.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileShareInfo> fileShareInfoList;
@@ -134,10 +134,10 @@ public class ListFileSharesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of information about the file gateway's file shares.
+     * An array of information about the S3 File Gateway's file shares.
      * </p>
      * 
-     * @return An array of information about the file gateway's file shares.
+     * @return An array of information about the S3 File Gateway's file shares.
      */
 
     public java.util.List<FileShareInfo> getFileShareInfoList() {
@@ -149,11 +149,11 @@ public class ListFileSharesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of information about the file gateway's file shares.
+     * An array of information about the S3 File Gateway's file shares.
      * </p>
      * 
      * @param fileShareInfoList
-     *        An array of information about the file gateway's file shares.
+     *        An array of information about the S3 File Gateway's file shares.
      */
 
     public void setFileShareInfoList(java.util.Collection<FileShareInfo> fileShareInfoList) {
@@ -167,7 +167,7 @@ public class ListFileSharesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of information about the file gateway's file shares.
+     * An array of information about the S3 File Gateway's file shares.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +176,7 @@ public class ListFileSharesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param fileShareInfoList
-     *        An array of information about the file gateway's file shares.
+     *        An array of information about the S3 File Gateway's file shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class ListFileSharesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of information about the file gateway's file shares.
+     * An array of information about the S3 File Gateway's file shares.
      * </p>
      * 
      * @param fileShareInfoList
-     *        An array of information about the file gateway's file shares.
+     *        An array of information about the S3 File Gateway's file shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

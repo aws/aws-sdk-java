@@ -25,18 +25,18 @@ public class GetAccessKeyInfoResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number used to identify the AWS account.
+     * The number used to identify the Amazon Web Services account.
      * </p>
      */
     private String account;
 
     /**
      * <p>
-     * The number used to identify the AWS account.
+     * The number used to identify the Amazon Web Services account.
      * </p>
      * 
      * @param account
-     *        The number used to identify the AWS account.
+     *        The number used to identify the Amazon Web Services account.
      */
 
     public void setAccount(String account) {
@@ -45,10 +45,10 @@ public class GetAccessKeyInfoResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number used to identify the AWS account.
+     * The number used to identify the Amazon Web Services account.
      * </p>
      * 
-     * @return The number used to identify the AWS account.
+     * @return The number used to identify the Amazon Web Services account.
      */
 
     public String getAccount() {
@@ -57,11 +57,11 @@ public class GetAccessKeyInfoResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number used to identify the AWS account.
+     * The number used to identify the Amazon Web Services account.
      * </p>
      * 
      * @param account
-     *        The number used to identify the AWS account.
+     *        The number used to identify the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,6 +41,12 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
     /**
      * <p>
+     * The IDs of the security group rules.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> securityGroupRuleIds;
+    /**
+     * <p>
      * Not supported. Use a set of IP permissions to specify the CIDR.
      * </p>
      */
@@ -194,6 +200,79 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
 
     public RevokeSecurityGroupEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * 
+     * @return The IDs of the security group rules.
+     */
+
+    public java.util.List<String> getSecurityGroupRuleIds() {
+        if (securityGroupRuleIds == null) {
+            securityGroupRuleIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return securityGroupRuleIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * 
+     * @param securityGroupRuleIds
+     *        The IDs of the security group rules.
+     */
+
+    public void setSecurityGroupRuleIds(java.util.Collection<String> securityGroupRuleIds) {
+        if (securityGroupRuleIds == null) {
+            this.securityGroupRuleIds = null;
+            return;
+        }
+
+        this.securityGroupRuleIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupRuleIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupRuleIds(java.util.Collection)} or {@link #withSecurityGroupRuleIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupRuleIds
+     *        The IDs of the security group rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RevokeSecurityGroupEgressRequest withSecurityGroupRuleIds(String... securityGroupRuleIds) {
+        if (this.securityGroupRuleIds == null) {
+            setSecurityGroupRuleIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupRuleIds.length));
+        }
+        for (String ele : securityGroupRuleIds) {
+            this.securityGroupRuleIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * 
+     * @param securityGroupRuleIds
+     *        The IDs of the security group rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RevokeSecurityGroupEgressRequest withSecurityGroupRuleIds(java.util.Collection<String> securityGroupRuleIds) {
+        setSecurityGroupRuleIds(securityGroupRuleIds);
         return this;
     }
 
@@ -464,6 +543,8 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
             sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getIpPermissions() != null)
             sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
+        if (getSecurityGroupRuleIds() != null)
+            sb.append("SecurityGroupRuleIds: ").append(getSecurityGroupRuleIds()).append(",");
         if (getCidrIp() != null)
             sb.append("CidrIp: ").append(getCidrIp()).append(",");
         if (getFromPort() != null)
@@ -497,6 +578,10 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
         if (other.getIpPermissions() == null ^ this.getIpPermissions() == null)
             return false;
         if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
+            return false;
+        if (other.getSecurityGroupRuleIds() == null ^ this.getSecurityGroupRuleIds() == null)
+            return false;
+        if (other.getSecurityGroupRuleIds() != null && other.getSecurityGroupRuleIds().equals(this.getSecurityGroupRuleIds()) == false)
             return false;
         if (other.getCidrIp() == null ^ this.getCidrIp() == null)
             return false;
@@ -532,6 +617,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupRuleIds() == null) ? 0 : getSecurityGroupRuleIds().hashCode());
         hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
         hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
         hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());

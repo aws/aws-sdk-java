@@ -45,7 +45,7 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String portalDescription;
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      */
     private String portalContactEmail;
@@ -54,10 +54,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String roleArn;
@@ -76,9 +75,11 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String notificationSenderEmail;
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      */
     private Alarms alarms;
@@ -205,11 +206,11 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      * 
      * @param portalContactEmail
-     *        The AWS administrator's contact email address.
+     *        The Amazon Web Services administrator's contact email address.
      */
 
     public void setPortalContactEmail(String portalContactEmail) {
@@ -218,10 +219,10 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      * 
-     * @return The AWS administrator's contact email address.
+     * @return The Amazon Web Services administrator's contact email address.
      */
 
     public String getPortalContactEmail() {
@@ -230,11 +231,11 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS administrator's contact email address.
+     * The Amazon Web Services administrator's contact email address.
      * </p>
      * 
      * @param portalContactEmail
-     *        The AWS administrator's contact email address.
+     *        The Amazon Web Services administrator's contact email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,18 +273,17 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param roleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a
-     *        service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
-     *        more information, see <a
+     *        service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *        roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -293,17 +293,16 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a
-     *         service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
+     *         service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *         roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getRoleArn() {
@@ -313,18 +312,17 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
-     * role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles
-     * for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
+     * roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param roleArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a
-     *        service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For
-     *        more information, see <a
+     *        service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service
-     *        roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,15 +419,19 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      * 
      * @param alarms
-     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
-     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
-     *        specified range. For more information, see .
+     *        Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use
+     *        the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with
+     *        alarms</a> in the <i>IoT SiteWise Application Guide</i>.
      */
 
     public void setAlarms(Alarms alarms) {
@@ -438,14 +440,18 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      * 
-     * @return Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
-     *         use the alarm to monitor an asset property and get notified when the asset property value is outside a
-     *         specified range. For more information, see .
+     * @return Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use
+     *         the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *         specified range. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with
+     *         alarms</a> in the <i>IoT SiteWise Application Guide</i>.
      */
 
     public Alarms getAlarms() {
@@ -454,15 +460,19 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the
      * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-     * For more information, see .
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in
+     * the <i>IoT SiteWise Application Guide</i>.
      * </p>
      * 
      * @param alarms
-     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
-     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
-     *        specified range. For more information, see .
+     *        Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use
+     *        the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with
+     *        alarms</a> in the <i>IoT SiteWise Application Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

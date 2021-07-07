@@ -37,8 +37,9 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data
-     * uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This process aborts
-     * the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.
+     * uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web
+     * Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
+     * status.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -89,8 +90,9 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data
-     * uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This process aborts
-     * the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.
+     * uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web
+     * Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
+     * status.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -98,9 +100,9 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param forceDelete
      *        If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all
-     *        data uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This
-     *        process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
-     *        status.</p>
+     *        data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded
+     *        to Amazon Web Services. This process aborts the data upload process, and the file share enters the
+     *        <code>FORCE_DELETING</code> status.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
@@ -112,17 +114,18 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data
-     * uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This process aborts
-     * the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.
+     * uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web
+     * Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
+     * status.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all
-     *         data uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This
-     *         process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
-     *         status.</p>
+     *         data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded
+     *         to Amazon Web Services. This process aborts the data upload process, and the file share enters the
+     *         <code>FORCE_DELETING</code> status.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -134,8 +137,9 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data
-     * uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This process aborts
-     * the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.
+     * uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web
+     * Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
+     * status.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -143,9 +147,9 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param forceDelete
      *        If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all
-     *        data uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This
-     *        process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
-     *        status.</p>
+     *        data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded
+     *        to Amazon Web Services. This process aborts the data upload process, and the file share enters the
+     *        <code>FORCE_DELETING</code> status.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -159,17 +163,18 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data
-     * uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This process aborts
-     * the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.
+     * uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web
+     * Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
+     * status.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all
-     *         data uploads to AWS. Otherwise, the file share is not deleted until all data is uploaded to AWS. This
-     *         process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code>
-     *         status.</p>
+     *         data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded
+     *         to Amazon Web Services. This process aborts the data upload process, and the file share enters the
+     *         <code>FORCE_DELETING</code> status.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */

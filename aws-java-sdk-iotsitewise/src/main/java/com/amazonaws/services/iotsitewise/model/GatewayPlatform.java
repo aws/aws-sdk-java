@@ -30,18 +30,18 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A gateway that runs on AWS IoT Greengrass.
+     * A gateway that runs on IoT Greengrass.
      * </p>
      */
     private Greengrass greengrass;
 
     /**
      * <p>
-     * A gateway that runs on AWS IoT Greengrass.
+     * A gateway that runs on IoT Greengrass.
      * </p>
      * 
      * @param greengrass
-     *        A gateway that runs on AWS IoT Greengrass.
+     *        A gateway that runs on IoT Greengrass.
      */
 
     public void setGreengrass(Greengrass greengrass) {
@@ -50,10 +50,10 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A gateway that runs on AWS IoT Greengrass.
+     * A gateway that runs on IoT Greengrass.
      * </p>
      * 
-     * @return A gateway that runs on AWS IoT Greengrass.
+     * @return A gateway that runs on IoT Greengrass.
      */
 
     public Greengrass getGreengrass() {
@@ -62,11 +62,11 @@ public class GatewayPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A gateway that runs on AWS IoT Greengrass.
+     * A gateway that runs on IoT Greengrass.
      * </p>
      * 
      * @param greengrass
-     *        A gateway that runs on AWS IoT Greengrass.
+     *        A gateway that runs on IoT Greengrass.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,16 +23,24 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** A list of information about all brokers. */
+    /**
+     * <p>
+     * A list of information about all brokers.
+     * </p>
+     */
     private java.util.List<BrokerSummary> brokerSummaries;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * A list of information about all brokers.
+     * </p>
      * 
      * @return A list of information about all brokers.
      */
@@ -42,7 +50,9 @@ public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
      * A list of information about all brokers.
+     * </p>
      * 
      * @param brokerSummaries
      *        A list of information about all brokers.
@@ -58,7 +68,9 @@ public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
      * A list of information about all brokers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBrokerSummaries(java.util.Collection)} or {@link #withBrokerSummaries(java.util.Collection)} if you
@@ -81,7 +93,9 @@ public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
      * A list of information about all brokers.
+     * </p>
      * 
      * @param brokerSummaries
      *        A list of information about all brokers.
@@ -94,8 +108,10 @@ public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -107,8 +123,10 @@ public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -119,8 +137,10 @@ public class ListBrokersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,

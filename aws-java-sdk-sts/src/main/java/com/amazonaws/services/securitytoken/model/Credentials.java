@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS credentials for API authentication.
+ * Amazon Web Services credentials for API authentication.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/Credentials" target="_top">AWS API

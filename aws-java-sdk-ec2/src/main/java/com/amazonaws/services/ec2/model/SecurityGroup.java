@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a security group
+ * Describes a security group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroup" target="_top">AWS API
@@ -46,7 +46,7 @@ public class SecurityGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * The Amazon Web Services account ID of the owner of the security group.
      * </p>
      */
     private String ownerId;
@@ -230,11 +230,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the owner of the security group.
+     *        The Amazon Web Services account ID of the owner of the security group.
      */
 
     public void setOwnerId(String ownerId) {
@@ -243,10 +243,10 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the security group.
+     * @return The Amazon Web Services account ID of the owner of the security group.
      */
 
     public String getOwnerId() {
@@ -255,11 +255,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * The Amazon Web Services account ID of the owner of the security group.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the owner of the security group.
+     *        The Amazon Web Services account ID of the owner of the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -80,7 +80,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     * <code>false</code>.
+     * <code>false</code>. Only supported for S3 File Gateways.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -96,7 +96,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
      * client. This option is recommended when you want to maximize compatibility across different clients in your
-     * environment.
+     * environment. Only supported for S3 File Gateways.
      * </p>
      * </li>
      * <li>
@@ -118,7 +118,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     private String sMBSecurityStrategy;
     /**
      * <p>
-     * The shares on this gateway appear when listing shares.
+     * The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      * </p>
      */
     private Boolean fileSharesVisible;
@@ -575,7 +575,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     * <code>false</code>.
+     * <code>false</code>. Only supported for S3 File Gateways.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -583,7 +583,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param sMBGuestPasswordSet
      *        This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     *        <code>false</code>.</p>
+     *        <code>false</code>. Only supported for S3 File Gateways.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
@@ -595,14 +595,14 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     * <code>false</code>.
+     * <code>false</code>. Only supported for S3 File Gateways.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     *         <code>false</code>.</p>
+     *         <code>false</code>. Only supported for S3 File Gateways.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -614,7 +614,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     * <code>false</code>.
+     * <code>false</code>. Only supported for S3 File Gateways.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -622,7 +622,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param sMBGuestPasswordSet
      *        This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     *        <code>false</code>.</p>
+     *        <code>false</code>. Only supported for S3 File Gateways.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -636,14 +636,14 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     * <code>false</code>.
+     * <code>false</code>. Only supported for S3 File Gateways.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise
-     *         <code>false</code>.</p>
+     *         <code>false</code>. Only supported for S3 File Gateways.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -661,7 +661,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
      * client. This option is recommended when you want to maximize compatibility across different clients in your
-     * environment.
+     * environment. Only supported for S3 File Gateways.
      * </p>
      * </li>
      * <li>
@@ -687,7 +687,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *        <p>
      *        <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated
      *        by the client. This option is recommended when you want to maximize compatibility across different clients
-     *        in your environment.
+     *        in your environment. Only supported for S3 File Gateways.
      *        </p>
      *        </li>
      *        <li>
@@ -720,7 +720,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
      * client. This option is recommended when you want to maximize compatibility across different clients in your
-     * environment.
+     * environment. Only supported for S3 File Gateways.
      * </p>
      * </li>
      * <li>
@@ -745,7 +745,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *         <p>
      *         <code>ClientSpecified</code>: If you use this option, requests are established based on what is
      *         negotiated by the client. This option is recommended when you want to maximize compatibility across
-     *         different clients in your environment.
+     *         different clients in your environment. Only supported for S3 File Gateways.
      *         </p>
      *         </li>
      *         <li>
@@ -778,7 +778,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
      * client. This option is recommended when you want to maximize compatibility across different clients in your
-     * environment.
+     * environment. Only supported for S3 File Gateways.
      * </p>
      * </li>
      * <li>
@@ -804,7 +804,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *        <p>
      *        <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated
      *        by the client. This option is recommended when you want to maximize compatibility across different clients
-     *        in your environment.
+     *        in your environment. Only supported for S3 File Gateways.
      *        </p>
      *        </li>
      *        <li>
@@ -839,7 +839,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the
      * client. This option is recommended when you want to maximize compatibility across different clients in your
-     * environment.
+     * environment. Only supported for S3 File Gateways.
      * </p>
      * </li>
      * <li>
@@ -865,7 +865,7 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
      *        <p>
      *        <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated
      *        by the client. This option is recommended when you want to maximize compatibility across different clients
-     *        in your environment.
+     *        in your environment. Only supported for S3 File Gateways.
      *        </p>
      *        </li>
      *        <li>
@@ -893,11 +893,11 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The shares on this gateway appear when listing shares.
+     * The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      * </p>
      * 
      * @param fileSharesVisible
-     *        The shares on this gateway appear when listing shares.
+     *        The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      */
 
     public void setFileSharesVisible(Boolean fileSharesVisible) {
@@ -906,10 +906,10 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The shares on this gateway appear when listing shares.
+     * The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      * </p>
      * 
-     * @return The shares on this gateway appear when listing shares.
+     * @return The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      */
 
     public Boolean getFileSharesVisible() {
@@ -918,11 +918,11 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The shares on this gateway appear when listing shares.
+     * The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      * </p>
      * 
      * @param fileSharesVisible
-     *        The shares on this gateway appear when listing shares.
+     *        The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -933,10 +933,10 @@ public class DescribeSMBSettingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The shares on this gateway appear when listing shares.
+     * The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      * </p>
      * 
-     * @return The shares on this gateway appear when listing shares.
+     * @return The shares on this gateway appear when listing shares. Only supported for S3 File Gateways.
      */
 
     public Boolean isFileSharesVisible() {

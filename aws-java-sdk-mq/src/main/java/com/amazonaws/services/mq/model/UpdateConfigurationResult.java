@@ -23,24 +23,48 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Required. The Amazon Resource Name (ARN) of the configuration. */
+    /**
+     * <p>
+     * Required. The Amazon Resource Name (ARN) of the configuration.
+     * </p>
+     */
     private String arn;
-    /** Required. The date and time of the configuration. */
+    /**
+     * <p>
+     * Required. The date and time of the configuration.
+     * </p>
+     */
     private java.util.Date created;
-    /** Required. The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String id;
-    /** The latest revision of the configuration. */
+    /**
+     * <p>
+     * The latest revision of the configuration.
+     * </p>
+     */
     private ConfigurationRevision latestRevision;
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      */
     private String name;
-    /** The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized. */
+    /**
+     * <p>
+     * The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
+     * </p>
+     */
     private java.util.List<SanitizationWarning> warnings;
 
     /**
+     * <p>
      * Required. The Amazon Resource Name (ARN) of the configuration.
+     * </p>
      * 
      * @param arn
      *        Required. The Amazon Resource Name (ARN) of the configuration.
@@ -51,7 +75,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The Amazon Resource Name (ARN) of the configuration.
+     * </p>
      * 
      * @return Required. The Amazon Resource Name (ARN) of the configuration.
      */
@@ -61,7 +87,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The Amazon Resource Name (ARN) of the configuration.
+     * </p>
      * 
      * @param arn
      *        Required. The Amazon Resource Name (ARN) of the configuration.
@@ -74,7 +102,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration.
@@ -85,7 +115,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration.
+     * </p>
      * 
      * @return Required. The date and time of the configuration.
      */
@@ -95,7 +127,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration.
@@ -108,7 +142,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param id
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -119,7 +155,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the configuration.
      */
@@ -129,7 +167,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param id
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -142,7 +182,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The latest revision of the configuration.
+     * </p>
      * 
      * @param latestRevision
      *        The latest revision of the configuration.
@@ -153,7 +195,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The latest revision of the configuration.
+     * </p>
      * 
      * @return The latest revision of the configuration.
      */
@@ -163,7 +207,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The latest revision of the configuration.
+     * </p>
      * 
      * @param latestRevision
      *        The latest revision of the configuration.
@@ -176,8 +222,10 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      * 
      * @param name
      *        Required. The name of the configuration. This value can contain only alphanumeric characters, dashes,
@@ -189,8 +237,10 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      * 
      * @return Required. The name of the configuration. This value can contain only alphanumeric characters, dashes,
      *         periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
@@ -201,8 +251,10 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods,
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
+     * </p>
      * 
      * @param name
      *        Required. The name of the configuration. This value can contain only alphanumeric characters, dashes,
@@ -216,7 +268,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
+     * </p>
      * 
      * @return The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
      */
@@ -226,7 +280,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
+     * </p>
      * 
      * @param warnings
      *        The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
@@ -242,7 +298,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override
@@ -265,7 +323,9 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.
+     * </p>
      * 
      * @param warnings
      *        The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.

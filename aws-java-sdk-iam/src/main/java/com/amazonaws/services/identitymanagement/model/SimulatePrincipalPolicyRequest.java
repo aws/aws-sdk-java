@@ -33,9 +33,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * to.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String policySourceArn;
@@ -81,6 +87,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -114,10 +126,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> actionNames;
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
-     * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response. You can simulate resources that don't exist in your account.
+     * A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided,
+     * then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
+     * evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each
+     * combination and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -127,7 +139,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceArns;
@@ -135,6 +147,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A resource-based policy to include in the simulation provided as a string. Each resource in the simulation is
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
+     * </p>
+     * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -163,13 +181,13 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     private String resourcePolicy;
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
-     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource is different from the account that
-     * owns the simulated calling user <code>CallerArn</code>.
+     * An account ID that specifies the owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
+     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
+     * you specify a resource-based policy and account that owns the resource is different from the account that owns
+     * the simulated calling user <code>CallerArn</code>.
      * </p>
      */
     private String resourceOwner;
@@ -194,7 +212,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String callerArn;
@@ -304,9 +322,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * to.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param policySourceArn
@@ -315,9 +339,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        associated with that entity. If you specify a user, the simulation also includes all policies that are
      *        attached to any groups the user belongs to.</p>
      *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
+     *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setPolicySourceArn(String policySourceArn) {
@@ -332,9 +362,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * to.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to include in the
@@ -342,9 +378,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         associated with that entity. If you specify a user, the simulation also includes all policies that are
      *         attached to any groups the user belongs to.</p>
      *         <p>
+     *         The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *         listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *         >IAM and STS character quotas</a>.
+     *         </p>
+     *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getPolicySourceArn() {
@@ -359,9 +401,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * to.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param policySourceArn
@@ -370,9 +418,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        associated with that entity. If you specify a user, the simulation also includes all policies that are
      *        attached to any groups the user belongs to.</p>
      *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
+     *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,6 +712,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -690,6 +750,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *         boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *         containing the complete, valid JSON text of a permissions boundary policy.</p>
+     *         <p>
+     *         The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *         listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *         >IAM and STS character quotas</a>.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -734,6 +800,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -767,6 +839,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *        containing the complete, valid JSON text of a permissions boundary policy.</p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -813,6 +891,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -852,6 +936,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *        containing the complete, valid JSON text of a permissions boundary policy.</p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -900,6 +990,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -933,6 +1029,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *        containing the complete, valid JSON text of a permissions boundary policy.</p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -1047,10 +1149,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
-     * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response. You can simulate resources that don't exist in your account.
+     * A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided,
+     * then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
+     * evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each
+     * combination and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1060,14 +1162,14 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
-     *         value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
-     *         evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *         of each combination and reports it in the response. You can simulate resources that don't exist in your
-     *         account.</p>
+     * @return A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not
+     *         provided, then the value defaults to <code>*</code> (all resources). Each API in the
+     *         <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines
+     *         the access result (allowed or denied) of each combination and reports it in the response. You can
+     *         simulate resources that don't exist in your account.</p>
      *         <p>
      *         The simulation does not automatically retrieve policies for the specified resources. If you want to
      *         include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1076,7 +1178,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -1088,10 +1190,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
-     * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response. You can simulate resources that don't exist in your account.
+     * A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided,
+     * then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
+     * evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each
+     * combination and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1101,15 +1203,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param resourceArns
-     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
-     *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
-     *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *        of each combination and reports it in the response. You can simulate resources that don't exist in your
-     *        account.</p>
+     *        A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not
+     *        provided, then the value defaults to <code>*</code> (all resources). Each API in the
+     *        <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines
+     *        the access result (allowed or denied) of each combination and reports it in the response. You can simulate
+     *        resources that don't exist in your account.</p>
      *        <p>
      *        The simulation does not automatically retrieve policies for the specified resources. If you want to
      *        include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1118,7 +1220,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -1132,10 +1234,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
-     * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response. You can simulate resources that don't exist in your account.
+     * A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided,
+     * then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
+     * evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each
+     * combination and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1145,7 +1247,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1154,11 +1256,11 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param resourceArns
-     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
-     *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
-     *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *        of each combination and reports it in the response. You can simulate resources that don't exist in your
-     *        account.</p>
+     *        A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not
+     *        provided, then the value defaults to <code>*</code> (all resources). Each API in the
+     *        <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines
+     *        the access result (allowed or denied) of each combination and reports it in the response. You can simulate
+     *        resources that don't exist in your account.</p>
      *        <p>
      *        The simulation does not automatically retrieve policies for the specified resources. If you want to
      *        include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1167,7 +1269,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1183,10 +1285,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
-     * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response. You can simulate resources that don't exist in your account.
+     * A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided,
+     * then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
+     * evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each
+     * combination and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1196,15 +1298,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param resourceArns
-     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
-     *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
-     *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *        of each combination and reports it in the response. You can simulate resources that don't exist in your
-     *        account.</p>
+     *        A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not
+     *        provided, then the value defaults to <code>*</code> (all resources). Each API in the
+     *        <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines
+     *        the access result (allowed or denied) of each combination and reports it in the response. You can simulate
+     *        resources that don't exist in your account.</p>
      *        <p>
      *        The simulation does not automatically retrieve policies for the specified resources. If you want to
      *        include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1213,7 +1315,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1226,6 +1328,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A resource-based policy to include in the simulation provided as a string. Each resource in the simulation is
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
+     * </p>
+     * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -1255,6 +1363,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        A resource-based policy to include in the simulation provided as a string. Each resource in the simulation
      *        is treated as if it had this policy attached. You can include only one resource-based policy in a
      *        simulation.</p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -1290,6 +1404,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -1316,6 +1436,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * @return A resource-based policy to include in the simulation provided as a string. Each resource in the
      *         simulation is treated as if it had this policy attached. You can include only one resource-based policy
      *         in a simulation.</p>
+     *         <p>
+     *         The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *         listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *         >IAM and STS character quotas</a>.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -1351,6 +1477,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
+     * The maximum length of the policy document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     * >IAM and STS character quotas</a>.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -1378,6 +1510,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        A resource-based policy to include in the simulation provided as a string. Each resource in the simulation
      *        is treated as if it had this policy attached. You can include only one resource-based policy in a
      *        simulation.</p>
+     *        <p>
+     *        The maximum length of the policy document that you can pass in this operation, including whitespace, is
+     *        listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length"
+     *        >IAM and STS character quotas</a>.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -1411,19 +1549,19 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
-     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource is different from the account that
-     * owns the simulated calling user <code>CallerArn</code>.
+     * An account ID that specifies the owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
+     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
+     * you specify a resource-based policy and account that owns the resource is different from the account that owns
+     * the simulated calling user <code>CallerArn</code>.
      * </p>
      * 
      * @param resourceOwner
-     *        An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *        the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code>
-     *        is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
+     *        An account ID that specifies the owner of any simulated resource that does not identify its owner in the
+     *        resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     *        specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
      *        simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
      *        and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
      *        parameter is required only if you specify a resource-based policy and account that owns the resource is
@@ -1436,18 +1574,18 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
-     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource is different from the account that
-     * owns the simulated calling user <code>CallerArn</code>.
+     * An account ID that specifies the owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
+     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
+     * you specify a resource-based policy and account that owns the resource is different from the account that owns
+     * the simulated calling user <code>CallerArn</code>.
      * </p>
      * 
-     * @return An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *         the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code>
-     *         is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
+     * @return An account ID that specifies the owner of any simulated resource that does not identify its owner in the
+     *         resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     *         specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
      *         simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
      *         and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
      *         parameter is required only if you specify a resource-based policy and account that owns the resource is
@@ -1460,19 +1598,19 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
-     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
-     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource is different from the account that
-     * owns the simulated calling user <code>CallerArn</code>.
+     * An account ID that specifies the owner of any simulated resource that does not identify its owner in the resource
+     * ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is
+     * also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy
+     * defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if
+     * you specify a resource-based policy and account that owns the resource is different from the account that owns
+     * the simulated calling user <code>CallerArn</code>.
      * </p>
      * 
      * @param resourceOwner
-     *        An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *        the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code>
-     *        is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
+     *        An account ID that specifies the owner of any simulated resource that does not identify its owner in the
+     *        resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     *        specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
      *        simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
      *        and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
      *        parameter is required only if you specify a resource-based policy and account that owns the resource is
@@ -1506,7 +1644,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param callerArn
@@ -1528,7 +1666,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setCallerArn(String callerArn) {
@@ -1556,7 +1694,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM user that you want to specify as the simulated caller of the API operations. If you do
@@ -1577,7 +1715,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getCallerArn() {
@@ -1605,7 +1743,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param callerArn
@@ -1627,7 +1765,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

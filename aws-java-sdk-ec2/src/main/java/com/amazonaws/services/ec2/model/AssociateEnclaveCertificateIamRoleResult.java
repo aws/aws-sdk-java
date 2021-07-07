@@ -39,7 +39,7 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
     private String certificateS3ObjectKey;
     /**
      * <p>
-     * The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     * The ID of the KMS key used to encrypt the private key of the certificate.
      * </p>
      */
     private String encryptionKmsKeyId;
@@ -132,11 +132,11 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     * The ID of the KMS key used to encrypt the private key of the certificate.
      * </p>
      * 
      * @param encryptionKmsKeyId
-     *        The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     *        The ID of the KMS key used to encrypt the private key of the certificate.
      */
 
     public void setEncryptionKmsKeyId(String encryptionKmsKeyId) {
@@ -145,10 +145,10 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     * The ID of the KMS key used to encrypt the private key of the certificate.
      * </p>
      * 
-     * @return The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     * @return The ID of the KMS key used to encrypt the private key of the certificate.
      */
 
     public String getEncryptionKmsKeyId() {
@@ -157,11 +157,11 @@ public class AssociateEnclaveCertificateIamRoleResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     * The ID of the KMS key used to encrypt the private key of the certificate.
      * </p>
      * 
      * @param encryptionKmsKeyId
-     *        The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
+     *        The ID of the KMS key used to encrypt the private key of the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

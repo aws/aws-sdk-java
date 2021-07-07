@@ -80,6 +80,12 @@ public class SMBFileShareInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheAttributes").build();
     private static final MarshallingInfo<String> NOTIFICATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationPolicy").build();
+    private static final MarshallingInfo<String> VPCENDPOINTDNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCEndpointDNSName").build();
+    private static final MarshallingInfo<String> BUCKETREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketRegion").build();
+    private static final MarshallingInfo<Boolean> OPLOCKSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OplocksEnabled").build();
 
     private static final SMBFileShareInfoMarshaller instance = new SMBFileShareInfoMarshaller();
 
@@ -123,6 +129,9 @@ public class SMBFileShareInfoMarshaller {
             protocolMarshaller.marshall(sMBFileShareInfo.getFileShareName(), FILESHARENAME_BINDING);
             protocolMarshaller.marshall(sMBFileShareInfo.getCacheAttributes(), CACHEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(sMBFileShareInfo.getNotificationPolicy(), NOTIFICATIONPOLICY_BINDING);
+            protocolMarshaller.marshall(sMBFileShareInfo.getVPCEndpointDNSName(), VPCENDPOINTDNSNAME_BINDING);
+            protocolMarshaller.marshall(sMBFileShareInfo.getBucketRegion(), BUCKETREGION_BINDING);
+            protocolMarshaller.marshall(sMBFileShareInfo.getOplocksEnabled(), OPLOCKSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

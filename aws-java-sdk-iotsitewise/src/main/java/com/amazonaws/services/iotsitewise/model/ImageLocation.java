@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.
+ * Contains an image that is uploaded to IoT SiteWise and available at a URL.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ImageLocation" target="_top">AWS API

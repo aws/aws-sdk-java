@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Returns information about the specified configuration revision.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationRevision" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +28,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationRevision implements Serializable, Cloneable, StructuredPojo {
 
-    /** Required. The date and time of the configuration revision. */
+    /**
+     * <p>
+     * Required. The date and time of the configuration revision.
+     * </p>
+     */
     private java.util.Date created;
-    /** The description of the configuration revision. */
+    /**
+     * <p>
+     * The description of the configuration revision.
+     * </p>
+     */
     private String description;
-    /** Required. The revision number of the configuration. */
+    /**
+     * <p>
+     * Required. The revision number of the configuration.
+     * </p>
+     */
     private Integer revision;
 
     /**
+     * <p>
      * Required. The date and time of the configuration revision.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration revision.
@@ -45,7 +61,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration revision.
+     * </p>
      * 
      * @return Required. The date and time of the configuration revision.
      */
@@ -55,7 +73,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Required. The date and time of the configuration revision.
+     * </p>
      * 
      * @param created
      *        Required. The date and time of the configuration revision.
@@ -68,7 +88,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * The description of the configuration revision.
+     * </p>
      * 
      * @param description
      *        The description of the configuration revision.
@@ -79,7 +101,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * The description of the configuration revision.
+     * </p>
      * 
      * @return The description of the configuration revision.
      */
@@ -89,7 +113,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * The description of the configuration revision.
+     * </p>
      * 
      * @param description
      *        The description of the configuration revision.
@@ -102,7 +128,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Required. The revision number of the configuration.
+     * </p>
      * 
      * @param revision
      *        Required. The revision number of the configuration.
@@ -113,7 +141,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Required. The revision number of the configuration.
+     * </p>
      * 
      * @return Required. The revision number of the configuration.
      */
@@ -123,7 +153,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
      * Required. The revision number of the configuration.
+     * </p>
      * 
      * @param revision
      *        Required. The revision number of the configuration.

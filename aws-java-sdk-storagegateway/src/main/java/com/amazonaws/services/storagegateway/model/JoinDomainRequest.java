@@ -31,7 +31,7 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
-     * gateways for your account and AWS Region.
+     * gateways for your account and Region.
      * </p>
      */
     private String gatewayARN;
@@ -80,12 +80,12 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
-     * gateways for your account and AWS Region.
+     * gateways for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a
-     *        list of gateways for your account and AWS Region.
+     *        list of gateways for your account and Region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -95,11 +95,11 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
-     * gateways for your account and AWS Region.
+     * gateways for your account and Region.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a
-     *         list of gateways for your account and AWS Region.
+     *         list of gateways for your account and Region.
      */
 
     public String getGatewayARN() {
@@ -109,12 +109,12 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
-     * gateways for your account and AWS Region.
+     * gateways for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a
-     *        list of gateways for your account and AWS Region.
+     *        list of gateways for your account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,9 +41,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -143,9 +143,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -174,9 +174,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * @param policyDocument
      *        The policy that grants an entity permission to assume the role.</p>
      *        <p>
-     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *        to JSON format before submitting it to IAM.
+     *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
+     *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
+     *        format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -212,9 +212,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -242,9 +242,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The policy that grants an entity permission to assume the role.</p>
      *         <p>
-     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *         to JSON format before submitting it to IAM.
+     *         You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
+     *         you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
+     *         format before submitting it to IAM.
      *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -280,9 +280,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * The policy that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
+     * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -311,9 +311,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * @param policyDocument
      *        The policy that grants an entity permission to assume the role.</p>
      *        <p>
-     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *        to JSON format before submitting it to IAM.
+     *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
+     *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
+     *        format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a

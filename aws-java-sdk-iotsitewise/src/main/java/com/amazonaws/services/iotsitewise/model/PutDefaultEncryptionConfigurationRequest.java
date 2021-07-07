@@ -33,8 +33,8 @@ public class PutDefaultEncryptionConfigurationRequest extends com.amazonaws.Amaz
     private String encryptionType;
     /**
      * <p>
-     * The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you
-     * use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if you use
+     * <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      */
     private String kmsKeyId;
@@ -100,13 +100,13 @@ public class PutDefaultEncryptionConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you
-     * use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if you use
+     * <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required
-     *        if you use <code>KMS_BASED_ENCRYPTION</code>.
+     *        The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if
+     *        you use <code>KMS_BASED_ENCRYPTION</code>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -115,12 +115,12 @@ public class PutDefaultEncryptionConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you
-     * use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if you use
+     * <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      * 
-     * @return The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is
-     *         required if you use <code>KMS_BASED_ENCRYPTION</code>.
+     * @return The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if
+     *         you use <code>KMS_BASED_ENCRYPTION</code>.
      */
 
     public String getKmsKeyId() {
@@ -129,13 +129,13 @@ public class PutDefaultEncryptionConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you
-     * use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if you use
+     * <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required
-     *        if you use <code>KMS_BASED_ENCRYPTION</code>.
+     *        The Key ID of the customer managed customer master key (CMK) used for KMS encryption. This is required if
+     *        you use <code>KMS_BASED_ENCRYPTION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

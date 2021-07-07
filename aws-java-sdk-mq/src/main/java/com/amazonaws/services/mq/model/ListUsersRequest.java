@@ -24,21 +24,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
     /**
-     * The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
      * from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -49,7 +59,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return The unique ID that Amazon MQ generates for the broker.
      */
@@ -59,7 +71,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
      * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        The unique ID that Amazon MQ generates for the broker.
@@ -72,11 +86,13 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
      * from 5 to 100.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an
+     *        The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
      *        integer from 5 to 100.
      */
 
@@ -85,10 +101,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
      * from 5 to 100.
+     * </p>
      * 
-     * @return The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an
+     * @return The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
      *         integer from 5 to 100.
      */
 
@@ -97,11 +115,13 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
      * from 5 to 100.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an
+     *        The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
      *        integer from 5 to 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -112,8 +132,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -125,8 +147,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -137,8 +161,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,

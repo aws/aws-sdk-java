@@ -40,7 +40,7 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
     private String password;
     /**
      * <p>
-     * A unique string value that you supply that is used by the file gateway to ensure idempotent file system
+     * A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system
      * association creation.
      * </p>
      */
@@ -49,7 +49,7 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
     private String gatewayARN;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file gateway.
+     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      * </p>
      */
     private String locationARN;
@@ -67,6 +67,18 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
     private String auditDestinationARN;
 
     private CacheAttributes cacheAttributes;
+    /**
+     * <p>
+     * Specifies the network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     */
+    private EndpointNetworkConfiguration endpointNetworkConfiguration;
 
     /**
      * <p>
@@ -156,13 +168,13 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique string value that you supply that is used by the file gateway to ensure idempotent file system
+     * A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system
      * association creation.
      * </p>
      * 
      * @param clientToken
-     *        A unique string value that you supply that is used by the file gateway to ensure idempotent file system
-     *        association creation.
+     *        A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file
+     *        system association creation.
      */
 
     public void setClientToken(String clientToken) {
@@ -171,12 +183,12 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique string value that you supply that is used by the file gateway to ensure idempotent file system
+     * A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system
      * association creation.
      * </p>
      * 
-     * @return A unique string value that you supply that is used by the file gateway to ensure idempotent file system
-     *         association creation.
+     * @return A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file
+     *         system association creation.
      */
 
     public String getClientToken() {
@@ -185,13 +197,13 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique string value that you supply that is used by the file gateway to ensure idempotent file system
+     * A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system
      * association creation.
      * </p>
      * 
      * @param clientToken
-     *        A unique string value that you supply that is used by the file gateway to ensure idempotent file system
-     *        association creation.
+     *        A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file
+     *        system association creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,12 +240,11 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file gateway.
+     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      * </p>
      * 
      * @param locationARN
-     *        The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file
-     *        gateway.
+     *        The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      */
 
     public void setLocationARN(String locationARN) {
@@ -242,11 +253,10 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file gateway.
+     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file
-     *         gateway.
+     * @return The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      */
 
     public String getLocationARN() {
@@ -255,12 +265,11 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file gateway.
+     * The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      * </p>
      * 
      * @param locationARN
-     *        The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the Amazon FSx file
-     *        gateway.
+     *        The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,6 +419,79 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     * 
+     * @param endpointNetworkConfiguration
+     *        Specifies the network configuration information for the gateway associated with the Amazon FSx file
+     *        system.</p> <note>
+     *        <p>
+     *        If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field
+     *        is required.
+     *        </p>
+     */
+
+    public void setEndpointNetworkConfiguration(EndpointNetworkConfiguration endpointNetworkConfiguration) {
+        this.endpointNetworkConfiguration = endpointNetworkConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the network configuration information for the gateway associated with the Amazon FSx file
+     *         system.</p> <note>
+     *         <p>
+     *         If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+     *         field is required.
+     *         </p>
+     */
+
+    public EndpointNetworkConfiguration getEndpointNetworkConfiguration() {
+        return this.endpointNetworkConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the network configuration information for the gateway associated with the Amazon FSx file system.
+     * </p>
+     * <note>
+     * <p>
+     * If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.
+     * </p>
+     * </note>
+     * 
+     * @param endpointNetworkConfiguration
+     *        Specifies the network configuration information for the gateway associated with the Amazon FSx file
+     *        system.</p> <note>
+     *        <p>
+     *        If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field
+     *        is required.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateFileSystemRequest withEndpointNetworkConfiguration(EndpointNetworkConfiguration endpointNetworkConfiguration) {
+        setEndpointNetworkConfiguration(endpointNetworkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -436,7 +518,9 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
         if (getAuditDestinationARN() != null)
             sb.append("AuditDestinationARN: ").append(getAuditDestinationARN()).append(",");
         if (getCacheAttributes() != null)
-            sb.append("CacheAttributes: ").append(getCacheAttributes());
+            sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
+        if (getEndpointNetworkConfiguration() != null)
+            sb.append("EndpointNetworkConfiguration: ").append(getEndpointNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -483,6 +567,10 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
             return false;
+        if (other.getEndpointNetworkConfiguration() == null ^ this.getEndpointNetworkConfiguration() == null)
+            return false;
+        if (other.getEndpointNetworkConfiguration() != null && other.getEndpointNetworkConfiguration().equals(this.getEndpointNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -499,6 +587,7 @@ public class AssociateFileSystemRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAuditDestinationARN() == null) ? 0 : getAuditDestinationARN().hashCode());
         hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
+        hashCode = prime * hashCode + ((getEndpointNetworkConfiguration() == null) ? 0 : getEndpointNetworkConfiguration().hashCode());
         return hashCode;
     }
 

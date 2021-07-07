@@ -18,7 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A list of information about the configuration. <important>Does not apply to RabbitMQ brokers.</important>
+ * <p>
+ * A list of information about the configuration.
+ * </p>
+ * <important>
+ * <p>
+ * Does not apply to RabbitMQ brokers.
+ * </p>
+ * </important>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationId" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +33,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationId implements Serializable, Cloneable, StructuredPojo {
 
-    /** Required. The unique ID that Amazon MQ generates for the configuration. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
+     */
     private String id;
-    /** The revision number of the configuration. */
+    /**
+     * <p>
+     * The revision number of the configuration.
+     * </p>
+     */
     private Integer revision;
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param id
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -43,7 +60,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the configuration.
      */
@@ -53,7 +72,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the configuration.
+     * </p>
      * 
      * @param id
      *        Required. The unique ID that Amazon MQ generates for the configuration.
@@ -66,7 +87,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * The revision number of the configuration.
+     * </p>
      * 
      * @param revision
      *        The revision number of the configuration.
@@ -77,7 +100,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * The revision number of the configuration.
+     * </p>
      * 
      * @return The revision number of the configuration.
      */
@@ -87,7 +112,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * The revision number of the configuration.
+     * </p>
      * 
      * @param revision
      *        The revision number of the configuration.

@@ -25,21 +25,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Filter response by engine type. */
+    /**
+     * <p>
+     * Filter response by engine type.
+     * </p>
+     */
     private String engineType;
     /**
-     * The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * Filter response by engine type.
+     * </p>
      * 
      * @param engineType
      *        Filter response by engine type.
@@ -50,7 +60,9 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * Filter response by engine type.
+     * </p>
      * 
      * @return Filter response by engine type.
      */
@@ -60,7 +72,9 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * Filter response by engine type.
+     * </p>
      * 
      * @param engineType
      *        Filter response by engine type.
@@ -73,12 +87,14 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be
-     *        an integer from 5 to 100.
+     *        The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
+     *        integer from 5 to 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -86,11 +102,13 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      * 
-     * @return The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be
-     *         an integer from 5 to 100.
+     * @return The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
+     *         integer from 5 to 100.
      */
 
     public Integer getMaxResults() {
@@ -98,12 +116,14 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be an
-     * integer from 5 to 100.
+     * <p>
+     * The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer
+     * from 5 to 100.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of engine types that Amazon MQ can return per page (20 by default). This value must be
-     *        an integer from 5 to 100.
+     *        The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an
+     *        integer from 5 to 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,8 +133,10 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -126,8 +148,10 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -138,8 +162,10 @@ public class DescribeBrokerEngineTypesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,

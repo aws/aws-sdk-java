@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can
- * be used to make AWS requests.
+ * Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary Amazon Web Services
+ * credentials that can be used to make Amazon Web Services requests.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML" target="_top">AWS API
@@ -97,7 +97,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -526,7 +526,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -556,7 +556,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        The AWS account ID.
+     *        The Amazon Web Services account ID.
      *        </p>
      *        </li>
      *        <li>
@@ -592,7 +592,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -621,7 +621,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         The AWS account ID.
+     *         The Amazon Web Services account ID.
      *         </p>
      *         </li>
      *         <li>
@@ -657,7 +657,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * </li>
      * <li>
@@ -687,7 +687,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        The AWS account ID.
+     *        The Amazon Web Services account ID.
      *        </p>
      *        </li>
      *        <li>

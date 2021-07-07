@@ -25,8 +25,8 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with other AWS
-     * IoT SiteWise APIs.
+     * The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT
+     * SiteWise APIs.
      * </p>
      */
     private String assetId;
@@ -50,13 +50,13 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with other AWS
-     * IoT SiteWise APIs.
+     * The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT
+     * SiteWise APIs.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with
-     *        other AWS IoT SiteWise APIs.
+     *        The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
+     *        IoT SiteWise APIs.
      */
 
     public void setAssetId(String assetId) {
@@ -65,12 +65,12 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with other AWS
-     * IoT SiteWise APIs.
+     * The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT
+     * SiteWise APIs.
      * </p>
      * 
-     * @return The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with
-     *         other AWS IoT SiteWise APIs.
+     * @return The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
+     *         IoT SiteWise APIs.
      */
 
     public String getAssetId() {
@@ -79,13 +79,13 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with other AWS
-     * IoT SiteWise APIs.
+     * The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT
+     * SiteWise APIs.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset. This ID uniquely identifies the asset within AWS IoT SiteWise and can be used with
-     *        other AWS IoT SiteWise APIs.
+     *        The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other
+     *        IoT SiteWise APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can
- * be used to make AWS requests.
+ * Contains the response to a successful <a>GetFederationToken</a> request, including temporary Amazon Web Services
+ * credentials that can be used to make Amazon Web Services requests.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken" target="_top">AWS API

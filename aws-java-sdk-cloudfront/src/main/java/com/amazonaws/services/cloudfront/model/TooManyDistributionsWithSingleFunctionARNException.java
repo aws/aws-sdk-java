@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The maximum number of distributions have been associated with the specified Lambda function.
+ * The maximum number of distributions have been associated with the specified Lambda@Edge function.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

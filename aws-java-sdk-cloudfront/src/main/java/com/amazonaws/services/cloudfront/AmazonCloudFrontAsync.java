@@ -37,6 +37,61 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.
+     * </p>
+     * <p>
+     * With this operation you can move an alias that’s already in use on a CloudFront distribution to a different
+     * distribution in one step. This prevents the downtime that could occur if you first remove the alias from one
+     * distribution and then separately add the alias to another distribution.
+     * </p>
+     * <p>
+     * To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target
+     * distribution for the alias. For more information, including how to set up the target distribution, prerequisites
+     * that you must complete, and other restrictions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move"
+     * >Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateAliasRequest
+     * @return A Java Future containing the result of the AssociateAlias operation returned by the service.
+     * @sample AmazonCloudFrontAsync.AssociateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateAliasResult> associateAliasAsync(AssociateAliasRequest associateAliasRequest);
+
+    /**
+     * <p>
+     * Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.
+     * </p>
+     * <p>
+     * With this operation you can move an alias that’s already in use on a CloudFront distribution to a different
+     * distribution in one step. This prevents the downtime that could occur if you first remove the alias from one
+     * distribution and then separately add the alias to another distribution.
+     * </p>
+     * <p>
+     * To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target
+     * distribution for the alias. For more information, including how to set up the target distribution, prerequisites
+     * that you must complete, and other restrictions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move"
+     * >Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateAlias operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.AssociateAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateAliasResult> associateAliasAsync(AssociateAliasRequest associateAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateAliasRequest, AssociateAliasResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a cache policy.
      * </p>
      * <p>
@@ -2454,8 +2509,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a list of cache policies.
      * </p>
      * <p>
-     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
-     * created in your AWS account.
+     * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -2477,8 +2532,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a list of cache policies.
      * </p>
      * <p>
-     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
-     * created in your AWS account.
+     * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -2536,6 +2591,87 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
             ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest,
             com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided
+     * alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias.
+     * In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the
+     * distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+     * </p>
+     * <p>
+     * Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided
+     * alias. For example, if you provide <code>www.example.com</code> as input, the returned list can include
+     * <code>www.example.com</code> and the overlapping wildcard alternate domain name (<code>*.example.com</code>), if
+     * they exist. If you provide <code>*.example.com</code> as input, the returned list can include
+     * <code>*.example.com</code> and any alternate domain names covered by that wildcard (for example,
+     * <code>www.example.com</code>, <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+     * exist.
+     * </p>
+     * <p>
+     * To list conflicting aliases, you provide the alias to search and the ID of a distribution in your account that
+     * has an attached SSL/TLS certificate that includes the provided alias. For more information, including how to set
+     * up the distribution and certificate, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move"
+     * >Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listConflictingAliasesRequest
+     * @return A Java Future containing the result of the ListConflictingAliases operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListConflictingAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConflictingAliasesResult> listConflictingAliasesAsync(ListConflictingAliasesRequest listConflictingAliasesRequest);
+
+    /**
+     * <p>
+     * Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided
+     * alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias.
+     * In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the
+     * distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+     * </p>
+     * <p>
+     * Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided
+     * alias. For example, if you provide <code>www.example.com</code> as input, the returned list can include
+     * <code>www.example.com</code> and the overlapping wildcard alternate domain name (<code>*.example.com</code>), if
+     * they exist. If you provide <code>*.example.com</code> as input, the returned list can include
+     * <code>*.example.com</code> and any alternate domain names covered by that wildcard (for example,
+     * <code>www.example.com</code>, <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+     * exist.
+     * </p>
+     * <p>
+     * To list conflicting aliases, you provide the alias to search and the ID of a distribution in your account that
+     * has an attached SSL/TLS certificate that includes the provided alias. For more information, including how to set
+     * up the distribution and certificate, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move"
+     * >Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listConflictingAliasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConflictingAliases operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListConflictingAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConflictingAliasesResult> listConflictingAliasesAsync(ListConflictingAliasesRequest listConflictingAliasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConflictingAliasesRequest, ListConflictingAliasesResult> asyncHandler);
 
     /**
      * <p>
@@ -2778,11 +2914,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * List the distributions that are associated with a specified AWS WAF web ACL.
+     * List the distributions that are associated with a specified WAF web ACL.
      * </p>
      * 
      * @param listDistributionsByWebACLIdRequest
-     *        The request to list distributions that are associated with a specified AWS WAF web ACL.
+     *        The request to list distributions that are associated with a specified WAF web ACL.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributionsByWebACLId
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"
@@ -2793,11 +2929,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * List the distributions that are associated with a specified AWS WAF web ACL.
+     * List the distributions that are associated with a specified WAF web ACL.
      * </p>
      * 
      * @param listDistributionsByWebACLIdRequest
-     *        The request to list distributions that are associated with a specified AWS WAF web ACL.
+     *        The request to list distributions that are associated with a specified WAF web ACL.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2883,7 +3019,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of all CloudFront functions in your AWS account.
+     * Gets a list of all CloudFront functions in your account.
      * </p>
      * <p>
      * You can optionally apply a filter to return only the functions that are in the specified stage, either
@@ -2906,7 +3042,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of all CloudFront functions in your AWS account.
+     * Gets a list of all CloudFront functions in your account.
      * </p>
      * <p>
      * You can optionally apply a filter to return only the functions that are in the specified stage, either
@@ -3013,8 +3149,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a list of origin request policies.
      * </p>
      * <p>
-     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
-     * created in your AWS account.
+     * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items
@@ -3037,8 +3173,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a list of origin request policies.
      * </p>
      * <p>
-     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
-     * created in your AWS account.
+     * You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the
+     * custom policies created in your account.
      * </p>
      * <p>
      * You can optionally specify the maximum number of items to receive in the response. If the total number of items

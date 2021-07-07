@@ -28,7 +28,7 @@ public class ListAccountAliasesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of aliases associated with the account. AWS supports only one alias per account.
+     * A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accountAliases;
@@ -52,10 +52,10 @@ public class ListAccountAliasesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of aliases associated with the account. AWS supports only one alias per account.
+     * A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * </p>
      * 
-     * @return A list of aliases associated with the account. AWS supports only one alias per account.
+     * @return A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      */
 
     public java.util.List<String> getAccountAliases() {
@@ -67,11 +67,11 @@ public class ListAccountAliasesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of aliases associated with the account. AWS supports only one alias per account.
+     * A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * </p>
      * 
      * @param accountAliases
-     *        A list of aliases associated with the account. AWS supports only one alias per account.
+     *        A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      */
 
     public void setAccountAliases(java.util.Collection<String> accountAliases) {
@@ -85,7 +85,7 @@ public class ListAccountAliasesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of aliases associated with the account. AWS supports only one alias per account.
+     * A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -94,7 +94,7 @@ public class ListAccountAliasesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param accountAliases
-     *        A list of aliases associated with the account. AWS supports only one alias per account.
+     *        A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +110,11 @@ public class ListAccountAliasesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of aliases associated with the account. AWS supports only one alias per account.
+     * A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * </p>
      * 
      * @param accountAliases
-     *        A list of aliases associated with the account. AWS supports only one alias per account.
+     *        A list of aliases associated with the account. Amazon Web Services supports only one alias per account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

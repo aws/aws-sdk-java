@@ -22,23 +22,37 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Required. The unique ID that Amazon MQ generates for the broker. */
+    /**
+     * <p>
+     * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
+     */
     private String brokerId;
     /**
+     * <p>
      * Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      */
     private String nextToken;
-    /** Required. The list of all ActiveMQ usernames for the specified broker. */
+    /**
+     * <p>
+     * Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
+     * </p>
+     */
     private java.util.List<UserSummary> users;
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        Required. The unique ID that Amazon MQ generates for the broker.
@@ -49,7 +63,9 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @return Required. The unique ID that Amazon MQ generates for the broker.
      */
@@ -59,7 +75,9 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Required. The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
      *        Required. The unique ID that Amazon MQ generates for the broker.
@@ -72,8 +90,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value
@@ -85,8 +105,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      * 
      * @return Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value
      *         must be an integer from 5 to 100.
@@ -97,8 +119,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be
      * an integer from 5 to 100.
+     * </p>
      * 
      * @param maxResults
      *        Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value
@@ -112,8 +136,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -125,8 +151,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @return The token that specifies the next page of results Amazon MQ should return. To request the first page,
      *         leave nextToken empty.
@@ -137,8 +165,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * The token that specifies the next page of results Amazon MQ should return. To request the first page, leave
      * nextToken empty.
+     * </p>
      * 
      * @param nextToken
      *        The token that specifies the next page of results Amazon MQ should return. To request the first page,
@@ -152,9 +182,12 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Required. The list of all ActiveMQ usernames for the specified broker.
+     * <p>
+     * Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
-     * @return Required. The list of all ActiveMQ usernames for the specified broker.
+     * @return Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ
+     *         brokers.
      */
 
     public java.util.List<UserSummary> getUsers() {
@@ -162,10 +195,12 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Required. The list of all ActiveMQ usernames for the specified broker.
+     * <p>
+     * Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param users
-     *        Required. The list of all ActiveMQ usernames for the specified broker.
+     *        Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
      */
 
     public void setUsers(java.util.Collection<UserSummary> users) {
@@ -178,7 +213,9 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Required. The list of all ActiveMQ usernames for the specified broker.
+     * <p>
+     * Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUsers(java.util.Collection)} or {@link #withUsers(java.util.Collection)} if you want to override the
@@ -186,7 +223,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param users
-     *        Required. The list of all ActiveMQ usernames for the specified broker.
+     *        Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,10 +238,12 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Required. The list of all ActiveMQ usernames for the specified broker.
+     * <p>
+     * Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param users
-     *        Required. The list of all ActiveMQ usernames for the specified broker.
+     *        Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

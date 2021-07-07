@@ -31,7 +31,7 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
     private String keyFingerprint;
     /**
      * <p>
-     * The key pair name you provided.
+     * The key pair name that you provided.
      * </p>
      */
     private String keyName;
@@ -90,11 +90,11 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The key pair name you provided.
+     * The key pair name that you provided.
      * </p>
      * 
      * @param keyName
-     *        The key pair name you provided.
+     *        The key pair name that you provided.
      */
 
     public void setKeyName(String keyName) {
@@ -103,10 +103,10 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The key pair name you provided.
+     * The key pair name that you provided.
      * </p>
      * 
-     * @return The key pair name you provided.
+     * @return The key pair name that you provided.
      */
 
     public String getKeyName() {
@@ -115,11 +115,11 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The key pair name you provided.
+     * The key pair name that you provided.
      * </p>
      * 
      * @param keyName
-     *        The key pair name you provided.
+     *        The key pair name that you provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

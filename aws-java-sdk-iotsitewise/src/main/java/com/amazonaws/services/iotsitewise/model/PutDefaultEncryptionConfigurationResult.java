@@ -32,7 +32,7 @@ public class PutDefaultEncryptionConfigurationResult extends com.amazonaws.Amazo
     private String encryptionType;
     /**
      * <p>
-     * The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      */
     private String kmsKeyArn;
@@ -105,11 +105,11 @@ public class PutDefaultEncryptionConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     *        The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -118,10 +118,10 @@ public class PutDefaultEncryptionConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      * 
-     * @return The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     * @return The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      */
 
     public String getKmsKeyArn() {
@@ -130,11 +130,11 @@ public class PutDefaultEncryptionConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     * The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+     *        The Key ARN of the KMS CMK used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

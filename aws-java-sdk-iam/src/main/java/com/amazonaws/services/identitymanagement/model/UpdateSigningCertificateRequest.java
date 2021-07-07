@@ -49,7 +49,7 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
-     * programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     * programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      */
     private String status;
@@ -72,7 +72,8 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *        used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *        used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot
+     *        be used.
      */
     public UpdateSigningCertificateRequest(String certificateId, String status) {
         setCertificateId(certificateId);
@@ -90,7 +91,8 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *        used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *        used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot
+     *        be used.
      */
     public UpdateSigningCertificateRequest(String certificateId, StatusType status) {
         setCertificateId(certificateId);
@@ -228,12 +230,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
-     * programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     * programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *        used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *        used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot
+     *        be used.
      * @see StatusType
      */
 
@@ -244,11 +247,12 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
-     * programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     * programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @return The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *         used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *         used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate
+     *         cannot be used.
      * @see StatusType
      */
 
@@ -259,12 +263,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
-     * programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     * programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *        used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *        used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot
+     *        be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -277,12 +282,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
-     * programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     * programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *        used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *        used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot
+     *        be used.
      * @see StatusType
      */
 
@@ -293,12 +299,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
-     * programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     * programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
-     *        used for programmatic calls to AWS <code>Inactive</code> means that the certificate cannot be used.
+     *        used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot
+     *        be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

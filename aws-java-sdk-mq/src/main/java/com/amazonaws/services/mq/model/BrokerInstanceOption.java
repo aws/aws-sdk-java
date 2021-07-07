@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Option for host instance type.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerInstanceOption" target="_top">AWS API
  *      Documentation</a>
@@ -26,21 +28,47 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BrokerInstanceOption implements Serializable, Cloneable, StructuredPojo {
 
-    /** The list of available az. */
+    /**
+     * <p>
+     * The list of available az.
+     * </p>
+     */
     private java.util.List<AvailabilityZone> availabilityZones;
-    /** The type of broker engine. */
+    /**
+     * <p>
+     * The broker's engine type.
+     * </p>
+     */
     private String engineType;
-    /** The type of broker instance. */
+    /**
+     * <p>
+     * The broker's instance type.
+     * </p>
+     */
     private String hostInstanceType;
-    /** The broker's storage type. */
+    /**
+     * <p>
+     * The broker's storage type.
+     * </p>
+     */
     private String storageType;
-    /** The list of supported deployment modes. */
+    /**
+     * <p>
+     * The list of supported deployment modes.
+     * </p>
+     */
     private java.util.List<String> supportedDeploymentModes;
-    /** The list of supported engine versions. */
+    /**
+     * <p>
+     * The list of supported engine versions.
+     * </p>
+     */
     private java.util.List<String> supportedEngineVersions;
 
     /**
+     * <p>
      * The list of available az.
+     * </p>
      * 
      * @return The list of available az.
      */
@@ -50,7 +78,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of available az.
+     * </p>
      * 
      * @param availabilityZones
      *        The list of available az.
@@ -66,7 +96,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of available az.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
@@ -89,7 +121,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of available az.
+     * </p>
      * 
      * @param availabilityZones
      *        The list of available az.
@@ -102,10 +136,12 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
      * @param engineType
-     *        The type of broker engine.
+     *        The broker's engine type.
      * @see EngineType
      */
 
@@ -114,9 +150,11 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
-     * @return The type of broker engine.
+     * @return The broker's engine type.
      * @see EngineType
      */
 
@@ -125,10 +163,12 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
      * @param engineType
-     *        The type of broker engine.
+     *        The broker's engine type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -139,10 +179,12 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker engine.
+     * <p>
+     * The broker's engine type.
+     * </p>
      * 
      * @param engineType
-     *        The type of broker engine.
+     *        The broker's engine type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -153,10 +195,12 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker instance.
+     * <p>
+     * The broker's instance type.
+     * </p>
      * 
      * @param hostInstanceType
-     *        The type of broker instance.
+     *        The broker's instance type.
      */
 
     public void setHostInstanceType(String hostInstanceType) {
@@ -164,9 +208,11 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker instance.
+     * <p>
+     * The broker's instance type.
+     * </p>
      * 
-     * @return The type of broker instance.
+     * @return The broker's instance type.
      */
 
     public String getHostInstanceType() {
@@ -174,10 +220,12 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The type of broker instance.
+     * <p>
+     * The broker's instance type.
+     * </p>
      * 
      * @param hostInstanceType
-     *        The type of broker instance.
+     *        The broker's instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +235,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @param storageType
      *        The broker's storage type.
@@ -199,7 +249,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @return The broker's storage type.
      * @see BrokerStorageType
@@ -210,7 +262,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @param storageType
      *        The broker's storage type.
@@ -224,7 +278,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @param storageType
      *        The broker's storage type.
@@ -238,7 +294,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported deployment modes.
+     * </p>
      * 
      * @return The list of supported deployment modes.
      * @see DeploymentMode
@@ -249,7 +307,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported deployment modes.
+     * </p>
      * 
      * @param supportedDeploymentModes
      *        The list of supported deployment modes.
@@ -266,7 +326,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported deployment modes.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedDeploymentModes(java.util.Collection)} or
@@ -290,7 +352,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported deployment modes.
+     * </p>
      * 
      * @param supportedDeploymentModes
      *        The list of supported deployment modes.
@@ -304,7 +368,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported deployment modes.
+     * </p>
      * 
      * @param supportedDeploymentModes
      *        The list of supported deployment modes.
@@ -326,7 +392,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported engine versions.
+     * </p>
      * 
      * @return The list of supported engine versions.
      */
@@ -336,7 +404,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported engine versions.
+     * </p>
      * 
      * @param supportedEngineVersions
      *        The list of supported engine versions.
@@ -352,7 +422,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported engine versions.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedEngineVersions(java.util.Collection)} or
@@ -375,7 +447,9 @@ public class BrokerInstanceOption implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
      * The list of supported engine versions.
+     * </p>
      * 
      * @param supportedEngineVersions
      *        The list of supported engine versions.

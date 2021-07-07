@@ -26,21 +26,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeBrokerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      */
     private String brokerId;
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
-     *        The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *        only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The unique ID that Amazon MQ generates for the broker.
      */
 
     public void setBrokerId(String brokerId) {
@@ -48,13 +46,11 @@ public class DescribeBrokerRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
-     * @return The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *         only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *         characters, or special characters.
+     * @return The unique ID that Amazon MQ generates for the broker.
      */
 
     public String getBrokerId() {
@@ -62,14 +58,12 @@ public class DescribeBrokerRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * <p>
+     * The unique ID that Amazon MQ generates for the broker.
+     * </p>
      * 
      * @param brokerId
-     *        The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *        only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The unique ID that Amazon MQ generates for the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

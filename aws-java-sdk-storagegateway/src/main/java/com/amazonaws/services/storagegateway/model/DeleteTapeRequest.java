@@ -31,7 +31,7 @@ public class DeleteTapeRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      */
     private String gatewayARN;
@@ -53,12 +53,12 @@ public class DeleteTapeRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with.
-     *        Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     *        Use the <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -68,11 +68,11 @@ public class DeleteTapeRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      * 
      * @return The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with.
-     *         Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     *         Use the <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      */
 
     public String getGatewayARN() {
@@ -82,12 +82,12 @@ public class DeleteTapeRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the
-     * <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     * <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * </p>
      * 
      * @param gatewayARN
      *        The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with.
-     *        Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+     *        Use the <a>ListGateways</a> operation to return a list of gateways for your account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

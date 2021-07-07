@@ -53,8 +53,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the project. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -228,13 +228,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the project. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return A list of key-value pairs that contain metadata for the project. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *         SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *         SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -244,14 +244,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the project. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key-value pairs that contain metadata for the project. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *        SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *        SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -261,14 +261,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the project. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-     * resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+     * resources</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param tags
      *        A list of key-value pairs that contain metadata for the project. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT
-     *        SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT
+     *        SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

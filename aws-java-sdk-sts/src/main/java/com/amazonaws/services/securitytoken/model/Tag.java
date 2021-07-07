@@ -19,8 +19,8 @@ import javax.annotation.Generated;
  * <p>
  * You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session
  * tags. You can then use the session tags to control access to resources. For more information, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a> in the
- * <i>IAM User Guide</i>.
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS Sessions</a> in the <i>IAM
+ * User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/Tag" target="_top">AWS API Documentation</a>

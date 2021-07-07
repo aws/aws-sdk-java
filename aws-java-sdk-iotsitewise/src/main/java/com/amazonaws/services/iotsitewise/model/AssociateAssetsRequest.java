@@ -36,7 +36,7 @@ public class AssociateAssetsRequest extends com.amazonaws.AmazonWebServiceReques
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String hierarchyId;
@@ -99,14 +99,14 @@ public class AssociateAssetsRequest extends com.amazonaws.AmazonWebServiceReques
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
      *        The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be
      *        formed that all come from the same asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setHierarchyId(String hierarchyId) {
@@ -118,13 +118,13 @@ public class AssociateAssetsRequest extends com.amazonaws.AmazonWebServiceReques
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be
      *         formed that all come from the same asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getHierarchyId() {
@@ -136,14 +136,14 @@ public class AssociateAssetsRequest extends com.amazonaws.AmazonWebServiceReques
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
-     * the <i>AWS IoT SiteWise User Guide</i>.
+     * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
      *        The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be
      *        formed that all come from the same asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -44,6 +44,8 @@ public class UpdateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ldapServerMetadata").build();
     private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
+    private static final MarshallingInfo<StructuredPojo> MAINTENANCEWINDOWSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maintenanceWindowStartTime").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroups").build();
 
@@ -71,6 +73,7 @@ public class UpdateBrokerRequestMarshaller {
             protocolMarshaller.marshall(updateBrokerRequest.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getLdapServerMetadata(), LDAPSERVERMETADATA_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getLogs(), LOGS_BINDING);
+            protocolMarshaller.marshall(updateBrokerRequest.getMaintenanceWindowStartTime(), MAINTENANCEWINDOWSTARTTIME_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

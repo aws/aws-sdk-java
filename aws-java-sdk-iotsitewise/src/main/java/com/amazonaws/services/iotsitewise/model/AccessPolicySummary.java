@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an access policy that defines an identity's access to an AWS IoT SiteWise Monitor resource.
+ * Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AccessPolicySummary" target="_top">AWS
@@ -36,13 +36,13 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
     private String id;
     /**
      * <p>
-     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      * </p>
      */
     private Identity identity;
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (a portal or project).
+     * The IoT SiteWise Monitor resource (a portal or project).
      * </p>
      */
     private Resource resource;
@@ -108,11 +108,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      * </p>
      * 
      * @param identity
-     *        The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     *        The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      */
 
     public void setIdentity(Identity identity) {
@@ -121,10 +121,10 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      * </p>
      * 
-     * @return The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     * @return The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      */
 
     public Identity getIdentity() {
@@ -133,11 +133,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     * The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      * </p>
      * 
      * @param identity
-     *        The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
+     *        The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (a portal or project).
+     * The IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param resource
-     *        The AWS IoT SiteWise Monitor resource (a portal or project).
+     *        The IoT SiteWise Monitor resource (a portal or project).
      */
 
     public void setResource(Resource resource) {
@@ -161,10 +161,10 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (a portal or project).
+     * The IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
-     * @return The AWS IoT SiteWise Monitor resource (a portal or project).
+     * @return The IoT SiteWise Monitor resource (a portal or project).
      */
 
     public Resource getResource() {
@@ -173,11 +173,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource (a portal or project).
+     * The IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param resource
-     *        The AWS IoT SiteWise Monitor resource (a portal or project).
+     *        The IoT SiteWise Monitor resource (a portal or project).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

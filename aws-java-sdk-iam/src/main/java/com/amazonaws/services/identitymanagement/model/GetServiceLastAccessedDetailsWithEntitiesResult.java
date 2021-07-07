@@ -51,7 +51,7 @@ public class GetServiceLastAccessedDetailsWithEntitiesResult extends com.amazona
     /**
      * <p>
      * An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group
-     * or policy permissions in an attempt to access the specified AWS service.
+     * or policy permissions in an attempt to access the specified Amazon Web Services service.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EntityDetails> entityDetailsList;
@@ -254,11 +254,11 @@ public class GetServiceLastAccessedDetailsWithEntitiesResult extends com.amazona
     /**
      * <p>
      * An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group
-     * or policy permissions in an attempt to access the specified AWS service.
+     * or policy permissions in an attempt to access the specified Amazon Web Services service.
      * </p>
      * 
      * @return An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role)
-     *         used group or policy permissions in an attempt to access the specified AWS service.
+     *         used group or policy permissions in an attempt to access the specified Amazon Web Services service.
      */
 
     public java.util.List<EntityDetails> getEntityDetailsList() {
@@ -271,12 +271,12 @@ public class GetServiceLastAccessedDetailsWithEntitiesResult extends com.amazona
     /**
      * <p>
      * An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group
-     * or policy permissions in an attempt to access the specified AWS service.
+     * or policy permissions in an attempt to access the specified Amazon Web Services service.
      * </p>
      * 
      * @param entityDetailsList
      *        An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role)
-     *        used group or policy permissions in an attempt to access the specified AWS service.
+     *        used group or policy permissions in an attempt to access the specified Amazon Web Services service.
      */
 
     public void setEntityDetailsList(java.util.Collection<EntityDetails> entityDetailsList) {
@@ -291,7 +291,7 @@ public class GetServiceLastAccessedDetailsWithEntitiesResult extends com.amazona
     /**
      * <p>
      * An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group
-     * or policy permissions in an attempt to access the specified AWS service.
+     * or policy permissions in an attempt to access the specified Amazon Web Services service.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -301,7 +301,7 @@ public class GetServiceLastAccessedDetailsWithEntitiesResult extends com.amazona
      * 
      * @param entityDetailsList
      *        An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role)
-     *        used group or policy permissions in an attempt to access the specified AWS service.
+     *        used group or policy permissions in an attempt to access the specified Amazon Web Services service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,12 +318,12 @@ public class GetServiceLastAccessedDetailsWithEntitiesResult extends com.amazona
     /**
      * <p>
      * An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group
-     * or policy permissions in an attempt to access the specified AWS service.
+     * or policy permissions in an attempt to access the specified Amazon Web Services service.
      * </p>
      * 
      * @param entityDetailsList
      *        An <code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role)
-     *        used group or policy permissions in an attempt to access the specified AWS service.
+     *        used group or policy permissions in an attempt to access the specified Amazon Web Services service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

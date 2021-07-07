@@ -33,9 +33,9 @@ public class DescribeGatewayCapabilityConfigurationRequest extends com.amazonaws
     private String gatewayId;
     /**
      * <p>
-     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS IoT
-     * SiteWise console, your OPC-UA capability configuration has the namespace
-     * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise
+     * console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
+     * where <code>version</code> is a number such as <code>1</code>.
      * </p>
      */
     private String capabilityNamespace;
@@ -82,14 +82,14 @@ public class DescribeGatewayCapabilityConfigurationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS IoT
-     * SiteWise console, your OPC-UA capability configuration has the namespace
-     * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise
+     * console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
+     * where <code>version</code> is a number such as <code>1</code>.
      * </p>
      * 
      * @param capabilityNamespace
-     *        The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS
-     *        IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     *        The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT
+     *        SiteWise console, your OPC-UA capability configuration has the namespace
      *        <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
      *        <code>1</code>.
      */
@@ -100,13 +100,13 @@ public class DescribeGatewayCapabilityConfigurationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS IoT
-     * SiteWise console, your OPC-UA capability configuration has the namespace
-     * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise
+     * console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
+     * where <code>version</code> is a number such as <code>1</code>.
      * </p>
      * 
-     * @return The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS
-     *         IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     * @return The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT
+     *         SiteWise console, your OPC-UA capability configuration has the namespace
      *         <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
      *         <code>1</code>.
      */
@@ -117,14 +117,14 @@ public class DescribeGatewayCapabilityConfigurationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS IoT
-     * SiteWise console, your OPC-UA capability configuration has the namespace
-     * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
+     * The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise
+     * console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>,
+     * where <code>version</code> is a number such as <code>1</code>.
      * </p>
      * 
      * @param capabilityNamespace
-     *        The namespace of the capability configuration. For example, if you configure OPC-UA sources from the AWS
-     *        IoT SiteWise console, your OPC-UA capability configuration has the namespace
+     *        The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT
+     *        SiteWise console, your OPC-UA capability configuration has the namespace
      *        <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
      *        <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

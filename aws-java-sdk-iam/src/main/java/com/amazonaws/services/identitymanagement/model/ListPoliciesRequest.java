@@ -30,8 +30,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The scope to use for filtering the results.
      * </p>
      * <p>
-     * To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed
-     * policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     * To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the
+     * customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -102,8 +102,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The scope to use for filtering the results.
      * </p>
      * <p>
-     * To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed
-     * policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     * To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the
+     * customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -113,8 +113,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        The scope to use for filtering the results.</p>
      *        <p>
-     *        To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     *        managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     *        To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     *        only the customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      *        </p>
      *        <p>
      *        This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -131,8 +131,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The scope to use for filtering the results.
      * </p>
      * <p>
-     * To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed
-     * policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     * To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the
+     * customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -141,8 +141,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return The scope to use for filtering the results.</p>
      *         <p>
-     *         To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     *         managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     *         To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     *         only the customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      *         </p>
      *         <p>
      *         This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -159,8 +159,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The scope to use for filtering the results.
      * </p>
      * <p>
-     * To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed
-     * policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     * To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the
+     * customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -170,8 +170,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        The scope to use for filtering the results.</p>
      *        <p>
-     *        To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     *        managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     *        To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     *        only the customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      *        </p>
      *        <p>
      *        This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -190,8 +190,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The scope to use for filtering the results.
      * </p>
      * <p>
-     * To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed
-     * policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     * To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the
+     * customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -201,8 +201,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        The scope to use for filtering the results.</p>
      *        <p>
-     *        To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     *        managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     *        To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     *        only the customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      *        </p>
      *        <p>
      *        This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -219,8 +219,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The scope to use for filtering the results.
      * </p>
      * <p>
-     * To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed
-     * policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     * To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the
+     * customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are
@@ -230,8 +230,8 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        The scope to use for filtering the results.</p>
      *        <p>
-     *        To list only AWS managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     *        managed policies in your AWS account, set <code>Scope</code> to <code>Local</code>.
+     *        To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     *        only the customer managed policies in your account, set <code>Scope</code> to <code>Local</code>.
      *        </p>
      *        <p>
      *        This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are

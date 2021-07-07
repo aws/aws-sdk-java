@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Creates a broker using the specified properties.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker" target="_top">AWS API
  *      Documentation</a>
@@ -26,75 +28,159 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The authentication strategy used to secure the broker. */
+    /**
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
+     */
     private String authenticationStrategy;
     /**
-     * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
-     * automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * <p>
+     * Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by
+     * Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual
+     * broker reboot. Set to true by default, if no value is specified.
+     * </p>
      */
     private Boolean autoMinorVersionUpgrade;
     /**
-     * Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must
-     * contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     * characters, or special characters.
+     * <p>
+     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
+     * </p>
      */
     private String brokerName;
-    /** A list of information about the configuration. */
+    /**
+     * <p>
+     * A list of information about the configuration.
+     * </p>
+     */
     private ConfigurationId configuration;
     /**
+     * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
      * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
+     * </p>
      */
     private String creatorRequestId;
-    /** Required. The deployment mode of the broker. */
+    /**
+     * <p>
+     * Required. The broker's deployment mode.
+     * </p>
+     */
     private String deploymentMode;
-    /** Encryption options for the broker. */
+    /**
+     * <p>
+     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * </p>
+     */
     private EncryptionOptions encryptionOptions;
-    /** Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ. */
+    /**
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
+     */
     private String engineType;
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      */
     private String engineVersion;
-    /** Required. The broker's instance type. */
+    /**
+     * <p>
+     * Required. The broker's instance type.
+     * </p>
+     */
     private String hostInstanceType;
-    /** The metadata of the LDAP server used to authenticate and authorize connections to the broker. */
+    /**
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
+     */
     private LdapServerMetadataInput ldapServerMetadata;
-    /** Enables Amazon CloudWatch logging for brokers. */
+    /**
+     * <p>
+     * Enables Amazon CloudWatch logging for brokers.
+     * </p>
+     */
     private Logs logs;
-    /** The parameters that determine the WeeklyStartTime. */
+    /**
+     * <p>
+     * The parameters that determine the WeeklyStartTime.
+     * </p>
+     */
     private WeeklyStartTime maintenanceWindowStartTime;
-    /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
+    /**
+     * <p>
+     * Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     * default, if no value is provided.
+     * </p>
+     */
     private Boolean publiclyAccessible;
-    /** The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers. */
+    /**
+     * <p>
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * </p>
+     */
     private java.util.List<String> securityGroups;
-    /** The broker's storage type. */
+    /**
+     * <p>
+     * The broker's storage type.
+     * </p>
+     */
     private String storageType;
     /**
+     * <p>
      * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
-     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
-     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+     * If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be
+     * able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A
+     * SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has
+     * no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires
+     * at least one subnet.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
+     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * </p>
+     * </important>
      */
     private java.util.List<String> subnetIds;
-    /** Create tags when creating the broker. */
+    /**
+     * <p>
+     * Create tags when creating the broker.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
     /**
-     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
-     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
-     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
-     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 2-100 characters long.
+     * <p>
+     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
+     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+     * 2-100 characters long.
+     * </p>
+     * <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
+     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
+     * to brokers or via the RabbitMQ web console.
+     * </p>
+     * </important>
      */
     private java.util.List<User> users;
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy used to secure the broker.
+     *        Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @see AuthenticationStrategy
      */
 
@@ -103,9 +189,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
-     * @return The authentication strategy used to secure the broker.
+     * @return Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @see AuthenticationStrategy
      */
 
@@ -114,10 +202,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy used to secure the broker.
+     *        Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationStrategy
      */
@@ -128,10 +218,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The authentication strategy used to secure the broker.
+     * <p>
+     * Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
+     * </p>
      * 
      * @param authenticationStrategy
-     *        The authentication strategy used to secure the broker.
+     *        Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationStrategy
      */
@@ -142,12 +234,16 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
-     * automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * <p>
+     * Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by
+     * Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual
+     * broker reboot. Set to true by default, if no value is specified.
+     * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions.
-     *        The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     *        Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported
+     *        by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a
+     *        manual broker reboot. Set to true by default, if no value is specified.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -155,11 +251,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
-     * automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * <p>
+     * Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by
+     * Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual
+     * broker reboot. Set to true by default, if no value is specified.
+     * </p>
      * 
-     * @return Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions.
-     *         The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * @return Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported
+     *         by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a
+     *         manual broker reboot. Set to true by default, if no value is specified.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -167,12 +267,16 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
-     * automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * <p>
+     * Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by
+     * Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual
+     * broker reboot. Set to true by default, if no value is specified.
+     * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions.
-     *        The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     *        Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported
+     *        by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a
+     *        manual broker reboot. Set to true by default, if no value is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +286,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
-     * automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * <p>
+     * Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by
+     * Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual
+     * broker reboot. Set to true by default, if no value is specified.
+     * </p>
      * 
-     * @return Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions.
-     *         The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+     * @return Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported
+     *         by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a
+     *         manual broker reboot. Set to true by default, if no value is specified.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -194,13 +302,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must
-     * contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     * characters, or special characters.
+     * <p>
+     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
+     * </p>
      * 
      * @param brokerName
-     *        Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long,
-     *        must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets,
+     *        Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must
+     *        contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
      *        wildcard characters, or special characters.
      */
 
@@ -209,12 +319,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must
-     * contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     * characters, or special characters.
+     * <p>
+     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
+     * </p>
      * 
-     * @return Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long,
-     *         must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets,
+     * @return Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must
+     *         contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
      *         wildcard characters, or special characters.
      */
 
@@ -223,13 +335,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must
-     * contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     * characters, or special characters.
+     * <p>
+     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
+     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.
+     * </p>
      * 
      * @param brokerName
-     *        Required. The name of the broker. This value must be unique in your AWS account, 1-50 characters long,
-     *        must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets,
+     *        Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must
+     *        contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
      *        wildcard characters, or special characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -240,7 +354,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * A list of information about the configuration.
+     * </p>
      * 
      * @param configuration
      *        A list of information about the configuration.
@@ -251,7 +367,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * A list of information about the configuration.
+     * </p>
      * 
      * @return A list of information about the configuration.
      */
@@ -261,7 +379,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * A list of information about the configuration.
+     * </p>
      * 
      * @param configuration
      *        A list of information about the configuration.
@@ -274,9 +394,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
      * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
+     * </p>
      * 
      * @param creatorRequestId
      *        The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API
@@ -289,9 +411,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
      * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
+     * </p>
      * 
      * @return The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API
      *         action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may
@@ -303,9 +427,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
      * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
+     * </p>
      * 
      * @param creatorRequestId
      *        The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API
@@ -320,10 +446,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The deployment mode of the broker.
+     * <p>
+     * Required. The broker's deployment mode.
+     * </p>
      * 
      * @param deploymentMode
-     *        Required. The deployment mode of the broker.
+     *        Required. The broker's deployment mode.
      * @see DeploymentMode
      */
 
@@ -332,9 +460,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The deployment mode of the broker.
+     * <p>
+     * Required. The broker's deployment mode.
+     * </p>
      * 
-     * @return Required. The deployment mode of the broker.
+     * @return Required. The broker's deployment mode.
      * @see DeploymentMode
      */
 
@@ -343,10 +473,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The deployment mode of the broker.
+     * <p>
+     * Required. The broker's deployment mode.
+     * </p>
      * 
      * @param deploymentMode
-     *        Required. The deployment mode of the broker.
+     *        Required. The broker's deployment mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentMode
      */
@@ -357,10 +489,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The deployment mode of the broker.
+     * <p>
+     * Required. The broker's deployment mode.
+     * </p>
      * 
      * @param deploymentMode
-     *        Required. The deployment mode of the broker.
+     *        Required. The broker's deployment mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentMode
      */
@@ -371,10 +505,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Encryption options for the broker.
+     * <p>
+     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param encryptionOptions
-     *        Encryption options for the broker.
+     *        Encryption options for the broker. Does not apply to RabbitMQ brokers.
      */
 
     public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
@@ -382,9 +518,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Encryption options for the broker.
+     * <p>
+     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
-     * @return Encryption options for the broker.
+     * @return Encryption options for the broker. Does not apply to RabbitMQ brokers.
      */
 
     public EncryptionOptions getEncryptionOptions() {
@@ -392,10 +530,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Encryption options for the broker.
+     * <p>
+     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param encryptionOptions
-     *        Encryption options for the broker.
+     *        Encryption options for the broker. Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,10 +545,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     *        Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -417,9 +559,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
-     * @return Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * @return Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @see EngineType
      */
 
@@ -428,10 +572,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     *        Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -442,10 +588,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * <p>
+     * Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     * </p>
      * 
      * @param engineType
-     *        Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
+     *        Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -456,12 +604,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. For a list of supported engine versions, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     *        Required. The broker engine's version. For a list of supported engine versions, see <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *        engines</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -469,11 +620,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
-     * @return Required. The version of the broker engine. For a list of supported engine versions, see
-     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * @return Required. The broker engine's version. For a list of supported engine versions, see <a
+     *         href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *         engines</a>.
      */
 
     public String getEngineVersion() {
@@ -481,12 +635,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The version of the broker engine. For a list of supported engine versions, see
-     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     * <p>
+     * Required. The broker engine's version. For a list of supported engine versions, see <a
+     * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.
+     * </p>
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine. For a list of supported engine versions, see
-     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     *        Required. The broker engine's version. For a list of supported engine versions, see <a
+     *        href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported
+     *        engines</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,7 +653,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Required. The broker's instance type.
+     * </p>
      * 
      * @param hostInstanceType
      *        Required. The broker's instance type.
@@ -507,7 +666,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Required. The broker's instance type.
+     * </p>
      * 
      * @return Required. The broker's instance type.
      */
@@ -517,7 +678,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Required. The broker's instance type.
+     * </p>
      * 
      * @param hostInstanceType
      *        Required. The broker's instance type.
@@ -530,10 +693,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param ldapServerMetadata
-     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Does not apply to RabbitMQ brokers.
      */
 
     public void setLdapServerMetadata(LdapServerMetadataInput ldapServerMetadata) {
@@ -541,9 +708,13 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
      * 
-     * @return The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * @return Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *         Does not apply to RabbitMQ brokers.
      */
 
     public LdapServerMetadataInput getLdapServerMetadata() {
@@ -551,10 +722,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * <p>
+     * Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not
+     * apply to RabbitMQ brokers.
+     * </p>
      * 
      * @param ldapServerMetadata
-     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     *        Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,7 +739,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Enables Amazon CloudWatch logging for brokers.
+     * </p>
      * 
      * @param logs
      *        Enables Amazon CloudWatch logging for brokers.
@@ -575,7 +752,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Enables Amazon CloudWatch logging for brokers.
+     * </p>
      * 
      * @return Enables Amazon CloudWatch logging for brokers.
      */
@@ -585,7 +764,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Enables Amazon CloudWatch logging for brokers.
+     * </p>
      * 
      * @param logs
      *        Enables Amazon CloudWatch logging for brokers.
@@ -598,7 +779,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The parameters that determine the WeeklyStartTime.
+     * </p>
      * 
      * @param maintenanceWindowStartTime
      *        The parameters that determine the WeeklyStartTime.
@@ -609,7 +792,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The parameters that determine the WeeklyStartTime.
+     * </p>
      * 
      * @return The parameters that determine the WeeklyStartTime.
      */
@@ -619,7 +804,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The parameters that determine the WeeklyStartTime.
+     * </p>
      * 
      * @param maintenanceWindowStartTime
      *        The parameters that determine the WeeklyStartTime.
@@ -632,10 +819,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     * <p>
+     * Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     * default, if no value is provided.
+     * </p>
      * 
      * @param publiclyAccessible
-     *        Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     *        Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     *        default, if no value is provided.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -643,9 +834,13 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     * <p>
+     * Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     * default, if no value is provided.
+     * </p>
      * 
-     * @return Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     * @return Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     *         default, if no value is provided.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -653,10 +848,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     * <p>
+     * Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     * default, if no value is provided.
+     * </p>
      * 
      * @param publiclyAccessible
-     *        Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     *        Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     *        default, if no value is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -666,9 +865,13 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     * <p>
+     * Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     * default, if no value is provided.
+     * </p>
      * 
-     * @return Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+     * @return Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by
+     *         default, if no value is provided.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -676,9 +879,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * <p>
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * </p>
      * 
-     * @return The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * @return The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -686,10 +891,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * <p>
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * </p>
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     *        The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -702,7 +909,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * <p>
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -710,7 +919,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     *        The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,10 +934,12 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     * <p>
+     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * </p>
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
+     *        The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -738,7 +949,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @param storageType
      *        The broker's storage type.
@@ -750,7 +963,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @return The broker's storage type.
      * @see BrokerStorageType
@@ -761,7 +976,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @param storageType
      *        The broker's storage type.
@@ -775,7 +992,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The broker's storage type.
+     * </p>
      * 
      * @param storageType
      *        The broker's storage type.
@@ -789,16 +1008,36 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
-     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
-     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+     * If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be
+     * able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A
+     * SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has
+     * no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires
+     * at least one subnet.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
+     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * </p>
+     * </important>
      * 
      * @return The list of groups that define which subnets and IP ranges the broker can use from different Availability
-     *         Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *         ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
-     *         (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
-     *         accessibility requires at least one subnet.
+     *         Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon
+     *         MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same
+     *         Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *         ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon
+     *         MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment
+     *         without public accessibility requires at least one subnet.</p> <important>
+     *         <p>
+     *         If you specify subnets in a <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
+     *         broker, the associated VPC to which the specified subnets belong must be owned by your AWS account.
+     *         Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *         </p>
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -806,17 +1045,37 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
-     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
-     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+     * If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be
+     * able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A
+     * SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has
+     * no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires
+     * at least one subnet.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
+     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * </p>
+     * </important>
      * 
      * @param subnetIds
      *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
-     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
-     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
-     *        accessibility requires at least one subnet.
+     *        Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ
+     *        will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability
+     *        Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon
+     *        MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment
+     *        without public accessibility requires at least one subnet.</p> <important>
+     *        <p>
+     *        If you specify subnets in a <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
+     *        broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon
+     *        MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *        </p>
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -829,10 +1088,22 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
-     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
-     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+     * If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be
+     * able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A
+     * SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has
+     * no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires
+     * at least one subnet.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
+     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
@@ -841,10 +1112,18 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param subnetIds
      *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
-     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
-     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
-     *        accessibility requires at least one subnet.
+     *        Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ
+     *        will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability
+     *        Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon
+     *        MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment
+     *        without public accessibility requires at least one subnet.</p> <important>
+     *        <p>
+     *        If you specify subnets in a <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
+     *        broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon
+     *        MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -859,17 +1138,37 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.
-     * A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-     * deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements
-     * when deployed with public accessibility, deployment without public accessibility requires at least one subnet.
+     * If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be
+     * able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A
+     * SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
+     * Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has
+     * no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires
+     * at least one subnet.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
+     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * </p>
+     * </important>
      * 
      * @param subnetIds
      *        The list of groups that define which subnets and IP ranges the broker can use from different Availability
-     *        Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
-     *        ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment
-     *        (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public
-     *        accessibility requires at least one subnet.
+     *        Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ
+     *        will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability
+     *        Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
+     *        ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon
+     *        MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment
+     *        without public accessibility requires at least one subnet.</p> <important>
+     *        <p>
+     *        If you specify subnets in a <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
+     *        broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon
+     *        MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -879,7 +1178,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Create tags when creating the broker.
+     * </p>
      * 
      * @return Create tags when creating the broker.
      */
@@ -889,7 +1190,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Create tags when creating the broker.
+     * </p>
      * 
      * @param tags
      *        Create tags when creating the broker.
@@ -900,7 +1203,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Create tags when creating the broker.
+     * </p>
      * 
      * @param tags
      *        Create tags when creating the broker.
@@ -941,17 +1246,27 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
-     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
-     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
-     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 2-100 characters long.
+     * <p>
+     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
+     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+     * 2-100 characters long.
+     * </p>
+     * <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
+     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
+     * to brokers or via the RabbitMQ web console.
+     * </p>
+     * </important>
      * 
-     * @return Required. The list of broker users (persons or applications) who can access queues and topics. For
-     *         RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
-     *         provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
-     *         via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
-     *         underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * @return Required. The list of broker users (persons or applications) who can access queues and topics. This value
+     *         can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
+     *         must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
+     *         <p>
+     *         When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
+     *         created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ
+     *         API calls directly to brokers or via the RabbitMQ web console.
+     *         </p>
      */
 
     public java.util.List<User> getUsers() {
@@ -959,18 +1274,28 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
-     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
-     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
-     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 2-100 characters long.
+     * <p>
+     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
+     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+     * 2-100 characters long.
+     * </p>
+     * <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
+     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
+     * to brokers or via the RabbitMQ web console.
+     * </p>
+     * </important>
      * 
      * @param users
-     *        Required. The list of broker users (persons or applications) who can access queues and topics. For
-     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
-     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
-     *        via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
-     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     *        Required. The list of broker users (persons or applications) who can access queues and topics. This value
+     *        can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
+     *        must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
+     *        <p>
+     *        When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
+     *        created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API
+     *        calls directly to brokers or via the RabbitMQ web console.
+     *        </p>
      */
 
     public void setUsers(java.util.Collection<User> users) {
@@ -983,11 +1308,18 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
-     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
-     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
-     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 2-100 characters long.
+     * <p>
+     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
+     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+     * 2-100 characters long.
+     * </p>
+     * <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
+     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
+     * to brokers or via the RabbitMQ web console.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUsers(java.util.Collection)} or {@link #withUsers(java.util.Collection)} if you want to override the
@@ -995,11 +1327,14 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param users
-     *        Required. The list of broker users (persons or applications) who can access queues and topics. For
-     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
-     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
-     *        via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
-     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     *        Required. The list of broker users (persons or applications) who can access queues and topics. This value
+     *        can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
+     *        must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
+     *        <p>
+     *        When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
+     *        created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API
+     *        calls directly to brokers or via the RabbitMQ web console.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1014,18 +1349,28 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ
-     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
-     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web
-     * Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 2-100 characters long.
+     * <p>
+     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
+     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
+     * 2-100 characters long.
+     * </p>
+     * <important><title>Amazon MQ for RabbitMQ</title>
+     * <p>
+     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
+     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
+     * to brokers or via the RabbitMQ web console.
+     * </p>
+     * </important>
      * 
      * @param users
-     *        Required. The list of broker users (persons or applications) who can access queues and topics. For
-     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
-     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
-     *        via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods,
-     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     *        Required. The list of broker users (persons or applications) who can access queues and topics. This value
+     *        can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
+     *        must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
+     *        <p>
+     *        When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
+     *        created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API
+     *        calls directly to brokers or via the RabbitMQ web console.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
