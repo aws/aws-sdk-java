@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Violations for network interfaces associated with an EC2 instance.
+ * Violation detail for network interfaces associated with an EC2 instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsEc2NetworkInterfaceViolation"
@@ -36,7 +36,7 @@ public class AwsEc2NetworkInterfaceViolation implements Serializable, Cloneable,
     private String violationTarget;
     /**
      * <p>
-     * List of security groups that violate the rules specified in the master security group of the AWS Firewall Manager
+     * List of security groups that violate the rules specified in the primary security group of the Firewall Manager
      * policy.
      * </p>
      */
@@ -84,11 +84,11 @@ public class AwsEc2NetworkInterfaceViolation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * List of security groups that violate the rules specified in the master security group of the AWS Firewall Manager
+     * List of security groups that violate the rules specified in the primary security group of the Firewall Manager
      * policy.
      * </p>
      * 
-     * @return List of security groups that violate the rules specified in the master security group of the AWS Firewall
+     * @return List of security groups that violate the rules specified in the primary security group of the Firewall
      *         Manager policy.
      */
 
@@ -98,12 +98,12 @@ public class AwsEc2NetworkInterfaceViolation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * List of security groups that violate the rules specified in the master security group of the AWS Firewall Manager
+     * List of security groups that violate the rules specified in the primary security group of the Firewall Manager
      * policy.
      * </p>
      * 
      * @param violatingSecurityGroups
-     *        List of security groups that violate the rules specified in the master security group of the AWS Firewall
+     *        List of security groups that violate the rules specified in the primary security group of the Firewall
      *        Manager policy.
      */
 
@@ -118,7 +118,7 @@ public class AwsEc2NetworkInterfaceViolation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * List of security groups that violate the rules specified in the master security group of the AWS Firewall Manager
+     * List of security groups that violate the rules specified in the primary security group of the Firewall Manager
      * policy.
      * </p>
      * <p>
@@ -128,7 +128,7 @@ public class AwsEc2NetworkInterfaceViolation implements Serializable, Cloneable,
      * </p>
      * 
      * @param violatingSecurityGroups
-     *        List of security groups that violate the rules specified in the master security group of the AWS Firewall
+     *        List of security groups that violate the rules specified in the primary security group of the Firewall
      *        Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,12 +145,12 @@ public class AwsEc2NetworkInterfaceViolation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * List of security groups that violate the rules specified in the master security group of the AWS Firewall Manager
+     * List of security groups that violate the rules specified in the primary security group of the Firewall Manager
      * policy.
      * </p>
      * 
      * @param violatingSecurityGroups
-     *        List of security groups that violate the rules specified in the master security group of the AWS Firewall
+     *        List of security groups that violate the rules specified in the primary security group of the Firewall
      *        Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

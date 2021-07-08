@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The definition of the AWS Network Firewall firewall policy.
+ * The definition of the Network Firewall firewall policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallPolicyDescription"

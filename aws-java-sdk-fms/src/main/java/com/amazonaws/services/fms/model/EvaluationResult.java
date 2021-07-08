@@ -31,33 +31,33 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     * Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * </p>
      */
     private String complianceStatus;
     /**
      * <p>
-     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
-     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
-     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
-     * is disabled or not possible.
+     * The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a
+     * resource is considered noncompliant if it is not associated with the policy. For security group policies, a
+     * resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled
+     * or not possible.
      * </p>
      */
     private Long violatorCount;
     /**
      * <p>
-     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      */
     private Boolean evaluationLimitExceeded;
 
     /**
      * <p>
-     * Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     * Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * </p>
      * 
      * @param complianceStatus
-     *        Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     *        Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * @see PolicyComplianceStatusType
      */
 
@@ -67,10 +67,10 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     * Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * </p>
      * 
-     * @return Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     * @return Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * @see PolicyComplianceStatusType
      */
 
@@ -80,11 +80,11 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     * Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * </p>
      * 
      * @param complianceStatus
-     *        Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     *        Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyComplianceStatusType
      */
@@ -96,11 +96,11 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     * Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * </p>
      * 
      * @param complianceStatus
-     *        Describes an AWS account's compliance with the AWS Firewall Manager policy.
+     *        Describes an Amazon Web Services account's compliance with the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyComplianceStatusType
      */
@@ -112,14 +112,14 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
-     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
-     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
-     * is disabled or not possible.
+     * The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a
+     * resource is considered noncompliant if it is not associated with the policy. For security group policies, a
+     * resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled
+     * or not possible.
      * </p>
      * 
      * @param violatorCount
-     *        The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     *        The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced
      *        policies, a resource is considered noncompliant if it is not associated with the policy. For security
      *        group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy
      *        and remediation is disabled or not possible.
@@ -131,13 +131,13 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
-     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
-     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
-     * is disabled or not possible.
+     * The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a
+     * resource is considered noncompliant if it is not associated with the policy. For security group policies, a
+     * resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled
+     * or not possible.
      * </p>
      * 
-     * @return The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     * @return The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced
      *         policies, a resource is considered noncompliant if it is not associated with the policy. For security
      *         group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy
      *         and remediation is disabled or not possible.
@@ -149,14 +149,14 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
-     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
-     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
-     * is disabled or not possible.
+     * The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a
+     * resource is considered noncompliant if it is not associated with the policy. For security group policies, a
+     * resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled
+     * or not possible.
      * </p>
      * 
      * @param violatorCount
-     *        The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     *        The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced
      *        policies, a resource is considered noncompliant if it is not associated with the policy. For security
      *        group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy
      *        and remediation is disabled or not possible.
@@ -170,11 +170,11 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
      * @param evaluationLimitExceeded
-     *        Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     *        Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      */
 
     public void setEvaluationLimitExceeded(Boolean evaluationLimitExceeded) {
@@ -183,10 +183,10 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
-     * @return Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * @return Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      */
 
     public Boolean getEvaluationLimitExceeded() {
@@ -195,11 +195,11 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
      * @param evaluationLimitExceeded
-     *        Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     *        Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,10 +210,10 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
-     * @return Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * @return Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
      */
 
     public Boolean isEvaluationLimitExceeded() {

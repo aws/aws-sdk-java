@@ -273,6 +273,19 @@ public interface AWSMediaTailor {
 
     /**
      * <p>
+     * Returns a list of alerts for the given resource.
+     * </p>
+     * 
+     * @param listAlertsRequest
+     * @return Result of the ListAlerts operation returned by the service.
+     * @sample AWSMediaTailor.ListAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAlertsResult listAlerts(ListAlertsRequest listAlertsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of channels that are associated with this account.
      * </p>
      * 

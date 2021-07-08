@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.outposts.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,12 @@ public class ListOutpostsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<List> LIFECYCLESTATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("LifeCycleStatusFilter").build();
+    private static final MarshallingInfo<List> AVAILABILITYZONEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("AvailabilityZoneFilter").build();
+    private static final MarshallingInfo<List> AVAILABILITYZONEIDFILTER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("AvailabilityZoneIdFilter").build();
 
     private static final ListOutpostsRequestMarshaller instance = new ListOutpostsRequestMarshaller();
 
@@ -50,6 +57,9 @@ public class ListOutpostsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listOutpostsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listOutpostsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listOutpostsRequest.getLifeCycleStatusFilter(), LIFECYCLESTATUSFILTER_BINDING);
+            protocolMarshaller.marshall(listOutpostsRequest.getAvailabilityZoneFilter(), AVAILABILITYZONEFILTER_BINDING);
+            protocolMarshaller.marshall(listOutpostsRequest.getAvailabilityZoneIdFilter(), AVAILABILITYZONEIDFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

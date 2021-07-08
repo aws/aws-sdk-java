@@ -35,6 +35,8 @@ public class ReactiveAnomalyMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> ANOMALYREPORTEDTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyReportedTimeRange").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetails").build();
     private static final MarshallingInfo<String> ASSOCIATEDINSIGHTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class ReactiveAnomalyMarshaller {
             protocolMarshaller.marshall(reactiveAnomaly.getSeverity(), SEVERITY_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
+            protocolMarshaller.marshall(reactiveAnomaly.getAnomalyReportedTimeRange(), ANOMALYREPORTEDTIMERANGE_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getSourceDetails(), SOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);
             protocolMarshaller.marshall(reactiveAnomaly.getResourceCollection(), RESOURCECOLLECTION_BINDING);

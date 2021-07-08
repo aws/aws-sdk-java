@@ -25,7 +25,7 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager policy.
+     * Information about the specified Firewall Manager policy.
      * </p>
      */
     private Policy policy;
@@ -38,11 +38,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager policy.
+     * Information about the specified Firewall Manager policy.
      * </p>
      * 
      * @param policy
-     *        Information about the specified AWS Firewall Manager policy.
+     *        Information about the specified Firewall Manager policy.
      */
 
     public void setPolicy(Policy policy) {
@@ -51,10 +51,10 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager policy.
+     * Information about the specified Firewall Manager policy.
      * </p>
      * 
-     * @return Information about the specified AWS Firewall Manager policy.
+     * @return Information about the specified Firewall Manager policy.
      */
 
     public Policy getPolicy() {
@@ -63,11 +63,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager policy.
+     * Information about the specified Firewall Manager policy.
      * </p>
      * 
      * @param policy
-     *        Information about the specified AWS Firewall Manager policy.
+     *        Information about the specified Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

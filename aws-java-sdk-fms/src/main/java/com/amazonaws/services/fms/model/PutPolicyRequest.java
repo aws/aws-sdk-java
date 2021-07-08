@@ -27,24 +27,24 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy to be created.
+     * The details of the Firewall Manager policy to be created.
      * </p>
      */
     private Policy policy;
     /**
      * <p>
-     * The tags to add to the AWS resource.
+     * The tags to add to the Amazon Web Services resource.
      * </p>
      */
     private java.util.List<Tag> tagList;
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy to be created.
+     * The details of the Firewall Manager policy to be created.
      * </p>
      * 
      * @param policy
-     *        The details of the AWS Firewall Manager policy to be created.
+     *        The details of the Firewall Manager policy to be created.
      */
 
     public void setPolicy(Policy policy) {
@@ -53,10 +53,10 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy to be created.
+     * The details of the Firewall Manager policy to be created.
      * </p>
      * 
-     * @return The details of the AWS Firewall Manager policy to be created.
+     * @return The details of the Firewall Manager policy to be created.
      */
 
     public Policy getPolicy() {
@@ -65,11 +65,11 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy to be created.
+     * The details of the Firewall Manager policy to be created.
      * </p>
      * 
      * @param policy
-     *        The details of the AWS Firewall Manager policy to be created.
+     *        The details of the Firewall Manager policy to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to add to the AWS resource.
+     * The tags to add to the Amazon Web Services resource.
      * </p>
      * 
-     * @return The tags to add to the AWS resource.
+     * @return The tags to add to the Amazon Web Services resource.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -92,11 +92,11 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to add to the AWS resource.
+     * The tags to add to the Amazon Web Services resource.
      * </p>
      * 
      * @param tagList
-     *        The tags to add to the AWS resource.
+     *        The tags to add to the Amazon Web Services resource.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -110,7 +110,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to add to the AWS resource.
+     * The tags to add to the Amazon Web Services resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tagList
-     *        The tags to add to the AWS resource.
+     *        The tags to add to the Amazon Web Services resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class PutPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to add to the AWS resource.
+     * The tags to add to the Amazon Web Services resource.
      * </p>
      * 
      * @param tagList
-     *        The tags to add to the AWS resource.
+     *        The tags to add to the Amazon Web Services resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

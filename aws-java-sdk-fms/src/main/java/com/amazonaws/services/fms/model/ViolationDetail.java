@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+ * Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ViolationDetail" target="_top">AWS API
@@ -30,13 +30,13 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     * The ID of the Firewall Manager policy that the violation details were requested for.
      * </p>
      */
     private String policyId;
     /**
      * <p>
-     * The AWS account that the violation details were requested for.
+     * The Amazon Web Services account that the violation details were requested for.
      * </p>
      */
     private String memberAccount;
@@ -73,11 +73,11 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     * The ID of the Firewall Manager policy that the violation details were requested for.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     *        The ID of the Firewall Manager policy that the violation details were requested for.
      */
 
     public void setPolicyId(String policyId) {
@@ -86,10 +86,10 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     * The ID of the Firewall Manager policy that the violation details were requested for.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     * @return The ID of the Firewall Manager policy that the violation details were requested for.
      */
 
     public String getPolicyId() {
@@ -98,11 +98,11 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     * The ID of the Firewall Manager policy that the violation details were requested for.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy that the violation details were requested for.
+     *        The ID of the Firewall Manager policy that the violation details were requested for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS account that the violation details were requested for.
+     * The Amazon Web Services account that the violation details were requested for.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account that the violation details were requested for.
+     *        The Amazon Web Services account that the violation details were requested for.
      */
 
     public void setMemberAccount(String memberAccount) {
@@ -126,10 +126,10 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS account that the violation details were requested for.
+     * The Amazon Web Services account that the violation details were requested for.
      * </p>
      * 
-     * @return The AWS account that the violation details were requested for.
+     * @return The Amazon Web Services account that the violation details were requested for.
      */
 
     public String getMemberAccount() {
@@ -138,11 +138,11 @@ public class ViolationDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS account that the violation details were requested for.
+     * The Amazon Web Services account that the violation details were requested for.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account that the violation details were requested for.
+     *        The Amazon Web Services account that the violation details were requested for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

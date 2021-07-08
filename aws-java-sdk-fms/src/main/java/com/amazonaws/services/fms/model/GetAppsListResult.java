@@ -25,7 +25,7 @@ public class GetAppsListResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager applications list.
+     * Information about the specified Firewall Manager applications list.
      * </p>
      */
     private AppsListData appsList;
@@ -38,11 +38,11 @@ public class GetAppsListResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager applications list.
+     * Information about the specified Firewall Manager applications list.
      * </p>
      * 
      * @param appsList
-     *        Information about the specified AWS Firewall Manager applications list.
+     *        Information about the specified Firewall Manager applications list.
      */
 
     public void setAppsList(AppsListData appsList) {
@@ -51,10 +51,10 @@ public class GetAppsListResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager applications list.
+     * Information about the specified Firewall Manager applications list.
      * </p>
      * 
-     * @return Information about the specified AWS Firewall Manager applications list.
+     * @return Information about the specified Firewall Manager applications list.
      */
 
     public AppsListData getAppsList() {
@@ -63,11 +63,11 @@ public class GetAppsListResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager applications list.
+     * Information about the specified Firewall Manager applications list.
      * </p>
      * 
      * @param appsList
-     *        Information about the specified AWS Firewall Manager applications list.
+     *        Information about the specified Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

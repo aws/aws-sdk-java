@@ -42,12 +42,32 @@ public class ResourceViolationMarshaller {
             .build();
     private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLPOLICYMODIFIEDVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallPolicyModifiedViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLINTERNETTRAFFICNOTINSPECTEDVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkFirewallInternetTrafficNotInspectedViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLINVALIDROUTECONFIGURATIONVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkFirewallInvalidRouteConfigurationViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLBLACKHOLEROUTEDETECTEDVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkFirewallBlackHoleRouteDetectedViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLUNEXPECTEDFIREWALLROUTESVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkFirewallUnexpectedFirewallRoutesViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLUNEXPECTEDGATEWAYROUTESVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkFirewallUnexpectedGatewayRoutesViolation").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLMISSINGEXPECTEDROUTESVIOLATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetworkFirewallMissingExpectedRoutesViolation").build();
     private static final MarshallingInfo<StructuredPojo> DNSRULEGROUPPRIORITYCONFLICTVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsRuleGroupPriorityConflictViolation").build();
     private static final MarshallingInfo<StructuredPojo> DNSDUPLICATERULEGROUPVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsDuplicateRuleGroupViolation").build();
     private static final MarshallingInfo<StructuredPojo> DNSRULEGROUPLIMITEXCEEDEDVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsRuleGroupLimitExceededViolation").build();
+    private static final MarshallingInfo<StructuredPojo> POSSIBLEREMEDIATIONACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PossibleRemediationActions").build();
 
     private static final ResourceViolationMarshaller instance = new ResourceViolationMarshaller();
 
@@ -72,9 +92,22 @@ public class ResourceViolationMarshaller {
             protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingSubnetViolation(), NETWORKFIREWALLMISSINGSUBNETVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingExpectedRTViolation(), NETWORKFIREWALLMISSINGEXPECTEDRTVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getNetworkFirewallPolicyModifiedViolation(), NETWORKFIREWALLPOLICYMODIFIEDVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallInternetTrafficNotInspectedViolation(),
+                    NETWORKFIREWALLINTERNETTRAFFICNOTINSPECTEDVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallInvalidRouteConfigurationViolation(),
+                    NETWORKFIREWALLINVALIDROUTECONFIGURATIONVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallBlackHoleRouteDetectedViolation(),
+                    NETWORKFIREWALLBLACKHOLEROUTEDETECTEDVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallUnexpectedFirewallRoutesViolation(),
+                    NETWORKFIREWALLUNEXPECTEDFIREWALLROUTESVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallUnexpectedGatewayRoutesViolation(),
+                    NETWORKFIREWALLUNEXPECTEDGATEWAYROUTESVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingExpectedRoutesViolation(),
+                    NETWORKFIREWALLMISSINGEXPECTEDROUTESVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getDnsRuleGroupPriorityConflictViolation(), DNSRULEGROUPPRIORITYCONFLICTVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getDnsDuplicateRuleGroupViolation(), DNSDUPLICATERULEGROUPVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getDnsRuleGroupLimitExceededViolation(), DNSRULEGROUPLIMITEXCEEDEDVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getPossibleRemediationActions(), POSSIBLEREMEDIATIONACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

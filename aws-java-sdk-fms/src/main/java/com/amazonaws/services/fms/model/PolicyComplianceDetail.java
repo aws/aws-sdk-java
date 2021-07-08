@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100
+ * Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100
  * entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to
  * <code>True</code>.
  * </p>
@@ -32,32 +32,32 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS account that created the AWS Firewall Manager policy.
+     * The Amazon Web Services account that created the Firewall Manager policy.
      * </p>
      */
     private String policyOwner;
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      */
     private String policyId;
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      */
     private String memberAccount;
     /**
      * <p>
-     * An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in compliance
+     * An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance
      * with the security group policy.
      * </p>
      */
     private java.util.List<ComplianceViolator> violators;
     /**
      * <p>
-     * Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      */
     private Boolean evaluationLimitExceeded;
@@ -69,20 +69,19 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
     private java.util.Date expiredAt;
     /**
      * <p>
-     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * noncompliant. The details include the name of the dependent service and the error message received that indicates
-     * the problem with the service.
+     * Details about problems with dependent services, such as WAF or Config, and the error message received that
+     * indicates the problem with the service.
      * </p>
      */
     private java.util.Map<String, String> issueInfoMap;
 
     /**
      * <p>
-     * The AWS account that created the AWS Firewall Manager policy.
+     * The Amazon Web Services account that created the Firewall Manager policy.
      * </p>
      * 
      * @param policyOwner
-     *        The AWS account that created the AWS Firewall Manager policy.
+     *        The Amazon Web Services account that created the Firewall Manager policy.
      */
 
     public void setPolicyOwner(String policyOwner) {
@@ -91,10 +90,10 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS account that created the AWS Firewall Manager policy.
+     * The Amazon Web Services account that created the Firewall Manager policy.
      * </p>
      * 
-     * @return The AWS account that created the AWS Firewall Manager policy.
+     * @return The Amazon Web Services account that created the Firewall Manager policy.
      */
 
     public String getPolicyOwner() {
@@ -103,11 +102,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS account that created the AWS Firewall Manager policy.
+     * The Amazon Web Services account that created the Firewall Manager policy.
      * </p>
      * 
      * @param policyOwner
-     *        The AWS account that created the AWS Firewall Manager policy.
+     *        The Amazon Web Services account that created the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +117,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy.
+     *        The ID of the Firewall Manager policy.
      */
 
     public void setPolicyId(String policyId) {
@@ -131,10 +130,10 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager policy.
+     * @return The ID of the Firewall Manager policy.
      */
 
     public String getPolicyId() {
@@ -143,11 +142,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy.
+     *        The ID of the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,11 +157,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account ID.
+     *        The Amazon Web Services account ID.
      */
 
     public void setMemberAccount(String memberAccount) {
@@ -171,10 +170,10 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The Amazon Web Services account ID.
      */
 
     public String getMemberAccount() {
@@ -183,11 +182,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The AWS account ID.
+     * The Amazon Web Services account ID.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account ID.
+     *        The Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +197,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in compliance
+     * An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance
      * with the security group policy.
      * </p>
      * 
-     * @return An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in
+     * @return An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in
      *         compliance with the security group policy.
      */
 
@@ -212,12 +211,12 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in compliance
+     * An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance
      * with the security group policy.
      * </p>
      * 
      * @param violators
-     *        An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in
+     *        An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in
      *        compliance with the security group policy.
      */
 
@@ -232,7 +231,7 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in compliance
+     * An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance
      * with the security group policy.
      * </p>
      * <p>
@@ -242,7 +241,7 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param violators
-     *        An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in
+     *        An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in
      *        compliance with the security group policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -259,12 +258,12 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in compliance
+     * An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance
      * with the security group policy.
      * </p>
      * 
      * @param violators
-     *        An array of resources that aren't protected by the AWS WAF or Shield Advanced policy or that aren't in
+     *        An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in
      *        compliance with the security group policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -276,11 +275,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
      * @param evaluationLimitExceeded
-     *        Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     *        Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      */
 
     public void setEvaluationLimitExceeded(Boolean evaluationLimitExceeded) {
@@ -289,10 +288,10 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
-     * @return Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * @return Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      */
 
     public Boolean getEvaluationLimitExceeded() {
@@ -301,11 +300,11 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
      * @param evaluationLimitExceeded
-     *        Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     *        Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,10 +315,10 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      * </p>
      * 
-     * @return Indicates if over 100 resources are noncompliant with the AWS Firewall Manager policy.
+     * @return Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
      */
 
     public Boolean isEvaluationLimitExceeded() {
@@ -368,14 +367,12 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * noncompliant. The details include the name of the dependent service and the error message received that indicates
-     * the problem with the service.
+     * Details about problems with dependent services, such as WAF or Config, and the error message received that
+     * indicates the problem with the service.
      * </p>
      * 
-     * @return Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a
-     *         resource to be noncompliant. The details include the name of the dependent service and the error message
-     *         received that indicates the problem with the service.
+     * @return Details about problems with dependent services, such as WAF or Config, and the error message received
+     *         that indicates the problem with the service.
      */
 
     public java.util.Map<String, String> getIssueInfoMap() {
@@ -384,15 +381,13 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * noncompliant. The details include the name of the dependent service and the error message received that indicates
-     * the problem with the service.
+     * Details about problems with dependent services, such as WAF or Config, and the error message received that
+     * indicates the problem with the service.
      * </p>
      * 
      * @param issueInfoMap
-     *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
-     *        to be noncompliant. The details include the name of the dependent service and the error message received
-     *        that indicates the problem with the service.
+     *        Details about problems with dependent services, such as WAF or Config, and the error message received that
+     *        indicates the problem with the service.
      */
 
     public void setIssueInfoMap(java.util.Map<String, String> issueInfoMap) {
@@ -401,15 +396,13 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * noncompliant. The details include the name of the dependent service and the error message received that indicates
-     * the problem with the service.
+     * Details about problems with dependent services, such as WAF or Config, and the error message received that
+     * indicates the problem with the service.
      * </p>
      * 
      * @param issueInfoMap
-     *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
-     *        to be noncompliant. The details include the name of the dependent service and the error message received
-     *        that indicates the problem with the service.
+     *        Details about problems with dependent services, such as WAF or Config, and the error message received that
+     *        indicates the problem with the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

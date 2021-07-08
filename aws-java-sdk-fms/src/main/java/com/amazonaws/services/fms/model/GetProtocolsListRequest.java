@@ -27,24 +27,24 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list that you want the details for.
+     * The ID of the Firewall Manager protocols list that you want the details for.
      * </p>
      */
     private String listId;
     /**
      * <p>
-     * Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      * </p>
      */
     private Boolean defaultList;
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list that you want the details for.
+     * The ID of the Firewall Manager protocols list that you want the details for.
      * </p>
      * 
      * @param listId
-     *        The ID of the AWS Firewall Manager protocols list that you want the details for.
+     *        The ID of the Firewall Manager protocols list that you want the details for.
      */
 
     public void setListId(String listId) {
@@ -53,10 +53,10 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list that you want the details for.
+     * The ID of the Firewall Manager protocols list that you want the details for.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager protocols list that you want the details for.
+     * @return The ID of the Firewall Manager protocols list that you want the details for.
      */
 
     public String getListId() {
@@ -65,11 +65,11 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list that you want the details for.
+     * The ID of the Firewall Manager protocols list that you want the details for.
      * </p>
      * 
      * @param listId
-     *        The ID of the AWS Firewall Manager protocols list that you want the details for.
+     *        The ID of the Firewall Manager protocols list that you want the details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      * </p>
      * 
      * @param defaultList
-     *        Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     *        Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      */
 
     public void setDefaultList(Boolean defaultList) {
@@ -93,10 +93,10 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      * </p>
      * 
-     * @return Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * @return Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      */
 
     public Boolean getDefaultList() {
@@ -105,11 +105,11 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      * </p>
      * 
      * @param defaultList
-     *        Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     *        Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class GetProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      * </p>
      * 
-     * @return Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.
+     * @return Specifies whether the list to retrieve is a default list owned by Firewall Manager.
      */
 
     public Boolean isDefaultList() {

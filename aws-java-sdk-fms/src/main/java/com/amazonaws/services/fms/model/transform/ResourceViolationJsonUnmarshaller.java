@@ -80,6 +80,37 @@ public class ResourceViolationJsonUnmarshaller implements Unmarshaller<ResourceV
                     resourceViolation.setNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("NetworkFirewallInternetTrafficNotInspectedViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation
+                            .setNetworkFirewallInternetTrafficNotInspectedViolation(NetworkFirewallInternetTrafficNotInspectedViolationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallInvalidRouteConfigurationViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallInvalidRouteConfigurationViolation(NetworkFirewallInvalidRouteConfigurationViolationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallBlackHoleRouteDetectedViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallBlackHoleRouteDetectedViolation(NetworkFirewallBlackHoleRouteDetectedViolationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallUnexpectedFirewallRoutesViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallUnexpectedFirewallRoutesViolation(NetworkFirewallUnexpectedFirewallRoutesViolationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallUnexpectedGatewayRoutesViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallUnexpectedGatewayRoutesViolation(NetworkFirewallUnexpectedGatewayRoutesViolationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkFirewallMissingExpectedRoutesViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setNetworkFirewallMissingExpectedRoutesViolation(NetworkFirewallMissingExpectedRoutesViolationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DnsRuleGroupPriorityConflictViolation", targetDepth)) {
                     context.nextToken();
                     resourceViolation.setDnsRuleGroupPriorityConflictViolation(DnsRuleGroupPriorityConflictViolationJsonUnmarshaller.getInstance().unmarshall(
@@ -93,6 +124,10 @@ public class ResourceViolationJsonUnmarshaller implements Unmarshaller<ResourceV
                     context.nextToken();
                     resourceViolation.setDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (context.testExpression("PossibleRemediationActions", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setPossibleRemediationActions(PossibleRemediationActionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

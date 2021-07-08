@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * AWS Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+ * Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatefulRuleGroup" target="_top">AWS API

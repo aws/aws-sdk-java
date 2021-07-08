@@ -30,19 +30,19 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for security groups.
+     * Violation detail for security groups.
      * </p>
      */
     private AwsVPCSecurityGroupViolation awsVPCSecurityGroupViolation;
     /**
      * <p>
-     * Violation details for network interface.
+     * Violation detail for a network interface.
      * </p>
      */
     private AwsEc2NetworkInterfaceViolation awsEc2NetworkInterfaceViolation;
     /**
      * <p>
-     * Violation details for an EC2 instance.
+     * Violation detail for an EC2 instance.
      * </p>
      */
     private AwsEc2InstanceViolation awsEc2InstanceViolation;
@@ -77,6 +77,38 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
     private NetworkFirewallPolicyModifiedViolation networkFirewallPolicyModifiedViolation;
     /**
      * <p>
+     * Violation detail for the subnet for which internet traffic hasn't been inspected.
+     * </p>
+     */
+    private NetworkFirewallInternetTrafficNotInspectedViolation networkFirewallInternetTrafficNotInspectedViolation;
+    /**
+     * <p>
+     * The route configuration is invalid.
+     * </p>
+     */
+    private NetworkFirewallInvalidRouteConfigurationViolation networkFirewallInvalidRouteConfigurationViolation;
+
+    private NetworkFirewallBlackHoleRouteDetectedViolation networkFirewallBlackHoleRouteDetectedViolation;
+    /**
+     * <p>
+     * There's an unexpected firewall route.
+     * </p>
+     */
+    private NetworkFirewallUnexpectedFirewallRoutesViolation networkFirewallUnexpectedFirewallRoutesViolation;
+    /**
+     * <p>
+     * There's an unexpected gateway route.
+     * </p>
+     */
+    private NetworkFirewallUnexpectedGatewayRoutesViolation networkFirewallUnexpectedGatewayRoutesViolation;
+    /**
+     * <p>
+     * Expected routes are missing from Network Firewall.
+     * </p>
+     */
+    private NetworkFirewallMissingExpectedRoutesViolation networkFirewallMissingExpectedRoutesViolation;
+    /**
+     * <p>
      * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
      * associate with a VPC has the same priority as a rule group that's already associated.
      * </p>
@@ -91,19 +123,26 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
     private DnsDuplicateRuleGroupViolation dnsDuplicateRuleGroupViolation;
     /**
      * <p>
-     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
      * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      * </p>
      */
     private DnsRuleGroupLimitExceededViolation dnsRuleGroupLimitExceededViolation;
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     */
+    private PossibleRemediationActions possibleRemediationActions;
 
     /**
      * <p>
-     * Violation details for security groups.
+     * Violation detail for security groups.
      * </p>
      * 
      * @param awsVPCSecurityGroupViolation
-     *        Violation details for security groups.
+     *        Violation detail for security groups.
      */
 
     public void setAwsVPCSecurityGroupViolation(AwsVPCSecurityGroupViolation awsVPCSecurityGroupViolation) {
@@ -112,10 +151,10 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for security groups.
+     * Violation detail for security groups.
      * </p>
      * 
-     * @return Violation details for security groups.
+     * @return Violation detail for security groups.
      */
 
     public AwsVPCSecurityGroupViolation getAwsVPCSecurityGroupViolation() {
@@ -124,11 +163,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for security groups.
+     * Violation detail for security groups.
      * </p>
      * 
      * @param awsVPCSecurityGroupViolation
-     *        Violation details for security groups.
+     *        Violation detail for security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +178,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for network interface.
+     * Violation detail for a network interface.
      * </p>
      * 
      * @param awsEc2NetworkInterfaceViolation
-     *        Violation details for network interface.
+     *        Violation detail for a network interface.
      */
 
     public void setAwsEc2NetworkInterfaceViolation(AwsEc2NetworkInterfaceViolation awsEc2NetworkInterfaceViolation) {
@@ -152,10 +191,10 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for network interface.
+     * Violation detail for a network interface.
      * </p>
      * 
-     * @return Violation details for network interface.
+     * @return Violation detail for a network interface.
      */
 
     public AwsEc2NetworkInterfaceViolation getAwsEc2NetworkInterfaceViolation() {
@@ -164,11 +203,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for network interface.
+     * Violation detail for a network interface.
      * </p>
      * 
      * @param awsEc2NetworkInterfaceViolation
-     *        Violation details for network interface.
+     *        Violation detail for a network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +218,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for an EC2 instance.
+     * Violation detail for an EC2 instance.
      * </p>
      * 
      * @param awsEc2InstanceViolation
-     *        Violation details for an EC2 instance.
+     *        Violation detail for an EC2 instance.
      */
 
     public void setAwsEc2InstanceViolation(AwsEc2InstanceViolation awsEc2InstanceViolation) {
@@ -192,10 +231,10 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for an EC2 instance.
+     * Violation detail for an EC2 instance.
      * </p>
      * 
-     * @return Violation details for an EC2 instance.
+     * @return Violation detail for an EC2 instance.
      */
 
     public AwsEc2InstanceViolation getAwsEc2InstanceViolation() {
@@ -204,11 +243,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for an EC2 instance.
+     * Violation detail for an EC2 instance.
      * </p>
      * 
      * @param awsEc2InstanceViolation
-     *        Violation details for an EC2 instance.
+     *        Violation detail for an EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,6 +451,242 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * Violation detail for the subnet for which internet traffic hasn't been inspected.
+     * </p>
+     * 
+     * @param networkFirewallInternetTrafficNotInspectedViolation
+     *        Violation detail for the subnet for which internet traffic hasn't been inspected.
+     */
+
+    public void setNetworkFirewallInternetTrafficNotInspectedViolation(
+            NetworkFirewallInternetTrafficNotInspectedViolation networkFirewallInternetTrafficNotInspectedViolation) {
+        this.networkFirewallInternetTrafficNotInspectedViolation = networkFirewallInternetTrafficNotInspectedViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for the subnet for which internet traffic hasn't been inspected.
+     * </p>
+     * 
+     * @return Violation detail for the subnet for which internet traffic hasn't been inspected.
+     */
+
+    public NetworkFirewallInternetTrafficNotInspectedViolation getNetworkFirewallInternetTrafficNotInspectedViolation() {
+        return this.networkFirewallInternetTrafficNotInspectedViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for the subnet for which internet traffic hasn't been inspected.
+     * </p>
+     * 
+     * @param networkFirewallInternetTrafficNotInspectedViolation
+     *        Violation detail for the subnet for which internet traffic hasn't been inspected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallInternetTrafficNotInspectedViolation(
+            NetworkFirewallInternetTrafficNotInspectedViolation networkFirewallInternetTrafficNotInspectedViolation) {
+        setNetworkFirewallInternetTrafficNotInspectedViolation(networkFirewallInternetTrafficNotInspectedViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The route configuration is invalid.
+     * </p>
+     * 
+     * @param networkFirewallInvalidRouteConfigurationViolation
+     *        The route configuration is invalid.
+     */
+
+    public void setNetworkFirewallInvalidRouteConfigurationViolation(
+            NetworkFirewallInvalidRouteConfigurationViolation networkFirewallInvalidRouteConfigurationViolation) {
+        this.networkFirewallInvalidRouteConfigurationViolation = networkFirewallInvalidRouteConfigurationViolation;
+    }
+
+    /**
+     * <p>
+     * The route configuration is invalid.
+     * </p>
+     * 
+     * @return The route configuration is invalid.
+     */
+
+    public NetworkFirewallInvalidRouteConfigurationViolation getNetworkFirewallInvalidRouteConfigurationViolation() {
+        return this.networkFirewallInvalidRouteConfigurationViolation;
+    }
+
+    /**
+     * <p>
+     * The route configuration is invalid.
+     * </p>
+     * 
+     * @param networkFirewallInvalidRouteConfigurationViolation
+     *        The route configuration is invalid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallInvalidRouteConfigurationViolation(
+            NetworkFirewallInvalidRouteConfigurationViolation networkFirewallInvalidRouteConfigurationViolation) {
+        setNetworkFirewallInvalidRouteConfigurationViolation(networkFirewallInvalidRouteConfigurationViolation);
+        return this;
+    }
+
+    /**
+     * @param networkFirewallBlackHoleRouteDetectedViolation
+     */
+
+    public void setNetworkFirewallBlackHoleRouteDetectedViolation(NetworkFirewallBlackHoleRouteDetectedViolation networkFirewallBlackHoleRouteDetectedViolation) {
+        this.networkFirewallBlackHoleRouteDetectedViolation = networkFirewallBlackHoleRouteDetectedViolation;
+    }
+
+    /**
+     * @return
+     */
+
+    public NetworkFirewallBlackHoleRouteDetectedViolation getNetworkFirewallBlackHoleRouteDetectedViolation() {
+        return this.networkFirewallBlackHoleRouteDetectedViolation;
+    }
+
+    /**
+     * @param networkFirewallBlackHoleRouteDetectedViolation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallBlackHoleRouteDetectedViolation(
+            NetworkFirewallBlackHoleRouteDetectedViolation networkFirewallBlackHoleRouteDetectedViolation) {
+        setNetworkFirewallBlackHoleRouteDetectedViolation(networkFirewallBlackHoleRouteDetectedViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * There's an unexpected firewall route.
+     * </p>
+     * 
+     * @param networkFirewallUnexpectedFirewallRoutesViolation
+     *        There's an unexpected firewall route.
+     */
+
+    public void setNetworkFirewallUnexpectedFirewallRoutesViolation(
+            NetworkFirewallUnexpectedFirewallRoutesViolation networkFirewallUnexpectedFirewallRoutesViolation) {
+        this.networkFirewallUnexpectedFirewallRoutesViolation = networkFirewallUnexpectedFirewallRoutesViolation;
+    }
+
+    /**
+     * <p>
+     * There's an unexpected firewall route.
+     * </p>
+     * 
+     * @return There's an unexpected firewall route.
+     */
+
+    public NetworkFirewallUnexpectedFirewallRoutesViolation getNetworkFirewallUnexpectedFirewallRoutesViolation() {
+        return this.networkFirewallUnexpectedFirewallRoutesViolation;
+    }
+
+    /**
+     * <p>
+     * There's an unexpected firewall route.
+     * </p>
+     * 
+     * @param networkFirewallUnexpectedFirewallRoutesViolation
+     *        There's an unexpected firewall route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallUnexpectedFirewallRoutesViolation(
+            NetworkFirewallUnexpectedFirewallRoutesViolation networkFirewallUnexpectedFirewallRoutesViolation) {
+        setNetworkFirewallUnexpectedFirewallRoutesViolation(networkFirewallUnexpectedFirewallRoutesViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * There's an unexpected gateway route.
+     * </p>
+     * 
+     * @param networkFirewallUnexpectedGatewayRoutesViolation
+     *        There's an unexpected gateway route.
+     */
+
+    public void setNetworkFirewallUnexpectedGatewayRoutesViolation(
+            NetworkFirewallUnexpectedGatewayRoutesViolation networkFirewallUnexpectedGatewayRoutesViolation) {
+        this.networkFirewallUnexpectedGatewayRoutesViolation = networkFirewallUnexpectedGatewayRoutesViolation;
+    }
+
+    /**
+     * <p>
+     * There's an unexpected gateway route.
+     * </p>
+     * 
+     * @return There's an unexpected gateway route.
+     */
+
+    public NetworkFirewallUnexpectedGatewayRoutesViolation getNetworkFirewallUnexpectedGatewayRoutesViolation() {
+        return this.networkFirewallUnexpectedGatewayRoutesViolation;
+    }
+
+    /**
+     * <p>
+     * There's an unexpected gateway route.
+     * </p>
+     * 
+     * @param networkFirewallUnexpectedGatewayRoutesViolation
+     *        There's an unexpected gateway route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallUnexpectedGatewayRoutesViolation(
+            NetworkFirewallUnexpectedGatewayRoutesViolation networkFirewallUnexpectedGatewayRoutesViolation) {
+        setNetworkFirewallUnexpectedGatewayRoutesViolation(networkFirewallUnexpectedGatewayRoutesViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Expected routes are missing from Network Firewall.
+     * </p>
+     * 
+     * @param networkFirewallMissingExpectedRoutesViolation
+     *        Expected routes are missing from Network Firewall.
+     */
+
+    public void setNetworkFirewallMissingExpectedRoutesViolation(NetworkFirewallMissingExpectedRoutesViolation networkFirewallMissingExpectedRoutesViolation) {
+        this.networkFirewallMissingExpectedRoutesViolation = networkFirewallMissingExpectedRoutesViolation;
+    }
+
+    /**
+     * <p>
+     * Expected routes are missing from Network Firewall.
+     * </p>
+     * 
+     * @return Expected routes are missing from Network Firewall.
+     */
+
+    public NetworkFirewallMissingExpectedRoutesViolation getNetworkFirewallMissingExpectedRoutesViolation() {
+        return this.networkFirewallMissingExpectedRoutesViolation;
+    }
+
+    /**
+     * <p>
+     * Expected routes are missing from Network Firewall.
+     * </p>
+     * 
+     * @param networkFirewallMissingExpectedRoutesViolation
+     *        Expected routes are missing from Network Firewall.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withNetworkFirewallMissingExpectedRoutesViolation(
+            NetworkFirewallMissingExpectedRoutesViolation networkFirewallMissingExpectedRoutesViolation) {
+        setNetworkFirewallMissingExpectedRoutesViolation(networkFirewallMissingExpectedRoutesViolation);
+        return this;
+    }
+
+    /**
+     * <p>
      * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
      * associate with a VPC has the same priority as a rule group that's already associated.
      * </p>
@@ -504,12 +779,12 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
      * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      * </p>
      * 
      * @param dnsRuleGroupLimitExceededViolation
-     *        Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated
+     *        Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated
      *        DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      */
 
@@ -519,11 +794,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
      * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      * </p>
      * 
-     * @return Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated
+     * @return Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated
      *         DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      */
 
@@ -533,18 +808,64 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
      * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      * </p>
      * 
      * @param dnsRuleGroupLimitExceededViolation
-     *        Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated
+     *        Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated
      *        DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceViolation withDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation dnsRuleGroupLimitExceededViolation) {
         setDnsRuleGroupLimitExceededViolation(dnsRuleGroupLimitExceededViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     * 
+     * @param possibleRemediationActions
+     *        A list of possible remediation action lists. Each individual possible remediation action is a list of
+     *        individual remediation actions.
+     */
+
+    public void setPossibleRemediationActions(PossibleRemediationActions possibleRemediationActions) {
+        this.possibleRemediationActions = possibleRemediationActions;
+    }
+
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     * 
+     * @return A list of possible remediation action lists. Each individual possible remediation action is a list of
+     *         individual remediation actions.
+     */
+
+    public PossibleRemediationActions getPossibleRemediationActions() {
+        return this.possibleRemediationActions;
+    }
+
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     * 
+     * @param possibleRemediationActions
+     *        A list of possible remediation action lists. Each individual possible remediation action is a list of
+     *        individual remediation actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withPossibleRemediationActions(PossibleRemediationActions possibleRemediationActions) {
+        setPossibleRemediationActions(possibleRemediationActions);
         return this;
     }
 
@@ -574,12 +895,26 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
             sb.append("NetworkFirewallMissingExpectedRTViolation: ").append(getNetworkFirewallMissingExpectedRTViolation()).append(",");
         if (getNetworkFirewallPolicyModifiedViolation() != null)
             sb.append("NetworkFirewallPolicyModifiedViolation: ").append(getNetworkFirewallPolicyModifiedViolation()).append(",");
+        if (getNetworkFirewallInternetTrafficNotInspectedViolation() != null)
+            sb.append("NetworkFirewallInternetTrafficNotInspectedViolation: ").append(getNetworkFirewallInternetTrafficNotInspectedViolation()).append(",");
+        if (getNetworkFirewallInvalidRouteConfigurationViolation() != null)
+            sb.append("NetworkFirewallInvalidRouteConfigurationViolation: ").append(getNetworkFirewallInvalidRouteConfigurationViolation()).append(",");
+        if (getNetworkFirewallBlackHoleRouteDetectedViolation() != null)
+            sb.append("NetworkFirewallBlackHoleRouteDetectedViolation: ").append(getNetworkFirewallBlackHoleRouteDetectedViolation()).append(",");
+        if (getNetworkFirewallUnexpectedFirewallRoutesViolation() != null)
+            sb.append("NetworkFirewallUnexpectedFirewallRoutesViolation: ").append(getNetworkFirewallUnexpectedFirewallRoutesViolation()).append(",");
+        if (getNetworkFirewallUnexpectedGatewayRoutesViolation() != null)
+            sb.append("NetworkFirewallUnexpectedGatewayRoutesViolation: ").append(getNetworkFirewallUnexpectedGatewayRoutesViolation()).append(",");
+        if (getNetworkFirewallMissingExpectedRoutesViolation() != null)
+            sb.append("NetworkFirewallMissingExpectedRoutesViolation: ").append(getNetworkFirewallMissingExpectedRoutesViolation()).append(",");
         if (getDnsRuleGroupPriorityConflictViolation() != null)
             sb.append("DnsRuleGroupPriorityConflictViolation: ").append(getDnsRuleGroupPriorityConflictViolation()).append(",");
         if (getDnsDuplicateRuleGroupViolation() != null)
             sb.append("DnsDuplicateRuleGroupViolation: ").append(getDnsDuplicateRuleGroupViolation()).append(",");
         if (getDnsRuleGroupLimitExceededViolation() != null)
-            sb.append("DnsRuleGroupLimitExceededViolation: ").append(getDnsRuleGroupLimitExceededViolation());
+            sb.append("DnsRuleGroupLimitExceededViolation: ").append(getDnsRuleGroupLimitExceededViolation()).append(",");
+        if (getPossibleRemediationActions() != null)
+            sb.append("PossibleRemediationActions: ").append(getPossibleRemediationActions());
         sb.append("}");
         return sb.toString();
     }
@@ -627,6 +962,36 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         if (other.getNetworkFirewallPolicyModifiedViolation() != null
                 && other.getNetworkFirewallPolicyModifiedViolation().equals(this.getNetworkFirewallPolicyModifiedViolation()) == false)
             return false;
+        if (other.getNetworkFirewallInternetTrafficNotInspectedViolation() == null ^ this.getNetworkFirewallInternetTrafficNotInspectedViolation() == null)
+            return false;
+        if (other.getNetworkFirewallInternetTrafficNotInspectedViolation() != null
+                && other.getNetworkFirewallInternetTrafficNotInspectedViolation().equals(this.getNetworkFirewallInternetTrafficNotInspectedViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallInvalidRouteConfigurationViolation() == null ^ this.getNetworkFirewallInvalidRouteConfigurationViolation() == null)
+            return false;
+        if (other.getNetworkFirewallInvalidRouteConfigurationViolation() != null
+                && other.getNetworkFirewallInvalidRouteConfigurationViolation().equals(this.getNetworkFirewallInvalidRouteConfigurationViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallBlackHoleRouteDetectedViolation() == null ^ this.getNetworkFirewallBlackHoleRouteDetectedViolation() == null)
+            return false;
+        if (other.getNetworkFirewallBlackHoleRouteDetectedViolation() != null
+                && other.getNetworkFirewallBlackHoleRouteDetectedViolation().equals(this.getNetworkFirewallBlackHoleRouteDetectedViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallUnexpectedFirewallRoutesViolation() == null ^ this.getNetworkFirewallUnexpectedFirewallRoutesViolation() == null)
+            return false;
+        if (other.getNetworkFirewallUnexpectedFirewallRoutesViolation() != null
+                && other.getNetworkFirewallUnexpectedFirewallRoutesViolation().equals(this.getNetworkFirewallUnexpectedFirewallRoutesViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallUnexpectedGatewayRoutesViolation() == null ^ this.getNetworkFirewallUnexpectedGatewayRoutesViolation() == null)
+            return false;
+        if (other.getNetworkFirewallUnexpectedGatewayRoutesViolation() != null
+                && other.getNetworkFirewallUnexpectedGatewayRoutesViolation().equals(this.getNetworkFirewallUnexpectedGatewayRoutesViolation()) == false)
+            return false;
+        if (other.getNetworkFirewallMissingExpectedRoutesViolation() == null ^ this.getNetworkFirewallMissingExpectedRoutesViolation() == null)
+            return false;
+        if (other.getNetworkFirewallMissingExpectedRoutesViolation() != null
+                && other.getNetworkFirewallMissingExpectedRoutesViolation().equals(this.getNetworkFirewallMissingExpectedRoutesViolation()) == false)
+            return false;
         if (other.getDnsRuleGroupPriorityConflictViolation() == null ^ this.getDnsRuleGroupPriorityConflictViolation() == null)
             return false;
         if (other.getDnsRuleGroupPriorityConflictViolation() != null
@@ -641,6 +1006,10 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDnsRuleGroupLimitExceededViolation() != null
                 && other.getDnsRuleGroupLimitExceededViolation().equals(this.getDnsRuleGroupLimitExceededViolation()) == false)
+            return false;
+        if (other.getPossibleRemediationActions() == null ^ this.getPossibleRemediationActions() == null)
+            return false;
+        if (other.getPossibleRemediationActions() != null && other.getPossibleRemediationActions().equals(this.getPossibleRemediationActions()) == false)
             return false;
         return true;
     }
@@ -658,9 +1027,23 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode
                 + ((getNetworkFirewallMissingExpectedRTViolation() == null) ? 0 : getNetworkFirewallMissingExpectedRTViolation().hashCode());
         hashCode = prime * hashCode + ((getNetworkFirewallPolicyModifiedViolation() == null) ? 0 : getNetworkFirewallPolicyModifiedViolation().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNetworkFirewallInternetTrafficNotInspectedViolation() == null) ? 0 : getNetworkFirewallInternetTrafficNotInspectedViolation().hashCode());
+        hashCode = prime * hashCode
+                + ((getNetworkFirewallInvalidRouteConfigurationViolation() == null) ? 0 : getNetworkFirewallInvalidRouteConfigurationViolation().hashCode());
+        hashCode = prime * hashCode
+                + ((getNetworkFirewallBlackHoleRouteDetectedViolation() == null) ? 0 : getNetworkFirewallBlackHoleRouteDetectedViolation().hashCode());
+        hashCode = prime * hashCode
+                + ((getNetworkFirewallUnexpectedFirewallRoutesViolation() == null) ? 0 : getNetworkFirewallUnexpectedFirewallRoutesViolation().hashCode());
+        hashCode = prime * hashCode
+                + ((getNetworkFirewallUnexpectedGatewayRoutesViolation() == null) ? 0 : getNetworkFirewallUnexpectedGatewayRoutesViolation().hashCode());
+        hashCode = prime * hashCode
+                + ((getNetworkFirewallMissingExpectedRoutesViolation() == null) ? 0 : getNetworkFirewallMissingExpectedRoutesViolation().hashCode());
         hashCode = prime * hashCode + ((getDnsRuleGroupPriorityConflictViolation() == null) ? 0 : getDnsRuleGroupPriorityConflictViolation().hashCode());
         hashCode = prime * hashCode + ((getDnsDuplicateRuleGroupViolation() == null) ? 0 : getDnsDuplicateRuleGroupViolation().hashCode());
         hashCode = prime * hashCode + ((getDnsRuleGroupLimitExceededViolation() == null) ? 0 : getDnsRuleGroupLimitExceededViolation().hashCode());
+        hashCode = prime * hashCode + ((getPossibleRemediationActions() == null) ? 0 : getPossibleRemediationActions().hashCode());
         return hashCode;
     }
 

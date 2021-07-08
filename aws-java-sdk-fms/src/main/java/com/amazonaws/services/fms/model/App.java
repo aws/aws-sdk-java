@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An individual AWS Firewall Manager application.
+ * An individual Firewall Manager application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/App" target="_top">AWS API Documentation</a>

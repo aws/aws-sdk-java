@@ -27,7 +27,7 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      * </p>
      */
     private String contactId;
@@ -100,11 +100,11 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      * </p>
      * 
      * @param contactId
-     *        The Amazon Resource Name (ARN) of the contact channel.
+     *        The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      */
 
     public void setContactId(String contactId) {
@@ -113,10 +113,10 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the contact channel.
+     * @return The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      */
 
     public String getContactId() {
@@ -125,11 +125,11 @@ public class CreateContactChannelRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the contact channel.
+     * The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      * </p>
      * 
      * @param contactId
-     *        The Amazon Resource Name (ARN) of the contact channel.
+     *        The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

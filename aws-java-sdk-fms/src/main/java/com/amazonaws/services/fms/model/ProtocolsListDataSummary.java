@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of the AWS Firewall Manager protocols list.
+ * Details of the Firewall Manager protocols list.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ProtocolsListDataSummary" target="_top">AWS API
@@ -48,7 +48,7 @@ public class ProtocolsListDataSummary implements Serializable, Cloneable, Struct
     private String listName;
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      */
     private java.util.List<String> protocolsList;
@@ -175,10 +175,10 @@ public class ProtocolsListDataSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * 
-     * @return An array of protocols in the AWS Firewall Manager protocols list.
+     * @return An array of protocols in the Firewall Manager protocols list.
      */
 
     public java.util.List<String> getProtocolsList() {
@@ -187,11 +187,11 @@ public class ProtocolsListDataSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * 
      * @param protocolsList
-     *        An array of protocols in the AWS Firewall Manager protocols list.
+     *        An array of protocols in the Firewall Manager protocols list.
      */
 
     public void setProtocolsList(java.util.Collection<String> protocolsList) {
@@ -205,7 +205,7 @@ public class ProtocolsListDataSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +214,7 @@ public class ProtocolsListDataSummary implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param protocolsList
-     *        An array of protocols in the AWS Firewall Manager protocols list.
+     *        An array of protocols in the Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +230,11 @@ public class ProtocolsListDataSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * 
      * @param protocolsList
-     *        An array of protocols in the AWS Firewall Manager protocols list.
+     *        An array of protocols in the Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,6 +68,10 @@ public class ProactiveAnomalySummaryJsonUnmarshaller implements Unmarshaller<Pro
                     context.nextToken();
                     proactiveAnomalySummary.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AnomalyReportedTimeRange", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomalySummary.setAnomalyReportedTimeRange(AnomalyReportedTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("PredictionTimeRange", targetDepth)) {
                     context.nextToken();
                     proactiveAnomalySummary.setPredictionTimeRange(PredictionTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));

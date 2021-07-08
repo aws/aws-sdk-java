@@ -1079,6 +1079,61 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
+     * Returns a list of alerts for the given resource.
+     * </p>
+     * 
+     * @param listAlertsRequest
+     * @return Result of the ListAlerts operation returned by the service.
+     * @sample AWSMediaTailor.ListAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAlertsResult listAlerts(ListAlertsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAlerts(request);
+    }
+
+    @SdkInternalApi
+    final ListAlertsResult executeListAlerts(ListAlertsRequest listAlertsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAlertsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAlertsRequest> request = null;
+        Response<ListAlertsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAlertsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAlertsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAlerts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAlertsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAlertsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of channels that are associated with this account.
      * </p>
      * 

@@ -25,12 +25,11 @@ import com.amazonaws.services.fms.model.*;
  * {@link com.amazonaws.services.fms.AbstractAWSFMSAsync} instead.
  * </p>
  * <p>
- * <fullname>AWS Firewall Manager</fullname>
  * <p>
- * This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers who need detailed information
- * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
- * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
- * Firewall Manager Developer Guide</a>.
+ * This is the <i>Firewall Manager API Reference</i>. This guide is for developers who need detailed information about
+ * the Firewall Manager API actions, data types, and errors. For detailed information about Firewall Manager features,
+ * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">Firewall Manager Developer
+ * Guide</a>.
  * </p>
  * <p>
  * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
@@ -43,14 +42,12 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
-     * account of your AWS organization or associated with a member account that has the appropriate permissions. If the
-     * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
-     * appropriate permissions for the given member account.
+     * Sets the Firewall Manager administrator account. The account must be a member of the organization in
+     * Organizations whose resources you want to protect. Firewall Manager sets the permissions that allow the account
+     * to administer your Firewall Manager policies.
      * </p>
      * <p>
-     * The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator
-     * account.
+     * The account that you associate with Firewall Manager is called the Firewall Manager administrator account.
      * </p>
      * 
      * @param associateAdminAccountRequest
@@ -63,14 +60,12 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
-     * account of your AWS organization or associated with a member account that has the appropriate permissions. If the
-     * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
-     * appropriate permissions for the given member account.
+     * Sets the Firewall Manager administrator account. The account must be a member of the organization in
+     * Organizations whose resources you want to protect. Firewall Manager sets the permissions that allow the account
+     * to administer your Firewall Manager policies.
      * </p>
      * <p>
-     * The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator
-     * account.
+     * The account that you associate with Firewall Manager is called the Firewall Manager administrator account.
      * </p>
      * 
      * @param associateAdminAccountRequest
@@ -88,7 +83,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Permanently deletes an AWS Firewall Manager applications list.
+     * Permanently deletes an Firewall Manager applications list.
      * </p>
      * 
      * @param deleteAppsListRequest
@@ -101,7 +96,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Permanently deletes an AWS Firewall Manager applications list.
+     * Permanently deletes an Firewall Manager applications list.
      * </p>
      * 
      * @param deleteAppsListRequest
@@ -119,8 +114,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS)
-     * topic that is used to record AWS Firewall Manager SNS logs.
+     * Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic
+     * that is used to record Firewall Manager SNS logs.
      * </p>
      * 
      * @param deleteNotificationChannelRequest
@@ -134,8 +129,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS)
-     * topic that is used to record AWS Firewall Manager SNS logs.
+     * Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic
+     * that is used to record Firewall Manager SNS logs.
      * </p>
      * 
      * @param deleteNotificationChannelRequest
@@ -154,7 +149,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Permanently deletes an AWS Firewall Manager policy.
+     * Permanently deletes an Firewall Manager policy.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -167,7 +162,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Permanently deletes an AWS Firewall Manager policy.
+     * Permanently deletes an Firewall Manager policy.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -185,7 +180,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Permanently deletes an AWS Firewall Manager protocols list.
+     * Permanently deletes an Firewall Manager protocols list.
      * </p>
      * 
      * @param deleteProtocolsListRequest
@@ -198,7 +193,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Permanently deletes an AWS Firewall Manager protocols list.
+     * Permanently deletes an Firewall Manager protocols list.
      * </p>
      * 
      * @param deleteProtocolsListRequest
@@ -216,7 +211,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
+     * Disassociates the account that has been set as the Firewall Manager administrator account. To set a different
      * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
      * </p>
      * 
@@ -230,7 +225,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
+     * Disassociates the account that has been set as the Firewall Manager administrator account. To set a different
      * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
      * </p>
      * 
@@ -249,8 +244,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator.
+     * Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager administrator.
      * </p>
      * 
      * @param getAdminAccountRequest
@@ -263,8 +257,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall
-     * Manager administrator.
+     * Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager administrator.
      * </p>
      * 
      * @param getAdminAccountRequest
@@ -282,7 +275,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns information about the specified AWS Firewall Manager applications list.
+     * Returns information about the specified Firewall Manager applications list.
      * </p>
      * 
      * @param getAppsListRequest
@@ -295,7 +288,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns information about the specified AWS Firewall Manager applications list.
+     * Returns information about the specified Firewall Manager applications list.
      * </p>
      * 
      * @param getAppsListRequest
@@ -314,14 +307,36 @@ public interface AWSFMSAsync extends AWSFMS {
     /**
      * <p>
      * Returns detailed compliance information about the specified member account. Details include resources that are in
-     * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
-     * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
-     * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
-     * remediation is disabled or not possible. Resources are considered noncompliant for Network Firewall policies if a
-     * firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and
-     * subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications
-     * to a firewall policy that violate the Firewall Manager policy's rules.
+     * and out of compliance with the specified policy.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for WAF and Shield Advanced policies if the specified policy has not been
+     * applied to them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for security group policies if they are in scope of the policy, they
+     * violate one or more of the policy rules, and remediation is disabled or not possible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for Network Firewall policies if a firewall is missing in the VPC, if the
+     * firewall endpoint isn't set up in an expected Availability Zone and subnet, if a subnet created by the Firewall
+     * Manager doesn't have the expected route table, and for modifications to a firewall policy that violate the
+     * Firewall Manager policy's rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall rule group is missing from the
+     * rule group associations for the VPC.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getComplianceDetailRequest
      * @return A Java Future containing the result of the GetComplianceDetail operation returned by the service.
@@ -334,14 +349,36 @@ public interface AWSFMSAsync extends AWSFMS {
     /**
      * <p>
      * Returns detailed compliance information about the specified member account. Details include resources that are in
-     * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
-     * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
-     * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
-     * remediation is disabled or not possible. Resources are considered noncompliant for Network Firewall policies if a
-     * firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and
-     * subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications
-     * to a firewall policy that violate the Firewall Manager policy's rules.
+     * and out of compliance with the specified policy.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for WAF and Shield Advanced policies if the specified policy has not been
+     * applied to them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for security group policies if they are in scope of the policy, they
+     * violate one or more of the policy rules, and remediation is disabled or not possible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for Network Firewall policies if a firewall is missing in the VPC, if the
+     * firewall endpoint isn't set up in an expected Availability Zone and subnet, if a subnet created by the Firewall
+     * Manager doesn't have the expected route table, and for modifications to a firewall policy that violate the
+     * Firewall Manager policy's rules.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall rule group is missing from the
+     * rule group associations for the VPC.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getComplianceDetailRequest
      * @param asyncHandler
@@ -358,8 +395,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager
-     * SNS logs.
+     * Information about the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS
+     * logs.
      * </p>
      * 
      * @param getNotificationChannelRequest
@@ -372,8 +409,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager
-     * SNS logs.
+     * Information about the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS
+     * logs.
      * </p>
      * 
      * @param getNotificationChannelRequest
@@ -391,7 +428,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns information about the specified AWS Firewall Manager policy.
+     * Returns information about the specified Firewall Manager policy.
      * </p>
      * 
      * @param getPolicyRequest
@@ -404,7 +441,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns information about the specified AWS Firewall Manager policy.
+     * Returns information about the specified Firewall Manager policy.
      * </p>
      * 
      * @param getPolicyRequest
@@ -455,7 +492,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns information about the specified AWS Firewall Manager protocols list.
+     * Returns information about the specified Firewall Manager protocols list.
      * </p>
      * 
      * @param getProtocolsListRequest
@@ -468,7 +505,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns information about the specified AWS Firewall Manager protocols list.
+     * Returns information about the specified Firewall Manager protocols list.
      * </p>
      * 
      * @param getProtocolsListRequest
@@ -486,7 +523,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+     * Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services
+     * account.
      * </p>
      * 
      * @param getViolationDetailsRequest
@@ -499,7 +537,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+     * Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services
+     * account.
      * </p>
      * 
      * @param getViolationDetailsRequest
@@ -581,11 +620,11 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS
-     * organization.
+     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's Amazon Web
+     * Services organization.
      * </p>
      * <p>
-     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the Firewall Manager
      * administrator.
      * </p>
      * 
@@ -599,11 +638,11 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS
-     * organization.
+     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's Amazon Web
+     * Services organization.
      * </p>
      * <p>
-     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the Firewall Manager
      * administrator.
      * </p>
      * 
@@ -684,7 +723,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Retrieves the list of tags for the specified AWS resource.
+     * Retrieves the list of tags for the specified Amazon Web Services resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -697,7 +736,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Retrieves the list of tags for the specified AWS resource.
+     * Retrieves the list of tags for the specified Amazon Web Services resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -715,7 +754,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Creates an AWS Firewall Manager applications list.
+     * Creates an Firewall Manager applications list.
      * </p>
      * 
      * @param putAppsListRequest
@@ -728,7 +767,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Creates an AWS Firewall Manager applications list.
+     * Creates an Firewall Manager applications list.
      * </p>
      * 
      * @param putAppsListRequest
@@ -746,14 +785,14 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
-     * record SNS logs.
+     * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that Firewall Manager uses to record
+     * SNS logs.
      * </p>
      * <p>
      * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
      * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
-     * required permissions for API actions</a> in the <i>AWS Firewall Manager Developer Guide</i>.
+     * required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -766,14 +805,14 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
-     * record SNS logs.
+     * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that Firewall Manager uses to record
+     * SNS logs.
      * </p>
      * <p>
      * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
      * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
-     * required permissions for API actions</a> in the <i>AWS Firewall Manager Developer Guide</i>.
+     * required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -791,7 +830,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Creates an AWS Firewall Manager policy.
+     * Creates an Firewall Manager policy.
      * </p>
      * <p>
      * Firewall Manager provides the following types of policies:
@@ -799,13 +838,13 @@ public interface AWSFMSAsync extends AWSFMS {
      * <ul>
      * <li>
      * <p>
-     * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
-     * rule groups to run last in the web ACL.
+     * An WAF policy (type WAFV2), which defines rule groups to run first in the corresponding WAF web ACL and rule
+     * groups to run last in the web ACL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An AWS WAF Classic policy (type WAF), which defines a rule group.
+     * An WAF Classic policy (type WAF), which defines a rule group.
      * </p>
      * </li>
      * <li>
@@ -815,12 +854,18 @@ public interface AWSFMSAsync extends AWSFMS {
      * </li>
      * <li>
      * <p>
-     * A security group policy, which manages VPC security groups across your AWS organization.
+     * A security group policy, which manages VPC security groups across your Amazon Web Services organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An AWS Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
+     * An Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter DNS queries for specified
+     * VPCs.
      * </p>
      * </li>
      * </ul>
@@ -845,7 +890,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Creates an AWS Firewall Manager policy.
+     * Creates an Firewall Manager policy.
      * </p>
      * <p>
      * Firewall Manager provides the following types of policies:
@@ -853,13 +898,13 @@ public interface AWSFMSAsync extends AWSFMS {
      * <ul>
      * <li>
      * <p>
-     * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
-     * rule groups to run last in the web ACL.
+     * An WAF policy (type WAFV2), which defines rule groups to run first in the corresponding WAF web ACL and rule
+     * groups to run last in the web ACL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An AWS WAF Classic policy (type WAF), which defines a rule group.
+     * An WAF Classic policy (type WAF), which defines a rule group.
      * </p>
      * </li>
      * <li>
@@ -869,12 +914,18 @@ public interface AWSFMSAsync extends AWSFMS {
      * </li>
      * <li>
      * <p>
-     * A security group policy, which manages VPC security groups across your AWS organization.
+     * A security group policy, which manages VPC security groups across your Amazon Web Services organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An AWS Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
+     * An Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter DNS queries for specified
+     * VPCs.
      * </p>
      * </li>
      * </ul>
@@ -904,7 +955,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Creates an AWS Firewall Manager protocols list.
+     * Creates an Firewall Manager protocols list.
      * </p>
      * 
      * @param putProtocolsListRequest
@@ -917,7 +968,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Creates an AWS Firewall Manager protocols list.
+     * Creates an Firewall Manager protocols list.
      * </p>
      * 
      * @param putProtocolsListRequest
@@ -935,7 +986,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Adds one or more tags to an AWS resource.
+     * Adds one or more tags to an Amazon Web Services resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -948,7 +999,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Adds one or more tags to an AWS resource.
+     * Adds one or more tags to an Amazon Web Services resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -966,7 +1017,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Removes one or more tags from an AWS resource.
+     * Removes one or more tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -979,7 +1030,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Removes one or more tags from an AWS resource.
+     * Removes one or more tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest

@@ -32,8 +32,8 @@ public class ListAppsListsResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests
-     * to retrieve the next batch of objects.
+     * maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to
+     * retrieve the next batch of objects.
      * </p>
      */
     private String nextToken;
@@ -111,13 +111,13 @@ public class ListAppsListsResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests
-     * to retrieve the next batch of objects.
+     * maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to
+     * retrieve the next batch of objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than
-     *        the maximum, AWS Firewall Manager returns this token in the response. You can use this token in subsequent
+     *        the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent
      *        requests to retrieve the next batch of objects.
      */
 
@@ -128,13 +128,13 @@ public class ListAppsListsResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests
-     * to retrieve the next batch of objects.
+     * maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to
+     * retrieve the next batch of objects.
      * </p>
      * 
      * @return If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than
-     *         the maximum, AWS Firewall Manager returns this token in the response. You can use this token in
-     *         subsequent requests to retrieve the next batch of objects.
+     *         the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent
+     *         requests to retrieve the next batch of objects.
      */
 
     public String getNextToken() {
@@ -144,13 +144,13 @@ public class ListAppsListsResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests
-     * to retrieve the next batch of objects.
+     * maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to
+     * retrieve the next batch of objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than
-     *        the maximum, AWS Firewall Manager returns this token in the response. You can use this token in subsequent
+     *        the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent
      *        requests to retrieve the next batch of objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

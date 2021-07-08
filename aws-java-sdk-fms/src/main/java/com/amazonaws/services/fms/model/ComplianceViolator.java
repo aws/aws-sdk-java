@@ -43,8 +43,8 @@ public class ComplianceViolator implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      * </p>
      */
@@ -152,16 +152,17 @@ public class ComplianceViolator implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      * </p>
      * 
      * @param resourceType
      *        The resource type. This is in the format shown in the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     *        <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services Resource Types Reference</a>. For example:
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or
+     *        <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -171,15 +172,16 @@ public class ComplianceViolator implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      * </p>
      * 
      * @return The resource type. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >AWS Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     *         <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
+     *         >Amazon Web Services Resource Types Reference</a>. For example:
+     *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or
+     *         <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      */
 
     public String getResourceType() {
@@ -189,16 +191,17 @@ public class ComplianceViolator implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      * </p>
      * 
      * @param resourceType
      *        The resource type. This is in the format shown in the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     *        <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services Resource Types Reference</a>. For example:
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or
+     *        <code>AWS::NetworkFirewall::FirewallPolicy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

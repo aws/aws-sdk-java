@@ -25,7 +25,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the AWS Firewall administrator account for this policy.
+     * The ID of the Firewall Manager administrator account for this policy.
      * </p>
      */
     private String adminAccountId;
@@ -79,20 +79,21 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * <code>NextToken</code> value in the next request.
      * </p>
      * <p>
-     * AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request
-     * calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>.
-     * You must submit subsequent requests with <code>NextToken</code> using your own processes.
+     * Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make
+     * subsequent request calls automatically on your behalf. However, this feature is not supported by
+     * <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own
+     * processes.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The ID of the AWS Firewall administrator account for this policy.
+     * The ID of the Firewall Manager administrator account for this policy.
      * </p>
      * 
      * @param adminAccountId
-     *        The ID of the AWS Firewall administrator account for this policy.
+     *        The ID of the Firewall Manager administrator account for this policy.
      */
 
     public void setAdminAccountId(String adminAccountId) {
@@ -101,10 +102,10 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the AWS Firewall administrator account for this policy.
+     * The ID of the Firewall Manager administrator account for this policy.
      * </p>
      * 
-     * @return The ID of the AWS Firewall administrator account for this policy.
+     * @return The ID of the Firewall Manager administrator account for this policy.
      */
 
     public String getAdminAccountId() {
@@ -113,11 +114,11 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the AWS Firewall administrator account for this policy.
+     * The ID of the Firewall Manager administrator account for this policy.
      * </p>
      * 
      * @param adminAccountId
-     *        The ID of the AWS Firewall administrator account for this policy.
+     *        The ID of the Firewall Manager administrator account for this policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,9 +411,10 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * <code>NextToken</code> value in the next request.
      * </p>
      * <p>
-     * AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request
-     * calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>.
-     * You must submit subsequent requests with <code>NextToken</code> using your own processes.
+     * Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make
+     * subsequent request calls automatically on your behalf. However, this feature is not supported by
+     * <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own
+     * processes.
      * </p>
      * 
      * @param nextToken
@@ -421,8 +423,8 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      *        <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response
      *        in the <code>NextToken</code> value in the next request.</p>
      *        <p>
-     *        AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent
-     *        request calls automatically on your behalf. However, this feature is not supported by
+     *        Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
+     *        make subsequent request calls automatically on your behalf. However, this feature is not supported by
      *        <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using
      *        your own processes.
      */
@@ -439,9 +441,10 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * <code>NextToken</code> value in the next request.
      * </p>
      * <p>
-     * AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request
-     * calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>.
-     * You must submit subsequent requests with <code>NextToken</code> using your own processes.
+     * Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make
+     * subsequent request calls automatically on your behalf. However, this feature is not supported by
+     * <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own
+     * processes.
      * </p>
      * 
      * @return If you have more objects than the number that you specified for <code>MaxResults</code> in the request,
@@ -449,8 +452,8 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      *         <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response
      *         in the <code>NextToken</code> value in the next request.</p>
      *         <p>
-     *         AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent
-     *         request calls automatically on your behalf. However, this feature is not supported by
+     *         Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
+     *         make subsequent request calls automatically on your behalf. However, this feature is not supported by
      *         <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using
      *         your own processes.
      */
@@ -467,9 +470,10 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * <code>NextToken</code> value in the next request.
      * </p>
      * <p>
-     * AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request
-     * calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>.
-     * You must submit subsequent requests with <code>NextToken</code> using your own processes.
+     * Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make
+     * subsequent request calls automatically on your behalf. However, this feature is not supported by
+     * <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own
+     * processes.
      * </p>
      * 
      * @param nextToken
@@ -478,8 +482,8 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      *        <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response
      *        in the <code>NextToken</code> value in the next request.</p>
      *        <p>
-     *        AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent
-     *        request calls automatically on your behalf. However, this feature is not supported by
+     *        Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
+     *        make subsequent request calls automatically on your behalf. However, this feature is not supported by
      *        <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using
      *        your own processes.
      * @return Returns a reference to this object so that method calls can be chained together.

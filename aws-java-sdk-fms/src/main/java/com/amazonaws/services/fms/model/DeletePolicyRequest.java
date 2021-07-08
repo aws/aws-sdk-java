@@ -37,12 +37,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If <code>True</code>, the request performs cleanup according to the policy type.
      * </p>
      * <p>
-     * For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     * For WAF and Shield Advanced policies, the cleanup does the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Deletes rule groups created by AWS Firewall Manager
+     * Deletes rule groups created by Firewall Manager
      * </p>
      * </li>
      * <li>
@@ -133,12 +133,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If <code>True</code>, the request performs cleanup according to the policy type.
      * </p>
      * <p>
-     * For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     * For WAF and Shield Advanced policies, the cleanup does the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Deletes rule groups created by AWS Firewall Manager
+     * Deletes rule groups created by Firewall Manager
      * </p>
      * </li>
      * <li>
@@ -179,12 +179,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param deleteAllPolicyResources
      *        If <code>True</code>, the request performs cleanup according to the policy type. </p>
      *        <p>
-     *        For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     *        For WAF and Shield Advanced policies, the cleanup does the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Deletes rule groups created by AWS Firewall Manager
+     *        Deletes rule groups created by Firewall Manager
      *        </p>
      *        </li>
      *        <li>
@@ -231,12 +231,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If <code>True</code>, the request performs cleanup according to the policy type.
      * </p>
      * <p>
-     * For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     * For WAF and Shield Advanced policies, the cleanup does the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Deletes rule groups created by AWS Firewall Manager
+     * Deletes rule groups created by Firewall Manager
      * </p>
      * </li>
      * <li>
@@ -276,12 +276,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return If <code>True</code>, the request performs cleanup according to the policy type. </p>
      *         <p>
-     *         For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     *         For WAF and Shield Advanced policies, the cleanup does the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Deletes rule groups created by AWS Firewall Manager
+     *         Deletes rule groups created by Firewall Manager
      *         </p>
      *         </li>
      *         <li>
@@ -329,12 +329,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If <code>True</code>, the request performs cleanup according to the policy type.
      * </p>
      * <p>
-     * For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     * For WAF and Shield Advanced policies, the cleanup does the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Deletes rule groups created by AWS Firewall Manager
+     * Deletes rule groups created by Firewall Manager
      * </p>
      * </li>
      * <li>
@@ -375,12 +375,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param deleteAllPolicyResources
      *        If <code>True</code>, the request performs cleanup according to the policy type. </p>
      *        <p>
-     *        For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     *        For WAF and Shield Advanced policies, the cleanup does the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Deletes rule groups created by AWS Firewall Manager
+     *        Deletes rule groups created by Firewall Manager
      *        </p>
      *        </li>
      *        <li>
@@ -429,12 +429,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If <code>True</code>, the request performs cleanup according to the policy type.
      * </p>
      * <p>
-     * For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     * For WAF and Shield Advanced policies, the cleanup does the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Deletes rule groups created by AWS Firewall Manager
+     * Deletes rule groups created by Firewall Manager
      * </p>
      * </li>
      * <li>
@@ -474,12 +474,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return If <code>True</code>, the request performs cleanup according to the policy type. </p>
      *         <p>
-     *         For AWS WAF and Shield Advanced policies, the cleanup does the following:
+     *         For WAF and Shield Advanced policies, the cleanup does the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Deletes rule groups created by AWS Firewall Manager
+     *         Deletes rule groups created by Firewall Manager
      *         </p>
      *         </li>
      *         <li>

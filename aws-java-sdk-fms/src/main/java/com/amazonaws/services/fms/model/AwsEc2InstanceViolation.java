@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Violations for an EC2 instance resource.
+ * Violation detail for an EC2 instance resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsEc2InstanceViolation" target="_top">AWS API
@@ -36,7 +36,7 @@ public class AwsEc2InstanceViolation implements Serializable, Cloneable, Structu
     private String violationTarget;
     /**
      * <p>
-     * Violations for network interfaces associated with the EC2 instance.
+     * Violation detail for network interfaces associated with the EC2 instance.
      * </p>
      */
     private java.util.List<AwsEc2NetworkInterfaceViolation> awsEc2NetworkInterfaceViolations;
@@ -83,10 +83,10 @@ public class AwsEc2InstanceViolation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Violations for network interfaces associated with the EC2 instance.
+     * Violation detail for network interfaces associated with the EC2 instance.
      * </p>
      * 
-     * @return Violations for network interfaces associated with the EC2 instance.
+     * @return Violation detail for network interfaces associated with the EC2 instance.
      */
 
     public java.util.List<AwsEc2NetworkInterfaceViolation> getAwsEc2NetworkInterfaceViolations() {
@@ -95,11 +95,11 @@ public class AwsEc2InstanceViolation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Violations for network interfaces associated with the EC2 instance.
+     * Violation detail for network interfaces associated with the EC2 instance.
      * </p>
      * 
      * @param awsEc2NetworkInterfaceViolations
-     *        Violations for network interfaces associated with the EC2 instance.
+     *        Violation detail for network interfaces associated with the EC2 instance.
      */
 
     public void setAwsEc2NetworkInterfaceViolations(java.util.Collection<AwsEc2NetworkInterfaceViolation> awsEc2NetworkInterfaceViolations) {
@@ -113,7 +113,7 @@ public class AwsEc2InstanceViolation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Violations for network interfaces associated with the EC2 instance.
+     * Violation detail for network interfaces associated with the EC2 instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class AwsEc2InstanceViolation implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param awsEc2NetworkInterfaceViolations
-     *        Violations for network interfaces associated with the EC2 instance.
+     *        Violation detail for network interfaces associated with the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class AwsEc2InstanceViolation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Violations for network interfaces associated with the EC2 instance.
+     * Violation detail for network interfaces associated with the EC2 instance.
      * </p>
      * 
      * @param awsEc2NetworkInterfaceViolations
-     *        Violations for network interfaces associated with the EC2 instance.
+     *        Violation detail for network interfaces associated with the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -113,6 +113,11 @@ public class AbstractAWSMediaTailor implements AWSMediaTailor {
     }
 
     @Override
+    public ListAlertsResult listAlerts(ListAlertsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListChannelsResult listChannels(ListChannelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

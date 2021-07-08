@@ -48,6 +48,9 @@ public interface AWSOutposts {
      * <p>
      * Creates an Outpost.
      * </p>
+     * <p>
+     * You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+     * </p>
      * 
      * @param createOutpostRequest
      * @return Result of the CreateOutpost operation returned by the service.
@@ -159,7 +162,13 @@ public interface AWSOutposts {
 
     /**
      * <p>
-     * List the Outposts for your AWS account.
+     * Create a list of the Outposts for your AWS account. Add filters to your request to return a more specific list of
+     * results. Use filters to match an Outpost lifecycle status, Availibility Zone (<code>us-east-1a</code>), and AZ ID
+     * (<code>use1-az1</code>).
+     * </p>
+     * <p>
+     * If you specify multiple filters, the filters are joined with an <code>AND</code>, and the request returns only
+     * results that match all of the specified filters.
      * </p>
      * 
      * @param listOutpostsRequest

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * AWS Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+ * Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatelessRuleGroup" target="_top">AWS API
@@ -42,7 +42,7 @@ public class StatelessRuleGroup implements Serializable, Cloneable, StructuredPo
     private String resourceId;
     /**
      * <p>
-     * The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall policy
+     * The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
      * starting from the lowest priority setting.
      * </p>
      */
@@ -130,13 +130,13 @@ public class StatelessRuleGroup implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall policy
+     * The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
      * starting from the lowest priority setting.
      * </p>
      * 
      * @param priority
-     *        The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall
-     *        policy starting from the lowest priority setting.
+     *        The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
+     *        starting from the lowest priority setting.
      */
 
     public void setPriority(Integer priority) {
@@ -145,12 +145,12 @@ public class StatelessRuleGroup implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall policy
+     * The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
      * starting from the lowest priority setting.
      * </p>
      * 
-     * @return The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall
-     *         policy starting from the lowest priority setting.
+     * @return The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
+     *         starting from the lowest priority setting.
      */
 
     public Integer getPriority() {
@@ -159,13 +159,13 @@ public class StatelessRuleGroup implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall policy
+     * The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
      * starting from the lowest priority setting.
      * </p>
      * 
      * @param priority
-     *        The priority of the rule group. AWS Network Firewall evaluates the stateless rule groups in a firewall
-     *        policy starting from the lowest priority setting.
+     *        The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy
+     *        starting from the lowest priority setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

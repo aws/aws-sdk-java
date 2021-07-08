@@ -27,18 +27,18 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for.
+     * The ID of the Firewall Manager policy that you want the details for.
      * </p>
      */
     private String policyId;
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for.
+     * The ID of the Firewall Manager policy that you want the details for.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy that you want the details for.
+     *        The ID of the Firewall Manager policy that you want the details for.
      */
 
     public void setPolicyId(String policyId) {
@@ -47,10 +47,10 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for.
+     * The ID of the Firewall Manager policy that you want the details for.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager policy that you want the details for.
+     * @return The ID of the Firewall Manager policy that you want the details for.
      */
 
     public String getPolicyId() {
@@ -59,11 +59,11 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for.
+     * The ID of the Firewall Manager policy that you want the details for.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy that you want the details for.
+     *        The ID of the Firewall Manager policy that you want the details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

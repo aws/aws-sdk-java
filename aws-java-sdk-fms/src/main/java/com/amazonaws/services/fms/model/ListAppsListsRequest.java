@@ -27,37 +27,37 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      * </p>
      */
     private Boolean defaultLists;
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you provide the
+     * maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the
      * token returned by the prior request in the request parameters, to retrieve the next batch of objects.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of objects that you want AWS Firewall Manager to return for this request. If more objects are
-     * available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that you can use in a
+     * The maximum number of objects that you want Firewall Manager to return for this request. If more objects are
+     * available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a
      * subsequent call to get the next batch of objects.
      * </p>
      * <p>
-     * If you don't specify this, AWS Firewall Manager returns all available objects.
+     * If you don't specify this, Firewall Manager returns all available objects.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      * </p>
      * 
      * @param defaultLists
-     *        Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     *        Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      */
 
     public void setDefaultLists(Boolean defaultLists) {
@@ -66,10 +66,10 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      * </p>
      * 
-     * @return Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * @return Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      */
 
     public Boolean getDefaultLists() {
@@ -78,11 +78,11 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      * </p>
      * 
      * @param defaultLists
-     *        Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     *        Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,10 +93,10 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      * </p>
      * 
-     * @return Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.
+     * @return Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
      */
 
     public Boolean isDefaultLists() {
@@ -106,13 +106,13 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you provide the
+     * maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the
      * token returned by the prior request in the request parameters, to retrieve the next batch of objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than
-     *        the maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you
+     *        the maximum, Firewall Manager returns this token in the response. For all but the first request, you
      *        provide the token returned by the prior request in the request parameters, to retrieve the next batch of
      *        objects.
      */
@@ -124,12 +124,12 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you provide the
+     * maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the
      * token returned by the prior request in the request parameters, to retrieve the next batch of objects.
      * </p>
      * 
      * @return If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than
-     *         the maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you
+     *         the maximum, Firewall Manager returns this token in the response. For all but the first request, you
      *         provide the token returned by the prior request in the request parameters, to retrieve the next batch of
      *         objects.
      */
@@ -141,13 +141,13 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the
-     * maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you provide the
+     * maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the
      * token returned by the prior request in the request parameters, to retrieve the next batch of objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than
-     *        the maximum, AWS Firewall Manager returns this token in the response. For all but the first request, you
+     *        the maximum, Firewall Manager returns this token in the response. For all but the first request, you
      *        provide the token returned by the prior request in the request parameters, to retrieve the next batch of
      *        objects.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -160,20 +160,20 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of objects that you want AWS Firewall Manager to return for this request. If more objects are
-     * available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that you can use in a
+     * The maximum number of objects that you want Firewall Manager to return for this request. If more objects are
+     * available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a
      * subsequent call to get the next batch of objects.
      * </p>
      * <p>
-     * If you don't specify this, AWS Firewall Manager returns all available objects.
+     * If you don't specify this, Firewall Manager returns all available objects.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-     *        objects are available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that
-     *        you can use in a subsequent call to get the next batch of objects.</p>
+     *        The maximum number of objects that you want Firewall Manager to return for this request. If more objects
+     *        are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use
+     *        in a subsequent call to get the next batch of objects.</p>
      *        <p>
-     *        If you don't specify this, AWS Firewall Manager returns all available objects.
+     *        If you don't specify this, Firewall Manager returns all available objects.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -182,19 +182,19 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of objects that you want AWS Firewall Manager to return for this request. If more objects are
-     * available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that you can use in a
+     * The maximum number of objects that you want Firewall Manager to return for this request. If more objects are
+     * available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a
      * subsequent call to get the next batch of objects.
      * </p>
      * <p>
-     * If you don't specify this, AWS Firewall Manager returns all available objects.
+     * If you don't specify this, Firewall Manager returns all available objects.
      * </p>
      * 
-     * @return The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-     *         objects are available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that
-     *         you can use in a subsequent call to get the next batch of objects.</p>
+     * @return The maximum number of objects that you want Firewall Manager to return for this request. If more objects
+     *         are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use
+     *         in a subsequent call to get the next batch of objects.</p>
      *         <p>
-     *         If you don't specify this, AWS Firewall Manager returns all available objects.
+     *         If you don't specify this, Firewall Manager returns all available objects.
      */
 
     public Integer getMaxResults() {
@@ -203,20 +203,20 @@ public class ListAppsListsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of objects that you want AWS Firewall Manager to return for this request. If more objects are
-     * available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that you can use in a
+     * The maximum number of objects that you want Firewall Manager to return for this request. If more objects are
+     * available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a
      * subsequent call to get the next batch of objects.
      * </p>
      * <p>
-     * If you don't specify this, AWS Firewall Manager returns all available objects.
+     * If you don't specify this, Firewall Manager returns all available objects.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-     *        objects are available, in the response, AWS Firewall Manager provides a <code>NextToken</code> value that
-     *        you can use in a subsequent call to get the next batch of objects.</p>
+     *        The maximum number of objects that you want Firewall Manager to return for this request. If more objects
+     *        are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use
+     *        in a subsequent call to get the next batch of objects.</p>
      *        <p>
-     *        If you don't specify this, AWS Firewall Manager returns all available objects.
+     *        If you don't specify this, Firewall Manager returns all available objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

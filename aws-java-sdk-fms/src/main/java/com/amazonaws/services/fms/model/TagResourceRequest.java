@@ -27,8 +27,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that
-     * support tagging are policies, applications lists, and protocols lists.
+     * The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support
+     * tagging are policies, applications lists, and protocols lists.
      * </p>
      */
     private String resourceArn;
@@ -41,12 +41,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that
-     * support tagging are policies, applications lists, and protocols lists.
+     * The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support
+     * tagging are policies, applications lists, and protocols lists.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that
+     *        The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that
      *        support tagging are policies, applications lists, and protocols lists.
      */
 
@@ -56,12 +56,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that
-     * support tagging are policies, applications lists, and protocols lists.
+     * The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support
+     * tagging are policies, applications lists, and protocols lists.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources
-     *         that support tagging are policies, applications lists, and protocols lists.
+     * @return The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that
+     *         support tagging are policies, applications lists, and protocols lists.
      */
 
     public String getResourceArn() {
@@ -70,12 +70,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that
-     * support tagging are policies, applications lists, and protocols lists.
+     * The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support
+     * tagging are policies, applications lists, and protocols lists.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that
+     *        The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that
      *        support tagging are policies, applications lists, and protocols lists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -31,7 +31,7 @@ public class DnsRuleGroupPriorityConflictViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Information about the VPC ID.
      * </p>
      */
     private String violationTarget;
@@ -64,11 +64,11 @@ public class DnsRuleGroupPriorityConflictViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Information about the VPC ID.
      * </p>
      * 
      * @param violationTarget
-     *        The ID of the VPC.
+     *        Information about the VPC ID.
      */
 
     public void setViolationTarget(String violationTarget) {
@@ -77,10 +77,10 @@ public class DnsRuleGroupPriorityConflictViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Information about the VPC ID.
      * </p>
      * 
-     * @return The ID of the VPC.
+     * @return Information about the VPC ID.
      */
 
     public String getViolationTarget() {
@@ -89,11 +89,11 @@ public class DnsRuleGroupPriorityConflictViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Information about the VPC ID.
      * </p>
      * 
      * @param violationTarget
-     *        The ID of the VPC.
+     *        Information about the VPC ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

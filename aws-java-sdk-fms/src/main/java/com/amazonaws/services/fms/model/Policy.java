@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS Firewall Manager policy.
+ * An Firewall Manager policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/Policy" target="_top">AWS API Documentation</a>
@@ -29,13 +29,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      */
     private String policyId;
     /**
      * <p>
-     * The name of the AWS Firewall Manager policy.
+     * The name of the Firewall Manager policy.
      * </p>
      */
     private String policyName;
@@ -57,21 +57,26 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource
+     * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
+     * </p>
+     * <p>
+     * For WAF and Shield Advanced, example resource types include
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
      * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
-     * .
+     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
+     * <code>AWS::EC2::VPC</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * An array of <code>ResourceType</code>.
+     * An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a
+     * single resource type, use <code>ResourceType</code>.
      * </p>
      */
     private java.util.List<String> resourceTypeList;
@@ -97,12 +102,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     private Boolean remediationEnabled;
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -134,12 +139,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, java.util.List<String>> includeMap;
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -172,11 +177,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy.
+     *        The ID of the Firewall Manager policy.
      */
 
     public void setPolicyId(String policyId) {
@@ -185,10 +190,10 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager policy.
+     * @return The ID of the Firewall Manager policy.
      */
 
     public String getPolicyId() {
@@ -197,11 +202,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy.
+     * The ID of the Firewall Manager policy.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy.
+     *        The ID of the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +217,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager policy.
+     * The name of the Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The name of the AWS Firewall Manager policy.
+     *        The name of the Firewall Manager policy.
      */
 
     public void setPolicyName(String policyName) {
@@ -225,10 +230,10 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager policy.
+     * The name of the Firewall Manager policy.
      * </p>
      * 
-     * @return The name of the AWS Firewall Manager policy.
+     * @return The name of the Firewall Manager policy.
      */
 
     public String getPolicyName() {
@@ -237,11 +242,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager policy.
+     * The name of the Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The name of the AWS Firewall Manager policy.
+     *        The name of the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,27 +356,35 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource
+     * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
+     * </p>
+     * <p>
+     * For WAF and Shield Advanced, example resource types include
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
      * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
-     * .
+     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
+     * <code>AWS::EC2::VPC</code>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types,
+     *        specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a
+     *        <code>ResourceTypeList</code>.</p>
+     *        <p>
+     *        For WAF and Shield Advanced, example resource types include
      *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
      *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *        <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is
+     *        <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
      *        <code>AWS::EC2::VPC</code>.
      */
 
@@ -382,26 +395,34 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource
+     * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
+     * </p>
+     * <p>
+     * For WAF and Shield Advanced, example resource types include
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
      * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
-     * .
+     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
+     * <code>AWS::EC2::VPC</code>.
      * </p>
      * 
      * @return The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >AWS Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *         >Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types,
+     *         specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a
+     *         <code>ResourceTypeList</code>.</p>
+     *         <p>
+     *         For WAF and Shield Advanced, example resource types include
      *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>.
      *         For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      *         <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      *         <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      *         <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *         <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is
+     *         <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
      *         <code>AWS::EC2::VPC</code>.
      */
 
@@ -412,27 +433,35 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource
+     * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
+     * </p>
+     * <p>
+     * For WAF and Shield Advanced, example resource types include
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
      * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
-     * .
+     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
+     * <code>AWS::EC2::VPC</code>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types,
+     *        specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a
+     *        <code>ResourceTypeList</code>.</p>
+     *        <p>
+     *        For WAF and Shield Advanced, example resource types include
      *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
      *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
      *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *        <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is
+     *        <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
      *        <code>AWS::EC2::VPC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -444,10 +473,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of <code>ResourceType</code>.
+     * An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a
+     * single resource type, use <code>ResourceType</code>.
      * </p>
      * 
-     * @return An array of <code>ResourceType</code>.
+     * @return An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To
+     *         specify a single resource type, use <code>ResourceType</code>.
      */
 
     public java.util.List<String> getResourceTypeList() {
@@ -456,11 +487,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of <code>ResourceType</code>.
+     * An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a
+     * single resource type, use <code>ResourceType</code>.
      * </p>
      * 
      * @param resourceTypeList
-     *        An array of <code>ResourceType</code>.
+     *        An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To
+     *        specify a single resource type, use <code>ResourceType</code>.
      */
 
     public void setResourceTypeList(java.util.Collection<String> resourceTypeList) {
@@ -474,7 +507,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of <code>ResourceType</code>.
+     * An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a
+     * single resource type, use <code>ResourceType</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -483,7 +517,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceTypeList
-     *        An array of <code>ResourceType</code>.
+     *        An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To
+     *        specify a single resource type, use <code>ResourceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,11 +534,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of <code>ResourceType</code>.
+     * An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a
+     * single resource type, use <code>ResourceType</code>.
      * </p>
      * 
      * @param resourceTypeList
-     *        An array of <code>ResourceType</code>.
+     *        An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To
+     *        specify a single resource type, use <code>ResourceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,12 +741,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -738,11 +775,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     *         Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
-     *         including any child OUs and accounts that are added at a later time.</p>
+     * @return Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in
+     *         the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its
+     *         child OUs, including any child OUs and accounts that are added at a later time.</p>
      *         <p>
-     *         You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     *         You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
      *         Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does
      *         not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>
      *         , then Firewall Manager applies the policy to all accounts except for those specified by the
@@ -779,12 +816,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -814,11 +851,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param includeMap
-     *        Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     *        Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
-     *        including any child OUs and accounts that are added at a later time.</p>
+     *        Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in
+     *        the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its
+     *        child OUs, including any child OUs and accounts that are added at a later time.</p>
      *        <p>
-     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
      *        Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not
      *        evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>,
      *        then Firewall Manager applies the policy to all accounts except for those specified by the
@@ -854,12 +891,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -889,11 +926,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param includeMap
-     *        Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to include in the policy.
-     *        Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
-     *        including any child OUs and accounts that are added at a later time.</p>
+     *        Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in
+     *        the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its
+     *        child OUs, including any child OUs and accounts that are added at a later time.</p>
      *        <p>
-     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
      *        Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not
      *        evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>,
      *        then Firewall Manager applies the policy to all accounts except for those specified by the
@@ -959,12 +996,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -993,11 +1030,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the
-     *         policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child
-     *         OUs, including any child OUs and accounts that are added at a later time.</p>
+     * @return Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude
+     *         from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of
+     *         its child OUs, including any child OUs and accounts that are added at a later time.</p>
      *         <p>
-     *         You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     *         You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
      *         Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does
      *         not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>
      *         , then Firewall Manager applies the policy to all accounts except for those specified by the
@@ -1034,12 +1071,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -1069,11 +1106,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param excludeMap
-     *        Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the policy.
-     *        Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
-     *        including any child OUs and accounts that are added at a later time.</p>
+     *        Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from
+     *        the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its
+     *        child OUs, including any child OUs and accounts that are added at a later time.</p>
      *        <p>
-     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
      *        Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not
      *        evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>,
      *        then Firewall Manager applies the policy to all accounts except for those specified by the
@@ -1109,12 +1146,12 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the policy.
-     * Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including
-     * any child OUs and accounts that are added at a later time.
+     * Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the
+     * policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
+     * including any child OUs and accounts that are added at a later time.
      * </p>
      * <p>
-     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS Firewall
+     * You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall
      * Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any
      * <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
      * applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.
@@ -1144,11 +1181,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param excludeMap
-     *        Specifies the AWS account IDs and AWS Organizations organizational units (OUs) to exclude from the policy.
-     *        Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs,
-     *        including any child OUs and accounts that are added at a later time.</p>
+     *        Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from
+     *        the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its
+     *        child OUs, including any child OUs and accounts that are added at a later time.</p>
      *        <p>
-     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     *        You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
      *        Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not
      *        evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>,
      *        then Firewall Manager applies the policy to all accounts except for those specified by the

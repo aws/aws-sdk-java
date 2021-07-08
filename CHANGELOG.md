@@ -1,3 +1,28 @@
+# __1.12.20__ __2021-07-08__
+## __AWS MediaTailor__
+  - ### Features
+    - Add ListAlerts for Channel, Program, Source Location, and VOD Source to return alerts for resources.
+
+## __AWS Outposts__
+  - ### Features
+    - Added property filters for listOutposts
+
+## __AWS Systems Manager Incident Manager Contacts__
+  - ### Features
+    - Updated description for CreateContactChannel contactId.
+
+## __Amazon DevOps Guru__
+  - ### Features
+    - Add AnomalyReportedTimeRange field to include open and close time of anomalies.
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Added waiters for EKS FargateProfiles.
+
+## __Firewall Management Service__
+  - ### Features
+    - AWS Firewall Manager now supports route table monitoring, and provides remediation action recommendations to security administrators for AWS Network Firewall policies with misconfigured routes.
+
 # __1.12.19__ __2021-07-07__
 ## __AWS Identity and Access Management__
   - ### Features

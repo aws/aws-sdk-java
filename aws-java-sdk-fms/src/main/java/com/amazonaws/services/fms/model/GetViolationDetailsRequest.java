@@ -27,14 +27,14 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security
-     * group content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
+     * content audit policies.
      * </p>
      */
     private String policyId;
     /**
      * <p>
-     * The AWS account ID that you want the details for.
+     * The Amazon Web Services account ID that you want the details for.
      * </p>
      */
     private String memberAccount;
@@ -47,8 +47,8 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
      * </p>
@@ -57,13 +57,13 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security
-     * group content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
+     * content audit policies.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports
-     *        security group content audit policies.
+     *        The ID of the Firewall Manager policy that you want the details for. This currently only supports security
+     *        group content audit policies.
      */
 
     public void setPolicyId(String policyId) {
@@ -72,11 +72,11 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security
-     * group content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
+     * content audit policies.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports
+     * @return The ID of the Firewall Manager policy that you want the details for. This currently only supports
      *         security group content audit policies.
      */
 
@@ -86,13 +86,13 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security
-     * group content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
+     * content audit policies.
      * </p>
      * 
      * @param policyId
-     *        The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports
-     *        security group content audit policies.
+     *        The ID of the Firewall Manager policy that you want the details for. This currently only supports security
+     *        group content audit policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,11 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID that you want the details for.
+     * The Amazon Web Services account ID that you want the details for.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account ID that you want the details for.
+     *        The Amazon Web Services account ID that you want the details for.
      */
 
     public void setMemberAccount(String memberAccount) {
@@ -116,10 +116,10 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID that you want the details for.
+     * The Amazon Web Services account ID that you want the details for.
      * </p>
      * 
-     * @return The AWS account ID that you want the details for.
+     * @return The Amazon Web Services account ID that you want the details for.
      */
 
     public String getMemberAccount() {
@@ -128,11 +128,11 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID that you want the details for.
+     * The Amazon Web Services account ID that you want the details for.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account ID that you want the details for.
+     *        The Amazon Web Services account ID that you want the details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,18 +184,19 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
      * </p>
      * 
      * @param resourceType
      *        The resource type. This is in the format shown in the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
-     *        <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
-     *        <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services Resource Types Reference</a>. Supported resource types are:
+     *        <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     *        <code>AWS::EC2::Subnet</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -205,17 +206,18 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
      * </p>
      * 
      * @return The resource type. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >AWS Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
-     *         <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
-     *         <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
+     *         >Amazon Web Services Resource Types Reference</a>. Supported resource types are:
+     *         <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     *         <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     *         <code>AWS::EC2::Subnet</code>.
      */
 
     public String getResourceType() {
@@ -225,18 +227,19 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
      * </p>
      * 
      * @param resourceType
      *        The resource type. This is in the format shown in the <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
-     *        <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
-     *        <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services Resource Types Reference</a>. Supported resource types are:
+     *        <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
+     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
+     *        <code>AWS::EC2::Subnet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

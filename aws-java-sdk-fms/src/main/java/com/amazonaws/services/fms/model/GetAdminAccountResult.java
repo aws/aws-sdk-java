@@ -25,24 +25,24 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS account that is set as the AWS Firewall Manager administrator.
+     * The Amazon Web Services account that is set as the Firewall Manager administrator.
      * </p>
      */
     private String adminAccount;
     /**
      * <p>
-     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * </p>
      */
     private String roleStatus;
 
     /**
      * <p>
-     * The AWS account that is set as the AWS Firewall Manager administrator.
+     * The Amazon Web Services account that is set as the Firewall Manager administrator.
      * </p>
      * 
      * @param adminAccount
-     *        The AWS account that is set as the AWS Firewall Manager administrator.
+     *        The Amazon Web Services account that is set as the Firewall Manager administrator.
      */
 
     public void setAdminAccount(String adminAccount) {
@@ -51,10 +51,10 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS account that is set as the AWS Firewall Manager administrator.
+     * The Amazon Web Services account that is set as the Firewall Manager administrator.
      * </p>
      * 
-     * @return The AWS account that is set as the AWS Firewall Manager administrator.
+     * @return The Amazon Web Services account that is set as the Firewall Manager administrator.
      */
 
     public String getAdminAccount() {
@@ -63,11 +63,11 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The AWS account that is set as the AWS Firewall Manager administrator.
+     * The Amazon Web Services account that is set as the Firewall Manager administrator.
      * </p>
      * 
      * @param adminAccount
-     *        The AWS account that is set as the AWS Firewall Manager administrator.
+     *        The Amazon Web Services account that is set as the Firewall Manager administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * </p>
      * 
      * @param roleStatus
-     *        The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     *        The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * @see AccountRoleStatus
      */
 
@@ -92,10 +92,10 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * </p>
      * 
-     * @return The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * @return The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * @see AccountRoleStatus
      */
 
@@ -105,11 +105,11 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * </p>
      * 
      * @param roleStatus
-     *        The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     *        The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountRoleStatus
      */
@@ -121,11 +121,11 @@ public class GetAdminAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     * The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * </p>
      * 
      * @param roleStatus
-     *        The status of the AWS account that you set as the AWS Firewall Manager administrator.
+     *        The status of the Amazon Web Services account that you set as the Firewall Manager administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountRoleStatus
      */

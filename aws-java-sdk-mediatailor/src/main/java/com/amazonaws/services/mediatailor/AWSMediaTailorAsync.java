@@ -572,6 +572,37 @@ public interface AWSMediaTailorAsync extends AWSMediaTailor {
 
     /**
      * <p>
+     * Returns a list of alerts for the given resource.
+     * </p>
+     * 
+     * @param listAlertsRequest
+     * @return A Java Future containing the result of the ListAlerts operation returned by the service.
+     * @sample AWSMediaTailorAsync.ListAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAlertsResult> listAlertsAsync(ListAlertsRequest listAlertsRequest);
+
+    /**
+     * <p>
+     * Returns a list of alerts for the given resource.
+     * </p>
+     * 
+     * @param listAlertsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAlerts operation returned by the service.
+     * @sample AWSMediaTailorAsyncHandler.ListAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAlertsResult> listAlertsAsync(ListAlertsRequest listAlertsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAlertsRequest, ListAlertsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of channels that are associated with this account.
      * </p>
      * 

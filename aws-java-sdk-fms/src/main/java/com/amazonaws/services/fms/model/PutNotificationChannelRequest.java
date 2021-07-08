@@ -27,24 +27,24 @@ public class PutNotificationChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      * </p>
      */
     private String snsTopicArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.
+     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.
      * </p>
      */
     private String snsRoleName;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      * </p>
      * 
      * @param snsTopicArn
-     *        The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     *        The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -53,10 +53,10 @@ public class PutNotificationChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     * @return The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      */
 
     public String getSnsTopicArn() {
@@ -65,11 +65,11 @@ public class PutNotificationChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     * The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      * </p>
      * 
      * @param snsTopicArn
-     *        The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS Firewall Manager.
+     *        The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,12 +80,11 @@ public class PutNotificationChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.
+     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.
      * </p>
      * 
      * @param snsRoleName
-     *        The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager
-     *        activity.
+     *        The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.
      */
 
     public void setSnsRoleName(String snsRoleName) {
@@ -94,10 +93,10 @@ public class PutNotificationChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.
+     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager
+     * @return The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager
      *         activity.
      */
 
@@ -107,12 +106,11 @@ public class PutNotificationChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity.
+     * The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.
      * </p>
      * 
      * @param snsRoleName
-     *        The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager
-     *        activity.
+     *        The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

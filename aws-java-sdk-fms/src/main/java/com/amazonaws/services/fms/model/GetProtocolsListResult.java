@@ -25,7 +25,7 @@ public class GetProtocolsListResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager protocols list.
+     * Information about the specified Firewall Manager protocols list.
      * </p>
      */
     private ProtocolsListData protocolsList;
@@ -38,11 +38,11 @@ public class GetProtocolsListResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager protocols list.
+     * Information about the specified Firewall Manager protocols list.
      * </p>
      * 
      * @param protocolsList
-     *        Information about the specified AWS Firewall Manager protocols list.
+     *        Information about the specified Firewall Manager protocols list.
      */
 
     public void setProtocolsList(ProtocolsListData protocolsList) {
@@ -51,10 +51,10 @@ public class GetProtocolsListResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager protocols list.
+     * Information about the specified Firewall Manager protocols list.
      * </p>
      * 
-     * @return Information about the specified AWS Firewall Manager protocols list.
+     * @return Information about the specified Firewall Manager protocols list.
      */
 
     public ProtocolsListData getProtocolsList() {
@@ -63,11 +63,11 @@ public class GetProtocolsListResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the specified AWS Firewall Manager protocols list.
+     * Information about the specified Firewall Manager protocols list.
      * </p>
      * 
      * @param protocolsList
-     *        Information about the specified AWS Firewall Manager protocols list.
+     *        Information about the specified Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

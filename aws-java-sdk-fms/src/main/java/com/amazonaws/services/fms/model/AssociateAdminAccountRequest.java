@@ -27,30 +27,28 @@ public class AssociateAdminAccountRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This
-     * can be an AWS Organizations master account or a member account. For more information about AWS Organizations and
-     * master accounts, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS
-     * Accounts in Your Organization</a>.
+     * The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator
+     * account. This must be an Organizations member account. For more information about Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon
+     * Web Services Accounts in Your Organization</a>.
      * </p>
      */
     private String adminAccount;
 
     /**
      * <p>
-     * The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This
-     * can be an AWS Organizations master account or a member account. For more information about AWS Organizations and
-     * master accounts, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS
-     * Accounts in Your Organization</a>.
+     * The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator
+     * account. This must be an Organizations member account. For more information about Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon
+     * Web Services Accounts in Your Organization</a>.
      * </p>
      * 
      * @param adminAccount
-     *        The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator
-     *        account. This can be an AWS Organizations master account or a member account. For more information about
-     *        AWS Organizations and master accounts, see <a
+     *        The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
+     *        administrator account. This must be an Organizations member account. For more information about
+     *        Organizations, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the
-     *        AWS Accounts in Your Organization</a>.
+     *        Amazon Web Services Accounts in Your Organization</a>.
      */
 
     public void setAdminAccount(String adminAccount) {
@@ -59,18 +57,17 @@ public class AssociateAdminAccountRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This
-     * can be an AWS Organizations master account or a member account. For more information about AWS Organizations and
-     * master accounts, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS
-     * Accounts in Your Organization</a>.
+     * The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator
+     * account. This must be an Organizations member account. For more information about Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon
+     * Web Services Accounts in Your Organization</a>.
      * </p>
      * 
-     * @return The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator
-     *         account. This can be an AWS Organizations master account or a member account. For more information about
-     *         AWS Organizations and master accounts, see <a
+     * @return The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
+     *         administrator account. This must be an Organizations member account. For more information about
+     *         Organizations, see <a
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the
-     *         AWS Accounts in Your Organization</a>.
+     *         Amazon Web Services Accounts in Your Organization</a>.
      */
 
     public String getAdminAccount() {
@@ -79,19 +76,18 @@ public class AssociateAdminAccountRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This
-     * can be an AWS Organizations master account or a member account. For more information about AWS Organizations and
-     * master accounts, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS
-     * Accounts in Your Organization</a>.
+     * The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator
+     * account. This must be an Organizations member account. For more information about Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon
+     * Web Services Accounts in Your Organization</a>.
      * </p>
      * 
      * @param adminAccount
-     *        The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator
-     *        account. This can be an AWS Organizations master account or a member account. For more information about
-     *        AWS Organizations and master accounts, see <a
+     *        The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
+     *        administrator account. This must be an Organizations member account. For more information about
+     *        Organizations, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the
-     *        AWS Accounts in Your Organization</a>.
+     *        Amazon Web Services Accounts in Your Organization</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

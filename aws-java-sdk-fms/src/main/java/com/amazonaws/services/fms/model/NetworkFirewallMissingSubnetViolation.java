@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Violation details for AWS Network Firewall for an Availability Zone that's missing the expected Firewall Manager
- * managed subnet.
+ * Violation detail for Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed
+ * subnet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallMissingSubnetViolation"
@@ -31,7 +31,7 @@ public class NetworkFirewallMissingSubnetViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS Network Firewall or VPC resource that's in violation.
+     * The ID of the Network Firewall or VPC resource that's in violation.
      * </p>
      */
     private String violationTarget;
@@ -56,11 +56,11 @@ public class NetworkFirewallMissingSubnetViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS Network Firewall or VPC resource that's in violation.
+     * The ID of the Network Firewall or VPC resource that's in violation.
      * </p>
      * 
      * @param violationTarget
-     *        The ID of the AWS Network Firewall or VPC resource that's in violation.
+     *        The ID of the Network Firewall or VPC resource that's in violation.
      */
 
     public void setViolationTarget(String violationTarget) {
@@ -69,10 +69,10 @@ public class NetworkFirewallMissingSubnetViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS Network Firewall or VPC resource that's in violation.
+     * The ID of the Network Firewall or VPC resource that's in violation.
      * </p>
      * 
-     * @return The ID of the AWS Network Firewall or VPC resource that's in violation.
+     * @return The ID of the Network Firewall or VPC resource that's in violation.
      */
 
     public String getViolationTarget() {
@@ -81,11 +81,11 @@ public class NetworkFirewallMissingSubnetViolation implements Serializable, Clon
 
     /**
      * <p>
-     * The ID of the AWS Network Firewall or VPC resource that's in violation.
+     * The ID of the Network Firewall or VPC resource that's in violation.
      * </p>
      * 
      * @param violationTarget
-     *        The ID of the AWS Network Firewall or VPC resource that's in violation.
+     *        The ID of the Network Firewall or VPC resource that's in violation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

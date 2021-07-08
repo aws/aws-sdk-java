@@ -37,6 +37,8 @@ public class ProactiveAnomalySummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> ANOMALYTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyTimeRange").build();
+    private static final MarshallingInfo<StructuredPojo> ANOMALYREPORTEDTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyReportedTimeRange").build();
     private static final MarshallingInfo<StructuredPojo> PREDICTIONTIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PredictionTimeRange").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -69,6 +71,7 @@ public class ProactiveAnomalySummaryMarshaller {
             protocolMarshaller.marshall(proactiveAnomalySummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getUpdateTime(), UPDATETIME_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getAnomalyTimeRange(), ANOMALYTIMERANGE_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getAnomalyReportedTimeRange(), ANOMALYREPORTEDTIMERANGE_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getPredictionTimeRange(), PREDICTIONTIMERANGE_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getSourceDetails(), SOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getAssociatedInsightId(), ASSOCIATEDINSIGHTID_BINDING);

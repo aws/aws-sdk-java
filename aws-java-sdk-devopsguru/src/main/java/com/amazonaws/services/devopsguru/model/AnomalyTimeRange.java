@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+ * A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different
+ * from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an
+ * anomaly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalyTimeRange" target="_top">AWS API

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of the rule violation in a security group when compared to the master security group of the AWS Firewall
- * Manager policy.
+ * Violation detail for the rule violation in a security group when compared to the primary security group of the
+ * Firewall Manager policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsVPCSecurityGroupViolation" target="_top">AWS
@@ -43,7 +43,7 @@ public class AwsVPCSecurityGroupViolation implements Serializable, Cloneable, St
     private String violationTargetDescription;
     /**
      * <p>
-     * List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     * List of rules specified in the security group of the Firewall Manager policy that partially match the
      * <code>ViolationTarget</code> rule.
      * </p>
      */
@@ -137,11 +137,11 @@ public class AwsVPCSecurityGroupViolation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     * List of rules specified in the security group of the Firewall Manager policy that partially match the
      * <code>ViolationTarget</code> rule.
      * </p>
      * 
-     * @return List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     * @return List of rules specified in the security group of the Firewall Manager policy that partially match the
      *         <code>ViolationTarget</code> rule.
      */
 
@@ -151,12 +151,12 @@ public class AwsVPCSecurityGroupViolation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     * List of rules specified in the security group of the Firewall Manager policy that partially match the
      * <code>ViolationTarget</code> rule.
      * </p>
      * 
      * @param partialMatches
-     *        List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     *        List of rules specified in the security group of the Firewall Manager policy that partially match the
      *        <code>ViolationTarget</code> rule.
      */
 
@@ -171,7 +171,7 @@ public class AwsVPCSecurityGroupViolation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     * List of rules specified in the security group of the Firewall Manager policy that partially match the
      * <code>ViolationTarget</code> rule.
      * </p>
      * <p>
@@ -181,7 +181,7 @@ public class AwsVPCSecurityGroupViolation implements Serializable, Cloneable, St
      * </p>
      * 
      * @param partialMatches
-     *        List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     *        List of rules specified in the security group of the Firewall Manager policy that partially match the
      *        <code>ViolationTarget</code> rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -198,12 +198,12 @@ public class AwsVPCSecurityGroupViolation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     * List of rules specified in the security group of the Firewall Manager policy that partially match the
      * <code>ViolationTarget</code> rule.
      * </p>
      * 
      * @param partialMatches
-     *        List of rules specified in the security group of the AWS Firewall Manager policy that partially match the
+     *        List of rules specified in the security group of the Firewall Manager policy that partially match the
      *        <code>ViolationTarget</code> rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

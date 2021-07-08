@@ -54,6 +54,13 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
     private java.util.Date updateTime;
 
     private AnomalyTimeRange anomalyTimeRange;
+    /**
+     * <p>
+     * A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened
+     * and the time when it is closed.
+     * </p>
+     */
+    private AnomalyReportedTimeRange anomalyReportedTimeRange;
 
     private PredictionTimeRange predictionTimeRange;
     /**
@@ -304,6 +311,52 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened
+     * and the time when it is closed.
+     * </p>
+     * 
+     * @param anomalyReportedTimeRange
+     *        A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is
+     *        opened and the time when it is closed.
+     */
+
+    public void setAnomalyReportedTimeRange(AnomalyReportedTimeRange anomalyReportedTimeRange) {
+        this.anomalyReportedTimeRange = anomalyReportedTimeRange;
+    }
+
+    /**
+     * <p>
+     * A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened
+     * and the time when it is closed.
+     * </p>
+     * 
+     * @return A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is
+     *         opened and the time when it is closed.
+     */
+
+    public AnomalyReportedTimeRange getAnomalyReportedTimeRange() {
+        return this.anomalyReportedTimeRange;
+    }
+
+    /**
+     * <p>
+     * A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened
+     * and the time when it is closed.
+     * </p>
+     * 
+     * @param anomalyReportedTimeRange
+     *        A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is
+     *        opened and the time when it is closed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveAnomaly withAnomalyReportedTimeRange(AnomalyReportedTimeRange anomalyReportedTimeRange) {
+        setAnomalyReportedTimeRange(anomalyReportedTimeRange);
+        return this;
+    }
+
+    /**
      * @param predictionTimeRange
      */
 
@@ -509,6 +562,8 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
             sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
         if (getAnomalyTimeRange() != null)
             sb.append("AnomalyTimeRange: ").append(getAnomalyTimeRange()).append(",");
+        if (getAnomalyReportedTimeRange() != null)
+            sb.append("AnomalyReportedTimeRange: ").append(getAnomalyReportedTimeRange()).append(",");
         if (getPredictionTimeRange() != null)
             sb.append("PredictionTimeRange: ").append(getPredictionTimeRange()).append(",");
         if (getSourceDetails() != null)
@@ -553,6 +608,10 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAnomalyTimeRange() != null && other.getAnomalyTimeRange().equals(this.getAnomalyTimeRange()) == false)
             return false;
+        if (other.getAnomalyReportedTimeRange() == null ^ this.getAnomalyReportedTimeRange() == null)
+            return false;
+        if (other.getAnomalyReportedTimeRange() != null && other.getAnomalyReportedTimeRange().equals(this.getAnomalyReportedTimeRange()) == false)
+            return false;
         if (other.getPredictionTimeRange() == null ^ this.getPredictionTimeRange() == null)
             return false;
         if (other.getPredictionTimeRange() != null && other.getPredictionTimeRange().equals(this.getPredictionTimeRange()) == false)
@@ -586,6 +645,7 @@ public class ProactiveAnomaly implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getAnomalyTimeRange() == null) ? 0 : getAnomalyTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getAnomalyReportedTimeRange() == null) ? 0 : getAnomalyReportedTimeRange().hashCode());
         hashCode = prime * hashCode + ((getPredictionTimeRange() == null) ? 0 : getPredictionTimeRange().hashCode());
         hashCode = prime * hashCode + ((getSourceDetails() == null) ? 0 : getSourceDetails().hashCode());
         hashCode = prime * hashCode + ((getAssociatedInsightId() == null) ? 0 : getAssociatedInsightId().hashCode());

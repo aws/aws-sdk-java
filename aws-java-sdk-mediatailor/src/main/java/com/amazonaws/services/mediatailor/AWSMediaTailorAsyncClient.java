@@ -644,6 +644,39 @@ public class AWSMediaTailorAsyncClient extends AWSMediaTailorClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListAlertsResult> listAlertsAsync(ListAlertsRequest request) {
+
+        return listAlertsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlertsResult> listAlertsAsync(final ListAlertsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAlertsRequest, ListAlertsResult> asyncHandler) {
+        final ListAlertsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAlertsResult>() {
+            @Override
+            public ListAlertsResult call() throws Exception {
+                ListAlertsResult result = null;
+
+                try {
+                    result = executeListAlerts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request) {
 
         return listChannelsAsync(request, null);

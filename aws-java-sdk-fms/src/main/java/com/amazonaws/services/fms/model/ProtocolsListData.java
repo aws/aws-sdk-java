@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS Firewall Manager protocols list.
+ * An Firewall Manager protocols list.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ProtocolsListData" target="_top">AWS API
@@ -30,13 +30,13 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list.
+     * The ID of the Firewall Manager protocols list.
      * </p>
      */
     private String listId;
     /**
      * <p>
-     * The name of the AWS Firewall Manager protocols list.
+     * The name of the Firewall Manager protocols list.
      * </p>
      */
     private String listName;
@@ -49,19 +49,19 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
     private String listUpdateToken;
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was created.
+     * The time that the Firewall Manager protocols list was created.
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was last updated.
+     * The time that the Firewall Manager protocols list was last updated.
      * </p>
      */
     private java.util.Date lastUpdateTime;
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      */
     private java.util.List<String> protocolsList;
@@ -74,11 +74,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list.
+     * The ID of the Firewall Manager protocols list.
      * </p>
      * 
      * @param listId
-     *        The ID of the AWS Firewall Manager protocols list.
+     *        The ID of the Firewall Manager protocols list.
      */
 
     public void setListId(String listId) {
@@ -87,10 +87,10 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list.
+     * The ID of the Firewall Manager protocols list.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager protocols list.
+     * @return The ID of the Firewall Manager protocols list.
      */
 
     public String getListId() {
@@ -99,11 +99,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager protocols list.
+     * The ID of the Firewall Manager protocols list.
      * </p>
      * 
      * @param listId
-     *        The ID of the AWS Firewall Manager protocols list.
+     *        The ID of the Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager protocols list.
+     * The name of the Firewall Manager protocols list.
      * </p>
      * 
      * @param listName
-     *        The name of the AWS Firewall Manager protocols list.
+     *        The name of the Firewall Manager protocols list.
      */
 
     public void setListName(String listName) {
@@ -127,10 +127,10 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager protocols list.
+     * The name of the Firewall Manager protocols list.
      * </p>
      * 
-     * @return The name of the AWS Firewall Manager protocols list.
+     * @return The name of the Firewall Manager protocols list.
      */
 
     public String getListName() {
@@ -139,11 +139,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager protocols list.
+     * The name of the Firewall Manager protocols list.
      * </p>
      * 
      * @param listName
-     *        The name of the AWS Firewall Manager protocols list.
+     *        The name of the Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +203,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was created.
+     * The time that the Firewall Manager protocols list was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the AWS Firewall Manager protocols list was created.
+     *        The time that the Firewall Manager protocols list was created.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -216,10 +216,10 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was created.
+     * The time that the Firewall Manager protocols list was created.
      * </p>
      * 
-     * @return The time that the AWS Firewall Manager protocols list was created.
+     * @return The time that the Firewall Manager protocols list was created.
      */
 
     public java.util.Date getCreateTime() {
@@ -228,11 +228,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was created.
+     * The time that the Firewall Manager protocols list was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the AWS Firewall Manager protocols list was created.
+     *        The time that the Firewall Manager protocols list was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was last updated.
+     * The time that the Firewall Manager protocols list was last updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The time that the AWS Firewall Manager protocols list was last updated.
+     *        The time that the Firewall Manager protocols list was last updated.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -256,10 +256,10 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was last updated.
+     * The time that the Firewall Manager protocols list was last updated.
      * </p>
      * 
-     * @return The time that the AWS Firewall Manager protocols list was last updated.
+     * @return The time that the Firewall Manager protocols list was last updated.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -268,11 +268,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager protocols list was last updated.
+     * The time that the Firewall Manager protocols list was last updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The time that the AWS Firewall Manager protocols list was last updated.
+     *        The time that the Firewall Manager protocols list was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,10 +283,10 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * 
-     * @return An array of protocols in the AWS Firewall Manager protocols list.
+     * @return An array of protocols in the Firewall Manager protocols list.
      */
 
     public java.util.List<String> getProtocolsList() {
@@ -295,11 +295,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * 
      * @param protocolsList
-     *        An array of protocols in the AWS Firewall Manager protocols list.
+     *        An array of protocols in the Firewall Manager protocols list.
      */
 
     public void setProtocolsList(java.util.Collection<String> protocolsList) {
@@ -313,7 +313,7 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -322,7 +322,7 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param protocolsList
-     *        An array of protocols in the AWS Firewall Manager protocols list.
+     *        An array of protocols in the Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +338,11 @@ public class ProtocolsListData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of protocols in the AWS Firewall Manager protocols list.
+     * An array of protocols in the Firewall Manager protocols list.
      * </p>
      * 
      * @param protocolsList
-     *        An array of protocols in the AWS Firewall Manager protocols list.
+     *        An array of protocols in the Firewall Manager protocols list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

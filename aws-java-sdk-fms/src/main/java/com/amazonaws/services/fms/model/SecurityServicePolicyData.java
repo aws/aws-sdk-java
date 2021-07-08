@@ -31,9 +31,9 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
-     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
-     * adjustable limit that you can increase by contacting AWS Support.
+     * either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall
+     * Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting Amazon Web Services Support.
      * </p>
      */
     private String type;
@@ -43,6 +43,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <code>SHIELD_ADVANCED</code>, this is an empty string.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * Example: <code>DNS_FIREWALL</code>
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Example: <code>NETWORK_FIREWALL</code>
@@ -78,6 +86,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * </p>
      * <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the
+     * account owns
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
      * </p>
      * </li>
      * <li>
@@ -109,16 +126,16 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
-     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
-     * adjustable limit that you can increase by contacting AWS Support.
+     * either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall
+     * Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting Amazon Web Services Support.
      * </p>
      * 
      * @param type
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
-     *        group policies, Firewall Manager supports one security group for each common policy and for each content
-     *        audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
+     *        created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group
+     *        policies, Firewall Manager supports one security group for each common policy and for each content audit
+     *        policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.
      * @see SecurityServiceType
      */
 
@@ -129,15 +146,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
-     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
-     * adjustable limit that you can increase by contacting AWS Support.
+     * either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall
+     * Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting Amazon Web Services Support.
      * </p>
      * 
      * @return The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *         created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
-     *         group policies, Firewall Manager supports one security group for each common policy and for each content
-     *         audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
+     *         created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group
+     *         policies, Firewall Manager supports one security group for each common policy and for each content audit
+     *         policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.
      * @see SecurityServiceType
      */
 
@@ -148,16 +165,16 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
-     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
-     * adjustable limit that you can increase by contacting AWS Support.
+     * either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall
+     * Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting Amazon Web Services Support.
      * </p>
      * 
      * @param type
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
-     *        group policies, Firewall Manager supports one security group for each common policy and for each content
-     *        audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
+     *        created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group
+     *        policies, Firewall Manager supports one security group for each common policy and for each content audit
+     *        policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -170,16 +187,16 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
-     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
-     * adjustable limit that you can increase by contacting AWS Support.
+     * either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall
+     * Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting Amazon Web Services Support.
      * </p>
      * 
      * @param type
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
-     *        group policies, Firewall Manager supports one security group for each common policy and for each content
-     *        audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
+     *        created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group
+     *        policies, Firewall Manager supports one security group for each common policy and for each content audit
+     *        policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -195,6 +212,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <code>SHIELD_ADVANCED</code>, this is an empty string.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * Example: <code>DNS_FIREWALL</code>
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Example: <code>NETWORK_FIREWALL</code>
@@ -234,6 +259,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
+     * Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the
+     * account owns
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
      * </p>
      * <p>
@@ -260,6 +294,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        Details about the service that are specific to the service type, in JSON format. For service type
      *        <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Example: <code>DNS_FIREWALL</code>
+     *        </p>
+     *        <p>
+     *        <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Example: <code>NETWORK_FIREWALL</code>
@@ -299,6 +341,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
+     *        Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs
+     *        that the account owns
+     *        </p>
+     *        <p>
+     *        <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
      *        </p>
      *        <p>
@@ -331,6 +382,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <code>SHIELD_ADVANCED</code>, this is an empty string.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * Example: <code>DNS_FIREWALL</code>
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Example: <code>NETWORK_FIREWALL</code>
@@ -370,6 +429,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
+     * Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the
+     * account owns
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
      * </p>
      * <p>
@@ -395,6 +463,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * @return Details about the service that are specific to the service type, in JSON format. For service type
      *         <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         Example: <code>DNS_FIREWALL</code>
+     *         </p>
+     *         <p>
+     *         <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         Example: <code>NETWORK_FIREWALL</code>
@@ -434,6 +510,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *         </li>
      *         <li>
      *         <p>
+     *         Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs
+     *         that the account owns
+     *         </p>
+     *         <p>
+     *         <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
      *         </p>
      *         <p>
@@ -466,6 +551,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <code>SHIELD_ADVANCED</code>, this is an empty string.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * Example: <code>DNS_FIREWALL</code>
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Example: <code>NETWORK_FIREWALL</code>
@@ -505,6 +598,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
+     * Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the
+     * account owns
+     * </p>
+     * <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
      * </p>
      * <p>
@@ -531,6 +633,14 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        Details about the service that are specific to the service type, in JSON format. For service type
      *        <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        Example: <code>DNS_FIREWALL</code>
+     *        </p>
+     *        <p>
+     *        <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Example: <code>NETWORK_FIREWALL</code>
@@ -566,6 +676,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        </p>
      *        <p>
      *        <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs
+     *        that the account owns
+     *        </p>
+     *        <p>
+     *        <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
      *        </p>
      *        </li>
      *        <li>

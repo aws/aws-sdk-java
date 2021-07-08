@@ -30,7 +30,7 @@ public class PartialMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference rule from the master security group of the AWS Firewall Manager policy.
+     * The reference rule from the primary security group of the Firewall Manager policy.
      * </p>
      */
     private String reference;
@@ -43,11 +43,11 @@ public class PartialMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference rule from the master security group of the AWS Firewall Manager policy.
+     * The reference rule from the primary security group of the Firewall Manager policy.
      * </p>
      * 
      * @param reference
-     *        The reference rule from the master security group of the AWS Firewall Manager policy.
+     *        The reference rule from the primary security group of the Firewall Manager policy.
      */
 
     public void setReference(String reference) {
@@ -56,10 +56,10 @@ public class PartialMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference rule from the master security group of the AWS Firewall Manager policy.
+     * The reference rule from the primary security group of the Firewall Manager policy.
      * </p>
      * 
-     * @return The reference rule from the master security group of the AWS Firewall Manager policy.
+     * @return The reference rule from the primary security group of the Firewall Manager policy.
      */
 
     public String getReference() {
@@ -68,11 +68,11 @@ public class PartialMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference rule from the master security group of the AWS Firewall Manager policy.
+     * The reference rule from the primary security group of the Firewall Manager policy.
      * </p>
      * 
      * @param reference
-     *        The reference rule from the master security group of the AWS Firewall Manager policy.
+     *        The reference rule from the primary security group of the Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

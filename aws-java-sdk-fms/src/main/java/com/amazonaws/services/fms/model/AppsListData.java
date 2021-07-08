@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS Firewall Manager applications list.
+ * An Firewall Manager applications list.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AppsListData" target="_top">AWS API
@@ -30,13 +30,13 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager applications list.
+     * The ID of the Firewall Manager applications list.
      * </p>
      */
     private String listId;
     /**
      * <p>
-     * The name of the AWS Firewall Manager applications list.
+     * The name of the Firewall Manager applications list.
      * </p>
      */
     private String listName;
@@ -49,19 +49,19 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
     private String listUpdateToken;
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was created.
+     * The time that the Firewall Manager applications list was created.
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was last updated.
+     * The time that the Firewall Manager applications list was last updated.
      * </p>
      */
     private java.util.Date lastUpdateTime;
     /**
      * <p>
-     * An array of applications in the AWS Firewall Manager applications list.
+     * An array of applications in the Firewall Manager applications list.
      * </p>
      */
     private java.util.List<App> appsList;
@@ -74,11 +74,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager applications list.
+     * The ID of the Firewall Manager applications list.
      * </p>
      * 
      * @param listId
-     *        The ID of the AWS Firewall Manager applications list.
+     *        The ID of the Firewall Manager applications list.
      */
 
     public void setListId(String listId) {
@@ -87,10 +87,10 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager applications list.
+     * The ID of the Firewall Manager applications list.
      * </p>
      * 
-     * @return The ID of the AWS Firewall Manager applications list.
+     * @return The ID of the Firewall Manager applications list.
      */
 
     public String getListId() {
@@ -99,11 +99,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Firewall Manager applications list.
+     * The ID of the Firewall Manager applications list.
      * </p>
      * 
      * @param listId
-     *        The ID of the AWS Firewall Manager applications list.
+     *        The ID of the Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager applications list.
+     * The name of the Firewall Manager applications list.
      * </p>
      * 
      * @param listName
-     *        The name of the AWS Firewall Manager applications list.
+     *        The name of the Firewall Manager applications list.
      */
 
     public void setListName(String listName) {
@@ -127,10 +127,10 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager applications list.
+     * The name of the Firewall Manager applications list.
      * </p>
      * 
-     * @return The name of the AWS Firewall Manager applications list.
+     * @return The name of the Firewall Manager applications list.
      */
 
     public String getListName() {
@@ -139,11 +139,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Firewall Manager applications list.
+     * The name of the Firewall Manager applications list.
      * </p>
      * 
      * @param listName
-     *        The name of the AWS Firewall Manager applications list.
+     *        The name of the Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +203,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was created.
+     * The time that the Firewall Manager applications list was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the AWS Firewall Manager applications list was created.
+     *        The time that the Firewall Manager applications list was created.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -216,10 +216,10 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was created.
+     * The time that the Firewall Manager applications list was created.
      * </p>
      * 
-     * @return The time that the AWS Firewall Manager applications list was created.
+     * @return The time that the Firewall Manager applications list was created.
      */
 
     public java.util.Date getCreateTime() {
@@ -228,11 +228,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was created.
+     * The time that the Firewall Manager applications list was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the AWS Firewall Manager applications list was created.
+     *        The time that the Firewall Manager applications list was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was last updated.
+     * The time that the Firewall Manager applications list was last updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The time that the AWS Firewall Manager applications list was last updated.
+     *        The time that the Firewall Manager applications list was last updated.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -256,10 +256,10 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was last updated.
+     * The time that the Firewall Manager applications list was last updated.
      * </p>
      * 
-     * @return The time that the AWS Firewall Manager applications list was last updated.
+     * @return The time that the Firewall Manager applications list was last updated.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -268,11 +268,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the AWS Firewall Manager applications list was last updated.
+     * The time that the Firewall Manager applications list was last updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The time that the AWS Firewall Manager applications list was last updated.
+     *        The time that the Firewall Manager applications list was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,10 +283,10 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of applications in the AWS Firewall Manager applications list.
+     * An array of applications in the Firewall Manager applications list.
      * </p>
      * 
-     * @return An array of applications in the AWS Firewall Manager applications list.
+     * @return An array of applications in the Firewall Manager applications list.
      */
 
     public java.util.List<App> getAppsList() {
@@ -295,11 +295,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of applications in the AWS Firewall Manager applications list.
+     * An array of applications in the Firewall Manager applications list.
      * </p>
      * 
      * @param appsList
-     *        An array of applications in the AWS Firewall Manager applications list.
+     *        An array of applications in the Firewall Manager applications list.
      */
 
     public void setAppsList(java.util.Collection<App> appsList) {
@@ -313,7 +313,7 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of applications in the AWS Firewall Manager applications list.
+     * An array of applications in the Firewall Manager applications list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -322,7 +322,7 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param appsList
-     *        An array of applications in the AWS Firewall Manager applications list.
+     *        An array of applications in the Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +338,11 @@ public class AppsListData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of applications in the AWS Firewall Manager applications list.
+     * An array of applications in the Firewall Manager applications list.
      * </p>
      * 
      * @param appsList
-     *        An array of applications in the AWS Firewall Manager applications list.
+     *        An array of applications in the Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

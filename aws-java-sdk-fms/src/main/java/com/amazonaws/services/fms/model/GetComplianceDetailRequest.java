@@ -34,7 +34,7 @@ public class GetComplianceDetailRequest extends com.amazonaws.AmazonWebServiceRe
     private String policyId;
     /**
      * <p>
-     * The AWS account that owns the resources that you want to get the details for.
+     * The Amazon Web Services account that owns the resources that you want to get the details for.
      * </p>
      */
     private String memberAccount;
@@ -87,11 +87,11 @@ public class GetComplianceDetailRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account that owns the resources that you want to get the details for.
+     * The Amazon Web Services account that owns the resources that you want to get the details for.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account that owns the resources that you want to get the details for.
+     *        The Amazon Web Services account that owns the resources that you want to get the details for.
      */
 
     public void setMemberAccount(String memberAccount) {
@@ -100,10 +100,10 @@ public class GetComplianceDetailRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account that owns the resources that you want to get the details for.
+     * The Amazon Web Services account that owns the resources that you want to get the details for.
      * </p>
      * 
-     * @return The AWS account that owns the resources that you want to get the details for.
+     * @return The Amazon Web Services account that owns the resources that you want to get the details for.
      */
 
     public String getMemberAccount() {
@@ -112,11 +112,11 @@ public class GetComplianceDetailRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account that owns the resources that you want to get the details for.
+     * The Amazon Web Services account that owns the resources that you want to get the details for.
      * </p>
      * 
      * @param memberAccount
-     *        The AWS account that owns the resources that you want to get the details for.
+     *        The Amazon Web Services account that owns the resources that you want to get the details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class PutProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager protocols list to be created.
+     * The details of the Firewall Manager protocols list to be created.
      * </p>
      */
     private ProtocolsListData protocolsList;
@@ -40,11 +40,11 @@ public class PutProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager protocols list to be created.
+     * The details of the Firewall Manager protocols list to be created.
      * </p>
      * 
      * @param protocolsList
-     *        The details of the AWS Firewall Manager protocols list to be created.
+     *        The details of the Firewall Manager protocols list to be created.
      */
 
     public void setProtocolsList(ProtocolsListData protocolsList) {
@@ -53,10 +53,10 @@ public class PutProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager protocols list to be created.
+     * The details of the Firewall Manager protocols list to be created.
      * </p>
      * 
-     * @return The details of the AWS Firewall Manager protocols list to be created.
+     * @return The details of the Firewall Manager protocols list to be created.
      */
 
     public ProtocolsListData getProtocolsList() {
@@ -65,11 +65,11 @@ public class PutProtocolsListRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager protocols list to be created.
+     * The details of the Firewall Manager protocols list to be created.
      * </p>
      * 
      * @param protocolsList
-     *        The details of the AWS Firewall Manager protocols list to be created.
+     *        The details of the Firewall Manager protocols list to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

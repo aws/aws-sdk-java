@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can
- * create for an AWS account. For more information, see <a
+ * create for an Amazon Web Services account. For more information, see <a
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the
- * <i>AWS WAF Developer Guide</i>.
+ * <i>WAF Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

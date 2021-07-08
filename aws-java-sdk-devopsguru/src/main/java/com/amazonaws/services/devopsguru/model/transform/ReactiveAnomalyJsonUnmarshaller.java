@@ -64,6 +64,10 @@ public class ReactiveAnomalyJsonUnmarshaller implements Unmarshaller<ReactiveAno
                     context.nextToken();
                     reactiveAnomaly.setAnomalyTimeRange(AnomalyTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AnomalyReportedTimeRange", targetDepth)) {
+                    context.nextToken();
+                    reactiveAnomaly.setAnomalyReportedTimeRange(AnomalyReportedTimeRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SourceDetails", targetDepth)) {
                     context.nextToken();
                     reactiveAnomaly.setSourceDetails(AnomalySourceDetailsJsonUnmarshaller.getInstance().unmarshall(context));

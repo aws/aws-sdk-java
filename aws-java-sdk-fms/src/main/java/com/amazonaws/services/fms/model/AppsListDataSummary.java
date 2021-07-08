@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of the AWS Firewall Manager applications list.
+ * Details of the Firewall Manager applications list.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AppsListDataSummary" target="_top">AWS API
@@ -48,7 +48,7 @@ public class AppsListDataSummary implements Serializable, Cloneable, StructuredP
     private String listName;
     /**
      * <p>
-     * An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     * An array of <code>App</code> objects in the Firewall Manager applications list.
      * </p>
      */
     private java.util.List<App> appsList;
@@ -175,10 +175,10 @@ public class AppsListDataSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     * An array of <code>App</code> objects in the Firewall Manager applications list.
      * </p>
      * 
-     * @return An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     * @return An array of <code>App</code> objects in the Firewall Manager applications list.
      */
 
     public java.util.List<App> getAppsList() {
@@ -187,11 +187,11 @@ public class AppsListDataSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     * An array of <code>App</code> objects in the Firewall Manager applications list.
      * </p>
      * 
      * @param appsList
-     *        An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     *        An array of <code>App</code> objects in the Firewall Manager applications list.
      */
 
     public void setAppsList(java.util.Collection<App> appsList) {
@@ -205,7 +205,7 @@ public class AppsListDataSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     * An array of <code>App</code> objects in the Firewall Manager applications list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +214,7 @@ public class AppsListDataSummary implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param appsList
-     *        An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     *        An array of <code>App</code> objects in the Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +230,11 @@ public class AppsListDataSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     * An array of <code>App</code> objects in the Firewall Manager applications list.
      * </p>
      * 
      * @param appsList
-     *        An array of <code>App</code> objects in the AWS Firewall Manager applications list.
+     *        An array of <code>App</code> objects in the Firewall Manager applications list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

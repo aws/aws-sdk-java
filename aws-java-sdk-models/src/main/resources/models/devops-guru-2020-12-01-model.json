@@ -430,6 +430,21 @@
       "type":"double",
       "box":true
     },
+    "AnomalyReportedTimeRange":{
+      "type":"structure",
+      "required":["OpenTime"],
+      "members":{
+        "OpenTime":{
+          "shape":"Timestamp",
+          "documentation":"<p> The time when an anomaly is opened. </p>"
+        },
+        "CloseTime":{
+          "shape":"Timestamp",
+          "documentation":"<p> The time when an anomaly is closed. </p>"
+        }
+      },
+      "documentation":"<p> A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes the anomalous behavior. </p>"
+    },
     "AnomalySeverity":{
       "type":"string",
       "enum":[
@@ -468,7 +483,7 @@
           "documentation":"<p> The time when the anomalous behavior ended. </p>"
         }
       },
-      "documentation":"<p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. </p>"
+      "documentation":"<p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>"
     },
     "Channels":{
       "type":"list",
@@ -1570,6 +1585,10 @@
           "documentation":"<p> The time of the anomaly's most recent update. </p>"
         },
         "AnomalyTimeRange":{"shape":"AnomalyTimeRange"},
+        "AnomalyReportedTimeRange":{
+          "shape":"AnomalyReportedTimeRange",
+          "documentation":"<p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>"
+        },
         "PredictionTimeRange":{"shape":"PredictionTimeRange"},
         "SourceDetails":{
           "shape":"AnomalySourceDetails",
@@ -1607,6 +1626,10 @@
           "documentation":"<p> The time of the anomaly's most recent update. </p>"
         },
         "AnomalyTimeRange":{"shape":"AnomalyTimeRange"},
+        "AnomalyReportedTimeRange":{
+          "shape":"AnomalyReportedTimeRange",
+          "documentation":"<p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>"
+        },
         "PredictionTimeRange":{"shape":"PredictionTimeRange"},
         "SourceDetails":{
           "shape":"AnomalySourceDetails",
@@ -1720,6 +1743,10 @@
           "documentation":"<p> The status of the anomaly. </p>"
         },
         "AnomalyTimeRange":{"shape":"AnomalyTimeRange"},
+        "AnomalyReportedTimeRange":{
+          "shape":"AnomalyReportedTimeRange",
+          "documentation":"<p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>"
+        },
         "SourceDetails":{
           "shape":"AnomalySourceDetails",
           "documentation":"<p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>"
@@ -1748,6 +1775,10 @@
           "documentation":"<p> The status of the reactive anomaly. </p>"
         },
         "AnomalyTimeRange":{"shape":"AnomalyTimeRange"},
+        "AnomalyReportedTimeRange":{
+          "shape":"AnomalyReportedTimeRange",
+          "documentation":"<p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed. </p>"
+        },
         "SourceDetails":{
           "shape":"AnomalySourceDetails",
           "documentation":"<p> Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics. </p>"
