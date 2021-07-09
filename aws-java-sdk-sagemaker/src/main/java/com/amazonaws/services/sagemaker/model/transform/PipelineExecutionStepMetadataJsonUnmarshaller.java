@@ -60,6 +60,10 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     pipelineExecutionStepMetadata.setTransformJob(TransformJobStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TuningJob", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStepMetadata.setTuningJob(TuningJobStepMetaDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Model", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStepMetadata.setModel(ModelStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));

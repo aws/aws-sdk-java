@@ -76,6 +76,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
      * destinationType to SCC.
      */
     private SccDestinationSettings sccDestinationSettings;
+    /** SRT Destination Settings */
+    private SrtDestinationSettings srtDestinationSettings;
     /**
      * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
      * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
@@ -471,6 +473,40 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * SRT Destination Settings
+     * 
+     * @param srtDestinationSettings
+     *        SRT Destination Settings
+     */
+
+    public void setSrtDestinationSettings(SrtDestinationSettings srtDestinationSettings) {
+        this.srtDestinationSettings = srtDestinationSettings;
+    }
+
+    /**
+     * SRT Destination Settings
+     * 
+     * @return SRT Destination Settings
+     */
+
+    public SrtDestinationSettings getSrtDestinationSettings() {
+        return this.srtDestinationSettings;
+    }
+
+    /**
+     * SRT Destination Settings
+     * 
+     * @param srtDestinationSettings
+     *        SRT Destination Settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionDestinationSettings withSrtDestinationSettings(SrtDestinationSettings srtDestinationSettings) {
+        setSrtDestinationSettings(srtDestinationSettings);
+        return this;
+    }
+
+    /**
      * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
      * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
      * directly in your JSON job specification, include this object and any required children when you set
@@ -641,6 +677,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
             sb.append("ImscDestinationSettings: ").append(getImscDestinationSettings()).append(",");
         if (getSccDestinationSettings() != null)
             sb.append("SccDestinationSettings: ").append(getSccDestinationSettings()).append(",");
+        if (getSrtDestinationSettings() != null)
+            sb.append("SrtDestinationSettings: ").append(getSrtDestinationSettings()).append(",");
         if (getTeletextDestinationSettings() != null)
             sb.append("TeletextDestinationSettings: ").append(getTeletextDestinationSettings()).append(",");
         if (getTtmlDestinationSettings() != null)
@@ -685,6 +723,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
             return false;
         if (other.getSccDestinationSettings() != null && other.getSccDestinationSettings().equals(this.getSccDestinationSettings()) == false)
             return false;
+        if (other.getSrtDestinationSettings() == null ^ this.getSrtDestinationSettings() == null)
+            return false;
+        if (other.getSrtDestinationSettings() != null && other.getSrtDestinationSettings().equals(this.getSrtDestinationSettings()) == false)
+            return false;
         if (other.getTeletextDestinationSettings() == null ^ this.getTeletextDestinationSettings() == null)
             return false;
         if (other.getTeletextDestinationSettings() != null && other.getTeletextDestinationSettings().equals(this.getTeletextDestinationSettings()) == false)
@@ -711,6 +753,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getEmbeddedDestinationSettings() == null) ? 0 : getEmbeddedDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getImscDestinationSettings() == null) ? 0 : getImscDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getSccDestinationSettings() == null) ? 0 : getSccDestinationSettings().hashCode());
+        hashCode = prime * hashCode + ((getSrtDestinationSettings() == null) ? 0 : getSrtDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getTeletextDestinationSettings() == null) ? 0 : getTeletextDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getTtmlDestinationSettings() == null) ? 0 : getTtmlDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getWebvttDestinationSettings() == null) ? 0 : getWebvttDestinationSettings().hashCode());

@@ -31,6 +31,8 @@ public class TrainingResultMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataValidationMetrics").build();
     private static final MarshallingInfo<StructuredPojo> TRAININGMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingMetrics").build();
+    private static final MarshallingInfo<StructuredPojo> VARIABLEIMPORTANCEMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("variableImportanceMetrics").build();
 
     private static final TrainingResultMarshaller instance = new TrainingResultMarshaller();
 
@@ -50,6 +52,7 @@ public class TrainingResultMarshaller {
         try {
             protocolMarshaller.marshall(trainingResult.getDataValidationMetrics(), DATAVALIDATIONMETRICS_BINDING);
             protocolMarshaller.marshall(trainingResult.getTrainingMetrics(), TRAININGMETRICS_BINDING);
+            protocolMarshaller.marshall(trainingResult.getVariableImportanceMetrics(), VARIABLEIMPORTANCEMETRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

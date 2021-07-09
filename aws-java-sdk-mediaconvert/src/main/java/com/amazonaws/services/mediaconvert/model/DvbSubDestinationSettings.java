@@ -79,7 +79,7 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
      */
     private Integer ddsYCoordinate;
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
      * DVB-Sub font settings must match.
      */
@@ -625,12 +625,12 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
      * DVB-Sub font settings must match.
      * 
      * @param fontColor
-     *        Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *        Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      *        608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
      *        and DVB-Sub font settings must match.
      * @see DvbSubtitleFontColor
@@ -641,11 +641,11 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
      * DVB-Sub font settings must match.
      * 
-     * @return Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * @return Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      *         608/embedded or teletext. These source settings are already pre-defined by the caption stream. All
      *         burn-in and DVB-Sub font settings must match.
      * @see DvbSubtitleFontColor
@@ -656,12 +656,12 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
      * DVB-Sub font settings must match.
      * 
      * @param fontColor
-     *        Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *        Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      *        608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
      *        and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -674,12 +674,12 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
      * DVB-Sub font settings must match.
      * 
      * @param fontColor
-     *        Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *        Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL,
      *        608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
      *        and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.

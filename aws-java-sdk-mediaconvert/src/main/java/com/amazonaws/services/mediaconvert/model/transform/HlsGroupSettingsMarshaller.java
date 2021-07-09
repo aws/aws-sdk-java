@@ -76,6 +76,8 @@ public class HlsGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentsPerSubdirectory").build();
     private static final MarshallingInfo<String> STREAMINFRESOLUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamInfResolution").build();
+    private static final MarshallingInfo<String> TARGETDURATIONCOMPATIBILITYMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetDurationCompatibilityMode").build();
     private static final MarshallingInfo<String> TIMEDMETADATAID3FRAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataId3Frame").build();
     private static final MarshallingInfo<Integer> TIMEDMETADATAID3PERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -123,6 +125,7 @@ public class HlsGroupSettingsMarshaller {
             protocolMarshaller.marshall(hlsGroupSettings.getSegmentLength(), SEGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getSegmentsPerSubdirectory(), SEGMENTSPERSUBDIRECTORY_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getStreamInfResolution(), STREAMINFRESOLUTION_BINDING);
+            protocolMarshaller.marshall(hlsGroupSettings.getTargetDurationCompatibilityMode(), TARGETDURATIONCOMPATIBILITYMODE_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getTimedMetadataId3Frame(), TIMEDMETADATAID3FRAME_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getTimedMetadataId3Period(), TIMEDMETADATAID3PERIOD_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getTimestampDeltaMilliseconds(), TIMESTAMPDELTAMILLISECONDS_BINDING);

@@ -151,6 +151,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setStreamInfResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("targetDurationCompatibilityMode", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setTargetDurationCompatibilityMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("timedMetadataId3Frame", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setTimedMetadataId3Frame(context.getUnmarshaller(String.class).unmarshall(context));

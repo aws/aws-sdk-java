@@ -56,6 +56,10 @@ public class TrainingResultJsonUnmarshaller implements Unmarshaller<TrainingResu
                     context.nextToken();
                     trainingResult.setTrainingMetrics(TrainingMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("variableImportanceMetrics", targetDepth)) {
+                    context.nextToken();
+                    trainingResult.setVariableImportanceMetrics(VariableImportanceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

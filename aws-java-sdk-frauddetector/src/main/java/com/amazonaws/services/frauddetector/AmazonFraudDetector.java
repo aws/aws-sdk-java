@@ -127,6 +127,8 @@ public interface AmazonFraudDetector {
      *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
      *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
      *         account.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
      * @sample AmazonFraudDetector.CreateBatchPredictionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob"
      *      target="_top">AWS API Documentation</a>

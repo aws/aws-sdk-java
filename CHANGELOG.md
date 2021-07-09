@@ -1,3 +1,16 @@
+# __1.12.21__ __2021-07-09__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - MediaConvert now supports color, style and position information passthrough from 608 and Teletext to SRT and WebVTT subtitles. MediaConvert now also supports Automatic QVBR quality levels for QVBR RateControlMode.
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - This release adds support for ML Explainability to display model variable importance value in Amazon Fraud Detector.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Releasing new APIs related to Tuning steps in model building pipelines.
+
 # __1.12.20__ __2021-07-08__
 ## __AWS MediaTailor__
   - ### Features

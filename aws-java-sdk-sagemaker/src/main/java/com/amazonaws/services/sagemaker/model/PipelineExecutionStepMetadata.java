@@ -48,6 +48,12 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     private TransformJobStepMetadata transformJob;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     * </p>
+     */
+    private TuningJobStepMetaData tuningJob;
+    /**
+     * <p>
      * Metadata for the Model step.
      * </p>
      */
@@ -184,6 +190,46 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     public PipelineExecutionStepMetadata withTransformJob(TransformJobStepMetadata transformJob) {
         setTransformJob(transformJob);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     * </p>
+     * 
+     * @param tuningJob
+     *        The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     */
+
+    public void setTuningJob(TuningJobStepMetaData tuningJob) {
+        this.tuningJob = tuningJob;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     */
+
+    public TuningJobStepMetaData getTuningJob() {
+        return this.tuningJob;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     * </p>
+     * 
+     * @param tuningJob
+     *        The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStepMetadata withTuningJob(TuningJobStepMetaData tuningJob) {
+        setTuningJob(tuningJob);
         return this;
     }
 
@@ -351,6 +397,8 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             sb.append("ProcessingJob: ").append(getProcessingJob()).append(",");
         if (getTransformJob() != null)
             sb.append("TransformJob: ").append(getTransformJob()).append(",");
+        if (getTuningJob() != null)
+            sb.append("TuningJob: ").append(getTuningJob()).append(",");
         if (getModel() != null)
             sb.append("Model: ").append(getModel()).append(",");
         if (getRegisterModel() != null)
@@ -385,6 +433,10 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             return false;
         if (other.getTransformJob() != null && other.getTransformJob().equals(this.getTransformJob()) == false)
             return false;
+        if (other.getTuningJob() == null ^ this.getTuningJob() == null)
+            return false;
+        if (other.getTuningJob() != null && other.getTuningJob().equals(this.getTuningJob()) == false)
+            return false;
         if (other.getModel() == null ^ this.getModel() == null)
             return false;
         if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
@@ -412,6 +464,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getTrainingJob() == null) ? 0 : getTrainingJob().hashCode());
         hashCode = prime * hashCode + ((getProcessingJob() == null) ? 0 : getProcessingJob().hashCode());
         hashCode = prime * hashCode + ((getTransformJob() == null) ? 0 : getTransformJob().hashCode());
+        hashCode = prime * hashCode + ((getTuningJob() == null) ? 0 : getTuningJob().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
         hashCode = prime * hashCode + ((getRegisterModel() == null) ? 0 : getRegisterModel().hashCode());
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());

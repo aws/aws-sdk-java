@@ -33,6 +33,8 @@ public class PipelineExecutionStepMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingJob").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFORMJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformJob").build();
+    private static final MarshallingInfo<StructuredPojo> TUNINGJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TuningJob").build();
     private static final MarshallingInfo<StructuredPojo> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Model").build();
     private static final MarshallingInfo<StructuredPojo> REGISTERMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -61,6 +63,7 @@ public class PipelineExecutionStepMetadataMarshaller {
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getTrainingJob(), TRAININGJOB_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getProcessingJob(), PROCESSINGJOB_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getTransformJob(), TRANSFORMJOB_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionStepMetadata.getTuningJob(), TUNINGJOB_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getModel(), MODEL_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getRegisterModel(), REGISTERMODEL_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getCondition(), CONDITION_BINDING);

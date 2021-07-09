@@ -139,6 +139,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private Integer segmentsPerSubdirectory;
     /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
     private String streamInfResolution;
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     */
+    private String targetDurationCompatibilityMode;
     /** Indicates ID3 frame that has the timecode. */
     private String timedMetadataId3Frame;
     /** Timed Metadata interval in seconds. */
@@ -1533,6 +1542,97 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @param targetDurationCompatibilityMode
+     *        When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *        its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *        the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *        if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *        duration is always longer than the actual duration of the segment. Some older players may experience
+     *        interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @see HlsTargetDurationCompatibilityMode
+     */
+
+    public void setTargetDurationCompatibilityMode(String targetDurationCompatibilityMode) {
+        this.targetDurationCompatibilityMode = targetDurationCompatibilityMode;
+    }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @return When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *         its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *         the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *         if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *         duration is always longer than the actual duration of the segment. Some older players may experience
+     *         interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @see HlsTargetDurationCompatibilityMode
+     */
+
+    public String getTargetDurationCompatibilityMode() {
+        return this.targetDurationCompatibilityMode;
+    }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @param targetDurationCompatibilityMode
+     *        When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *        its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *        the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *        if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *        duration is always longer than the actual duration of the segment. Some older players may experience
+     *        interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsTargetDurationCompatibilityMode
+     */
+
+    public HlsGroupSettings withTargetDurationCompatibilityMode(String targetDurationCompatibilityMode) {
+        setTargetDurationCompatibilityMode(targetDurationCompatibilityMode);
+        return this;
+    }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @param targetDurationCompatibilityMode
+     *        When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *        its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *        the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *        if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *        duration is always longer than the actual duration of the segment. Some older players may experience
+     *        interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsTargetDurationCompatibilityMode
+     */
+
+    public HlsGroupSettings withTargetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode targetDurationCompatibilityMode) {
+        this.targetDurationCompatibilityMode = targetDurationCompatibilityMode.toString();
+        return this;
+    }
+
+    /**
      * Indicates ID3 frame that has the timecode.
      * 
      * @param timedMetadataId3Frame
@@ -1711,6 +1811,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("SegmentsPerSubdirectory: ").append(getSegmentsPerSubdirectory()).append(",");
         if (getStreamInfResolution() != null)
             sb.append("StreamInfResolution: ").append(getStreamInfResolution()).append(",");
+        if (getTargetDurationCompatibilityMode() != null)
+            sb.append("TargetDurationCompatibilityMode: ").append(getTargetDurationCompatibilityMode()).append(",");
         if (getTimedMetadataId3Frame() != null)
             sb.append("TimedMetadataId3Frame: ").append(getTimedMetadataId3Frame()).append(",");
         if (getTimedMetadataId3Period() != null)
@@ -1827,6 +1929,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStreamInfResolution() != null && other.getStreamInfResolution().equals(this.getStreamInfResolution()) == false)
             return false;
+        if (other.getTargetDurationCompatibilityMode() == null ^ this.getTargetDurationCompatibilityMode() == null)
+            return false;
+        if (other.getTargetDurationCompatibilityMode() != null
+                && other.getTargetDurationCompatibilityMode().equals(this.getTargetDurationCompatibilityMode()) == false)
+            return false;
         if (other.getTimedMetadataId3Frame() == null ^ this.getTimedMetadataId3Frame() == null)
             return false;
         if (other.getTimedMetadataId3Frame() != null && other.getTimedMetadataId3Frame().equals(this.getTimedMetadataId3Frame()) == false)
@@ -1871,6 +1978,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getSegmentsPerSubdirectory() == null) ? 0 : getSegmentsPerSubdirectory().hashCode());
         hashCode = prime * hashCode + ((getStreamInfResolution() == null) ? 0 : getStreamInfResolution().hashCode());
+        hashCode = prime * hashCode + ((getTargetDurationCompatibilityMode() == null) ? 0 : getTargetDurationCompatibilityMode().hashCode());
         hashCode = prime * hashCode + ((getTimedMetadataId3Frame() == null) ? 0 : getTimedMetadataId3Frame().hashCode());
         hashCode = prime * hashCode + ((getTimedMetadataId3Period() == null) ? 0 : getTimedMetadataId3Period().hashCode());
         hashCode = prime * hashCode + ((getTimestampDeltaMilliseconds() == null) ? 0 : getTimestampDeltaMilliseconds().hashCode());

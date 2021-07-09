@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
- * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
- * DVB-Sub font settings must match.
+ * Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL, 608/embedded
+ * or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+ * settings must match.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DvbSubtitleFontColor {

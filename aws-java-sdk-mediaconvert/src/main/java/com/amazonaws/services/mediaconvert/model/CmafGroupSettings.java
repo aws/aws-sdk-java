@@ -129,6 +129,15 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     private Integer segmentLength;
     /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
     private String streamInfResolution;
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     */
+    private String targetDurationCompatibilityMode;
     /** When set to ENABLED, a DASH MPD manifest will be generated for this output. */
     private String writeDashManifest;
     /** When set to ENABLED, an Apple HLS manifest will be generated for this output. */
@@ -1244,6 +1253,97 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @param targetDurationCompatibilityMode
+     *        When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *        its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *        the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *        if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *        duration is always longer than the actual duration of the segment. Some older players may experience
+     *        interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @see CmafTargetDurationCompatibilityMode
+     */
+
+    public void setTargetDurationCompatibilityMode(String targetDurationCompatibilityMode) {
+        this.targetDurationCompatibilityMode = targetDurationCompatibilityMode;
+    }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @return When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *         its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *         the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *         if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *         duration is always longer than the actual duration of the segment. Some older players may experience
+     *         interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @see CmafTargetDurationCompatibilityMode
+     */
+
+    public String getTargetDurationCompatibilityMode() {
+        return this.targetDurationCompatibilityMode;
+    }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @param targetDurationCompatibilityMode
+     *        When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *        its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *        the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *        if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *        duration is always longer than the actual duration of the segment. Some older players may experience
+     *        interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafTargetDurationCompatibilityMode
+     */
+
+    public CmafGroupSettings withTargetDurationCompatibilityMode(String targetDurationCompatibilityMode) {
+        setTargetDurationCompatibilityMode(targetDurationCompatibilityMode);
+        return this;
+    }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its
+     * current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (<
+     * 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the
+     * actual duration of the segment. Some older players may experience interrupted playback when the actual duration of
+     * a track in a segment is longer than the target duration.
+     * 
+     * @param targetDurationCompatibilityMode
+     *        When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above
+     *        its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to
+     *        the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down
+     *        if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target
+     *        duration is always longer than the actual duration of the segment. Some older players may experience
+     *        interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafTargetDurationCompatibilityMode
+     */
+
+    public CmafGroupSettings withTargetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode targetDurationCompatibilityMode) {
+        this.targetDurationCompatibilityMode = targetDurationCompatibilityMode.toString();
+        return this;
+    }
+
+    /**
      * When set to ENABLED, a DASH MPD manifest will be generated for this output.
      * 
      * @param writeDashManifest
@@ -1476,6 +1576,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("SegmentLength: ").append(getSegmentLength()).append(",");
         if (getStreamInfResolution() != null)
             sb.append("StreamInfResolution: ").append(getStreamInfResolution()).append(",");
+        if (getTargetDurationCompatibilityMode() != null)
+            sb.append("TargetDurationCompatibilityMode: ").append(getTargetDurationCompatibilityMode()).append(",");
         if (getWriteDashManifest() != null)
             sb.append("WriteDashManifest: ").append(getWriteDashManifest()).append(",");
         if (getWriteHlsManifest() != null)
@@ -1568,6 +1670,11 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStreamInfResolution() != null && other.getStreamInfResolution().equals(this.getStreamInfResolution()) == false)
             return false;
+        if (other.getTargetDurationCompatibilityMode() == null ^ this.getTargetDurationCompatibilityMode() == null)
+            return false;
+        if (other.getTargetDurationCompatibilityMode() != null
+                && other.getTargetDurationCompatibilityMode().equals(this.getTargetDurationCompatibilityMode()) == false)
+            return false;
         if (other.getWriteDashManifest() == null ^ this.getWriteDashManifest() == null)
             return false;
         if (other.getWriteDashManifest() != null && other.getWriteDashManifest().equals(this.getWriteDashManifest()) == false)
@@ -1607,6 +1714,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getStreamInfResolution() == null) ? 0 : getStreamInfResolution().hashCode());
+        hashCode = prime * hashCode + ((getTargetDurationCompatibilityMode() == null) ? 0 : getTargetDurationCompatibilityMode().hashCode());
         hashCode = prime * hashCode + ((getWriteDashManifest() == null) ? 0 : getWriteDashManifest().hashCode());
         hashCode = prime * hashCode + ((getWriteHlsManifest() == null) ? 0 : getWriteHlsManifest().hashCode());
         hashCode = prime * hashCode + ((getWriteSegmentTimelineInRepresentation() == null) ? 0 : getWriteSegmentTimelineInRepresentation().hashCode());

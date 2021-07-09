@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a
  * value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code>
- * field of the <code>ImageConfig</code> object that you passed to a call to <a>CreateModel</a> and the private Docker
- * registry where the model image is hosted requires authentication.
+ * field of the <code>ImageConfig</code> object that you passed to a call to <code>CreateModel</code> and the private
+ * Docker registry where the model image is hosted requires authentication.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RepositoryAuthConfig" target="_top">AWS API

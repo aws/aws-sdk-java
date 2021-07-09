@@ -122,6 +122,10 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                     context.nextToken();
                     cmafGroupSettings.setStreamInfResolution(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("targetDurationCompatibilityMode", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setTargetDurationCompatibilityMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("writeDashManifest", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setWriteDashManifest(context.getUnmarshaller(String.class).unmarshall(context));

@@ -91,11 +91,6 @@ public class TransferManagerConfiguration {
      * in parallel. Setting this option to true will disable parallel downloads.
      * </p>
      * <p>
-     * During parallel downloads, each part is downloaded to a temporary file, gets merged
-     * into the final destination file and will be deleted. These temporary files uses disk space temporarily.
-     * Disable parallel downloads if your system do not have enough space to store these files during download.
-     * </p>
-     * <p>
      * Disabling parallel downloads might reduce performance for large files.
      * </p>
      */
@@ -272,11 +267,6 @@ public class TransferManagerConfiguration {
      * in parallel. Setting this option to true will disable parallel downloads.
      * </p>
      * <p>
-     * During parallel downloads, each part is downloaded to a temporary file, gets merged
-     * into the final destination file and will be deleted. These temporary files uses disk space temporarily.
-     * Disable parallel downloads if your system do not have enough space to store these files during download.
-     * </p>
-     * <p>
      * Disabling parallel downloads might reduce performance for large files.
      * </p>
      *
@@ -292,11 +282,6 @@ public class TransferManagerConfiguration {
      * <p>
      * TransferManager automatically detects and downloads a multipart object
      * in parallel. Setting this option to true will disable parallel downloads.
-     * </p>
-     * <p>
-     * During parallel downloads, each part is downloaded to a temporary file, gets merged
-     * into the final destination file and will be deleted. These temporary files uses disk space temporarily.
-     * Disable parallel downloads if your system do not have enough space to store these files during download.
      * </p>
      * <p>
      * Disabling parallel downloads might reduce performance for large files.

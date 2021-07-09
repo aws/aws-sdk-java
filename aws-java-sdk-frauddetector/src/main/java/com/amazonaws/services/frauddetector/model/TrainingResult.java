@@ -40,6 +40,12 @@ public class TrainingResult implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TrainingMetrics trainingMetrics;
+    /**
+     * <p>
+     * The variable importance metrics.
+     * </p>
+     */
+    private VariableImportanceMetrics variableImportanceMetrics;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class TrainingResult implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The variable importance metrics.
+     * </p>
+     * 
+     * @param variableImportanceMetrics
+     *        The variable importance metrics.
+     */
+
+    public void setVariableImportanceMetrics(VariableImportanceMetrics variableImportanceMetrics) {
+        this.variableImportanceMetrics = variableImportanceMetrics;
+    }
+
+    /**
+     * <p>
+     * The variable importance metrics.
+     * </p>
+     * 
+     * @return The variable importance metrics.
+     */
+
+    public VariableImportanceMetrics getVariableImportanceMetrics() {
+        return this.variableImportanceMetrics;
+    }
+
+    /**
+     * <p>
+     * The variable importance metrics.
+     * </p>
+     * 
+     * @param variableImportanceMetrics
+     *        The variable importance metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingResult withVariableImportanceMetrics(VariableImportanceMetrics variableImportanceMetrics) {
+        setVariableImportanceMetrics(variableImportanceMetrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class TrainingResult implements Serializable, Cloneable, StructuredPojo {
         if (getDataValidationMetrics() != null)
             sb.append("DataValidationMetrics: ").append(getDataValidationMetrics()).append(",");
         if (getTrainingMetrics() != null)
-            sb.append("TrainingMetrics: ").append(getTrainingMetrics());
+            sb.append("TrainingMetrics: ").append(getTrainingMetrics()).append(",");
+        if (getVariableImportanceMetrics() != null)
+            sb.append("VariableImportanceMetrics: ").append(getVariableImportanceMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class TrainingResult implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTrainingMetrics() != null && other.getTrainingMetrics().equals(this.getTrainingMetrics()) == false)
             return false;
+        if (other.getVariableImportanceMetrics() == null ^ this.getVariableImportanceMetrics() == null)
+            return false;
+        if (other.getVariableImportanceMetrics() != null && other.getVariableImportanceMetrics().equals(this.getVariableImportanceMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class TrainingResult implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDataValidationMetrics() == null) ? 0 : getDataValidationMetrics().hashCode());
         hashCode = prime * hashCode + ((getTrainingMetrics() == null) ? 0 : getTrainingMetrics().hashCode());
+        hashCode = prime * hashCode + ((getVariableImportanceMetrics() == null) ? 0 : getVariableImportanceMetrics().hashCode());
         return hashCode;
     }
 

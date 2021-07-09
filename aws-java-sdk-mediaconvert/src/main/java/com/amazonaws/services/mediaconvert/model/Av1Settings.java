@@ -83,9 +83,8 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer numberBFramesBetweenReferenceFrames;
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control
-     * mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate
-     * control mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
+     * QVBR for Rate control mode (RateControlMode).
      */
     private Av1QvbrSettings qvbrSettings;
     /**
@@ -626,14 +625,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control
-     * mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate
-     * control mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
+     * QVBR for Rate control mode (RateControlMode).
      * 
      * @param qvbrSettings
-     *        Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate
-     *        control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you
-     *        don't define Rate control mode.
+     *        Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when
+     *        you set QVBR for Rate control mode (RateControlMode).
      */
 
     public void setQvbrSettings(Av1QvbrSettings qvbrSettings) {
@@ -641,13 +638,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control
-     * mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate
-     * control mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
+     * QVBR for Rate control mode (RateControlMode).
      * 
-     * @return Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate
-     *         control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you
-     *         don't define Rate control mode.
+     * @return Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when
+     *         you set QVBR for Rate control mode (RateControlMode).
      */
 
     public Av1QvbrSettings getQvbrSettings() {
@@ -655,14 +650,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control
-     * mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate
-     * control mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set
+     * QVBR for Rate control mode (RateControlMode).
      * 
      * @param qvbrSettings
-     *        Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate
-     *        control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you
-     *        don't define Rate control mode.
+     *        Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when
+     *        you set QVBR for Rate control mode (RateControlMode).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
