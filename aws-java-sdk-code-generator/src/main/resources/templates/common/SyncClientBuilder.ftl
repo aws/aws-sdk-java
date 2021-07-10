@@ -66,8 +66,6 @@ public final class ${metadata.syncClientBuilderClassName}
 
     private boolean endpointDiscoveryEnabled() {
 
-        Boolean endpointDiscoveryChainSetting = DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled();
-
         if (endpointDiscoveryDisabled) {
             return false;
         }
@@ -75,6 +73,8 @@ public final class ${metadata.syncClientBuilderClassName}
         if (endpointDiscoveryEnabled) {
             return true;
         }
+
+        Boolean endpointDiscoveryChainSetting = DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled();
 
         if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting == false) {
             return false;
