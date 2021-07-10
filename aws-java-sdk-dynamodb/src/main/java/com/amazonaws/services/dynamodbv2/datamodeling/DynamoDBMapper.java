@@ -410,7 +410,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
-    public <T extends Object> T load(T keyObject, DynamoDBMapperConfig config) {
+    public <T> T load(T keyObject, DynamoDBMapperConfig config) {
         @SuppressWarnings("unchecked")
         Class<T> clazz = (Class<T>) keyObject.getClass();
 
@@ -459,6 +459,10 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 toParameters(itemAttributes, clazz, tableName, config));
     }
 
+    private <T extends Object> DynamoDBMapperTableModel<? extends T> getTableModel(Class<T> clazz, DynamoDBMapperConfig config, Map<String, AttributeValue> values) {
+        return getTableModel(getSubType(clazz, values), config);
+    }
+
     /**
      * The one true implementation of marshallIntoObject.
      */
@@ -468,7 +472,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         Class<T> clazz = parameters.getModelClass();
         Map<String, AttributeValue> values = untransformAttributes(parameters);
 
-        final DynamoDBMapperTableModel<T> model = getTableModel(clazz, parameters.getMapperConfig());
+        final DynamoDBMapperTableModel<? extends T> model = getTableModel(clazz, parameters.getMapperConfig(), values);
         return model.unconvert(values);
     }
 
@@ -744,6 +748,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 }
             }
 
+            if (model.requiresSubTypeAttribute()) {
+                onNonKeyAttribute(model.subTypeAttributeName(), new AttributeValue(model.subTypeAttributeValue()));
+            }
             /*
              * Execute the implementation of the low level request.
              */
@@ -2385,6 +2392,41 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             }
             return maps;
         }
+    }
+
+
+    /**
+     * A utility method that determines if the given type has subtypes and based on the attributes
+     * from the DB figures out which sub-type should be created. Fallback to base class if not found.
+     *
+     * @param startingType     type that was specified on the load request (ie base class)
+     * @param objectAttributes attributes of the DDB object so we can determine the type
+     *
+     * @return the actual type to create
+     */
+    @SuppressWarnings("unchecked")
+    private static <T> Class<? extends T> getSubType(final Class<T> startingType, final Map<String, AttributeValue> objectAttributes) {
+        DynamoDBSubTyped subTypes = startingType.getAnnotation(DynamoDBSubTyped.class);
+        if (subTypes != null && objectAttributes.containsKey(subTypes.attributeName())) {
+            String type = objectAttributes.get(subTypes.attributeName()).getS();
+            for (DynamoDBSubTyped.SubType subType : subTypes.value()) {
+                if (subType.name().equals(type)) {
+                    try {
+                        return subType.value().asSubclass(startingType);
+                    } catch (ClassCastException e) {
+                        throw new DynamoDBMappingException(
+                                String.format("Invalid @%s(name = \"%s\", value = %s.class), type '%s' is not a subclass of '%s'",
+                                        DynamoDBSubTyped.SubType.class.getSimpleName(),
+                                        subType.name(),
+                                        subType.value().getSimpleName(),
+                                        subType.value().getName(),
+                                        startingType.getName()),
+                                e);
+                    }
+                }
+            }
+        }
+        return startingType;
     }
 
     /**

@@ -116,7 +116,9 @@ final class StandardModelFactories {
     private static final class TableBuilder<T> extends DynamoDBMapperTableModel.Builder<T> {
         private TableBuilder(Class<T> clazz, Beans<T> beans, RuleFactory<Object> rules) {
             super(clazz, beans.properties());
+            final String subTypeAttributeName = beans.properties().subTypeAttributeName();
             for (final Bean<T,Object> bean : beans.map().values()) {
+                validateSubTypeAttribute(subTypeAttributeName, bean, clazz);
                 try {
                     with(new FieldBuilder<T,Object>(clazz, bean, rules.getRule(bean.type())).build());
                 } catch (final RuntimeException e) {
@@ -125,6 +127,17 @@ final class StandardModelFactories {
                         clazz.getSimpleName(), bean.properties().attributeName(), bean.type()
                     ), e);
                 }
+            }
+        }
+
+        private void validateSubTypeAttribute(String subTypeAttributeName, Bean<T, Object> bean, Class<T> clazz) {
+            if(bean.properties().attributeName().equals(subTypeAttributeName) && !bean.type().targetType().equals(String.class)) {
+                throw new DynamoDBMappingException(
+                        String.format("Invalid use of @%s annotation on %s, 'attributeName' must refer to a String property. '%s' is of type %s",
+                                DynamoDBSubTyped.class.getSimpleName(),
+                                clazz.getSimpleName(),
+                                subTypeAttributeName,
+                                bean.type().targetType().getSimpleName()));
             }
         }
 
