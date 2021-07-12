@@ -22,8 +22,12 @@ import static com.amazonaws.util.StringUtils.UTF8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
@@ -31,12 +35,17 @@ import org.hamcrest.Matchers;
 import org.hamcrest.core.IsEqual;
 import org.hamcrest.text.IsEmptyString;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  * Unit tests for the StringUtils class.
  */
 public class StringUtilsTest {
+
+    @Rule
+    public final ExpectedException thrown = ExpectedException.none();
 
     /**
      * Tests that {@link StringUtils#fromByteBuffer(ByteBuffer)} correctly
@@ -52,6 +61,130 @@ public class StringUtilsTest {
         String encodedData = StringUtils.fromByteBuffer(byteBuffer);
 
         assertEquals(expectedEncodedData, encodedData);
+    }
+
+    @Test
+    public void testToInteger() {
+        assertEquals(new Integer(1),
+                StringUtils.toInteger(new StringBuilder("1")));
+        assertEquals(new Integer(123),
+                StringUtils.toInteger(new StringBuilder("123")));
+    }
+
+    @Test
+    public void testToString() {
+        assertEquals("foo", StringUtils.toString(new StringBuilder("foo")));
+        assertEquals("123", StringUtils.toString(new StringBuilder("123")));
+    }
+
+    @Test
+    public void testToBoolean() {
+        assertFalse(StringUtils.toBoolean(new StringBuilder("true")));
+        assertFalse(StringUtils.toBoolean(new StringBuilder("false")));
+    }
+
+    @Test
+    public void testFromInteger() {
+        assertEquals("1", StringUtils.fromInteger(1));
+        assertEquals("123", StringUtils.fromInteger(123));
+    }
+
+    @Test
+    public void testFromLong() {
+        assertEquals("1", StringUtils.fromLong(1L));
+        assertEquals("12345678901234", StringUtils.fromLong(12345678901234L));
+    }
+
+    @Test
+    public void testFromShort() {
+        assertEquals("1", StringUtils.fromShort((short) 1));
+        assertEquals("1234", StringUtils.fromShort((short) 1234));
+    }
+
+    @Test
+    public void testFromString() {
+        assertEquals("foo", StringUtils.fromString("foo"));
+        assertEquals("123", StringUtils.fromString("123"));
+    }
+
+    @Test
+    public void testFromBoolean() {
+        assertEquals("true", StringUtils.fromBoolean(true));
+        assertEquals("false", StringUtils.fromBoolean(false));
+    }
+
+    @Test
+    public void testFromBigInteger() {
+        assertEquals("1", StringUtils.fromBigInteger(BigInteger.ONE));
+        assertEquals("0", StringUtils.fromBigInteger(BigInteger.ZERO));
+        assertEquals("10", StringUtils.fromBigInteger(BigInteger.TEN));
+        assertEquals("4",
+                StringUtils.fromBigInteger(new BigInteger(new byte[]{4})));
+    }
+
+    @Test
+    public void testFromBigDecimal() {
+        assertEquals("1", StringUtils.fromBigDecimal(new BigDecimal(1)));
+        assertEquals("1.229999999999999982236431605997495353221893310546875",
+                StringUtils.fromBigDecimal(new BigDecimal(1.23)));
+    }
+
+    @Test
+    public void testToBigInteger() {
+        assertEquals(BigInteger.ONE, StringUtils.toBigInteger("1"));
+        assertEquals(new BigInteger(new byte[]{123}),
+                StringUtils.toBigInteger("123"));
+    }
+
+    @Test
+    public void testToBigDecimal() {
+        assertEquals(new BigDecimal(1), StringUtils.toBigDecimal("1"));
+        assertEquals(new BigDecimal(1.23), StringUtils.toBigDecimal(
+                "1.229999999999999982236431605997495353221893310546875"));
+    }
+
+    @Test
+    public void testFromFloat() {
+        assertEquals("1.0", StringUtils.fromFloat(1.0f));
+        assertEquals("1.23", StringUtils.fromFloat(1.23f));
+    }
+
+    @Test
+    public void testFromDate() {
+        assertEquals("2019-01-04T11:22:33.000Z", StringUtils
+                .fromDate(new Date(1546600953000L)));
+        assertEquals("Fri, 04 Jan 2019 11:22:33 GMT", StringUtils
+                .fromDate(new Date(1546600953000L), "rfc822"));
+        assertEquals("2019-01-04T11:22:33.000Z", StringUtils
+                .fromDate(new Date(1546600953000L), "iso8601"));
+        assertEquals("1546600953.000", StringUtils
+                .fromDate(new Date(1546600953000L), "unixTimestamp"));
+        assertEquals("1546600953000", StringUtils
+                .fromDate(new Date(1546600953000L), "unixTimestampInMillis"));
+
+        thrown.expect(IllegalArgumentException.class);
+        StringUtils.fromDate(new Date(1546600953000L), "foo");
+    }
+
+    @Test
+    public void testFromDouble() {
+        assertEquals("1.0", StringUtils.fromDouble(1.0));
+        assertEquals("12.34", StringUtils.fromDouble(12.34));
+    }
+
+    @Test
+    public void testJoin() {
+        assertEquals("bfooafoor", StringUtils.join("foo", "b", "a", "r"));
+    }
+
+    @Test
+    public void testTrim() {
+        assertNull(StringUtils.trim(null));
+        assertEquals("foo", StringUtils.trim("foo"));
+        assertEquals("foo", StringUtils.trim("foo "));
+        assertEquals("foo", StringUtils.trim(" foo"));
+        assertEquals("foo", StringUtils.trim(" foo "));
+        assertEquals("f o o", StringUtils.trim(" f o o "));
     }
 
     /**
