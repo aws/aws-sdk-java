@@ -1573,7 +1573,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // stream in a validator that calculates an MD5 of the downloaded
         // bytes and complains if what we received doesn't match the Etag.
         if (!skipClientSideValidation) {
-            byte[] serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
+            String etag = s3Object.getObjectMetadata().getETag();
+            if (etag.startsWith("W/")) {
+                // weak etags are of the form `W/"etag"` so we trim accordingly
+                etag = etag.substring(3, etag.length() - 1);
+            }
+            byte[] serverSideHash = BinaryUtils.fromHex(etag);
             try {
                 // No content length check is performed when the
                 // MD5 check is enabled, since a correct MD5 check would
