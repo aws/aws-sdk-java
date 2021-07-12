@@ -39,6 +39,12 @@
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
     </dependency>
+    <dependency>
+        <artifactId>easymock</artifactId>
+        <groupId>org.easymock</groupId>
+        <scope>test</scope>
+        <version>${easymock.version}</version>
+    </dependency>
 </dependencies>
 
   <build>
