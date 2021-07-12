@@ -24,6 +24,7 @@ import com.amazonaws.http.conn.ClientConnectionManagerFactory;
 import com.amazonaws.http.conn.SdkConnectionKeepAliveStrategy;
 import com.amazonaws.http.protocol.SdkHttpRequestExecutor;
 import com.amazonaws.http.settings.HttpClientSettings;
+import java.net.ProxySelector;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpResponseInterceptor;
@@ -31,6 +32,7 @@ import org.apache.http.conn.ConnectionKeepAliveStrategy;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.SystemDefaultRoutePlanner;
 
 /**
  * Factory class that builds the apache http client from the settings.
@@ -96,6 +98,8 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
             if (settings.isAuthenticatedProxy()) {
                 builder.setDefaultCredentialsProvider(ApacheUtils.newProxyCredentialsProvider(settings));
             }
+        } else {
+             builder.setRoutePlanner(new SystemDefaultRoutePlanner(ProxySelector.getDefault()));
         }
     }
 
