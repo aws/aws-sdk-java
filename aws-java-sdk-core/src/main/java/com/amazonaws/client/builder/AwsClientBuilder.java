@@ -24,6 +24,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.client.AwsSyncClientParams;
@@ -120,6 +122,19 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      */
     public final Subclass withCredentials(AWSCredentialsProvider credentialsProvider) {
         setCredentials(credentialsProvider);
+        return getSubclass();
+    }
+
+    /**
+     * Sets the AWSCredentialsProvider using the BasicAWSCredentials provided by the client. If not
+     * specified the default is {@link DefaultAWSCredentialsProviderChain}.
+     *
+     * @param accessKey AWS access key to use.
+     * @param secretKey AWS secret key to use.
+     * @return This object for method chaining.
+     */
+    public final Subclass withCredentials(String accessKey, String secretKey) {
+        setCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)));
         return getSubclass();
     }
 
