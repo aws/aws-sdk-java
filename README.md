@@ -16,8 +16,6 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 
 ## Release Notes ##
 Beginning with 1.11.82 changes to the SDK are tracked in the [CHANGELOG.md][changes-file] file.
-Release notes for versions prior to 1.11.82 can still be found on the [AWS Release Notes
-Website][release-notes-catalog].
 
 ## Getting Started
 
