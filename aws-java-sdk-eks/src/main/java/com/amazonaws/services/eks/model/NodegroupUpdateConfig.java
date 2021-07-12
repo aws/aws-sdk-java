@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The node group update configuration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupUpdateConfig" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NodegroupUpdateConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This
+     * value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.
+     * </p>
+     */
     private Integer maxUnavailable;
-
+    /**
+     * <p>
+     * The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in
+     * parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.
+     * </p>
+     */
     private Integer maxUnavailablePercentage;
 
     /**
+     * <p>
+     * The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This
+     * value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.
+     * </p>
+     * 
      * @param maxUnavailable
+     *        The maximum number of nodes unavailable at once during a version update. Nodes will be updated in
+     *        parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum
+     *        number is 100.
      */
 
     public void setMaxUnavailable(Integer maxUnavailable) {
@@ -38,7 +60,14 @@ public class NodegroupUpdateConfig implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This
+     * value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.
+     * </p>
+     * 
+     * @return The maximum number of nodes unavailable at once during a version update. Nodes will be updated in
+     *         parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum
+     *         number is 100.
      */
 
     public Integer getMaxUnavailable() {
@@ -46,7 +75,15 @@ public class NodegroupUpdateConfig implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This
+     * value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.
+     * </p>
+     * 
      * @param maxUnavailable
+     *        The maximum number of nodes unavailable at once during a version update. Nodes will be updated in
+     *        parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum
+     *        number is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +93,15 @@ public class NodegroupUpdateConfig implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in
+     * parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.
+     * </p>
+     * 
      * @param maxUnavailablePercentage
+     *        The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+     *        updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to
+     *        have a value.
      */
 
     public void setMaxUnavailablePercentage(Integer maxUnavailablePercentage) {
@@ -64,7 +109,14 @@ public class NodegroupUpdateConfig implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in
+     * parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.
+     * </p>
+     * 
+     * @return The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+     *         updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to
+     *         have a value.
      */
 
     public Integer getMaxUnavailablePercentage() {
@@ -72,7 +124,15 @@ public class NodegroupUpdateConfig implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in
+     * parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.
+     * </p>
+     * 
      * @param maxUnavailablePercentage
+     *        The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+     *        updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to
+     *        have a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

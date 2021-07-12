@@ -38,8 +38,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
-     * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages related to the processing of the batch are sent to you CloudWatch log.
+     * The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services
+     * CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -56,8 +56,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
-     * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages related to the processing of the batch are sent to you CloudWatch log.
+     * The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services
+     * CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -136,8 +136,9 @@ public interface AWSkendraAsync extends AWSkendra {
      * attributes to the documents, and to attach an access control list to the documents added to the index.
      * </p>
      * <p>
-     * The documents are indexed asynchronously. You can see the progress of the batch using AWS CloudWatch. Any error
-     * messages related to processing the batch are sent to your AWS CloudWatch log.
+     * The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services
+     * CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch
+     * log.
      * </p>
      * 
      * @param batchPutDocumentRequest
@@ -158,8 +159,9 @@ public interface AWSkendraAsync extends AWSkendra {
      * attributes to the documents, and to attach an access control list to the documents added to the index.
      * </p>
      * <p>
-     * The documents are indexed asynchronously. You can see the progress of the batch using AWS CloudWatch. Any error
-     * messages related to processing the batch are sent to your AWS CloudWatch log.
+     * The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services
+     * CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch
+     * log.
      * </p>
      * 
      * @param batchPutDocumentRequest
@@ -534,6 +536,61 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Deletes a group so that all users and sub groups that belong to the group can no longer access documents only
+     * available to that group.
+     * </p>
+     * <p>
+     * For example, after deleting the group "Summer Interns", all interns who belonged to that group no longer see
+     * intern-only documents in their search results.
+     * </p>
+     * <p>
+     * If you want to delete or replace users or sub groups of a group, you need to use the
+     * <code>PutPrincipalMapping</code> operation. For example, if a user in the group "Engineering" leaves the
+     * engineering team and another user takes their place, you provide an updated list of users or sub groups that
+     * belong to the "Engineering" group when calling <code>PutPrincipalMapping</code>. You can update your internal
+     * list of users or sub groups and input this list when calling <code>PutPrincipalMapping</code>.
+     * </p>
+     * 
+     * @param deletePrincipalMappingRequest
+     * @return A Java Future containing the result of the DeletePrincipalMapping operation returned by the service.
+     * @sample AWSkendraAsync.DeletePrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePrincipalMappingResult> deletePrincipalMappingAsync(DeletePrincipalMappingRequest deletePrincipalMappingRequest);
+
+    /**
+     * <p>
+     * Deletes a group so that all users and sub groups that belong to the group can no longer access documents only
+     * available to that group.
+     * </p>
+     * <p>
+     * For example, after deleting the group "Summer Interns", all interns who belonged to that group no longer see
+     * intern-only documents in their search results.
+     * </p>
+     * <p>
+     * If you want to delete or replace users or sub groups of a group, you need to use the
+     * <code>PutPrincipalMapping</code> operation. For example, if a user in the group "Engineering" leaves the
+     * engineering team and another user takes their place, you provide an updated list of users or sub groups that
+     * belong to the "Engineering" group when calling <code>PutPrincipalMapping</code>. You can update your internal
+     * list of users or sub groups and input this list when calling <code>PutPrincipalMapping</code>.
+     * </p>
+     * 
+     * @param deletePrincipalMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePrincipalMapping operation returned by the service.
+     * @sample AWSkendraAsyncHandler.DeletePrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePrincipalMappingResult> deletePrincipalMappingAsync(DeletePrincipalMappingRequest deletePrincipalMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePrincipalMappingRequest, DeletePrincipalMappingResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a block list used for query suggestions for an index.
      * </p>
      * <p>
@@ -698,6 +755,43 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest describeIndexRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.
+     * This includes information on the status of actions currently processing or yet to be processed, when actions were
+     * last updated, when actions were received by Amazon Kendra, the latest action that should process and apply after
+     * other actions, and useful error messages if an action could not be processed.
+     * </p>
+     * 
+     * @param describePrincipalMappingRequest
+     * @return A Java Future containing the result of the DescribePrincipalMapping operation returned by the service.
+     * @sample AWSkendraAsync.DescribePrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePrincipalMappingResult> describePrincipalMappingAsync(DescribePrincipalMappingRequest describePrincipalMappingRequest);
+
+    /**
+     * <p>
+     * Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.
+     * This includes information on the status of actions currently processing or yet to be processed, when actions were
+     * last updated, when actions were received by Amazon Kendra, the latest action that should process and apply after
+     * other actions, and useful error messages if an action could not be processed.
+     * </p>
+     * 
+     * @param describePrincipalMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePrincipalMapping operation returned by the service.
+     * @sample AWSkendraAsyncHandler.DescribePrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePrincipalMappingResult> describePrincipalMappingAsync(DescribePrincipalMappingRequest describePrincipalMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePrincipalMappingRequest, DescribePrincipalMappingResult> asyncHandler);
 
     /**
      * <p>
@@ -938,6 +1032,41 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Provides a list of groups that are mapped to users before a given ordering or timestamp identifier.
+     * </p>
+     * 
+     * @param listGroupsOlderThanOrderingIdRequest
+     * @return A Java Future containing the result of the ListGroupsOlderThanOrderingId operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.ListGroupsOlderThanOrderingId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGroupsOlderThanOrderingIdResult> listGroupsOlderThanOrderingIdAsync(
+            ListGroupsOlderThanOrderingIdRequest listGroupsOlderThanOrderingIdRequest);
+
+    /**
+     * <p>
+     * Provides a list of groups that are mapped to users before a given ordering or timestamp identifier.
+     * </p>
+     * 
+     * @param listGroupsOlderThanOrderingIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGroupsOlderThanOrderingId operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.ListGroupsOlderThanOrderingId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGroupsOlderThanOrderingIdResult> listGroupsOlderThanOrderingIdAsync(
+            ListGroupsOlderThanOrderingIdRequest listGroupsOlderThanOrderingIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGroupsOlderThanOrderingIdRequest, ListGroupsOlderThanOrderingIdResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Amazon Kendra indexes that you have created.
      * </p>
      * 
@@ -1073,6 +1202,63 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest listThesauriRequest,
             com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler);
+
+    /**
+     * <p>
+     * Maps users to their groups. You can also map sub groups to groups. For example, the group
+     * "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include
+     * their own list of users or people who work in these teams. Only users who work in research and engineering, and
+     * therefore belong in the intellectual property group, can see top-secret company documents in their search
+     * results.
+     * </p>
+     * <p>
+     * You map users to their groups when you want to filter search results for different users based on their group’s
+     * access to documents. For more information on filtering search results for different users, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
+     * </p>
+     * <p>
+     * If more than five <code>PUT</code> actions for a group are currently processing, a validation exception is
+     * thrown.
+     * </p>
+     * 
+     * @param putPrincipalMappingRequest
+     * @return A Java Future containing the result of the PutPrincipalMapping operation returned by the service.
+     * @sample AWSkendraAsync.PutPrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPrincipalMappingResult> putPrincipalMappingAsync(PutPrincipalMappingRequest putPrincipalMappingRequest);
+
+    /**
+     * <p>
+     * Maps users to their groups. You can also map sub groups to groups. For example, the group
+     * "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include
+     * their own list of users or people who work in these teams. Only users who work in research and engineering, and
+     * therefore belong in the intellectual property group, can see top-secret company documents in their search
+     * results.
+     * </p>
+     * <p>
+     * You map users to their groups when you want to filter search results for different users based on their group’s
+     * access to documents. For more information on filtering search results for different users, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
+     * </p>
+     * <p>
+     * If more than five <code>PUT</code> actions for a group are currently processing, a validation exception is
+     * thrown.
+     * </p>
+     * 
+     * @param putPrincipalMappingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutPrincipalMapping operation returned by the service.
+     * @sample AWSkendraAsyncHandler.PutPrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPrincipalMappingResult> putPrincipalMappingAsync(PutPrincipalMappingRequest putPrincipalMappingRequest,
+            com.amazonaws.handlers.AsyncHandler<PutPrincipalMappingRequest, PutPrincipalMappingResult> asyncHandler);
 
     /**
      * <p>

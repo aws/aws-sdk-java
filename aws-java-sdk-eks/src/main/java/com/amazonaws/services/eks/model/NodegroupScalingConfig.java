@@ -32,7 +32,7 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
+     * The minimum number of nodes that the managed node group can scale in to.
      * </p>
      */
     private Integer minSize;
@@ -54,12 +54,11 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
+     * The minimum number of nodes that the managed node group can scale in to.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of nodes that the managed node group can scale in to. This number must be greater than
-     *        zero.
+     *        The minimum number of nodes that the managed node group can scale in to.
      */
 
     public void setMinSize(Integer minSize) {
@@ -68,11 +67,10 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
+     * The minimum number of nodes that the managed node group can scale in to.
      * </p>
      * 
-     * @return The minimum number of nodes that the managed node group can scale in to. This number must be greater than
-     *         zero.
+     * @return The minimum number of nodes that the managed node group can scale in to.
      */
 
     public Integer getMinSize() {
@@ -81,12 +79,11 @@ public class NodegroupScalingConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
+     * The minimum number of nodes that the managed node group can scale in to.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of nodes that the managed node group can scale in to. This number must be greater than
-     *        zero.
+     *        The minimum number of nodes that the managed node group can scale in to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra.
- * Amazon Kendra doesn't support asymmetric CMKs.
+ * Provides the identifier of the KMScustomer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon
+ * Kendra doesn't support asymmetric CMKs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServerSideEncryptionConfiguration"
@@ -31,18 +31,18 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     * The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     * The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     *        The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -51,10 +51,10 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     * The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      * </p>
      * 
-     * @return The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     * @return The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      */
 
     public String getKmsKeyId() {
@@ -63,11 +63,11 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     * The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the AWS KMS customer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
+     *        The identifier of the KMScustomer master key (CMK). Amazon Kendra doesn't support asymmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,21 +31,22 @@ public class DocumentsMetadataConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain multiple
-     * metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     * A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might
+     * contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
      * </p>
      */
     private String s3Prefix;
 
     /**
      * <p>
-     * A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain multiple
-     * metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     * A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might
+     * contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
      * </p>
      * 
      * @param s3Prefix
-     *        A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain
-     *        multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     *        A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket
+     *        might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata
+     *        files.
      */
 
     public void setS3Prefix(String s3Prefix) {
@@ -54,12 +55,13 @@ public class DocumentsMetadataConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain multiple
-     * metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     * A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might
+     * contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
      * </p>
      * 
-     * @return A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain
-     *         multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     * @return A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket
+     *         might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata
+     *         files.
      */
 
     public String getS3Prefix() {
@@ -68,13 +70,14 @@ public class DocumentsMetadataConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain multiple
-     * metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     * A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might
+     * contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
      * </p>
      * 
      * @param s3Prefix
-     *        A prefix used to filter metadata configuration files in the AWS S3 bucket. The S3 bucket might contain
-     *        multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.
+     *        A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket
+     *        might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata
+     *        files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,7 +60,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
-     * calls to AWS API operations on your behalf.
+     * calls to Amazon Web Services API operations on your behalf.
      * </p>
      */
     private String roleArn;
@@ -336,12 +336,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
-     * calls to AWS API operations on your behalf.
+     * calls to Amazon Web Services API operations on your behalf.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
-     *        to make calls to AWS API operations on your behalf.
+     *        to make calls to Amazon Web Services API operations on your behalf.
      */
 
     public void setRoleArn(String roleArn) {
@@ -351,11 +351,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
-     * calls to AWS API operations on your behalf.
+     * calls to Amazon Web Services API operations on your behalf.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
-     *         to make calls to AWS API operations on your behalf.
+     *         to make calls to Amazon Web Services API operations on your behalf.
      */
 
     public String getRoleArn() {
@@ -365,12 +365,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
-     * calls to AWS API operations on your behalf.
+     * calls to Amazon Web Services API operations on your behalf.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
-     *        to make calls to AWS API operations on your behalf.
+     *        to make calls to Amazon Web Services API operations on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

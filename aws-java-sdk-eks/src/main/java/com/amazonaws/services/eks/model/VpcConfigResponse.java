@@ -66,11 +66,11 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
      * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
-     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or AWS
-     * Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks
-     * for communication with the nodes or Fargate pods. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate
+     * pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private Boolean endpointPrivateAccess;
@@ -78,10 +78,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS Fargate pods in the
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
      * cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private java.util.List<String> publicAccessCidrs;
@@ -392,21 +392,21 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
      * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
-     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or AWS
-     * Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks
-     * for communication with the nodes or Fargate pods. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate
+     * pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param endpointPrivateAccess
      *        This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *        private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
      *        VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you
-     *        have nodes or AWS Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes
-     *        the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
-     *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the
+     *        necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *        access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setEndpointPrivateAccess(Boolean endpointPrivateAccess) {
@@ -417,20 +417,20 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
      * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
-     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or AWS
-     * Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks
-     * for communication with the nodes or Fargate pods. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate
+     * pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *         private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
      *         VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you
-     *         have nodes or AWS Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes
-     *         the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
-     *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *         have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the
+     *         necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *         access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public Boolean getEndpointPrivateAccess() {
@@ -441,21 +441,21 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
      * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
-     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or AWS
-     * Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks
-     * for communication with the nodes or Fargate pods. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate
+     * pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param endpointPrivateAccess
      *        This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *        private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
      *        VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you
-     *        have nodes or AWS Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes
-     *        the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
-     *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the
+     *        necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *        access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,20 +468,20 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
      * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
-     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or AWS
-     * Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks
-     * for communication with the nodes or Fargate pods. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate
+     * pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+     * communication with the nodes or Fargate pods. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *         private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
      *         VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you
-     *         have nodes or AWS Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes
-     *         the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
-     *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *         have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the
+     *         necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *         access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public Boolean isEndpointPrivateAccess() {
@@ -492,18 +492,18 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS Fargate pods in the
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
      * cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *         Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default
-     *         value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS
-     *         Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information,
-     *         see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-     *         Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *         value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate
+     *         pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *         access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public java.util.List<String> getPublicAccessCidrs() {
@@ -514,19 +514,19 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS Fargate pods in the
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
      * cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param publicAccessCidrs
      *        The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *        Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default
-     *        value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS
-     *        Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information,
-     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-     *        Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate
+     *        pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *        access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setPublicAccessCidrs(java.util.Collection<String> publicAccessCidrs) {
@@ -542,10 +542,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS Fargate pods in the
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
      * cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -556,10 +556,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * @param publicAccessCidrs
      *        The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *        Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default
-     *        value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS
-     *        Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information,
-     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-     *        Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate
+     *        pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *        access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,19 +577,19 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS Fargate pods in the
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
      * cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
+     * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param publicAccessCidrs
      *        The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *        Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default
-     *        value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or AWS
-     *        Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information,
-     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster
-     *        Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate
+     *        pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     *        access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

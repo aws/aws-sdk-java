@@ -36,9 +36,9 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     private String tenantDomain;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password to
-     * connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is
-     * the application key for the OneDrive application.
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
+     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * application key for the OneDrive application.
      * </p>
      */
     private String secretArn;
@@ -127,14 +127,14 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password to
-     * connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is
-     * the application key for the OneDrive application.
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
+     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * application key for the OneDrive application.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password
-     *        to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
+     *        The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to
+     *        connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
      *        password is the application key for the OneDrive application.
      */
 
@@ -144,13 +144,13 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password to
-     * connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is
-     * the application key for the OneDrive application.
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
+     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * application key for the OneDrive application.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password
-     *         to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
+     * @return The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to
+     *         connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
      *         password is the application key for the OneDrive application.
      */
 
@@ -160,14 +160,14 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password to
-     * connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the password is
-     * the application key for the OneDrive application.
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
+     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * application key for the OneDrive application.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the user name and password
-     *        to connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
+     *        The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to
+     *        connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
      *        password is the application key for the OneDrive application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

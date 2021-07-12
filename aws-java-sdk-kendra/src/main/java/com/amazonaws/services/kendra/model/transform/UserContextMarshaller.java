@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kendra.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,12 @@ public class UserContextMarshaller {
 
     private static final MarshallingInfo<String> TOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Token").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<List> GROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Groups").build();
+    private static final MarshallingInfo<List> DATASOURCEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceGroups").build();
 
     private static final UserContextMarshaller instance = new UserContextMarshaller();
 
@@ -47,6 +54,9 @@ public class UserContextMarshaller {
 
         try {
             protocolMarshaller.marshall(userContext.getToken(), TOKEN_BINDING);
+            protocolMarshaller.marshall(userContext.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(userContext.getGroups(), GROUPS_BINDING);
+            protocolMarshaller.marshall(userContext.getDataSourceGroups(), DATASOURCEGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -76,6 +76,12 @@ public class DocumentJsonUnmarshaller implements Unmarshaller<Document, JsonUnma
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("HierarchicalAccessControlList", targetDepth)) {
+                    context.nextToken();
+                    document.setHierarchicalAccessControlList(new ListUnmarshaller<HierarchicalPrincipal>(HierarchicalPrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ContentType", targetDepth)) {
                     context.nextToken();
                     document.setContentType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -31,8 +31,8 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of storage
+     * space or 500,000 documents, whichever is reached first.
      * </p>
      */
     private Integer storageCapacityUnits;
@@ -43,27 +43,27 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * capacity.
      * </p>
      * <p>
-     * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries per
+     * day.
      * </p>
      * <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
-     * capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries
-     * per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another
-     * 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code>
-     * capacity is 2.5 calls per second (higher than five times 0.2 queries per second).
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For example,
+     * the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5 calls per
+     * second. If adding another 0.5 queries per second to total 1 queries per second for an index, the
+     * <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      * </p>
      */
     private Integer queryCapacityUnits;
 
     /**
      * <p>
-     * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of storage
+     * space or 500,000 documents, whichever is reached first.
      * </p>
      * 
      * @param storageCapacityUnits
-     *        The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space
-     *        or 100,000 documents, whichever is reached first.
+     *        The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of
+     *        storage space or 500,000 documents, whichever is reached first.
      */
 
     public void setStorageCapacityUnits(Integer storageCapacityUnits) {
@@ -72,12 +72,12 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of storage
+     * space or 500,000 documents, whichever is reached first.
      * </p>
      * 
-     * @return The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space
-     *         or 100,000 documents, whichever is reached first.
+     * @return The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of
+     *         storage space or 500,000 documents, whichever is reached first.
      */
 
     public Integer getStorageCapacityUnits() {
@@ -86,13 +86,13 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or
-     * 100,000 documents, whichever is reached first.
+     * The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of storage
+     * space or 500,000 documents, whichever is reached first.
      * </p>
      * 
      * @param storageCapacityUnits
-     *        The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space
-     *        or 100,000 documents, whichever is reached first.
+     *        The amount of extra storage capacity for an index. A single capacity unit for an index provides 150 GB of
+     *        storage space or 500,000 documents, whichever is reached first.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,14 +108,14 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * capacity.
      * </p>
      * <p>
-     * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries per
+     * day.
      * </p>
      * <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
-     * capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries
-     * per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another
-     * 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code>
-     * capacity is 2.5 calls per second (higher than five times 0.2 queries per second).
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For example,
+     * the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5 calls per
+     * second. If adding another 0.5 queries per second to total 1 queries per second for an index, the
+     * <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      * </p>
      * 
      * @param queryCapacityUnits
@@ -123,16 +123,14 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
      *        capacity.</p>
      *        <p>
-     *        A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries
+     *        A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries
      *        per day.
      *        </p>
      *        <p>
-     *        <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or
-     *        the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an
-     *        index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per
-     *        second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the
-     *        <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per
-     *        second).
+     *        <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For
+     *        example, the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5
+     *        calls per second. If adding another 0.5 queries per second to total 1 queries per second for an index, the
+     *        <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      */
 
     public void setQueryCapacityUnits(Integer queryCapacityUnits) {
@@ -146,30 +144,28 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * capacity.
      * </p>
      * <p>
-     * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries per
+     * day.
      * </p>
      * <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
-     * capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries
-     * per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another
-     * 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code>
-     * capacity is 2.5 calls per second (higher than five times 0.2 queries per second).
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For example,
+     * the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5 calls per
+     * second. If adding another 0.5 queries per second to total 1 queries per second for an index, the
+     * <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      * </p>
      * 
      * @return The amount of extra query capacity for an index and <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
      *         capacity.</p>
      *         <p>
-     *         A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries
+     *         A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries
      *         per day.
      *         </p>
      *         <p>
-     *         <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or
-     *         the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an
-     *         index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls
-     *         per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the
-     *         <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per
-     *         second).
+     *         <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For
+     *         example, the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5
+     *         calls per second. If adding another 0.5 queries per second to total 1 queries per second for an index,
+     *         the <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      */
 
     public Integer getQueryCapacityUnits() {
@@ -183,14 +179,14 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      * capacity.
      * </p>
      * <p>
-     * A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day.
+     * A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries per
+     * day.
      * </p>
      * <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base
-     * capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries
-     * per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another
-     * 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code>
-     * capacity is 2.5 calls per second (higher than five times 0.2 queries per second).
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For example,
+     * the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5 calls per
+     * second. If adding another 0.5 queries per second to total 1 queries per second for an index, the
+     * <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      * </p>
      * 
      * @param queryCapacityUnits
@@ -198,16 +194,14 @@ public class CapacityUnitsConfiguration implements Serializable, Cloneable, Stru
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
      *        capacity.</p>
      *        <p>
-     *        A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries
+     *        A single extra capacity unit for an index provides 0.5 queries per second or approximately 40,000 queries
      *        per day.
      *        </p>
      *        <p>
-     *        <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or
-     *        the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an
-     *        index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per
-     *        second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the
-     *        <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per
-     *        second).
+     *        <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query capacity for an index. For
+     *        example, the base capacity for an index is 0.5 queries per second, so GetQuerySuggestions capacity is 2.5
+     *        calls per second. If adding another 0.5 queries per second to total 1 queries per second for an index, the
+     *        <code>GetQuerySuggestions</code> capacity is 5 calls per second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

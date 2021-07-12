@@ -46,8 +46,8 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
-     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
-     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
+     * the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
+     * calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      */
     private java.nio.ByteBuffer blob;
@@ -62,10 +62,17 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DocumentAttribute> attributes;
     /**
      * <p>
-     * Information to use for user context filtering.
+     * Information on user and group access rights, which is used for user context filtering.
      * </p>
      */
     private java.util.List<Principal> accessControlList;
+    /**
+     * <p>
+     * The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that
+     * define the hierarchy for which documents users should have access to.
+     * </p>
+     */
+    private java.util.List<HierarchicalPrincipal> hierarchicalAccessControlList;
     /**
      * <p>
      * The file type of the document in the <code>Blob</code> field.
@@ -159,8 +166,8 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
-     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
-     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
+     * the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
+     * calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -177,9 +184,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      *        The contents of the document. </p>
      *        <p>
      *        Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to
-     *        encode the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are
-     *        calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before
-     *        sending.
+     *        encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra
+     *        operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the
+     *        contents before sending.
      */
 
     public void setBlob(java.nio.ByteBuffer blob) {
@@ -192,8 +199,8 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
-     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
-     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
+     * the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
+     * calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -206,9 +213,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * @return The contents of the document. </p>
      *         <p>
      *         Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to
-     *         encode the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are
-     *         calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before
-     *         sending.
+     *         encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra
+     *         operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the
+     *         contents before sending.
      */
 
     public java.nio.ByteBuffer getBlob() {
@@ -221,8 +228,8 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
-     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
-     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
+     * the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
+     * calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -239,9 +246,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      *        The contents of the document. </p>
      *        <p>
      *        Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to
-     *        encode the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are
-     *        calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before
-     *        sending.
+     *        encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra
+     *        operations. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the
+     *        contents before sending.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,10 +367,10 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information to use for user context filtering.
+     * Information on user and group access rights, which is used for user context filtering.
      * </p>
      * 
-     * @return Information to use for user context filtering.
+     * @return Information on user and group access rights, which is used for user context filtering.
      */
 
     public java.util.List<Principal> getAccessControlList() {
@@ -372,11 +379,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information to use for user context filtering.
+     * Information on user and group access rights, which is used for user context filtering.
      * </p>
      * 
      * @param accessControlList
-     *        Information to use for user context filtering.
+     *        Information on user and group access rights, which is used for user context filtering.
      */
 
     public void setAccessControlList(java.util.Collection<Principal> accessControlList) {
@@ -390,7 +397,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information to use for user context filtering.
+     * Information on user and group access rights, which is used for user context filtering.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -399,7 +406,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param accessControlList
-     *        Information to use for user context filtering.
+     *        Information on user and group access rights, which is used for user context filtering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,16 +422,94 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information to use for user context filtering.
+     * Information on user and group access rights, which is used for user context filtering.
      * </p>
      * 
      * @param accessControlList
-     *        Information to use for user context filtering.
+     *        Information on user and group access rights, which is used for user context filtering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Document withAccessControlList(java.util.Collection<Principal> accessControlList) {
         setAccessControlList(accessControlList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that
+     * define the hierarchy for which documents users should have access to.
+     * </p>
+     * 
+     * @return The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+     *         that define the hierarchy for which documents users should have access to.
+     */
+
+    public java.util.List<HierarchicalPrincipal> getHierarchicalAccessControlList() {
+        return hierarchicalAccessControlList;
+    }
+
+    /**
+     * <p>
+     * The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that
+     * define the hierarchy for which documents users should have access to.
+     * </p>
+     * 
+     * @param hierarchicalAccessControlList
+     *        The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+     *        that define the hierarchy for which documents users should have access to.
+     */
+
+    public void setHierarchicalAccessControlList(java.util.Collection<HierarchicalPrincipal> hierarchicalAccessControlList) {
+        if (hierarchicalAccessControlList == null) {
+            this.hierarchicalAccessControlList = null;
+            return;
+        }
+
+        this.hierarchicalAccessControlList = new java.util.ArrayList<HierarchicalPrincipal>(hierarchicalAccessControlList);
+    }
+
+    /**
+     * <p>
+     * The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that
+     * define the hierarchy for which documents users should have access to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHierarchicalAccessControlList(java.util.Collection)} or
+     * {@link #withHierarchicalAccessControlList(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param hierarchicalAccessControlList
+     *        The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+     *        that define the hierarchy for which documents users should have access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Document withHierarchicalAccessControlList(HierarchicalPrincipal... hierarchicalAccessControlList) {
+        if (this.hierarchicalAccessControlList == null) {
+            setHierarchicalAccessControlList(new java.util.ArrayList<HierarchicalPrincipal>(hierarchicalAccessControlList.length));
+        }
+        for (HierarchicalPrincipal ele : hierarchicalAccessControlList) {
+            this.hierarchicalAccessControlList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that
+     * define the hierarchy for which documents users should have access to.
+     * </p>
+     * 
+     * @param hierarchicalAccessControlList
+     *        The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+     *        that define the hierarchy for which documents users should have access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Document withHierarchicalAccessControlList(java.util.Collection<HierarchicalPrincipal> hierarchicalAccessControlList) {
+        setHierarchicalAccessControlList(hierarchicalAccessControlList);
         return this;
     }
 
@@ -511,6 +596,8 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getAccessControlList() != null)
             sb.append("AccessControlList: ").append(getAccessControlList()).append(",");
+        if (getHierarchicalAccessControlList() != null)
+            sb.append("HierarchicalAccessControlList: ").append(getHierarchicalAccessControlList()).append(",");
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType());
         sb.append("}");
@@ -551,6 +638,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccessControlList() != null && other.getAccessControlList().equals(this.getAccessControlList()) == false)
             return false;
+        if (other.getHierarchicalAccessControlList() == null ^ this.getHierarchicalAccessControlList() == null)
+            return false;
+        if (other.getHierarchicalAccessControlList() != null
+                && other.getHierarchicalAccessControlList().equals(this.getHierarchicalAccessControlList()) == false)
+            return false;
         if (other.getContentType() == null ^ this.getContentType() == null)
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
@@ -569,6 +661,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getS3Path() == null) ? 0 : getS3Path().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getAccessControlList() == null) ? 0 : getAccessControlList().hashCode());
+        hashCode = prime * hashCode + ((getHierarchicalAccessControlList() == null) ? 0 : getHierarchicalAccessControlList().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         return hashCode;
     }

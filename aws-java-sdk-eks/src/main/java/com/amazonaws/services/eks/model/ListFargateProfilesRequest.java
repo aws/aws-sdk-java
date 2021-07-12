@@ -27,7 +27,7 @@ public class ListFargateProfilesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     * The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      * </p>
      */
     private String clusterName;
@@ -53,11 +53,11 @@ public class ListFargateProfilesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     * The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     *        The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      */
 
     public void setClusterName(String clusterName) {
@@ -66,10 +66,10 @@ public class ListFargateProfilesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     * The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     * @return The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      */
 
     public String getClusterName() {
@@ -78,11 +78,11 @@ public class ListFargateProfilesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     * The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that you would like to listFargate profiles in.
+     *        The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,6 +88,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public DeletePrincipalMappingResult deletePrincipalMapping(DeletePrincipalMappingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteQuerySuggestionsBlockListResult deleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +114,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public DescribeIndexResult describeIndex(DescribeIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePrincipalMappingResult describePrincipalMapping(DescribePrincipalMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,6 +158,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public ListGroupsOlderThanOrderingIdResult listGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIndicesResult listIndices(ListIndicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +179,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public ListThesauriResult listThesauri(ListThesauriRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPrincipalMappingResult putPrincipalMapping(PutPrincipalMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -36,7 +36,7 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> resources;
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     * Key Management Service (KMS) key. Either the ARN or the alias can be used.
      * </p>
      */
     private Provider provider;
@@ -113,11 +113,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     * Key Management Service (KMS) key. Either the ARN or the alias can be used.
      * </p>
      * 
      * @param provider
-     *        AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     *        Key Management Service (KMS) key. Either the ARN or the alias can be used.
      */
 
     public void setProvider(Provider provider) {
@@ -126,10 +126,10 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     * Key Management Service (KMS) key. Either the ARN or the alias can be used.
      * </p>
      * 
-     * @return AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     * @return Key Management Service (KMS) key. Either the ARN or the alias can be used.
      */
 
     public Provider getProvider() {
@@ -138,11 +138,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     * Key Management Service (KMS) key. Either the ARN or the alias can be used.
      * </p>
      * 
      * @param provider
-     *        AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
+     *        Key Management Service (KMS) key. Either the ARN or the alias can be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

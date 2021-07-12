@@ -60,6 +60,10 @@ public class PrincipalJsonUnmarshaller implements Unmarshaller<Principal, JsonUn
                     context.nextToken();
                     principal.setAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DataSourceId", targetDepth)) {
+                    context.nextToken();
+                    principal.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

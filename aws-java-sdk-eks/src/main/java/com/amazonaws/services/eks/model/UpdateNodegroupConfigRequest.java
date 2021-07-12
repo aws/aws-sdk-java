@@ -55,7 +55,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private NodegroupScalingConfig scalingConfig;
-
+    /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     */
     private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
@@ -265,7 +269,12 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
      * @param updateConfig
+     *        The node group update configuration.
      */
 
     public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
@@ -273,7 +282,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
+     * @return The node group update configuration.
      */
 
     public NodegroupUpdateConfig getUpdateConfig() {
@@ -281,7 +294,12 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
      * @param updateConfig
+     *        The node group update configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

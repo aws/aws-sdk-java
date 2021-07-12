@@ -106,8 +106,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
-     * type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the
+     * specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
      * </li>
      * <li>
@@ -140,7 +140,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
     private String message;
     /**
      * <p>
-     * The AWS resources that are afflicted by this issue.
+     * The Amazon Web Services resources that are afflicted by this issue.
      * </p>
      */
     private java.util.List<String> resourceIds;
@@ -224,8 +224,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
-     * type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the
+     * specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
      * </li>
      * <li>
@@ -326,8 +326,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
-     *        instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     *        <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of
+     *        the specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *        </p>
      *        </li>
      *        <li>
@@ -435,8 +435,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
-     * type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the
+     * specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
      * </li>
      * <li>
@@ -536,8 +536,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
-     *         instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     *         <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of
+     *         the specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *         </p>
      *         </li>
      *         <li>
@@ -645,8 +645,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
-     * type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the
+     * specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
      * </li>
      * <li>
@@ -747,8 +747,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
-     *        instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     *        <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of
+     *        the specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *        </p>
      *        </li>
      *        <li>
@@ -858,8 +858,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
-     * type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     * <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of the
+     * specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
      * </li>
      * <li>
@@ -960,8 +960,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
-     *        instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
+     *        <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is unable to launch any more instances of
+     *        the specified instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *        </p>
      *        </li>
      *        <li>
@@ -1034,10 +1034,10 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS resources that are afflicted by this issue.
+     * The Amazon Web Services resources that are afflicted by this issue.
      * </p>
      * 
-     * @return The AWS resources that are afflicted by this issue.
+     * @return The Amazon Web Services resources that are afflicted by this issue.
      */
 
     public java.util.List<String> getResourceIds() {
@@ -1046,11 +1046,11 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS resources that are afflicted by this issue.
+     * The Amazon Web Services resources that are afflicted by this issue.
      * </p>
      * 
      * @param resourceIds
-     *        The AWS resources that are afflicted by this issue.
+     *        The Amazon Web Services resources that are afflicted by this issue.
      */
 
     public void setResourceIds(java.util.Collection<String> resourceIds) {
@@ -1064,7 +1064,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS resources that are afflicted by this issue.
+     * The Amazon Web Services resources that are afflicted by this issue.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1073,7 +1073,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceIds
-     *        The AWS resources that are afflicted by this issue.
+     *        The Amazon Web Services resources that are afflicted by this issue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1089,11 +1089,11 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS resources that are afflicted by this issue.
+     * The Amazon Web Services resources that are afflicted by this issue.
      * </p>
      * 
      * @param resourceIds
-     *        The AWS resources that are afflicted by this issue.
+     *        The Amazon Web Services resources that are afflicted by this issue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

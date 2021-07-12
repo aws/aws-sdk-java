@@ -472,6 +472,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePrincipalMappingResult> deletePrincipalMappingAsync(DeletePrincipalMappingRequest request) {
+
+        return deletePrincipalMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePrincipalMappingResult> deletePrincipalMappingAsync(final DeletePrincipalMappingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePrincipalMappingRequest, DeletePrincipalMappingResult> asyncHandler) {
+        final DeletePrincipalMappingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePrincipalMappingResult>() {
+            @Override
+            public DeletePrincipalMappingResult call() throws Exception {
+                DeletePrincipalMappingResult result = null;
+
+                try {
+                    result = executeDeletePrincipalMapping(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
             DeleteQuerySuggestionsBlockListRequest request) {
 
@@ -623,6 +656,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeDescribeIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePrincipalMappingResult> describePrincipalMappingAsync(DescribePrincipalMappingRequest request) {
+
+        return describePrincipalMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePrincipalMappingResult> describePrincipalMappingAsync(final DescribePrincipalMappingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePrincipalMappingRequest, DescribePrincipalMappingResult> asyncHandler) {
+        final DescribePrincipalMappingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePrincipalMappingResult>() {
+            @Override
+            public DescribePrincipalMappingResult call() throws Exception {
+                DescribePrincipalMappingResult result = null;
+
+                try {
+                    result = executeDescribePrincipalMapping(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -873,6 +939,40 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListGroupsOlderThanOrderingIdResult> listGroupsOlderThanOrderingIdAsync(ListGroupsOlderThanOrderingIdRequest request) {
+
+        return listGroupsOlderThanOrderingIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsOlderThanOrderingIdResult> listGroupsOlderThanOrderingIdAsync(
+            final ListGroupsOlderThanOrderingIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGroupsOlderThanOrderingIdRequest, ListGroupsOlderThanOrderingIdResult> asyncHandler) {
+        final ListGroupsOlderThanOrderingIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGroupsOlderThanOrderingIdResult>() {
+            @Override
+            public ListGroupsOlderThanOrderingIdResult call() throws Exception {
+                ListGroupsOlderThanOrderingIdResult result = null;
+
+                try {
+                    result = executeListGroupsOlderThanOrderingId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIndicesResult> listIndicesAsync(ListIndicesRequest request) {
 
         return listIndicesAsync(request, null);
@@ -990,6 +1090,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeListThesauri(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPrincipalMappingResult> putPrincipalMappingAsync(PutPrincipalMappingRequest request) {
+
+        return putPrincipalMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPrincipalMappingResult> putPrincipalMappingAsync(final PutPrincipalMappingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPrincipalMappingRequest, PutPrincipalMappingResult> asyncHandler) {
+        final PutPrincipalMappingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPrincipalMappingResult>() {
+            @Override
+            public PutPrincipalMappingResult call() throws Exception {
+                PutPrincipalMappingResult result = null;
+
+                try {
+                    result = executePutPrincipalMapping(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

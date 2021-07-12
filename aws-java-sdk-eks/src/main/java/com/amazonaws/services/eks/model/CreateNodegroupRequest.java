@@ -107,12 +107,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API calls
-     * through an IAM instance profile and associated policies. Before you can launch nodes and register them into a
-     * cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for
+     * these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register
+     * them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS
+     * node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
+     * don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
      * <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
@@ -154,7 +154,11 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
-
+    /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     */
     private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
@@ -829,12 +833,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API calls
-     * through an IAM instance profile and associated policies. Before you can launch nodes and register them into a
-     * cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for
+     * these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register
+     * them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS
+     * node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
+     * don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
      * <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
@@ -843,10 +847,10 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param nodeRole
      *        The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-     *        node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for
-     *        these API calls through an IAM instance profile and associated policies. Before you can launch nodes and
-     *        register them into a cluster, you must create an IAM role for those nodes to use when they are launched.
-     *        For more information, see <a
+     *        node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
+     *        permissions for these API calls through an IAM instance profile and associated policies. Before you can
+     *        launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when
+     *        they are launched. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM
      *        role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
      *        don't specify <a
@@ -864,12 +868,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API calls
-     * through an IAM instance profile and associated policies. Before you can launch nodes and register them into a
-     * cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for
+     * these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register
+     * them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS
+     * node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
+     * don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
      * <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
@@ -877,10 +881,10 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-     *         node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for
-     *         these API calls through an IAM instance profile and associated policies. Before you can launch nodes and
-     *         register them into a cluster, you must create an IAM role for those nodes to use when they are launched.
-     *         For more information, see <a
+     *         node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
+     *         permissions for these API calls through an IAM instance profile and associated policies. Before you can
+     *         launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when
+     *         they are launched. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM
      *         role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
      *         don't specify <a
@@ -898,12 +902,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API calls
-     * through an IAM instance profile and associated policies. Before you can launch nodes and register them into a
-     * cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in
-     * the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
+     * <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for
+     * these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register
+     * them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS
+     * node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
+     * don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
      * <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
@@ -912,10 +916,10 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param nodeRole
      *        The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-     *        node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for
-     *        these API calls through an IAM instance profile and associated policies. Before you can launch nodes and
-     *        register them into a cluster, you must create an IAM role for those nodes to use when they are launched.
-     *        For more information, see <a
+     *        node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
+     *        permissions for these API calls through an IAM instance profile and associated policies. Before you can
+     *        launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when
+     *        they are launched. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM
      *        role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then
      *        don't specify <a
@@ -1243,7 +1247,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
      * @param updateConfig
+     *        The node group update configuration.
      */
 
     public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
@@ -1251,7 +1260,11 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
+     * @return The node group update configuration.
      */
 
     public NodegroupUpdateConfig getUpdateConfig() {
@@ -1259,7 +1272,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
      * @param updateConfig
+     *        The node group update configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

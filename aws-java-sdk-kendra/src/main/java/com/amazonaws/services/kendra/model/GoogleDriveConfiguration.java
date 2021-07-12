@@ -30,8 +30,8 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to connect
-     * to Google Drive. For more information, see <a
+     * The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to
+     * Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive
      * data source</a>.
      * </p>
@@ -93,14 +93,14 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to connect
-     * to Google Drive. For more information, see <a
+     * The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to
+     * Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive
      * data source</a>.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to
+     *        The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to
      *        connect to Google Drive. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace
      *        Drive data source</a>.
@@ -112,13 +112,13 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to connect
-     * to Google Drive. For more information, see <a
+     * The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to
+     * Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive
      * data source</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to
+     * @return The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to
      *         connect to Google Drive. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google
      *         Workspace Drive data source</a>.
@@ -130,14 +130,14 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to connect
-     * to Google Drive. For more information, see <a
+     * The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to
+     * Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive
      * data source</a>.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains the credentials required to
+     *        The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to
      *        connect to Google Drive. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace
      *        Drive data source</a>.

@@ -60,7 +60,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>.
      * For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i> Secrets Manager </i> user guide.
      * </p>
      */
     private String secretArn;
@@ -238,7 +238,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>.
      * For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i> Secrets Manager </i> user guide.
      * </p>
      * 
      * @param secretArn
@@ -247,7 +247,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data
      *        Source</a>. For more information about AWS Secrets Manager, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager
-     *        </a> in the <i>AWS Secrets Manager</i> user guide.
+     *        </a> in the <i> Secrets Manager </i> user guide.
      */
 
     public void setSecretArn(String secretArn) {
@@ -261,7 +261,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>.
      * For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i> Secrets Manager </i> user guide.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
@@ -269,7 +269,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data
      *         Source</a>. For more information about AWS Secrets Manager, see <a
      *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets
-     *         Manager </a> in the <i>AWS Secrets Manager</i> user guide.
+     *         Manager </a> in the <i> Secrets Manager </i> user guide.
      */
 
     public String getSecretArn() {
@@ -283,7 +283,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>.
      * For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i> Secrets Manager </i> user guide.
      * </p>
      * 
      * @param secretArn
@@ -292,7 +292,7 @@ public class ConnectionConfiguration implements Serializable, Cloneable, Structu
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data
      *        Source</a>. For more information about AWS Secrets Manager, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager
-     *        </a> in the <i>AWS Secrets Manager</i> user guide.
+     *        </a> in the <i> Secrets Manager </i> user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -121,9 +121,9 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String amiType;
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
-     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
-     * policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to
+     * Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.
      * </p>
      */
     private String nodeRole;
@@ -142,8 +142,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
-     * together with tolerations to control how workloads are scheduled to your nodes.
+     * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
+     * used together with tolerations to control how workloads are scheduled to your nodes.
      * </p>
      */
     private java.util.List<Taint> taints;
@@ -166,7 +166,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodegroupHealth health;
-
+    /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     */
     private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
@@ -914,15 +918,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
-     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
-     * policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to
+     * Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.
      * </p>
      * 
      * @param nodeRole
      *        The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
-     *        to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
-     *        and associated policies.
+     *        to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM
+     *        instance profile and associated policies.
      */
 
     public void setNodeRole(String nodeRole) {
@@ -931,14 +935,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
-     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
-     * policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to
+     * Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.
      * </p>
      * 
      * @return The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
-     *         to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
-     *         and associated policies.
+     *         to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM
+     *         instance profile and associated policies.
      */
 
     public String getNodeRole() {
@@ -947,15 +951,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
-     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
-     * policies.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to
+     * Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance
+     * profile and associated policies.
      * </p>
      * 
      * @param nodeRole
      *        The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
-     *        to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
-     *        and associated policies.
+     *        to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM
+     *        instance profile and associated policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1065,13 +1069,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
-     * together with tolerations to control how workloads are scheduled to your nodes.
+     * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
+     * used together with tolerations to control how workloads are scheduled to your nodes.
      * </p>
      * 
      * @return The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one
-     *         of <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints
-     *         can be used together with tolerations to control how workloads are scheduled to your nodes.
+     *         of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes
+     *         taints can be used together with tolerations to control how workloads are scheduled to your nodes.
      */
 
     public java.util.List<Taint> getTaints() {
@@ -1081,14 +1085,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
-     * together with tolerations to control how workloads are scheduled to your nodes.
+     * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
+     * used together with tolerations to control how workloads are scheduled to your nodes.
      * </p>
      * 
      * @param taints
      *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
-     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     *        <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     *        can be used together with tolerations to control how workloads are scheduled to your nodes.
      */
 
     public void setTaints(java.util.Collection<Taint> taints) {
@@ -1103,8 +1107,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
-     * together with tolerations to control how workloads are scheduled to your nodes.
+     * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
+     * used together with tolerations to control how workloads are scheduled to your nodes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1114,8 +1118,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param taints
      *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
-     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     *        <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     *        can be used together with tolerations to control how workloads are scheduled to your nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1132,14 +1136,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
-     * together with tolerations to control how workloads are scheduled to your nodes.
+     * <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be
+     * used together with tolerations to control how workloads are scheduled to your nodes.
      * </p>
      * 
      * @param taints
      *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
-     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
-     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     *        <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+     *        can be used together with tolerations to control how workloads are scheduled to your nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1281,7 +1285,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
      * @param updateConfig
+     *        The node group update configuration.
      */
 
     public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
@@ -1289,7 +1298,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
+     * @return The node group update configuration.
      */
 
     public NodegroupUpdateConfig getUpdateConfig() {
@@ -1297,7 +1310,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The node group update configuration.
+     * </p>
+     * 
      * @param updateConfig
+     *        The node group update configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

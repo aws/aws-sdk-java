@@ -52,6 +52,22 @@ public class UserContextJsonUnmarshaller implements Unmarshaller<UserContext, Js
                     context.nextToken();
                     userContext.setToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UserId", targetDepth)) {
+                    context.nextToken();
+                    userContext.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Groups", targetDepth)) {
+                    context.nextToken();
+                    userContext.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DataSourceGroups", targetDepth)) {
+                    context.nextToken();
+                    userContext.setDataSourceGroups(new ListUnmarshaller<DataSourceGroup>(DataSourceGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

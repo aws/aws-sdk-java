@@ -32,7 +32,7 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      * </p>
      */
     private String ec2SshKey;
@@ -51,14 +51,14 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param ec2SshKey
      *        The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node
      *        group. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
+     *        Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      */
 
     public void setEc2SshKey(String ec2SshKey) {
@@ -69,13 +69,13 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node
      *         group. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
+     *         Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      */
 
     public String getEc2SshKey() {
@@ -86,14 +86,14 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param ec2SshKey
      *        The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node
      *        group. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
+     *        Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

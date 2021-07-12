@@ -160,8 +160,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
-     * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages related to the processing of the batch are sent to you CloudWatch log.
+     * The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services
+     * CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -303,8 +303,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * attributes to the documents, and to attach an access control list to the documents added to the index.
      * </p>
      * <p>
-     * The documents are indexed asynchronously. You can see the progress of the batch using AWS CloudWatch. Any error
-     * messages related to processing the batch are sent to your AWS CloudWatch log.
+     * The documents are indexed asynchronously. You can see the progress of the batch using Amazon Web Services
+     * CloudWatch. Any error messages related to processing the batch are sent to your Amazon Web Services CloudWatch
+     * log.
      * </p>
      * 
      * @param batchPutDocumentRequest
@@ -962,6 +963,80 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Deletes a group so that all users and sub groups that belong to the group can no longer access documents only
+     * available to that group.
+     * </p>
+     * <p>
+     * For example, after deleting the group "Summer Interns", all interns who belonged to that group no longer see
+     * intern-only documents in their search results.
+     * </p>
+     * <p>
+     * If you want to delete or replace users or sub groups of a group, you need to use the
+     * <code>PutPrincipalMapping</code> operation. For example, if a user in the group "Engineering" leaves the
+     * engineering team and another user takes their place, you provide an updated list of users or sub groups that
+     * belong to the "Engineering" group when calling <code>PutPrincipalMapping</code>. You can update your internal
+     * list of users or sub groups and input this list when calling <code>PutPrincipalMapping</code>.
+     * </p>
+     * 
+     * @param deletePrincipalMappingRequest
+     * @return Result of the DeletePrincipalMapping operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeletePrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeletePrincipalMappingResult deletePrincipalMapping(DeletePrincipalMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePrincipalMapping(request);
+    }
+
+    @SdkInternalApi
+    final DeletePrincipalMappingResult executeDeletePrincipalMapping(DeletePrincipalMappingRequest deletePrincipalMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePrincipalMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePrincipalMappingRequest> request = null;
+        Response<DeletePrincipalMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePrincipalMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePrincipalMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePrincipalMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePrincipalMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePrincipalMappingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a block list used for query suggestions for an index.
      * </p>
      * <p>
@@ -1259,6 +1334,71 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.
+     * This includes information on the status of actions currently processing or yet to be processed, when actions were
+     * last updated, when actions were received by Amazon Kendra, the latest action that should process and apply after
+     * other actions, and useful error messages if an action could not be processed.
+     * </p>
+     * 
+     * @param describePrincipalMappingRequest
+     * @return Result of the DescribePrincipalMapping operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribePrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePrincipalMappingResult describePrincipalMapping(DescribePrincipalMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePrincipalMapping(request);
+    }
+
+    @SdkInternalApi
+    final DescribePrincipalMappingResult executeDescribePrincipalMapping(DescribePrincipalMappingRequest describePrincipalMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePrincipalMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePrincipalMappingRequest> request = null;
+        Response<DescribePrincipalMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePrincipalMappingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePrincipalMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePrincipalMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePrincipalMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePrincipalMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1706,6 +1846,69 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Provides a list of groups that are mapped to users before a given ordering or timestamp identifier.
+     * </p>
+     * 
+     * @param listGroupsOlderThanOrderingIdRequest
+     * @return Result of the ListGroupsOlderThanOrderingId operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ThrottlingException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListGroupsOlderThanOrderingId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListGroupsOlderThanOrderingIdResult listGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroupsOlderThanOrderingId(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupsOlderThanOrderingIdResult executeListGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest listGroupsOlderThanOrderingIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGroupsOlderThanOrderingIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupsOlderThanOrderingIdRequest> request = null;
+        Response<ListGroupsOlderThanOrderingIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupsOlderThanOrderingIdRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listGroupsOlderThanOrderingIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupsOlderThanOrderingId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGroupsOlderThanOrderingIdResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListGroupsOlderThanOrderingIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the Amazon Kendra indexes that you have created.
      * </p>
      * 
@@ -1940,6 +2143,81 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<ListThesauriResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThesauriResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Maps users to their groups. You can also map sub groups to groups. For example, the group
+     * "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include
+     * their own list of users or people who work in these teams. Only users who work in research and engineering, and
+     * therefore belong in the intellectual property group, can see top-secret company documents in their search
+     * results.
+     * </p>
+     * <p>
+     * You map users to their groups when you want to filter search results for different users based on their group’s
+     * access to documents. For more information on filtering search results for different users, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.
+     * </p>
+     * <p>
+     * If more than five <code>PUT</code> actions for a group are currently processing, a validation exception is
+     * thrown.
+     * </p>
+     * 
+     * @param putPrincipalMappingRequest
+     * @return Result of the PutPrincipalMapping operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws InternalServerException
+     * @sample AWSkendra.PutPrincipalMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutPrincipalMappingResult putPrincipalMapping(PutPrincipalMappingRequest request) {
+        request = beforeClientExecution(request);
+        return executePutPrincipalMapping(request);
+    }
+
+    @SdkInternalApi
+    final PutPrincipalMappingResult executePutPrincipalMapping(PutPrincipalMappingRequest putPrincipalMappingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putPrincipalMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPrincipalMappingRequest> request = null;
+        Response<PutPrincipalMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPrincipalMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPrincipalMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPrincipalMapping");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutPrincipalMappingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutPrincipalMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

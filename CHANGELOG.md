@@ -1,3 +1,12 @@
+# __1.12.22__ __2021-07-12__
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now supports Principal Store
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Documentation updates for Wesley to support the parallel node upgrade feature.
+
 # __1.12.21__ __2021-07-09__
 ## __AWS Elemental MediaConvert__
   - ### Features

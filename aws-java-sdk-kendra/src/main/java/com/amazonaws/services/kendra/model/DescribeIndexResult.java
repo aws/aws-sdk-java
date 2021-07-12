@@ -50,7 +50,7 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String roleArn;
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
+     * The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
      * asymmetric CMKs.
      * </p>
      */
@@ -308,12 +308,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
+     * The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
      * asymmetric CMKs.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't
+     *        The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't
      *        support asymmetric CMKs.
      */
 
@@ -323,11 +323,11 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
+     * The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
      * asymmetric CMKs.
      * </p>
      * 
-     * @return The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't
+     * @return The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't
      *         support asymmetric CMKs.
      */
 
@@ -337,12 +337,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
+     * The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't support
      * asymmetric CMKs.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The identifier of the AWS KMS customer master key (CMK) used to encrypt your data. Amazon Kendra doesn't
+     *        The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon Kendra doesn't
      *        support asymmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

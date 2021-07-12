@@ -46,6 +46,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String access;
+    /**
+     * <p>
+     * The identifier of the data source the principal should access documents from.
+     * </p>
+     */
+    private String dataSourceId;
 
     /**
      * <p>
@@ -206,6 +212,46 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the data source the principal should access documents from.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source the principal should access documents from.
+     */
+
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source the principal should access documents from.
+     * </p>
+     * 
+     * @return The identifier of the data source the principal should access documents from.
+     */
+
+    public String getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source the principal should access documents from.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source the principal should access documents from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Principal withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -222,7 +268,9 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getAccess() != null)
-            sb.append("Access: ").append(getAccess());
+            sb.append("Access: ").append(getAccess()).append(",");
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -249,6 +297,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccess() != null && other.getAccess().equals(this.getAccess()) == false)
             return false;
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+            return false;
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
+            return false;
         return true;
     }
 
@@ -260,6 +312,7 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAccess() == null) ? 0 : getAccess().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         return hashCode;
     }
 

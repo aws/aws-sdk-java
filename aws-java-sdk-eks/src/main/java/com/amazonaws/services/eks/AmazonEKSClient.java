@@ -53,8 +53,8 @@ import com.amazonaws.services.eks.model.transform.*;
  * <p>
  * <p>
  * Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on
- * AWS without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an open-source system
- * for automating the deployment, scaling, and management of containerized applications.
+ * Amazon Web Services without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an
+ * open-source system for automating the deployment, scaling, and management of containerized applications.
  * </p>
  * <p>
  * Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins
@@ -176,7 +176,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This
-     * allows you to implement a defense-in-depth security strategy without migrating applications to new EKS clusters.
+     * allows you to implement a defense-in-depth security strategy without migrating applications to new Amazon EKS
+     * clusters.
      * </p>
      * 
      * @param associateEncryptionConfigRequest
@@ -415,9 +416,9 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * The Amazon EKS control plane consists of control plane instances that run the Kubernetes software, such as
-     * <code>etcd</code> and the API server. The control plane runs in an account managed by AWS, and the Kubernetes API
-     * is exposed via the Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant and
-     * unique and runs on its own set of Amazon EC2 instances.
+     * <code>etcd</code> and the API server. The control plane runs in an account managed by Amazon Web Services, and
+     * the Kubernetes API is exposed via the Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is
+     * single-tenant and unique and runs on its own set of Amazon EC2 instances.
      * </p>
      * <p>
      * The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load
@@ -426,8 +427,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code> data flows).
      * </p>
      * <p>
-     * Amazon EKS nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes API
-     * server endpoint and a certificate file that is created for your cluster.
+     * Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's control plane via the
+     * Kubernetes API server endpoint and a certificate file that is created for your cluster.
      * </p>
      * <p>
      * Cluster creation typically takes several minutes. After you create an Amazon EKS cluster, you must configure your
@@ -507,8 +508,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least one Fargate profile in a
-     * cluster to be able to run pods on Fargate.
+     * Creates an Fargate profile for your Amazon EKS cluster. You must have at least one Fargate profile in a cluster
+     * to be able to run pods on Fargate.
      * </p>
      * <p>
      * The Fargate profile allows an administrator to declare which pods run on Fargate and specify which pods run on
@@ -536,8 +537,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * profile to finish deleting before you can create any other profiles in that cluster.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
-     * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
+     * Profile</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param createFargateProfileRequest
@@ -617,8 +618,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
-     * 2 AMI. For more information, see <a
+     * managed by Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
+     * optimized Amazon Linux 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
@@ -846,7 +847,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Deletes an AWS Fargate profile.
+     * Deletes an Fargate profile.
      * </p>
      * <p>
      * When you delete a Fargate profile, any pods running on Fargate that were created with the profile are deleted. If
@@ -1206,7 +1207,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Returns descriptive information about an AWS Fargate profile.
+     * Returns descriptive information about an Fargate profile.
      * </p>
      * 
      * @param describeFargateProfileRequest
@@ -1487,7 +1488,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <p>
      * Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from
      * your cluster, users included in the provider can no longer access the cluster. However, you can still access the
-     * cluster with AWS IAM users.
+     * cluster with Amazon Web Services IAM users.
      * </p>
      * 
      * @param disassociateIdentityProviderConfigRequest
@@ -1632,7 +1633,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Lists the Amazon EKS clusters in your AWS account in the specified Region.
+     * Lists the Amazon EKS clusters in your Amazon Web Services account in the specified Region.
      * </p>
      * 
      * @param listClustersRequest
@@ -1697,7 +1698,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Lists the AWS Fargate profiles associated with the specified cluster in your AWS account in the specified Region.
+     * Lists the Fargate profiles associated with the specified cluster in your Amazon Web Services account in the
+     * specified Region.
      * </p>
      * 
      * @param listFargateProfilesRequest
@@ -1835,8 +1837,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Lists the Amazon EKS managed node groups associated with the specified cluster in your AWS account in the
-     * specified Region. Self-managed node groups are not listed.
+     * Lists the Amazon EKS managed node groups associated with the specified cluster in your Amazon Web Services
+     * account in the specified Region. Self-managed node groups are not listed.
      * </p>
      * 
      * @param listNodegroupsRequest
@@ -1966,8 +1968,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS account, in the
-     * specified Region.
+     * Lists the updates associated with an Amazon EKS cluster or managed node group in your Amazon Web Services
+     * account, in the specified Region.
      * </p>
      * 
      * @param listUpdatesRequest
@@ -2245,14 +2247,14 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <note>
      * <p>
      * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
-     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.
      * </p>
      * </note>
      * <p>
      * You can also use this API operation to enable or disable public and private access to your cluster's Kubernetes
      * API server endpoint. By default, public access is enabled, and private access is disabled. For more information,
-     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
-     * Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint
+     * access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * <important>
      * <p>

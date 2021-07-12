@@ -43,11 +43,12 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i>Secrets Manager </i> user guide.
      * </p>
      */
     private String secretArn;
@@ -247,20 +248,22 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i>Secrets Manager </i> user guide.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     *        user/password pair. For more information, see <a
+     *        user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of
+     *        the credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
      *        SharePoint Data Source</a>. For more information about AWS Secrets Manager, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager
-     *        </a> in the <i>AWS Secrets Manager</i> user guide.
+     *        </a> in the <i>Secrets Manager </i> user guide.
      */
 
     public void setSecretArn(String secretArn) {
@@ -270,19 +273,21 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i>Secrets Manager </i> user guide.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     *         user/password pair. For more information, see <a
+     *         user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part
+     *         of the credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
      *         SharePoint Data Source</a>. For more information about AWS Secrets Manager, see <a
      *         href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets
-     *         Manager </a> in the <i>AWS Secrets Manager</i> user guide.
+     *         Manager </a> in the <i>Secrets Manager </i> user guide.
      */
 
     public String getSecretArn() {
@@ -292,20 +297,22 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     * user/password pair. For more information, see <a
+     * user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of the
+     * credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data
      * Source</a>. For more information about AWS Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager </a>
-     * in the <i>AWS Secrets Manager</i> user guide.
+     * in the <i>Secrets Manager </i> user guide.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager. The credentials should be a
-     *        user/password pair. For more information, see <a
+     *        user/password pair. If you use SharePoint Sever, you also need to provide the sever domain name as part of
+     *        the credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft
      *        SharePoint Data Source</a>. For more information about AWS Secrets Manager, see <a
      *        href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS Secrets Manager
-     *        </a> in the <i>AWS Secrets Manager</i> user guide.
+     *        </a> in the <i>Secrets Manager </i> user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

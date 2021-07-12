@@ -38,8 +38,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
     private String serverUrl;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs required to
-     * connect to your Confluence server. The secret must contain a JSON structure with the following keys:
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect
+     * to your Confluence server. The secret must contain a JSON structure with the following keys:
      * </p>
      * <ul>
      * <li>
@@ -164,8 +164,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs required to
-     * connect to your Confluence server. The secret must contain a JSON structure with the following keys:
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect
+     * to your Confluence server. The secret must contain a JSON structure with the following keys:
      * </p>
      * <ul>
      * <li>
@@ -181,9 +181,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs required
-     *        to connect to your Confluence server. The secret must contain a JSON structure with the following
-     *        keys:</p>
+     *        The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to
+     *        connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -204,8 +203,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs required to
-     * connect to your Confluence server. The secret must contain a JSON structure with the following keys:
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect
+     * to your Confluence server. The secret must contain a JSON structure with the following keys:
      * </p>
      * <ul>
      * <li>
@@ -220,9 +219,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs
-     *         required to connect to your Confluence server. The secret must contain a JSON structure with the
-     *         following keys:</p>
+     * @return The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to
+     *         connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -243,8 +241,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs required to
-     * connect to your Confluence server. The secret must contain a JSON structure with the following keys:
+     * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect
+     * to your Confluence server. The secret must contain a JSON structure with the following keys:
      * </p>
      * <ul>
      * <li>
@@ -260,9 +258,8 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains the key/value pairs required
-     *        to connect to your Confluence server. The secret must contain a JSON structure with the following
-     *        keys:</p>
+     *        The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to
+     *        connect to your Confluence server. The secret must contain a JSON structure with the following keys:</p>
      *        <ul>
      *        <li>
      *        <p>

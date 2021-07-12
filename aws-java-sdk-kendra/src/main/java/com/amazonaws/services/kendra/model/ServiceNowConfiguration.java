@@ -37,8 +37,8 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
     private String hostUrl;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password required
-     * to connect to the ServiceNow instance.
+     * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
+     * connect to the ServiceNow instance.
      * </p>
      */
     private String secretArn;
@@ -126,12 +126,12 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password required
-     * to connect to the ServiceNow instance.
+     * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
+     * connect to the ServiceNow instance.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password
+     *        The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password
      *        required to connect to the ServiceNow instance.
      */
 
@@ -141,11 +141,11 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password required
-     * to connect to the ServiceNow instance.
+     * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
+     * connect to the ServiceNow instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password
+     * @return The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password
      *         required to connect to the ServiceNow instance.
      */
 
@@ -155,12 +155,12 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password required
-     * to connect to the ServiceNow instance.
+     * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
+     * connect to the ServiceNow instance.
      * </p>
      * 
      * @param secretArn
-     *        The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains the user name and password
+     *        The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password
      *        required to connect to the ServiceNow instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

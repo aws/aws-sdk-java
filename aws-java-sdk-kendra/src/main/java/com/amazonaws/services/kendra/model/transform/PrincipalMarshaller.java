@@ -33,6 +33,8 @@ public class PrincipalMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> ACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Access").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceId").build();
 
     private static final PrincipalMarshaller instance = new PrincipalMarshaller();
 
@@ -53,6 +55,7 @@ public class PrincipalMarshaller {
             protocolMarshaller.marshall(principal.getName(), NAME_BINDING);
             protocolMarshaller.marshall(principal.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(principal.getAccess(), ACCESS_BINDING);
+            protocolMarshaller.marshall(principal.getDataSourceId(), DATASOURCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

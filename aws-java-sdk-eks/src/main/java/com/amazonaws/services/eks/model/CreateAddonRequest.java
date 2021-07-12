@@ -34,7 +34,8 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     * <code>DescribeAddonVersions</code> </a>.
      * </p>
      */
     private String addonName;
@@ -127,13 +128,14 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     * <code>DescribeAddonVersions</code> </a>.
      * </p>
      * 
      * @param addonName
      *        The name of the add-on. The name must match one of the names returned by <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code>
-     *        </a>.
+     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     *        <code>DescribeAddonVersions</code> </a>.
      */
 
     public void setAddonName(String addonName) {
@@ -143,12 +145,13 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     * <code>DescribeAddonVersions</code> </a>.
      * </p>
      * 
      * @return The name of the add-on. The name must match one of the names returned by <a
-     *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code>
-     *         </a>.
+     *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     *         <code>DescribeAddonVersions</code> </a>.
      */
 
     public String getAddonName() {
@@ -158,13 +161,14 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     * <code>DescribeAddonVersions</code> </a>.
      * </p>
      * 
      * @param addonName
      *        The name of the add-on. The name must match one of the names returned by <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code>
-     *        </a>.
+     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+     *        <code>DescribeAddonVersions</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

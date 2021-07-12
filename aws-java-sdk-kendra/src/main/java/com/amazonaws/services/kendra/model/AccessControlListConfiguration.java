@@ -31,18 +31,18 @@ public class AccessControlListConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Path to the AWS S3 bucket that contains the ACL files.
+     * Path to the Amazon Web Services S3 bucket that contains the ACL files.
      * </p>
      */
     private String keyPath;
 
     /**
      * <p>
-     * Path to the AWS S3 bucket that contains the ACL files.
+     * Path to the Amazon Web Services S3 bucket that contains the ACL files.
      * </p>
      * 
      * @param keyPath
-     *        Path to the AWS S3 bucket that contains the ACL files.
+     *        Path to the Amazon Web Services S3 bucket that contains the ACL files.
      */
 
     public void setKeyPath(String keyPath) {
@@ -51,10 +51,10 @@ public class AccessControlListConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Path to the AWS S3 bucket that contains the ACL files.
+     * Path to the Amazon Web Services S3 bucket that contains the ACL files.
      * </p>
      * 
-     * @return Path to the AWS S3 bucket that contains the ACL files.
+     * @return Path to the Amazon Web Services S3 bucket that contains the ACL files.
      */
 
     public String getKeyPath() {
@@ -63,11 +63,11 @@ public class AccessControlListConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Path to the AWS S3 bucket that contains the ACL files.
+     * Path to the Amazon Web Services S3 bucket that contains the ACL files.
      * </p>
      * 
      * @param keyPath
-     *        Path to the AWS S3 bucket that contains the ACL files.
+     *        Path to the Amazon Web Services S3 bucket that contains the ACL files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
