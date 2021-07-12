@@ -126,7 +126,16 @@ public class EC2MetadataUtils {
      * Valid values: none | shutdown | bundle-pending.
      */
     public static String getInstanceAction() {
-        return fetchData(EC2_METADATA_ROOT + "/instance-action");
+        return getInstanceAction(false);
+    }
+
+    /**
+     * Notifies the instance that it should reboot in preparation for bundling.
+     * @param force - indication to return cached value or fetch again.
+     * @return Valid values: none | shutdown | bundle-pending.
+     */
+    public static String getInstanceAction(boolean force) {
+        return fetchData(EC2_METADATA_ROOT + "/instance-action", force);
     }
 
     /**
