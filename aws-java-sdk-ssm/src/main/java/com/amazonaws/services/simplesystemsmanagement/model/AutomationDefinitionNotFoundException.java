@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An Automation document with the specified name could not be found.
+ * An Automation runbook with the specified name couldn't be found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

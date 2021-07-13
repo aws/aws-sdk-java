@@ -27,24 +27,24 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the patch baseline to register the patch group with.
+     * The ID of the patch baseline to register with the patch group.
      * </p>
      */
     private String baselineId;
     /**
      * <p>
-     * The name of the patch group that should be registered with the patch baseline.
+     * The name of the patch group to be registered with the patch baseline.
      * </p>
      */
     private String patchGroup;
 
     /**
      * <p>
-     * The ID of the patch baseline to register the patch group with.
+     * The ID of the patch baseline to register with the patch group.
      * </p>
      * 
      * @param baselineId
-     *        The ID of the patch baseline to register the patch group with.
+     *        The ID of the patch baseline to register with the patch group.
      */
 
     public void setBaselineId(String baselineId) {
@@ -53,10 +53,10 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the patch baseline to register the patch group with.
+     * The ID of the patch baseline to register with the patch group.
      * </p>
      * 
-     * @return The ID of the patch baseline to register the patch group with.
+     * @return The ID of the patch baseline to register with the patch group.
      */
 
     public String getBaselineId() {
@@ -65,11 +65,11 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the patch baseline to register the patch group with.
+     * The ID of the patch baseline to register with the patch group.
      * </p>
      * 
      * @param baselineId
-     *        The ID of the patch baseline to register the patch group with.
+     *        The ID of the patch baseline to register with the patch group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the patch group that should be registered with the patch baseline.
+     * The name of the patch group to be registered with the patch baseline.
      * </p>
      * 
      * @param patchGroup
-     *        The name of the patch group that should be registered with the patch baseline.
+     *        The name of the patch group to be registered with the patch baseline.
      */
 
     public void setPatchGroup(String patchGroup) {
@@ -93,10 +93,10 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the patch group that should be registered with the patch baseline.
+     * The name of the patch group to be registered with the patch baseline.
      * </p>
      * 
-     * @return The name of the patch group that should be registered with the patch baseline.
+     * @return The name of the patch group to be registered with the patch baseline.
      */
 
     public String getPatchGroup() {
@@ -105,11 +105,11 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the patch group that should be registered with the patch baseline.
+     * The name of the patch group to be registered with the patch baseline.
      * </p>
      * 
      * @param patchGroup
-     *        The name of the patch group that should be registered with the patch baseline.
+     *        The name of the patch group to be registered with the patch baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

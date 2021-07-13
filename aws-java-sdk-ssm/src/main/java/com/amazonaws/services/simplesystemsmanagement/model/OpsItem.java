@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
- * impacting the performance and health of their AWS resources. For more information, see <a
- * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a>
- * in the <i>AWS Systems Manager User Guide</i>.
+ * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
+ * remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more
+ * information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+ * in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItem" target="_top">AWS API Documentation</a>
@@ -32,7 +32,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that created the OpsItem.
+     * The ARN of the account that created the OpsItem.
      * </p>
      */
     private String createdBy;
@@ -57,7 +57,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The ARN of the AWS account that last updated the OpsItem.
+     * The ARN of the account that last updated the OpsItem.
      * </p>
      */
     private String lastModifiedBy;
@@ -69,8 +69,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     * changed.
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications
+     * are sent when this OpsItem is edited or changed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsItemNotification> notifications;
@@ -92,7 +92,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String status;
@@ -129,22 +129,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private java.util.Map<String, OpsItemDataValue> operationalData;
@@ -190,11 +192,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that created the OpsItem.
+     * The ARN of the account that created the OpsItem.
      * </p>
      * 
      * @param createdBy
-     *        The ARN of the AWS account that created the OpsItem.
+     *        The ARN of the account that created the OpsItem.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -203,10 +205,10 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that created the OpsItem.
+     * The ARN of the account that created the OpsItem.
      * </p>
      * 
-     * @return The ARN of the AWS account that created the OpsItem.
+     * @return The ARN of the account that created the OpsItem.
      */
 
     public String getCreatedBy() {
@@ -215,11 +217,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that created the OpsItem.
+     * The ARN of the account that created the OpsItem.
      * </p>
      * 
      * @param createdBy
-     *        The ARN of the AWS account that created the OpsItem.
+     *        The ARN of the account that created the OpsItem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,11 +358,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that last updated the OpsItem.
+     * The ARN of the account that last updated the OpsItem.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The ARN of the AWS account that last updated the OpsItem.
+     *        The ARN of the account that last updated the OpsItem.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -369,10 +371,10 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that last updated the OpsItem.
+     * The ARN of the account that last updated the OpsItem.
      * </p>
      * 
-     * @return The ARN of the AWS account that last updated the OpsItem.
+     * @return The ARN of the account that last updated the OpsItem.
      */
 
     public String getLastModifiedBy() {
@@ -381,11 +383,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS account that last updated the OpsItem.
+     * The ARN of the account that last updated the OpsItem.
      * </p>
      * 
      * @param lastModifiedBy
-     *        The ARN of the AWS account that last updated the OpsItem.
+     *        The ARN of the account that last updated the OpsItem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,12 +438,12 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     * changed.
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications
+     * are sent when this OpsItem is edited or changed.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited
-     *         or changed.
+     * @return The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+     *         notifications are sent when this OpsItem is edited or changed.
      */
 
     public java.util.List<OpsItemNotification> getNotifications() {
@@ -453,13 +455,13 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     * changed.
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications
+     * are sent when this OpsItem is edited or changed.
      * </p>
      * 
      * @param notifications
-     *        The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     *        changed.
+     *        The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+     *        notifications are sent when this OpsItem is edited or changed.
      */
 
     public void setNotifications(java.util.Collection<OpsItemNotification> notifications) {
@@ -473,8 +475,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     * changed.
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications
+     * are sent when this OpsItem is edited or changed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -483,8 +485,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param notifications
-     *        The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     *        changed.
+     *        The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+     *        notifications are sent when this OpsItem is edited or changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,13 +502,13 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     * changed.
+     * The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications
+     * are sent when this OpsItem is edited or changed.
      * </p>
      * 
      * @param notifications
-     *        The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or
-     *        changed.
+     *        The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+     *        notifications are sent when this OpsItem is edited or changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,14 +647,14 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -665,13 +667,13 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *         >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -684,14 +686,14 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */
@@ -706,14 +708,14 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */
@@ -895,22 +897,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Operational data is custom data that provides useful reference details about the OpsItem. For example,
@@ -918,23 +922,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *         enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has
      *         a maximum size of 20 KB.</p> <important>
      *         <p>
-     *         Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     *         /amzn, /ssm.
+     *         Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *         <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *         <code>/ssm</code>.
      *         </p>
      *         </important>
      *         <p>
      *         You can choose to make the data searchable by other users in the account or you can restrict search
      *         access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *         <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *         not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *         <a>GetOpsItem</a> API action).
+     *         <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *         isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *         <a>GetOpsItem</a> API operation).
      *         </p>
      *         <p>
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *         OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *         OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *         >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.Map<String, OpsItemDataValue> getOperationalData() {
@@ -950,22 +955,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -974,23 +981,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a
      *        maximum size of 20 KB.</p> <important>
      *        <p>
-     *        Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn,
-     *        /ssm.
+     *        Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *        <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *        <code>/ssm</code>.
      *        </p>
      *        </important>
      *        <p>
      *        You can choose to make the data searchable by other users in the account or you can restrict search
      *        access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *        <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *        not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *        isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *        <a>GetOpsItem</a> API operation).
      *        </p>
      *        <p>
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setOperationalData(java.util.Map<String, OpsItemDataValue> operationalData) {
@@ -1006,22 +1014,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -1030,23 +1040,24 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a
      *        maximum size of 20 KB.</p> <important>
      *        <p>
-     *        Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn,
-     *        /ssm.
+     *        Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *        <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *        <code>/ssm</code>.
      *        </p>
      *        </important>
      *        <p>
      *        You can choose to make the data searchable by other users in the account or you can restrict search
      *        access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *        <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *        not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *        isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *        <a>GetOpsItem</a> API operation).
      *        </p>
      *        <p>
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

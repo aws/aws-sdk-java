@@ -43,10 +43,10 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p>
      * <p>
-     * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
-     * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
-     * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
+     * <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems Manager,
+     * such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
+     * the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -147,10 +147,10 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p>
      * <p>
-     * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
-     * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
-     * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
+     * <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems Manager,
+     * such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
+     * the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -162,11 +162,11 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      *        </p>
      *        <p>
-     *        <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
-     *        <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
-     *        the <b>Region</b> column in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
-     *        endpoints</a> in the <i>AWS General Reference</i>.
+     *        <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems
+     *        Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported
+     *        <b>region</b> values, see the <b>Region</b> column in <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
+     *        endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        <p>
      *        <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -183,10 +183,10 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p>
      * <p>
-     * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
-     * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
-     * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
+     * <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems Manager,
+     * such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
+     * the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -197,11 +197,11 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      *         <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      *         </p>
      *         <p>
-     *         <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such
-     *         as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values,
-     *         see the <b>Region</b> column in <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
-     *         endpoints</a> in the <i>AWS General Reference</i>.
+     *         <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems
+     *         Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported
+     *         <b>region</b> values, see the <b>Region</b> column in <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
+     *         endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         <p>
      *         <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -218,10 +218,10 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p>
      * <p>
-     * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
-     * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
-     * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
+     * <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems Manager,
+     * such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
+     * the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -233,11 +233,11 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      *        </p>
      *        <p>
-     *        <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
-     *        <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
-     *        the <b>Region</b> column in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
-     *        endpoints</a> in the <i>AWS General Reference</i>.
+     *        <b>region</b> represents the Region identifier for an Region supported by Amazon Web Services Systems
+     *        Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported
+     *        <b>region</b> values, see the <b>Region</b> column in <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
+     *        endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        <p>
      *        <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.

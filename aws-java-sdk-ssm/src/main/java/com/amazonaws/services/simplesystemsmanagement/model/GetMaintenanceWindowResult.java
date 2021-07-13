@@ -44,14 +44,14 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.
-     * The maintenance window will not run before this specified time.
+     * The maintenance window won't run before this specified time.
      * </p>
      */
     private String startDate;
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
-     * The maintenance window will not run after this specified time.
+     * The maintenance window won't run after this specified time.
      * </p>
      */
     private String endDate;
@@ -71,7 +71,7 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     private String scheduleTimezone;
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      */
     private Integer scheduleOffset;
@@ -90,8 +90,8 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     private Integer duration;
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      */
     private Integer cutoff;
@@ -243,12 +243,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.
-     * The maintenance window will not run before this specified time.
+     * The maintenance window won't run before this specified time.
      * </p>
      * 
      * @param startDate
      *        The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become
-     *        active. The maintenance window will not run before this specified time.
+     *        active. The maintenance window won't run before this specified time.
      */
 
     public void setStartDate(String startDate) {
@@ -258,11 +258,11 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.
-     * The maintenance window will not run before this specified time.
+     * The maintenance window won't run before this specified time.
      * </p>
      * 
      * @return The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become
-     *         active. The maintenance window will not run before this specified time.
+     *         active. The maintenance window won't run before this specified time.
      */
 
     public String getStartDate() {
@@ -272,12 +272,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.
-     * The maintenance window will not run before this specified time.
+     * The maintenance window won't run before this specified time.
      * </p>
      * 
      * @param startDate
      *        The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become
-     *        active. The maintenance window will not run before this specified time.
+     *        active. The maintenance window won't run before this specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,12 +289,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
-     * The maintenance window will not run after this specified time.
+     * The maintenance window won't run after this specified time.
      * </p>
      * 
      * @param endDate
      *        The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become
-     *        inactive. The maintenance window will not run after this specified time.
+     *        inactive. The maintenance window won't run after this specified time.
      */
 
     public void setEndDate(String endDate) {
@@ -304,11 +304,11 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
-     * The maintenance window will not run after this specified time.
+     * The maintenance window won't run after this specified time.
      * </p>
      * 
      * @return The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become
-     *         inactive. The maintenance window will not run after this specified time.
+     *         inactive. The maintenance window won't run after this specified time.
      */
 
     public String getEndDate() {
@@ -318,12 +318,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
-     * The maintenance window will not run after this specified time.
+     * The maintenance window won't run after this specified time.
      * </p>
      * 
      * @param endDate
      *        The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become
-     *        inactive. The maintenance window will not run after this specified time.
+     *        inactive. The maintenance window won't run after this specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,11 +427,11 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     *        The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      */
 
     public void setScheduleOffset(Integer scheduleOffset) {
@@ -440,10 +440,10 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      * 
-     * @return The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * @return The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      */
 
     public Integer getScheduleOffset() {
@@ -452,11 +452,11 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     *        The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,13 +553,13 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      */
 
     public void setCutoff(Integer cutoff) {
@@ -568,12 +568,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
-     * @return The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *         tasks for execution.
+     * @return The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *         stops scheduling new tasks for execution.
      */
 
     public Integer getCutoff() {
@@ -582,13 +582,13 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

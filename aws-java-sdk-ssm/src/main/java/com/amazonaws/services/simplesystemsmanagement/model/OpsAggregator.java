@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>,
+ * One or more aggregators for viewing counts of OpsData using different dimensions such as <code>Source</code>,
  * <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
  * </p>
  * 
@@ -31,19 +31,19 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Either a Range or Count aggregator for limiting an OpsItem summary.
+     * Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      * </p>
      */
     private String aggregatorType;
     /**
      * <p>
-     * The data type name to use for viewing counts of OpsItems.
+     * The data type name to use for viewing counts of OpsData.
      * </p>
      */
     private String typeName;
     /**
      * <p>
-     * The name of an OpsItem attribute on which to limit the count of OpsItems.
+     * The name of an OpsData attribute on which to limit the count of OpsData.
      * </p>
      */
     private String attributeName;
@@ -61,18 +61,18 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<OpsFilter> filters;
     /**
      * <p>
-     * A nested aggregator for viewing counts of OpsItems.
+     * A nested aggregator for viewing counts of OpsData.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsAggregator> aggregators;
 
     /**
      * <p>
-     * Either a Range or Count aggregator for limiting an OpsItem summary.
+     * Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      * </p>
      * 
      * @param aggregatorType
-     *        Either a Range or Count aggregator for limiting an OpsItem summary.
+     *        Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      */
 
     public void setAggregatorType(String aggregatorType) {
@@ -81,10 +81,10 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Either a Range or Count aggregator for limiting an OpsItem summary.
+     * Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      * </p>
      * 
-     * @return Either a Range or Count aggregator for limiting an OpsItem summary.
+     * @return Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      */
 
     public String getAggregatorType() {
@@ -93,11 +93,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Either a Range or Count aggregator for limiting an OpsItem summary.
+     * Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      * </p>
      * 
      * @param aggregatorType
-     *        Either a Range or Count aggregator for limiting an OpsItem summary.
+     *        Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type name to use for viewing counts of OpsItems.
+     * The data type name to use for viewing counts of OpsData.
      * </p>
      * 
      * @param typeName
-     *        The data type name to use for viewing counts of OpsItems.
+     *        The data type name to use for viewing counts of OpsData.
      */
 
     public void setTypeName(String typeName) {
@@ -121,10 +121,10 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type name to use for viewing counts of OpsItems.
+     * The data type name to use for viewing counts of OpsData.
      * </p>
      * 
-     * @return The data type name to use for viewing counts of OpsItems.
+     * @return The data type name to use for viewing counts of OpsData.
      */
 
     public String getTypeName() {
@@ -133,11 +133,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type name to use for viewing counts of OpsItems.
+     * The data type name to use for viewing counts of OpsData.
      * </p>
      * 
      * @param typeName
-     *        The data type name to use for viewing counts of OpsItems.
+     *        The data type name to use for viewing counts of OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an OpsItem attribute on which to limit the count of OpsItems.
+     * The name of an OpsData attribute on which to limit the count of OpsData.
      * </p>
      * 
      * @param attributeName
-     *        The name of an OpsItem attribute on which to limit the count of OpsItems.
+     *        The name of an OpsData attribute on which to limit the count of OpsData.
      */
 
     public void setAttributeName(String attributeName) {
@@ -161,10 +161,10 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an OpsItem attribute on which to limit the count of OpsItems.
+     * The name of an OpsData attribute on which to limit the count of OpsData.
      * </p>
      * 
-     * @return The name of an OpsItem attribute on which to limit the count of OpsItems.
+     * @return The name of an OpsData attribute on which to limit the count of OpsData.
      */
 
     public String getAttributeName() {
@@ -173,11 +173,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of an OpsItem attribute on which to limit the count of OpsItems.
+     * The name of an OpsData attribute on which to limit the count of OpsData.
      * </p>
      * 
      * @param attributeName
-     *        The name of an OpsItem attribute on which to limit the count of OpsItems.
+     *        The name of an OpsData attribute on which to limit the count of OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,10 +329,10 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nested aggregator for viewing counts of OpsItems.
+     * A nested aggregator for viewing counts of OpsData.
      * </p>
      * 
-     * @return A nested aggregator for viewing counts of OpsItems.
+     * @return A nested aggregator for viewing counts of OpsData.
      */
 
     public java.util.List<OpsAggregator> getAggregators() {
@@ -344,11 +344,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nested aggregator for viewing counts of OpsItems.
+     * A nested aggregator for viewing counts of OpsData.
      * </p>
      * 
      * @param aggregators
-     *        A nested aggregator for viewing counts of OpsItems.
+     *        A nested aggregator for viewing counts of OpsData.
      */
 
     public void setAggregators(java.util.Collection<OpsAggregator> aggregators) {
@@ -362,7 +362,7 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nested aggregator for viewing counts of OpsItems.
+     * A nested aggregator for viewing counts of OpsData.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -371,7 +371,7 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param aggregators
-     *        A nested aggregator for viewing counts of OpsItems.
+     *        A nested aggregator for viewing counts of OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,11 +387,11 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nested aggregator for viewing counts of OpsItems.
+     * A nested aggregator for viewing counts of OpsData.
      * </p>
      * 
      * @param aggregators
-     *        A nested aggregator for viewing counts of OpsItems.
+     *        A nested aggregator for viewing counts of OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

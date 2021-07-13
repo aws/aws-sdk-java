@@ -122,14 +122,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The new password for the cluster master user. This change is asynchronously applied as soon as possible. Between
+     * The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
      * <note>
      * <p>
-     * Operations never return the password, so this operation provides a way to regain access to the master user
-     * account for a cluster if the password is lost.
+     * Operations never return the password, so this operation provides a way to regain access to the admin user account
+     * for a cluster if the password is lost.
      * </p>
      * </note>
      * <p>
@@ -312,7 +312,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -377,7 +377,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean encrypted;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      */
@@ -1094,14 +1094,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The new password for the cluster master user. This change is asynchronously applied as soon as possible. Between
+     * The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
      * <note>
      * <p>
-     * Operations never return the password, so this operation provides a way to regain access to the master user
-     * account for a cluster if the password is lost.
+     * Operations never return the password, so this operation provides a way to regain access to the admin user account
+     * for a cluster if the password is lost.
      * </p>
      * </note>
      * <p>
@@ -1140,11 +1140,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param masterUserPassword
-     *        The new password for the cluster master user. This change is asynchronously applied as soon as possible.
+     *        The new password for the cluster admin user. This change is asynchronously applied as soon as possible.
      *        Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      *        element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
      *        <p>
-     *        Operations never return the password, so this operation provides a way to regain access to the master user
+     *        Operations never return the password, so this operation provides a way to regain access to the admin user
      *        account for a cluster if the password is lost.
      *        </p>
      *        </note>
@@ -1189,14 +1189,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The new password for the cluster master user. This change is asynchronously applied as soon as possible. Between
+     * The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
      * <note>
      * <p>
-     * Operations never return the password, so this operation provides a way to regain access to the master user
-     * account for a cluster if the password is lost.
+     * Operations never return the password, so this operation provides a way to regain access to the admin user account
+     * for a cluster if the password is lost.
      * </p>
      * </note>
      * <p>
@@ -1234,12 +1234,12 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * 
-     * @return The new password for the cluster master user. This change is asynchronously applied as soon as possible.
+     * @return The new password for the cluster admin user. This change is asynchronously applied as soon as possible.
      *         Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      *         element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
      *         <p>
-     *         Operations never return the password, so this operation provides a way to regain access to the master
-     *         user account for a cluster if the password is lost.
+     *         Operations never return the password, so this operation provides a way to regain access to the admin user
+     *         account for a cluster if the password is lost.
      *         </p>
      *         </note>
      *         <p>
@@ -1283,14 +1283,14 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The new password for the cluster master user. This change is asynchronously applied as soon as possible. Between
+     * The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
      * <note>
      * <p>
-     * Operations never return the password, so this operation provides a way to regain access to the master user
-     * account for a cluster if the password is lost.
+     * Operations never return the password, so this operation provides a way to regain access to the admin user account
+     * for a cluster if the password is lost.
      * </p>
      * </note>
      * <p>
@@ -1329,11 +1329,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param masterUserPassword
-     *        The new password for the cluster master user. This change is asynchronously applied as soon as possible.
+     *        The new password for the cluster admin user. This change is asynchronously applied as soon as possible.
      *        Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      *        element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
      *        <p>
-     *        Operations never return the password, so this operation provides a way to regain access to the master user
+     *        Operations never return the password, so this operation provides a way to regain access to the admin user
      *        account for a cluster if the password is lost.
      *        </p>
      *        </note>
@@ -2128,7 +2128,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -2164,7 +2164,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      *        </ul>
@@ -2206,7 +2206,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -2241,7 +2241,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique for all clusters within an AWS account.
+     *         Must be unique for all clusters within an account.
      *         </p>
      *         </li>
      *         </ul>
@@ -2283,7 +2283,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -2319,7 +2319,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      *        </ul>
@@ -2735,13 +2735,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *        the cluster.
+     *        The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *        cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2750,12 +2750,12 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *         the cluster.
+     * @return The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *         cluster.
      */
 
     public String getKmsKeyId() {
@@ -2764,13 +2764,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *        the cluster.
+     *        The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

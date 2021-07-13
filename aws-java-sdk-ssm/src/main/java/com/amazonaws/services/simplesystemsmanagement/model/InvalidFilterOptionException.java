@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path filter, valid options are
+ * The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are
  * Recursive and OneLevel.
  * </p>
  */

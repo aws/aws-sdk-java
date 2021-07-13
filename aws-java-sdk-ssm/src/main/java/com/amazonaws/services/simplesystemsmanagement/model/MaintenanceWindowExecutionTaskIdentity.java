@@ -48,7 +48,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
     private String status;
     /**
      * <p>
-     * The details explaining the status of the task execution. Only available for certain status values.
+     * The details explaining the status of the task execution. Not available for all status values.
      * </p>
      */
     private String statusDetails;
@@ -66,7 +66,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
     private java.util.Date endTime;
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      */
     private String taskArn;
@@ -232,11 +232,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The details explaining the status of the task execution. Only available for certain status values.
+     * The details explaining the status of the task execution. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the status of the task execution. Only available for certain status values.
+     *        The details explaining the status of the task execution. Not available for all status values.
      */
 
     public void setStatusDetails(String statusDetails) {
@@ -245,10 +245,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The details explaining the status of the task execution. Only available for certain status values.
+     * The details explaining the status of the task execution. Not available for all status values.
      * </p>
      * 
-     * @return The details explaining the status of the task execution. Only available for certain status values.
+     * @return The details explaining the status of the task execution. Not available for all status values.
      */
 
     public String getStatusDetails() {
@@ -257,11 +257,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The details explaining the status of the task execution. Only available for certain status values.
+     * The details explaining the status of the task execution. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the status of the task execution. Only available for certain status values.
+     *        The details explaining the status of the task execution. Not available for all status values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +352,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task that ran.
+     *        The Amazon Resource Name (ARN) of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -365,10 +365,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      * 
-     * @return The ARN of the task that ran.
+     * @return The Amazon Resource Name (ARN) of the task that ran.
      */
 
     public String getTaskArn() {
@@ -377,11 +377,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task that ran.
+     *        The Amazon Resource Name (ARN) of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of resources that are not compliant. The summary is organized according to resource type.
+ * A summary of resources that aren't compliant. The summary is organized according to resource type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/NonCompliantSummary" target="_top">AWS API
@@ -30,7 +30,7 @@ public class NonCompliantSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total number of compliance items that are not compliant.
+     * The total number of compliance items that aren't compliant.
      * </p>
      */
     private Integer nonCompliantCount;
@@ -43,11 +43,11 @@ public class NonCompliantSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total number of compliance items that are not compliant.
+     * The total number of compliance items that aren't compliant.
      * </p>
      * 
      * @param nonCompliantCount
-     *        The total number of compliance items that are not compliant.
+     *        The total number of compliance items that aren't compliant.
      */
 
     public void setNonCompliantCount(Integer nonCompliantCount) {
@@ -56,10 +56,10 @@ public class NonCompliantSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total number of compliance items that are not compliant.
+     * The total number of compliance items that aren't compliant.
      * </p>
      * 
-     * @return The total number of compliance items that are not compliant.
+     * @return The total number of compliance items that aren't compliant.
      */
 
     public Integer getNonCompliantCount() {
@@ -68,11 +68,11 @@ public class NonCompliantSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total number of compliance items that are not compliant.
+     * The total number of compliance items that aren't compliant.
      * </p>
      * 
      * @param nonCompliantCount
-     *        The total number of compliance items that are not compliant.
+     *        The total number of compliance items that aren't compliant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

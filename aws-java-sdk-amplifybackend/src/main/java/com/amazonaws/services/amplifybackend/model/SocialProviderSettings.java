@@ -34,6 +34,8 @@ public class SocialProviderSettings implements Serializable, Cloneable, Structur
 
     private BackendAuthSocialProviderConfig loginWithAmazon;
 
+    private BackendAuthAppleProviderConfig signInWithApple;
+
     /**
      * @param facebook
      */
@@ -113,6 +115,32 @@ public class SocialProviderSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @param signInWithApple
+     */
+
+    public void setSignInWithApple(BackendAuthAppleProviderConfig signInWithApple) {
+        this.signInWithApple = signInWithApple;
+    }
+
+    /**
+     * @return
+     */
+
+    public BackendAuthAppleProviderConfig getSignInWithApple() {
+        return this.signInWithApple;
+    }
+
+    /**
+     * @param signInWithApple
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SocialProviderSettings withSignInWithApple(BackendAuthAppleProviderConfig signInWithApple) {
+        setSignInWithApple(signInWithApple);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -129,7 +157,9 @@ public class SocialProviderSettings implements Serializable, Cloneable, Structur
         if (getGoogle() != null)
             sb.append("Google: ").append(getGoogle()).append(",");
         if (getLoginWithAmazon() != null)
-            sb.append("LoginWithAmazon: ").append(getLoginWithAmazon());
+            sb.append("LoginWithAmazon: ").append(getLoginWithAmazon()).append(",");
+        if (getSignInWithApple() != null)
+            sb.append("SignInWithApple: ").append(getSignInWithApple());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +186,10 @@ public class SocialProviderSettings implements Serializable, Cloneable, Structur
             return false;
         if (other.getLoginWithAmazon() != null && other.getLoginWithAmazon().equals(this.getLoginWithAmazon()) == false)
             return false;
+        if (other.getSignInWithApple() == null ^ this.getSignInWithApple() == null)
+            return false;
+        if (other.getSignInWithApple() != null && other.getSignInWithApple().equals(this.getSignInWithApple()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +201,7 @@ public class SocialProviderSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getFacebook() == null) ? 0 : getFacebook().hashCode());
         hashCode = prime * hashCode + ((getGoogle() == null) ? 0 : getGoogle().hashCode());
         hashCode = prime * hashCode + ((getLoginWithAmazon() == null) ? 0 : getLoginWithAmazon().hashCode());
+        hashCode = prime * hashCode + ((getSignInWithApple() == null) ? 0 : getSignInWithApple().hashCode());
         return hashCode;
     }
 

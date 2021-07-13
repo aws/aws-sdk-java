@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The version you specified is not valid. Use ListAssociationVersions to view all versions of an association according
+ * The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according
  * to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.
  * </p>
  */

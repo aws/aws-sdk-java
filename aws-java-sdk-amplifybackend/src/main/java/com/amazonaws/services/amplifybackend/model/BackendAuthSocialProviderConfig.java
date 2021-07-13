@@ -30,24 +30,24 @@ public class BackendAuthSocialProviderConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the client_id which can be obtained from the third-party social federation provider.
+     * Describes the client_id, which can be obtained from the third-party social federation provider.
      * </p>
      */
     private String clientId;
     /**
      * <p>
-     * Describes the client_secret which can be obtained from third-party social federation providers.
+     * Describes the client_secret, which can be obtained from third-party social federation providers.
      * </p>
      */
     private String clientSecret;
 
     /**
      * <p>
-     * Describes the client_id which can be obtained from the third-party social federation provider.
+     * Describes the client_id, which can be obtained from the third-party social federation provider.
      * </p>
      * 
      * @param clientId
-     *        Describes the client_id which can be obtained from the third-party social federation provider.
+     *        Describes the client_id, which can be obtained from the third-party social federation provider.
      */
 
     public void setClientId(String clientId) {
@@ -56,10 +56,10 @@ public class BackendAuthSocialProviderConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the client_id which can be obtained from the third-party social federation provider.
+     * Describes the client_id, which can be obtained from the third-party social federation provider.
      * </p>
      * 
-     * @return Describes the client_id which can be obtained from the third-party social federation provider.
+     * @return Describes the client_id, which can be obtained from the third-party social federation provider.
      */
 
     public String getClientId() {
@@ -68,11 +68,11 @@ public class BackendAuthSocialProviderConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the client_id which can be obtained from the third-party social federation provider.
+     * Describes the client_id, which can be obtained from the third-party social federation provider.
      * </p>
      * 
      * @param clientId
-     *        Describes the client_id which can be obtained from the third-party social federation provider.
+     *        Describes the client_id, which can be obtained from the third-party social federation provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class BackendAuthSocialProviderConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the client_secret which can be obtained from third-party social federation providers.
+     * Describes the client_secret, which can be obtained from third-party social federation providers.
      * </p>
      * 
      * @param clientSecret
-     *        Describes the client_secret which can be obtained from third-party social federation providers.
+     *        Describes the client_secret, which can be obtained from third-party social federation providers.
      */
 
     public void setClientSecret(String clientSecret) {
@@ -96,10 +96,10 @@ public class BackendAuthSocialProviderConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the client_secret which can be obtained from third-party social federation providers.
+     * Describes the client_secret, which can be obtained from third-party social federation providers.
      * </p>
      * 
-     * @return Describes the client_secret which can be obtained from third-party social federation providers.
+     * @return Describes the client_secret, which can be obtained from third-party social federation providers.
      */
 
     public String getClientSecret() {
@@ -108,11 +108,11 @@ public class BackendAuthSocialProviderConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Describes the client_secret which can be obtained from third-party social federation providers.
+     * Describes the client_secret, which can be obtained from third-party social federation providers.
      * </p>
      * 
      * @param clientSecret
-     *        Describes the client_secret which can be obtained from third-party social federation providers.
+     *        Describes the client_secret, which can be obtained from third-party social federation providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

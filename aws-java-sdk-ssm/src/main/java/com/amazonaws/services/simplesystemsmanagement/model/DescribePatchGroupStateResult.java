@@ -43,20 +43,21 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithInstalledOtherPatches;
     /**
      * <p>
-     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
-     * installation. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed by Patch Manager that haven't been rebooted after the patch
+     * installation. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer instancesWithInstalledPendingRebootPatches;
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      */
@@ -81,31 +82,32 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithNotApplicablePatches;
     /**
      * <p>
-     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     * reported by name to Systems Manager Inventory.
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported
+     * by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      */
     private Integer instancesWithUnreportedNotApplicablePatches;
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer instancesWithCriticalNonCompliantPatches;
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer instancesWithSecurityNonCompliantPatches;
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer instancesWithOtherNonCompliantPatches;
@@ -232,13 +234,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
-     * installation. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed by Patch Manager that haven't been rebooted after the patch
+     * installation. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithInstalledPendingRebootPatches
-     *        The number of instances with patches installed by Patch Manager that have not been rebooted after the
-     *        patch installation. The status of these instances is NON_COMPLIANT.
+     *        The number of instances with patches installed by Patch Manager that haven't been rebooted after the patch
+     *        installation. The status of these instances is <code>NON_COMPLIANT</code>.
      */
 
     public void setInstancesWithInstalledPendingRebootPatches(Integer instancesWithInstalledPendingRebootPatches) {
@@ -247,12 +249,12 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
-     * installation. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed by Patch Manager that haven't been rebooted after the patch
+     * installation. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances with patches installed by Patch Manager that have not been rebooted after the
-     *         patch installation. The status of these instances is NON_COMPLIANT.
+     * @return The number of instances with patches installed by Patch Manager that haven't been rebooted after the
+     *         patch installation. The status of these instances is <code>NON_COMPLIANT</code>.
      */
 
     public Integer getInstancesWithInstalledPendingRebootPatches() {
@@ -261,13 +263,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
-     * installation. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed by Patch Manager that haven't been rebooted after the patch
+     * installation. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithInstalledPendingRebootPatches
-     *        The number of instances with patches installed by Patch Manager that have not been rebooted after the
-     *        patch installation. The status of these instances is NON_COMPLIANT.
+     *        The number of instances with patches installed by Patch Manager that haven't been rebooted after the patch
+     *        installation. The status of these instances is <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,23 +280,24 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
      * @param instancesWithInstalledRejectedPatches
-     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches
-     *        list.</p> <note>
+     *        The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list.
+     *        Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added
+     *        to a <code>RejectedPatches</code> list.</p> <note>
      *        <p>
-     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *        InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *        value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      *        </p>
      */
 
@@ -304,22 +307,23 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
-     * @return The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *         a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a
-     *         RejectedPatches list.</p> <note>
+     * @return The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list.
+     *         Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added
+     *         to a <code>RejectedPatches</code> list.</p> <note>
      *         <p>
-     *         If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *         InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     *         If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *         value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      *         </p>
      */
 
@@ -329,23 +333,24 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
      * @param instancesWithInstalledRejectedPatches
-     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches
-     *        list.</p> <note>
+     *        The number of instances with patches installed that are specified in a <code>RejectedPatches</code> list.
+     *        Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added
+     *        to a <code>RejectedPatches</code> list.</p> <note>
      *        <p>
-     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *        InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *        value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -477,13 +482,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     * reported by name to Systems Manager Inventory.
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported
+     * by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param instancesWithUnreportedNotApplicablePatches
-     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     *        reported by name to Systems Manager Inventory.
+     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't
+     *        reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      */
 
     public void setInstancesWithUnreportedNotApplicablePatches(Integer instancesWithUnreportedNotApplicablePatches) {
@@ -492,12 +497,12 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     * reported by name to Systems Manager Inventory.
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported
+     * by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
-     * @return The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     *         reported by name to Systems Manager Inventory.
+     * @return The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't
+     *         reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      */
 
     public Integer getInstancesWithUnreportedNotApplicablePatches() {
@@ -506,13 +511,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     * reported by name to Systems Manager Inventory.
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported
+     * by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param instancesWithUnreportedNotApplicablePatches
-     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
-     *        reported by name to Systems Manager Inventory.
+     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which aren't
+     *        reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,15 +528,15 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithCriticalNonCompliantPatches
-     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
-     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
-     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        The number of instances where patches that are specified as <code>Critical</code> for compliance reporting
+     *        in the patch baseline aren't installed. These patches might be missing, have failed installation, were
+     *        rejected, or were installed but awaiting a required instance reboot. The status of these instances is
      *        <code>NON_COMPLIANT</code>.
      */
 
@@ -541,15 +546,15 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances where patches that are specified as "Critical" for compliance reporting in the
-     *         patch baseline are not installed. These patches might be missing, have failed installation, were
-     *         rejected, or were installed but awaiting a required instance reboot. The status of these instances is
-     *         <code>NON_COMPLIANT</code>.
+     * @return The number of instances where patches that are specified as <code>Critical</code> for compliance
+     *         reporting in the patch baseline aren't installed. These patches might be missing, have failed
+     *         installation, were rejected, or were installed but awaiting a required instance reboot. The status of
+     *         these instances is <code>NON_COMPLIANT</code>.
      */
 
     public Integer getInstancesWithCriticalNonCompliantPatches() {
@@ -558,15 +563,15 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithCriticalNonCompliantPatches
-     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
-     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
-     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        The number of instances where patches that are specified as <code>Critical</code> for compliance reporting
+     *        in the patch baseline aren't installed. These patches might be missing, have failed installation, were
+     *        rejected, or were installed but awaiting a required instance reboot. The status of these instances is
      *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -578,15 +583,16 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithSecurityNonCompliantPatches
-     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
-     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     *        The number of instances where patches that are specified as <code>Security</code> in a patch advisory
+     *        aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     *        installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      */
 
     public void setInstancesWithSecurityNonCompliantPatches(Integer instancesWithSecurityNonCompliantPatches) {
@@ -595,14 +601,15 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances where patches that are specified as "Security" in a patch advisory are not
-     *         installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     *         awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * @return The number of instances where patches that are specified as <code>Security</code> in a patch advisory
+     *         aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     *         installed but awaiting a required instance reboot. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
      */
 
     public Integer getInstancesWithSecurityNonCompliantPatches() {
@@ -611,15 +618,16 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithSecurityNonCompliantPatches
-     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
-     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     *        The number of instances where patches that are specified as <code>Security</code> in a patch advisory
+     *        aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     *        installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,13 +638,15 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithOtherNonCompliantPatches
-     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
-     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     *        The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     *        <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      */
 
     public void setInstancesWithOtherNonCompliantPatches(Integer instancesWithOtherNonCompliantPatches) {
@@ -645,12 +655,14 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances with patches installed that are specified as other than "Critical" or "Security"
-     *         but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * @return The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     *         <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
      */
 
     public Integer getInstancesWithOtherNonCompliantPatches() {
@@ -659,13 +671,15 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param instancesWithOtherNonCompliantPatches
-     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
-     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     *        The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     *        <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

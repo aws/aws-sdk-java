@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The association was not found using the parameters you specified in the call. Verify the information and try again.
+ * The association wasn't found using the parameters you specified in the call. Verify the information and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a tag associated with an AWS Direct Connect resource.
+ * Information about a tag associated with an Direct Connect resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag" target="_top">AWS API

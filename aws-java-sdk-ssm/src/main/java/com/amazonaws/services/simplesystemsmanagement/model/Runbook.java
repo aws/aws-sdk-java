@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an Automation runbook (Automation document) used in a runbook workflow in Change Manager.
+ * Information about an Automation runbook used in a runbook workflow in Change Manager.
  * </p>
  * <note>
  * <p>
@@ -35,13 +35,13 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Automation runbook (Automation document) used in a runbook workflow.
+     * The name of the Automation runbook used in a runbook workflow.
      * </p>
      */
     private String documentName;
     /**
      * <p>
-     * The version of the Automation runbook (Automation document) used in a runbook workflow.
+     * The version of the Automation runbook used in a runbook workflow.
      * </p>
      */
     private String documentVersion;
@@ -61,7 +61,7 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
     private String targetParameterName;
     /**
      * <p>
-     * A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you specify
+     * A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify
      * <code>TargetParameterName</code>.
      * </p>
      */
@@ -82,18 +82,18 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
     private String maxErrors;
     /**
      * <p>
-     * Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     * Information about the Regions and accounts targeted by the current Runbook operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
 
     /**
      * <p>
-     * The name of the Automation runbook (Automation document) used in a runbook workflow.
+     * The name of the Automation runbook used in a runbook workflow.
      * </p>
      * 
      * @param documentName
-     *        The name of the Automation runbook (Automation document) used in a runbook workflow.
+     *        The name of the Automation runbook used in a runbook workflow.
      */
 
     public void setDocumentName(String documentName) {
@@ -102,10 +102,10 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Automation runbook (Automation document) used in a runbook workflow.
+     * The name of the Automation runbook used in a runbook workflow.
      * </p>
      * 
-     * @return The name of the Automation runbook (Automation document) used in a runbook workflow.
+     * @return The name of the Automation runbook used in a runbook workflow.
      */
 
     public String getDocumentName() {
@@ -114,11 +114,11 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Automation runbook (Automation document) used in a runbook workflow.
+     * The name of the Automation runbook used in a runbook workflow.
      * </p>
      * 
      * @param documentName
-     *        The name of the Automation runbook (Automation document) used in a runbook workflow.
+     *        The name of the Automation runbook used in a runbook workflow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the Automation runbook (Automation document) used in a runbook workflow.
+     * The version of the Automation runbook used in a runbook workflow.
      * </p>
      * 
      * @param documentVersion
-     *        The version of the Automation runbook (Automation document) used in a runbook workflow.
+     *        The version of the Automation runbook used in a runbook workflow.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -142,10 +142,10 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the Automation runbook (Automation document) used in a runbook workflow.
+     * The version of the Automation runbook used in a runbook workflow.
      * </p>
      * 
-     * @return The version of the Automation runbook (Automation document) used in a runbook workflow.
+     * @return The version of the Automation runbook used in a runbook workflow.
      */
 
     public String getDocumentVersion() {
@@ -154,11 +154,11 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the Automation runbook (Automation document) used in a runbook workflow.
+     * The version of the Automation runbook used in a runbook workflow.
      * </p>
      * 
      * @param documentVersion
-     *        The version of the Automation runbook (Automation document) used in a runbook workflow.
+     *        The version of the Automation runbook used in a runbook workflow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,11 +289,11 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you specify
+     * A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify
      * <code>TargetParameterName</code>.
      * </p>
      * 
-     * @return A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you
+     * @return A key-value mapping to target resources that the runbook operation performs tasks on. Required if you
      *         specify <code>TargetParameterName</code>.
      */
 
@@ -306,12 +306,12 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you specify
+     * A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify
      * <code>TargetParameterName</code>.
      * </p>
      * 
      * @param targets
-     *        A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you
+     *        A key-value mapping to target resources that the runbook operation performs tasks on. Required if you
      *        specify <code>TargetParameterName</code>.
      */
 
@@ -326,7 +326,7 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you specify
+     * A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify
      * <code>TargetParameterName</code>.
      * </p>
      * <p>
@@ -336,7 +336,7 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targets
-     *        A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you
+     *        A key-value mapping to target resources that the runbook operation performs tasks on. Required if you
      *        specify <code>TargetParameterName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -353,12 +353,12 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you specify
+     * A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify
      * <code>TargetParameterName</code>.
      * </p>
      * 
      * @param targets
-     *        A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you
+     *        A key-value mapping to target resources that the runbook operation performs tasks on. Required if you
      *        specify <code>TargetParameterName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -462,10 +462,10 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     * Information about the Regions and accounts targeted by the current Runbook operation.
      * </p>
      * 
-     * @return Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     * @return Information about the Regions and accounts targeted by the current Runbook operation.
      */
 
     public java.util.List<TargetLocation> getTargetLocations() {
@@ -477,11 +477,11 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     * Information about the Regions and accounts targeted by the current Runbook operation.
      * </p>
      * 
      * @param targetLocations
-     *        Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     *        Information about the Regions and accounts targeted by the current Runbook operation.
      */
 
     public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
@@ -495,7 +495,7 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     * Information about the Regions and accounts targeted by the current Runbook operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -504,7 +504,7 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targetLocations
-     *        Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     *        Information about the Regions and accounts targeted by the current Runbook operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,11 +520,11 @@ public class Runbook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     * Information about the Regions and accounts targeted by the current Runbook operation.
      * </p>
      * 
      * @param targetLocations
-     *        Information about the AWS Regions and accounts targeted by the current Runbook operation.
+     *        Information about the Regions and accounts targeted by the current Runbook operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

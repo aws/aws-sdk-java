@@ -38,7 +38,7 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
-     * This is because the command has not reached the instance yet.
+     * This is because the command hasn't reached the instance yet.
      * </p>
      * </note>
      */
@@ -110,7 +110,7 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
-     * This is because the command has not reached the instance yet.
+     * This is because the command hasn't reached the instance yet.
      * </p>
      * </note>
      * 
@@ -118,7 +118,7 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        (Optional) Lists commands issued against this instance ID.</p> <note>
      *        <p>
      *        You can't specify an instance ID in the same command that you specify <code>Status</code> =
-     *        <code>Pending</code>. This is because the command has not reached the instance yet.
+     *        <code>Pending</code>. This is because the command hasn't reached the instance yet.
      *        </p>
      */
 
@@ -133,14 +133,14 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
-     * This is because the command has not reached the instance yet.
+     * This is because the command hasn't reached the instance yet.
      * </p>
      * </note>
      * 
      * @return (Optional) Lists commands issued against this instance ID.</p> <note>
      *         <p>
      *         You can't specify an instance ID in the same command that you specify <code>Status</code> =
-     *         <code>Pending</code>. This is because the command has not reached the instance yet.
+     *         <code>Pending</code>. This is because the command hasn't reached the instance yet.
      *         </p>
      */
 
@@ -155,7 +155,7 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
-     * This is because the command has not reached the instance yet.
+     * This is because the command hasn't reached the instance yet.
      * </p>
      * </note>
      * 
@@ -163,7 +163,7 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        (Optional) Lists commands issued against this instance ID.</p> <note>
      *        <p>
      *        You can't specify an instance ID in the same command that you specify <code>Status</code> =
-     *        <code>Pending</code>. This is because the command has not reached the instance yet.
+     *        <code>Pending</code>. This is because the command hasn't reached the instance yet.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

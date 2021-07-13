@@ -54,14 +54,14 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * automatically. Not supported on Debian Server or Ubuntu Server.
      * </p>
      * <p>
-     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      * </p>
      */
     private String approveUntilDate;
     /**
      * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
-     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * available in the specified repository. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      */
     private Boolean enableNonSecurity;
@@ -237,14 +237,14 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * automatically. Not supported on Debian Server or Ubuntu Server.
      * </p>
      * <p>
-     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      * </p>
      * 
      * @param approveUntilDate
      *        The cutoff date for auto approval of released patches. Any patches released on or before this date are
      *        installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
      *        <p>
-     *        Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     *        Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      */
 
     public void setApproveUntilDate(String approveUntilDate) {
@@ -257,13 +257,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * automatically. Not supported on Debian Server or Ubuntu Server.
      * </p>
      * <p>
-     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      * </p>
      * 
      * @return The cutoff date for auto approval of released patches. Any patches released on or before this date are
      *         installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
      *         <p>
-     *         Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     *         Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      */
 
     public String getApproveUntilDate() {
@@ -276,14 +276,14 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * automatically. Not supported on Debian Server or Ubuntu Server.
      * </p>
      * <p>
-     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      * </p>
      * 
      * @param approveUntilDate
      *        The cutoff date for auto approval of released patches. Any patches released on or before this date are
      *        installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
      *        <p>
-     *        Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
+     *        Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,13 +295,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
-     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * available in the specified repository. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @param enableNonSecurity
      *        For instances identified by the approval rule filters, enables a patch baseline to apply non-security
-     *        updates available in the specified repository. The default value is 'false'. Applies to Linux instances
-     *        only.
+     *        updates available in the specified repository. The default value is <code>false</code>. Applies to Linux
+     *        instances only.
      */
 
     public void setEnableNonSecurity(Boolean enableNonSecurity) {
@@ -311,12 +311,12 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
-     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * available in the specified repository. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @return For instances identified by the approval rule filters, enables a patch baseline to apply non-security
-     *         updates available in the specified repository. The default value is 'false'. Applies to Linux instances
-     *         only.
+     *         updates available in the specified repository. The default value is <code>false</code>. Applies to Linux
+     *         instances only.
      */
 
     public Boolean getEnableNonSecurity() {
@@ -326,13 +326,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
-     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * available in the specified repository. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @param enableNonSecurity
      *        For instances identified by the approval rule filters, enables a patch baseline to apply non-security
-     *        updates available in the specified repository. The default value is 'false'. Applies to Linux instances
-     *        only.
+     *        updates available in the specified repository. The default value is <code>false</code>. Applies to Linux
+     *        instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,12 +344,12 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
-     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * available in the specified repository. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @return For instances identified by the approval rule filters, enables a patch baseline to apply non-security
-     *         updates available in the specified repository. The default value is 'false'. Applies to Linux instances
-     *         only.
+     *         updates available in the specified repository. The default value is <code>false</code>. Applies to Linux
+     *         instances only.
      */
 
     public Boolean isEnableNonSecurity() {

@@ -33,8 +33,8 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     private String name;
     /**
      * <p>
-     * Return decrypted values for secure string parameters. This flag is ignored for String and StringList parameter
-     * types.
+     * Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.
      * </p>
      */
     private Boolean withDecryption;
@@ -94,13 +94,13 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Return decrypted values for secure string parameters. This flag is ignored for String and StringList parameter
-     * types.
+     * Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.
      * </p>
      * 
      * @param withDecryption
-     *        Return decrypted values for secure string parameters. This flag is ignored for String and StringList
-     *        parameter types.
+     *        Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     *        <code>StringList</code> parameter types.
      */
 
     public void setWithDecryption(Boolean withDecryption) {
@@ -109,12 +109,12 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Return decrypted values for secure string parameters. This flag is ignored for String and StringList parameter
-     * types.
+     * Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.
      * </p>
      * 
-     * @return Return decrypted values for secure string parameters. This flag is ignored for String and StringList
-     *         parameter types.
+     * @return Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     *         <code>StringList</code> parameter types.
      */
 
     public Boolean getWithDecryption() {
@@ -123,13 +123,13 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Return decrypted values for secure string parameters. This flag is ignored for String and StringList parameter
-     * types.
+     * Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.
      * </p>
      * 
      * @param withDecryption
-     *        Return decrypted values for secure string parameters. This flag is ignored for String and StringList
-     *        parameter types.
+     *        Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     *        <code>StringList</code> parameter types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,12 +140,12 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Return decrypted values for secure string parameters. This flag is ignored for String and StringList parameter
-     * types.
+     * Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.
      * </p>
      * 
-     * @return Return decrypted values for secure string parameters. This flag is ignored for String and StringList
-     *         parameter types.
+     * @return Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and
+     *         <code>StringList</code> parameter types.
      */
 
     public Boolean isWithDecryption() {

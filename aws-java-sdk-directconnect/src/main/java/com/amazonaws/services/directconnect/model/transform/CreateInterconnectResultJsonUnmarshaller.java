@@ -92,6 +92,10 @@ public class CreateInterconnectResultJsonUnmarshaller implements Unmarshaller<Cr
                     context.nextToken();
                     createInterconnectResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     createInterconnectResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

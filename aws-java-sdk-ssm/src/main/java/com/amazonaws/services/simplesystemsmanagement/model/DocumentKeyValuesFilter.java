@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * For keys, you can specify one or more tags that have been applied to a document.
  * </p>
  * <p>
- * You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated
- * values are as follows:
+ * You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys and their
+ * associated values are as follows:
  * </p>
  * <dl>
  * <dt>DocumentType</dt>
@@ -34,47 +34,47 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * ApplicationConfiguration
+ * <code>ApplicationConfiguration</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * ApplicationConfigurationSchema
+ * <code>ApplicationConfigurationSchema</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Automation
+ * <code>Automation</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * ChangeCalendar
+ * <code>ChangeCalendar</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Command
+ * <code>Command</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * DeploymentStrategy
+ * <code>DeploymentStrategy</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Package
+ * <code>Package</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Policy
+ * <code>Policy</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Session
+ * <code>Session</code>
  * </p>
  * </li>
  * </ul>
@@ -87,27 +87,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * Amazon
+ * <code>Amazon</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Private
+ * <code>Private</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Public
+ * <code>Public</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Self
+ * <code>Self</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * ThirdParty
+ * <code>ThirdParty</code>
  * </p>
  * </li>
  * </ul>
@@ -117,30 +117,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * Linux
+ * <code>Linux</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * Windows
+ * <code>Windows</code>
  * </p>
  * </li>
  * </ul>
  * </dd>
  * </dl>
  * <p>
- * <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to
- * return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with
- * <code>Te</code>, run the following command:
+ * <code>Name</code> is another Amazon Web Services-provided key. If you use <code>Name</code> as a key, you can use a
+ * name prefix to return a list of documents. For example, in the Amazon Web Services CLI, to return a list of all
+ * documents that begin with <code>Te</code>, run the following command:
  * </p>
  * <p>
  * <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
  * </p>
  * <p>
- * You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be
- * used with this key, see <a
- * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
- * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+ * You can also use the <code>TargetType</code> Amazon Web Services-provided key. For a list of valid resource type
+ * values that can be used with this key, see <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web
+ * Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
  * </p>
  * <p>
  * If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If
@@ -148,11 +148,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * results.
  * </p>
  * <p>
- * To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+ * To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
  * </p>
  * <p>
- * For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code>
- * command:
+ * For example, if you created a key called region and are using the Amazon Web Services CLI to call the
+ * <code>list-documents</code> command:
  * </p>
  * <p>
  * <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>

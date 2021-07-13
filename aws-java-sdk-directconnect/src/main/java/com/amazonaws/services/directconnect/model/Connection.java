@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an AWS Direct Connect connection.
+ * Information about an Direct Connect connection.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the connection.
+     * The ID of the account that owns the connection.
      * </p>
      */
     private String ownerAccount;
@@ -104,7 +104,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String connectionState;
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      */
     private String region;
@@ -128,7 +128,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private Integer vlan;
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the connection.
+     * The name of the Direct Connect service provider associated with the connection.
      * </p>
      */
     private String partnerName;
@@ -162,6 +162,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String awsDeviceV2;
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     */
+    private String awsLogicalDeviceId;
     /**
      * <p>
      * Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).
@@ -214,11 +220,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the connection.
+     * The ID of the account that owns the connection.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the connection.
+     *        The ID of the account that owns the connection.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -227,10 +233,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the connection.
+     * The ID of the account that owns the connection.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the connection.
+     * @return The ID of the account that owns the connection.
      */
 
     public String getOwnerAccount() {
@@ -239,11 +245,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the connection.
+     * The ID of the account that owns the connection.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the connection.
+     *        The ID of the account that owns the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -907,11 +913,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      * 
      * @param region
-     *        The AWS Region where the connection is located.
+     *        The Region where the connection is located.
      */
 
     public void setRegion(String region) {
@@ -920,10 +926,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      * 
-     * @return The AWS Region where the connection is located.
+     * @return The Region where the connection is located.
      */
 
     public String getRegion() {
@@ -932,11 +938,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      * 
      * @param region
-     *        The AWS Region where the connection is located.
+     *        The Region where the connection is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,11 +1073,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the connection.
+     * The name of the Direct Connect service provider associated with the connection.
      * </p>
      * 
      * @param partnerName
-     *        The name of the AWS Direct Connect service provider associated with the connection.
+     *        The name of the Direct Connect service provider associated with the connection.
      */
 
     public void setPartnerName(String partnerName) {
@@ -1080,10 +1086,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the connection.
+     * The name of the Direct Connect service provider associated with the connection.
      * </p>
      * 
-     * @return The name of the AWS Direct Connect service provider associated with the connection.
+     * @return The name of the Direct Connect service provider associated with the connection.
      */
 
     public String getPartnerName() {
@@ -1092,11 +1098,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the AWS Direct Connect service provider associated with the connection.
+     * The name of the Direct Connect service provider associated with the connection.
      * </p>
      * 
      * @param partnerName
-     *        The name of the AWS Direct Connect service provider associated with the connection.
+     *        The name of the Direct Connect service provider associated with the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1314,6 +1320,46 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     public Connection withAwsDeviceV2(String awsDeviceV2) {
         setAwsDeviceV2(awsDeviceV2);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @param awsLogicalDeviceId
+     *        The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     */
+
+    public void setAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        this.awsLogicalDeviceId = awsLogicalDeviceId;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @return The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     */
+
+    public String getAwsLogicalDeviceId() {
+        return this.awsLogicalDeviceId;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @param awsLogicalDeviceId
+     *        The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Connection withAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        setAwsLogicalDeviceId(awsLogicalDeviceId);
         return this;
     }
 
@@ -1784,6 +1830,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
             sb.append("JumboFrameCapable: ").append(getJumboFrameCapable()).append(",");
         if (getAwsDeviceV2() != null)
             sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
+        if (getAwsLogicalDeviceId() != null)
+            sb.append("AwsLogicalDeviceId: ").append(getAwsLogicalDeviceId()).append(",");
         if (getHasLogicalRedundancy() != null)
             sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy()).append(",");
         if (getTags() != null)
@@ -1868,6 +1916,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
             return false;
+        if (other.getAwsLogicalDeviceId() == null ^ this.getAwsLogicalDeviceId() == null)
+            return false;
+        if (other.getAwsLogicalDeviceId() != null && other.getAwsLogicalDeviceId().equals(this.getAwsLogicalDeviceId()) == false)
+            return false;
         if (other.getHasLogicalRedundancy() == null ^ this.getHasLogicalRedundancy() == null)
             return false;
         if (other.getHasLogicalRedundancy() != null && other.getHasLogicalRedundancy().equals(this.getHasLogicalRedundancy()) == false)
@@ -1918,6 +1970,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAwsDevice() == null) ? 0 : getAwsDevice().hashCode());
         hashCode = prime * hashCode + ((getJumboFrameCapable() == null) ? 0 : getJumboFrameCapable().hashCode());
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
+        hashCode = prime * hashCode + ((getAwsLogicalDeviceId() == null) ? 0 : getAwsLogicalDeviceId().hashCode());
         hashCode = prime * hashCode + ((getHasLogicalRedundancy() == null) ? 0 : getHasLogicalRedundancy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());

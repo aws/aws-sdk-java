@@ -44,7 +44,7 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
     private String status;
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      */
     private String statusDetails;
@@ -249,11 +249,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the Status. Only available for certain status values.
+     *        The details explaining the status. Not available for all status values.
      */
 
     public void setStatusDetails(String statusDetails) {
@@ -262,10 +262,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      * 
-     * @return The details explaining the Status. Only available for certain status values.
+     * @return The details explaining the status. Not available for all status values.
      */
 
     public String getStatusDetails() {
@@ -274,11 +274,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the Status. Only available for certain status values.
+     *        The details explaining the status. Not available for all status values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

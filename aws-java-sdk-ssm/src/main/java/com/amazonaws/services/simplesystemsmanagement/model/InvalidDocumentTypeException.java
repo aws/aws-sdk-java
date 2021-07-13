@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The document type is not valid. Valid document types are described in the <code>DocumentType</code> property.
+ * The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code> property.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

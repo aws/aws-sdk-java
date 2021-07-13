@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The document does not support the platform type of the given instance ID(s). For example, you sent an document for a
+ * The document doesn't support the platform type of the given instance ID(s). For example, you sent an document for a
  * Windows instance to a Linux instance.
  * </p>
  */

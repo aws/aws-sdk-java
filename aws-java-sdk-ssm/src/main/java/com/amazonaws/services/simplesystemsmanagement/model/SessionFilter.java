@@ -58,7 +58,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Owner: Specify an AWS user account to see a list of sessions started by that user.
+     * Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      * </p>
      * </li>
      * <li>
@@ -191,7 +191,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Owner: Specify an AWS user account to see a list of sessions started by that user.
+     * Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      * </p>
      * </li>
      * <li>
@@ -261,7 +261,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Owner: Specify an AWS user account to see a list of sessions started by that user.
+     *        Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      *        </p>
      *        </li>
      *        <li>
@@ -337,7 +337,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Owner: Specify an AWS user account to see a list of sessions started by that user.
+     * Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      * </p>
      * </li>
      * <li>
@@ -406,7 +406,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Owner: Specify an AWS user account to see a list of sessions started by that user.
+     *         Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      *         </p>
      *         </li>
      *         <li>
@@ -482,7 +482,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Owner: Specify an AWS user account to see a list of sessions started by that user.
+     * Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      * </p>
      * </li>
      * <li>
@@ -552,7 +552,7 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Owner: Specify an AWS user account to see a list of sessions started by that user.
+     *        Owner: Specify an Amazon Web Services user account to see a list of sessions started by that user.
      *        </p>
      *        </li>
      *        <li>

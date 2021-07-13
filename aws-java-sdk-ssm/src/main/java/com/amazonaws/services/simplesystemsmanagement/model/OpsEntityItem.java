@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The OpsItem summaries result item.
+ * The OpsData summary.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsEntityItem" target="_top">AWS API
@@ -30,24 +30,24 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time OpsItem data was captured.
+     * The time the OpsData was captured.
      * </p>
      */
     private String captureTime;
     /**
      * <p>
-     * The detailed data content for an OpsItem summaries result item.
+     * The details of an OpsData summary.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, String>> content;
 
     /**
      * <p>
-     * The time OpsItem data was captured.
+     * The time the OpsData was captured.
      * </p>
      * 
      * @param captureTime
-     *        The time OpsItem data was captured.
+     *        The time the OpsData was captured.
      */
 
     public void setCaptureTime(String captureTime) {
@@ -56,10 +56,10 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time OpsItem data was captured.
+     * The time the OpsData was captured.
      * </p>
      * 
-     * @return The time OpsItem data was captured.
+     * @return The time the OpsData was captured.
      */
 
     public String getCaptureTime() {
@@ -68,11 +68,11 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time OpsItem data was captured.
+     * The time the OpsData was captured.
      * </p>
      * 
      * @param captureTime
-     *        The time OpsItem data was captured.
+     *        The time the OpsData was captured.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed data content for an OpsItem summaries result item.
+     * The details of an OpsData summary.
      * </p>
      * 
-     * @return The detailed data content for an OpsItem summaries result item.
+     * @return The details of an OpsData summary.
      */
 
     public java.util.List<java.util.Map<String, String>> getContent() {
@@ -98,11 +98,11 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed data content for an OpsItem summaries result item.
+     * The details of an OpsData summary.
      * </p>
      * 
      * @param content
-     *        The detailed data content for an OpsItem summaries result item.
+     *        The details of an OpsData summary.
      */
 
     public void setContent(java.util.Collection<java.util.Map<String, String>> content) {
@@ -116,7 +116,7 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed data content for an OpsItem summaries result item.
+     * The details of an OpsData summary.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param content
-     *        The detailed data content for an OpsItem summaries result item.
+     *        The details of an OpsData summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The detailed data content for an OpsItem summaries result item.
+     * The details of an OpsData summary.
      * </p>
      * 
      * @param content
-     *        The detailed data content for an OpsItem summaries result item.
+     *        The details of an OpsData summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

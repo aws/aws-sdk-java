@@ -28,7 +28,7 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the Amazon Redshift event notification subscription.
+     * The account associated with the Amazon Redshift event notification subscription.
      * </p>
      */
     private String customerAwsId;
@@ -119,11 +119,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the Amazon Redshift event notification subscription.
+     * The account associated with the Amazon Redshift event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the Amazon Redshift event notification subscription.
+     *        The account associated with the Amazon Redshift event notification subscription.
      */
 
     public void setCustomerAwsId(String customerAwsId) {
@@ -132,10 +132,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the Amazon Redshift event notification subscription.
+     * The account associated with the Amazon Redshift event notification subscription.
      * </p>
      * 
-     * @return The AWS customer account associated with the Amazon Redshift event notification subscription.
+     * @return The account associated with the Amazon Redshift event notification subscription.
      */
 
     public String getCustomerAwsId() {
@@ -144,11 +144,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the Amazon Redshift event notification subscription.
+     * The account associated with the Amazon Redshift event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the Amazon Redshift event notification subscription.
+     *        The account associated with the Amazon Redshift event notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

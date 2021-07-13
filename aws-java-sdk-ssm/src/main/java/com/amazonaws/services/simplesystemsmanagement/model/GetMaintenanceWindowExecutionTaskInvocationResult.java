@@ -50,8 +50,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String executionId;
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
-     * AUTOMATION, RUN_COMMAND.
+     * Retrieves the task type for a maintenance window.
      * </p>
      */
     private String taskType;
@@ -87,8 +86,8 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private java.util.Date endTime;
     /**
      * <p>
-     * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * maintenance window.
+     * User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while
+     * running tasks for these targets in this maintenance window.
      * </p>
      */
     private String ownerInformation;
@@ -261,13 +260,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
-     * AUTOMATION, RUN_COMMAND.
+     * Retrieves the task type for a maintenance window.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
-     *        STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
+     *        Retrieves the task type for a maintenance window.
      * @see MaintenanceWindowTaskType
      */
 
@@ -277,12 +274,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
-     * AUTOMATION, RUN_COMMAND.
+     * Retrieves the task type for a maintenance window.
      * </p>
      * 
-     * @return Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
-     *         STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
+     * @return Retrieves the task type for a maintenance window.
      * @see MaintenanceWindowTaskType
      */
 
@@ -292,13 +287,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
-     * AUTOMATION, RUN_COMMAND.
+     * Retrieves the task type for a maintenance window.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
-     *        STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
+     *        Retrieves the task type for a maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -310,13 +303,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTIONS,
-     * AUTOMATION, RUN_COMMAND.
+     * Retrieves the task type for a maintenance window.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
-     *        STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.
+     *        Retrieves the task type for a maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -547,13 +538,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * maintenance window.
+     * User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while
+     * running tasks for these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value to be included in any CloudWatch events raised while running tasks for these targets
-     *        in this maintenance window.
+     *        User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised
+     *        while running tasks for these targets in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -562,12 +553,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * maintenance window.
+     * User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while
+     * running tasks for these targets in this maintenance window.
      * </p>
      * 
-     * @return User-provided value to be included in any CloudWatch events raised while running tasks for these targets
-     *         in this maintenance window.
+     * @return User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised
+     *         while running tasks for these targets in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -576,13 +567,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * maintenance window.
+     * User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while
+     * running tasks for these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value to be included in any CloudWatch events raised while running tasks for these targets
-     *        in this maintenance window.
+     *        User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised
+     *        while running tasks for these targets in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The LAG MAC Security (MACsec) encryption mode.
      * </p>
      * <p>
-     * AWS applies the value to all connections which are part of the LAG.
+     * Amazon Web Services applies the value to all connections which are part of the LAG.
      * </p>
      */
     private String encryptionMode;
@@ -178,13 +178,13 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The LAG MAC Security (MACsec) encryption mode.
      * </p>
      * <p>
-     * AWS applies the value to all connections which are part of the LAG.
+     * Amazon Web Services applies the value to all connections which are part of the LAG.
      * </p>
      * 
      * @param encryptionMode
      *        The LAG MAC Security (MACsec) encryption mode.</p>
      *        <p>
-     *        AWS applies the value to all connections which are part of the LAG.
+     *        Amazon Web Services applies the value to all connections which are part of the LAG.
      */
 
     public void setEncryptionMode(String encryptionMode) {
@@ -196,12 +196,12 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The LAG MAC Security (MACsec) encryption mode.
      * </p>
      * <p>
-     * AWS applies the value to all connections which are part of the LAG.
+     * Amazon Web Services applies the value to all connections which are part of the LAG.
      * </p>
      * 
      * @return The LAG MAC Security (MACsec) encryption mode.</p>
      *         <p>
-     *         AWS applies the value to all connections which are part of the LAG.
+     *         Amazon Web Services applies the value to all connections which are part of the LAG.
      */
 
     public String getEncryptionMode() {
@@ -213,13 +213,13 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The LAG MAC Security (MACsec) encryption mode.
      * </p>
      * <p>
-     * AWS applies the value to all connections which are part of the LAG.
+     * Amazon Web Services applies the value to all connections which are part of the LAG.
      * </p>
      * 
      * @param encryptionMode
      *        The LAG MAC Security (MACsec) encryption mode.</p>
      *        <p>
-     *        AWS applies the value to all connections which are part of the LAG.
+     *        Amazon Web Services applies the value to all connections which are part of the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,8 +34,8 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon Elastic
-     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for AWS Systems
-     * Manager.
+     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for Amazon Web
+     * Services Systems Manager.
      * </p>
      */
     private String instanceId;
@@ -46,7 +46,7 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example,
      * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * <p>
@@ -101,14 +101,14 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon Elastic
-     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for AWS Systems
-     * Manager.
+     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for Amazon Web
+     * Services Systems Manager.
      * </p>
      * 
      * @param instanceId
      *        (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon
      *        Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured
-     *        for AWS Systems Manager.
+     *        for Amazon Web Services Systems Manager.
      */
 
     public void setInstanceId(String instanceId) {
@@ -118,13 +118,13 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon Elastic
-     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for AWS Systems
-     * Manager.
+     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for Amazon Web
+     * Services Systems Manager.
      * </p>
      * 
      * @return (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon
      *         Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured
-     *         for AWS Systems Manager.
+     *         for Amazon Web Services Systems Manager.
      */
 
     public String getInstanceId() {
@@ -134,14 +134,14 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon Elastic
-     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for AWS Systems
-     * Manager.
+     * Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for Amazon Web
+     * Services Systems Manager.
      * </p>
      * 
      * @param instanceId
      *        (Required) The ID of the managed instance targeted by the command. A managed instance can be an Amazon
      *        Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured
-     *        for AWS Systems Manager.
+     *        for Amazon Web Services Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +157,7 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example,
      * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * <p>
@@ -172,8 +172,8 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      *        can omit the name and details for that plugin. If the document contains more than one plugin, you must
      *        specify the name of the plugin for which you want to view details.</p>
      *        <p>
-     *        Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
-     *        <code>aws:RunShellScript</code> is a plugin.
+     *        Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For
+     *        example, <code>aws:RunShellScript</code> is a plugin.
      *        </p>
      *        <p>
      *        To find the <code>PluginName</code>, check the document content and find the name of the plugin.
@@ -193,7 +193,7 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example,
      * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * <p>
@@ -207,8 +207,8 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      *         can omit the name and details for that plugin. If the document contains more than one plugin, you must
      *         specify the name of the plugin for which you want to view details.</p>
      *         <p>
-     *         Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
-     *         <code>aws:RunShellScript</code> is a plugin.
+     *         Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For
+     *         example, <code>aws:RunShellScript</code> is a plugin.
      *         </p>
      *         <p>
      *         To find the <code>PluginName</code>, check the document content and find the name of the plugin.
@@ -228,7 +228,7 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example,
      * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * <p>
@@ -243,8 +243,8 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      *        can omit the name and details for that plugin. If the document contains more than one plugin, you must
      *        specify the name of the plugin for which you want to view details.</p>
      *        <p>
-     *        Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
-     *        <code>aws:RunShellScript</code> is a plugin.
+     *        Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For
+     *        example, <code>aws:RunShellScript</code> is a plugin.
      *        </p>
      *        <p>
      *        To find the <code>PluginName</code>, check the document content and find the name of the plugin.

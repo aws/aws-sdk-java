@@ -45,6 +45,8 @@ public class BGPPeerMarshaller {
             .marshallLocationName("bgpStatus").build();
     private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
+    private static final MarshallingInfo<String> AWSLOGICALDEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsLogicalDeviceId").build();
 
     private static final BGPPeerMarshaller instance = new BGPPeerMarshaller();
 
@@ -71,6 +73,7 @@ public class BGPPeerMarshaller {
             protocolMarshaller.marshall(bGPPeer.getBgpPeerState(), BGPPEERSTATE_BINDING);
             protocolMarshaller.marshall(bGPPeer.getBgpStatus(), BGPSTATUS_BINDING);
             protocolMarshaller.marshall(bGPPeer.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
+            protocolMarshaller.marshall(bGPPeer.getAwsLogicalDeviceId(), AWSLOGICALDEVICEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

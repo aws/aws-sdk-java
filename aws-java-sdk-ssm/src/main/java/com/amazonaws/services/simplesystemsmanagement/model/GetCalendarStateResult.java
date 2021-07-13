@@ -26,14 +26,14 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a
-     * <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     * <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * </p>
      */
     private String state;
     /**
      * <p>
      * The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your
-     * command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     * command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      * </p>
      */
     private String atTime;
@@ -49,12 +49,12 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a
-     * <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     * <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * </p>
      * 
      * @param state
      *        The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed,
-     *        and a <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     *        and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * @see CalendarState
      */
 
@@ -65,11 +65,11 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a
-     * <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     * <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * </p>
      * 
      * @return The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed,
-     *         and a <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     *         and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * @see CalendarState
      */
 
@@ -80,12 +80,12 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a
-     * <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     * <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * </p>
      * 
      * @param state
      *        The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed,
-     *        and a <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     *        and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CalendarState
      */
@@ -98,12 +98,12 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a
-     * <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     * <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * </p>
      * 
      * @param state
      *        The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed,
-     *        and a <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.
+     *        and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CalendarState
      */
@@ -116,12 +116,12 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your
-     * command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     * command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      * </p>
      * 
      * @param atTime
      *        The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified
-     *        in your command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     *        in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      */
 
     public void setAtTime(String atTime) {
@@ -131,11 +131,11 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your
-     * command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     * command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      * </p>
      * 
      * @return The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified
-     *         in your command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     *         in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      */
 
     public String getAtTime() {
@@ -145,12 +145,12 @@ public class GetCalendarStateResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your
-     * command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     * command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      * </p>
      * 
      * @param atTime
      *        The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified
-     *        in your command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.
+     *        in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

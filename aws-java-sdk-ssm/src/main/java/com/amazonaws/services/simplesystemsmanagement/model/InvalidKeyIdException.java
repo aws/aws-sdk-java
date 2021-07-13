@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The query key ID is not valid.
+ * The query key ID isn't valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

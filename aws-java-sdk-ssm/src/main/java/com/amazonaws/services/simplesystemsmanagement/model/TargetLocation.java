@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The combination of AWS Regions and accounts targeted by the current Automation execution.
+ * The combination of Regions and accounts targeted by the current Automation execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TargetLocation" target="_top">AWS API
@@ -30,19 +30,19 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS accounts targeted by the current Automation execution.
+     * The accounts targeted by the current Automation execution.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accounts;
     /**
      * <p>
-     * The AWS Regions targeted by the current Automation execution.
+     * The Regions targeted by the current Automation execution.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
     /**
      * <p>
-     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     * The maximum number of Regions and accounts allowed to run the Automation concurrently.
      * </p>
      */
     private String targetLocationMaxConcurrency;
@@ -63,10 +63,10 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS accounts targeted by the current Automation execution.
+     * The accounts targeted by the current Automation execution.
      * </p>
      * 
-     * @return The AWS accounts targeted by the current Automation execution.
+     * @return The accounts targeted by the current Automation execution.
      */
 
     public java.util.List<String> getAccounts() {
@@ -78,11 +78,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS accounts targeted by the current Automation execution.
+     * The accounts targeted by the current Automation execution.
      * </p>
      * 
      * @param accounts
-     *        The AWS accounts targeted by the current Automation execution.
+     *        The accounts targeted by the current Automation execution.
      */
 
     public void setAccounts(java.util.Collection<String> accounts) {
@@ -96,7 +96,7 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS accounts targeted by the current Automation execution.
+     * The accounts targeted by the current Automation execution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -105,7 +105,7 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param accounts
-     *        The AWS accounts targeted by the current Automation execution.
+     *        The accounts targeted by the current Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +121,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS accounts targeted by the current Automation execution.
+     * The accounts targeted by the current Automation execution.
      * </p>
      * 
      * @param accounts
-     *        The AWS accounts targeted by the current Automation execution.
+     *        The accounts targeted by the current Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +136,10 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Regions targeted by the current Automation execution.
+     * The Regions targeted by the current Automation execution.
      * </p>
      * 
-     * @return The AWS Regions targeted by the current Automation execution.
+     * @return The Regions targeted by the current Automation execution.
      */
 
     public java.util.List<String> getRegions() {
@@ -151,11 +151,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Regions targeted by the current Automation execution.
+     * The Regions targeted by the current Automation execution.
      * </p>
      * 
      * @param regions
-     *        The AWS Regions targeted by the current Automation execution.
+     *        The Regions targeted by the current Automation execution.
      */
 
     public void setRegions(java.util.Collection<String> regions) {
@@ -169,7 +169,7 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Regions targeted by the current Automation execution.
+     * The Regions targeted by the current Automation execution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,7 +178,7 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param regions
-     *        The AWS Regions targeted by the current Automation execution.
+     *        The Regions targeted by the current Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +194,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Regions targeted by the current Automation execution.
+     * The Regions targeted by the current Automation execution.
      * </p>
      * 
      * @param regions
-     *        The AWS Regions targeted by the current Automation execution.
+     *        The Regions targeted by the current Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     * The maximum number of Regions and accounts allowed to run the Automation concurrently.
      * </p>
      * 
      * @param targetLocationMaxConcurrency
-     *        The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     *        The maximum number of Regions and accounts allowed to run the Automation concurrently.
      */
 
     public void setTargetLocationMaxConcurrency(String targetLocationMaxConcurrency) {
@@ -222,10 +222,10 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     * The maximum number of Regions and accounts allowed to run the Automation concurrently.
      * </p>
      * 
-     * @return The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     * @return The maximum number of Regions and accounts allowed to run the Automation concurrently.
      */
 
     public String getTargetLocationMaxConcurrency() {
@@ -234,11 +234,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     * The maximum number of Regions and accounts allowed to run the Automation concurrently.
      * </p>
      * 
      * @param targetLocationMaxConcurrency
-     *        The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
+     *        The maximum number of Regions and accounts allowed to run the Automation concurrently.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

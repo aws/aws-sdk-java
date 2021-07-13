@@ -29,7 +29,7 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified,
-     * information is returned for all HSM configurations owned by your AWS customer account.
+     * information is returned for all HSM configurations owned by your account.
      * </p>
      */
     private String hsmConfigurationIdentifier;
@@ -50,9 +50,10 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      */
     private String marker;
@@ -80,12 +81,12 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified,
-     * information is returned for all HSM configurations owned by your AWS customer account.
+     * information is returned for all HSM configurations owned by your account.
      * </p>
      * 
      * @param hsmConfigurationIdentifier
      *        The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is
-     *        specified, information is returned for all HSM configurations owned by your AWS customer account.
+     *        specified, information is returned for all HSM configurations owned by your account.
      */
 
     public void setHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
@@ -95,11 +96,11 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified,
-     * information is returned for all HSM configurations owned by your AWS customer account.
+     * information is returned for all HSM configurations owned by your account.
      * </p>
      * 
      * @return The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is
-     *         specified, information is returned for all HSM configurations owned by your AWS customer account.
+     *         specified, information is returned for all HSM configurations owned by your account.
      */
 
     public String getHsmConfigurationIdentifier() {
@@ -109,12 +110,12 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified,
-     * information is returned for all HSM configurations owned by your AWS customer account.
+     * information is returned for all HSM configurations owned by your account.
      * </p>
      * 
      * @param hsmConfigurationIdentifier
      *        The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is
-     *        specified, information is returned for all HSM configurations owned by your AWS customer account.
+     *        specified, information is returned for all HSM configurations owned by your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,16 +215,17 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request.
      */
 
@@ -234,15 +236,16 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @return An optional parameter that specifies the starting point to return a set of response records. When the
      *         results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in
-     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *         response. You can retrieve the next set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      */
 
@@ -253,16 +256,17 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

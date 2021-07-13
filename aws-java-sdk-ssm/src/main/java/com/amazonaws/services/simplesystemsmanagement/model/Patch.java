@@ -33,7 +33,7 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * This ID isn't the same as the Microsoft Knowledge Base ID.
      * </p>
      * </note>
      */
@@ -188,14 +188,14 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * This ID isn't the same as the Microsoft Knowledge Base ID.
      * </p>
      * </note>
      * 
      * @param id
      *        The ID of the patch. Applies to Windows patches only.</p> <note>
      *        <p>
-     *        This ID is not the same as the Microsoft Knowledge Base ID.
+     *        This ID isn't the same as the Microsoft Knowledge Base ID.
      *        </p>
      */
 
@@ -209,13 +209,13 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * This ID isn't the same as the Microsoft Knowledge Base ID.
      * </p>
      * </note>
      * 
      * @return The ID of the patch. Applies to Windows patches only.</p> <note>
      *         <p>
-     *         This ID is not the same as the Microsoft Knowledge Base ID.
+     *         This ID isn't the same as the Microsoft Knowledge Base ID.
      *         </p>
      */
 
@@ -229,14 +229,14 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This ID is not the same as the Microsoft Knowledge Base ID.
+     * This ID isn't the same as the Microsoft Knowledge Base ID.
      * </p>
      * </note>
      * 
      * @param id
      *        The ID of the patch. Applies to Windows patches only.</p> <note>
      *        <p>
-     *        This ID is not the same as the Microsoft Knowledge Base ID.
+     *        This ID isn't the same as the Microsoft Knowledge Base ID.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

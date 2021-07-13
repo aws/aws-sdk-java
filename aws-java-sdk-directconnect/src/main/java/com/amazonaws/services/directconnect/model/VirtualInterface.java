@@ -30,7 +30,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      */
     private String ownerAccount;
@@ -204,7 +204,8 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
     private String directConnectGatewayId;
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
@@ -216,7 +217,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
     private com.amazonaws.internal.SdkInternalList<BGPPeer> bgpPeers;
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      */
     private String region;
@@ -228,6 +229,12 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
     private String awsDeviceV2;
     /**
      * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     */
+    private String awsLogicalDeviceId;
+    /**
+     * <p>
      * The tags associated with the virtual interface.
      * </p>
      */
@@ -235,11 +242,11 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the virtual interface.
+     *        The ID of the account that owns the virtual interface.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -248,10 +255,10 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the virtual interface.
+     * @return The ID of the account that owns the virtual interface.
      */
 
     public String getOwnerAccount() {
@@ -260,11 +267,11 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the virtual interface.
+     *        The ID of the account that owns the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1648,10 +1655,12 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * 
-     * @return The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * @return The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *         interfaces.
      */
 
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
@@ -1663,11 +1672,13 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * 
      * @param routeFilterPrefixes
-     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     *        The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *        interfaces.
      */
 
     public void setRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
@@ -1681,7 +1692,8 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1690,7 +1702,8 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param routeFilterPrefixes
-     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     *        The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *        interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1706,11 +1719,13 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * 
      * @param routeFilterPrefixes
-     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     *        The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *        interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1794,11 +1809,11 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      * 
      * @param region
-     *        The AWS Region where the virtual interface is located.
+     *        The Region where the virtual interface is located.
      */
 
     public void setRegion(String region) {
@@ -1807,10 +1822,10 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      * 
-     * @return The AWS Region where the virtual interface is located.
+     * @return The Region where the virtual interface is located.
      */
 
     public String getRegion() {
@@ -1819,11 +1834,11 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      * 
      * @param region
-     *        The AWS Region where the virtual interface is located.
+     *        The Region where the virtual interface is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1869,6 +1884,46 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
 
     public VirtualInterface withAwsDeviceV2(String awsDeviceV2) {
         setAwsDeviceV2(awsDeviceV2);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @param awsLogicalDeviceId
+     *        The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     */
+
+    public void setAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        this.awsLogicalDeviceId = awsLogicalDeviceId;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @return The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     */
+
+    public String getAwsLogicalDeviceId() {
+        return this.awsLogicalDeviceId;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @param awsLogicalDeviceId
+     *        The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualInterface withAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        setAwsLogicalDeviceId(awsLogicalDeviceId);
         return this;
     }
 
@@ -2003,6 +2058,8 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
             sb.append("Region: ").append(getRegion()).append(",");
         if (getAwsDeviceV2() != null)
             sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
+        if (getAwsLogicalDeviceId() != null)
+            sb.append("AwsLogicalDeviceId: ").append(getAwsLogicalDeviceId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -2111,6 +2168,10 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
             return false;
+        if (other.getAwsLogicalDeviceId() == null ^ this.getAwsLogicalDeviceId() == null)
+            return false;
+        if (other.getAwsLogicalDeviceId() != null && other.getAwsLogicalDeviceId().equals(this.getAwsLogicalDeviceId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -2146,6 +2207,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getBgpPeers() == null) ? 0 : getBgpPeers().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
+        hashCode = prime * hashCode + ((getAwsLogicalDeviceId() == null) ? 0 : getAwsLogicalDeviceId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

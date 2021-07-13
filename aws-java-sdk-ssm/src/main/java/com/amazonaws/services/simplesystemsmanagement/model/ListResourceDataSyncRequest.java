@@ -29,7 +29,7 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
      * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
-     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * resource data syncs from Organizations or from multiple Regions.
      * </p>
      */
     private String syncType;
@@ -51,13 +51,13 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
      * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
-     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * resource data syncs from Organizations or from multiple Regions.
      * </p>
      * 
      * @param syncType
      *        View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
      *        view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code>
-     *        to view resource data syncs from AWS Organizations or from multiple AWS Regions.
+     *        to view resource data syncs from Organizations or from multiple Regions.
      */
 
     public void setSyncType(String syncType) {
@@ -68,13 +68,12 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
      * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
-     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * resource data syncs from Organizations or from multiple Regions.
      * </p>
      * 
      * @return View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
      *         view resource data syncs that synchronize data to an Amazon S3 bucket. Specify
-     *         <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
-     *         Regions.
+     *         <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Regions.
      */
 
     public String getSyncType() {
@@ -85,13 +84,13 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
      * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
-     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * resource data syncs from Organizations or from multiple Regions.
      * </p>
      * 
      * @param syncType
      *        View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
      *        view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code>
-     *        to view resource data syncs from AWS Organizations or from multiple AWS Regions.
+     *        to view resource data syncs from Organizations or from multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,7 +38,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
     private String taskExecutionId;
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      */
     private String taskArn;
@@ -69,12 +69,18 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * <p>
      * The map has the following format:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Key: string, between 1 and 255 characters
+     * <code>Key</code>: string, between 1 and 255 characters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Value: an array of strings, each string is between 1 and 255 characters
+     * <code>Value</code>: an array of strings, each between 1 and 255 characters
      * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters;
     /**
@@ -104,7 +110,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
     private String status;
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      */
     private String statusDetails;
@@ -203,11 +209,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task that ran.
+     *        The Amazon Resource Name (ARN) of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -216,10 +222,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      * 
-     * @return The ARN of the task that ran.
+     * @return The Amazon Resource Name (ARN) of the task that ran.
      */
 
     public String getTaskArn() {
@@ -228,11 +234,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the task that ran.
+     * The Amazon Resource Name (ARN) of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task that ran.
+     *        The Amazon Resource Name (ARN) of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,12 +375,18 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * <p>
      * The map has the following format:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Key: string, between 1 and 255 characters
+     * <code>Key</code>: string, between 1 and 255 characters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Value: an array of strings, each string is between 1 and 255 characters
+     * <code>Value</code>: an array of strings, each between 1 and 255 characters
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The parameters passed to the task when it was run.</p> <note>
      *         <p>
@@ -387,11 +399,17 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      *         <p>
      *         The map has the following format:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Key: string, between 1 and 255 characters
+     *         <code>Key</code>: string, between 1 and 255 characters
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Value: an array of strings, each string is between 1 and 255 characters
+     *         <code>Value</code>: an array of strings, each between 1 and 255 characters
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> getTaskParameters() {
@@ -416,12 +434,18 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * <p>
      * The map has the following format:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Key: string, between 1 and 255 characters
+     * <code>Key</code>: string, between 1 and 255 characters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Value: an array of strings, each string is between 1 and 255 characters
+     * <code>Value</code>: an array of strings, each between 1 and 255 characters
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param taskParameters
      *        The parameters passed to the task when it was run.</p> <note>
@@ -435,11 +459,17 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      *        <p>
      *        The map has the following format:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Key: string, between 1 and 255 characters
+     *        <code>Key</code>: string, between 1 and 255 characters
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Value: an array of strings, each string is between 1 and 255 characters
+     *        <code>Value</code>: an array of strings, each between 1 and 255 characters
+     *        </p>
+     *        </li>
      */
 
     public void setTaskParameters(java.util.Collection<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters) {
@@ -466,12 +496,18 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * <p>
      * The map has the following format:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Key: string, between 1 and 255 characters
+     * <code>Key</code>: string, between 1 and 255 characters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Value: an array of strings, each string is between 1 and 255 characters
+     * <code>Value</code>: an array of strings, each between 1 and 255 characters
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTaskParameters(java.util.Collection)} or {@link #withTaskParameters(java.util.Collection)} if you want
@@ -490,11 +526,17 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      *        <p>
      *        The map has the following format:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Key: string, between 1 and 255 characters
+     *        <code>Key</code>: string, between 1 and 255 characters
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Value: an array of strings, each string is between 1 and 255 characters
+     *        <code>Value</code>: an array of strings, each between 1 and 255 characters
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,12 +566,18 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * <p>
      * The map has the following format:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Key: string, between 1 and 255 characters
+     * <code>Key</code>: string, between 1 and 255 characters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Value: an array of strings, each string is between 1 and 255 characters
+     * <code>Value</code>: an array of strings, each between 1 and 255 characters
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param taskParameters
      *        The parameters passed to the task when it was run.</p> <note>
@@ -543,11 +591,17 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      *        <p>
      *        The map has the following format:
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Key: string, between 1 and 255 characters
+     *        <code>Key</code>: string, between 1 and 255 characters
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Value: an array of strings, each string is between 1 and 255 characters
+     *        <code>Value</code>: an array of strings, each between 1 and 255 characters
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -758,11 +812,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the Status. Only available for certain status values.
+     *        The details explaining the status. Not available for all status values.
      */
 
     public void setStatusDetails(String statusDetails) {
@@ -771,10 +825,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      * 
-     * @return The details explaining the Status. Only available for certain status values.
+     * @return The details explaining the status. Not available for all status values.
      */
 
     public String getStatusDetails() {
@@ -783,11 +837,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The details explaining the Status. Only available for certain status values.
+     * The details explaining the status. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the Status. Only available for certain status values.
+     *        The details explaining the status. Not available for all status values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

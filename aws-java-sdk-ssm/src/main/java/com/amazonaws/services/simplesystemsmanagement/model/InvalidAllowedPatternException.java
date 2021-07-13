@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request does not meet the regular expression requirement.
+ * The request doesn't meet the regular expression requirement.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

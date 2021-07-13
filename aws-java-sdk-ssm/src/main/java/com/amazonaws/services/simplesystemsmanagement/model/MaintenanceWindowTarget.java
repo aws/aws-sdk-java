@@ -66,8 +66,8 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this maintenance window.
+     * A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running
+     * tasks for these targets in this maintenance window.
      * </p>
      */
     private String ownerInformation;
@@ -404,13 +404,13 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this maintenance window.
+     * A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running
+     * tasks for these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        A user-provided value that will be included in any CloudWatch events that are raised while running tasks
-     *        for these targets in this maintenance window.
+     *        A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while
+     *        running tasks for these targets in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -419,12 +419,12 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this maintenance window.
+     * A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running
+     * tasks for these targets in this maintenance window.
      * </p>
      * 
-     * @return A user-provided value that will be included in any CloudWatch events that are raised while running tasks
-     *         for these targets in this maintenance window.
+     * @return A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while
+     *         running tasks for these targets in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -433,13 +433,13 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this maintenance window.
+     * A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running
+     * tasks for these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        A user-provided value that will be included in any CloudWatch events that are raised while running tasks
-     *        for these targets in this maintenance window.
+     *        A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while
+     *        running tasks for these targets in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

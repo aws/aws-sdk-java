@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the corresponding service is not
- * available.
+ * You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the
+ * corresponding service isn't available.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

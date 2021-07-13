@@ -34,7 +34,7 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
     private String directConnectGatewayId;
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      */
     private String directConnectGatewayOwnerAccount;
@@ -99,11 +99,11 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayOwnerAccount
-     *        The ID of the AWS account that owns the Direct Connect gateway.
+     *        The ID of the account that owns the Direct Connect gateway.
      */
 
     public void setDirectConnectGatewayOwnerAccount(String directConnectGatewayOwnerAccount) {
@@ -112,10 +112,10 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the Direct Connect gateway.
+     * @return The ID of the account that owns the Direct Connect gateway.
      */
 
     public String getDirectConnectGatewayOwnerAccount() {
@@ -124,11 +124,11 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayOwnerAccount
-     *        The ID of the AWS account that owns the Direct Connect gateway.
+     *        The ID of the account that owns the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

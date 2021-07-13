@@ -34,7 +34,7 @@ public class EndpointAccess implements Serializable, Cloneable {
     private String clusterIdentifier;
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster.
+     * The account ID of the owner of the cluster.
      * </p>
      */
     private String resourceOwner;
@@ -125,11 +125,11 @@ public class EndpointAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster.
+     * The account ID of the owner of the cluster.
      * </p>
      * 
      * @param resourceOwner
-     *        The AWS account ID of the owner of the cluster.
+     *        The account ID of the owner of the cluster.
      */
 
     public void setResourceOwner(String resourceOwner) {
@@ -138,10 +138,10 @@ public class EndpointAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster.
+     * The account ID of the owner of the cluster.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the cluster.
+     * @return The account ID of the owner of the cluster.
      */
 
     public String getResourceOwner() {
@@ -150,11 +150,11 @@ public class EndpointAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster.
+     * The account ID of the owner of the cluster.
      * </p>
      * 
      * @param resourceOwner
-     *        The AWS account ID of the owner of the cluster.
+     *        The account ID of the owner of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

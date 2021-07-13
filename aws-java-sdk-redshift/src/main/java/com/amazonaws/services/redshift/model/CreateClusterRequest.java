@@ -94,7 +94,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -142,7 +142,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nodeType;
     /**
      * <p>
-     * The user name associated with the master user account for the cluster that is being created.
+     * The user name associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -170,7 +170,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String masterUsername;
     /**
      * <p>
-     * The password associated with the master user account for the cluster that is being created.
+     * The password associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -445,7 +445,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      */
@@ -473,9 +473,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String additionalInfo;
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated with it at any time.
@@ -510,7 +510,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -781,7 +781,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -819,7 +819,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      *        </ul>
@@ -862,7 +862,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -899,7 +899,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique for all clusters within an AWS account.
+     *         Must be unique for all clusters within an account.
      *         </p>
      *         </li>
      *         </ul>
@@ -942,7 +942,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -980,7 +980,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      *        </ul>
@@ -1220,7 +1220,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user name associated with the master user account for the cluster that is being created.
+     * The user name associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -1246,7 +1246,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param masterUsername
-     *        The user name associated with the master user account for the cluster that is being created.</p>
+     *        The user name associated with the admin user account for the cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1276,7 +1276,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user name associated with the master user account for the cluster that is being created.
+     * The user name associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -1301,7 +1301,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * 
-     * @return The user name associated with the master user account for the cluster that is being created.</p>
+     * @return The user name associated with the admin user account for the cluster that is being created.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1331,7 +1331,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user name associated with the master user account for the cluster that is being created.
+     * The user name associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -1357,7 +1357,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param masterUsername
-     *        The user name associated with the master user account for the cluster that is being created.</p>
+     *        The user name associated with the admin user account for the cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1389,7 +1389,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The password associated with the master user account for the cluster that is being created.
+     * The password associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -1424,7 +1424,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param masterUserPassword
-     *        The password associated with the master user account for the cluster that is being created.</p>
+     *        The password associated with the admin user account for the cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1463,7 +1463,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The password associated with the master user account for the cluster that is being created.
+     * The password associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -1497,7 +1497,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * 
-     * @return The password associated with the master user account for the cluster that is being created.</p>
+     * @return The password associated with the admin user account for the cluster that is being created.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1536,7 +1536,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The password associated with the master user account for the cluster that is being created.
+     * The password associated with the admin user account for the cluster that is being created.
      * </p>
      * <p>
      * Constraints:
@@ -1571,7 +1571,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @param masterUserPassword
-     *        The password associated with the master user account for the cluster that is being created.</p>
+     *        The password associated with the admin user account for the cluster that is being created.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -3246,13 +3246,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *        the cluster.
+     *        The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *        cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -3261,12 +3261,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *         the cluster.
+     * @return The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *         cluster.
      */
 
     public String getKmsKeyId() {
@@ -3275,13 +3275,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
      * cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *        the cluster.
+     *        The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3452,17 +3452,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * 
-     * @return A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *         AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *         to 10 IAM roles in a single request.</p>
+     * @return A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *         Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *         You can supply up to 10 IAM roles in a single request.</p>
      *         <p>
      *         A cluster can have up to 10 IAM roles associated with it at any time.
      */
@@ -3476,18 +3476,18 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *        to 10 IAM roles in a single request.</p>
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
      *        A cluster can have up to 10 IAM roles associated with it at any time.
      */
@@ -3503,9 +3503,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated with it at any time.
@@ -3517,9 +3517,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *        to 10 IAM roles in a single request.</p>
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
      *        A cluster can have up to 10 IAM roles associated with it at any time.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3537,18 +3537,18 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated with it at any time.
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *        to 10 IAM roles in a single request.</p>
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
      *        A cluster can have up to 10 IAM roles associated with it at any time.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3713,7 +3713,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -3734,7 +3734,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *        </p>
      *        </li>
      *        <li>
@@ -3762,7 +3762,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -3782,7 +3782,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <ul>
      *         <li>
      *         <p>
-     *         enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *         enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *         </p>
      *         </li>
      *         <li>
@@ -3810,7 +3810,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -3831,7 +3831,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *        </p>
      *        </li>
      *        <li>
@@ -3861,7 +3861,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -3882,7 +3882,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *        </p>
      *        </li>
      *        <li>

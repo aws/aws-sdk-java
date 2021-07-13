@@ -28,7 +28,7 @@ public class GetAutomationExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     * StartAutomationExecution when the execution of an Automation document is initiated.
+     * StartAutomationExecution when the execution of an Automation runbook is initiated.
      * </p>
      */
     private String automationExecutionId;
@@ -36,12 +36,12 @@ public class GetAutomationExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     * StartAutomationExecution when the execution of an Automation document is initiated.
+     * StartAutomationExecution when the execution of an Automation runbook is initiated.
      * </p>
      * 
      * @param automationExecutionId
      *        The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     *        StartAutomationExecution when the execution of an Automation document is initiated.
+     *        StartAutomationExecution when the execution of an Automation runbook is initiated.
      */
 
     public void setAutomationExecutionId(String automationExecutionId) {
@@ -51,11 +51,11 @@ public class GetAutomationExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     * StartAutomationExecution when the execution of an Automation document is initiated.
+     * StartAutomationExecution when the execution of an Automation runbook is initiated.
      * </p>
      * 
      * @return The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     *         StartAutomationExecution when the execution of an Automation document is initiated.
+     *         StartAutomationExecution when the execution of an Automation runbook is initiated.
      */
 
     public String getAutomationExecutionId() {
@@ -65,12 +65,12 @@ public class GetAutomationExecutionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     * StartAutomationExecution when the execution of an Automation document is initiated.
+     * StartAutomationExecution when the execution of an Automation runbook is initiated.
      * </p>
      * 
      * @param automationExecutionId
      *        The unique identifier for an existing automation execution to examine. The execution ID is returned by
-     *        StartAutomationExecution when the execution of an Automation document is initiated.
+     *        StartAutomationExecution when the execution of an Automation runbook is initiated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

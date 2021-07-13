@@ -27,7 +27,7 @@ public class DeletePartnerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account ID that owns the cluster.
+     * The Region ID that owns the cluster.
      * </p>
      */
     private String accountId;
@@ -52,11 +52,11 @@ public class DeletePartnerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account ID that owns the cluster.
+     * The Region ID that owns the cluster.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID that owns the cluster.
+     *        The Region ID that owns the cluster.
      */
 
     public void setAccountId(String accountId) {
@@ -65,10 +65,10 @@ public class DeletePartnerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account ID that owns the cluster.
+     * The Region ID that owns the cluster.
      * </p>
      * 
-     * @return The AWS account ID that owns the cluster.
+     * @return The Region ID that owns the cluster.
      */
 
     public String getAccountId() {
@@ -77,11 +77,11 @@ public class DeletePartnerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS account ID that owns the cluster.
+     * The Region ID that owns the cluster.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID that owns the cluster.
+     *        The Region ID that owns the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

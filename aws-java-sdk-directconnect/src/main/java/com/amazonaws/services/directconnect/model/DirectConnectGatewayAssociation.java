@@ -36,7 +36,7 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
     private String directConnectGatewayId;
     /**
      * <p>
-     * The ID of the AWS account that owns the associated gateway.
+     * The ID of the account that owns the associated gateway.
      * </p>
      */
     private String directConnectGatewayOwnerAccount;
@@ -103,13 +103,13 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
     private String virtualGatewayId;
     /**
      * <p>
-     * The AWS Region where the virtual private gateway is located.
+     * The Region where the virtual private gateway is located.
      * </p>
      */
     private String virtualGatewayRegion;
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the account that owns the virtual private gateway.
      * </p>
      */
     private String virtualGatewayOwnerAccount;
@@ -156,11 +156,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the AWS account that owns the associated gateway.
+     * The ID of the account that owns the associated gateway.
      * </p>
      * 
      * @param directConnectGatewayOwnerAccount
-     *        The ID of the AWS account that owns the associated gateway.
+     *        The ID of the account that owns the associated gateway.
      */
 
     public void setDirectConnectGatewayOwnerAccount(String directConnectGatewayOwnerAccount) {
@@ -169,10 +169,10 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the AWS account that owns the associated gateway.
+     * The ID of the account that owns the associated gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the associated gateway.
+     * @return The ID of the account that owns the associated gateway.
      */
 
     public String getDirectConnectGatewayOwnerAccount() {
@@ -181,11 +181,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the AWS account that owns the associated gateway.
+     * The ID of the account that owns the associated gateway.
      * </p>
      * 
      * @param directConnectGatewayOwnerAccount
-     *        The ID of the AWS account that owns the associated gateway.
+     *        The ID of the account that owns the associated gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,11 +687,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region where the virtual private gateway is located.
+     * The Region where the virtual private gateway is located.
      * </p>
      * 
      * @param virtualGatewayRegion
-     *        The AWS Region where the virtual private gateway is located.
+     *        The Region where the virtual private gateway is located.
      */
 
     public void setVirtualGatewayRegion(String virtualGatewayRegion) {
@@ -700,10 +700,10 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region where the virtual private gateway is located.
+     * The Region where the virtual private gateway is located.
      * </p>
      * 
-     * @return The AWS Region where the virtual private gateway is located.
+     * @return The Region where the virtual private gateway is located.
      */
 
     public String getVirtualGatewayRegion() {
@@ -712,11 +712,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region where the virtual private gateway is located.
+     * The Region where the virtual private gateway is located.
      * </p>
      * 
      * @param virtualGatewayRegion
-     *        The AWS Region where the virtual private gateway is located.
+     *        The Region where the virtual private gateway is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -727,11 +727,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the account that owns the virtual private gateway.
      * </p>
      * 
      * @param virtualGatewayOwnerAccount
-     *        The ID of the AWS account that owns the virtual private gateway.
+     *        The ID of the account that owns the virtual private gateway.
      */
 
     public void setVirtualGatewayOwnerAccount(String virtualGatewayOwnerAccount) {
@@ -740,10 +740,10 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the account that owns the virtual private gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the virtual private gateway.
+     * @return The ID of the account that owns the virtual private gateway.
      */
 
     public String getVirtualGatewayOwnerAccount() {
@@ -752,11 +752,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the account that owns the virtual private gateway.
      * </p>
      * 
      * @param virtualGatewayOwnerAccount
-     *        The ID of the AWS account that owns the virtual private gateway.
+     *        The ID of the account that owns the virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

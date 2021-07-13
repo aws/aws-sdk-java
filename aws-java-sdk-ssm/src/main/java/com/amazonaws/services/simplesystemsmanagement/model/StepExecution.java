@@ -48,27 +48,27 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     private Long timeoutSeconds;
     /**
      * <p>
-     * The action to take if the step fails. The default value is Abort.
+     * The action to take if the step fails. The default value is <code>Abort</code>.
      * </p>
      */
     private String onFailure;
     /**
      * <p>
-     * The maximum number of tries to run the action of the step. The default value is 1.
+     * The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      * </p>
      */
     private Integer maxAttempts;
     /**
      * <p>
      * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
-     * field is not populated.
+     * field isn't populated.
      * </p>
      */
     private java.util.Date executionStartTime;
     /**
      * <p>
-     * If a step has finished execution, this contains the time the execution ended. If the step has not yet concluded,
-     * this field is not populated.
+     * If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded,
+     * this field isn't populated.
      * </p>
      */
     private java.util.Date executionEndTime;
@@ -160,7 +160,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * The combination of Regions and accounts targeted by the current Automation execution.
      * </p>
      */
     private TargetLocation targetLocation;
@@ -287,11 +287,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if the step fails. The default value is Abort.
+     * The action to take if the step fails. The default value is <code>Abort</code>.
      * </p>
      * 
      * @param onFailure
-     *        The action to take if the step fails. The default value is Abort.
+     *        The action to take if the step fails. The default value is <code>Abort</code>.
      */
 
     public void setOnFailure(String onFailure) {
@@ -300,10 +300,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if the step fails. The default value is Abort.
+     * The action to take if the step fails. The default value is <code>Abort</code>.
      * </p>
      * 
-     * @return The action to take if the step fails. The default value is Abort.
+     * @return The action to take if the step fails. The default value is <code>Abort</code>.
      */
 
     public String getOnFailure() {
@@ -312,11 +312,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if the step fails. The default value is Abort.
+     * The action to take if the step fails. The default value is <code>Abort</code>.
      * </p>
      * 
      * @param onFailure
-     *        The action to take if the step fails. The default value is Abort.
+     *        The action to take if the step fails. The default value is <code>Abort</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +327,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of tries to run the action of the step. The default value is 1.
+     * The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      * </p>
      * 
      * @param maxAttempts
-     *        The maximum number of tries to run the action of the step. The default value is 1.
+     *        The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      */
 
     public void setMaxAttempts(Integer maxAttempts) {
@@ -340,10 +340,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of tries to run the action of the step. The default value is 1.
+     * The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      * </p>
      * 
-     * @return The maximum number of tries to run the action of the step. The default value is 1.
+     * @return The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      */
 
     public Integer getMaxAttempts() {
@@ -352,11 +352,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of tries to run the action of the step. The default value is 1.
+     * The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      * </p>
      * 
      * @param maxAttempts
-     *        The maximum number of tries to run the action of the step. The default value is 1.
+     *        The maximum number of tries to run the action of the step. The default value is <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,12 +368,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
-     * field is not populated.
+     * field isn't populated.
      * </p>
      * 
      * @param executionStartTime
      *        If a step has begun execution, this contains the time the step started. If the step is in Pending status,
-     *        this field is not populated.
+     *        this field isn't populated.
      */
 
     public void setExecutionStartTime(java.util.Date executionStartTime) {
@@ -383,11 +383,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
-     * field is not populated.
+     * field isn't populated.
      * </p>
      * 
      * @return If a step has begun execution, this contains the time the step started. If the step is in Pending status,
-     *         this field is not populated.
+     *         this field isn't populated.
      */
 
     public java.util.Date getExecutionStartTime() {
@@ -397,12 +397,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
-     * field is not populated.
+     * field isn't populated.
      * </p>
      * 
      * @param executionStartTime
      *        If a step has begun execution, this contains the time the step started. If the step is in Pending status,
-     *        this field is not populated.
+     *        this field isn't populated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,13 +413,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a step has finished execution, this contains the time the execution ended. If the step has not yet concluded,
-     * this field is not populated.
+     * If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded,
+     * this field isn't populated.
      * </p>
      * 
      * @param executionEndTime
-     *        If a step has finished execution, this contains the time the execution ended. If the step has not yet
-     *        concluded, this field is not populated.
+     *        If a step has finished execution, this contains the time the execution ended. If the step hasn't yet
+     *        concluded, this field isn't populated.
      */
 
     public void setExecutionEndTime(java.util.Date executionEndTime) {
@@ -428,12 +428,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a step has finished execution, this contains the time the execution ended. If the step has not yet concluded,
-     * this field is not populated.
+     * If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded,
+     * this field isn't populated.
      * </p>
      * 
-     * @return If a step has finished execution, this contains the time the execution ended. If the step has not yet
-     *         concluded, this field is not populated.
+     * @return If a step has finished execution, this contains the time the execution ended. If the step hasn't yet
+     *         concluded, this field isn't populated.
      */
 
     public java.util.Date getExecutionEndTime() {
@@ -442,13 +442,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a step has finished execution, this contains the time the execution ended. If the step has not yet concluded,
-     * this field is not populated.
+     * If a step has finished execution, this contains the time the execution ended. If the step hasn't yet concluded,
+     * this field isn't populated.
      * </p>
      * 
      * @param executionEndTime
-     *        If a step has finished execution, this contains the time the execution ended. If the step has not yet
-     *        concluded, this field is not populated.
+     *        If a step has finished execution, this contains the time the execution ended. If the step hasn't yet
+     *        concluded, this field isn't populated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1247,11 +1247,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * The combination of Regions and accounts targeted by the current Automation execution.
      * </p>
      * 
      * @param targetLocation
-     *        The combination of AWS Regions and accounts targeted by the current Automation execution.
+     *        The combination of Regions and accounts targeted by the current Automation execution.
      */
 
     public void setTargetLocation(TargetLocation targetLocation) {
@@ -1260,10 +1260,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * The combination of Regions and accounts targeted by the current Automation execution.
      * </p>
      * 
-     * @return The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * @return The combination of Regions and accounts targeted by the current Automation execution.
      */
 
     public TargetLocation getTargetLocation() {
@@ -1272,11 +1272,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The combination of AWS Regions and accounts targeted by the current Automation execution.
+     * The combination of Regions and accounts targeted by the current Automation execution.
      * </p>
      * 
      * @param targetLocation
-     *        The combination of AWS Regions and accounts targeted by the current Automation execution.
+     *        The combination of Regions and accounts targeted by the current Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

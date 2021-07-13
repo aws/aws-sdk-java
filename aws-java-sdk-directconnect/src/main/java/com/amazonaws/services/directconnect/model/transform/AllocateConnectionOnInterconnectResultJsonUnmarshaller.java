@@ -104,6 +104,10 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
                     context.nextToken();
                     allocateConnectionOnInterconnectResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    allocateConnectionOnInterconnectResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

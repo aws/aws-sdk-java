@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The request body of the UpdateServiceSetting API action.
+ * The request body of the UpdateServiceSetting API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting" target="_top">AWS API
@@ -97,15 +97,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     * CloudWatch.
+     * <code>CloudWatch</code>.
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
-     * of a CloudWatch Logs log group.
+     * of an Amazon CloudWatch Logs log group.
      * </p>
      * <p>
-     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
-     * or Disable.
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     * <code>Enable</code> or <code>Disable</code>.
      * </p>
      */
     private String settingValue;
@@ -380,15 +380,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     * CloudWatch.
+     * <code>CloudWatch</code>.
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
-     * of a CloudWatch Logs log group.
+     * of an Amazon CloudWatch Logs log group.
      * </p>
      * <p>
-     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
-     * or Disable.
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     * <code>Enable</code> or <code>Disable</code>.
      * </p>
      * 
      * @param settingValue
@@ -418,15 +418,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     *        CloudWatch.
+     *        <code>CloudWatch</code>.
      *        </p>
      *        <p>
      *        For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
-     *        the name of a CloudWatch Logs log group.
+     *        the name of an Amazon CloudWatch Logs log group.
      *        </p>
      *        <p>
      *        For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
-     *        Enable or Disable.
+     *        <code>Enable</code> or <code>Disable</code>.
      */
 
     public void setSettingValue(String settingValue) {
@@ -462,15 +462,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     * CloudWatch.
+     * <code>CloudWatch</code>.
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
-     * of a CloudWatch Logs log group.
+     * of an Amazon CloudWatch Logs log group.
      * </p>
      * <p>
-     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
-     * or Disable.
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     * <code>Enable</code> or <code>Disable</code>.
      * </p>
      * 
      * @return The new value to specify for the service setting. For the
@@ -499,15 +499,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     *         CloudWatch.
+     *         <code>CloudWatch</code>.
      *         </p>
      *         <p>
      *         For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
-     *         the name of a CloudWatch Logs log group.
+     *         the name of an Amazon CloudWatch Logs log group.
      *         </p>
      *         <p>
      *         For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can
-     *         be Enable or Disable.
+     *         be <code>Enable</code> or <code>Disable</code>.
      */
 
     public String getSettingValue() {
@@ -543,15 +543,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     * CloudWatch.
+     * <code>CloudWatch</code>.
      * </p>
      * <p>
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
-     * of a CloudWatch Logs log group.
+     * of an Amazon CloudWatch Logs log group.
      * </p>
      * <p>
-     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
-     * or Disable.
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     * <code>Enable</code> or <code>Disable</code>.
      * </p>
      * 
      * @param settingValue
@@ -581,15 +581,15 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
-     *        CloudWatch.
+     *        <code>CloudWatch</code>.
      *        </p>
      *        <p>
      *        For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
-     *        the name of a CloudWatch Logs log group.
+     *        the name of an Amazon CloudWatch Logs log group.
      *        </p>
      *        <p>
      *        For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
-     *        Enable or Disable.
+     *        <code>Enable</code> or <code>Disable</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

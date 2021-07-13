@@ -39,8 +39,8 @@ public class DescribePatchPropertiesRequest extends com.amazonaws.AmazonWebServi
     private String property;
     /**
      * <p>
-     * Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable
-     * for the Linux or macOS operating systems.
+     * Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not
+     * applicable for the Linux or macOS operating systems.
      * </p>
      */
     private String patchSet;
@@ -178,13 +178,13 @@ public class DescribePatchPropertiesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable
-     * for the Linux or macOS operating systems.
+     * Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not
+     * applicable for the Linux or macOS operating systems.
      * </p>
      * 
      * @param patchSet
-     *        Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not
-     *        applicable for the Linux or macOS operating systems.
+     *        Indicates whether to list patches for the Windows operating system or for applications released by
+     *        Microsoft. Not applicable for the Linux or macOS operating systems.
      * @see PatchSet
      */
 
@@ -194,12 +194,12 @@ public class DescribePatchPropertiesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable
-     * for the Linux or macOS operating systems.
+     * Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not
+     * applicable for the Linux or macOS operating systems.
      * </p>
      * 
-     * @return Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not
-     *         applicable for the Linux or macOS operating systems.
+     * @return Indicates whether to list patches for the Windows operating system or for applications released by
+     *         Microsoft. Not applicable for the Linux or macOS operating systems.
      * @see PatchSet
      */
 
@@ -209,13 +209,13 @@ public class DescribePatchPropertiesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable
-     * for the Linux or macOS operating systems.
+     * Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not
+     * applicable for the Linux or macOS operating systems.
      * </p>
      * 
      * @param patchSet
-     *        Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not
-     *        applicable for the Linux or macOS operating systems.
+     *        Indicates whether to list patches for the Windows operating system or for applications released by
+     *        Microsoft. Not applicable for the Linux or macOS operating systems.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchSet
      */
@@ -227,13 +227,13 @@ public class DescribePatchPropertiesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable
-     * for the Linux or macOS operating systems.
+     * Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not
+     * applicable for the Linux or macOS operating systems.
      * </p>
      * 
      * @param patchSet
-     *        Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not
-     *        applicable for the Linux or macOS operating systems.
+     *        Indicates whether to list patches for the Windows operating system or for applications released by
+     *        Microsoft. Not applicable for the Linux or macOS operating systems.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchSet
      */

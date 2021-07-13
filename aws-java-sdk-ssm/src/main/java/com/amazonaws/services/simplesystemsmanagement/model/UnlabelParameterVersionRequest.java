@@ -27,13 +27,13 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parameter name of which you want to delete one or more labels.
+     * The name of the parameter from which you want to delete one or more labels.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The specific version of the parameter which you want to delete one or more labels from. If it is not present, the
+     * The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the
      * call will fail.
      * </p>
      */
@@ -47,11 +47,11 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parameter name of which you want to delete one or more labels.
+     * The name of the parameter from which you want to delete one or more labels.
      * </p>
      * 
      * @param name
-     *        The parameter name of which you want to delete one or more labels.
+     *        The name of the parameter from which you want to delete one or more labels.
      */
 
     public void setName(String name) {
@@ -60,10 +60,10 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parameter name of which you want to delete one or more labels.
+     * The name of the parameter from which you want to delete one or more labels.
      * </p>
      * 
-     * @return The parameter name of which you want to delete one or more labels.
+     * @return The name of the parameter from which you want to delete one or more labels.
      */
 
     public String getName() {
@@ -72,11 +72,11 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The parameter name of which you want to delete one or more labels.
+     * The name of the parameter from which you want to delete one or more labels.
      * </p>
      * 
      * @param name
-     *        The parameter name of which you want to delete one or more labels.
+     *        The name of the parameter from which you want to delete one or more labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,12 +87,12 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The specific version of the parameter which you want to delete one or more labels from. If it is not present, the
+     * The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the
      * call will fail.
      * </p>
      * 
      * @param parameterVersion
-     *        The specific version of the parameter which you want to delete one or more labels from. If it is not
+     *        The specific version of the parameter which you want to delete one or more labels from. If it isn't
      *        present, the call will fail.
      */
 
@@ -102,11 +102,11 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The specific version of the parameter which you want to delete one or more labels from. If it is not present, the
+     * The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the
      * call will fail.
      * </p>
      * 
-     * @return The specific version of the parameter which you want to delete one or more labels from. If it is not
+     * @return The specific version of the parameter which you want to delete one or more labels from. If it isn't
      *         present, the call will fail.
      */
 
@@ -116,12 +116,12 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The specific version of the parameter which you want to delete one or more labels from. If it is not present, the
+     * The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the
      * call will fail.
      * </p>
      * 
      * @param parameterVersion
-     *        The specific version of the parameter which you want to delete one or more labels from. If it is not
+     *        The specific version of the parameter which you want to delete one or more labels from. If it isn't
      *        present, the call will fail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

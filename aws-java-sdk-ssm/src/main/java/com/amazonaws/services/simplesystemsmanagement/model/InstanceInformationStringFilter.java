@@ -38,7 +38,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * </p>
      * <important>
      * <p>
-     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
      * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      * </p>
@@ -62,7 +62,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * </p>
      * <important>
      * <p>
-     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
      * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      * </p>
@@ -76,7 +76,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      *        </p>
      *        <important>
      *        <p>
-     *        <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     *        <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      *        <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
      *        tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      *        </p>
@@ -96,7 +96,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * </p>
      * <important>
      * <p>
-     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
      * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      * </p>
@@ -109,7 +109,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      *         </p>
      *         <important>
      *         <p>
-     *         <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     *         <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      *         <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
      *         tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      *         </p>
@@ -129,7 +129,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * </p>
      * <important>
      * <p>
-     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
      * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      * </p>
@@ -143,7 +143,7 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      *        </p>
      *        <important>
      *        <p>
-     *        <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     *        <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
      *        <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
      *        tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
      *        </p>

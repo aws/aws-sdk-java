@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an AWS customer account authorized to restore a snapshot.
+ * Describes an account authorized to restore a snapshot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AccountWithRestoreAccess" target="_top">AWS
@@ -28,25 +28,25 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an AWS customer account authorized to restore a snapshot.
+     * The identifier of an account authorized to restore a snapshot.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier is
-     * <code>amazon-redshift-support</code>.
+     * The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     * Services Support, the identifier is <code>amazon-redshift-support</code>.
      * </p>
      */
     private String accountAlias;
 
     /**
      * <p>
-     * The identifier of an AWS customer account authorized to restore a snapshot.
+     * The identifier of an account authorized to restore a snapshot.
      * </p>
      * 
      * @param accountId
-     *        The identifier of an AWS customer account authorized to restore a snapshot.
+     *        The identifier of an account authorized to restore a snapshot.
      */
 
     public void setAccountId(String accountId) {
@@ -55,10 +55,10 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an AWS customer account authorized to restore a snapshot.
+     * The identifier of an account authorized to restore a snapshot.
      * </p>
      * 
-     * @return The identifier of an AWS customer account authorized to restore a snapshot.
+     * @return The identifier of an account authorized to restore a snapshot.
      */
 
     public String getAccountId() {
@@ -67,11 +67,11 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an AWS customer account authorized to restore a snapshot.
+     * The identifier of an account authorized to restore a snapshot.
      * </p>
      * 
      * @param accountId
-     *        The identifier of an AWS customer account authorized to restore a snapshot.
+     *        The identifier of an account authorized to restore a snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,13 +82,13 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier is
-     * <code>amazon-redshift-support</code>.
+     * The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     * Services Support, the identifier is <code>amazon-redshift-support</code>.
      * </p>
      * 
      * @param accountAlias
-     *        The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier
-     *        is <code>amazon-redshift-support</code>.
+     *        The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     *        Services Support, the identifier is <code>amazon-redshift-support</code>.
      */
 
     public void setAccountAlias(String accountAlias) {
@@ -97,12 +97,12 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier is
-     * <code>amazon-redshift-support</code>.
+     * The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     * Services Support, the identifier is <code>amazon-redshift-support</code>.
      * </p>
      * 
-     * @return The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the
-     *         identifier is <code>amazon-redshift-support</code>.
+     * @return The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     *         Services Support, the identifier is <code>amazon-redshift-support</code>.
      */
 
     public String getAccountAlias() {
@@ -111,13 +111,13 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier is
-     * <code>amazon-redshift-support</code>.
+     * The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     * Services Support, the identifier is <code>amazon-redshift-support</code>.
      * </p>
      * 
      * @param accountAlias
-     *        The identifier of an AWS support account authorized to restore a snapshot. For AWS support, the identifier
-     *        is <code>amazon-redshift-support</code>.
+     *        The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web
+     *        Services Support, the identifier is <code>amazon-redshift-support</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

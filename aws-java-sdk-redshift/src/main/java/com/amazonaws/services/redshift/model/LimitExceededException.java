@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The encryption key has exceeded its grant limit in AWS KMS.
+ * The encryption key has exceeded its grant limit in Amazon Web Services KMS.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

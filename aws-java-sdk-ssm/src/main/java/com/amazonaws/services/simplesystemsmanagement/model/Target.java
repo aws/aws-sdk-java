@@ -19,15 +19,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An array of search criteria that targets instances using a Key,Value combination that you specify.
+ * An array of search criteria that targets instances using a key-value pair that you specify.
  * </p>
  * <note>
  * <p>
  * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets
- * are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more
- * information about running tasks that do not specify targets, see <a
+ * are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information
+ * about running tasks that don't specify targets, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
- * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+ * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+ * Guide</i>.
  * </p>
  * </note>
  * <p>
@@ -102,7 +103,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
  * </p>
  * <p>
- * This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
+ * This example demonstrates how to target only Amazon Elastic Compute Cloud (Amazon EC2) instances and VPCs in your
+ * maintenance window.
  * </p>
  * </li>
  * <li>
@@ -115,7 +117,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=<i>*</i> </code>
  * </p>
  * <p>
- * This example demonstrates how to target all managed instances in the AWS Region where the association was created.
+ * This example demonstrates how to target all managed instances in the Region where the association was created.
  * </p>
  * </li>
  * </ul>
@@ -123,7 +125,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a
  * href
  * ="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
- * >Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.
+ * >Targeting multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target" target="_top">AWS API Documentation</a>
@@ -144,8 +146,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
-     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
-     * than the global maximum of 50.
+     * Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of
+     * 50.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -197,16 +199,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
-     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
-     * than the global maximum of 50.
+     * Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of
+     * 50.
      * </p>
      * 
      * @return User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *         <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
      *         that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
      *         <p>
-     *         Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might
-     *         be lower than the global maximum of 50.
+     *         Depending on the type of target, the maximum number of values for a key might be lower than the global
+     *         maximum of 50.
      */
 
     public java.util.List<String> getValues() {
@@ -223,8 +225,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
-     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
-     * than the global maximum of 50.
+     * Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of
+     * 50.
      * </p>
      * 
      * @param values
@@ -232,8 +234,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
      *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
      *        <p>
-     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
-     *        lower than the global maximum of 50.
+     *        Depending on the type of target, the maximum number of values for a key might be lower than the global
+     *        maximum of 50.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -252,8 +254,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
-     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
-     * than the global maximum of 50.
+     * Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of
+     * 50.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -266,8 +268,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
      *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
      *        <p>
-     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
-     *        lower than the global maximum of 50.
+     *        Depending on the type of target, the maximum number of values for a key might be lower than the global
+     *        maximum of 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,8 +290,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
-     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
-     * than the global maximum of 50.
+     * Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of
+     * 50.
      * </p>
      * 
      * @param values
@@ -297,8 +299,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
      *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
      *        <p>
-     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
-     *        lower than the global maximum of 50.
+     *        Depending on the type of target, the maximum number of values for a key might be lower than the global
+     *        maximum of 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

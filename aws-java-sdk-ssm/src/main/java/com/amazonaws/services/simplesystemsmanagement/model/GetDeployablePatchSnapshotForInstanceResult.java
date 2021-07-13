@@ -38,7 +38,7 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
     private String snapshotId;
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     * A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.
      * </p>
      */
     private String snapshotDownloadUrl;
@@ -132,11 +132,12 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
 
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     * A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.
      * </p>
      * 
      * @param snapshotDownloadUrl
-     *        A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     *        A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch
+     *        snapshot.
      */
 
     public void setSnapshotDownloadUrl(String snapshotDownloadUrl) {
@@ -145,10 +146,11 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
 
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     * A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.
      * </p>
      * 
-     * @return A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     * @return A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch
+     *         snapshot.
      */
 
     public String getSnapshotDownloadUrl() {
@@ -157,11 +159,12 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
 
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     * A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.
      * </p>
      * 
      * @param snapshotDownloadUrl
-     *        A pre-signed Amazon S3 URL that can be used to download the patch snapshot.
+     *        A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch
+     *        snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

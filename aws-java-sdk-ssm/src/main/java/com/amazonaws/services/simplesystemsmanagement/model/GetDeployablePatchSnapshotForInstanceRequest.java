@@ -33,7 +33,7 @@ public class GetDeployablePatchSnapshotForInstanceRequest extends com.amazonaws.
     private String instanceId;
     /**
      * <p>
-     * The user-defined snapshot ID.
+     * The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      * </p>
      */
     private String snapshotId;
@@ -86,11 +86,11 @@ public class GetDeployablePatchSnapshotForInstanceRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The user-defined snapshot ID.
+     * The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      * </p>
      * 
      * @param snapshotId
-     *        The user-defined snapshot ID.
+     *        The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -99,10 +99,10 @@ public class GetDeployablePatchSnapshotForInstanceRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The user-defined snapshot ID.
+     * The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      * </p>
      * 
-     * @return The user-defined snapshot ID.
+     * @return The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      */
 
     public String getSnapshotId() {
@@ -111,11 +111,11 @@ public class GetDeployablePatchSnapshotForInstanceRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The user-defined snapshot ID.
+     * The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      * </p>
      * 
      * @param snapshotId
-     *        The user-defined snapshot ID.
+     *        The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

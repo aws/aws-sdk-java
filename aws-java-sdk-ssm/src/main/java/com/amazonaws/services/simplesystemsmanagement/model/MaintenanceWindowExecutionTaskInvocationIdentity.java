@@ -50,7 +50,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * The ID of the action performed in the service that actually handled the task invocation. If the task type is
-     * RUN_COMMAND, this value is the command ID.
+     * <code>RUN_COMMAND</code>, this value is the command ID.
      * </p>
      */
     private String executionId;
@@ -74,7 +74,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     private String status;
     /**
      * <p>
-     * The details explaining the status of the task invocation. Only available for certain Status values.
+     * The details explaining the status of the task invocation. Not available for all status values.
      * </p>
      */
     private String statusDetails;
@@ -93,7 +93,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * User-provided value that was specified when the target was registered with the maintenance window. This was also
-     * included in any CloudWatch events raised during the task invocation.
+     * included in any Amazon CloudWatch Events events raised during the task invocation.
      * </p>
      */
     private String ownerInformation;
@@ -227,12 +227,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * The ID of the action performed in the service that actually handled the task invocation. If the task type is
-     * RUN_COMMAND, this value is the command ID.
+     * <code>RUN_COMMAND</code>, this value is the command ID.
      * </p>
      * 
      * @param executionId
      *        The ID of the action performed in the service that actually handled the task invocation. If the task type
-     *        is RUN_COMMAND, this value is the command ID.
+     *        is <code>RUN_COMMAND</code>, this value is the command ID.
      */
 
     public void setExecutionId(String executionId) {
@@ -242,11 +242,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * The ID of the action performed in the service that actually handled the task invocation. If the task type is
-     * RUN_COMMAND, this value is the command ID.
+     * <code>RUN_COMMAND</code>, this value is the command ID.
      * </p>
      * 
      * @return The ID of the action performed in the service that actually handled the task invocation. If the task type
-     *         is RUN_COMMAND, this value is the command ID.
+     *         is <code>RUN_COMMAND</code>, this value is the command ID.
      */
 
     public String getExecutionId() {
@@ -256,12 +256,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * The ID of the action performed in the service that actually handled the task invocation. If the task type is
-     * RUN_COMMAND, this value is the command ID.
+     * <code>RUN_COMMAND</code>, this value is the command ID.
      * </p>
      * 
      * @param executionId
      *        The ID of the action performed in the service that actually handled the task invocation. If the task type
-     *        is RUN_COMMAND, this value is the command ID.
+     *        is <code>RUN_COMMAND</code>, this value is the command ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +458,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The details explaining the status of the task invocation. Only available for certain Status values.
+     * The details explaining the status of the task invocation. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the status of the task invocation. Only available for certain Status values.
+     *        The details explaining the status of the task invocation. Not available for all status values.
      */
 
     public void setStatusDetails(String statusDetails) {
@@ -471,10 +471,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The details explaining the status of the task invocation. Only available for certain Status values.
+     * The details explaining the status of the task invocation. Not available for all status values.
      * </p>
      * 
-     * @return The details explaining the status of the task invocation. Only available for certain Status values.
+     * @return The details explaining the status of the task invocation. Not available for all status values.
      */
 
     public String getStatusDetails() {
@@ -483,11 +483,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The details explaining the status of the task invocation. Only available for certain Status values.
+     * The details explaining the status of the task invocation. Not available for all status values.
      * </p>
      * 
      * @param statusDetails
-     *        The details explaining the status of the task invocation. Only available for certain Status values.
+     *        The details explaining the status of the task invocation. Not available for all status values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,12 +579,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * User-provided value that was specified when the target was registered with the maintenance window. This was also
-     * included in any CloudWatch events raised during the task invocation.
+     * included in any Amazon CloudWatch Events events raised during the task invocation.
      * </p>
      * 
      * @param ownerInformation
      *        User-provided value that was specified when the target was registered with the maintenance window. This
-     *        was also included in any CloudWatch events raised during the task invocation.
+     *        was also included in any Amazon CloudWatch Events events raised during the task invocation.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -594,11 +594,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * User-provided value that was specified when the target was registered with the maintenance window. This was also
-     * included in any CloudWatch events raised during the task invocation.
+     * included in any Amazon CloudWatch Events events raised during the task invocation.
      * </p>
      * 
      * @return User-provided value that was specified when the target was registered with the maintenance window. This
-     *         was also included in any CloudWatch events raised during the task invocation.
+     *         was also included in any Amazon CloudWatch Events events raised during the task invocation.
      */
 
     public String getOwnerInformation() {
@@ -608,12 +608,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     /**
      * <p>
      * User-provided value that was specified when the target was registered with the maintenance window. This was also
-     * included in any CloudWatch events raised during the task invocation.
+     * included in any Amazon CloudWatch Events events raised during the task invocation.
      * </p>
      * 
      * @param ownerInformation
      *        User-provided value that was specified when the target was registered with the maintenance window. This
-     *        was also included in any CloudWatch events raised during the task invocation.
+     *        was also included in any Amazon CloudWatch Events events raised during the task invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

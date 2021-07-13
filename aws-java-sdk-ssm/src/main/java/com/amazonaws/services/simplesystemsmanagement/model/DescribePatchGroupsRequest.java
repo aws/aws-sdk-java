@@ -33,37 +33,27 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
      * <p>
-     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * Supported keys for <code>DescribePatchGroups</code> include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * <b> <code>NAME_PREFIX</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>AWS-</code> | <code>My-</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
-     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * <b> <code>OPERATING_SYSTEM</code> </b>
      * </p>
      * <p>
-     * Examples:
+     * Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      */
@@ -117,71 +107,50 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
      * <p>
-     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * Supported keys for <code>DescribePatchGroups</code> include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * <b> <code>NAME_PREFIX</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>AWS-</code> | <code>My-</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
-     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * <b> <code>OPERATING_SYSTEM</code> </b>
      * </p>
      * <p>
-     * Examples:
+     * Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of results.</p>
+     * @return Each element in the array is a structure containing a key-value pair.</p>
      *         <p>
-     *         For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *         Supported keys for <code>DescribePatchGroups</code> include the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *         <b> <code>NAME_PREFIX</code> </b>
+     *         </p>
+     *         <p>
+     *         Sample values: <code>AWS-</code> | <code>My-</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
-     *         operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     *         <a>CreatePatchBaseline</a>.
+     *         <b> <code>OPERATING_SYSTEM</code> </b>
      *         </p>
      *         <p>
-     *         Examples:
+     *         Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     *         </p>
-     *         </li>
-     *         </ul>
      *         </li>
      */
 
@@ -194,72 +163,51 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
      * <p>
-     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * Supported keys for <code>DescribePatchGroups</code> include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * <b> <code>NAME_PREFIX</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>AWS-</code> | <code>My-</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
-     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * <b> <code>OPERATING_SYSTEM</code> </b>
      * </p>
      * <p>
-     * Examples:
+     * Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.</p>
+     *        Each element in the array is a structure containing a key-value pair.</p>
      *        <p>
-     *        For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *        Supported keys for <code>DescribePatchGroups</code> include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *        <b> <code>NAME_PREFIX</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>AWS-</code> | <code>My-</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
-     *        operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     *        <a>CreatePatchBaseline</a>.
+     *        <b> <code>OPERATING_SYSTEM</code> </b>
      *        </p>
      *        <p>
-     *        Examples:
+     *        Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      */
 
@@ -274,37 +222,27 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
      * <p>
-     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * Supported keys for <code>DescribePatchGroups</code> include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * <b> <code>NAME_PREFIX</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>AWS-</code> | <code>My-</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
-     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * <b> <code>OPERATING_SYSTEM</code> </b>
      * </p>
      * <p>
-     * Examples:
+     * Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -314,37 +252,26 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.</p>
+     *        Each element in the array is a structure containing a key-value pair.</p>
      *        <p>
-     *        For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *        Supported keys for <code>DescribePatchGroups</code> include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *        <b> <code>NAME_PREFIX</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>AWS-</code> | <code>My-</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
-     *        operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     *        <a>CreatePatchBaseline</a>.
+     *        <b> <code>OPERATING_SYSTEM</code> </b>
      *        </p>
      *        <p>
-     *        Examples:
+     *        Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -361,72 +288,51 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
      * <p>
-     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * Supported keys for <code>DescribePatchGroups</code> include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * <b> <code>NAME_PREFIX</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>AWS-</code> | <code>My-</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
-     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * <b> <code>OPERATING_SYSTEM</code> </b>
      * </p>
      * <p>
-     * Examples:
+     * Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.</p>
+     *        Each element in the array is a structure containing a key-value pair.</p>
      *        <p>
-     *        For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *        Supported keys for <code>DescribePatchGroups</code> include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *        <b> <code>NAME_PREFIX</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>AWS-</code> | <code>My-</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
-     *        operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     *        <a>CreatePatchBaseline</a>.
+     *        <b> <code>OPERATING_SYSTEM</code> </b>
      *        </p>
      *        <p>
-     *        Examples:
+     *        Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
      *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

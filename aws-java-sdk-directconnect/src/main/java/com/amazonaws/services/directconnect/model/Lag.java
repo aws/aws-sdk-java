@@ -49,7 +49,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private String lagId;
     /**
      * <p>
-     * The ID of the AWS account that owns the LAG.
+     * The ID of the account that owns the LAG.
      * </p>
      */
     private String ownerAccount;
@@ -111,7 +111,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private String location;
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      */
     private String region;
@@ -124,16 +124,22 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private Integer minimumLinks;
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      */
     private String awsDevice;
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      */
     private String awsDeviceV2;
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     */
+    private String awsLogicalDeviceId;
     /**
      * <p>
      * The connections bundled by the LAG.
@@ -320,11 +326,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the LAG.
+     * The ID of the account that owns the LAG.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the LAG.
+     *        The ID of the account that owns the LAG.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -333,10 +339,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the LAG.
+     * The ID of the account that owns the LAG.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the LAG.
+     * @return The ID of the account that owns the LAG.
      */
 
     public String getOwnerAccount() {
@@ -345,11 +351,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the LAG.
+     * The ID of the account that owns the LAG.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the LAG.
+     *        The ID of the account that owns the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -888,11 +894,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      * 
      * @param region
-     *        The AWS Region where the connection is located.
+     *        The Region where the connection is located.
      */
 
     public void setRegion(String region) {
@@ -901,10 +907,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      * 
-     * @return The AWS Region where the connection is located.
+     * @return The Region where the connection is located.
      */
 
     public String getRegion() {
@@ -913,11 +919,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region where the connection is located.
+     * The Region where the connection is located.
      * </p>
      * 
      * @param region
-     *        The AWS Region where the connection is located.
+     *        The Region where the connection is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -974,11 +980,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDevice
-     *        The AWS Direct Connect endpoint that hosts the LAG.
+     *        The Direct Connect endpoint that hosts the LAG.
      */
 
     public void setAwsDevice(String awsDevice) {
@@ -987,10 +993,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
-     * @return The AWS Direct Connect endpoint that hosts the LAG.
+     * @return The Direct Connect endpoint that hosts the LAG.
      */
 
     public String getAwsDevice() {
@@ -999,11 +1005,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDevice
-     *        The AWS Direct Connect endpoint that hosts the LAG.
+     *        The Direct Connect endpoint that hosts the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1014,11 +1020,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDeviceV2
-     *        The AWS Direct Connect endpoint that hosts the LAG.
+     *        The Direct Connect endpoint that hosts the LAG.
      */
 
     public void setAwsDeviceV2(String awsDeviceV2) {
@@ -1027,10 +1033,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
-     * @return The AWS Direct Connect endpoint that hosts the LAG.
+     * @return The Direct Connect endpoint that hosts the LAG.
      */
 
     public String getAwsDeviceV2() {
@@ -1039,16 +1045,56 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Direct Connect endpoint that hosts the LAG.
+     * The Direct Connect endpoint that hosts the LAG.
      * </p>
      * 
      * @param awsDeviceV2
-     *        The AWS Direct Connect endpoint that hosts the LAG.
+     *        The Direct Connect endpoint that hosts the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Lag withAwsDeviceV2(String awsDeviceV2) {
         setAwsDeviceV2(awsDeviceV2);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @param awsLogicalDeviceId
+     *        The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     */
+
+    public void setAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        this.awsLogicalDeviceId = awsLogicalDeviceId;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @return The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     */
+
+    public String getAwsLogicalDeviceId() {
+        return this.awsLogicalDeviceId;
+    }
+
+    /**
+     * <p>
+     * The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * </p>
+     * 
+     * @param awsLogicalDeviceId
+     *        The Direct Connect endpoint that terminates a physical connection's BGP sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lag withAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        setAwsLogicalDeviceId(awsLogicalDeviceId);
         return this;
     }
 
@@ -1629,6 +1675,8 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
             sb.append("AwsDevice: ").append(getAwsDevice()).append(",");
         if (getAwsDeviceV2() != null)
             sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
+        if (getAwsLogicalDeviceId() != null)
+            sb.append("AwsLogicalDeviceId: ").append(getAwsLogicalDeviceId()).append(",");
         if (getConnections() != null)
             sb.append("Connections: ").append(getConnections()).append(",");
         if (getAllowsHostedConnections() != null)
@@ -1705,6 +1753,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
             return false;
+        if (other.getAwsLogicalDeviceId() == null ^ this.getAwsLogicalDeviceId() == null)
+            return false;
+        if (other.getAwsLogicalDeviceId() != null && other.getAwsLogicalDeviceId().equals(this.getAwsLogicalDeviceId()) == false)
+            return false;
         if (other.getConnections() == null ^ this.getConnections() == null)
             return false;
         if (other.getConnections() != null && other.getConnections().equals(this.getConnections()) == false)
@@ -1760,6 +1812,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMinimumLinks() == null) ? 0 : getMinimumLinks().hashCode());
         hashCode = prime * hashCode + ((getAwsDevice() == null) ? 0 : getAwsDevice().hashCode());
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
+        hashCode = prime * hashCode + ((getAwsLogicalDeviceId() == null) ? 0 : getAwsLogicalDeviceId().hashCode());
         hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         hashCode = prime * hashCode + ((getAllowsHostedConnections() == null) ? 0 : getAllowsHostedConnections().hashCode());
         hashCode = prime * hashCode + ((getJumboFrameCapable() == null) ? 0 : getJumboFrameCapable().hashCode());

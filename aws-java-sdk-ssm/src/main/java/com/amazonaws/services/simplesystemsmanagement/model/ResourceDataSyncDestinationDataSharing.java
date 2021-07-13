@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized
- * S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a
- * different AWS account ID.
+ * Synchronize Amazon Web Services Systems Manager Inventory data from multiple accounts defined in Organizations to a
+ * centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix
+ * represents a different account ID.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncDestinationDataSharing"

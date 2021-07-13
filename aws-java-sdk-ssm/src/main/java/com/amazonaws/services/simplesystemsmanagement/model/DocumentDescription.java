@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a Systems Manager document.
+ * Describes a Amazon Web Services Systems Manager document (SSM document).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDescription" target="_top">AWS API
@@ -58,14 +58,14 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private String hashType;
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
-     * want to update this value, see <a>UpdateDocument</a>.
+     * The friendly name of the SSM document. This value can differ for each version of the document. If you want to
+     * update this value, see <a>UpdateDocument</a>.
      * </p>
      */
     private String displayName;
@@ -77,7 +77,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private String versionName;
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      */
     private String owner;
@@ -89,15 +89,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private java.util.Date createdDate;
     /**
      * <p>
-     * The status of the Systems Manager document.
+     * The status of the SSM document.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For
+     * example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      * </p>
      */
     private String statusInformation;
@@ -121,7 +121,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<DocumentParameter> parameters;
     /**
      * <p>
-     * The list of OS platforms compatible with this Systems Manager document.
+     * The list of OS platforms compatible with this SSM document.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> platformTypes;
@@ -157,10 +157,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private String documentFormat;
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String targetType;
@@ -433,11 +433,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      */
 
     public void setName(String name) {
@@ -446,10 +446,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the Systems Manager document.
+     * @return The name of the SSM document.
      */
 
     public String getName() {
@@ -458,11 +458,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,13 +473,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
-     * want to update this value, see <a>UpdateDocument</a>.
+     * The friendly name of the SSM document. This value can differ for each version of the document. If you want to
+     * update this value, see <a>UpdateDocument</a>.
      * </p>
      * 
      * @param displayName
-     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
-     *        If you want to update this value, see <a>UpdateDocument</a>.
+     *        The friendly name of the SSM document. This value can differ for each version of the document. If you want
+     *        to update this value, see <a>UpdateDocument</a>.
      */
 
     public void setDisplayName(String displayName) {
@@ -488,12 +488,12 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
-     * want to update this value, see <a>UpdateDocument</a>.
+     * The friendly name of the SSM document. This value can differ for each version of the document. If you want to
+     * update this value, see <a>UpdateDocument</a>.
      * </p>
      * 
-     * @return The friendly name of the Systems Manager document. This value can differ for each version of the
-     *         document. If you want to update this value, see <a>UpdateDocument</a>.
+     * @return The friendly name of the SSM document. This value can differ for each version of the document. If you
+     *         want to update this value, see <a>UpdateDocument</a>.
      */
 
     public String getDisplayName() {
@@ -502,13 +502,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
-     * want to update this value, see <a>UpdateDocument</a>.
+     * The friendly name of the SSM document. This value can differ for each version of the document. If you want to
+     * update this value, see <a>UpdateDocument</a>.
      * </p>
      * 
      * @param displayName
-     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
-     *        If you want to update this value, see <a>UpdateDocument</a>.
+     *        The friendly name of the SSM document. This value can differ for each version of the document. If you want
+     *        to update this value, see <a>UpdateDocument</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,11 +559,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      * 
      * @param owner
-     *        The AWS user account that created the document.
+     *        The Amazon Web Services user account that created the document.
      */
 
     public void setOwner(String owner) {
@@ -572,10 +572,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      * 
-     * @return The AWS user account that created the document.
+     * @return The Amazon Web Services user account that created the document.
      */
 
     public String getOwner() {
@@ -584,11 +584,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      * 
      * @param owner
-     *        The AWS user account that created the document.
+     *        The Amazon Web Services user account that created the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -639,11 +639,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the Systems Manager document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the Systems Manager document.
+     *        The status of the SSM document.
      * @see DocumentStatus
      */
 
@@ -653,10 +653,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the Systems Manager document.
+     * The status of the SSM document.
      * </p>
      * 
-     * @return The status of the Systems Manager document.
+     * @return The status of the SSM document.
      * @see DocumentStatus
      */
 
@@ -666,11 +666,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the Systems Manager document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the Systems Manager document.
+     *        The status of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentStatus
      */
@@ -682,11 +682,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the Systems Manager document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the Systems Manager document.
+     *        The status of the SSM document.
      * @see DocumentStatus
      */
 
@@ -696,11 +696,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the Systems Manager document.
+     * The status of the SSM document.
      * </p>
      * 
      * @param status
-     *        The status of the Systems Manager document.
+     *        The status of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentStatus
      */
@@ -712,15 +712,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For
+     * example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      * </p>
      * 
      * @param statusInformation
-     *        A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     *        <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     *        "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     *        A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For
+     *        example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *        "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      */
 
     public void setStatusInformation(String statusInformation) {
@@ -729,14 +729,14 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For
+     * example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      * </p>
      * 
-     * @return A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     *         <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     *         "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * @return A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value.
+     *         For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
+     *         message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      */
 
     public String getStatusInformation() {
@@ -745,15 +745,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For
+     * example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      * </p>
      * 
      * @param statusInformation
-     *        A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
-     *        <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-     *        "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     *        A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For
+     *        example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *        "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -917,10 +917,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of OS platforms compatible with this Systems Manager document.
+     * The list of OS platforms compatible with this SSM document.
      * </p>
      * 
-     * @return The list of OS platforms compatible with this Systems Manager document.
+     * @return The list of OS platforms compatible with this SSM document.
      * @see PlatformType
      */
 
@@ -933,11 +933,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of OS platforms compatible with this Systems Manager document.
+     * The list of OS platforms compatible with this SSM document.
      * </p>
      * 
      * @param platformTypes
-     *        The list of OS platforms compatible with this Systems Manager document.
+     *        The list of OS platforms compatible with this SSM document.
      * @see PlatformType
      */
 
@@ -952,7 +952,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of OS platforms compatible with this Systems Manager document.
+     * The list of OS platforms compatible with this SSM document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -961,7 +961,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param platformTypes
-     *        The list of OS platforms compatible with this Systems Manager document.
+     *        The list of OS platforms compatible with this SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
@@ -978,11 +978,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of OS platforms compatible with this Systems Manager document.
+     * The list of OS platforms compatible with this SSM document.
      * </p>
      * 
      * @param platformTypes
-     *        The list of OS platforms compatible with this Systems Manager document.
+     *        The list of OS platforms compatible with this SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
@@ -994,11 +994,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of OS platforms compatible with this Systems Manager document.
+     * The list of OS platforms compatible with this SSM document.
      * </p>
      * 
      * @param platformTypes
-     *        The list of OS platforms compatible with this Systems Manager document.
+     *        The list of OS platforms compatible with this SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
@@ -1284,17 +1284,17 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -1303,16 +1303,16 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The target type which defines the kinds of resources the document can run on. For example,
-     *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *         >Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public String getTargetType() {
@@ -1321,17 +1321,17 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

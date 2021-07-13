@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameters for an AUTOMATION task type.
+ * The parameters for an <code>AUTOMATION</code> task type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowAutomationParameters"
@@ -30,13 +30,13 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an Automation document to use during task execution.
+     * The version of an Automation runbook to use during task execution.
      * </p>
      */
     private String documentVersion;
     /**
      * <p>
-     * The parameters for the AUTOMATION task.
+     * The parameters for the <code>AUTOMATION</code> task.
      * </p>
      * <p>
      * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and
@@ -44,10 +44,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
@@ -56,7 +57,8 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
-     * For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     * For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for
+     * these parameters.
      * </p>
      * </note>
      */
@@ -64,11 +66,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an Automation document to use during task execution.
+     * The version of an Automation runbook to use during task execution.
      * </p>
      * 
      * @param documentVersion
-     *        The version of an Automation document to use during task execution.
+     *        The version of an Automation runbook to use during task execution.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -77,10 +79,10 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an Automation document to use during task execution.
+     * The version of an Automation runbook to use during task execution.
      * </p>
      * 
-     * @return The version of an Automation document to use during task execution.
+     * @return The version of an Automation runbook to use during task execution.
      */
 
     public String getDocumentVersion() {
@@ -89,11 +91,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an Automation document to use during task execution.
+     * The version of an Automation runbook to use during task execution.
      * </p>
      * 
      * @param documentVersion
-     *        The version of an Automation document to use during task execution.
+     *        The version of an Automation runbook to use during task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +106,7 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The parameters for the AUTOMATION task.
+     * The parameters for the <code>AUTOMATION</code> task.
      * </p>
      * <p>
      * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and
@@ -112,10 +114,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
@@ -124,22 +127,23 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
-     * For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     * For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for
+     * these parameters.
      * </p>
      * </note>
      * 
-     * @return The parameters for the AUTOMATION task.</p>
+     * @return The parameters for the <code>AUTOMATION</code> task.</p>
      *         <p>
      *         For information about specifying and updating task parameters, see
      *         <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
      *         </p>
      *         <note>
      *         <p>
-     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported maintenance window task types, see
-     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *         bucket to contain logs, instead use the <code>OutputS3BucketName</code> and
+     *         <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For
+     *         information about how Amazon Web Services Systems Manager handles these options for the supported
+     *         maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
@@ -148,7 +152,8 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      *         <p>
-     *         For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     *         For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified
+     *         for these parameters.
      *         </p>
      */
 
@@ -158,7 +163,7 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The parameters for the AUTOMATION task.
+     * The parameters for the <code>AUTOMATION</code> task.
      * </p>
      * <p>
      * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and
@@ -166,10 +171,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
@@ -178,22 +184,23 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
-     * For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     * For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for
+     * these parameters.
      * </p>
      * </note>
      * 
      * @param parameters
-     *        The parameters for the AUTOMATION task.</p>
+     *        The parameters for the <code>AUTOMATION</code> task.</p>
      *        <p>
      *        For information about specifying and updating task parameters, see
      *        <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        <p>
@@ -203,7 +210,8 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        <p>
-     *        For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     *        For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified
+     *        for these parameters.
      *        </p>
      */
 
@@ -213,7 +221,7 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The parameters for the AUTOMATION task.
+     * The parameters for the <code>AUTOMATION</code> task.
      * </p>
      * <p>
      * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and
@@ -221,10 +229,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
@@ -233,22 +242,23 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * <p>
-     * For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     * For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for
+     * these parameters.
      * </p>
      * </note>
      * 
      * @param parameters
-     *        The parameters for the AUTOMATION task.</p>
+     *        The parameters for the <code>AUTOMATION</code> task.</p>
      *        <p>
      *        For information about specifying and updating task parameters, see
      *        <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        <p>
@@ -258,7 +268,8 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      *        <p>
-     *        For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+     *        For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified
+     *        for these parameters.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

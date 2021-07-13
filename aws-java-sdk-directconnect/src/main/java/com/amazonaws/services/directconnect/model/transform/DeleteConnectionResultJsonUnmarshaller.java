@@ -104,6 +104,10 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
                     context.nextToken();
                     deleteConnectionResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     deleteConnectionResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

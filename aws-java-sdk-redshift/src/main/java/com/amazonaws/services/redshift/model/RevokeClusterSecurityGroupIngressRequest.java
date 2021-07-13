@@ -49,9 +49,10 @@ public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.Amaz
     private String eC2SecurityGroupName;
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
+     * The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The Amazon Web Services access key ID is not an acceptable value. If
+     * <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and
+     * <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
@@ -202,17 +203,18 @@ public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
+     * The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The Amazon Web Services access key ID is not an acceptable value. If
+     * <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and
+     * <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
      * </p>
      * 
      * @param eC2SecurityGroupOwnerId
-     *        The AWS account number of the owner of the security group specified in the
-     *        <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If
+     *        The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     *        parameter. The Amazon Web Services access key ID is not an acceptable value. If
      *        <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be
      *        provided. and <code>CIDRIP</code> cannot be provided. </p>
      *        <p>
@@ -225,16 +227,17 @@ public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
+     * The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The Amazon Web Services access key ID is not an acceptable value. If
+     * <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and
+     * <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
      * </p>
      * 
-     * @return The AWS account number of the owner of the security group specified in the
-     *         <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If
+     * @return The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     *         parameter. The Amazon Web Services access key ID is not an acceptable value. If
      *         <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be
      *         provided. and <code>CIDRIP</code> cannot be provided. </p>
      *         <p>
@@ -247,17 +250,18 @@ public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided.
+     * The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The Amazon Web Services access key ID is not an acceptable value. If
+     * <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and
+     * <code>CIDRIP</code> cannot be provided.
      * </p>
      * <p>
      * Example: <code>111122223333</code>
      * </p>
      * 
      * @param eC2SecurityGroupOwnerId
-     *        The AWS account number of the owner of the security group specified in the
-     *        <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If
+     *        The account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+     *        parameter. The Amazon Web Services access key ID is not an acceptable value. If
      *        <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be
      *        provided. and <code>CIDRIP</code> cannot be provided. </p>
      *        <p>

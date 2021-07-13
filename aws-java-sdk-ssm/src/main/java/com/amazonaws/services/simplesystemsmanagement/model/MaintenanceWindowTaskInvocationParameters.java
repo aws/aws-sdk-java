@@ -30,36 +30,36 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a RUN_COMMAND task type.
+     * The parameters for a <code>RUN_COMMAND</code> task type.
      * </p>
      */
     private MaintenanceWindowRunCommandParameters runCommand;
     /**
      * <p>
-     * The parameters for an AUTOMATION task type.
+     * The parameters for an <code>AUTOMATION</code> task type.
      * </p>
      */
     private MaintenanceWindowAutomationParameters automation;
     /**
      * <p>
-     * The parameters for a STEP_FUNCTIONS task type.
+     * The parameters for a <code>STEP_FUNCTIONS</code> task type.
      * </p>
      */
     private MaintenanceWindowStepFunctionsParameters stepFunctions;
     /**
      * <p>
-     * The parameters for a LAMBDA task type.
+     * The parameters for a <code>LAMBDA</code> task type.
      * </p>
      */
     private MaintenanceWindowLambdaParameters lambda;
 
     /**
      * <p>
-     * The parameters for a RUN_COMMAND task type.
+     * The parameters for a <code>RUN_COMMAND</code> task type.
      * </p>
      * 
      * @param runCommand
-     *        The parameters for a RUN_COMMAND task type.
+     *        The parameters for a <code>RUN_COMMAND</code> task type.
      */
 
     public void setRunCommand(MaintenanceWindowRunCommandParameters runCommand) {
@@ -68,10 +68,10 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a RUN_COMMAND task type.
+     * The parameters for a <code>RUN_COMMAND</code> task type.
      * </p>
      * 
-     * @return The parameters for a RUN_COMMAND task type.
+     * @return The parameters for a <code>RUN_COMMAND</code> task type.
      */
 
     public MaintenanceWindowRunCommandParameters getRunCommand() {
@@ -80,11 +80,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a RUN_COMMAND task type.
+     * The parameters for a <code>RUN_COMMAND</code> task type.
      * </p>
      * 
      * @param runCommand
-     *        The parameters for a RUN_COMMAND task type.
+     *        The parameters for a <code>RUN_COMMAND</code> task type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for an AUTOMATION task type.
+     * The parameters for an <code>AUTOMATION</code> task type.
      * </p>
      * 
      * @param automation
-     *        The parameters for an AUTOMATION task type.
+     *        The parameters for an <code>AUTOMATION</code> task type.
      */
 
     public void setAutomation(MaintenanceWindowAutomationParameters automation) {
@@ -108,10 +108,10 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for an AUTOMATION task type.
+     * The parameters for an <code>AUTOMATION</code> task type.
      * </p>
      * 
-     * @return The parameters for an AUTOMATION task type.
+     * @return The parameters for an <code>AUTOMATION</code> task type.
      */
 
     public MaintenanceWindowAutomationParameters getAutomation() {
@@ -120,11 +120,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for an AUTOMATION task type.
+     * The parameters for an <code>AUTOMATION</code> task type.
      * </p>
      * 
      * @param automation
-     *        The parameters for an AUTOMATION task type.
+     *        The parameters for an <code>AUTOMATION</code> task type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a STEP_FUNCTIONS task type.
+     * The parameters for a <code>STEP_FUNCTIONS</code> task type.
      * </p>
      * 
      * @param stepFunctions
-     *        The parameters for a STEP_FUNCTIONS task type.
+     *        The parameters for a <code>STEP_FUNCTIONS</code> task type.
      */
 
     public void setStepFunctions(MaintenanceWindowStepFunctionsParameters stepFunctions) {
@@ -148,10 +148,10 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a STEP_FUNCTIONS task type.
+     * The parameters for a <code>STEP_FUNCTIONS</code> task type.
      * </p>
      * 
-     * @return The parameters for a STEP_FUNCTIONS task type.
+     * @return The parameters for a <code>STEP_FUNCTIONS</code> task type.
      */
 
     public MaintenanceWindowStepFunctionsParameters getStepFunctions() {
@@ -160,11 +160,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a STEP_FUNCTIONS task type.
+     * The parameters for a <code>STEP_FUNCTIONS</code> task type.
      * </p>
      * 
      * @param stepFunctions
-     *        The parameters for a STEP_FUNCTIONS task type.
+     *        The parameters for a <code>STEP_FUNCTIONS</code> task type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a LAMBDA task type.
+     * The parameters for a <code>LAMBDA</code> task type.
      * </p>
      * 
      * @param lambda
-     *        The parameters for a LAMBDA task type.
+     *        The parameters for a <code>LAMBDA</code> task type.
      */
 
     public void setLambda(MaintenanceWindowLambdaParameters lambda) {
@@ -188,10 +188,10 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a LAMBDA task type.
+     * The parameters for a <code>LAMBDA</code> task type.
      * </p>
      * 
-     * @return The parameters for a LAMBDA task type.
+     * @return The parameters for a <code>LAMBDA</code> task type.
      */
 
     public MaintenanceWindowLambdaParameters getLambda() {
@@ -200,11 +200,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a LAMBDA task type.
+     * The parameters for a <code>LAMBDA</code> task type.
      * </p>
      * 
      * @param lambda
-     *        The parameters for a LAMBDA task type.
+     *        The parameters for a <code>LAMBDA</code> task type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

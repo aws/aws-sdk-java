@@ -104,6 +104,10 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
                     context.nextToken();
                     connection.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    connection.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     connection.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

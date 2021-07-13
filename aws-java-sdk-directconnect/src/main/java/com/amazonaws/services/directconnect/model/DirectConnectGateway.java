@@ -49,7 +49,7 @@ public class DirectConnectGateway implements Serializable, Cloneable, Structured
     private Long amazonSideAsn;
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      */
     private String ownerAccount;
@@ -210,11 +210,11 @@ public class DirectConnectGateway implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the Direct Connect gateway.
+     *        The ID of the account that owns the Direct Connect gateway.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -223,10 +223,10 @@ public class DirectConnectGateway implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the Direct Connect gateway.
+     * @return The ID of the account that owns the Direct Connect gateway.
      */
 
     public String getOwnerAccount() {
@@ -235,11 +235,11 @@ public class DirectConnectGateway implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the AWS account that owns the Direct Connect gateway.
+     * The ID of the account that owns the Direct Connect gateway.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the Direct Connect gateway.
+     *        The ID of the account that owns the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The calendar entry contained in the specified Systems Manager document is not supported.
+ * The calendar entry contained in the specified SSM document isn't supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

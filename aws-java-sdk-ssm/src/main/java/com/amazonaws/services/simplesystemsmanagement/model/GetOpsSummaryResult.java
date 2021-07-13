@@ -25,7 +25,7 @@ public class GetOpsSummaryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The list of aggregated and filtered OpsItems.
+     * The list of aggregated and filtered OpsData.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsEntity> entities;
@@ -38,10 +38,10 @@ public class GetOpsSummaryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The list of aggregated and filtered OpsItems.
+     * The list of aggregated and filtered OpsData.
      * </p>
      * 
-     * @return The list of aggregated and filtered OpsItems.
+     * @return The list of aggregated and filtered OpsData.
      */
 
     public java.util.List<OpsEntity> getEntities() {
@@ -53,11 +53,11 @@ public class GetOpsSummaryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The list of aggregated and filtered OpsItems.
+     * The list of aggregated and filtered OpsData.
      * </p>
      * 
      * @param entities
-     *        The list of aggregated and filtered OpsItems.
+     *        The list of aggregated and filtered OpsData.
      */
 
     public void setEntities(java.util.Collection<OpsEntity> entities) {
@@ -71,7 +71,7 @@ public class GetOpsSummaryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The list of aggregated and filtered OpsItems.
+     * The list of aggregated and filtered OpsData.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class GetOpsSummaryResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param entities
-     *        The list of aggregated and filtered OpsItems.
+     *        The list of aggregated and filtered OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class GetOpsSummaryResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The list of aggregated and filtered OpsItems.
+     * The list of aggregated and filtered OpsData.
      * </p>
      * 
      * @param entities
-     *        The list of aggregated and filtered OpsItems.
+     *        The list of aggregated and filtered OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

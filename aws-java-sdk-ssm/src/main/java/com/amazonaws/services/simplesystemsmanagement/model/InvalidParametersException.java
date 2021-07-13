@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You must specify values for all required parameters in the Systems Manager document. You can only supply values to
- * parameters defined in the Systems Manager document.
+ * You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
+ * document). You can only supply values to parameters defined in the SSM document.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -51,12 +51,12 @@ import com.amazonaws.services.directconnect.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic
- * cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. With this
- * connection in place, you can create virtual interfaces directly to the AWS cloud (for example, to Amazon EC2 and
- * Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network path. A connection provides access
- * to all AWS Regions except the China (Beijing) and (China) Ningxia Regions. AWS resources in the China Regions can
- * only be accessed through locations associated with those Regions.
+ * Direct Connect links your internal network to an Direct Connect location over a standard Ethernet fiber-optic cable.
+ * One end of the cable is connected to your router, the other to an Direct Connect router. With this connection in
+ * place, you can create virtual interfaces directly to the Cloud (for example, to Amazon EC2 and Amazon S3) and to
+ * Amazon VPC, bypassing Internet service providers in your network path. A connection provides access to all Regions
+ * except the China (Beijing) and (China) Ningxia Regions. Amazon Web Services resources in the China Regions can only
+ * be accessed through locations associated with those Regions.
  * </p>
  */
 @ThreadSafe
@@ -372,7 +372,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -440,12 +440,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * Allocates a VLAN number and a specified amount of capacity (bandwidth) for use by a hosted connection on the
-     * specified interconnect or LAG of interconnects. AWS polices the hosted connection for the specified capacity and
-     * the AWS Direct Connect Partner must also police the hosted connection for the specified capacity.
+     * specified interconnect or LAG of interconnects. Amazon Web Services polices the hosted connection for the
+     * specified capacity and the Direct Connect Partner must also police the hosted connection for the specified
+     * capacity.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -511,7 +512,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Provisions a private virtual interface to be owned by the specified AWS account.
+     * Provisions a private virtual interface to be owned by the specified account.
      * </p>
      * <p>
      * Virtual interfaces created using this action must be confirmed by the owner using
@@ -582,11 +583,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Provisions a public virtual interface to be owned by the specified AWS account.
+     * Provisions a public virtual interface to be owned by the specified account.
      * </p>
      * <p>
      * The owner of a connection calls this function to provision a public virtual interface to be owned by the
-     * specified AWS account.
+     * specified account.
      * </p>
      * <p>
      * Virtual interfaces created using this function must be confirmed by the owner using
@@ -660,11 +661,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Provisions a transit virtual interface to be owned by the specified AWS account. Use this type of interface to
+     * Provisions a transit virtual interface to be owned by the specified account. Use this type of interface to
      * connect a transit gateway to your Direct Connect gateway.
      * </p>
      * <p>
-     * The owner of a connection provisions a transit virtual interface to be owned by the specified AWS account.
+     * The owner of a connection provisions a transit virtual interface to be owned by the specified account.
      * </p>
      * <p>
      * After you create a transit virtual interface, it must be confirmed by the owner using
@@ -736,11 +737,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Associates an existing connection with a link aggregation group (LAG). The connection is interrupted and
-     * re-established as a member of the LAG (connectivity to AWS is interrupted). The connection must be hosted on the
-     * same AWS Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can
-     * re-associate a connection that's currently associated with a different LAG; however, if removing the connection
-     * would cause the original LAG to fall below its setting for minimum number of operational connections, the request
-     * fails.
+     * re-established as a member of the LAG (connectivity to Amazon Web Services is interrupted). The connection must
+     * be hosted on the same Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG.
+     * You can re-associate a connection that's currently associated with a different LAG; however, if removing the
+     * connection would cause the original LAG to fall below its setting for minimum number of operational connections,
+     * the request fails.
      * </p>
      * <p>
      * Any virtual interfaces that are directly associated with the connection are automatically re-associated with the
@@ -812,12 +813,12 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * <p>
      * Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect. If
      * the target interconnect or LAG has an existing hosted connection with a conflicting VLAN number or IP address,
-     * the operation fails. This action temporarily interrupts the hosted connection's connectivity to AWS as it is
-     * being migrated.
+     * the operation fails. This action temporarily interrupts the hosted connection's connectivity to Amazon Web
+     * Services as it is being migrated.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -879,7 +880,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an AWS
+     * Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an
      * Direct Connect dedicated connection.
      * </p>
      * <p>
@@ -889,7 +890,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * <p>
      * For information about MAC Security (MACsec) key considerations, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration"
-     * >MACsec pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec pre-shared CKN/CAK key considerations </a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param associateMacSecKeyRequest
@@ -948,9 +949,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to AWS
-     * is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an
-     * associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.
+     * Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to
+     * Amazon Web Services is temporarily interrupted as the virtual interface is being migrated. If the target
+     * connection or LAG has an associated virtual interface with a conflicting VLAN number or a conflicting IP address,
+     * the operation fails.
      * </p>
      * <p>
      * Virtual interfaces associated with a hosted connection cannot be associated with a LAG; hosted connections must
@@ -1083,7 +1085,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Accepts ownership of a private virtual interface created by another AWS account.
+     * Accepts ownership of a private virtual interface created by another account.
      * </p>
      * <p>
      * After the virtual interface owner makes this call, the virtual interface is created and attached to the specified
@@ -1148,7 +1150,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Accepts ownership of a public virtual interface created by another AWS account.
+     * Accepts ownership of a public virtual interface created by another account.
      * </p>
      * <p>
      * After the virtual interface owner makes this call, the specified virtual interface is created and made available
@@ -1213,7 +1215,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Accepts ownership of a transit virtual interface created by another AWS account.
+     * Accepts ownership of a transit virtual interface created by another account.
      * </p>
      * <p>
      * After the owner of the transit virtual interface makes this call, the specified transit virtual interface is
@@ -1281,8 +1283,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Creates a BGP peer on the specified virtual interface.
      * </p>
      * <p>
-     * You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order to access AWS resources that
-     * also use that address family.
+     * You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order to access Amazon Web
+     * Services resources that also use that address family.
      * </p>
      * <p>
      * If logical redundancy is not supported by the connection, interconnect, or LAG, the BGP peer cannot be in the
@@ -1353,18 +1355,18 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a connection between a customer network and a specific AWS Direct Connect location.
+     * Creates a connection between a customer network and a specific Direct Connect location.
      * </p>
      * <p>
-     * A connection links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic
-     * cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router.
+     * A connection links your internal network to an Direct Connect location over a standard Ethernet fiber-optic
+     * cable. One end of the cable is connected to your router, the other to an Direct Connect router.
      * </p>
      * <p>
      * To find the locations for your Region, use <a>DescribeLocations</a>.
      * </p>
      * <p>
      * You can automatically add the new connection to a link aggregation group (LAG) by specifying a LAG ID in the
-     * request. This ensures that the new connection is allocated on the same AWS Direct Connect endpoint that hosts the
+     * request. This ensures that the new connection is allocated on the same Direct Connect endpoint that hosts the
      * specified LAG. If there are no available ports on the endpoint, the request fails and no connection is created.
      * </p>
      * 
@@ -1429,10 +1431,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual
-     * interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any AWS Region after
-     * it is created. The virtual interfaces and virtual private gateways that are connected through a Direct Connect
-     * gateway can be in different AWS Regions. This enables you to connect to a VPC in any Region, regardless of the
-     * Region in which the virtual interfaces are located, and pass traffic between them.
+     * interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any Region after it is
+     * created. The virtual interfaces and virtual private gateways that are connected through a Direct Connect gateway
+     * can be in different Regions. This enables you to connect to a VPC in any Region, regardless of the Region in
+     * which the virtual interfaces are located, and pass traffic between them.
      * </p>
      * 
      * @param createDirectConnectGatewayRequest
@@ -1562,7 +1564,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any
-     * AWS account.
+     * account.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationProposalRequest
@@ -1626,30 +1628,28 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an interconnect between an AWS Direct Connect Partner's network and a specific AWS Direct Connect
-     * location.
+     * Creates an interconnect between an Direct Connect Partner's network and a specific Direct Connect location.
      * </p>
      * <p>
-     * An interconnect is a connection that is capable of hosting other connections. The AWS Direct Connect partner can
-     * use an interconnect to provide AWS Direct Connect hosted connections to customers through their own network
-     * services. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect
-     * location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to
-     * an AWS Direct Connect router.
+     * An interconnect is a connection that is capable of hosting other connections. The Direct Connect Partner can use
+     * an interconnect to provide Direct Connect hosted connections to customers through their own network services.
+     * Like a standard connection, an interconnect links the partner's network to an Direct Connect location over a
+     * standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to an Direct Connect
+     * router.
      * </p>
      * <p>
      * You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the
-     * request. This ensures that the new interconnect is allocated on the same AWS Direct Connect endpoint that hosts
-     * the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect is
-     * created.
+     * request. This ensures that the new interconnect is allocated on the same Direct Connect endpoint that hosts the
+     * specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect is created.
      * </p>
      * <p>
-     * For each end customer, the AWS Direct Connect Partner provisions a connection on their interconnect by calling
-     * <a>AllocateHostedConnection</a>. The end customer can then connect to AWS resources by creating a virtual
-     * interface on their connection, using the VLAN assigned to them by the AWS Direct Connect Partner.
+     * For each end customer, the Direct Connect Partner provisions a connection on their interconnect by calling
+     * <a>AllocateHostedConnection</a>. The end customer can then connect to Amazon Web Services resources by creating a
+     * virtual interface on their connection, using the VLAN assigned to them by the Direct Connect Partner.
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -1714,29 +1714,29 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections
-     * between the customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses
-     * the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a
-     * single interface.
+     * between the customer network and a specific Direct Connect location. A LAG is a logical interface that uses the
+     * Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single
+     * interface.
      * </p>
      * <p>
-     * All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same AWS
+     * All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same
      * Direct Connect endpoint.
      * </p>
      * <p>
      * You can have up to 10 dedicated connections per LAG. Regardless of this limit, if you request more connections
-     * for the LAG than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
+     * for the LAG than Direct Connect can allocate on a single endpoint, no LAG is created.
      * </p>
      * <p>
      * You can specify an existing physical dedicated connection or interconnect to include in the LAG (which counts
      * towards the total number of connections). Doing so interrupts the current physical dedicated connection, and
-     * re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to
-     * which the dedicated connection terminates. Any virtual interfaces associated with the dedicated connection are
+     * re-establishes them as a member of the LAG. The LAG will be created on the same Direct Connect endpoint to which
+     * the dedicated connection terminates. Any virtual interfaces associated with the dedicated connection are
      * automatically disassociated and re-associated with the LAG. The connection ID does not change.
      * </p>
      * <p>
-     * If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically
-     * enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be
-     * directly configured.
+     * If the account used to create a LAG is a registered Direct Connect Partner, the LAG is automatically enabled to
+     * host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be directly
+     * configured.
      * </p>
      * 
      * @param createLagRequest
@@ -1799,11 +1799,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic.
-     * A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway
-     * (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for
-     * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
-     * a VGW only provides access to a single VPC within the same Region.
+     * Creates a private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A
+     * private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW).
+     * Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to
+     * multiple VPCs, including VPCs in different Regions. Connecting the private virtual interface to a VGW only
+     * provides access to a single VPC within the same Region.
      * </p>
      * <p>
      * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
@@ -1875,8 +1875,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A
-     * public virtual interface supports sending traffic to public services of AWS such as Amazon S3.
+     * Creates a public virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A
+     * public virtual interface supports sending traffic to public services of Amazon Web Services such as Amazon S3.
      * </p>
      * <p>
      * When creating an IPv6 public virtual interface (<code>addressFamily</code> is <code>ipv6</code>), leave the
@@ -2092,9 +2092,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Deletes the specified connection.
      * </p>
      * <p>
-     * Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. If you are
-     * partnering with any third parties to connect with the AWS Direct Connect location, you must cancel your service
-     * with them separately.
+     * Deleting a connection only stops the Direct Connect port hour and data transfer charges. If you are partnering
+     * with any third parties to connect with the Direct Connect location, you must cancel your service with them
+     * separately.
      * </p>
      * 
      * @param deleteConnectionRequest
@@ -2353,7 +2353,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -2540,9 +2540,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or
-     * service provider uses when establishing your cross connect to AWS at the colocation facility. For more
-     * information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
-     * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * service provider uses when establishing your cross connect to Amazon Web Services at the colocation facility. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
+     * Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeConnectionLoaRequest
@@ -2674,7 +2675,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -3044,7 +3045,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Intended for use by AWS Direct Connect Partners only.
+     * Intended for use by Direct Connect Partners only.
      * </p>
      * </note>
      * 
@@ -3113,9 +3114,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
-     * establishing your cross connect to AWS at the colocation facility. For more information, see <a
+     * establishing your cross connect to Amazon Web Services at the colocation facility. For more information, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
-     * AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeInterconnectLoaRequest
@@ -3177,7 +3178,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the interconnects owned by the AWS account or only the specified interconnect.
+     * Lists the interconnects owned by the account or only the specified interconnect.
      * </p>
      * 
      * @param describeInterconnectsRequest
@@ -3305,9 +3306,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
-     * establishing your cross connect to AWS at the colocation facility. For more information, see <a
+     * establishing your cross connect to Amazon Web Services at the colocation facility. For more information, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
-     * AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeLoaRequest
@@ -3366,8 +3367,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the AWS Direct Connect locations in the current AWS Region. These are the locations that can be selected
-     * when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+     * Lists the Direct Connect locations in the current Region. These are the locations that can be selected when
+     * calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
      * </p>
      * 
      * @param describeLocationsRequest
@@ -3431,7 +3432,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the tags associated with the specified AWS Direct Connect resources.
+     * Describes the tags associated with the specified Direct Connect resources.
      * </p>
      * 
      * @param describeTagsRequest
@@ -3490,10 +3491,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the virtual private gateways owned by the AWS account.
+     * Lists the virtual private gateways owned by the account.
      * </p>
      * <p>
-     * You can create one or more AWS Direct Connect private virtual interfaces linked to a virtual private gateway.
+     * You can create one or more Direct Connect private virtual interfaces linked to a virtual private gateway.
      * </p>
      * 
      * @param describeVirtualGatewaysRequest
@@ -3559,14 +3560,12 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before you
-     * make the request are also returned. If you specify a connection ID, only the virtual interfaces associated with
-     * the connection are returned. If you specify a virtual interface ID, then only a single virtual interface is
-     * returned.
+     * Displays all virtual interfaces for an account. Virtual interfaces deleted fewer than 15 minutes before you make
+     * the request are also returned. If you specify a connection ID, only the virtual interfaces associated with the
+     * connection are returned. If you specify a virtual interface ID, then only a single virtual interface is returned.
      * </p>
      * <p>
-     * A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location and the customer
-     * network.
+     * A virtual interface (VLAN) transmits the traffic between the Direct Connect location and the customer network.
      * </p>
      * 
      * @param describeVirtualInterfacesRequest
@@ -3635,8 +3634,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established
      * as a standalone connection (the connection is not deleted; to delete the connection, use the
      * <a>DeleteConnection</a> request). If the LAG has associated virtual interfaces or hosted connections, they remain
-     * associated with the LAG. A disassociated connection owned by an AWS Direct Connect Partner is automatically
-     * converted to an interconnect.
+     * associated with the LAG. A disassociated connection owned by an Direct Connect Partner is automatically converted
+     * to an interconnect.
      * </p>
      * <p>
      * If disassociating the connection would cause the LAG to fall below its setting for minimum number of operational
@@ -3702,8 +3701,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Removes the association between a MAC Security (MACsec) security key and an AWS Direct Connect dedicated
-     * connection.
+     * Removes the association between a MAC Security (MACsec) security key and an Direct Connect dedicated connection.
      * </p>
      * 
      * @param disassociateMacSecKeyRequest
@@ -3957,8 +3955,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50
-     * tags.
+     * Adds the specified tags to the specified Direct Connect resource. Each resource can have a maximum of 50 tags.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a tag with the same key is already associated with the
@@ -4025,7 +4022,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Removes one or more tags from the specified AWS Direct Connect resource.
+     * Removes one or more tags from the specified Direct Connect resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -4084,7 +4081,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Updates the AWS Direct Connect dedicated connection configuration.
+     * Updates the Direct Connect dedicated connection configuration.
      * </p>
      * <p>
      * You can update the following parameters for a connection:
@@ -4245,7 +4242,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * The LAG's MACsec encryption mode.
      * </p>
      * <p>
-     * AWS assigns this value to each connection which is part of the LAG.
+     * Amazon Web Services assigns this value to each connection which is part of the LAG.
      * </p>
      * </li>
      * <li>

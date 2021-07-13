@@ -69,7 +69,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec)
      * prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      */
     private Boolean requestMACSec;
@@ -355,7 +355,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec)
      * prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param requestMACSec
@@ -364,7 +364,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security
      *        (MACsec) prerequisties, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *        >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      */
 
     public void setRequestMACSec(Boolean requestMACSec) {
@@ -379,7 +379,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec)
      * prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @return Indicates whether you want the connection to support MAC Security (MACsec).</p>
@@ -387,7 +387,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      *         MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security
      *         (MACsec) prerequisties, see <a href=
      *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *         >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      */
 
     public Boolean getRequestMACSec() {
@@ -402,7 +402,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec)
      * prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param requestMACSec
@@ -411,7 +411,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security
      *        (MACsec) prerequisties, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *        >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,7 +428,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec)
      * prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @return Indicates whether you want the connection to support MAC Security (MACsec).</p>
@@ -436,7 +436,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      *         MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security
      *         (MACsec) prerequisties, see <a href=
      *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *         >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      */
 
     public Boolean isRequestMACSec() {

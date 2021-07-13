@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The policy type is not supported. Parameter Store supports the following policy types: Expiration,
+ * The policy type isn't supported. Parameter Store supports the following policy types: Expiration,
  * ExpirationNotification, and NoChangeNotification.
  * </p>
  */

@@ -16,8 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The document cannot be shared with more AWS user accounts. You can share a document with a maximum of 20 accounts.
- * You can publicly share up to five documents. If you need to increase this limit, contact AWS Support.
+ * The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of
+ * 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web
+ * Services Support.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

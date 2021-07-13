@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration options for sending command output to CloudWatch Logs.
+ * Configuration options for sending command output to Amazon CloudWatch Logs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CloudWatchOutputConfig" target="_top">AWS API
@@ -30,9 +30,12 @@ public class CloudWatchOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch log group where you want to send command output. If you don't specify a group name,
-     * Systems Manager automatically creates a log group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.
+     * The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group
+     * name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the
+     * following naming format:
+     * </p>
+     * <p>
+     * <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      * </p>
      */
     private String cloudWatchLogGroupName;
@@ -45,15 +48,20 @@ public class CloudWatchOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch log group where you want to send command output. If you don't specify a group name,
-     * Systems Manager automatically creates a log group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.
+     * The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group
+     * name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the
+     * following naming format:
+     * </p>
+     * <p>
+     * <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      * </p>
      * 
      * @param cloudWatchLogGroupName
-     *        The name of the CloudWatch log group where you want to send command output. If you don't specify a group
-     *        name, Systems Manager automatically creates a log group for you. The log group uses the following naming
-     *        format: aws/ssm/<i>SystemsManagerDocumentName</i>.
+     *        The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a
+     *        group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group
+     *        uses the following naming format:</p>
+     *        <p>
+     *        <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      */
 
     public void setCloudWatchLogGroupName(String cloudWatchLogGroupName) {
@@ -62,14 +70,19 @@ public class CloudWatchOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch log group where you want to send command output. If you don't specify a group name,
-     * Systems Manager automatically creates a log group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.
+     * The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group
+     * name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the
+     * following naming format:
+     * </p>
+     * <p>
+     * <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      * </p>
      * 
-     * @return The name of the CloudWatch log group where you want to send command output. If you don't specify a group
-     *         name, Systems Manager automatically creates a log group for you. The log group uses the following naming
-     *         format: aws/ssm/<i>SystemsManagerDocumentName</i>.
+     * @return The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a
+     *         group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group
+     *         uses the following naming format:</p>
+     *         <p>
+     *         <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      */
 
     public String getCloudWatchLogGroupName() {
@@ -78,15 +91,20 @@ public class CloudWatchOutputConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the CloudWatch log group where you want to send command output. If you don't specify a group name,
-     * Systems Manager automatically creates a log group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.
+     * The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group
+     * name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the
+     * following naming format:
+     * </p>
+     * <p>
+     * <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      * </p>
      * 
      * @param cloudWatchLogGroupName
-     *        The name of the CloudWatch log group where you want to send command output. If you don't specify a group
-     *        name, Systems Manager automatically creates a log group for you. The log group uses the following naming
-     *        format: aws/ssm/<i>SystemsManagerDocumentName</i>.
+     *        The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a
+     *        group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group
+     *        uses the following naming format:</p>
+     *        <p>
+     *        <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

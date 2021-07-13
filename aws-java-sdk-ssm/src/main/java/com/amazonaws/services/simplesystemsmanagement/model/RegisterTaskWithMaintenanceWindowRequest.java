@@ -38,10 +38,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -66,13 +67,14 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private String taskArn;
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -132,8 +134,8 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      */
@@ -144,22 +146,24 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      */
     private String maxErrors;
     /**
      * <p>
-     * A structure containing information about an S3 bucket to write instance-level logs to.
+     * A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     * instance-level logs to.
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      */
@@ -230,10 +234,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -252,10 +257,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * @return The targets (either instances or maintenance window targets).</p> <note>
      *         <p>
      *         One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *         task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *         Functions). For more information about running tasks that do not specify targets, see <a href=
+     *         task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *         Functions). For more information about running tasks that don't specify targets, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *         >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *         User Guide</i>.
      *         </p>
      *         </note>
      *         <p>
@@ -285,10 +291,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -308,10 +315,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        The targets (either instances or maintenance window targets).</p> <note>
      *        <p>
      *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *        Functions). For more information about running tasks that don't specify targets, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -343,10 +351,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -371,10 +380,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        The targets (either instances or maintenance window targets).</p> <note>
      *        <p>
      *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *        Functions). For more information about running tasks that don't specify targets, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -408,10 +418,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -431,10 +442,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        The targets (either instances or maintenance window targets).</p> <note>
      *        <p>
      *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *        Functions). For more information about running tasks that don't specify targets, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -498,13 +510,14 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -524,12 +537,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
-     *        you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
-     *        service-linked role for Systems Manager exists in your account, it is created when you run
-     *        <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *        The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume
+     *        when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses
+     *        your account's service-linked role. If no service-linked role for Systems Manager exists in your account,
+     *        it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
      *        <p>
-     *        For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *        For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -554,13 +568,14 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -579,12 +594,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </li>
      * </ul>
      * 
-     * @return The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
-     *         you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
-     *         service-linked role for Systems Manager exists in your account, it is created when you run
-     *         <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume
+     *         when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses
+     *         your account's service-linked role. If no service-linked role for Systems Manager exists in your account,
+     *         it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
      *         <p>
-     *         For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *         For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     *         Guide</i>:
      *         </p>
      *         <ul>
      *         <li>
@@ -609,13 +625,14 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -635,12 +652,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
-     *        you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
-     *        service-linked role for Systems Manager exists in your account, it is created when you run
-     *        <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *        The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume
+     *        when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses
+     *        your account's service-linked role. If no service-linked role for Systems Manager exists in your account,
+     *        it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
      *        <p>
-     *        For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *        For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -949,16 +967,16 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      * 
      * @param maxConcurrency
      *        The maximum number of targets this task can be run for in parallel.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
-     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running
      *        of your task.
      *        </p>
      */
@@ -973,15 +991,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      * 
      * @return The maximum number of targets this task can be run for in parallel.</p> <note>
      *         <p>
-     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
-     *         Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *         For maintenance window tasks without a target specified, you can't supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running
      *         of your task.
      *         </p>
      */
@@ -996,16 +1014,16 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      * 
      * @param maxConcurrency
      *        The maximum number of targets this task can be run for in parallel.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
-     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running
      *        of your task.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1022,16 +1040,16 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed before this task stops being scheduled.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
-     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running
      *        of your task.
      *        </p>
      */
@@ -1046,15 +1064,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      * 
      * @return The maximum number of errors allowed before this task stops being scheduled.</p> <note>
      *         <p>
-     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
-     *         Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *         For maintenance window tasks without a target specified, you can't supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running
      *         of your task.
      *         </p>
      */
@@ -1069,16 +1087,16 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
-     * system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.
      * </p>
      * </note>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed before this task stops being scheduled.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
-     *        Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running
      *        of your task.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1091,24 +1109,27 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A structure containing information about an S3 bucket to write instance-level logs to.
+     * A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     * instance-level logs to.
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
-     *        A structure containing information about an S3 bucket to write instance-level logs to. </p> <note>
+     *        A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     *        instance-level logs to. </p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -1119,24 +1140,27 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A structure containing information about an S3 bucket to write instance-level logs to.
+     * A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     * instance-level logs to.
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
-     * @return A structure containing information about an S3 bucket to write instance-level logs to. </p> <note>
+     * @return A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     *         instance-level logs to. </p> <note>
      *         <p>
-     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported maintenance window task types, see
-     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *         bucket to contain logs, instead use the <code>OutputS3BucketName</code> and
+     *         <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For
+     *         information about how Amazon Web Services Systems Manager handles these options for the supported
+     *         maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
 
@@ -1146,24 +1170,27 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A structure containing information about an S3 bucket to write instance-level logs to.
+     * A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     * instance-level logs to.
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
-     *        A structure containing information about an S3 bucket to write instance-level logs to. </p> <note>
+     *        A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+     *        instance-level logs to. </p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

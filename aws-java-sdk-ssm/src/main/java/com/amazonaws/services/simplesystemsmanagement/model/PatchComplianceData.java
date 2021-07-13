@@ -43,13 +43,14 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
     private String kBId;
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     * <code>CriticalUpdates</code>.
      * </p>
      */
     private String classification;
     /**
      * <p>
-     * The severity of the patch (for example, Critical, Important, Moderate).
+     * The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.
      * </p>
      */
     private String severity;
@@ -60,13 +61,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * For descriptions of each patch state, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * The date/time the patch was installed on the instance. Not all operating systems provide this level of
      * information.
      * </p>
      */
@@ -160,11 +161,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     * <code>CriticalUpdates</code>.
      * </p>
      * 
      * @param classification
-     *        The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     *        The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     *        <code>CriticalUpdates</code>.
      */
 
     public void setClassification(String classification) {
@@ -173,10 +176,12 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     * <code>CriticalUpdates</code>.
      * </p>
      * 
-     * @return The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * @return The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     *         <code>CriticalUpdates</code>.
      */
 
     public String getClassification() {
@@ -185,11 +190,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     * <code>CriticalUpdates</code>.
      * </p>
      * 
      * @param classification
-     *        The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     *        The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and
+     *        <code>CriticalUpdates</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +207,11 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The severity of the patch (for example, Critical, Important, Moderate).
+     * The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.
      * </p>
      * 
      * @param severity
-     *        The severity of the patch (for example, Critical, Important, Moderate).
+     *        The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.
      */
 
     public void setSeverity(String severity) {
@@ -213,10 +220,11 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The severity of the patch (for example, Critical, Important, Moderate).
+     * The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.
      * </p>
      * 
-     * @return The severity of the patch (for example, Critical, Important, Moderate).
+     * @return The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>
+     *         .
      */
 
     public String getSeverity() {
@@ -225,11 +233,11 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The severity of the patch (for example, Critical, Important, Moderate).
+     * The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.
      * </p>
      * 
      * @param severity
-     *        The severity of the patch (for example, Critical, Important, Moderate).
+     *        The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,7 +253,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * For descriptions of each patch state, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
@@ -253,7 +261,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      *        <p>
      *        For descriptions of each patch state, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -268,14 +276,14 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * For descriptions of each patch state, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      *         <p>
      *         For descriptions of each patch state, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *         >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -290,7 +298,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * For descriptions of each patch state, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
@@ -298,7 +306,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      *        <p>
      *        For descriptions of each patch state, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceDataState
      */
@@ -315,7 +323,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * For descriptions of each patch state, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
@@ -323,7 +331,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      *        <p>
      *        For descriptions of each patch state, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -338,7 +346,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * For descriptions of each patch state, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
@@ -346,7 +354,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      *        <p>
      *        For descriptions of each patch state, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceDataState
      */
@@ -358,13 +366,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * The date/time the patch was installed on the instance. Not all operating systems provide this level of
      * information.
      * </p>
      * 
      * @param installedTime
-     *        The date/time the patch was installed on the instance. Note that not all operating systems provide this
-     *        level of information.
+     *        The date/time the patch was installed on the instance. Not all operating systems provide this level of
+     *        information.
      */
 
     public void setInstalledTime(java.util.Date installedTime) {
@@ -373,12 +381,12 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * The date/time the patch was installed on the instance. Not all operating systems provide this level of
      * information.
      * </p>
      * 
-     * @return The date/time the patch was installed on the instance. Note that not all operating systems provide this
-     *         level of information.
+     * @return The date/time the patch was installed on the instance. Not all operating systems provide this level of
+     *         information.
      */
 
     public java.util.Date getInstalledTime() {
@@ -387,13 +395,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * The date/time the patch was installed on the instance. Not all operating systems provide this level of
      * information.
      * </p>
      * 
      * @param installedTime
-     *        The date/time the patch was installed on the instance. Note that not all operating systems provide this
-     *        level of information.
+     *        The date/time the patch was installed on the instance. Not all operating systems provide this level of
+     *        information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

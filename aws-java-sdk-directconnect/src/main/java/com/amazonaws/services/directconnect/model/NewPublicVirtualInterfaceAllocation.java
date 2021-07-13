@@ -77,7 +77,8 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
     private String addressFamily;
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
@@ -430,10 +431,12 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * 
-     * @return The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * @return The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *         interfaces.
      */
 
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
@@ -445,11 +448,13 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * 
      * @param routeFilterPrefixes
-     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     *        The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *        interfaces.
      */
 
     public void setRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
@@ -463,7 +468,8 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -472,7 +478,8 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
      * </p>
      * 
      * @param routeFilterPrefixes
-     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     *        The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *        interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,11 +495,13 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
 
     /**
      * <p>
-     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     * interfaces.
      * </p>
      * 
      * @param routeFilterPrefixes
-     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     *        The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual
+     *        interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

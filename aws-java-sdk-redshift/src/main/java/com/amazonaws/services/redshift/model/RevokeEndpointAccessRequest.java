@@ -33,7 +33,7 @@ public class RevokeEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
     private String clusterIdentifier;
     /**
      * <p>
-     * The AWS account ID whose access is to be revoked.
+     * The account ID whose access is to be revoked.
      * </p>
      */
     private String account;
@@ -93,11 +93,11 @@ public class RevokeEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID whose access is to be revoked.
+     * The account ID whose access is to be revoked.
      * </p>
      * 
      * @param account
-     *        The AWS account ID whose access is to be revoked.
+     *        The account ID whose access is to be revoked.
      */
 
     public void setAccount(String account) {
@@ -106,10 +106,10 @@ public class RevokeEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID whose access is to be revoked.
+     * The account ID whose access is to be revoked.
      * </p>
      * 
-     * @return The AWS account ID whose access is to be revoked.
+     * @return The account ID whose access is to be revoked.
      */
 
     public String getAccount() {
@@ -118,11 +118,11 @@ public class RevokeEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID whose access is to be revoked.
+     * The account ID whose access is to be revoked.
      * </p>
      * 
      * @param account
-     *        The AWS account ID whose access is to be revoked.
+     *        The account ID whose access is to be revoked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

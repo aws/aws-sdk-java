@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The delete inventory option specified is not valid. Verify the option and try again.
+ * The delete inventory option specified isn't valid. Verify the option and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

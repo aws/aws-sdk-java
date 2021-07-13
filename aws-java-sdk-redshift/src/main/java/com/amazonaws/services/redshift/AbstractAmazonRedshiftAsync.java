@@ -145,6 +145,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAuthenticationProfileResult> createAuthenticationProfileAsync(CreateAuthenticationProfileRequest request) {
+
+        return createAuthenticationProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAuthenticationProfileResult> createAuthenticationProfileAsync(CreateAuthenticationProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAuthenticationProfileRequest, CreateAuthenticationProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);
@@ -322,6 +335,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUsageLimitRequest, CreateUsageLimitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAuthenticationProfileResult> deleteAuthenticationProfileAsync(DeleteAuthenticationProfileRequest request) {
+
+        return deleteAuthenticationProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAuthenticationProfileResult> deleteAuthenticationProfileAsync(DeleteAuthenticationProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAuthenticationProfileRequest, DeleteAuthenticationProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -530,6 +556,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAuthenticationProfilesResult> describeAuthenticationProfilesAsync(DescribeAuthenticationProfilesRequest request) {
+
+        return describeAuthenticationProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAuthenticationProfilesResult> describeAuthenticationProfilesAsync(DescribeAuthenticationProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAuthenticationProfilesRequest, DescribeAuthenticationProfilesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1426,6 +1465,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(ModifyAquaConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyAquaConfigurationRequest, ModifyAquaConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAuthenticationProfileResult> modifyAuthenticationProfileAsync(ModifyAuthenticationProfileRequest request) {
+
+        return modifyAuthenticationProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAuthenticationProfileResult> modifyAuthenticationProfileAsync(ModifyAuthenticationProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyAuthenticationProfileRequest, ModifyAuthenticationProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

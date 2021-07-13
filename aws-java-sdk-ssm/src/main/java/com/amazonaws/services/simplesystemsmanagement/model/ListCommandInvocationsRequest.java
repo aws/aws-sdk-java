@@ -59,7 +59,7 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * (Optional) If set this returns the response of the command executions and any command output. The default value
-     * is 'false'.
+     * is <code>false</code>.
      * </p>
      */
     private Boolean details;
@@ -306,12 +306,12 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * (Optional) If set this returns the response of the command executions and any command output. The default value
-     * is 'false'.
+     * is <code>false</code>.
      * </p>
      * 
      * @param details
      *        (Optional) If set this returns the response of the command executions and any command output. The default
-     *        value is 'false'.
+     *        value is <code>false</code>.
      */
 
     public void setDetails(Boolean details) {
@@ -321,11 +321,11 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * (Optional) If set this returns the response of the command executions and any command output. The default value
-     * is 'false'.
+     * is <code>false</code>.
      * </p>
      * 
      * @return (Optional) If set this returns the response of the command executions and any command output. The default
-     *         value is 'false'.
+     *         value is <code>false</code>.
      */
 
     public Boolean getDetails() {
@@ -335,12 +335,12 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * (Optional) If set this returns the response of the command executions and any command output. The default value
-     * is 'false'.
+     * is <code>false</code>.
      * </p>
      * 
      * @param details
      *        (Optional) If set this returns the response of the command executions and any command output. The default
-     *        value is 'false'.
+     *        value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +352,11 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * (Optional) If set this returns the response of the command executions and any command output. The default value
-     * is 'false'.
+     * is <code>false</code>.
      * </p>
      * 
      * @return (Optional) If set this returns the response of the command executions and any command output. The default
-     *         value is 'false'.
+     *         value is <code>false</code>.
      */
 
     public Boolean isDetails() {

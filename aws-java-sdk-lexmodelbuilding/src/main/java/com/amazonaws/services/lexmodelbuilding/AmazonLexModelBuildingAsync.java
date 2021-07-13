@@ -1319,6 +1319,70 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use
+     * this operation to view the migration alerts and warnings related to the migration.
+     * </p>
+     * 
+     * @param getMigrationRequest
+     * @return A Java Future containing the result of the GetMigration operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.GetMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMigrationResult> getMigrationAsync(GetMigrationRequest getMigrationRequest);
+
+    /**
+     * <p>
+     * Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use
+     * this operation to view the migration alerts and warnings related to the migration.
+     * </p>
+     * 
+     * @param getMigrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMigration operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.GetMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMigrationResult> getMigrationAsync(GetMigrationRequest getMigrationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMigrationRequest, GetMigrationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
+     * </p>
+     * 
+     * @param getMigrationsRequest
+     * @return A Java Future containing the result of the GetMigrations operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.GetMigrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMigrationsResult> getMigrationsAsync(GetMigrationsRequest getMigrationsRequest);
+
+    /**
+     * <p>
+     * Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
+     * </p>
+     * 
+     * @param getMigrationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMigrations operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.GetMigrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMigrationsResult> getMigrationsAsync(GetMigrationsRequest getMigrationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMigrationsRequest, GetMigrationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a specific version of a slot type. In addition to specifying the slot type name, you
      * must specify the slot type version.
      * </p>
@@ -1500,8 +1564,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * each version.
      * </p>
      * <p>
-     * If you set <code>childDirected</code> field to true when you created your bot, or if you opted out of
-     * participating in improving Amazon Lex, utterances are not available.
+     * If you set <code>childDirected</code> field to true when you created your bot, if you are using slot obfuscation
+     * with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not
+     * available.
      * </p>
      * <p>
      * This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
@@ -1537,8 +1602,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * each version.
      * </p>
      * <p>
-     * If you set <code>childDirected</code> field to true when you created your bot, or if you opted out of
-     * participating in improving Amazon Lex, utterances are not available.
+     * If you set <code>childDirected</code> field to true when you created your bot, if you are using slot obfuscation
+     * with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not
+     * available.
      * </p>
      * <p>
      * This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
@@ -1950,6 +2016,47 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      */
     java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest,
             com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of
+     * the new features of Amazon Lex V2.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in
+     * the <i>Amazon Lex developer guide</i>.
+     * </p>
+     * 
+     * @param startMigrationRequest
+     * @return A Java Future containing the result of the StartMigration operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.StartMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartMigrationResult> startMigrationAsync(StartMigrationRequest startMigrationRequest);
+
+    /**
+     * <p>
+     * Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of
+     * the new features of Amazon Lex V2.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in
+     * the <i>Amazon Lex developer guide</i>.
+     * </p>
+     * 
+     * @param startMigrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMigration operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.StartMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartMigrationResult> startMigrationAsync(StartMigrationRequest startMigrationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMigrationRequest, StartMigrationResult> asyncHandler);
 
     /**
      * <p>

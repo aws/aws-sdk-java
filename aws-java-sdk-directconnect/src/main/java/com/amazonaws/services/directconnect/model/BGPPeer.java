@@ -130,6 +130,8 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
     private String awsDeviceV2;
 
+    private String awsLogicalDeviceId;
+
     /**
      * <p>
      * The ID of the BGP peer.
@@ -1051,6 +1053,32 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param awsLogicalDeviceId
+     */
+
+    public void setAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        this.awsLogicalDeviceId = awsLogicalDeviceId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getAwsLogicalDeviceId() {
+        return this.awsLogicalDeviceId;
+    }
+
+    /**
+     * @param awsLogicalDeviceId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BGPPeer withAwsLogicalDeviceId(String awsLogicalDeviceId) {
+        setAwsLogicalDeviceId(awsLogicalDeviceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1079,7 +1107,9 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
         if (getBgpStatus() != null)
             sb.append("BgpStatus: ").append(getBgpStatus()).append(",");
         if (getAwsDeviceV2() != null)
-            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2());
+            sb.append("AwsDeviceV2: ").append(getAwsDeviceV2()).append(",");
+        if (getAwsLogicalDeviceId() != null)
+            sb.append("AwsLogicalDeviceId: ").append(getAwsLogicalDeviceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1130,6 +1160,10 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsDeviceV2() != null && other.getAwsDeviceV2().equals(this.getAwsDeviceV2()) == false)
             return false;
+        if (other.getAwsLogicalDeviceId() == null ^ this.getAwsLogicalDeviceId() == null)
+            return false;
+        if (other.getAwsLogicalDeviceId() != null && other.getAwsLogicalDeviceId().equals(this.getAwsLogicalDeviceId()) == false)
+            return false;
         return true;
     }
 
@@ -1147,6 +1181,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBgpPeerState() == null) ? 0 : getBgpPeerState().hashCode());
         hashCode = prime * hashCode + ((getBgpStatus() == null) ? 0 : getBgpStatus().hashCode());
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
+        hashCode = prime * hashCode + ((getAwsLogicalDeviceId() == null) ? 0 : getAwsLogicalDeviceId().hashCode());
         return hashCode;
     }
 

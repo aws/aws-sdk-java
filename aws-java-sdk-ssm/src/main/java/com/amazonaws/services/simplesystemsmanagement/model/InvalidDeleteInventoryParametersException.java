@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One or more of the parameters specified for the delete operation is not valid. Verify all parameters and try again.
+ * One or more of the parameters specified for the delete operation isn't valid. Verify all parameters and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

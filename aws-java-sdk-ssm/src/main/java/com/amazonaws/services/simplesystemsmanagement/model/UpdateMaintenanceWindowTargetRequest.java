@@ -45,8 +45,8 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      */
     private String ownerInformation;
@@ -64,8 +64,8 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
     private String description;
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also required
-     * for this API request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     * operation are also required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      */
     private Boolean replace;
@@ -225,13 +225,13 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this maintenance window.
+     *        User-provided value that will be included in any Amazon CloudWatch Events events raised while running
+     *        tasks for these targets in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -240,12 +240,12 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      * 
-     * @return User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *         targets in this maintenance window.
+     * @return User-provided value that will be included in any Amazon CloudWatch Events events raised while running
+     *         tasks for these targets in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -254,13 +254,13 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this maintenance window.
+     *        User-provided value that will be included in any Amazon CloudWatch Events events raised while running
+     *        tasks for these targets in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,13 +351,13 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also required
-     * for this API request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     * operation are also required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also
-     *        required for this API request. Optional fields that are not specified are set to null.
+     *        If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     *        operation are also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public void setReplace(Boolean replace) {
@@ -366,12 +366,12 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also required
-     * for this API request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     * operation are also required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also
-     *         required for this API request. Optional fields that are not specified are set to null.
+     * @return If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     *         operation are also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public Boolean getReplace() {
@@ -380,13 +380,13 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also required
-     * for this API request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     * operation are also required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also
-     *        required for this API request. Optional fields that are not specified are set to null.
+     *        If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     *        operation are also required for this API request. Optional fields that aren't specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,12 +397,12 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also required
-     * for this API request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     * operation are also required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also
-     *         required for this API request. Optional fields that are not specified are set to null.
+     * @return If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+     *         operation are also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public Boolean isReplace() {

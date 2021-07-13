@@ -144,6 +144,10 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                     context.nextToken();
                     virtualInterface.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     virtualInterface.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

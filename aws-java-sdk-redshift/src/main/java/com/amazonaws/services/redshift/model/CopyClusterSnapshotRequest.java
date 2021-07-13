@@ -89,7 +89,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Must be unique for the AWS account that is making the request.
+     * Must be unique for the account that is making the request.
      * </p>
      * </li>
      * </ul>
@@ -342,7 +342,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Must be unique for the AWS account that is making the request.
+     * Must be unique for the account that is making the request.
      * </p>
      * </li>
      * </ul>
@@ -375,7 +375,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for the AWS account that is making the request.
+     *        Must be unique for the account that is making the request.
      *        </p>
      *        </li>
      */
@@ -414,7 +414,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Must be unique for the AWS account that is making the request.
+     * Must be unique for the account that is making the request.
      * </p>
      * </li>
      * </ul>
@@ -446,7 +446,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique for the AWS account that is making the request.
+     *         Must be unique for the account that is making the request.
      *         </p>
      *         </li>
      */
@@ -485,7 +485,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Must be unique for the AWS account that is making the request.
+     * Must be unique for the account that is making the request.
      * </p>
      * </li>
      * </ul>
@@ -518,7 +518,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for the AWS account that is making the request.
+     *        Must be unique for the account that is making the request.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

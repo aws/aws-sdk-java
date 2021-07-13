@@ -47,22 +47,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private java.util.Map<String, OpsItemDataValue> operationalData;
@@ -92,7 +94,8 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * The source name can't contain the following strings: aws, amazon, and amzn.
+     * The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>
+     * .
      * </p>
      * </note>
      */
@@ -108,7 +111,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
      * policy that specifies tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -116,11 +119,13 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>Key=Department,Value=Finance</code>
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     * To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code>
+     * operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the
+     * <a>AddTagsToResource</a> operation.
      * </p>
-     * </note>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
@@ -258,22 +263,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Operational data is custom data that provides useful reference details about the OpsItem. For example,
@@ -281,23 +288,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has
      *         a maximum size of 20 KB.</p> <important>
      *         <p>
-     *         Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     *         /amzn, /ssm.
+     *         Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *         <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *         <code>/ssm</code>.
      *         </p>
      *         </important>
      *         <p>
      *         You can choose to make the data searchable by other users in the account or you can restrict search
      *         access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *         <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *         not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *         <a>GetOpsItem</a> API action).
+     *         <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *         isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *         <a>GetOpsItem</a> API operation).
      *         </p>
      *         <p>
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *         OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *         OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *         >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.Map<String, OpsItemDataValue> getOperationalData() {
@@ -313,22 +321,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -337,23 +347,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a
      *        maximum size of 20 KB.</p> <important>
      *        <p>
-     *        Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn,
-     *        /ssm.
+     *        Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *        <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *        <code>/ssm</code>.
      *        </p>
      *        </important>
      *        <p>
      *        You can choose to make the data searchable by other users in the account or you can restrict search
      *        access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *        <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *        not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *        isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *        <a>GetOpsItem</a> API operation).
      *        </p>
      *        <p>
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setOperationalData(java.util.Map<String, OpsItemDataValue> operationalData) {
@@ -369,22 +380,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -393,23 +406,24 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a
      *        maximum size of 20 KB.</p> <important>
      *        <p>
-     *        Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn,
-     *        /ssm.
+     *        Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *        <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *        <code>/ssm</code>.
      *        </p>
      *        </important>
      *        <p>
      *        You can choose to make the data searchable by other users in the account or you can restrict search
      *        access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *        <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *        not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *        isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *        <a>GetOpsItem</a> API operation).
      *        </p>
      *        <p>
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,14 +672,16 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * The source name can't contain the following strings: aws, amazon, and amzn.
+     * The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>
+     * .
      * </p>
      * </note>
      * 
      * @param source
      *        The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
      *        <p>
-     *        The source name can't contain the following strings: aws, amazon, and amzn.
+     *        The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and
+     *        <code>amzn</code>.
      *        </p>
      */
 
@@ -679,13 +695,15 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * The source name can't contain the following strings: aws, amazon, and amzn.
+     * The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>
+     * .
      * </p>
      * </note>
      * 
      * @return The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
      *         <p>
-     *         The source name can't contain the following strings: aws, amazon, and amzn.
+     *         The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and
+     *         <code>amzn</code>.
      *         </p>
      */
 
@@ -699,14 +717,16 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * The source name can't contain the following strings: aws, amazon, and amzn.
+     * The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>
+     * .
      * </p>
      * </note>
      * 
      * @param source
      *        The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
      *        <p>
-     *        The source name can't contain the following strings: aws, amazon, and amzn.
+     *        The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and
+     *        <code>amzn</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -761,7 +781,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
      * policy that specifies tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -769,25 +789,29 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>Key=Department,Value=Finance</code>
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     * To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code>
+     * operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the
+     * <a>AddTagsToResource</a> operation.
      * </p>
-     * </note>
+     * </important>
      * 
      * @return Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
      *         IAM policy that specifies tags. For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *         >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *         >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      *         <p>
      *         Tags use a key-value pair. For example:
      *         </p>
      *         <p>
      *         <code>Key=Department,Value=Finance</code>
      *         </p>
-     *         <note>
+     *         <important>
      *         <p>
-     *         To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     *         To add tags to a new OpsItem, a user must have IAM permissions for both the
+     *         <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add
+     *         tags to an existing OpsItem, use the <a>AddTagsToResource</a> operation.
      *         </p>
      */
 
@@ -803,7 +827,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
      * policy that specifies tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -811,26 +835,30 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>Key=Department,Value=Finance</code>
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     * To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code>
+     * operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the
+     * <a>AddTagsToResource</a> operation.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param tags
      *        Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
      *        IAM policy that specifies tags. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *        >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *        >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      *        <p>
      *        Tags use a key-value pair. For example:
      *        </p>
      *        <p>
      *        <code>Key=Department,Value=Finance</code>
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     *        To add tags to a new OpsItem, a user must have IAM permissions for both the
+     *        <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add
+     *        tags to an existing OpsItem, use the <a>AddTagsToResource</a> operation.
      *        </p>
      */
 
@@ -848,7 +876,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
      * policy that specifies tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -856,11 +884,13 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>Key=Department,Value=Finance</code>
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     * To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code>
+     * operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the
+     * <a>AddTagsToResource</a> operation.
      * </p>
-     * </note>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -871,16 +901,18 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
      *        IAM policy that specifies tags. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *        >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *        >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      *        <p>
      *        Tags use a key-value pair. For example:
      *        </p>
      *        <p>
      *        <code>Key=Department,Value=Finance</code>
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     *        To add tags to a new OpsItem, a user must have IAM permissions for both the
+     *        <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add
+     *        tags to an existing OpsItem, use the <a>AddTagsToResource</a> operation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -900,7 +932,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM
      * policy that specifies tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     * >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Tags use a key-value pair. For example:
@@ -908,26 +940,30 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>Key=Department,Value=Finance</code>
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     * To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code>
+     * operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the
+     * <a>AddTagsToResource</a> operation.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param tags
      *        Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline
      *        IAM policy that specifies tags. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions"
-     *        >Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *        >Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      *        <p>
      *        Tags use a key-value pair. For example:
      *        </p>
      *        <p>
      *        <code>Key=Department,Value=Finance</code>
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.
+     *        To add tags to a new OpsItem, a user must have IAM permissions for both the
+     *        <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add
+     *        tags to an existing OpsItem, use the <a>AddTagsToResource</a> operation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

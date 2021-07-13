@@ -44,7 +44,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a capability of
-     * AWS Systems Manager.
+     * Amazon Web Services Systems Manager.
      * </p>
      * <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -53,7 +53,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
     private String resourceType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.
      * </p>
      */
     private String resourceUri;
@@ -150,7 +150,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a capability of
-     * AWS Systems Manager.
+     * Amazon Web Services Systems Manager.
      * </p>
      * <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -161,7 +161,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      *        types:</p>
      *        <p>
      *        <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a
-     *        capability of AWS Systems Manager.
+     *        capability of Amazon Web Services Systems Manager.
      *        </p>
      *        <p>
      *        <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -177,7 +177,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a capability of
-     * AWS Systems Manager.
+     * Amazon Web Services Systems Manager.
      * </p>
      * <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -187,7 +187,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      *         types:</p>
      *         <p>
      *         <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a
-     *         capability of AWS Systems Manager.
+     *         capability of Amazon Web Services Systems Manager.
      *         </p>
      *         <p>
      *         <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -203,7 +203,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a capability of
-     * AWS Systems Manager.
+     * Amazon Web Services Systems Manager.
      * </p>
      * <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -214,7 +214,7 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
      *        types:</p>
      *        <p>
      *        <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a
-     *        capability of AWS Systems Manager.
+     *        capability of Amazon Web Services Systems Manager.
      *        </p>
      *        <p>
      *        <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.
@@ -228,11 +228,12 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.
      * </p>
      * 
      * @param resourceUri
-     *        The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
+     *        OpsItem.
      */
 
     public void setResourceUri(String resourceUri) {
@@ -241,10 +242,11 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
+     *         OpsItem.
      */
 
     public String getResourceUri() {
@@ -253,11 +255,12 @@ public class AssociateOpsItemRelatedItemRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.
      * </p>
      * 
      * @param resourceUri
-     *        The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the OpsItem.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
+     *        OpsItem.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

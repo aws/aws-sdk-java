@@ -56,14 +56,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private String snapshotId;
     /**
      * <p>
-     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
+     * An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed.
+     * This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      */
     private String installOverrideList;
@@ -94,7 +95,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
-     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * with a status of <code>InstalledRejected</code> were typically installed before they were added to a
      * <code>RejectedPatches</code> list.
      * </p>
      * <note>
@@ -121,8 +122,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer failedCount;
     /**
      * <p>
-     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
-     * to Systems Manager Inventory.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name
+     * to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      */
     private Integer unreportedNotApplicableCount;
@@ -148,9 +149,20 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private java.util.Date operationEndTime;
     /**
      * <p>
-     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     * <code>INSTALL</code> (install missing patches).
+     * The type of patching operation that was performed: or
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SCAN</code> assesses the patch compliance state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTALL</code> installs missing patches.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String operation;
     /**
@@ -165,22 +177,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      * <code>Scan</code> operations.
      * </p>
      * </note>
      * <ul>
      * <li>
      * <p>
-     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
-     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     * patches are detected with a status of <code>InstalledPendingReboot</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
-     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
-     * be in effect until a reboot is performed.
+     * <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     * Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches
+     * might not be in effect until a reboot is performed.
      * </p>
      * </li>
      * </ul>
@@ -188,24 +200,25 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private String rebootOption;
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer criticalNonCompliantCount;
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer securityNonCompliantCount;
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      */
     private Integer otherNonCompliantCount;
@@ -375,24 +388,27 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
+     * An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed.
+     * This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param installOverrideList
-     *        An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
-     *        list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
-     *        <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
+     *        An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be
+     *        installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in
+     *        the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch
+     *        baseline.</p>
      *        <p>
      *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *        >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems
+     *        Manager User Guide</i>.
      */
 
     public void setInstallOverrideList(String installOverrideList) {
@@ -401,23 +417,26 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
+     * An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed.
+     * This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
-     * @return An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
-     *         list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
-     *         <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
+     * @return An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be
+     *         installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in
+     *         the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch
+     *         baseline.</p>
      *         <p>
      *         For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *         >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems
+     *         Manager User Guide</i>.
      */
 
     public String getInstallOverrideList() {
@@ -426,24 +445,27 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
+     * An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed.
+     * This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param installOverrideList
-     *        An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
-     *        list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
-     *        <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
+     *        An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be
+     *        installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in
+     *        the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch
+     *        baseline.</p>
      *        <p>
      *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *        >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems
+     *        Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -615,7 +637,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
-     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * with a status of <code>InstalledRejected</code> were typically installed before they were added to a
      * <code>RejectedPatches</code> list.
      * </p>
      * <note>
@@ -627,8 +649,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * 
      * @param installedRejectedCount
      *        The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
-     *        Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
-     *        <code>RejectedPatches</code> list.</p> <note>
+     *        Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to
+     *        a <code>RejectedPatches</code> list.</p> <note>
      *        <p>
      *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
      *        value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
@@ -642,7 +664,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
-     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * with a status of <code>InstalledRejected</code> were typically installed before they were added to a
      * <code>RejectedPatches</code> list.
      * </p>
      * <note>
@@ -653,8 +675,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </note>
      * 
      * @return The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
-     *         Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
-     *         <code>RejectedPatches</code> list.</p> <note>
+     *         Patches with a status of <code>InstalledRejected</code> were typically installed before they were added
+     *         to a <code>RejectedPatches</code> list.</p> <note>
      *         <p>
      *         If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
      *         value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
@@ -668,7 +690,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
-     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * with a status of <code>InstalledRejected</code> were typically installed before they were added to a
      * <code>RejectedPatches</code> list.
      * </p>
      * <note>
@@ -680,8 +702,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * 
      * @param installedRejectedCount
      *        The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
-     *        Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
-     *        <code>RejectedPatches</code> list.</p> <note>
+     *        Patches with a status of <code>InstalledRejected</code> were typically installed before they were added to
+     *        a <code>RejectedPatches</code> list.</p> <note>
      *        <p>
      *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
      *        value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
@@ -788,13 +810,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
-     * to Systems Manager Inventory.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name
+     * to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param unreportedNotApplicableCount
-     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
-     *        by name to Systems Manager Inventory.
+     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported
+     *        by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      */
 
     public void setUnreportedNotApplicableCount(Integer unreportedNotApplicableCount) {
@@ -803,12 +825,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
-     * to Systems Manager Inventory.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name
+     * to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
-     * @return The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
-     *         by name to Systems Manager Inventory.
+     * @return The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported
+     *         by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      */
 
     public Integer getUnreportedNotApplicableCount() {
@@ -817,13 +839,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
-     * to Systems Manager Inventory.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported by name
+     * to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param unreportedNotApplicableCount
-     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
-     *        by name to Systems Manager Inventory.
+     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that aren't reported
+     *        by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -966,13 +988,34 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     * <code>INSTALL</code> (install missing patches).
+     * The type of patching operation that was performed: or
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SCAN</code> assesses the patch compliance state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTALL</code> installs missing patches.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operation
-     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     *        <code>INSTALL</code> (install missing patches).
+     *        The type of patching operation that was performed: or </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SCAN</code> assesses the patch compliance state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTALL</code> installs missing patches.
+     *        </p>
+     *        </li>
      * @see PatchOperationType
      */
 
@@ -982,12 +1025,33 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     * <code>INSTALL</code> (install missing patches).
+     * The type of patching operation that was performed: or
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SCAN</code> assesses the patch compliance state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTALL</code> installs missing patches.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     *         <code>INSTALL</code> (install missing patches).
+     * @return The type of patching operation that was performed: or </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SCAN</code> assesses the patch compliance state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INSTALL</code> installs missing patches.
+     *         </p>
+     *         </li>
      * @see PatchOperationType
      */
 
@@ -997,13 +1061,34 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     * <code>INSTALL</code> (install missing patches).
+     * The type of patching operation that was performed: or
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SCAN</code> assesses the patch compliance state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTALL</code> installs missing patches.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operation
-     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     *        <code>INSTALL</code> (install missing patches).
+     *        The type of patching operation that was performed: or </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SCAN</code> assesses the patch compliance state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTALL</code> installs missing patches.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchOperationType
      */
@@ -1015,13 +1100,34 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     * <code>INSTALL</code> (install missing patches).
+     * The type of patching operation that was performed: or
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SCAN</code> assesses the patch compliance state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTALL</code> installs missing patches.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operation
-     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     *        <code>INSTALL</code> (install missing patches).
+     *        The type of patching operation that was performed: or </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SCAN</code> assesses the patch compliance state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTALL</code> installs missing patches.
+     *        </p>
+     *        </li>
      * @see PatchOperationType
      */
 
@@ -1031,13 +1137,34 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     * <code>INSTALL</code> (install missing patches).
+     * The type of patching operation that was performed: or
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SCAN</code> assesses the patch compliance state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTALL</code> installs missing patches.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operation
-     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
-     *        <code>INSTALL</code> (install missing patches).
+     *        The type of patching operation that was performed: or </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SCAN</code> assesses the patch compliance state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTALL</code> installs missing patches.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchOperationType
      */
@@ -1096,22 +1223,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      * <code>Scan</code> operations.
      * </p>
      * </note>
      * <ul>
      * <li>
      * <p>
-     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
-     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     * patches are detected with a status of <code>InstalledPendingReboot</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
-     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
-     * be in effect until a reboot is performed.
+     * <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     * Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches
+     * might not be in effect until a reboot is performed.
      * </p>
      * </li>
      * </ul>
@@ -1119,22 +1246,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * @param rebootOption
      *        Indicates the reboot option specified in the patch baseline.</p> <note>
      *        <p>
-     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      *        <code>Scan</code> operations.
      *        </p>
      *        </note>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
-     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if
+     *        any patches are detected with a status of <code>InstalledPendingReboot</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
-     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
-     *        patches might not be in effect until a reboot is performed.
+     *        <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the
+     *        system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>.
+     *        These patches might not be in effect until a reboot is performed.
      *        </p>
      *        </li>
      * @see RebootOption
@@ -1150,44 +1277,44 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      * <code>Scan</code> operations.
      * </p>
      * </note>
      * <ul>
      * <li>
      * <p>
-     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
-     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     * patches are detected with a status of <code>InstalledPendingReboot</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
-     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
-     * be in effect until a reboot is performed.
+     * <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     * Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches
+     * might not be in effect until a reboot is performed.
      * </p>
      * </li>
      * </ul>
      * 
      * @return Indicates the reboot option specified in the patch baseline.</p> <note>
      *         <p>
-     *         Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *         Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      *         <code>Scan</code> operations.
      *         </p>
      *         </note>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
-     *         patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *         <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or
+     *         if any patches are detected with a status of <code>InstalledPendingReboot</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
-     *         Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
-     *         patches might not be in effect until a reboot is performed.
+     *         <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the
+     *         system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>.
+     *         These patches might not be in effect until a reboot is performed.
      *         </p>
      *         </li>
      * @see RebootOption
@@ -1203,22 +1330,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      * <code>Scan</code> operations.
      * </p>
      * </note>
      * <ul>
      * <li>
      * <p>
-     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
-     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     * patches are detected with a status of <code>InstalledPendingReboot</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
-     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
-     * be in effect until a reboot is performed.
+     * <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     * Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches
+     * might not be in effect until a reboot is performed.
      * </p>
      * </li>
      * </ul>
@@ -1226,22 +1353,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * @param rebootOption
      *        Indicates the reboot option specified in the patch baseline.</p> <note>
      *        <p>
-     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      *        <code>Scan</code> operations.
      *        </p>
      *        </note>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
-     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if
+     *        any patches are detected with a status of <code>InstalledPendingReboot</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
-     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
-     *        patches might not be in effect until a reboot is performed.
+     *        <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the
+     *        system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>.
+     *        These patches might not be in effect until a reboot is performed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1259,22 +1386,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      * <code>Scan</code> operations.
      * </p>
      * </note>
      * <ul>
      * <li>
      * <p>
-     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
-     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     * patches are detected with a status of <code>InstalledPendingReboot</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
-     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
-     * be in effect until a reboot is performed.
+     * <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     * Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches
+     * might not be in effect until a reboot is performed.
      * </p>
      * </li>
      * </ul>
@@ -1282,22 +1409,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * @param rebootOption
      *        Indicates the reboot option specified in the patch baseline.</p> <note>
      *        <p>
-     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      *        <code>Scan</code> operations.
      *        </p>
      *        </note>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
-     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if
+     *        any patches are detected with a status of <code>InstalledPendingReboot</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
-     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
-     *        patches might not be in effect until a reboot is performed.
+     *        <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the
+     *        system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>.
+     *        These patches might not be in effect until a reboot is performed.
      *        </p>
      *        </li>
      * @see RebootOption
@@ -1313,22 +1440,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      * <code>Scan</code> operations.
      * </p>
      * </note>
      * <ul>
      * <li>
      * <p>
-     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
-     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     * patches are detected with a status of <code>InstalledPendingReboot</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
-     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
-     * be in effect until a reboot is performed.
+     * <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     * Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches
+     * might not be in effect until a reboot is performed.
      * </p>
      * </li>
      * </ul>
@@ -1336,22 +1463,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * @param rebootOption
      *        Indicates the reboot option specified in the patch baseline.</p> <note>
      *        <p>
-     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager
      *        <code>Scan</code> operations.
      *        </p>
      *        </note>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
-     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed any patches, or if
+     *        any patches are detected with a status of <code>InstalledPendingReboot</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
-     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
-     *        patches might not be in effect until a reboot is performed.
+     *        <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the
+     *        system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>.
+     *        These patches might not be in effect until a reboot is performed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1365,15 +1492,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param criticalNonCompliantCount
-     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
-     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
-     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        The number of instances where patches that are specified as <code>Critical</code> for compliance reporting
+     *        in the patch baseline aren't installed. These patches might be missing, have failed installation, were
+     *        rejected, or were installed but awaiting a required instance reboot. The status of these instances is
      *        <code>NON_COMPLIANT</code>.
      */
 
@@ -1383,15 +1510,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances where patches that are specified as "Critical" for compliance reporting in the
-     *         patch baseline are not installed. These patches might be missing, have failed installation, were
-     *         rejected, or were installed but awaiting a required instance reboot. The status of these instances is
-     *         <code>NON_COMPLIANT</code>.
+     * @return The number of instances where patches that are specified as <code>Critical</code> for compliance
+     *         reporting in the patch baseline aren't installed. These patches might be missing, have failed
+     *         installation, were rejected, or were installed but awaiting a required instance reboot. The status of
+     *         these instances is <code>NON_COMPLIANT</code>.
      */
 
     public Integer getCriticalNonCompliantCount() {
@@ -1400,15 +1527,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
-     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * The number of instances where patches that are specified as <code>Critical</code> for compliance reporting in the
+     * patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were
      * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param criticalNonCompliantCount
-     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
-     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
-     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        The number of instances where patches that are specified as <code>Critical</code> for compliance reporting
+     *        in the patch baseline aren't installed. These patches might be missing, have failed installation, were
+     *        rejected, or were installed but awaiting a required instance reboot. The status of these instances is
      *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1420,15 +1547,16 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param securityNonCompliantCount
-     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
-     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     *        The number of instances where patches that are specified as <code>Security</code> in a patch advisory
+     *        aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     *        installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      */
 
     public void setSecurityNonCompliantCount(Integer securityNonCompliantCount) {
@@ -1437,14 +1565,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances where patches that are specified as "Security" in a patch advisory are not
-     *         installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     *         awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * @return The number of instances where patches that are specified as <code>Security</code> in a patch advisory
+     *         aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     *         installed but awaiting a required instance reboot. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
      */
 
     public Integer getSecurityNonCompliantCount() {
@@ -1453,15 +1582,16 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
-     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
-     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * The number of instances where patches that are specified as <code>Security</code> in a patch advisory aren't
+     * installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param securityNonCompliantCount
-     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
-     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
-     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     *        The number of instances where patches that are specified as <code>Security</code> in a patch advisory
+     *        aren't installed. These patches might be missing, have failed installation, were rejected, or were
+     *        installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1472,13 +1602,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param otherNonCompliantCount
-     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
-     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     *        The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     *        <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      */
 
     public void setOtherNonCompliantCount(Integer otherNonCompliantCount) {
@@ -1487,12 +1619,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return The number of instances with patches installed that are specified as other than "Critical" or "Security"
-     *         but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * @return The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     *         <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
      */
 
     public Integer getOtherNonCompliantCount() {
@@ -1501,13 +1635,15 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
-     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     * <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param otherNonCompliantCount
-     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
-     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     *        The number of instances with patches installed that are specified as other than <code>Critical</code> or
+     *        <code>Security</code> but aren't compliant with the patch baseline. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

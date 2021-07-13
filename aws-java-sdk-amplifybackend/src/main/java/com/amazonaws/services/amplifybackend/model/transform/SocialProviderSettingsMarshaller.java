@@ -33,6 +33,8 @@ public class SocialProviderSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Google").build();
     private static final MarshallingInfo<StructuredPojo> LOGINWITHAMAZON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoginWithAmazon").build();
+    private static final MarshallingInfo<StructuredPojo> SIGNINWITHAPPLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SignInWithApple").build();
 
     private static final SocialProviderSettingsMarshaller instance = new SocialProviderSettingsMarshaller();
 
@@ -53,6 +55,7 @@ public class SocialProviderSettingsMarshaller {
             protocolMarshaller.marshall(socialProviderSettings.getFacebook(), FACEBOOK_BINDING);
             protocolMarshaller.marshall(socialProviderSettings.getGoogle(), GOOGLE_BINDING);
             protocolMarshaller.marshall(socialProviderSettings.getLoginWithAmazon(), LOGINWITHAMAZON_BINDING);
+            protocolMarshaller.marshall(socialProviderSettings.getSignInWithApple(), SIGNINWITHAPPLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

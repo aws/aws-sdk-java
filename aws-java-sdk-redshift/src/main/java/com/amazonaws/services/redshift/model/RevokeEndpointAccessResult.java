@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS
+ * Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across
  * accounts.
  * </p>
  * 
@@ -29,13 +29,13 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the cluster owner.
+     * The account ID of the cluster owner.
      * </p>
      */
     private String grantor;
     /**
      * <p>
-     * The AWS account ID of the grantee of the cluster.
+     * The account ID of the grantee of the cluster.
      * </p>
      */
     private String grantee;
@@ -84,11 +84,11 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the cluster owner.
+     * The account ID of the cluster owner.
      * </p>
      * 
      * @param grantor
-     *        The AWS account ID of the cluster owner.
+     *        The account ID of the cluster owner.
      */
 
     public void setGrantor(String grantor) {
@@ -97,10 +97,10 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the cluster owner.
+     * The account ID of the cluster owner.
      * </p>
      * 
-     * @return The AWS account ID of the cluster owner.
+     * @return The account ID of the cluster owner.
      */
 
     public String getGrantor() {
@@ -109,11 +109,11 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the cluster owner.
+     * The account ID of the cluster owner.
      * </p>
      * 
      * @param grantor
-     *        The AWS account ID of the cluster owner.
+     *        The account ID of the cluster owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the grantee of the cluster.
+     * The account ID of the grantee of the cluster.
      * </p>
      * 
      * @param grantee
-     *        The AWS account ID of the grantee of the cluster.
+     *        The account ID of the grantee of the cluster.
      */
 
     public void setGrantee(String grantee) {
@@ -137,10 +137,10 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the grantee of the cluster.
+     * The account ID of the grantee of the cluster.
      * </p>
      * 
-     * @return The AWS account ID of the grantee of the cluster.
+     * @return The account ID of the grantee of the cluster.
      */
 
     public String getGrantee() {
@@ -149,11 +149,11 @@ public class RevokeEndpointAccessResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS account ID of the grantee of the cluster.
+     * The account ID of the grantee of the cluster.
      * </p>
      * 
      * @param grantee
-     *        The AWS account ID of the grantee of the cluster.
+     *        The account ID of the grantee of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -93,14 +93,15 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      */
     private String ownerInformation;
@@ -292,7 +293,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @return The targets to register with the maintenance window. In other words, the instances to run commands on
@@ -348,7 +350,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *         <p>
      *         For more information about these examples formats, including the best use case for each one, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *         >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager
+     *         User Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -414,7 +417,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param targets
@@ -471,7 +475,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *        >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -539,7 +544,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -601,7 +607,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *        >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,7 +678,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param targets
@@ -728,7 +736,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *        >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,13 +748,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this maintenance window.
+     *        User-provided value that will be included in any Amazon CloudWatch Events events raised while running
+     *        tasks for these targets in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -754,12 +763,12 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      * 
-     * @return User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *         targets in this maintenance window.
+     * @return User-provided value that will be included in any Amazon CloudWatch Events events raised while running
+     *         tasks for these targets in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -768,13 +777,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this maintenance window.
+     * User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for
+     * these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this maintenance window.
+     *        User-provided value that will be included in any Amazon CloudWatch Events events raised while running
+     *        tasks for these targets in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

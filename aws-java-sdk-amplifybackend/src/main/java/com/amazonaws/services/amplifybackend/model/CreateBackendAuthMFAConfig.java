@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool configured
- * as a part of your Amplify project.
+ * Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a
+ * part of your Amplify project.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthMFAConfig"
@@ -31,7 +31,7 @@ public class CreateBackendAuthMFAConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     * Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * </p>
      */
     private String mFAMode;
@@ -44,11 +44,11 @@ public class CreateBackendAuthMFAConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     * Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * </p>
      * 
      * @param mFAMode
-     *        Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     *        Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * @see MFAMode
      */
 
@@ -58,10 +58,10 @@ public class CreateBackendAuthMFAConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     * Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * </p>
      * 
-     * @return Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     * @return Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * @see MFAMode
      */
 
@@ -71,11 +71,11 @@ public class CreateBackendAuthMFAConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     * Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * </p>
      * 
      * @param mFAMode
-     *        Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     *        Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MFAMode
      */
@@ -87,11 +87,11 @@ public class CreateBackendAuthMFAConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     * Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * </p>
      * 
      * @param mFAMode
-     *        Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.
+     *        Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MFAMode
      */

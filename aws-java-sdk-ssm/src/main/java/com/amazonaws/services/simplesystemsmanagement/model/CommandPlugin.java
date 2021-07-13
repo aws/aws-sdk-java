@@ -30,8 +30,9 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>,
+     * <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>,
+     * <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>.
      * </p>
      */
     private String name;
@@ -43,21 +44,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
-     * than Status. For more information about these statuses, see <a
+     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
-     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+     * following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending: The command has not been sent to the instance.
+     * Pending: The command hasn't been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      * </p>
      * </li>
      * <li>
@@ -67,22 +69,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
-     * command status is Success or Incomplete. This is a terminal state.
+     * Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether
+     * the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before the
+     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
+     * command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
-     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code wasn't
+     * zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero.
      * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
@@ -133,22 +135,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String output;
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
-     * not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command
+     * wasn't specified, then this string is empty.
      * </p>
      */
     private String standardOutputUrl;
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then this string
+     * The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string
      * is empty.
      * </p>
      */
     private String standardErrorUrl;
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the S3 bucket region.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the S3 bucket region.
      * </p>
      */
     private String outputS3Region;
@@ -158,19 +160,19 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      */
     private String outputS3BucketName;
@@ -180,32 +182,35 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      */
     private String outputS3KeyPrefix;
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>,
+     * <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>,
+     * <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>.
      * </p>
      * 
      * @param name
-     *        The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     *        The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
+     *        <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>,
+     *        <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or
+     *        <code>aws:updateSSMAgent</code>.
      */
 
     public void setName(String name) {
@@ -214,12 +219,15 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>,
+     * <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>,
+     * <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>.
      * </p>
      * 
-     * @return The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     *         aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * @return The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
+     *         <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>,
+     *         <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or
+     *         <code>aws:updateSSMAgent</code>.
      */
 
     public String getName() {
@@ -228,13 +236,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     * aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>,
+     * <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>,
+     * <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>.
      * </p>
      * 
      * @param name
-     *        The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin, aws:applications,
-     *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     *        The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
+     *        <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>,
+     *        <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or
+     *        <code>aws:updateSSMAgent</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,21 +329,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
-     * than Status. For more information about these statuses, see <a
+     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
-     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+     * following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending: The command has not been sent to the instance.
+     * Pending: The command hasn't been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      * </p>
      * </li>
      * <li>
@@ -342,22 +354,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
-     * command status is Success or Incomplete. This is a terminal state.
+     * Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether
+     * the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before the
+     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
+     * command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
-     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code wasn't
+     * zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero.
      * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
@@ -382,21 +394,21 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
-     *        results than Status. For more information about these statuses, see <a
+     *        A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
+     *        Status because it includes states resulting from error and concurrency control parameters. StatusDetails
+     *        can show different results than Status. For more information about these statuses, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
-     *        following values:</p>
+     *        command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be
+     *        one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: The command has not been sent to the instance.
+     *        Pending: The command hasn't been sent to the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: The command has been sent to the instance but has not reached a terminal state.
+     *        In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -406,23 +418,23 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
-     *        Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
-     *        whether the parent command status is Success or Incomplete. This is a terminal state.
+     *        Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired.
+     *        Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do
+     *        contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out: Command execution started on the instance, but the execution was not complete before
-     *        the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
-     *        This is a terminal state.
+     *        Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before
+     *        the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
+     *        parent command. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The command was not successful on the instance. For a plugin, this indicates that the result code
-     *        was not zero. For a command invocation, this indicates that the result code for one or more plugins was
-     *        not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
+     *        Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code
+     *        wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't
+     *        zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
      *        state.
      *        </p>
      *        </li>
@@ -453,21 +465,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
-     * than Status. For more information about these statuses, see <a
+     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
-     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+     * following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending: The command has not been sent to the instance.
+     * Pending: The command hasn't been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      * </p>
      * </li>
      * <li>
@@ -477,22 +490,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
-     * command status is Success or Incomplete. This is a terminal state.
+     * Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether
+     * the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before the
+     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
+     * command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
-     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code wasn't
+     * zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero.
      * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
@@ -516,21 +529,21 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     *         includes states resulting from error and concurrency control parameters. StatusDetails can show different
-     *         results than Status. For more information about these statuses, see <a
+     * @return A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
+     *         Status because it includes states resulting from error and concurrency control parameters. StatusDetails
+     *         can show different results than Status. For more information about these statuses, see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *         command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
-     *         following values:</p>
+     *         command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be
+     *         one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Pending: The command has not been sent to the instance.
+     *         Pending: The command hasn't been sent to the instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress: The command has been sent to the instance but has not reached a terminal state.
+     *         In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      *         </p>
      *         </li>
      *         <li>
@@ -540,23 +553,23 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
-     *         Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
-     *         whether the parent command status is Success or Incomplete. This is a terminal state.
+     *         Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired.
+     *         Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do
+     *         contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Execution Timed Out: Command execution started on the instance, but the execution was not complete before
-     *         the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent
-     *         command. This is a terminal state.
+     *         Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before
+     *         the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
+     *         parent command. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: The command was not successful on the instance. For a plugin, this indicates that the result code
-     *         was not zero. For a command invocation, this indicates that the result code for one or more plugins was
-     *         not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
+     *         Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code
+     *         wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't
+     *         zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
      *         state.
      *         </p>
      *         </li>
@@ -587,21 +600,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
-     * than Status. For more information about these statuses, see <a
+     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
-     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+     * following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending: The command has not been sent to the instance.
+     * Pending: The command hasn't been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      * </p>
      * </li>
      * <li>
@@ -611,22 +625,22 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
-     * command status is Success or Incomplete. This is a terminal state.
+     * Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether
+     * the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
-     * terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before the
+     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
+     * command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
-     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code wasn't
+     * zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero.
      * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
@@ -651,21 +665,21 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
-     *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
-     *        results than Status. For more information about these statuses, see <a
+     *        A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
+     *        Status because it includes states resulting from error and concurrency control parameters. StatusDetails
+     *        can show different results than Status. For more information about these statuses, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
-     *        following values:</p>
+     *        command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be
+     *        one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: The command has not been sent to the instance.
+     *        Pending: The command hasn't been sent to the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: The command has been sent to the instance but has not reached a terminal state.
+     *        In Progress: The command has been sent to the instance but hasn't reached a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -675,23 +689,23 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
-     *        Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
-     *        whether the parent command status is Success or Incomplete. This is a terminal state.
+     *        Delivery Timed Out: The command wasn't delivered to the instance before the delivery timeout expired.
+     *        Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do
+     *        contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out: Command execution started on the instance, but the execution was not complete before
-     *        the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
-     *        This is a terminal state.
+     *        Execution Timed Out: Command execution started on the instance, but the execution wasn't complete before
+     *        the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
+     *        parent command. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The command was not successful on the instance. For a plugin, this indicates that the result code
-     *        was not zero. For a command invocation, this indicates that the result code for one or more plugins was
-     *        not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
+     *        Failed: The command wasn't successful on the instance. For a plugin, this indicates that the result code
+     *        wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't
+     *        zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
      *        state.
      *        </p>
      *        </li>
@@ -884,13 +898,13 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
-     * not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command
+     * wasn't specified, then this string is empty.
      * </p>
      * 
      * @param standardOutputUrl
      *        The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the
-     *        command was not specified, then this string is empty.
+     *        command wasn't specified, then this string is empty.
      */
 
     public void setStandardOutputUrl(String standardOutputUrl) {
@@ -899,12 +913,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
-     * not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command
+     * wasn't specified, then this string is empty.
      * </p>
      * 
      * @return The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the
-     *         command was not specified, then this string is empty.
+     *         command wasn't specified, then this string is empty.
      */
 
     public String getStandardOutputUrl() {
@@ -913,13 +927,13 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
-     * not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command
+     * wasn't specified, then this string is empty.
      * </p>
      * 
      * @param standardOutputUrl
      *        The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the
-     *        command was not specified, then this string is empty.
+     *        command wasn't specified, then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -930,12 +944,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then this string
+     * The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string
      * is empty.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then this
+     *        The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this
      *        string is empty.
      */
 
@@ -945,12 +959,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then this string
+     * The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string
      * is empty.
      * </p>
      * 
-     * @return The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then
-     *         this string is empty.
+     * @return The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this
+     *         string is empty.
      */
 
     public String getStandardErrorUrl() {
@@ -959,12 +973,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then this string
+     * The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string
      * is empty.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL for the complete text written by the plugin to stderr. If execution is not yet complete, then this
+     *        The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this
      *        string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -976,13 +990,13 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the S3 bucket region.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the S3 bucket region.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     *        Systems Manager automatically determines the S3 bucket region.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -991,12 +1005,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the S3 bucket region.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the S3 bucket region.
      * </p>
      * 
-     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *         automatically determines the S3 bucket region.
+     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web
+     *         Services Systems Manager automatically determines the S3 bucket region.
      */
 
     public String getOutputS3Region() {
@@ -1005,13 +1019,13 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the S3 bucket region.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the S3 bucket region.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     *        Systems Manager automatically determines the S3 bucket region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1026,38 +1040,38 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should be stored. This was requested when
      *        issuing the command. For example, in the following response:</p>
      *        <p>
-     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     *        <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      *        </p>
      *        <p>
-     *        doc-example-bucket is the name of the S3 bucket;
+     *        <code>doc-example-bucket</code> is the name of the S3 bucket;
      *        </p>
      *        <p>
-     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-02573cafcfEXAMPLE is the instance ID;
+     *        <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      *        </p>
      *        <p>
-     *        awsrunShellScript is the name of the plugin.
+     *        <code>awsrunShellScript</code> is the name of the plugin.
      */
 
     public void setOutputS3BucketName(String outputS3BucketName) {
@@ -1070,37 +1084,37 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      * 
      * @return The S3 bucket where the responses to the command executions should be stored. This was requested when
      *         issuing the command. For example, in the following response:</p>
      *         <p>
-     *         doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     *         <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      *         </p>
      *         <p>
-     *         doc-example-bucket is the name of the S3 bucket;
+     *         <code>doc-example-bucket</code> is the name of the S3 bucket;
      *         </p>
      *         <p>
-     *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     *         <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      *         </p>
      *         <p>
-     *         i-02573cafcfEXAMPLE is the instance ID;
+     *         <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      *         </p>
      *         <p>
-     *         awsrunShellScript is the name of the plugin.
+     *         <code>awsrunShellScript</code> is the name of the plugin.
      */
 
     public String getOutputS3BucketName() {
@@ -1113,38 +1127,38 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should be stored. This was requested when
      *        issuing the command. For example, in the following response:</p>
      *        <p>
-     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     *        <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      *        </p>
      *        <p>
-     *        doc-example-bucket is the name of the S3 bucket;
+     *        <code>doc-example-bucket</code> is the name of the S3 bucket;
      *        </p>
      *        <p>
-     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-02573cafcfEXAMPLE is the instance ID;
+     *        <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      *        </p>
      *        <p>
-     *        awsrunShellScript is the name of the plugin.
+     *        <code>awsrunShellScript</code> is the name of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1159,38 +1173,38 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *        This was requested when issuing the command. For example, in the following response:</p>
      *        <p>
-     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     *        <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      *        </p>
      *        <p>
-     *        doc-example-bucket is the name of the S3 bucket;
+     *        <code>doc-example-bucket</code> is the name of the S3 bucket;
      *        </p>
      *        <p>
-     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-02573cafcfEXAMPLE is the instance ID;
+     *        <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      *        </p>
      *        <p>
-     *        awsrunShellScript is the name of the plugin.
+     *        <code>awsrunShellScript</code> is the name of the plugin.
      */
 
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
@@ -1203,37 +1217,37 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      * 
      * @return The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *         This was requested when issuing the command. For example, in the following response:</p>
      *         <p>
-     *         doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     *         <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      *         </p>
      *         <p>
-     *         doc-example-bucket is the name of the S3 bucket;
+     *         <code>doc-example-bucket</code> is the name of the S3 bucket;
      *         </p>
      *         <p>
-     *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     *         <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      *         </p>
      *         <p>
-     *         i-02573cafcfEXAMPLE is the instance ID;
+     *         <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      *         </p>
      *         <p>
-     *         awsrunShellScript is the name of the plugin.
+     *         <code>awsrunShellScript</code> is the name of the plugin.
      */
 
     public String getOutputS3KeyPrefix() {
@@ -1246,38 +1260,38 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     * <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      * </p>
      * <p>
-     * doc-example-bucket is the name of the S3 bucket;
+     * <code>doc-example-bucket</code> is the name of the S3 bucket;
      * </p>
      * <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-02573cafcfEXAMPLE is the instance ID;
+     * <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      * </p>
      * <p>
-     * awsrunShellScript is the name of the plugin.
+     * <code>awsrunShellScript</code> is the name of the plugin.
      * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *        This was requested when issuing the command. For example, in the following response:</p>
      *        <p>
-     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
+     *        <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
      *        </p>
      *        <p>
-     *        doc-example-bucket is the name of the S3 bucket;
+     *        <code>doc-example-bucket</code> is the name of the S3 bucket;
      *        </p>
      *        <p>
-     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
+     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-02573cafcfEXAMPLE is the instance ID;
+     *        <code>i-02573cafcfEXAMPLE</code> is the instance ID;
      *        </p>
      *        <p>
-     *        awsrunShellScript is the name of the plugin.
+     *        <code>awsrunShellScript</code> is the name of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

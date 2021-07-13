@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a
- * particular patch baseline. The approval state includes information about whether the patch is currently approved, due
- * to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
+ * The <code>EffectivePatch</code> structure defines metadata about a patch along with the approval state of the patch
+ * in a particular patch baseline. The approval state includes information about whether the patch is currently
+ * approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or
+ * will be approved.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/EffectivePatch" target="_top">AWS API

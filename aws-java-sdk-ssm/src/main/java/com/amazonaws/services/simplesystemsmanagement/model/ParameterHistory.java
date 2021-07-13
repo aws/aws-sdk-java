@@ -54,7 +54,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      */
     private String lastModifiedUser;
@@ -103,7 +103,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy> policies;
@@ -310,11 +310,11 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      * 
      * @param lastModifiedUser
-     *        Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     *        Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      */
 
     public void setLastModifiedUser(String lastModifiedUser) {
@@ -323,10 +323,10 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * @return Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      */
 
     public String getLastModifiedUser() {
@@ -335,11 +335,11 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      * 
      * @param lastModifiedUser
-     *        Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     *        Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,13 +675,13 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Information about the policies assigned to a parameter.</p>
      *         <p>
      *         <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
-     *         Assigning parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.List<ParameterInlinePolicy> getPolicies() {
@@ -697,14 +697,14 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param policies
      *        Information about the policies assigned to a parameter.</p>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
-     *        Assigning parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setPolicies(java.util.Collection<ParameterInlinePolicy> policies) {
@@ -722,7 +722,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -734,7 +734,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      *        Information about the policies assigned to a parameter.</p>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
-     *        Assigning parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -754,14 +754,14 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param policies
      *        Information about the policies assigned to a parameter.</p>
      *        <p>
      *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
-     *        Assigning parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -981,6 +981,49 @@ public interface AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use
+     * this operation to view the migration alerts and warnings related to the migration.
+     * </p>
+     * 
+     * @param getMigrationRequest
+     * @return Result of the GetMigration operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @sample AmazonLexModelBuilding.GetMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMigrationResult getMigration(GetMigrationRequest getMigrationRequest);
+
+    /**
+     * <p>
+     * Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
+     * </p>
+     * 
+     * @param getMigrationsRequest
+     * @return Result of the GetMigrations operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.GetMigrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMigrationsResult getMigrations(GetMigrationsRequest getMigrationsRequest);
+
+    /**
+     * <p>
      * Returns information about a specific version of a slot type. In addition to specifying the slot type name, you
      * must specify the slot type version.
      * </p>
@@ -1101,8 +1144,9 @@ public interface AmazonLexModelBuilding {
      * each version.
      * </p>
      * <p>
-     * If you set <code>childDirected</code> field to true when you created your bot, or if you opted out of
-     * participating in improving Amazon Lex, utterances are not available.
+     * If you set <code>childDirected</code> field to true when you created your bot, if you are using slot obfuscation
+     * with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not
+     * available.
      * </p>
      * <p>
      * This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
@@ -1368,6 +1412,36 @@ public interface AmazonLexModelBuilding {
      *      Documentation</a>
      */
     StartImportResult startImport(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
+     * Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of
+     * the new features of Amazon Lex V2.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in
+     * the <i>Amazon Lex developer guide</i>.
+     * </p>
+     * 
+     * @param startMigrationRequest
+     * @return Result of the StartMigration operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @throws AccessDeniedException
+     *         Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required to migrate your
+     *         bot.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @sample AmazonLexModelBuilding.StartMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartMigrationResult startMigration(StartMigrationRequest startMigrationRequest);
 
     /**
      * <p>

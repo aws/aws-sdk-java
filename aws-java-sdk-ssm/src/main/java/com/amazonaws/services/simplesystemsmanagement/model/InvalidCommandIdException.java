@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified command ID is not valid. Verify the ID and try again.
+ * The specified command ID isn't valid. Verify the ID and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The signal is not valid for the current Automation execution.
+ * The signal isn't valid for the current Automation execution.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

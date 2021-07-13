@@ -32,25 +32,23 @@ public class ParameterStringFilter implements Serializable, Cloneable, Structure
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
      * <p>
      * The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     * <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be
-     * used with both actions.
+     * <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for <code>Key</code> can
+     * be used with both operations.
      * </p>
      * <p>
      * For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
      * </p>
      * <p>
-     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      * <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      * </p>
      * <p>
-     * For examples of CLI commands demonstrating valid parameter filter constructions, see <a
+     * For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems
-     * Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
-     * </note>
      */
     private String key;
     /**
@@ -78,46 +76,43 @@ public class ParameterStringFilter implements Serializable, Cloneable, Structure
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
      * <p>
      * The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     * <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be
-     * used with both actions.
+     * <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for <code>Key</code> can
+     * be used with both operations.
      * </p>
      * <p>
      * For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
      * </p>
      * <p>
-     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      * <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      * </p>
      * <p>
-     * For examples of CLI commands demonstrating valid parameter filter constructions, see <a
+     * For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems
-     * Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
-     * </note>
      * 
      * @param key
-     *        The name of the filter.</p> <note>
+     *        The name of the filter.</p>
      *        <p>
      *        The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     *        <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code>
-     *        can be used with both actions.
+     *        <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for
+     *        <code>Key</code> can be used with both operations.
      *        </p>
      *        <p>
      *        For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of
      *        <code>Label</code>.
      *        </p>
      *        <p>
-     *        For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     *        For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      *        <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      *        </p>
      *        <p>
-     *        For examples of CLI commands demonstrating valid parameter filter constructions, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
-     *        Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
-     *        </p>
+     *        For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
+     *        Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setKey(String key) {
@@ -128,45 +123,42 @@ public class ParameterStringFilter implements Serializable, Cloneable, Structure
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
      * <p>
      * The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     * <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be
-     * used with both actions.
+     * <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for <code>Key</code> can
+     * be used with both operations.
      * </p>
      * <p>
      * For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
      * </p>
      * <p>
-     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      * <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      * </p>
      * <p>
-     * For examples of CLI commands demonstrating valid parameter filter constructions, see <a
+     * For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems
-     * Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
-     * </note>
      * 
-     * @return The name of the filter.</p> <note>
+     * @return The name of the filter.</p>
      *         <p>
      *         The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     *         <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for
-     *         <code>Key</code> can be used with both actions.
+     *         <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for
+     *         <code>Key</code> can be used with both operations.
      *         </p>
      *         <p>
      *         For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of
      *         <code>Label</code>.
      *         </p>
      *         <p>
-     *         For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     *         For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      *         <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      *         </p>
      *         <p>
-     *         For examples of CLI commands demonstrating valid parameter filter constructions, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
-     *         Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
-     *         </p>
+     *         For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
+     *         <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
+     *         for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getKey() {
@@ -177,46 +169,43 @@ public class ParameterStringFilter implements Serializable, Cloneable, Structure
      * <p>
      * The name of the filter.
      * </p>
-     * <note>
      * <p>
      * The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     * <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be
-     * used with both actions.
+     * <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for <code>Key</code> can
+     * be used with both operations.
      * </p>
      * <p>
      * For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
      * </p>
      * <p>
-     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      * <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      * </p>
      * <p>
-     * For examples of CLI commands demonstrating valid parameter filter constructions, see <a
+     * For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems
-     * Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
-     * </note>
      * 
      * @param key
-     *        The name of the filter.</p> <note>
+     *        The name of the filter.</p>
      *        <p>
      *        The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and
-     *        <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code>
-     *        can be used with both actions.
+     *        <a>GetParametersByPath</a> API operations. However, not all of the pattern values listed for
+     *        <code>Key</code> can be used with both operations.
      *        </p>
      *        <p>
      *        For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of
      *        <code>Label</code>.
      *        </p>
      *        <p>
-     *        For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid:
+     *        For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid:
      *        <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
      *        </p>
      *        <p>
-     *        For examples of CLI commands demonstrating valid parameter filter constructions, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
-     *        Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
-     *        </p>
+     *        For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
+     *        Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

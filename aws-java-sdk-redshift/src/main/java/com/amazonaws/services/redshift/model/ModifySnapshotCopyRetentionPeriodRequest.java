@@ -29,7 +29,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The unique identifier of the cluster for which you want to change the retention period for either automated or
-     * manual snapshots that are copied to a destination AWS Region.
+     * manual snapshots that are copied to a destination Region.
      * </p>
      * <p>
      * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
@@ -38,15 +38,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
     private String clusterIdentifier;
     /**
      * <p>
-     * The number of days to retain automated snapshots in the destination AWS Region after they are copied from the
-     * source AWS Region.
+     * The number of days to retain automated snapshots in the destination Region after they are copied from the source
+     * Region.
      * </p>
      * <p>
      * By default, this only changes the retention period of copied automated snapshots.
      * </p>
      * <p>
-     * If you decrease the retention period for automated snapshots that are copied to a destination AWS Region, Amazon
-     * Redshift deletes any existing automated snapshots that were copied to the destination AWS Region and that fall
+     * If you decrease the retention period for automated snapshots that are copied to a destination Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the destination Region and that fall
      * outside of the new retention period.
      * </p>
      * <p>
@@ -75,7 +75,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The unique identifier of the cluster for which you want to change the retention period for either automated or
-     * manual snapshots that are copied to a destination AWS Region.
+     * manual snapshots that are copied to a destination Region.
      * </p>
      * <p>
      * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
@@ -83,7 +83,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
      * 
      * @param clusterIdentifier
      *        The unique identifier of the cluster for which you want to change the retention period for either
-     *        automated or manual snapshots that are copied to a destination AWS Region.</p>
+     *        automated or manual snapshots that are copied to a destination Region.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      */
@@ -95,14 +95,14 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The unique identifier of the cluster for which you want to change the retention period for either automated or
-     * manual snapshots that are copied to a destination AWS Region.
+     * manual snapshots that are copied to a destination Region.
      * </p>
      * <p>
      * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      * </p>
      * 
      * @return The unique identifier of the cluster for which you want to change the retention period for either
-     *         automated or manual snapshots that are copied to a destination AWS Region.</p>
+     *         automated or manual snapshots that are copied to a destination Region.</p>
      *         <p>
      *         Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      */
@@ -114,7 +114,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The unique identifier of the cluster for which you want to change the retention period for either automated or
-     * manual snapshots that are copied to a destination AWS Region.
+     * manual snapshots that are copied to a destination Region.
      * </p>
      * <p>
      * Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
@@ -122,7 +122,7 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
      * 
      * @param clusterIdentifier
      *        The unique identifier of the cluster for which you want to change the retention period for either
-     *        automated or manual snapshots that are copied to a destination AWS Region.</p>
+     *        automated or manual snapshots that are copied to a destination Region.</p>
      *        <p>
      *        Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -135,15 +135,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The number of days to retain automated snapshots in the destination AWS Region after they are copied from the
-     * source AWS Region.
+     * The number of days to retain automated snapshots in the destination Region after they are copied from the source
+     * Region.
      * </p>
      * <p>
      * By default, this only changes the retention period of copied automated snapshots.
      * </p>
      * <p>
-     * If you decrease the retention period for automated snapshots that are copied to a destination AWS Region, Amazon
-     * Redshift deletes any existing automated snapshots that were copied to the destination AWS Region and that fall
+     * If you decrease the retention period for automated snapshots that are copied to a destination Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the destination Region and that fall
      * outside of the new retention period.
      * </p>
      * <p>
@@ -161,15 +161,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param retentionPeriod
-     *        The number of days to retain automated snapshots in the destination AWS Region after they are copied from
-     *        the source AWS Region.</p>
+     *        The number of days to retain automated snapshots in the destination Region after they are copied from the
+     *        source Region.</p>
      *        <p>
      *        By default, this only changes the retention period of copied automated snapshots.
      *        </p>
      *        <p>
-     *        If you decrease the retention period for automated snapshots that are copied to a destination AWS Region,
-     *        Amazon Redshift deletes any existing automated snapshots that were copied to the destination AWS Region
-     *        and that fall outside of the new retention period.
+     *        If you decrease the retention period for automated snapshots that are copied to a destination Region,
+     *        Amazon Redshift deletes any existing automated snapshots that were copied to the destination Region and
+     *        that fall outside of the new retention period.
      *        </p>
      *        <p>
      *        Constraints: Must be at least 1 and no more than 35 for automated snapshots.
@@ -191,15 +191,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The number of days to retain automated snapshots in the destination AWS Region after they are copied from the
-     * source AWS Region.
+     * The number of days to retain automated snapshots in the destination Region after they are copied from the source
+     * Region.
      * </p>
      * <p>
      * By default, this only changes the retention period of copied automated snapshots.
      * </p>
      * <p>
-     * If you decrease the retention period for automated snapshots that are copied to a destination AWS Region, Amazon
-     * Redshift deletes any existing automated snapshots that were copied to the destination AWS Region and that fall
+     * If you decrease the retention period for automated snapshots that are copied to a destination Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the destination Region and that fall
      * outside of the new retention period.
      * </p>
      * <p>
@@ -216,15 +216,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
      * Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.
      * </p>
      * 
-     * @return The number of days to retain automated snapshots in the destination AWS Region after they are copied from
-     *         the source AWS Region.</p>
+     * @return The number of days to retain automated snapshots in the destination Region after they are copied from the
+     *         source Region.</p>
      *         <p>
      *         By default, this only changes the retention period of copied automated snapshots.
      *         </p>
      *         <p>
-     *         If you decrease the retention period for automated snapshots that are copied to a destination AWS Region,
-     *         Amazon Redshift deletes any existing automated snapshots that were copied to the destination AWS Region
-     *         and that fall outside of the new retention period.
+     *         If you decrease the retention period for automated snapshots that are copied to a destination Region,
+     *         Amazon Redshift deletes any existing automated snapshots that were copied to the destination Region and
+     *         that fall outside of the new retention period.
      *         </p>
      *         <p>
      *         Constraints: Must be at least 1 and no more than 35 for automated snapshots.
@@ -246,15 +246,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The number of days to retain automated snapshots in the destination AWS Region after they are copied from the
-     * source AWS Region.
+     * The number of days to retain automated snapshots in the destination Region after they are copied from the source
+     * Region.
      * </p>
      * <p>
      * By default, this only changes the retention period of copied automated snapshots.
      * </p>
      * <p>
-     * If you decrease the retention period for automated snapshots that are copied to a destination AWS Region, Amazon
-     * Redshift deletes any existing automated snapshots that were copied to the destination AWS Region and that fall
+     * If you decrease the retention period for automated snapshots that are copied to a destination Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the destination Region and that fall
      * outside of the new retention period.
      * </p>
      * <p>
@@ -272,15 +272,15 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param retentionPeriod
-     *        The number of days to retain automated snapshots in the destination AWS Region after they are copied from
-     *        the source AWS Region.</p>
+     *        The number of days to retain automated snapshots in the destination Region after they are copied from the
+     *        source Region.</p>
      *        <p>
      *        By default, this only changes the retention period of copied automated snapshots.
      *        </p>
      *        <p>
-     *        If you decrease the retention period for automated snapshots that are copied to a destination AWS Region,
-     *        Amazon Redshift deletes any existing automated snapshots that were copied to the destination AWS Region
-     *        and that fall outside of the new retention period.
+     *        If you decrease the retention period for automated snapshots that are copied to a destination Region,
+     *        Amazon Redshift deletes any existing automated snapshots that were copied to the destination Region and
+     *        that fall outside of the new retention period.
      *        </p>
      *        <p>
      *        Constraints: Must be at least 1 and no more than 35 for automated snapshots.

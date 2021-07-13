@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure
- * those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed
- * instance.
+ * An activation registers one or more on-premises servers or virtual machines (VMs) with Amazon Web Services so that
+ * you can configure those servers or VMs using Run Command. A server or VM that has been registered with Amazon Web
+ * Services Systems Manager is called a managed instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation" target="_top">AWS API
@@ -50,7 +50,7 @@ public class Activation implements Serializable, Cloneable, StructuredPojo {
     private String defaultInstanceName;
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     * The Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      */
     private String iamRole;
@@ -213,11 +213,11 @@ public class Activation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     * The Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      * 
      * @param iamRole
-     *        The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     *        The Identity and Access Management (IAM) role to assign to the managed instance.
      */
 
     public void setIamRole(String iamRole) {
@@ -226,10 +226,10 @@ public class Activation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     * The Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      * 
-     * @return The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     * @return The Identity and Access Management (IAM) role to assign to the managed instance.
      */
 
     public String getIamRole() {
@@ -238,11 +238,11 @@ public class Activation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     * The Identity and Access Management (IAM) role to assign to the managed instance.
      * </p>
      * 
      * @param iamRole
-     *        The Amazon Identity and Access Management (IAM) role to assign to the managed instance.
+     *        The Identity and Access Management (IAM) role to assign to the managed instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,10 @@ public class SocialProviderSettingsJsonUnmarshaller implements Unmarshaller<Soci
                     context.nextToken();
                     socialProviderSettings.setLoginWithAmazon(BackendAuthSocialProviderConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SignInWithApple", targetDepth)) {
+                    context.nextToken();
+                    socialProviderSettings.setSignInWithApple(BackendAuthAppleProviderConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

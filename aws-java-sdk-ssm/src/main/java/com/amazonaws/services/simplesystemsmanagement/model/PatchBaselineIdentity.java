@@ -42,7 +42,7 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
     private String baselineName;
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * </p>
      */
     private String operatingSystem;
@@ -54,8 +54,8 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
     private String baselineDescription;
     /**
      * <p>
-     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     * baselines. For example, you can create a default patch baseline for each operating system.
+     * Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default
+     * patch baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      */
     private Boolean defaultBaseline;
@@ -142,11 +142,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * @see OperatingSystem
      */
 
@@ -156,10 +156,10 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * </p>
      * 
-     * @return Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * @return Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * @see OperatingSystem
      */
 
@@ -169,11 +169,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -185,11 +185,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * @see OperatingSystem
      */
 
@@ -199,11 +199,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -255,13 +255,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     * baselines. For example, you can create a default patch baseline for each operating system.
+     * Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default
+     * patch baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param defaultBaseline
-     *        Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     *        baselines. For example, you can create a default patch baseline for each operating system.
+     *        Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple
+     *        default patch baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public void setDefaultBaseline(Boolean defaultBaseline) {
@@ -270,12 +270,12 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     * baselines. For example, you can create a default patch baseline for each operating system.
+     * Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default
+     * patch baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
-     * @return Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     *         baselines. For example, you can create a default patch baseline for each operating system.
+     * @return Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple
+     *         default patch baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public Boolean getDefaultBaseline() {
@@ -284,13 +284,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     * baselines. For example, you can create a default patch baseline for each operating system.
+     * Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default
+     * patch baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param defaultBaseline
-     *        Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     *        baselines. For example, you can create a default patch baseline for each operating system.
+     *        Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple
+     *        default patch baselines. For example, you can create a default patch baseline for each operating system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,12 +301,12 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     * baselines. For example, you can create a default patch baseline for each operating system.
+     * Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default
+     * patch baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
-     * @return Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
-     *         baselines. For example, you can create a default patch baseline for each operating system.
+     * @return Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple
+     *         default patch baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public Boolean isDefaultBaseline() {

@@ -104,6 +104,10 @@ public class UpdateConnectionResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateConnectionResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    updateConnectionResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     updateConnectionResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

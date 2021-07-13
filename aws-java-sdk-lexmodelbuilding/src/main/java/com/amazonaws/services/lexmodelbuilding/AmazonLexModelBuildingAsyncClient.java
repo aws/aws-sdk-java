@@ -969,6 +969,72 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetMigrationResult> getMigrationAsync(GetMigrationRequest request) {
+
+        return getMigrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMigrationResult> getMigrationAsync(final GetMigrationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMigrationRequest, GetMigrationResult> asyncHandler) {
+        final GetMigrationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMigrationResult>() {
+            @Override
+            public GetMigrationResult call() throws Exception {
+                GetMigrationResult result = null;
+
+                try {
+                    result = executeGetMigration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMigrationsResult> getMigrationsAsync(GetMigrationsRequest request) {
+
+        return getMigrationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMigrationsResult> getMigrationsAsync(final GetMigrationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMigrationsRequest, GetMigrationsResult> asyncHandler) {
+        final GetMigrationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMigrationsResult>() {
+            @Override
+            public GetMigrationsResult call() throws Exception {
+                GetMigrationsResult result = null;
+
+                try {
+                    result = executeGetMigrations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSlotTypeResult> getSlotTypeAsync(GetSlotTypeRequest request) {
 
         return getSlotTypeAsync(request, null);
@@ -1283,6 +1349,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
 
                 try {
                     result = executeStartImport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMigrationResult> startMigrationAsync(StartMigrationRequest request) {
+
+        return startMigrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMigrationResult> startMigrationAsync(final StartMigrationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMigrationRequest, StartMigrationResult> asyncHandler) {
+        final StartMigrationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMigrationResult>() {
+            @Override
+            public StartMigrationResult call() throws Exception {
+                StartMigrationResult result = null;
+
+                try {
+                    result = executeStartMigration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

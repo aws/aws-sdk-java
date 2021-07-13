@@ -41,14 +41,15 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
-     * StartDate allows you to delay activation of the maintenance window until the specified future date.
+     * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
      */
     private String startDate;
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      */
     private String endDate;
@@ -68,7 +69,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private String scheduleTimezone;
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -91,14 +92,14 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private Integer duration;
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      */
     private Integer cutoff;
     /**
      * <p>
-     * Enables a maintenance window task to run on managed instances, even if you have not registered those instances as
+     * Enables a maintenance window task to run on managed instances, even if you haven't registered those instances as
      * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
      * with the maintenance window.
      * </p>
@@ -119,7 +120,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
      * as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the
      * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
-     * specify the following key name/value pairs:
+     * specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -140,7 +141,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * <note>
      * <p>
-     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      * </p>
      * </note>
      */
@@ -235,12 +236,13 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
-     * StartDate allows you to delay activation of the maintenance window until the specified future date.
+     * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
      * 
      * @param startDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
-     *        StartDate allows you to delay activation of the maintenance window until the specified future date.
+     *        <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future
+     *        date.
      */
 
     public void setStartDate(String startDate) {
@@ -250,12 +252,12 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
-     * StartDate allows you to delay activation of the maintenance window until the specified future date.
+     * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
      * 
      * @return The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *         active. StartDate allows you to delay activation of the maintenance window until the specified future
-     *         date.
+     *         active. <code>StartDate</code> allows you to delay activation of the maintenance window until the
+     *         specified future date.
      */
 
     public String getStartDate() {
@@ -265,12 +267,13 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
-     * StartDate allows you to delay activation of the maintenance window until the specified future date.
+     * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
      * 
      * @param startDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
-     *        StartDate allows you to delay activation of the maintenance window until the specified future date.
+     *        <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future
+     *        date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,13 +285,14 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      * 
      * @param endDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *        inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
-     *        longer run.
+     *        inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window
+     *        will no longer run.
      */
 
     public void setEndDate(String endDate) {
@@ -298,12 +302,13 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      * 
      * @return The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *         inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
-     *         longer run.
+     *         inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance
+     *         window will no longer run.
      */
 
     public String getEndDate() {
@@ -313,13 +318,14 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      * 
      * @param endDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *        inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
-     *        longer run.
+     *        inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window
+     *        will no longer run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,7 +429,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -438,7 +444,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait after the date and time specified by a CRON expression before running the
+     *        The number of days to wait after the date and time specified by a cron expression before running the
      *        maintenance window.</p>
      *        <p>
      *        For example, the following cron expression schedules a maintenance window to run on the third Tuesday of
@@ -457,7 +463,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -471,7 +477,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.
      * </p>
      * 
-     * @return The number of days to wait after the date and time specified by a CRON expression before running the
+     * @return The number of days to wait after the date and time specified by a cron expression before running the
      *         maintenance window.</p>
      *         <p>
      *         For example, the following cron expression schedules a maintenance window to run on the third Tuesday of
@@ -490,7 +496,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -505,7 +511,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait after the date and time specified by a CRON expression before running the
+     *        The number of days to wait after the date and time specified by a cron expression before running the
      *        maintenance window.</p>
      *        <p>
      *        For example, the following cron expression schedules a maintenance window to run on the third Tuesday of
@@ -566,13 +572,13 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      */
 
     public void setCutoff(Integer cutoff) {
@@ -581,12 +587,12 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
-     * @return The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *         tasks for execution.
+     * @return The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *         stops scheduling new tasks for execution.
      */
 
     public Integer getCutoff() {
@@ -595,13 +601,13 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,7 +618,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a maintenance window task to run on managed instances, even if you have not registered those instances as
+     * Enables a maintenance window task to run on managed instances, even if you haven't registered those instances as
      * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
      * with the maintenance window.
      * </p>
@@ -622,7 +628,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param allowUnassociatedTargets
-     *        Enables a maintenance window task to run on managed instances, even if you have not registered those
+     *        Enables a maintenance window task to run on managed instances, even if you haven't registered those
      *        instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *        you register a task with the maintenance window.</p>
      *        <p>
@@ -636,7 +642,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a maintenance window task to run on managed instances, even if you have not registered those instances as
+     * Enables a maintenance window task to run on managed instances, even if you haven't registered those instances as
      * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
      * with the maintenance window.
      * </p>
@@ -645,7 +651,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * with the maintenance window.
      * </p>
      * 
-     * @return Enables a maintenance window task to run on managed instances, even if you have not registered those
+     * @return Enables a maintenance window task to run on managed instances, even if you haven't registered those
      *         instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *         you register a task with the maintenance window.</p>
      *         <p>
@@ -659,7 +665,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a maintenance window task to run on managed instances, even if you have not registered those instances as
+     * Enables a maintenance window task to run on managed instances, even if you haven't registered those instances as
      * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
      * with the maintenance window.
      * </p>
@@ -669,7 +675,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param allowUnassociatedTargets
-     *        Enables a maintenance window task to run on managed instances, even if you have not registered those
+     *        Enables a maintenance window task to run on managed instances, even if you haven't registered those
      *        instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *        you register a task with the maintenance window.</p>
      *        <p>
@@ -685,7 +691,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Enables a maintenance window task to run on managed instances, even if you have not registered those instances as
+     * Enables a maintenance window task to run on managed instances, even if you haven't registered those instances as
      * targets. If enabled, then you must specify the unregistered instances (by instance ID) when you register a task
      * with the maintenance window.
      * </p>
@@ -694,7 +700,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * with the maintenance window.
      * </p>
      * 
-     * @return Enables a maintenance window task to run on managed instances, even if you have not registered those
+     * @return Enables a maintenance window task to run on managed instances, even if you haven't registered those
      *         instances as targets. If enabled, then you must specify the unregistered instances (by instance ID) when
      *         you register a task with the maintenance window.</p>
      *         <p>
@@ -751,7 +757,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
      * as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the
      * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
-     * specify the following key name/value pairs:
+     * specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -772,14 +778,14 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * <note>
      * <p>
-     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      * </p>
      * </note>
      * 
      * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
      *         ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window
      *         to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
-     *         this case, you could specify the following key name/value pairs:</p>
+     *         this case, you could specify the following key-value pairs:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -799,7 +805,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *         </ul>
      *         <note>
      *         <p>
-     *         To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     *         To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      *         </p>
      */
 
@@ -815,7 +821,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
      * as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the
      * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
-     * specify the following key name/value pairs:
+     * specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -836,7 +842,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * <note>
      * <p>
-     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      * </p>
      * </note>
      * 
@@ -844,7 +850,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
      *        ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window
      *        to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
-     *        this case, you could specify the following key name/value pairs:</p>
+     *        this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -864,7 +870,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *        </ul>
      *        <note>
      *        <p>
-     *        To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     *        To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      *        </p>
      */
 
@@ -882,7 +888,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
      * as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the
      * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
-     * specify the following key name/value pairs:
+     * specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -903,7 +909,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * <note>
      * <p>
-     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      * </p>
      * </note>
      * <p>
@@ -916,7 +922,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
      *        ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window
      *        to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
-     *        this case, you could specify the following key name/value pairs:</p>
+     *        this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -936,7 +942,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *        </ul>
      *        <note>
      *        <p>
-     *        To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     *        To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -956,7 +962,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
      * as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the
      * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
-     * specify the following key name/value pairs:
+     * specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -977,7 +983,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * <note>
      * <p>
-     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     * To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      * </p>
      * </note>
      * 
@@ -985,7 +991,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
      *        ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window
      *        to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
-     *        this case, you could specify the following key name/value pairs:</p>
+     *        this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1005,7 +1011,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      *        </ul>
      *        <note>
      *        <p>
-     *        To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> action.
+     *        To add tags to an existing maintenance window, use the <a>AddTagsToResource</a> operation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

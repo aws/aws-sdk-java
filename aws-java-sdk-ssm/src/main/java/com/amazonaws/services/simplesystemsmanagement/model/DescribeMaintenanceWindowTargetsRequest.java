@@ -34,7 +34,7 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are Type, WindowTargetId and OwnerInformation.
+     * keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowFilter> filters;
@@ -95,11 +95,11 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are Type, WindowTargetId and OwnerInformation.
+     * keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * </p>
      * 
      * @return Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *         filter keys are Type, WindowTargetId and OwnerInformation.
+     *         filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      */
 
     public java.util.List<MaintenanceWindowFilter> getFilters() {
@@ -112,12 +112,12 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are Type, WindowTargetId and OwnerInformation.
+     * keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * </p>
      * 
      * @param filters
      *        Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *        filter keys are Type, WindowTargetId and OwnerInformation.
+     *        filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      */
 
     public void setFilters(java.util.Collection<MaintenanceWindowFilter> filters) {
@@ -132,7 +132,7 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are Type, WindowTargetId and OwnerInformation.
+     * keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -142,7 +142,7 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
      * 
      * @param filters
      *        Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *        filter keys are Type, WindowTargetId and OwnerInformation.
+     *        filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,12 +159,12 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are Type, WindowTargetId and OwnerInformation.
+     * keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * </p>
      * 
      * @param filters
      *        Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *        filter keys are Type, WindowTargetId and OwnerInformation.
+     *        filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

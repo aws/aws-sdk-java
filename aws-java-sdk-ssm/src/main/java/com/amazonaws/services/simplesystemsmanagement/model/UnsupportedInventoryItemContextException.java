@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> is not allowed for this
+ * The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this
  * inventory type. You can only use the <code>Context</code> attribute with inventory types like
  * <code>AWS:ComplianceItem</code>.
  * </p>

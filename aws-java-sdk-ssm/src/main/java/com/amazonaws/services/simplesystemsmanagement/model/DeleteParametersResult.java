@@ -31,7 +31,7 @@ public class DeleteParametersResult extends com.amazonaws.AmazonWebServiceResult
     private com.amazonaws.internal.SdkInternalList<String> deletedParameters;
     /**
      * <p>
-     * The names of parameters that weren't deleted because the parameters are not valid.
+     * The names of parameters that weren't deleted because the parameters aren't valid.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> invalidParameters;
@@ -111,10 +111,10 @@ public class DeleteParametersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of parameters that weren't deleted because the parameters are not valid.
+     * The names of parameters that weren't deleted because the parameters aren't valid.
      * </p>
      * 
-     * @return The names of parameters that weren't deleted because the parameters are not valid.
+     * @return The names of parameters that weren't deleted because the parameters aren't valid.
      */
 
     public java.util.List<String> getInvalidParameters() {
@@ -126,11 +126,11 @@ public class DeleteParametersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of parameters that weren't deleted because the parameters are not valid.
+     * The names of parameters that weren't deleted because the parameters aren't valid.
      * </p>
      * 
      * @param invalidParameters
-     *        The names of parameters that weren't deleted because the parameters are not valid.
+     *        The names of parameters that weren't deleted because the parameters aren't valid.
      */
 
     public void setInvalidParameters(java.util.Collection<String> invalidParameters) {
@@ -144,7 +144,7 @@ public class DeleteParametersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of parameters that weren't deleted because the parameters are not valid.
+     * The names of parameters that weren't deleted because the parameters aren't valid.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,7 +153,7 @@ public class DeleteParametersResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param invalidParameters
-     *        The names of parameters that weren't deleted because the parameters are not valid.
+     *        The names of parameters that weren't deleted because the parameters aren't valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +169,11 @@ public class DeleteParametersResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The names of parameters that weren't deleted because the parameters are not valid.
+     * The names of parameters that weren't deleted because the parameters aren't valid.
      * </p>
      * 
      * @param invalidParameters
-     *        The names of parameters that weren't deleted because the parameters are not valid.
+     *        The names of parameters that weren't deleted because the parameters aren't valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,28 +27,28 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar entries
-     * for which you want to get the state.
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the
+     * calendar entries for which you want to get the state.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> calendarNames;
     /**
      * <p>
      * (Optional) The specific time for which you want to get calendar state information, in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>, the
-     * current time is assumed.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     * <code>AtTime</code>, the current time is used.
      * </p>
      */
     private String atTime;
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar entries
-     * for which you want to get the state.
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the
+     * calendar entries for which you want to get the state.
      * </p>
      * 
-     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar
-     *         entries for which you want to get the state.
+     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent
+     *         the calendar entries for which you want to get the state.
      */
 
     public java.util.List<String> getCalendarNames() {
@@ -60,13 +60,13 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar entries
-     * for which you want to get the state.
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the
+     * calendar entries for which you want to get the state.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar
-     *        entries for which you want to get the state.
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent
+     *        the calendar entries for which you want to get the state.
      */
 
     public void setCalendarNames(java.util.Collection<String> calendarNames) {
@@ -80,8 +80,8 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar entries
-     * for which you want to get the state.
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the
+     * calendar entries for which you want to get the state.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,8 +90,8 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar
-     *        entries for which you want to get the state.
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent
+     *        the calendar entries for which you want to get the state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +107,13 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar entries
-     * for which you want to get the state.
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the
+     * calendar entries for which you want to get the state.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar
-     *        entries for which you want to get the state.
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent
+     *        the calendar entries for which you want to get the state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,14 +125,14 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The specific time for which you want to get calendar state information, in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>, the
-     * current time is assumed.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     * <code>AtTime</code>, the current time is used.
      * </p>
      * 
      * @param atTime
      *        (Optional) The specific time for which you want to get calendar state information, in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>,
-     *        the current time is assumed.
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     *        <code>AtTime</code>, the current time is used.
      */
 
     public void setAtTime(String atTime) {
@@ -142,13 +142,13 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The specific time for which you want to get calendar state information, in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>, the
-     * current time is assumed.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     * <code>AtTime</code>, the current time is used.
      * </p>
      * 
      * @return (Optional) The specific time for which you want to get calendar state information, in <a
-     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>,
-     *         the current time is assumed.
+     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     *         <code>AtTime</code>, the current time is used.
      */
 
     public String getAtTime() {
@@ -158,14 +158,14 @@ public class GetCalendarStateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The specific time for which you want to get calendar state information, in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>, the
-     * current time is assumed.
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     * <code>AtTime</code>, the current time is used.
      * </p>
      * 
      * @param atTime
      *        (Optional) The specific time for which you want to get calendar state information, in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add <code>AtTime</code>,
-     *        the current time is assumed.
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or
+     *        <code>AtTime</code>, the current time is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
     private String connectionId;
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private interface.
+     * The ID of the account that owns the virtual private interface.
      * </p>
      */
     private String ownerAccount;
@@ -86,11 +86,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private interface.
+     * The ID of the account that owns the virtual private interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the virtual private interface.
+     *        The ID of the account that owns the virtual private interface.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -99,10 +99,10 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private interface.
+     * The ID of the account that owns the virtual private interface.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the virtual private interface.
+     * @return The ID of the account that owns the virtual private interface.
      */
 
     public String getOwnerAccount() {
@@ -111,11 +111,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private interface.
+     * The ID of the account that owns the virtual private interface.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the virtual private interface.
+     *        The ID of the account that owns the virtual private interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

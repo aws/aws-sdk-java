@@ -33,19 +33,19 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String syncName;
     /**
      * <p>
-     * Optional filters used to scope down the returned OpsItems.
+     * Optional filters used to scope down the returned OpsData.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsFilter> filters;
     /**
      * <p>
-     * Optional aggregators that return counts of OpsItems based on one or more expressions.
+     * Optional aggregators that return counts of OpsData based on one or more expressions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsAggregator> aggregators;
     /**
      * <p>
-     * The OpsItem data type to return.
+     * The OpsData data type to return.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OpsResultAttribute> resultAttributes;
@@ -105,10 +105,10 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional filters used to scope down the returned OpsItems.
+     * Optional filters used to scope down the returned OpsData.
      * </p>
      * 
-     * @return Optional filters used to scope down the returned OpsItems.
+     * @return Optional filters used to scope down the returned OpsData.
      */
 
     public java.util.List<OpsFilter> getFilters() {
@@ -120,11 +120,11 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional filters used to scope down the returned OpsItems.
+     * Optional filters used to scope down the returned OpsData.
      * </p>
      * 
      * @param filters
-     *        Optional filters used to scope down the returned OpsItems.
+     *        Optional filters used to scope down the returned OpsData.
      */
 
     public void setFilters(java.util.Collection<OpsFilter> filters) {
@@ -138,7 +138,7 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional filters used to scope down the returned OpsItems.
+     * Optional filters used to scope down the returned OpsData.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param filters
-     *        Optional filters used to scope down the returned OpsItems.
+     *        Optional filters used to scope down the returned OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional filters used to scope down the returned OpsItems.
+     * Optional filters used to scope down the returned OpsData.
      * </p>
      * 
      * @param filters
-     *        Optional filters used to scope down the returned OpsItems.
+     *        Optional filters used to scope down the returned OpsData.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +178,10 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional aggregators that return counts of OpsItems based on one or more expressions.
+     * Optional aggregators that return counts of OpsData based on one or more expressions.
      * </p>
      * 
-     * @return Optional aggregators that return counts of OpsItems based on one or more expressions.
+     * @return Optional aggregators that return counts of OpsData based on one or more expressions.
      */
 
     public java.util.List<OpsAggregator> getAggregators() {
@@ -193,11 +193,11 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional aggregators that return counts of OpsItems based on one or more expressions.
+     * Optional aggregators that return counts of OpsData based on one or more expressions.
      * </p>
      * 
      * @param aggregators
-     *        Optional aggregators that return counts of OpsItems based on one or more expressions.
+     *        Optional aggregators that return counts of OpsData based on one or more expressions.
      */
 
     public void setAggregators(java.util.Collection<OpsAggregator> aggregators) {
@@ -211,7 +211,7 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional aggregators that return counts of OpsItems based on one or more expressions.
+     * Optional aggregators that return counts of OpsData based on one or more expressions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,7 +220,7 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param aggregators
-     *        Optional aggregators that return counts of OpsItems based on one or more expressions.
+     *        Optional aggregators that return counts of OpsData based on one or more expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional aggregators that return counts of OpsItems based on one or more expressions.
+     * Optional aggregators that return counts of OpsData based on one or more expressions.
      * </p>
      * 
      * @param aggregators
-     *        Optional aggregators that return counts of OpsItems based on one or more expressions.
+     *        Optional aggregators that return counts of OpsData based on one or more expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +251,10 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The OpsItem data type to return.
+     * The OpsData data type to return.
      * </p>
      * 
-     * @return The OpsItem data type to return.
+     * @return The OpsData data type to return.
      */
 
     public java.util.List<OpsResultAttribute> getResultAttributes() {
@@ -266,11 +266,11 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The OpsItem data type to return.
+     * The OpsData data type to return.
      * </p>
      * 
      * @param resultAttributes
-     *        The OpsItem data type to return.
+     *        The OpsData data type to return.
      */
 
     public void setResultAttributes(java.util.Collection<OpsResultAttribute> resultAttributes) {
@@ -284,7 +284,7 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The OpsItem data type to return.
+     * The OpsData data type to return.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -293,7 +293,7 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param resultAttributes
-     *        The OpsItem data type to return.
+     *        The OpsData data type to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +309,11 @@ public class GetOpsSummaryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The OpsItem data type to return.
+     * The OpsData data type to return.
      * </p>
      * 
      * @param resultAttributes
-     *        The OpsItem data type to return.
+     *        The OpsData data type to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

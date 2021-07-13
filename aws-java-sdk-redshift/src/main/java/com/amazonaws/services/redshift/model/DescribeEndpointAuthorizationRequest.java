@@ -33,8 +33,8 @@ public class DescribeEndpointAuthorizationRequest extends com.amazonaws.AmazonWe
     private String clusterIdentifier;
     /**
      * <p>
-     * The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true,
-     * then the <code>Account</code> value is of the grantor.
+     * The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then
+     * the <code>Account</code> value is of the grantor.
      * </p>
      */
     private String account;
@@ -105,12 +105,12 @@ public class DescribeEndpointAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true,
-     * then the <code>Account</code> value is of the grantor.
+     * The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then
+     * the <code>Account</code> value is of the grantor.
      * </p>
      * 
      * @param account
-     *        The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is
+     *        The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is
      *        true, then the <code>Account</code> value is of the grantor.
      */
 
@@ -120,11 +120,11 @@ public class DescribeEndpointAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true,
-     * then the <code>Account</code> value is of the grantor.
+     * The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then
+     * the <code>Account</code> value is of the grantor.
      * </p>
      * 
-     * @return The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is
+     * @return The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is
      *         true, then the <code>Account</code> value is of the grantor.
      */
 
@@ -134,12 +134,12 @@ public class DescribeEndpointAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true,
-     * then the <code>Account</code> value is of the grantor.
+     * The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then
+     * the <code>Account</code> value is of the grantor.
      * </p>
      * 
      * @param account
-     *        The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is
+     *        The Aaccount ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is
      *        true, then the <code>Account</code> value is of the grantor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

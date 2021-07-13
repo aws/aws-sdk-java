@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a Resource Data Sync configuration, including its current status and last successful sync.
+ * Information about a resource data sync configuration, including its current status and last successful sync.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncItem" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Resource Data Sync.
+     * The name of the resource data sync.
      * </p>
      */
     private String syncName;
@@ -38,7 +38,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
      * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
-     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * resource data sync synchronizes data from Organizations or from multiple Regions.
      * </p>
      */
     private String syncType;
@@ -93,11 +93,11 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Resource Data Sync.
+     * The name of the resource data sync.
      * </p>
      * 
      * @param syncName
-     *        The name of the Resource Data Sync.
+     *        The name of the resource data sync.
      */
 
     public void setSyncName(String syncName) {
@@ -106,10 +106,10 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Resource Data Sync.
+     * The name of the resource data sync.
      * </p>
      * 
-     * @return The name of the Resource Data Sync.
+     * @return The name of the resource data sync.
      */
 
     public String getSyncName() {
@@ -118,11 +118,11 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Resource Data Sync.
+     * The name of the resource data sync.
      * </p>
      * 
      * @param syncName
-     *        The name of the Resource Data Sync.
+     *        The name of the resource data sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,14 +135,14 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
      * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
-     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * resource data sync synchronizes data from Organizations or from multiple Regions.
      * </p>
      * 
      * @param syncType
      *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
      *        resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
-     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-     *        multiple AWS Regions.
+     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
+     *        multiple Regions.
      */
 
     public void setSyncType(String syncType) {
@@ -153,13 +153,13 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
      * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
-     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * resource data sync synchronizes data from Organizations or from multiple Regions.
      * </p>
      * 
      * @return The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
      *         resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
-     *         <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-     *         multiple AWS Regions.
+     *         <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
+     *         multiple Regions.
      */
 
     public String getSyncType() {
@@ -170,14 +170,14 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
      * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
-     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * resource data sync synchronizes data from Organizations or from multiple Regions.
      * </p>
      * 
      * @param syncType
      *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
      *        resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
-     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-     *        multiple AWS Regions.
+     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
+     *        multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

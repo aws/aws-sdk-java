@@ -33,9 +33,45 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
     private String instanceId;
     /**
      * <p>
-     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
-     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
+     * <p>
+     * Supported keys for <code>DescribeInstancePatches</code>include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Classification</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KBId</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Severity</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>State</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter> filters;
     /**
@@ -93,13 +129,83 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
-     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
+     * <p>
+     * Supported keys for <code>DescribeInstancePatches</code>include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Classification</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KBId</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Severity</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>State</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
-     *         values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
-     *         <code>State</code>.
+     * @return Each element in the array is a structure containing a key-value pair.</p>
+     *         <p>
+     *         Supported keys for <code>DescribeInstancePatches</code>include the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>Classification</code> </b>
+     *         </p>
+     *         <p>
+     *         Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>KBId</code> </b>
+     *         </p>
+     *         <p>
+     *         Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>Severity</code> </b>
+     *         </p>
+     *         <p>
+     *         Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>State</code> </b>
+     *         </p>
+     *         <p>
+     *         Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<PatchOrchestratorFilter> getFilters() {
@@ -111,14 +217,84 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
-     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
+     * <p>
+     * Supported keys for <code>DescribeInstancePatches</code>include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Classification</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KBId</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Severity</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>State</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
-     *        values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
-     *        <code>State</code>.
+     *        Each element in the array is a structure containing a key-value pair.</p>
+     *        <p>
+     *        Supported keys for <code>DescribeInstancePatches</code>include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>Classification</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>KBId</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Severity</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>State</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
@@ -132,9 +308,45 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
-     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
+     * <p>
+     * Supported keys for <code>DescribeInstancePatches</code>include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Classification</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KBId</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Severity</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>State</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -142,9 +354,43 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
-     *        values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
-     *        <code>State</code>.
+     *        Each element in the array is a structure containing a key-value pair.</p>
+     *        <p>
+     *        Supported keys for <code>DescribeInstancePatches</code>include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>Classification</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>KBId</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Severity</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>State</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,14 +406,84 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
-     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
+     * Each element in the array is a structure containing a key-value pair.
      * </p>
+     * <p>
+     * Supported keys for <code>DescribeInstancePatches</code>include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Classification</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KBId</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Severity</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>State</code> </b>
+     * </p>
+     * <p>
+     * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
-     *        values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
-     *        <code>State</code>.
+     *        Each element in the array is a structure containing a key-value pair.</p>
+     *        <p>
+     *        Supported keys for <code>DescribeInstancePatches</code>include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>Classification</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>KBId</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Severity</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>State</code> </b>
+     *        </p>
+     *        <p>
+     *        Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

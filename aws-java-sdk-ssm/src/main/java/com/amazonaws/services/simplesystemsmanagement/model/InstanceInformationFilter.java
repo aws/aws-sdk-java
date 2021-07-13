@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * tags by using a key-value mapping.
  * </p>
  * <p>
- * Use this action instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The
- * <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
+ * Use this operation instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The
+ * <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationFilter" target="_top">AWS API

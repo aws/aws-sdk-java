@@ -28,8 +28,8 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      */
     private String bandwidth;
@@ -41,7 +41,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     private String connectionName;
     /**
      * <p>
-     * The ID of the AWS account of the customer for whom the connection will be provisioned.
+     * The ID of the account of the customer for whom the connection will be provisioned.
      * </p>
      */
     private String ownerAccount;
@@ -61,13 +61,13 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      * 
      * @param bandwidth
      *        The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps,
-     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met
+     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met
      *        specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      */
 
@@ -78,12 +78,12 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      * 
      * @return The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps,
-     *         500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met
+     *         500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met
      *         specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      */
 
@@ -94,13 +94,13 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      * 
      * @param bandwidth
      *        The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps,
-     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met
+     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met
      *        specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -152,11 +152,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the AWS account of the customer for whom the connection will be provisioned.
+     * The ID of the account of the customer for whom the connection will be provisioned.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account of the customer for whom the connection will be provisioned.
+     *        The ID of the account of the customer for whom the connection will be provisioned.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -165,10 +165,10 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the AWS account of the customer for whom the connection will be provisioned.
+     * The ID of the account of the customer for whom the connection will be provisioned.
      * </p>
      * 
-     * @return The ID of the AWS account of the customer for whom the connection will be provisioned.
+     * @return The ID of the account of the customer for whom the connection will be provisioned.
      */
 
     public String getOwnerAccount() {
@@ -177,11 +177,11 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the AWS account of the customer for whom the connection will be provisioned.
+     * The ID of the account of the customer for whom the connection will be provisioned.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account of the customer for whom the connection will be provisioned.
+     *        The ID of the account of the customer for whom the connection will be provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

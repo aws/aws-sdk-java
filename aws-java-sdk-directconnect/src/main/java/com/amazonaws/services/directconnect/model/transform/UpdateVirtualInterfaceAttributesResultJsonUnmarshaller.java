@@ -145,6 +145,10 @@ public class UpdateVirtualInterfaceAttributesResultJsonUnmarshaller implements U
                     context.nextToken();
                     updateVirtualInterfaceAttributesResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    updateVirtualInterfaceAttributesResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     updateVirtualInterfaceAttributesResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

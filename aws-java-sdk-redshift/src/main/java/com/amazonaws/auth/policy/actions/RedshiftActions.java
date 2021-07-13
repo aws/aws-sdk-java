@@ -43,6 +43,8 @@ public enum RedshiftActions implements Action {
     CancelResize("redshift:CancelResize"),
     /** Action for the CopyClusterSnapshot operation. */
     CopyClusterSnapshot("redshift:CopyClusterSnapshot"),
+    /** Action for the CreateAuthenticationProfile operation. */
+    CreateAuthenticationProfile("redshift:CreateAuthenticationProfile"),
     /** Action for the CreateCluster operation. */
     CreateCluster("redshift:CreateCluster"),
     /** Action for the CreateClusterParameterGroup operation. */
@@ -71,6 +73,8 @@ public enum RedshiftActions implements Action {
     CreateTags("redshift:CreateTags"),
     /** Action for the CreateUsageLimit operation. */
     CreateUsageLimit("redshift:CreateUsageLimit"),
+    /** Action for the DeleteAuthenticationProfile operation. */
+    DeleteAuthenticationProfile("redshift:DeleteAuthenticationProfile"),
     /** Action for the DeleteCluster operation. */
     DeleteCluster("redshift:DeleteCluster"),
     /** Action for the DeleteClusterParameterGroup operation. */
@@ -103,6 +107,8 @@ public enum RedshiftActions implements Action {
     DeleteUsageLimit("redshift:DeleteUsageLimit"),
     /** Action for the DescribeAccountAttributes operation. */
     DescribeAccountAttributes("redshift:DescribeAccountAttributes"),
+    /** Action for the DescribeAuthenticationProfiles operation. */
+    DescribeAuthenticationProfiles("redshift:DescribeAuthenticationProfiles"),
     /** Action for the DescribeClusterDbRevisions operation. */
     DescribeClusterDbRevisions("redshift:DescribeClusterDbRevisions"),
     /** Action for the DescribeClusterParameterGroups operation. */
@@ -179,6 +185,8 @@ public enum RedshiftActions implements Action {
     GetReservedNodeExchangeOfferings("redshift:GetReservedNodeExchangeOfferings"),
     /** Action for the ModifyAquaConfiguration operation. */
     ModifyAquaConfiguration("redshift:ModifyAquaConfiguration"),
+    /** Action for the ModifyAuthenticationProfile operation. */
+    ModifyAuthenticationProfile("redshift:ModifyAuthenticationProfile"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("redshift:ModifyCluster"),
     /** Action for the ModifyClusterDbRevision operation. */

@@ -42,23 +42,24 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private String windowTaskId;
     /**
      * <p>
-     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
-     * is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.
+     * The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task
+     * types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN. For
+     * <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state
+     * machine ARN.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTIONS.
+     * The type of task.
      * </p>
      */
     private String type;
     /**
      * <p>
      * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -89,18 +90,19 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      */
     private LoggingInfo loggingInfo;
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      */
     private String serviceRoleArn;
@@ -211,15 +213,17 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
-     * is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.
+     * The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task
+     * types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN. For
+     * <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state
+     * machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-     *        <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name
-     *        or ARN. For STEP_FUNCTIONS tasks, it's the state machine ARN.
+     *        The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code>
+     *        task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN.
+     *        For <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's
+     *        the state machine ARN.
      */
 
     public void setTaskArn(String taskArn) {
@@ -228,14 +232,16 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
-     * is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.
+     * The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task
+     * types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN. For
+     * <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state
+     * machine ARN.
      * </p>
      * 
-     * @return The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-     *         <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function
-     *         name or ARN. For STEP_FUNCTIONS tasks, it's the state machine ARN.
+     * @return The resource that the task uses during execution. For <code>RUN_COMMAND</code> and
+     *         <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM
+     *         document) name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     *         <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.
      */
 
     public String getTaskArn() {
@@ -244,15 +250,17 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
-     * is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.
+     * The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task
+     * types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN. For
+     * <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state
+     * machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-     *        <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name
-     *        or ARN. For STEP_FUNCTIONS tasks, it's the state machine ARN.
+     *        The resource that the task uses during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code>
+     *        task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or ARN.
+     *        For <code>LAMBDA</code> tasks, it's the function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's
+     *        the state machine ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,12 +271,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTIONS.
+     * The type of task.
      * </p>
      * 
      * @param type
-     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-     *        STEP_FUNCTIONS.
+     *        The type of task.
      * @see MaintenanceWindowTaskType
      */
 
@@ -278,11 +285,10 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTIONS.
+     * The type of task.
      * </p>
      * 
-     * @return The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-     *         STEP_FUNCTIONS.
+     * @return The type of task.
      * @see MaintenanceWindowTaskType
      */
 
@@ -292,12 +298,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTIONS.
+     * The type of task.
      * </p>
      * 
      * @param type
-     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-     *        STEP_FUNCTIONS.
+     *        The type of task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -309,12 +314,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTIONS.
+     * The type of task.
      * </p>
      * 
      * @param type
-     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-     *        STEP_FUNCTIONS.
+     *        The type of task.
      * @see MaintenanceWindowTaskType
      */
 
@@ -324,12 +328,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTIONS.
+     * The type of task.
      * </p>
      * 
      * @param type
-     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-     *        STEP_FUNCTIONS.
+     *        The type of task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -342,13 +345,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * 
      * @return The targets (either instances or tags). Instances are specified using
-     *         Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *         name&gt;,Values=&lt;tag value&gt;.
+     *         <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     *         <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -361,14 +364,14 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * 
      * @param targets
      *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     *        <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -383,8 +386,8 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -394,8 +397,8 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * 
      * @param targets
      *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     *        <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,14 +415,14 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * 
      * @param targets
      *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>. Tags are specified using
+     *        <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,20 +593,21 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
      *        Information about an S3 bucket to write task-level logs to.</p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -618,20 +622,21 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @return Information about an S3 bucket to write task-level logs to.</p> <note>
      *         <p>
-     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported maintenance window task types, see
-     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *         bucket to contain logs, instead use the <code>OutputS3BucketName</code> and
+     *         <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For
+     *         information about how Amazon Web Services Systems Manager handles these options for the supported
+     *         maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
 
@@ -645,20 +650,21 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
      *        Information about an S3 bucket to write task-level logs to.</p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -671,13 +677,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *        notifications for maintenance window Run Command tasks.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish
+     *        Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -686,12 +692,12 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      * 
-     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *         notifications for maintenance window Run Command tasks.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish
+     *         Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      */
 
     public String getServiceRoleArn() {
@@ -700,13 +706,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *        notifications for maintenance window Run Command tasks.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish
+     *        Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

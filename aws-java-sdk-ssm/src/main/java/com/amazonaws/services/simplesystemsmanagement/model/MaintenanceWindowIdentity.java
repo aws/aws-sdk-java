@@ -60,8 +60,8 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
     private Integer duration;
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      */
     private Integer cutoff;
@@ -80,7 +80,7 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
     private String scheduleTimezone;
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      */
     private Integer scheduleOffset;
@@ -318,13 +318,13 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      */
 
     public void setCutoff(Integer cutoff) {
@@ -333,12 +333,12 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
-     * @return The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *         tasks for execution.
+     * @return The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *         stops scheduling new tasks for execution.
      */
 
     public Integer getCutoff() {
@@ -347,13 +347,13 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,11 +450,11 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     *        The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      */
 
     public void setScheduleOffset(Integer scheduleOffset) {
@@ -463,10 +463,10 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      * 
-     * @return The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * @return The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      */
 
     public Integer getScheduleOffset() {
@@ -475,11 +475,11 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     *        The number of days to wait to run a maintenance window after the scheduled cron expression date and time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

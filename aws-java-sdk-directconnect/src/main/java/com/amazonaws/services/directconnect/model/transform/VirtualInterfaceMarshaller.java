@@ -74,6 +74,8 @@ public class VirtualInterfaceMarshaller {
             .marshallLocationName("region").build();
     private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
+    private static final MarshallingInfo<String> AWSLOGICALDEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsLogicalDeviceId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -116,6 +118,7 @@ public class VirtualInterfaceMarshaller {
             protocolMarshaller.marshall(virtualInterface.getBgpPeers(), BGPPEERS_BINDING);
             protocolMarshaller.marshall(virtualInterface.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(virtualInterface.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getAwsLogicalDeviceId(), AWSLOGICALDEVICEID_BINDING);
             protocolMarshaller.marshall(virtualInterface.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

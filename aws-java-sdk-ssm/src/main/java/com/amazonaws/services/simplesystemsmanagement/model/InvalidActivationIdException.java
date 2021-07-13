@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The activation ID is not valid. Verify the you entered the correct ActivationId or ActivationCode and try again.
+ * The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

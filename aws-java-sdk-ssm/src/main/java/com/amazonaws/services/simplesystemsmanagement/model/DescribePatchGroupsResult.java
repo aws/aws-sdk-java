@@ -27,12 +27,19 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Each entry in the array contains:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     * <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * PatchBaselineIdentity: A PatchBaselineIdentity element.
+     * <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
      * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<PatchGroupPatchBaselineMapping> mappings;
     /**
@@ -47,19 +54,33 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Each entry in the array contains:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     * <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * PatchBaselineIdentity: A PatchBaselineIdentity element.
+     * <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return Each entry in the array contains:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *         <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     *         <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         PatchBaselineIdentity: A PatchBaselineIdentity element.
+     *         <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<PatchGroupPatchBaselineMapping> getMappings() {
@@ -73,20 +94,34 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Each entry in the array contains:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     * <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * PatchBaselineIdentity: A PatchBaselineIdentity element.
+     * <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param mappings
      *        Each entry in the array contains:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *        <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     *        <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        PatchBaselineIdentity: A PatchBaselineIdentity element.
+     *        <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
+     *        </p>
+     *        </li>
      */
 
     public void setMappings(java.util.Collection<PatchGroupPatchBaselineMapping> mappings) {
@@ -102,12 +137,19 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Each entry in the array contains:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     * <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * PatchBaselineIdentity: A PatchBaselineIdentity element.
+     * <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMappings(java.util.Collection)} or {@link #withMappings(java.util.Collection)} if you want to override
@@ -116,11 +158,18 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param mappings
      *        Each entry in the array contains:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *        <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     *        <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        PatchBaselineIdentity: A PatchBaselineIdentity element.
+     *        <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,20 +187,34 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * Each entry in the array contains:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     * <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * PatchBaselineIdentity: A PatchBaselineIdentity element.
+     * <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param mappings
      *        Each entry in the array contains:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *        <code>PatchGroup</code>: string (between 1 and 256 characters. Regex:
+     *        <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        PatchBaselineIdentity: A PatchBaselineIdentity element.
+     *        <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

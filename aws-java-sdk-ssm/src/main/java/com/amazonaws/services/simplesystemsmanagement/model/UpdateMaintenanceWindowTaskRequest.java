@@ -39,16 +39,18 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String windowTaskId;
     /**
      * <p>
-     * The targets (either instances or tags) to modify. Instances are specified using
-     * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     * The targets (either instances or tags) to modify. Instances are specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     * <code> Key=tag_name,Values=tag_value</code>.
      * </p>
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      */
@@ -61,13 +63,14 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String taskArn;
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -119,7 +122,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
      * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
-     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * you don't specify again are removed. For example, suppose that when you registered a Run Command task, you
      * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
      * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
@@ -142,9 +145,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      */
@@ -156,9 +159,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      */
@@ -169,10 +172,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      */
@@ -191,8 +195,8 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String description;
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
-     * this API request. Optional fields that are not specified are set to null.
+     * If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      */
     private Boolean replace;
@@ -279,28 +283,31 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) to modify. Instances are specified using
-     * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     * The targets (either instances or tags) to modify. Instances are specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     * <code> Key=tag_name,Values=tag_value</code>.
      * </p>
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The targets (either instances or tags) to modify. Instances are specified using
-     *         Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
-     *         </p> <note>
+     * @return The targets (either instances or tags) to modify. Instances are specified using the format
+     *         <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     *         <code> Key=tag_name,Values=tag_value</code>. </p> <note>
      *         <p>
      *         One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *         task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *         Functions). For more information about running tasks that do not specify targets, see <a href=
+     *         task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *         Functions). For more information about running tasks that don't specify targets, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *         >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -313,29 +320,32 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) to modify. Instances are specified using
-     * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     * The targets (either instances or tags) to modify. Instances are specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     * <code> Key=tag_name,Values=tag_value</code>.
      * </p>
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * 
      * @param targets
-     *        The targets (either instances or tags) to modify. Instances are specified using
-     *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
-     *        </p> <note>
+     *        The targets (either instances or tags) to modify. Instances are specified using the format
+     *        <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     *        <code> Key=tag_name,Values=tag_value</code>. </p> <note>
      *        <p>
      *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *        Functions). For more information about running tasks that don't specify targets, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -350,16 +360,18 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) to modify. Instances are specified using
-     * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     * The targets (either instances or tags) to modify. Instances are specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     * <code> Key=tag_name,Values=tag_value</code>.
      * </p>
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -369,15 +381,16 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) to modify. Instances are specified using
-     *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
-     *        </p> <note>
+     *        The targets (either instances or tags) to modify. Instances are specified using the format
+     *        <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     *        <code> Key=tag_name,Values=tag_value</code>. </p> <note>
      *        <p>
      *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *        Functions). For more information about running tasks that don't specify targets, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -394,29 +407,32 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) to modify. Instances are specified using
-     * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     * The targets (either instances or tags) to modify. Instances are specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     * <code> Key=tag_name,Values=tag_value</code>.
      * </p>
      * <note>
      * <p>
      * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
-     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
-     * For more information about running tasks that do not specify targets, see <a
+     * targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more
+     * information about running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * </note>
      * 
      * @param targets
-     *        The targets (either instances or tags) to modify. Instances are specified using
-     *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
-     *        </p> <note>
+     *        The targets (either instances or tags) to modify. Instances are specified using the format
+     *        <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format
+     *        <code> Key=tag_name,Values=tag_value</code>. </p> <note>
      *        <p>
      *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
-     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
-     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        task, targets are optional for other maintenance window task types (Automation, Lambda, and Step
+     *        Functions). For more information about running tasks that don't specify targets, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
-     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -468,13 +484,14 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -494,12 +511,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
-     *        you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
-     *        service-linked role for Systems Manager exists in your account, it is created when you run
-     *        <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *        The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume
+     *        when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses
+     *        your account's service-linked role. If no service-linked role for Systems Manager exists in your account,
+     *        it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
      *        <p>
-     *        For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *        For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -524,13 +542,14 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -549,12 +568,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </li>
      * </ul>
      * 
-     * @return The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
-     *         you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
-     *         service-linked role for Systems Manager exists in your account, it is created when you run
-     *         <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     * @return The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume
+     *         when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses
+     *         your account's service-linked role. If no service-linked role for Systems Manager exists in your account,
+     *         it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
      *         <p>
-     *         For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *         For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     *         Guide</i>:
      *         </p>
      *         <ul>
      *         <li>
@@ -579,13 +599,14 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
-     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
-     * role for Systems Manager exists in your account, it is created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code>.
+     * The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when
+     * running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
+     * service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you
+     * run <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
      * <p>
-     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -605,12 +626,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
-     *        you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
-     *        service-linked role for Systems Manager exists in your account, it is created when you run
-     *        <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *        The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume
+     *        when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses
+     *        your account's service-linked role. If no service-linked role for Systems Manager exists in your account,
+     *        it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
      *        <p>
-     *        For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *        For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
@@ -808,7 +830,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
      * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
-     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * you don't specify again are removed. For example, suppose that when you registered a Run Command task, you
      * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
      * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
@@ -822,7 +844,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        When you update a maintenance window task that has options specified in
      *        <code>TaskInvocationParameters</code>, you must provide again all the
-     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again
      *        are removed. For example, suppose that when you registered a Run Command task, you specified
      *        <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      *        and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
@@ -844,7 +866,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
      * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
-     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * you don't specify again are removed. For example, suppose that when you registered a Run Command task, you
      * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
      * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
@@ -857,7 +879,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         When you update a maintenance window task that has options specified in
      *         <code>TaskInvocationParameters</code>, you must provide again all the
-     *         <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *         <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again
      *         are removed. For example, suppose that when you registered a Run Command task, you specified
      *         <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      *         and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
@@ -879,7 +901,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
      * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
-     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * you don't specify again are removed. For example, suppose that when you registered a Run Command task, you
      * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
      * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
@@ -893,7 +915,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        When you update a maintenance window task that has options specified in
      *        <code>TaskInvocationParameters</code>, you must provide again all the
-     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again
      *        are removed. For example, suppose that when you registered a Run Command task, you specified
      *        <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
      *        and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
@@ -961,9 +983,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      * 
@@ -971,9 +993,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *        The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number
      *        of targets that are allowed to run this task in parallel.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
      *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
-     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        to this command. This value doesn't affect the running of your task and can be ignored.
      *        </p>
      */
 
@@ -988,18 +1010,18 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      * 
      * @return The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number
      *         of targets that are allowed to run this task in parallel.</p> <note>
      *         <p>
-     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         For maintenance window tasks without a target specified, you can't supply a value for this option.
      *         Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
-     *         to this command. This value does not affect the running of your task and can be ignored.
+     *         to this command. This value doesn't affect the running of your task and can be ignored.
      *         </p>
      */
 
@@ -1014,9 +1036,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      * 
@@ -1024,9 +1046,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *        The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number
      *        of targets that are allowed to run this task in parallel.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
      *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
-     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        to this command. This value doesn't affect the running of your task and can be ignored.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1043,9 +1065,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      * 
@@ -1053,9 +1075,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *        The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
      *        that are allowed before the task stops being scheduled.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
      *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
-     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        to this command. This value doesn't affect the running of your task and can be ignored.
      *        </p>
      */
 
@@ -1070,18 +1092,18 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      * 
      * @return The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
      *         that are allowed before the task stops being scheduled.</p> <note>
      *         <p>
-     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         For maintenance window tasks without a target specified, you can't supply a value for this option.
      *         Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
-     *         to this command. This value does not affect the running of your task and can be ignored.
+     *         to this command. This value doesn't affect the running of your task and can be ignored.
      *         </p>
      */
 
@@ -1096,9 +1118,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the
      * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
-     * value does not affect the running of your task and can be ignored.
+     * value doesn't affect the running of your task and can be ignored.
      * </p>
      * </note>
      * 
@@ -1106,9 +1128,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      *        The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
      *        that are allowed before the task stops being scheduled.</p> <note>
      *        <p>
-     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        For maintenance window tasks without a target specified, you can't supply a value for this option.
      *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
-     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        to this command. This value doesn't affect the running of your task and can be ignored.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1124,20 +1146,21 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
      *        The new logging location in Amazon S3 to specify.</p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -1152,20 +1175,21 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @return The new logging location in Amazon S3 to specify.</p> <note>
      *         <p>
-     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported maintenance window task types, see
-     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *         bucket to contain logs, instead use the <code>OutputS3BucketName</code> and
+     *         <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For
+     *         information about how Amazon Web Services Systems Manager handles these options for the supported
+     *         maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
 
@@ -1179,20 +1203,21 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
      *        The new logging location in Amazon S3 to specify.</p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1285,13 +1310,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
-     * this API request. Optional fields that are not specified are set to null.
+     * If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
-     *        required for this API request. Optional fields that are not specified are set to null.
+     *        If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are
+     *        also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public void setReplace(Boolean replace) {
@@ -1300,12 +1325,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
-     * this API request. Optional fields that are not specified are set to null.
+     * If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
-     *         required for this API request. Optional fields that are not specified are set to null.
+     * @return If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are
+     *         also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public Boolean getReplace() {
@@ -1314,13 +1339,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
-     * this API request. Optional fields that are not specified are set to null.
+     * If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
-     *        required for this API request. Optional fields that are not specified are set to null.
+     *        If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are
+     *        also required for this API request. Optional fields that aren't specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1331,12 +1356,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
-     * this API request. Optional fields that are not specified are set to null.
+     * If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
-     *         required for this API request. Optional fields that are not specified are set to null.
+     * @return If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are
+     *         also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public Boolean isReplace() {

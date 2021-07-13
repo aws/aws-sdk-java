@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the name of a Systems Manager document.
+ * Describes the name of a SSM document.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier" target="_top">AWS API
@@ -30,33 +30,33 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The date the Systems Manager document was created.
+     * The date the SSM document was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
-     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * An optional field where you can specify a friendly name for the SSM document. This value can differ for each
+     * version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      */
     private String owner;
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      */
     private String versionName;
@@ -92,10 +92,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     private String documentFormat;
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String targetType;
@@ -127,11 +127,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      */
 
     public void setName(String name) {
@@ -140,10 +140,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the Systems Manager document.
+     * @return The name of the SSM document.
      */
 
     public String getName() {
@@ -152,11 +152,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +167,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the Systems Manager document was created.
+     * The date the SSM document was created.
      * </p>
      * 
      * @param createdDate
-     *        The date the Systems Manager document was created.
+     *        The date the SSM document was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -180,10 +180,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the Systems Manager document was created.
+     * The date the SSM document was created.
      * </p>
      * 
-     * @return The date the Systems Manager document was created.
+     * @return The date the SSM document was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -192,11 +192,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date the Systems Manager document was created.
+     * The date the SSM document was created.
      * </p>
      * 
      * @param createdDate
-     *        The date the Systems Manager document was created.
+     *        The date the SSM document was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,13 +207,13 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
-     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * An optional field where you can specify a friendly name for the SSM document. This value can differ for each
+     * version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      * </p>
      * 
      * @param displayName
-     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
-     *        differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     *        An optional field where you can specify a friendly name for the SSM document. This value can differ for
+     *        each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      */
 
     public void setDisplayName(String displayName) {
@@ -222,12 +222,12 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
-     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * An optional field where you can specify a friendly name for the SSM document. This value can differ for each
+     * version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      * </p>
      * 
-     * @return An optional field where you can specify a friendly name for the Systems Manager document. This value can
-     *         differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * @return An optional field where you can specify a friendly name for the SSM document. This value can differ for
+     *         each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      */
 
     public String getDisplayName() {
@@ -236,13 +236,13 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
-     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * An optional field where you can specify a friendly name for the SSM document. This value can differ for each
+     * version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      * </p>
      * 
      * @param displayName
-     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
-     *        differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     *        An optional field where you can specify a friendly name for the SSM document. This value can differ for
+     *        each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,11 +253,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      * 
      * @param owner
-     *        The AWS user account that created the document.
+     *        The Amazon Web Services user account that created the document.
      */
 
     public void setOwner(String owner) {
@@ -266,10 +266,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      * 
-     * @return The AWS user account that created the document.
+     * @return The Amazon Web Services user account that created the document.
      */
 
     public String getOwner() {
@@ -278,11 +278,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS user account that created the document.
+     * The Amazon Web Services user account that created the document.
      * </p>
      * 
      * @param owner
-     *        The AWS user account that created the document.
+     *        The Amazon Web Services user account that created the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,12 +294,12 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
      *        An optional field specifying the version of the artifact associated with the document. For example,
-     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      */
 
     public void setVersionName(String versionName) {
@@ -309,11 +309,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @return An optional field specifying the version of the artifact associated with the document. For example,
-     *         "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     *         "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      */
 
     public String getVersionName() {
@@ -323,12 +323,12 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
      *        An optional field specifying the version of the artifact associated with the document. For example,
-     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -666,17 +666,17 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -685,16 +685,16 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The target type which defines the kinds of resources the document can run on. For example,
-     *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *         >Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public String getTargetType() {
@@ -703,17 +703,17 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
-     * For a list of valid resource types, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The target type which defines the kinds of resources the document can run on. For example,
+     * <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

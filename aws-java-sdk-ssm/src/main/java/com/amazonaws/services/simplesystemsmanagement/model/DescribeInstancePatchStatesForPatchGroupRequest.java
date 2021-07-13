@@ -35,15 +35,23 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Key (string between 1 and 200 characters)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Values (array containing a single string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<InstancePatchStateFilter> filters;
     /**
@@ -103,25 +111,41 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Key (string between 1 and 200 characters)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Values (array containing a single string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return Each entry in the array is a structure containing:</p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         Key (string between 1 and 200 characters)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         Values (array containing a single string)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<InstancePatchStateFilter> getFilters() {
@@ -135,26 +159,42 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Key (string between 1 and 200 characters)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Values (array containing a single string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Key (string between 1 and 200 characters)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Values (array containing a single string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<InstancePatchStateFilter> filters) {
@@ -170,15 +210,23 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Key (string between 1 and 200 characters)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Values (array containing a single string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -187,14 +235,22 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Key (string between 1 and 200 characters)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Values (array containing a single string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,26 +268,42 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Key (string between 1 and 200 characters)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Values (array containing a single string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Key (string between 1 and 200 characters)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Values (array containing a single string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

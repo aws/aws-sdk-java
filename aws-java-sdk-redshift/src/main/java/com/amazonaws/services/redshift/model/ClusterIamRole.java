@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access
- * other AWS services.
+ * An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access
+ * other Amazon Web Services services.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterIamRole" target="_top">AWS API

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize
- * data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
+ * Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can
+ * synchronize data from Organizations or, if an Amazon Web Services organization isn't present, from multiple Regions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncAwsOrganizationsSource"
@@ -31,31 +31,33 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     * If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      * <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS Organization.
+     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web
+     * Services organization.
      * </p>
      */
     private String organizationSourceType;
     /**
      * <p>
-     * The AWS Organizations organization units included in the sync.
+     * The Organizations organization units included in the sync.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceDataSyncOrganizationalUnit> organizationalUnits;
 
     /**
      * <p>
-     * If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     * If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      * <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS Organization.
+     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web
+     * Services organization.
      * </p>
      * 
      * @param organizationSourceType
-     *        If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     *        If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      *        <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set
-     *        of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS
-     *        Organization.
+     *        of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon
+     *        Web Services organization.
      */
 
     public void setOrganizationSourceType(String organizationSourceType) {
@@ -64,15 +66,16 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     * If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      * <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS Organization.
+     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web
+     * Services organization.
      * </p>
      * 
-     * @return If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     * @return If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      *         <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set
-     *         of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS
-     *         Organization.
+     *         of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon
+     *         Web Services organization.
      */
 
     public String getOrganizationSourceType() {
@@ -81,16 +84,17 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     * If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      * <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of
-     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS Organization.
+     * organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web
+     * Services organization.
      * </p>
      * 
      * @param organizationSourceType
-     *        If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+     *        If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
      *        <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set
-     *        of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS
-     *        Organization.
+     *        of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon
+     *        Web Services organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +105,10 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * The AWS Organizations organization units included in the sync.
+     * The Organizations organization units included in the sync.
      * </p>
      * 
-     * @return The AWS Organizations organization units included in the sync.
+     * @return The Organizations organization units included in the sync.
      */
 
     public java.util.List<ResourceDataSyncOrganizationalUnit> getOrganizationalUnits() {
@@ -116,11 +120,11 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * The AWS Organizations organization units included in the sync.
+     * The Organizations organization units included in the sync.
      * </p>
      * 
      * @param organizationalUnits
-     *        The AWS Organizations organization units included in the sync.
+     *        The Organizations organization units included in the sync.
      */
 
     public void setOrganizationalUnits(java.util.Collection<ResourceDataSyncOrganizationalUnit> organizationalUnits) {
@@ -134,7 +138,7 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * The AWS Organizations organization units included in the sync.
+     * The Organizations organization units included in the sync.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,7 +147,7 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
      * </p>
      * 
      * @param organizationalUnits
-     *        The AWS Organizations organization units included in the sync.
+     *        The Organizations organization units included in the sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +163,11 @@ public class ResourceDataSyncAwsOrganizationsSource implements Serializable, Clo
 
     /**
      * <p>
-     * The AWS Organizations organization units included in the sync.
+     * The Organizations organization units included in the sync.
      * </p>
      * 
      * @param organizationalUnits
-     *        The AWS Organizations organization units included in the sync.
+     *        The Organizations organization units included in the sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

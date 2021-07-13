@@ -33,7 +33,7 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
     private String clusterIdentifier;
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.
+     * The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      * </p>
      */
     private String resourceOwner;
@@ -103,12 +103,11 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.
+     * The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      * </p>
      * 
      * @param resourceOwner
-     *        The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS
-     *        account.
+     *        The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      */
 
     public void setResourceOwner(String resourceOwner) {
@@ -117,11 +116,10 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.
+     * The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS
-     *         account.
+     * @return The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      */
 
     public String getResourceOwner() {
@@ -130,12 +128,11 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.
+     * The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      * </p>
      * 
      * @param resourceOwner
-     *        The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS
-     *        account.
+     *        The account ID of the owner of the cluster. This is only required if the cluster is in another account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

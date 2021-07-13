@@ -163,6 +163,16 @@ public class AbstractAmazonLexModelBuilding implements AmazonLexModelBuilding {
     }
 
     @Override
+    public GetMigrationResult getMigration(GetMigrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMigrationsResult getMigrations(GetMigrationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSlotTypeResult getSlotType(GetSlotTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +219,11 @@ public class AbstractAmazonLexModelBuilding implements AmazonLexModelBuilding {
 
     @Override
     public StartImportResult startImport(StartImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMigrationResult startMigration(StartMigrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -83,7 +83,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      * Security (MACsec) prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * </note>
      */
@@ -490,7 +490,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      * Security (MACsec) prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * </note>
      * 
@@ -500,7 +500,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      *        Security (MACsec) prerequisties, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *        >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      *        </p>
      */
 
@@ -517,7 +517,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      * Security (MACsec) prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * </note>
      * 
@@ -526,7 +526,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      *         Security (MACsec) prerequisties, see <a href=
      *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *         >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      *         </p>
      */
 
@@ -543,7 +543,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      * Security (MACsec) prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * </note>
      * 
@@ -553,7 +553,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      *        Security (MACsec) prerequisties, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *        >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -572,7 +572,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      * Security (MACsec) prerequisties, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * </note>
      * 
@@ -581,7 +581,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
      *         Security (MACsec) prerequisties, see <a href=
      *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
-     *         >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         >MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.
      *         </p>
      */
 

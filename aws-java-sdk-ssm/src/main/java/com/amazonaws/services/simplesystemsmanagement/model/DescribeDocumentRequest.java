@@ -27,7 +27,7 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
@@ -40,18 +40,18 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      */
     private String versionName;
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      */
 
     public void setName(String name) {
@@ -60,10 +60,10 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the Systems Manager document.
+     * @return The name of the SSM document.
      */
 
     public String getName() {
@@ -72,11 +72,11 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,12 +128,12 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
      *        An optional field specifying the version of the artifact associated with the document. For example,
-     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      */
 
     public void setVersionName(String versionName) {
@@ -143,11 +143,11 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @return An optional field specifying the version of the artifact associated with the document. For example,
-     *         "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     *         "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      */
 
     public String getVersionName() {
@@ -157,12 +157,12 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * An optional field specifying the version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
      *        An optional field specifying the version of the artifact associated with the document. For example,
-     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

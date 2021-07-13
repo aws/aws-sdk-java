@@ -44,22 +44,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private java.util.Map<String, OpsItemDataValue> operationalData;
@@ -94,7 +96,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String status;
@@ -208,22 +210,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
@@ -235,23 +239,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <important>
      *         <p>
-     *         Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     *         /amzn, /ssm.
+     *         Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *         <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *         <code>/ssm</code>.
      *         </p>
      *         </important>
      *         <p>
      *         You can choose to make the data searchable by other users in the account or you can restrict search
      *         access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *         <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *         not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *         <a>GetOpsItem</a> API action).
+     *         <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *         isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *         <a>GetOpsItem</a> API operation).
      *         </p>
      *         <p>
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *         OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *         OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *         >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.Map<String, OpsItemDataValue> getOperationalData() {
@@ -270,22 +275,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -298,23 +305,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <important>
      *        <p>
-     *        Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn,
-     *        /ssm.
+     *        Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *        <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *        <code>/ssm</code>.
      *        </p>
      *        </important>
      *        <p>
      *        You can choose to make the data searchable by other users in the account or you can restrict search
      *        access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *        <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *        not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *        isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *        <a>GetOpsItem</a> API operation).
      *        </p>
      *        <p>
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setOperationalData(java.util.Map<String, OpsItemDataValue> operationalData) {
@@ -333,22 +341,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <important>
      * <p>
-     * Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.
+     * Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     * <code>/ssm</code>.
      * </p>
      * </important>
      * <p>
      * You can choose to make the data searchable by other users in the account or you can restrict search access.
      * Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not
+     * <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that isn't
      * searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API
-     * action).
+     * operation).
      * </p>
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * AWS CLI example commands that use these keys, see <a href=
+     * Amazon Web Services CLI example commands that use these keys, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -361,23 +371,24 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <important>
      *        <p>
-     *        Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn,
-     *        /ssm.
+     *        Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     *        <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>,
+     *        <code>/ssm</code>.
      *        </p>
      *        </important>
      *        <p>
      *        You can choose to make the data searchable by other users in the account or you can restrict search
      *        access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the
-     *        <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is
-     *        not searchable is only viewable by users who have access to the OpsItem (as provided by the
-     *        <a>GetOpsItem</a> API action).
+     *        <a>DescribeOpsItems</a> API operation) can view and search on the specified data. Operational data that
+     *        isn't searchable is only viewable by users who have access to the OpsItem (as provided by the
+     *        <a>GetOpsItem</a> API operation).
      *        </p>
      *        <p>
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
-     *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
+     *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,14 +709,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -718,13 +729,13 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     *         >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -737,14 +748,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */
@@ -759,14 +770,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
-     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */

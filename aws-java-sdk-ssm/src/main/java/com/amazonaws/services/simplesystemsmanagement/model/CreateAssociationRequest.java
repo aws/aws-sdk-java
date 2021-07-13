@@ -27,16 +27,16 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * The name of the SSM Command document or Automation runbook that contains the configuration information for the
+     * instance.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the
+     * complete SSM document ARN, in the following format:
      * </p>
      * <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -48,8 +48,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      */
     private String name;
@@ -66,11 +66,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents
-     * that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
-     * you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.
+     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager
+     * documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.
      * </p>
      * </note>
      */
@@ -83,12 +83,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
-     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
-     * href=
+     * The targets for the association. You can target instances by using tags, Amazon Web Services resource groups, all
+     * instances in an account, or individual instance IDs. For more information about choosing targets for an
+     * association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -100,7 +100,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String scheduleExpression;
     /**
      * <p>
-     * An S3 bucket where you want to store the output details of the request.
+     * An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.
      * </p>
      */
     private InstanceAssociationOutputLocation outputLocation;
@@ -112,8 +112,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String associationName;
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      */
     private String automationTargetParameterName;
@@ -123,13 +123,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      */
     private String maxErrors;
@@ -140,9 +140,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      */
     private String maxConcurrency;
@@ -161,8 +162,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -173,39 +174,39 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
-     * your associations under. The associations only run when that Change Calendar is open. For more information, see
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     * Systems Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     * associations under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> calendarNames;
     /**
      * <p>
-     * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
-     * action to create an association in multiple Regions and multiple accounts.
+     * A location is a combination of Regions and accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
 
     /**
      * <p>
-     * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * The name of the SSM Command document or Automation runbook that contains the configuration information for the
+     * instance.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the
+     * complete SSM document ARN, in the following format:
      * </p>
      * <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -217,20 +218,20 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @param name
-     *        The name of the SSM document that contains the configuration information for the instance. You can specify
-     *        Command or Automation documents.</p>
+     *        The name of the SSM Command document or Automation runbook that contains the configuration information for
+     *        the instance.</p>
      *        <p>
-     *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
-     *        from another account.
+     *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+     *        shared with you from another account.
      *        </p>
      *        <p>
-     *        For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
-     *        document ARN, in the following format:
+     *        For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must
+     *        specify the complete SSM document ARN, in the following format:
      *        </p>
      *        <p>
      *        <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -242,8 +243,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      *        </p>
      *        <p>
-     *        For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
-     *        document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     *        For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+     *        to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      */
 
     public void setName(String name) {
@@ -252,16 +253,16 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * The name of the SSM Command document or Automation runbook that contains the configuration information for the
+     * instance.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the
+     * complete SSM document ARN, in the following format:
      * </p>
      * <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -273,19 +274,19 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
-     * @return The name of the SSM document that contains the configuration information for the instance. You can
-     *         specify Command or Automation documents.</p>
+     * @return The name of the SSM Command document or Automation runbook that contains the configuration information
+     *         for the instance.</p>
      *         <p>
-     *         You can specify AWS-predefined documents, documents you created, or a document that is shared with you
-     *         from another account.
+     *         You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+     *         shared with you from another account.
      *         </p>
      *         <p>
-     *         For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
-     *         document ARN, in the following format:
+     *         For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must
+     *         specify the complete SSM document ARN, in the following format:
      *         </p>
      *         <p>
      *         <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -297,8 +298,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      *         </p>
      *         <p>
-     *         For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
-     *         document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     *         For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+     *         to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+     *         <code>My-Document</code>.
      */
 
     public String getName() {
@@ -307,16 +309,16 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * The name of the SSM Command document or Automation runbook that contains the configuration information for the
+     * instance.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must specify the
+     * complete SSM document ARN, in the following format:
      * </p>
      * <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -328,20 +330,20 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @param name
-     *        The name of the SSM document that contains the configuration information for the instance. You can specify
-     *        Command or Automation documents.</p>
+     *        The name of the SSM Command document or Automation runbook that contains the configuration information for
+     *        the instance.</p>
      *        <p>
-     *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
-     *        from another account.
+     *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+     *        shared with you from another account.
      *        </p>
      *        <p>
-     *        For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
-     *        document ARN, in the following format:
+     *        For Systems Manager documents (SSM documents) that are shared with you from other accounts, you must
+     *        specify the complete SSM document ARN, in the following format:
      *        </p>
      *        <p>
      *        <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -353,8 +355,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      *        </p>
      *        <p>
-     *        For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
-     *        document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     *        For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+     *        to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,11 +415,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents
-     * that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
-     * you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.
+     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager
+     * documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.
      * </p>
      * </note>
      * 
@@ -425,9 +427,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The instance ID.</p> <note>
      *        <p>
      *        <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     *        <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM
-     *        documents that use schema version 2.0 or later will fail. In addition, if you use the parameter
-     *        <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>,
+     *        <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems
+     *        Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use
+     *        the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
      *        <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      *        <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the
      *        <code>Targets</code> parameter.
@@ -445,20 +447,20 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents
-     * that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
-     * you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.
+     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager
+     * documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.
      * </p>
      * </note>
      * 
      * @return The instance ID.</p> <note>
      *         <p>
      *         <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     *         <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM
-     *         documents that use schema version 2.0 or later will fail. In addition, if you use the parameter
-     *         <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>,
+     *         <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems
+     *         Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use
+     *         the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
      *         <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      *         <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use
      *         the <code>Targets</code> parameter.
@@ -476,11 +478,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM documents
-     * that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
-     * you cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
-     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.
+     * <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager
+     * documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.
      * </p>
      * </note>
      * 
@@ -488,9 +490,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The instance ID.</p> <note>
      *        <p>
      *        <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the
-     *        <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with SSM
-     *        documents that use schema version 2.0 or later will fail. In addition, if you use the parameter
-     *        <code>InstanceId</code>, you cannot use the parameters <code>AssociationName</code>,
+     *        <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems
+     *        Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use
+     *        the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
      *        <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      *        <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the
      *        <code>Targets</code> parameter.
@@ -573,20 +575,20 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
-     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
-     * href=
+     * The targets for the association. You can target instances by using tags, Amazon Web Services resource groups, all
+     * instances in an account, or individual instance IDs. For more information about choosing targets for an
+     * association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
-     * @return The targets for the association. You can target instances by using tags, AWS Resource Groups, all
-     *         instances in an AWS account, or individual instance IDs. For more information about choosing targets for
-     *         an association, see <a href=
+     * @return The targets for the association. You can target instances by using tags, Amazon Web Services resource
+     *         groups, all instances in an account, or individual instance IDs. For more information about choosing
+     *         targets for an association, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *         >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     *         Guide</i>.
+     *         >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services
+     *         Systems Manager User Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -598,21 +600,21 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
-     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
-     * href=
+     * The targets for the association. You can target instances by using tags, Amazon Web Services resource groups, all
+     * instances in an account, or individual instance IDs. For more information about choosing targets for an
+     * association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @param targets
-     *        The targets for the association. You can target instances by using tags, AWS Resource Groups, all
-     *        instances in an AWS account, or individual instance IDs. For more information about choosing targets for
-     *        an association, see <a href=
+     *        The targets for the association. You can target instances by using tags, Amazon Web Services resource
+     *        groups, all instances in an account, or individual instance IDs. For more information about choosing
+     *        targets for an association, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *        >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     *        Manager User Guide</i>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -626,12 +628,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
-     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
-     * href=
+     * The targets for the association. You can target instances by using tags, Amazon Web Services resource groups, all
+     * instances in an account, or individual instance IDs. For more information about choosing targets for an
+     * association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -640,12 +642,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param targets
-     *        The targets for the association. You can target instances by using tags, AWS Resource Groups, all
-     *        instances in an AWS account, or individual instance IDs. For more information about choosing targets for
-     *        an association, see <a href=
+     *        The targets for the association. You can target instances by using tags, Amazon Web Services resource
+     *        groups, all instances in an account, or individual instance IDs. For more information about choosing
+     *        targets for an association, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *        >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     *        Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -661,21 +663,21 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
-     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
-     * href=
+     * The targets for the association. You can target instances by using tags, Amazon Web Services resource groups, all
+     * instances in an account, or individual instance IDs. For more information about choosing targets for an
+     * association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @param targets
-     *        The targets for the association. You can target instances by using tags, AWS Resource Groups, all
-     *        instances in an AWS account, or individual instance IDs. For more information about choosing targets for
-     *        an association, see <a href=
+     *        The targets for the association. You can target instances by using tags, Amazon Web Services resource
+     *        groups, all instances in an account, or individual instance IDs. For more information about choosing
+     *        targets for an association, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *        >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     *        Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -726,11 +728,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An S3 bucket where you want to store the output details of the request.
+     * An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.
      * </p>
      * 
      * @param outputLocation
-     *        An S3 bucket where you want to store the output details of the request.
+     *        An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the
+     *        request.
      */
 
     public void setOutputLocation(InstanceAssociationOutputLocation outputLocation) {
@@ -739,10 +742,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An S3 bucket where you want to store the output details of the request.
+     * An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.
      * </p>
      * 
-     * @return An S3 bucket where you want to store the output details of the request.
+     * @return An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the
+     *         request.
      */
 
     public InstanceAssociationOutputLocation getOutputLocation() {
@@ -751,11 +755,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An S3 bucket where you want to store the output details of the request.
+     * An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.
      * </p>
      * 
      * @param outputLocation
-     *        An S3 bucket where you want to store the output details of the request.
+     *        An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -806,13 +811,14 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param automationTargetParameterName
      *        Specify the target for the association. This target is required for associations that use an Automation
-     *        document and target resources by using rate controls.
+     *        runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *        Systems Manager.
      */
 
     public void setAutomationTargetParameterName(String automationTargetParameterName) {
@@ -821,12 +827,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @return Specify the target for the association. This target is required for associations that use an Automation
-     *         document and target resources by using rate controls.
+     *         runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *         Systems Manager.
      */
 
     public String getAutomationTargetParameterName() {
@@ -835,13 +842,14 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param automationTargetParameterName
      *        Specify the target for the association. This target is required for associations that use an Automation
-     *        document and target resources by using rate controls.
+     *        runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *        Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -856,13 +864,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @param maxErrors
@@ -870,12 +878,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *        stops sending the request when the sixth error is received.</p>
+     *        error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *        the system stops sending the request when the sixth error is received.</p>
      *        <p>
-     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *        Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *        complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *        than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *        a time.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -888,25 +897,26 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @return The number of errors that are allowed before the system stops sending requests to run the association on
      *         additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *         of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *         the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *         error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *         stops sending the request when the sixth error is received.</p>
+     *         error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *         the system stops sending the request when the sixth error is received.</p>
      *         <p>
-     *         Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *         some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *         failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *         Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *         complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *         than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *         a time.
      */
 
     public String getMaxErrors() {
@@ -919,13 +929,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @param maxErrors
@@ -933,12 +943,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *        stops sending the request when the sixth error is received.</p>
+     *        error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *        the system stops sending the request when the sixth error is received.</p>
      *        <p>
-     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *        Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *        complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *        than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *        a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -954,9 +965,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @param maxConcurrency
@@ -965,8 +977,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        all targets run the association at the same time.</p>
      *        <p>
      *        If a new instance starts and attempts to run an association while Systems Manager is running
-     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *        new instance will process its association within the limit specified for MaxConcurrency.
+     *        <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *        interval, the new instance will process its association within the limit specified for
+     *        <code>MaxConcurrency</code>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -980,9 +993,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @return The maximum number of targets allowed to run the association at the same time. You can specify a number,
@@ -990,8 +1004,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         means all targets run the association at the same time.</p>
      *         <p>
      *         If a new instance starts and attempts to run an association while Systems Manager is running
-     *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *         new instance will process its association within the limit specified for MaxConcurrency.
+     *         <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *         interval, the new instance will process its association within the limit specified for
+     *         <code>MaxConcurrency</code>.
      */
 
     public String getMaxConcurrency() {
@@ -1005,9 +1020,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @param maxConcurrency
@@ -1016,8 +1032,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        all targets run the association at the same time.</p>
      *        <p>
      *        If a new instance starts and attempts to run an association while Systems Manager is running
-     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *        new instance will process its association within the limit specified for MaxConcurrency.
+     *        <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *        interval, the new instance will process its association within the limit specified for
+     *        <code>MaxConcurrency</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1094,8 +1111,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1109,8 +1126,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>NON-COMPLIANT</code>.</p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It
+     *        is managed by your direct call to the <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1130,8 +1147,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1144,8 +1161,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>NON-COMPLIANT</code>.</p>
      *         <p>
      *         In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *         <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It
-     *         is managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *         <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It
+     *         is managed by your direct call to the <a>PutComplianceItems</a> API operation.
      *         </p>
      *         <p>
      *         By default, all associations use <code>AUTO</code> mode.
@@ -1165,8 +1182,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1180,8 +1197,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>NON-COMPLIANT</code>.</p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It
+     *        is managed by your direct call to the <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1203,8 +1220,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1218,8 +1235,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>NON-COMPLIANT</code>.</p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager. It
+     *        is managed by your direct call to the <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1236,13 +1253,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new association, the system runs it immediately after it is created and then
      *        according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it. This parameter is not supported for rate expressions.
+     *        immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public void setApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
@@ -1253,12 +1270,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new association, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it. This parameter is not supported for rate expressions.
+     *         immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public Boolean getApplyOnlyAtCronInterval() {
@@ -1269,13 +1286,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new association, the system runs it immediately after it is created and then
      *        according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it. This parameter is not supported for rate expressions.
+     *        immediately after you create it. This parameter isn't supported for rate expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1288,12 +1305,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new association, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it. This parameter is not supported for rate expressions.
+     *         immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public Boolean isApplyOnlyAtCronInterval() {
@@ -1302,17 +1319,17 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
-     * your associations under. The associations only run when that Change Calendar is open. For more information, see
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     * Systems Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     * associations under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
-     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
-     *         to gate your associations under. The associations only run when that Change Calendar is open. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *         Systems Manager Change Calendar</a>.
+     * @return The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     *         associations under. The associations only run when that change calendar is open. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar"
+     *         >Amazon Web Services Systems Manager Change Calendar</a>.
      */
 
     public java.util.List<String> getCalendarNames() {
@@ -1324,18 +1341,17 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
-     * your associations under. The associations only run when that Change Calendar is open. For more information, see
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     * Systems Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     * associations under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
-     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     *        associations under. The associations only run when that change calendar is open. For more information, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">
+     *        Amazon Web Services Systems Manager Change Calendar</a>.
      */
 
     public void setCalendarNames(java.util.Collection<String> calendarNames) {
@@ -1349,10 +1365,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
-     * your associations under. The associations only run when that Change Calendar is open. For more information, see
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     * Systems Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     * associations under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1361,11 +1377,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
-     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     *        associations under. The associations only run when that change calendar is open. For more information, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">
+     *        Amazon Web Services Systems Manager Change Calendar</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1381,18 +1396,17 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
-     * your associations under. The associations only run when that Change Calendar is open. For more information, see
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     * Systems Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     * associations under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
-     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your
+     *        associations under. The associations only run when that change calendar is open. For more information, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">
+     *        Amazon Web Services Systems Manager Change Calendar</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1403,12 +1417,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
-     * action to create an association in multiple Regions and multiple accounts.
+     * A location is a combination of Regions and accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.
      * </p>
      * 
-     * @return A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use
-     *         this action to create an association in multiple Regions and multiple accounts.
+     * @return A location is a combination of Regions and accounts where you want to run the association. Use this
+     *         action to create an association in multiple Regions and multiple accounts.
      */
 
     public java.util.List<TargetLocation> getTargetLocations() {
@@ -1420,13 +1434,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
-     * action to create an association in multiple Regions and multiple accounts.
+     * A location is a combination of Regions and accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.
      * </p>
      * 
      * @param targetLocations
-     *        A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use
-     *        this action to create an association in multiple Regions and multiple accounts.
+     *        A location is a combination of Regions and accounts where you want to run the association. Use this action
+     *        to create an association in multiple Regions and multiple accounts.
      */
 
     public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
@@ -1440,8 +1454,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
-     * action to create an association in multiple Regions and multiple accounts.
+     * A location is a combination of Regions and accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1450,8 +1464,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param targetLocations
-     *        A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use
-     *        this action to create an association in multiple Regions and multiple accounts.
+     *        A location is a combination of Regions and accounts where you want to run the association. Use this action
+     *        to create an association in multiple Regions and multiple accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1467,13 +1481,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
-     * action to create an association in multiple Regions and multiple accounts.
+     * A location is a combination of Regions and accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.
      * </p>
      * 
      * @param targetLocations
-     *        A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use
-     *        this action to create an association in multiple Regions and multiple accounts.
+     *        A location is a combination of Regions and accounts where you want to run the association. Use this action
+     *        to create an association in multiple Regions and multiple accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

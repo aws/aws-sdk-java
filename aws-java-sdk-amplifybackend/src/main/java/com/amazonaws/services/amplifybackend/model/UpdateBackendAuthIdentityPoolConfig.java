@@ -31,18 +31,18 @@ public class UpdateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      * </p>
      */
     private Boolean unauthenticatedLogin;
 
     /**
      * <p>
-     * A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      * </p>
      * 
      * @param unauthenticatedLogin
-     *        A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     *        A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      */
 
     public void setUnauthenticatedLogin(Boolean unauthenticatedLogin) {
@@ -51,10 +51,10 @@ public class UpdateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      * </p>
      * 
-     * @return A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * @return A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      */
 
     public Boolean getUnauthenticatedLogin() {
@@ -63,11 +63,11 @@ public class UpdateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      * </p>
      * 
      * @param unauthenticatedLogin
-     *        A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     *        A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class UpdateBackendAuthIdentityPoolConfig implements Serializable, Clonea
 
     /**
      * <p>
-     * A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      * </p>
      * 
-     * @return A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.
+     * @return A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.
      */
 
     public Boolean isUnauthenticatedLogin() {

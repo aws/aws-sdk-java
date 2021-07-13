@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided for an
- * Amazon SNS topic.
+ * One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided for an
+ * Amazon Simple Notification Service topic.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -26,8 +26,8 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new
-     * version and assigns this new version a unique ID. You can reference a parameter version ID in API actions or in
-     * Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
+     * version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or
+     * in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
      * returns the latest parameter value when a parameter is called.
      * </p>
      */
@@ -42,15 +42,15 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new
-     * version and assigns this new version a unique ID. You can reference a parameter version ID in API actions or in
-     * Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
+     * version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or
+     * in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
      * returns the latest parameter value when a parameter is called.
      * </p>
      * 
      * @param version
      *        The new version number of a parameter. If you edit a parameter value, Parameter Store automatically
      *        creates a new version and assigns this new version a unique ID. You can reference a parameter version ID
-     *        in API actions or in Systems Manager documents (SSM documents). By default, if you don't specify a
+     *        in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a
      *        specific version, the system returns the latest parameter value when a parameter is called.
      */
 
@@ -61,14 +61,14 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new
-     * version and assigns this new version a unique ID. You can reference a parameter version ID in API actions or in
-     * Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
+     * version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or
+     * in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
      * returns the latest parameter value when a parameter is called.
      * </p>
      * 
      * @return The new version number of a parameter. If you edit a parameter value, Parameter Store automatically
      *         creates a new version and assigns this new version a unique ID. You can reference a parameter version ID
-     *         in API actions or in Systems Manager documents (SSM documents). By default, if you don't specify a
+     *         in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a
      *         specific version, the system returns the latest parameter value when a parameter is called.
      */
 
@@ -79,15 +79,15 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new
-     * version and assigns this new version a unique ID. You can reference a parameter version ID in API actions or in
-     * Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
+     * version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or
+     * in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system
      * returns the latest parameter value when a parameter is called.
      * </p>
      * 
      * @param version
      *        The new version number of a parameter. If you edit a parameter value, Parameter Store automatically
      *        creates a new version and assigns this new version a unique ID. You can reference a parameter version ID
-     *        in API actions or in Systems Manager documents (SSM documents). By default, if you don't specify a
+     *        in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a
      *        specific version, the system returns the latest parameter value when a parameter is called.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

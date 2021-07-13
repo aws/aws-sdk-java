@@ -297,24 +297,13 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotScheduleAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotScheduleQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ScheduledActionNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidClusterSnapshotScheduleStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnauthorizedPartnerIntegrationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidUsageLimitExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new EndpointAuthorizationNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AccessToClusterDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidScheduleExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DependentServiceRequestThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BucketNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
@@ -324,95 +313,110 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidTableRestoreArgumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyGrantQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ScheduledActionAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotCopyAlreadyDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EndpointAuthorizationAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NumberOfNodesQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EndpointNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ScheduledActionTypeUnsupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnauthorizedOperationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthenticationProfileNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnsupportedOptionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InsufficientClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchDeleteRequestSizeExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidS3KeyPrefixExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ScheduledActionNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterSnapshotScheduleStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EndpointAuthorizationNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AccessToClusterDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnknownSnapshotCopyRegionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TableRestoreNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmConfigurationQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyGrantNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeAlreadyMigratedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyEnabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmConfigurationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ScheduledActionAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidReservedNodeStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DependentServiceUnavailableExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SnapshotCopyAlreadyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidAuthorizationStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new EndpointAuthorizationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmConfigurationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NumberOfNodesPerClusterLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NumberOfNodesQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthenticationProfileQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointAuthorizationsPerClusterLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRetentionPeriodExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthenticationProfileAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointsPerAuthorizationLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UsageLimitNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new EndpointNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TableLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotScheduleUpdateInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterOnLatestRevisionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BatchModifyClusterSnapshotsLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSecurityGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ScheduledActionTypeUnsupportedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new UnauthorizedOperationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidAuthenticationProfileRequestExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SnapshotScheduleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidScheduledActionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IncompatibleOrderableOptionsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new UnsupportedOptionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointsPerClusterLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UsageLimitAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InsufficientClusterCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterParameterGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BatchDeleteRequestSizeExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidS3KeyPrefixExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.redshift.model.AmazonRedshiftException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -567,7 +571,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and
-     * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS
+     * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same
      * Region.
      * </p>
      * <p>
@@ -714,7 +718,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Authorizes the specified AWS customer account to restore the specified snapshot.
+     * Authorizes the specified account to restore the specified snapshot.
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
@@ -738,7 +742,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
      *         authorized to access the snapshot.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @sample AmazonRedshift.AuthorizeSnapshotAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess"
      *      target="_top">AWS API Documentation</a>
@@ -1052,6 +1056,70 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates an authentication profile with the specified parameters.
+     * </p>
+     * 
+     * @param createAuthenticationProfileRequest
+     * @return Result of the CreateAuthenticationProfile operation returned by the service.
+     * @throws AuthenticationProfileAlreadyExistsException
+     *         The authentication profile already exists.
+     * @throws AuthenticationProfileQuotaExceededException
+     *         The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON
+     *         string and maximum number of authentication profiles is determined by a quota for your account.
+     * @throws InvalidAuthenticationProfileRequestException
+     *         The authentication profile request is not valid. The profile name can't be null or empty. The
+     *         authentication profile API operation must be available in the Region.
+     * @sample AmazonRedshift.CreateAuthenticationProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateAuthenticationProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAuthenticationProfileResult createAuthenticationProfile(CreateAuthenticationProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAuthenticationProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateAuthenticationProfileResult executeCreateAuthenticationProfile(CreateAuthenticationProfileRequest createAuthenticationProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAuthenticationProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAuthenticationProfileRequest> request = null;
+        Response<CreateAuthenticationProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAuthenticationProfileRequestMarshaller().marshall(super.beforeMarshalling(createAuthenticationProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAuthenticationProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateAuthenticationProfileResult> responseHandler = new StaxResponseHandler<CreateAuthenticationProfileResult>(
+                    new CreateAuthenticationProfileResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new cluster with the specified parameters.
      * </p>
      * <p>
@@ -1105,7 +1173,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
@@ -1569,9 +1637,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * If you specify both the source type and source IDs, such as source type = cluster and source identifier =
      * my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a source
      * type but do not specify a source identifier, you will receive notice of the events for the objects of that type
-     * in your AWS account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified
-     * of events generated from all Amazon Redshift sources belonging to your AWS account. You must specify a source
-     * type if you specify a source ID.
+     * in your account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of
+     * events generated from all Amazon Redshift sources belonging to your account. You must specify a source type if
+     * you specify a source ID.
      * </p>
      * 
      * @param createEventSubscriptionRequest
@@ -1869,8 +1937,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key (CMK) from AWS Key
-     * Management Service (AWS KMS) to encrypt copied snapshots in a destination region.
+     * Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key (CMK) from Key Management
+     * Service (KMS) to encrypt copied snapshots in a destination region.
      * </p>
      * <p>
      * For more information about managing snapshot copy grants, go to <a
@@ -1884,9 +1952,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SnapshotCopyGrantAlreadyExistsException
      *         The snapshot copy grant can't be created because a grant with the same name already exists.
      * @throws SnapshotCopyGrantQuotaExceededException
-     *         The AWS account has exceeded the maximum number of snapshot copy grants in this region.
+     *         The account has exceeded the maximum number of snapshot copy grants in this region.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @throws TagLimitExceededException
      *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
@@ -2096,7 +2164,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @throws UsageLimitAlreadyExistsException
      *         The usage limit already exists.
      * @throws InvalidUsageLimitException
@@ -2143,6 +2211,67 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<CreateUsageLimitResult> responseHandler = new StaxResponseHandler<CreateUsageLimitResult>(
                     new CreateUsageLimitResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an authentication profile.
+     * </p>
+     * 
+     * @param deleteAuthenticationProfileRequest
+     * @return Result of the DeleteAuthenticationProfile operation returned by the service.
+     * @throws AuthenticationProfileNotFoundException
+     *         The authentication profile can't be found.
+     * @throws InvalidAuthenticationProfileRequestException
+     *         The authentication profile request is not valid. The profile name can't be null or empty. The
+     *         authentication profile API operation must be available in the Region.
+     * @sample AmazonRedshift.DeleteAuthenticationProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteAuthenticationProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAuthenticationProfileResult deleteAuthenticationProfile(DeleteAuthenticationProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAuthenticationProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAuthenticationProfileResult executeDeleteAuthenticationProfile(DeleteAuthenticationProfileRequest deleteAuthenticationProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAuthenticationProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAuthenticationProfileRequest> request = null;
+        Response<DeleteAuthenticationProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAuthenticationProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteAuthenticationProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAuthenticationProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteAuthenticationProfileResult> responseHandler = new StaxResponseHandler<DeleteAuthenticationProfileResult>(
+                    new DeleteAuthenticationProfileResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -3176,6 +3305,67 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes an authentication profile.
+     * </p>
+     * 
+     * @param describeAuthenticationProfilesRequest
+     * @return Result of the DescribeAuthenticationProfiles operation returned by the service.
+     * @throws AuthenticationProfileNotFoundException
+     *         The authentication profile can't be found.
+     * @throws InvalidAuthenticationProfileRequestException
+     *         The authentication profile request is not valid. The profile name can't be null or empty. The
+     *         authentication profile API operation must be available in the Region.
+     * @sample AmazonRedshift.DescribeAuthenticationProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAuthenticationProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAuthenticationProfilesResult describeAuthenticationProfiles(DescribeAuthenticationProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAuthenticationProfiles(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAuthenticationProfilesResult executeDescribeAuthenticationProfiles(DescribeAuthenticationProfilesRequest describeAuthenticationProfilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAuthenticationProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAuthenticationProfilesRequest> request = null;
+        Response<DescribeAuthenticationProfilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAuthenticationProfilesRequestMarshaller().marshall(super.beforeMarshalling(describeAuthenticationProfilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAuthenticationProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAuthenticationProfilesResult> responseHandler = new StaxResponseHandler<DescribeAuthenticationProfilesResult>(
+                    new DescribeAuthenticationProfilesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of <code>ClusterDbRevision</code> objects.
      * </p>
      * 
@@ -3471,8 +3661,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this
-     * operation returns information about all snapshots of all clusters that are owned by you AWS customer account. No
-     * information is returned for snapshots owned by inactive AWS customer accounts.
+     * operation returns information about all snapshots of all clusters that are owned by your account. No information
+     * is returned for snapshots owned by inactive accounts.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match
@@ -3551,7 +3741,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By
-     * default, this operation returns information about all cluster subnet groups that are defined in you AWS account.
+     * default, this operation returns information about all cluster subnet groups that are defined in your account.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all subnet groups that
@@ -4216,7 +4406,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns information about the specified HSM client certificate. If no certificate ID is specified, returns
-     * information about all the HSM certificates owned by your AWS customer account.
+     * information about all the HSM certificates owned by your account.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM client
@@ -4292,7 +4482,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified,
-     * returns information about all the HSM configurations owned by your AWS customer account.
+     * returns information about all the HSM configurations owned by your account.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM connections that
@@ -4494,10 +4684,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
-     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
-     * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
-     * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
-     * values when creating a cluster. For more information about managing clusters, go to <a
+     * what options are available, such as the EC2 Availability Zones (AZ) in the specific Region that you can specify,
+     * and the node types you can request. The node types differ by available storage, memory, CPU and price. With the
+     * cost involved you might want to obtain a list of cluster options in the specific region and specify values when
+     * creating a cluster. For more information about managing clusters, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
@@ -4890,7 +5080,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns a list of snapshot copy grants owned by the AWS account in the destination region.
+     * Returns a list of snapshot copy grants owned by the account in the destination region.
      * </p>
      * <p>
      * For more information about managing snapshot copy grants, go to <a
@@ -5386,8 +5576,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * Disables the automatic copying of snapshots from one region to another region for a specified cluster.
      * </p>
      * <p>
-     * If your cluster and its snapshots are encrypted using a customer master key (CMK) from AWS KMS, use
-     * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift permission to the CMK in the
+     * If your cluster and its snapshots are encrypted using a customer master key (CMK) from Key Management Service,
+     * use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift permission to the CMK in the
      * destination region.
      * </p>
      * 
@@ -5544,7 +5734,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the
      *         grant exists in the destination region.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
@@ -5612,9 +5802,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
-     * The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials must have an IAM
-     * policy attached that allows access to all necessary actions and resources. For more information about
-     * permissions, see <a href=
+     * The Identity and Access Management (IAM) user or role that runs GetClusterCredentials must have an IAM policy
+     * attached that allows access to all necessary actions and resources. For more information about permissions, see
+     * <a href=
      * "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources"
      * >Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -5822,6 +6012,70 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Modifies an authentication profile.
+     * </p>
+     * 
+     * @param modifyAuthenticationProfileRequest
+     * @return Result of the ModifyAuthenticationProfile operation returned by the service.
+     * @throws AuthenticationProfileNotFoundException
+     *         The authentication profile can't be found.
+     * @throws AuthenticationProfileQuotaExceededException
+     *         The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON
+     *         string and maximum number of authentication profiles is determined by a quota for your account.
+     * @throws InvalidAuthenticationProfileRequestException
+     *         The authentication profile request is not valid. The profile name can't be null or empty. The
+     *         authentication profile API operation must be available in the Region.
+     * @sample AmazonRedshift.ModifyAuthenticationProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAuthenticationProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyAuthenticationProfileResult modifyAuthenticationProfile(ModifyAuthenticationProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyAuthenticationProfile(request);
+    }
+
+    @SdkInternalApi
+    final ModifyAuthenticationProfileResult executeModifyAuthenticationProfile(ModifyAuthenticationProfileRequest modifyAuthenticationProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyAuthenticationProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyAuthenticationProfileRequest> request = null;
+        Response<ModifyAuthenticationProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyAuthenticationProfileRequestMarshaller().marshall(super.beforeMarshalling(modifyAuthenticationProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyAuthenticationProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyAuthenticationProfileResult> responseHandler = new StaxResponseHandler<ModifyAuthenticationProfileResult>(
+                    new ModifyAuthenticationProfileResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the settings for a cluster.
      * </p>
      * <p>
@@ -5829,7 +6083,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * you must specify both the number of nodes and the node type even if one of the parameters does not change.
      * </p>
      * <p>
-     * You can add another security or parameter group, or change the master user password. Resetting a cluster password
+     * You can add another security or parameter group, or change the admin user password. Resetting a cluster password
      * or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter
      * group requires a reboot for parameters to take effect. For more information about managing clusters, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
@@ -5868,7 +6122,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterAlreadyExistsException
      *         The account already has a cluster with the given identifier.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
@@ -5994,8 +6248,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Modifies the list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access
-     * other AWS services.
+     * Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     * Amazon Web Services services.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated at any time.
@@ -6595,11 +6849,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Modifies the number of days to retain snapshots in the destination AWS Region after they are copied from the
-     * source AWS Region. By default, this operation only changes the retention period of copied automated snapshots.
-     * The retention periods for both new and existing copied automated snapshots are updated with the new retention
-     * period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set
-     * this option, only newly copied manual snapshots have the new retention period.
+     * Modifies the number of days to retain snapshots in the destination Region after they are copied from the source
+     * Region. By default, this operation only changes the retention period of copied automated snapshots. The retention
+     * periods for both new and existing copied automated snapshots are updated with the new retention period. You can
+     * set the manual option to change only the retention periods of copied manual snapshots. If you set this option,
+     * only newly copied manual snapshots have the new retention period.
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -7142,7 +7396,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @sample AmazonRedshift.ResizeCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
      *      Documentation</a>
@@ -7257,7 +7511,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSecurityGroupNotFoundException
      *         The cluster security group name does not refer to an existing cluster security group.
      * @throws LimitExceededException
-     *         The encryption key has exceeded its grant limit in AWS KMS.
+     *         The encryption key has exceeded its grant limit in Amazon Web Services KMS.
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
@@ -7601,8 +7855,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Removes the ability of the specified AWS customer account to restore the specified snapshot. If the account is
-     * currently restoring the snapshot, the restore will run to completion.
+     * Removes the ability of the specified account to restore the specified snapshot. If the account is currently
+     * restoring the snapshot, the restore will run to completion.
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a

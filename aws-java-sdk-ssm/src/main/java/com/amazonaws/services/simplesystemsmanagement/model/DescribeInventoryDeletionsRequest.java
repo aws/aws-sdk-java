@@ -28,7 +28,7 @@ public class DescribeInventoryDeletionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Specify the delete inventory ID for which you want information. This ID was returned by the
-     * <code>DeleteInventory</code> action.
+     * <code>DeleteInventory</code> operation.
      * </p>
      */
     private String deletionId;
@@ -49,12 +49,12 @@ public class DescribeInventoryDeletionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Specify the delete inventory ID for which you want information. This ID was returned by the
-     * <code>DeleteInventory</code> action.
+     * <code>DeleteInventory</code> operation.
      * </p>
      * 
      * @param deletionId
      *        Specify the delete inventory ID for which you want information. This ID was returned by the
-     *        <code>DeleteInventory</code> action.
+     *        <code>DeleteInventory</code> operation.
      */
 
     public void setDeletionId(String deletionId) {
@@ -64,11 +64,11 @@ public class DescribeInventoryDeletionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Specify the delete inventory ID for which you want information. This ID was returned by the
-     * <code>DeleteInventory</code> action.
+     * <code>DeleteInventory</code> operation.
      * </p>
      * 
      * @return Specify the delete inventory ID for which you want information. This ID was returned by the
-     *         <code>DeleteInventory</code> action.
+     *         <code>DeleteInventory</code> operation.
      */
 
     public String getDeletionId() {
@@ -78,12 +78,12 @@ public class DescribeInventoryDeletionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Specify the delete inventory ID for which you want information. This ID was returned by the
-     * <code>DeleteInventory</code> action.
+     * <code>DeleteInventory</code> operation.
      * </p>
      * 
      * @param deletionId
      *        Specify the delete inventory ID for which you want information. This ID was returned by the
-     *        <code>DeleteInventory</code> action.
+     *        <code>DeleteInventory</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified
- * customer master key (CMK) from AWS KMS in the destination region.
+ * customer master key (CMK) from Amazon Web Services KMS in the destination region.
  * </p>
  * <p>
  * For more information about managing snapshot copy grants, go to <a
@@ -40,7 +40,8 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
     private String snapshotCopyGrantName;
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is
+     * granted permission.
      * </p>
      */
     private String kmsKeyId;
@@ -93,12 +94,13 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is
+     * granted permission.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted
-     *        permission.
+     *        The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift
+     *        is granted permission.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -107,11 +109,12 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is
+     * granted permission.
      * </p>
      * 
-     * @return The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted
-     *         permission.
+     * @return The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon
+     *         Redshift is granted permission.
      */
 
     public String getKmsKeyId() {
@@ -120,12 +123,13 @@ public class SnapshotCopyGrant implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted permission.
+     * The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift is
+     * granted permission.
      * </p>
      * 
      * @param kmsKeyId
-     *        The unique identifier of the customer master key (CMK) in AWS KMS to which Amazon Redshift is granted
-     *        permission.
+     *        The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which Amazon Redshift
+     *        is granted permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

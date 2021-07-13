@@ -37,7 +37,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     * Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     * <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -49,7 +49,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </note>
      */
@@ -98,11 +98,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     * Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     * <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * </p>
      * 
      * @return Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     *         Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     *         <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      */
 
     public java.util.List<String> getValues() {
@@ -115,12 +115,12 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     * Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     * <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * </p>
      * 
      * @param values
      *        Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     *        Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     *        <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -135,7 +135,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     * Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     * <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param values
      *        Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     *        Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     *        <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,12 +162,12 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     * Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     * <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * </p>
      * 
      * @param values
      *        Inventory filter values. Example: inventory filter where instance IDs are specified as values
-     *        Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
+     *        <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,7 +184,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -193,7 +193,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
-     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      * @see InventoryQueryOperatorType
      */
@@ -210,7 +210,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -218,7 +218,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
-     *         >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *         </p>
      * @see InventoryQueryOperatorType
      */
@@ -235,7 +235,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -244,7 +244,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
-     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryQueryOperatorType
@@ -263,7 +263,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -272,7 +272,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
-     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      * @see InventoryQueryOperatorType
      */
@@ -289,7 +289,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
-     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -298,7 +298,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
-     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryQueryOperatorType

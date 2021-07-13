@@ -39,7 +39,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -56,25 +56,26 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
-     * shared document belonging to another account, specify the document ARN. For more information about how to use
-     * shared documents, see <a
+     * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
+     * or a custom document. To run a shared document belonging to another account, specify the document ARN. For more
+     * information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
-     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String documentName;
     /**
      * <p>
      * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
-     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For example:
+     * If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first
+     * two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For
+     * example:
      * </p>
      * <p>
      * --document-version "\$DEFAULT"
@@ -111,7 +112,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String documentHashType;
     /**
      * <p>
-     * If this time is reached and the command has not already started running, it will not run.
+     * If this time is reached and the command hasn't already started running, it won't run.
      * </p>
      */
     private Integer timeoutSeconds;
@@ -149,27 +150,28 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * (Optional) The maximum number of instances that are allowed to run the command at the same time. You can specify
-     * a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a href=
+     * a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     * >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String maxConcurrency;
     /**
      * <p>
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
-     * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
-     * or a percentage like 10%. The default value is 0. For more information about how to use MaxErrors, see <a href=
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to
+     * use <code>MaxErrors</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     * >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String maxErrors;
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for Run Command commands.
+     * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
      */
     private String serviceRoleArn;
@@ -181,7 +183,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private NotificationConfig notificationConfig;
     /**
      * <p>
-     * Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     * Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is
+     * a capability of Amazon Web Services Systems Manager.
      * </p>
      */
     private CloudWatchOutputConfig cloudWatchOutputConfig;
@@ -200,7 +203,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The IDs of the instances where the command should run. Specifying instance IDs is most useful when you
@@ -214,7 +217,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For more information about how to use targets, see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *         targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
+     *         User Guide</i>.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -238,7 +242,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param instanceIds
@@ -253,7 +257,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information about how to use targets, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *        targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -279,7 +284,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -299,7 +304,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information about how to use targets, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *        targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,7 +333,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param instanceIds
@@ -342,7 +348,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information about how to use targets, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *        targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,7 +371,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return An array of search criteria that targets instances using a <code>Key,Value</code> combination that you
@@ -378,7 +385,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For more information about how to use targets, see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *         commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -401,7 +408,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -416,7 +423,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information about how to use targets, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -441,7 +448,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -461,7 +468,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information about how to use targets, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,7 +495,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -503,7 +510,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information about how to use targets, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,19 +521,19 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
-     * shared document belonging to another account, specify the document ARN. For more information about how to use
-     * shared documents, see <a
+     * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
+     * or a custom document. To run a shared document belonging to another account, specify the document ARN. For more
+     * information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
-     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param documentName
-     *        The name of the Systems Manager document to run. This can be a public document or a custom document. To
-     *        run a shared document belonging to another account, specify the document ARN. For more information about
-     *        how to use shared documents, see <a
+     *        The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public
+     *        document or a custom document. To run a shared document belonging to another account, specify the document
+     *        ARN. For more information about how to use shared documents, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
-     *        documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setDocumentName(String documentName) {
@@ -535,18 +542,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
-     * shared document belonging to another account, specify the document ARN. For more information about how to use
-     * shared documents, see <a
+     * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
+     * or a custom document. To run a shared document belonging to another account, specify the document ARN. For more
+     * information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
-     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return The name of the Systems Manager document to run. This can be a public document or a custom document. To
-     *         run a shared document belonging to another account, specify the document ARN. For more information about
-     *         how to use shared documents, see <a
+     * @return The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public
+     *         document or a custom document. To run a shared document belonging to another account, specify the
+     *         document ARN. For more information about how to use shared documents, see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
-     *         SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getDocumentName() {
@@ -555,19 +562,19 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
-     * shared document belonging to another account, specify the document ARN. For more information about how to use
-     * shared documents, see <a
+     * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
+     * or a custom document. To run a shared document belonging to another account, specify the document ARN. For more
+     * information about how to use shared documents, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
-     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param documentName
-     *        The name of the Systems Manager document to run. This can be a public document or a custom document. To
-     *        run a shared document belonging to another account, specify the document ARN. For more information about
-     *        how to use shared documents, see <a
+     *        The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public
+     *        document or a custom document. To run a shared document belonging to another account, specify the document
+     *        ARN. For more information about how to use shared documents, see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
-     *        documents</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,8 +586,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
-     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For example:
+     * If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first
+     * two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For
+     * example:
      * </p>
      * <p>
      * --document-version "\$DEFAULT"
@@ -594,8 +602,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param documentVersion
      *        The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version
-     *        number. If you run commands by using the AWS CLI, then you must escape the first two options by using a
-     *        backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+     *        number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must
+     *        escape the first two options by using a backslash. If you specify a version number, then you don't need to
+     *        use the backslash. For example:</p>
      *        <p>
      *        --document-version "\$DEFAULT"
      *        </p>
@@ -613,8 +622,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
-     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For example:
+     * If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first
+     * two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For
+     * example:
      * </p>
      * <p>
      * --document-version "\$DEFAULT"
@@ -627,8 +637,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version
-     *         number. If you run commands by using the AWS CLI, then you must escape the first two options by using a
-     *         backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+     *         number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must
+     *         escape the first two options by using a backslash. If you specify a version number, then you don't need
+     *         to use the backslash. For example:</p>
      *         <p>
      *         --document-version "\$DEFAULT"
      *         </p>
@@ -646,8 +657,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
-     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For example:
+     * If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first
+     * two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For
+     * example:
      * </p>
      * <p>
      * --document-version "\$DEFAULT"
@@ -661,8 +673,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param documentVersion
      *        The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version
-     *        number. If you run commands by using the AWS CLI, then you must escape the first two options by using a
-     *        backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+     *        number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must
+     *        escape the first two options by using a backslash. If you specify a version number, then you don't need to
+     *        use the backslash. For example:</p>
      *        <p>
      *        --document-version "\$DEFAULT"
      *        </p>
@@ -858,11 +871,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If this time is reached and the command has not already started running, it will not run.
+     * If this time is reached and the command hasn't already started running, it won't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started running, it will not run.
+     *        If this time is reached and the command hasn't already started running, it won't run.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -871,10 +884,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If this time is reached and the command has not already started running, it will not run.
+     * If this time is reached and the command hasn't already started running, it won't run.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started running, it will not run.
+     * @return If this time is reached and the command hasn't already started running, it won't run.
      */
 
     public Integer getTimeoutSeconds() {
@@ -883,11 +896,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If this time is reached and the command has not already started running, it will not run.
+     * If this time is reached and the command hasn't already started running, it won't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started running, it will not run.
+     *        If this time is reached and the command hasn't already started running, it won't run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1133,18 +1146,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * (Optional) The maximum number of instances that are allowed to run the command at the same time. You can specify
-     * a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a href=
+     * a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     * >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxConcurrency
      *        (Optional) The maximum number of instances that are allowed to run the command at the same time. You can
-     *        specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information
-     *        about how to use MaxConcurrency, see <a href=
+     *        specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more
+     *        information about how to use <code>MaxConcurrency</code>, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     *        >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1154,17 +1167,17 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * (Optional) The maximum number of instances that are allowed to run the command at the same time. You can specify
-     * a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a href=
+     * a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     * >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return (Optional) The maximum number of instances that are allowed to run the command at the same time. You can
-     *         specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information
-     *         about how to use MaxConcurrency, see <a href=
+     *         specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more
+     *         information about how to use <code>MaxConcurrency</code>, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     *         >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getMaxConcurrency() {
@@ -1174,18 +1187,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * (Optional) The maximum number of instances that are allowed to run the command at the same time. You can specify
-     * a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how to use
-     * MaxConcurrency, see <a href=
+     * a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about
+     * how to use <code>MaxConcurrency</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     * >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxConcurrency
      *        (Optional) The maximum number of instances that are allowed to run the command at the same time. You can
-     *        specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information
-     *        about how to use MaxConcurrency, see <a href=
+     *        specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more
+     *        information about how to use <code>MaxConcurrency</code>, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity"
-     *        >Using concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1197,19 +1210,20 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
-     * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
-     * or a percentage like 10%. The default value is 0. For more information about how to use MaxErrors, see <a href=
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to
+     * use <code>MaxErrors</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     * >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed without the command failing. When the command fails one more time
-     *        beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can
-     *        specify a number like 10 or a percentage like 10%. The default value is 0. For more information about how
-     *        to use MaxErrors, see <a href=
+     *        beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
+     *        You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more
+     *        information about how to use <code>MaxErrors</code>, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     *        >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -1219,18 +1233,19 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
-     * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
-     * or a percentage like 10%. The default value is 0. For more information about how to use MaxErrors, see <a href=
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to
+     * use <code>MaxErrors</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     * >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The maximum number of errors allowed without the command failing. When the command fails one more time
-     *         beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can
-     *         specify a number like 10 or a percentage like 10%. The default value is 0. For more information about how
-     *         to use MaxErrors, see <a href=
+     *         beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
+     *         You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more
+     *         information about how to use <code>MaxErrors</code>, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     *         >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getMaxErrors() {
@@ -1240,19 +1255,20 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
-     * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
-     * or a percentage like 10%. The default value is 0. For more information about how to use MaxErrors, see <a href=
+     * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
+     * number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to
+     * use <code>MaxErrors</code>, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     * >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed without the command failing. When the command fails one more time
-     *        beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can
-     *        specify a number like 10 or a percentage like 10%. The default value is 0. For more information about how
-     *        to use MaxErrors, see <a href=
+     *        beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
+     *        You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more
+     *        information about how to use <code>MaxErrors</code>, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors"
-     *        >Using error controls</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1263,13 +1279,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for Run Command commands.
+     * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *        notifications for Run Command commands.
+     *        The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple
+     *        Notification Service (Amazon SNS) notifications for Run Command commands.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -1278,12 +1294,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for Run Command commands.
+     * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
      * 
-     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *         notifications for Run Command commands.
+     * @return The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple
+     *         Notification Service (Amazon SNS) notifications for Run Command commands.
      */
 
     public String getServiceRoleArn() {
@@ -1292,13 +1308,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for Run Command commands.
+     * The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *        notifications for Run Command commands.
+     *        The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple
+     *        Notification Service (Amazon SNS) notifications for Run Command commands.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1349,11 +1365,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     * Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is
+     * a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param cloudWatchOutputConfig
-     *        Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     *        Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run
+     *        Command is a capability of Amazon Web Services Systems Manager.
      */
 
     public void setCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
@@ -1362,10 +1380,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     * Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is
+     * a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
-     * @return Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     * @return Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run
+     *         Command is a capability of Amazon Web Services Systems Manager.
      */
 
     public CloudWatchOutputConfig getCloudWatchOutputConfig() {
@@ -1374,11 +1394,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     * Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is
+     * a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param cloudWatchOutputConfig
-     *        Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     *        Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run
+     *        Command is a capability of Amazon Web Services Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

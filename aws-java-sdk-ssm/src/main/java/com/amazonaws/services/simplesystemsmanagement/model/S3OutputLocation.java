@@ -30,8 +30,8 @@ public class S3OutputLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Region of the S3 bucket.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the Region of the S3 bucket.
      * </p>
      */
     private String outputS3Region;
@@ -50,13 +50,13 @@ public class S3OutputLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Region of the S3 bucket.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the Region of the S3 bucket.
      * </p>
      * 
      * @param outputS3Region
-     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the Region of the S3 bucket.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     *        Systems Manager automatically determines the Region of the S3 bucket.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -65,12 +65,12 @@ public class S3OutputLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Region of the S3 bucket.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the Region of the S3 bucket.
      * </p>
      * 
-     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *         automatically determines the Region of the S3 bucket.
+     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web
+     *         Services Systems Manager automatically determines the Region of the S3 bucket.
      */
 
     public String getOutputS3Region() {
@@ -79,13 +79,13 @@ public class S3OutputLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Region of the S3 bucket.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     * Systems Manager automatically determines the Region of the S3 bucket.
      * </p>
      * 
      * @param outputS3Region
-     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the Region of the S3 bucket.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services
+     *        Systems Manager automatically determines the Region of the S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

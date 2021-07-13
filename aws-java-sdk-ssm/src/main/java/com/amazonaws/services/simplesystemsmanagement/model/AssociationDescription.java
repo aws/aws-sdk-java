@@ -30,7 +30,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      */
     private String name;
@@ -78,8 +78,8 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
     private String documentVersion;
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      */
     private String automationTargetParameterName;
@@ -137,13 +137,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      */
     private String maxErrors;
@@ -154,9 +154,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      */
     private String maxConcurrency;
@@ -175,8 +176,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -187,33 +189,33 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> calendarNames;
     /**
      * <p>
-     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * The combination of Regions and accounts where you want to run the association.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      */
 
     public void setName(String name) {
@@ -222,10 +224,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
-     * @return The name of the Systems Manager document.
+     * @return The name of the SSM document.
      */
 
     public String getName() {
@@ -234,11 +236,11 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the Systems Manager document.
+     * The name of the SSM document.
      * </p>
      * 
      * @param name
-     *        The name of the Systems Manager document.
+     *        The name of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,13 +531,14 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param automationTargetParameterName
      *        Specify the target for the association. This target is required for associations that use an Automation
-     *        document and target resources by using rate controls.
+     *        runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *        Systems Manager.
      */
 
     public void setAutomationTargetParameterName(String automationTargetParameterName) {
@@ -544,12 +547,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @return Specify the target for the association. This target is required for associations that use an Automation
-     *         document and target resources by using rate controls.
+     *         runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *         Systems Manager.
      */
 
     public String getAutomationTargetParameterName() {
@@ -558,13 +562,14 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param automationTargetParameterName
      *        Specify the target for the association. This target is required for associations that use an Automation
-     *        document and target resources by using rate controls.
+     *        runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *        Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -960,13 +965,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @param maxErrors
@@ -974,12 +979,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *        stops sending the request when the sixth error is received.</p>
+     *        error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *        the system stops sending the request when the sixth error is received.</p>
      *        <p>
-     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *        Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *        complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *        than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *        a time.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -992,25 +998,26 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @return The number of errors that are allowed before the system stops sending requests to run the association on
      *         additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *         of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *         the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *         error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *         stops sending the request when the sixth error is received.</p>
+     *         error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *         the system stops sending the request when the sixth error is received.</p>
      *         <p>
-     *         Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *         some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *         failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *         Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *         complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *         than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *         a time.
      */
 
     public String getMaxErrors() {
@@ -1023,13 +1030,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @param maxErrors
@@ -1037,12 +1044,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *        stops sending the request when the sixth error is received.</p>
+     *        error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *        the system stops sending the request when the sixth error is received.</p>
      *        <p>
-     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *        Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *        complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *        than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *        a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1058,9 +1066,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @param maxConcurrency
@@ -1069,8 +1078,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        all targets run the association at the same time.</p>
      *        <p>
      *        If a new instance starts and attempts to run an association while Systems Manager is running
-     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *        new instance will process its association within the limit specified for MaxConcurrency.
+     *        <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *        interval, the new instance will process its association within the limit specified for
+     *        <code>MaxConcurrency</code>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1084,9 +1094,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @return The maximum number of targets allowed to run the association at the same time. You can specify a number,
@@ -1094,8 +1105,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *         means all targets run the association at the same time.</p>
      *         <p>
      *         If a new instance starts and attempts to run an association while Systems Manager is running
-     *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *         new instance will process its association within the limit specified for MaxConcurrency.
+     *         <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *         interval, the new instance will process its association within the limit specified for
+     *         <code>MaxConcurrency</code>.
      */
 
     public String getMaxConcurrency() {
@@ -1109,9 +1121,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @param maxConcurrency
@@ -1120,8 +1133,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        all targets run the association at the same time.</p>
      *        <p>
      *        If a new instance starts and attempts to run an association while Systems Manager is running
-     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *        new instance will process its association within the limit specified for MaxConcurrency.
+     *        <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *        interval, the new instance will process its association within the limit specified for
+     *        <code>MaxConcurrency</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1198,8 +1212,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1213,8 +1228,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        <code>NON-COMPLIANT</code>.</p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *        capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *        <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1234,8 +1250,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1248,8 +1265,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *         <code>NON-COMPLIANT</code>.</p>
      *         <p>
      *         In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *         <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It
-     *         is managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *         <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *         capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *         <a>PutComplianceItems</a> API operation.
      *         </p>
      *         <p>
      *         By default, all associations use <code>AUTO</code> mode.
@@ -1269,8 +1287,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1284,8 +1303,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        <code>NON-COMPLIANT</code>.</p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *        capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *        <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1307,8 +1327,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1322,8 +1343,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      *        <code>NON-COMPLIANT</code>.</p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *        capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *        <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1340,13 +1362,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new associations, the system runs it immediately after it is created and
      *        then according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it. This parameter is not supported for rate expressions.
+     *        immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public void setApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
@@ -1357,12 +1379,12 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new associations, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it. This parameter is not supported for rate expressions.
+     *         immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public Boolean getApplyOnlyAtCronInterval() {
@@ -1373,13 +1395,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new associations, the system runs it immediately after it is created and
      *        then according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it. This parameter is not supported for rate expressions.
+     *        immediately after you create it. This parameter isn't supported for rate expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1392,12 +1414,12 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new associations, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it. This parameter is not supported for rate expressions.
+     *         immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public Boolean isApplyOnlyAtCronInterval() {
@@ -1406,17 +1428,17 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
-     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *         associations are gated under. The associations only run when that Change Calendar is open. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *         Systems Manager Change Calendar</a>.
+     * @return The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *         gated under. The associations only run when that change calendar is open. For more information, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *         Web Services Systems Manager Change Calendar</a>.
      */
 
     public java.util.List<String> getCalendarNames() {
@@ -1428,18 +1450,17 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *        associations are gated under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *        gated under. The associations only run when that change calendar is open. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *        Web Services Systems Manager Change Calendar</a>.
      */
 
     public void setCalendarNames(java.util.Collection<String> calendarNames) {
@@ -1453,10 +1474,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1465,11 +1486,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *        associations are gated under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *        gated under. The associations only run when that change calendar is open. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *        Web Services Systems Manager Change Calendar</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1485,18 +1505,17 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that change calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *        associations are gated under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *        gated under. The associations only run when that change calendar is open. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *        Web Services Systems Manager Change Calendar</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1507,10 +1526,10 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * The combination of Regions and accounts where you want to run the association.
      * </p>
      * 
-     * @return The combination of AWS Regions and AWS accounts where you want to run the association.
+     * @return The combination of Regions and accounts where you want to run the association.
      */
 
     public java.util.List<TargetLocation> getTargetLocations() {
@@ -1522,11 +1541,11 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * The combination of Regions and accounts where you want to run the association.
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and AWS accounts where you want to run the association.
+     *        The combination of Regions and accounts where you want to run the association.
      */
 
     public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
@@ -1540,7 +1559,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * The combination of Regions and accounts where you want to run the association.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1549,7 +1568,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and AWS accounts where you want to run the association.
+     *        The combination of Regions and accounts where you want to run the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1565,11 +1584,11 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The combination of AWS Regions and AWS accounts where you want to run the association.
+     * The combination of Regions and accounts where you want to run the association.
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and AWS accounts where you want to run the association.
+     *        The combination of Regions and accounts where you want to run the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

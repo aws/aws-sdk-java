@@ -36,16 +36,16 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
     private String policyText;
     /**
      * <p>
-     * The type of policy. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and
-     * NoChangeNotification.
+     * The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following
+     * policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      * </p>
      */
     private String policyType;
     /**
      * <p>
-     * The status of the policy. Policies report the following statuses: Pending (the policy has not been enforced or
-     * applied yet), Finished (the policy was applied), Failed (the policy was not applied), or InProgress (the policy
-     * is being applied now).
+     * The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or
+     * applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is
+     * being applied now).
      * </p>
      */
     private String policyStatus;
@@ -92,13 +92,13 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of policy. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and
-     * NoChangeNotification.
+     * The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following
+     * policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      * </p>
      * 
      * @param policyType
-     *        The type of policy. Parameter Store supports the following policy types: Expiration,
-     *        ExpirationNotification, and NoChangeNotification.
+     *        The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the
+     *        following policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      */
 
     public void setPolicyType(String policyType) {
@@ -107,12 +107,12 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of policy. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and
-     * NoChangeNotification.
+     * The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following
+     * policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      * </p>
      * 
-     * @return The type of policy. Parameter Store supports the following policy types: Expiration,
-     *         ExpirationNotification, and NoChangeNotification.
+     * @return The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the
+     *         following policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      */
 
     public String getPolicyType() {
@@ -121,13 +121,13 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of policy. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and
-     * NoChangeNotification.
+     * The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following
+     * policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      * </p>
      * 
      * @param policyType
-     *        The type of policy. Parameter Store supports the following policy types: Expiration,
-     *        ExpirationNotification, and NoChangeNotification.
+     *        The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the
+     *        following policy types: Expiration, ExpirationNotification, and NoChangeNotification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,15 +138,15 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the policy. Policies report the following statuses: Pending (the policy has not been enforced or
-     * applied yet), Finished (the policy was applied), Failed (the policy was not applied), or InProgress (the policy
-     * is being applied now).
+     * The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or
+     * applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is
+     * being applied now).
      * </p>
      * 
      * @param policyStatus
-     *        The status of the policy. Policies report the following statuses: Pending (the policy has not been
-     *        enforced or applied yet), Finished (the policy was applied), Failed (the policy was not applied), or
-     *        InProgress (the policy is being applied now).
+     *        The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced
+     *        or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the
+     *        policy is being applied now).
      */
 
     public void setPolicyStatus(String policyStatus) {
@@ -155,13 +155,13 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the policy. Policies report the following statuses: Pending (the policy has not been enforced or
-     * applied yet), Finished (the policy was applied), Failed (the policy was not applied), or InProgress (the policy
-     * is being applied now).
+     * The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or
+     * applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is
+     * being applied now).
      * </p>
      * 
-     * @return The status of the policy. Policies report the following statuses: Pending (the policy has not been
-     *         enforced or applied yet), Finished (the policy was applied), Failed (the policy was not applied), or
+     * @return The status of the policy. Policies report the following statuses: Pending (the policy hasn't been
+     *         enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or
      *         InProgress (the policy is being applied now).
      */
 
@@ -171,15 +171,15 @@ public class ParameterInlinePolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the policy. Policies report the following statuses: Pending (the policy has not been enforced or
-     * applied yet), Finished (the policy was applied), Failed (the policy was not applied), or InProgress (the policy
-     * is being applied now).
+     * The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or
+     * applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is
+     * being applied now).
      * </p>
      * 
      * @param policyStatus
-     *        The status of the policy. Policies report the following statuses: Pending (the policy has not been
-     *        enforced or applied yet), Finished (the policy was applied), Failed (the policy was not applied), or
-     *        InProgress (the policy is being applied now).
+     *        The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced
+     *        or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the
+     *        policy is being applied now).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

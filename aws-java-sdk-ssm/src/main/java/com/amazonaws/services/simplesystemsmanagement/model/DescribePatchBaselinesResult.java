@@ -25,7 +25,7 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of PatchBaselineIdentity elements.
+     * An array of <code>PatchBaselineIdentity</code> elements.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PatchBaselineIdentity> baselineIdentities;
@@ -39,10 +39,10 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of PatchBaselineIdentity elements.
+     * An array of <code>PatchBaselineIdentity</code> elements.
      * </p>
      * 
-     * @return An array of PatchBaselineIdentity elements.
+     * @return An array of <code>PatchBaselineIdentity</code> elements.
      */
 
     public java.util.List<PatchBaselineIdentity> getBaselineIdentities() {
@@ -54,11 +54,11 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of PatchBaselineIdentity elements.
+     * An array of <code>PatchBaselineIdentity</code> elements.
      * </p>
      * 
      * @param baselineIdentities
-     *        An array of PatchBaselineIdentity elements.
+     *        An array of <code>PatchBaselineIdentity</code> elements.
      */
 
     public void setBaselineIdentities(java.util.Collection<PatchBaselineIdentity> baselineIdentities) {
@@ -72,7 +72,7 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of PatchBaselineIdentity elements.
+     * An array of <code>PatchBaselineIdentity</code> elements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param baselineIdentities
-     *        An array of PatchBaselineIdentity elements.
+     *        An array of <code>PatchBaselineIdentity</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of PatchBaselineIdentity elements.
+     * An array of <code>PatchBaselineIdentity</code> elements.
      * </p>
      * 
      * @param baselineIdentities
-     *        An array of PatchBaselineIdentity elements.
+     *        An array of <code>PatchBaselineIdentity</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

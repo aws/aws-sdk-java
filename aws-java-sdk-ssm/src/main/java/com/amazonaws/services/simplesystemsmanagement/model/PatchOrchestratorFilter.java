@@ -19,8 +19,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a filter used in Patch Manager APIs.
+ * Defines a filter used in Patch Manager APIs. Supported filter keys depend on the API operation that includes the
+ * filter. Patch Manager API operations that use <code>PatchOrchestratorFilter</code> include the following:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeAvailablePatches</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeInstancePatches</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePatchBaselines</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePatchGroups</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchOrchestratorFilter" target="_top">AWS API
  *      Documentation</a>

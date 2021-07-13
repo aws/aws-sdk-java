@@ -70,7 +70,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
     private String clientToken;
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run during the runbook workflow.
+     * Information about the Automation runbooks that are run during the runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -84,8 +84,8 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request.
      * Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For
-     * example, you might want to tag a change request to identify an environment or target AWS Region. In this case,
-     * you could specify the following key-value pairs:
+     * example, you might want to tag a change request to identify an environment or target Region. In this case, you
+     * could specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -422,7 +422,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run during the runbook workflow.
+     * Information about the Automation runbooks that are run during the runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -431,8 +431,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </note>
      * 
-     * @return Information about the Automation runbooks (Automation documents) that are run during the runbook
-     *         workflow.</p> <note>
+     * @return Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
      *         <p>
      *         The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *         change request have been received.
@@ -448,7 +447,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run during the runbook workflow.
+     * Information about the Automation runbooks that are run during the runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -458,8 +457,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * </note>
      * 
      * @param runbooks
-     *        Information about the Automation runbooks (Automation documents) that are run during the runbook
-     *        workflow.</p> <note>
+     *        Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
      *        <p>
      *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *        change request have been received.
@@ -477,7 +475,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run during the runbook workflow.
+     * Information about the Automation runbooks that are run during the runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -492,8 +490,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param runbooks
-     *        Information about the Automation runbooks (Automation documents) that are run during the runbook
-     *        workflow.</p> <note>
+     *        Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
      *        <p>
      *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *        change request have been received.
@@ -513,7 +510,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run during the runbook workflow.
+     * Information about the Automation runbooks that are run during the runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -523,8 +520,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * </note>
      * 
      * @param runbooks
-     *        Information about the Automation runbooks (Automation documents) that are run during the runbook
-     *        workflow.</p> <note>
+     *        Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
      *        <p>
      *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *        change request have been received.
@@ -541,8 +537,8 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request.
      * Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For
-     * example, you might want to tag a change request to identify an environment or target AWS Region. In this case,
-     * you could specify the following key-value pairs:
+     * example, you might want to tag a change request to identify an environment or target Region. In this case, you
+     * could specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -559,7 +555,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * 
      * @return Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change
      *         request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
-     *         environment. For example, you might want to tag a change request to identify an environment or target AWS
+     *         environment. For example, you might want to tag a change request to identify an environment or target
      *         Region. In this case, you could specify the following key-value pairs:</p>
      *         <ul>
      *         <li>
@@ -585,8 +581,8 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request.
      * Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For
-     * example, you might want to tag a change request to identify an environment or target AWS Region. In this case,
-     * you could specify the following key-value pairs:
+     * example, you might want to tag a change request to identify an environment or target Region. In this case, you
+     * could specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -604,7 +600,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * @param tags
      *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change
      *        request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
-     *        environment. For example, you might want to tag a change request to identify an environment or target AWS
+     *        environment. For example, you might want to tag a change request to identify an environment or target
      *        Region. In this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
@@ -632,8 +628,8 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request.
      * Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For
-     * example, you might want to tag a change request to identify an environment or target AWS Region. In this case,
-     * you could specify the following key-value pairs:
+     * example, you might want to tag a change request to identify an environment or target Region. In this case, you
+     * could specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -656,7 +652,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * @param tags
      *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change
      *        request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
-     *        environment. For example, you might want to tag a change request to identify an environment or target AWS
+     *        environment. For example, you might want to tag a change request to identify an environment or target
      *        Region. In this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
@@ -686,8 +682,8 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request.
      * Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For
-     * example, you might want to tag a change request to identify an environment or target AWS Region. In this case,
-     * you could specify the following key-value pairs:
+     * example, you might want to tag a change request to identify an environment or target Region. In this case, you
+     * could specify the following key-value pairs:
      * </p>
      * <ul>
      * <li>
@@ -705,7 +701,7 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * @param tags
      *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change
      *        request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
-     *        environment. For example, you might want to tag a change request to identify an environment or target AWS
+     *        environment. For example, you might want to tag a change request to identify an environment or target
      *        Region. In this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The activation is not valid. The activation might have been deleted, or the ActivationId and the ActivationCode do
- * not match.
+ * The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't
+ * match.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -54,7 +54,8 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      */
     private String endDate;
@@ -74,7 +75,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private String scheduleTimezone;
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -97,8 +98,8 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private Integer duration;
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      */
     private Integer cutoff;
@@ -116,8 +117,8 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private Boolean enabled;
     /**
      * <p>
-     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      */
     private Boolean replace;
@@ -298,13 +299,14 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      * 
      * @param endDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *        inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
-     *        longer run.
+     *        inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window
+     *        will no longer run.
      */
 
     public void setEndDate(String endDate) {
@@ -314,12 +316,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      * 
      * @return The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *         inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
-     *         longer run.
+     *         inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance
+     *         window will no longer run.
      */
 
     public String getEndDate() {
@@ -329,13 +332,14 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
-     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer
+     * run.
      * </p>
      * 
      * @param endDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
-     *        inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
-     *        longer run.
+     *        inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window
+     *        will no longer run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,7 +443,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -454,7 +458,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait after the date and time specified by a CRON expression before running the
+     *        The number of days to wait after the date and time specified by a cron expression before running the
      *        maintenance window.</p>
      *        <p>
      *        For example, the following cron expression schedules a maintenance window to run the third Tuesday of
@@ -473,7 +477,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -487,7 +491,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.
      * </p>
      * 
-     * @return The number of days to wait after the date and time specified by a CRON expression before running the
+     * @return The number of days to wait after the date and time specified by a cron expression before running the
      *         maintenance window.</p>
      *         <p>
      *         For example, the following cron expression schedules a maintenance window to run the third Tuesday of
@@ -506,7 +510,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to wait after the date and time specified by a CRON expression before running the maintenance
+     * The number of days to wait after the date and time specified by a cron expression before running the maintenance
      * window.
      * </p>
      * <p>
@@ -521,7 +525,7 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param scheduleOffset
-     *        The number of days to wait after the date and time specified by a CRON expression before running the
+     *        The number of days to wait after the date and time specified by a cron expression before running the
      *        maintenance window.</p>
      *        <p>
      *        For example, the following cron expression schedules a maintenance window to run the third Tuesday of
@@ -582,13 +586,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      */
 
     public void setCutoff(Integer cutoff) {
@@ -597,12 +601,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
-     * @return The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *         tasks for execution.
+     * @return The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *         stops scheduling new tasks for execution.
      */
 
     public Integer getCutoff() {
@@ -611,13 +615,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
-     * execution.
+     * The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops
+     * scheduling new tasks for execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-     *        tasks for execution.
+     *        The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager
+     *        stops scheduling new tasks for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -736,13 +740,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
-     *        this API request. Optional fields that are not specified are set to null.
+     *        If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation
+     *        are also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public void setReplace(Boolean replace) {
@@ -751,12 +755,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
-     *         this API request. Optional fields that are not specified are set to null.
+     * @return If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation
+     *         are also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public Boolean getReplace() {
@@ -765,13 +769,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
-     *        this API request. Optional fields that are not specified are set to null.
+     *        If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation
+     *        are also required for this API request. Optional fields that aren't specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -782,12 +786,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
-     * request. Optional fields that are not specified are set to null.
+     * If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also
+     * required for this API request. Optional fields that aren't specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
-     *         this API request. Optional fields that are not specified are set to null.
+     * @return If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation
+     *         are also required for this API request. Optional fields that aren't specified are set to null.
      */
 
     public Boolean isReplace() {

@@ -187,7 +187,7 @@ public class Cluster implements Serializable, Cloneable {
     private String modifyStatus;
     /**
      * <p>
-     * The master user name for the cluster. This name is used to connect to the database that is specified in the
+     * The admin user name for the cluster. This name is used to connect to the database that is specified in the
      * <b>DBName</b> parameter.
      * </p>
      */
@@ -376,7 +376,7 @@ public class Cluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the cluster.
+     * The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      * </p>
      */
     private String kmsKeyId;
@@ -397,8 +397,8 @@ public class Cluster implements Serializable, Cloneable {
     private Boolean enhancedVpcRouting;
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterIamRole> iamRoles;
@@ -1483,13 +1483,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The master user name for the cluster. This name is used to connect to the database that is specified in the
+     * The admin user name for the cluster. This name is used to connect to the database that is specified in the
      * <b>DBName</b> parameter.
      * </p>
      * 
      * @param masterUsername
-     *        The master user name for the cluster. This name is used to connect to the database that is specified in
-     *        the <b>DBName</b> parameter.
+     *        The admin user name for the cluster. This name is used to connect to the database that is specified in the
+     *        <b>DBName</b> parameter.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -1498,11 +1498,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The master user name for the cluster. This name is used to connect to the database that is specified in the
+     * The admin user name for the cluster. This name is used to connect to the database that is specified in the
      * <b>DBName</b> parameter.
      * </p>
      * 
-     * @return The master user name for the cluster. This name is used to connect to the database that is specified in
+     * @return The admin user name for the cluster. This name is used to connect to the database that is specified in
      *         the <b>DBName</b> parameter.
      */
 
@@ -1512,13 +1512,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The master user name for the cluster. This name is used to connect to the database that is specified in the
+     * The admin user name for the cluster. This name is used to connect to the database that is specified in the
      * <b>DBName</b> parameter.
      * </p>
      * 
      * @param masterUsername
-     *        The master user name for the cluster. This name is used to connect to the database that is specified in
-     *        the <b>DBName</b> parameter.
+     *        The admin user name for the cluster. This name is used to connect to the database that is specified in the
+     *        <b>DBName</b> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2960,11 +2960,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the cluster.
+     * The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the cluster.
+     *        The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2973,11 +2973,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the cluster.
+     * The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the
-     *         cluster.
+     * @return The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      */
 
     public String getKmsKeyId() {
@@ -2986,11 +2985,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the cluster.
+     * The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt data in the cluster.
+     *        The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3121,12 +3120,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services.
      * </p>
      * 
-     * @return A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *         AWS services.
+     * @return A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *         Amazon Web Services services.
      */
 
     public java.util.List<ClusterIamRole> getIamRoles() {
@@ -3138,13 +3137,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services.
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services.
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services.
      */
 
     public void setIamRoles(java.util.Collection<ClusterIamRole> iamRoles) {
@@ -3158,8 +3157,8 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3168,8 +3167,8 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services.
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3185,13 +3184,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services.
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services.
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

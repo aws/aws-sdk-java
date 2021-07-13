@@ -41,7 +41,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
-     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target Region. In this
      * case, you could specify the following key-value pairs:
      * </p>
      * <ul>
@@ -171,7 +171,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
-     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target Region. In this
      * case, you could specify the following key-value pairs:
      * </p>
      * <ul>
@@ -190,7 +190,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return Optional metadata that you assign to a resource. You can specify a maximum of five tags for an
      *         OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose,
      *         owner, or environment. For example, you might want to tag an OpsMetadata object to identify an
-     *         environment or target AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *         environment or target Region. In this case, you could specify the following key-value pairs:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -215,7 +215,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
-     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target Region. In this
      * case, you could specify the following key-value pairs:
      * </p>
      * <ul>
@@ -235,7 +235,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      *        object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
      *        environment. For example, you might want to tag an OpsMetadata object to identify an environment or target
-     *        AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *        Region. In this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -262,7 +262,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
-     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target Region. In this
      * case, you could specify the following key-value pairs:
      * </p>
      * <ul>
@@ -287,7 +287,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      *        object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
      *        environment. For example, you might want to tag an OpsMetadata object to identify an environment or target
-     *        AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *        Region. In this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -316,7 +316,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
-     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target Region. In this
      * case, you could specify the following key-value pairs:
      * </p>
      * <ul>
@@ -336,7 +336,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
      *        object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
      *        environment. For example, you might want to tag an OpsMetadata object to identify an environment or target
-     *        AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *        Region. In this case, you could specify the following key-value pairs:</p>
      *        <ul>
      *        <li>
      *        <p>

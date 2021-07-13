@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operating systems you specified is not supported, or the operation is not supported for the operating system.
+ * The operating systems you specified isn't supported, or the operation isn't supported for the operating system.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

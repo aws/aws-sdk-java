@@ -29,7 +29,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pending or in-progress change of the master user password for the cluster.
+     * The pending or in-progress change of the admin user password for the cluster.
      * </p>
      */
     private String masterUserPassword;
@@ -105,11 +105,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pending or in-progress change of the master user password for the cluster.
+     * The pending or in-progress change of the admin user password for the cluster.
      * </p>
      * 
      * @param masterUserPassword
-     *        The pending or in-progress change of the master user password for the cluster.
+     *        The pending or in-progress change of the admin user password for the cluster.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -118,10 +118,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pending or in-progress change of the master user password for the cluster.
+     * The pending or in-progress change of the admin user password for the cluster.
      * </p>
      * 
-     * @return The pending or in-progress change of the master user password for the cluster.
+     * @return The pending or in-progress change of the admin user password for the cluster.
      */
 
     public String getMasterUserPassword() {
@@ -130,11 +130,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pending or in-progress change of the master user password for the cluster.
+     * The pending or in-progress change of the admin user password for the cluster.
      * </p>
      * 
      * @param masterUserPassword
-     *        The pending or in-progress change of the master user password for the cluster.
+     *        The pending or in-progress change of the admin user password for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

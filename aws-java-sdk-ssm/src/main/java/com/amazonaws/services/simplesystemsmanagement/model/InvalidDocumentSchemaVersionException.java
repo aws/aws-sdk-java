@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The version of the document schema is not supported.
+ * The version of the document schema isn't supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

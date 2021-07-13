@@ -41,7 +41,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * This API action only supports filtering documents by using a single tag key and one or more tag values. For
+     * This API operation only supports filtering documents by using a single tag key and one or more tag values. For
      * example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      * </p>
      * </note>
@@ -144,7 +144,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * This API action only supports filtering documents by using a single tag key and one or more tag values. For
+     * This API operation only supports filtering documents by using a single tag key and one or more tag values. For
      * example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      * </p>
      * </note>
@@ -156,8 +156,8 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
      *         <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
      *         <p>
-     *         This API action only supports filtering documents by using a single tag key and one or more tag values.
-     *         For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+     *         This API operation only supports filtering documents by using a single tag key and one or more tag
+     *         values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      *         </p>
      */
 
@@ -178,7 +178,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * This API action only supports filtering documents by using a single tag key and one or more tag values. For
+     * This API operation only supports filtering documents by using a single tag key and one or more tag values. For
      * example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      * </p>
      * </note>
@@ -191,7 +191,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
      *        <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
      *        <p>
-     *        This API action only supports filtering documents by using a single tag key and one or more tag values.
+     *        This API operation only supports filtering documents by using a single tag key and one or more tag values.
      *        For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      *        </p>
      */
@@ -215,7 +215,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * This API action only supports filtering documents by using a single tag key and one or more tag values. For
+     * This API operation only supports filtering documents by using a single tag key and one or more tag values. For
      * example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      * </p>
      * </note>
@@ -233,7 +233,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
      *        <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
      *        <p>
-     *        This API action only supports filtering documents by using a single tag key and one or more tag values.
+     *        This API operation only supports filtering documents by using a single tag key and one or more tag values.
      *        For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -259,7 +259,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * This API action only supports filtering documents by using a single tag key and one or more tag values. For
+     * This API operation only supports filtering documents by using a single tag key and one or more tag values. For
      * example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      * </p>
      * </note>
@@ -272,7 +272,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
      *        <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
      *        <p>
-     *        This API action only supports filtering documents by using a single tag key and one or more tag values.
+     *        This API operation only supports filtering documents by using a single tag key and one or more tag values.
      *        For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

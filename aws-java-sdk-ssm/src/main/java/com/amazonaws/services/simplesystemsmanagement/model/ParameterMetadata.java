@@ -55,7 +55,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      */
     private String lastModifiedUser;
@@ -305,11 +305,11 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      * 
      * @param lastModifiedUser
-     *        Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     *        Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      */
 
     public void setLastModifiedUser(String lastModifiedUser) {
@@ -318,10 +318,10 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * @return Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      */
 
     public String getLastModifiedUser() {
@@ -330,11 +330,11 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     * Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * </p>
      * 
      * @param lastModifiedUser
-     *        Amazon Resource Name (ARN) of the AWS user who last changed the parameter.
+     *        Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

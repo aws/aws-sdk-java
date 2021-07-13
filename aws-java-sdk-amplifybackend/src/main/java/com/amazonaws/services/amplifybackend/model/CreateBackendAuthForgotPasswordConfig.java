@@ -30,7 +30,7 @@ public class CreateBackendAuthForgotPasswordConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their
+     * Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their
      * password.
      * </p>
      */
@@ -50,12 +50,12 @@ public class CreateBackendAuthForgotPasswordConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their
+     * Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their
      * password.
      * </p>
      * 
      * @param deliveryMethod
-     *        Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover
+     *        Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover
      *        their password.
      * @see DeliveryMethod
      */
@@ -66,11 +66,11 @@ public class CreateBackendAuthForgotPasswordConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their
+     * Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their
      * password.
      * </p>
      * 
-     * @return Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover
+     * @return Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover
      *         their password.
      * @see DeliveryMethod
      */
@@ -81,12 +81,12 @@ public class CreateBackendAuthForgotPasswordConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their
+     * Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their
      * password.
      * </p>
      * 
      * @param deliveryMethod
-     *        Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover
+     *        Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover
      *        their password.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMethod
@@ -99,12 +99,12 @@ public class CreateBackendAuthForgotPasswordConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their
+     * Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their
      * password.
      * </p>
      * 
      * @param deliveryMethod
-     *        Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover
+     *        Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover
      *        their password.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMethod

@@ -42,13 +42,13 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
     private String virtualInterfaceId;
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      */
     private String virtualInterfaceRegion;
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      */
     private String virtualInterfaceOwnerAccount;
@@ -176,11 +176,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      * 
      * @param virtualInterfaceRegion
-     *        The AWS Region where the virtual interface is located.
+     *        The Region where the virtual interface is located.
      */
 
     public void setVirtualInterfaceRegion(String virtualInterfaceRegion) {
@@ -189,10 +189,10 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      * 
-     * @return The AWS Region where the virtual interface is located.
+     * @return The Region where the virtual interface is located.
      */
 
     public String getVirtualInterfaceRegion() {
@@ -201,11 +201,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The AWS Region where the virtual interface is located.
+     * The Region where the virtual interface is located.
      * </p>
      * 
      * @param virtualInterfaceRegion
-     *        The AWS Region where the virtual interface is located.
+     *        The Region where the virtual interface is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,11 +216,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceOwnerAccount
-     *        The ID of the AWS account that owns the virtual interface.
+     *        The ID of the account that owns the virtual interface.
      */
 
     public void setVirtualInterfaceOwnerAccount(String virtualInterfaceOwnerAccount) {
@@ -229,10 +229,10 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the virtual interface.
+     * @return The ID of the account that owns the virtual interface.
      */
 
     public String getVirtualInterfaceOwnerAccount() {
@@ -241,11 +241,11 @@ public class DirectConnectGatewayAttachment implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual interface.
+     * The ID of the account that owns the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceOwnerAccount
-     *        The ID of the AWS account that owns the virtual interface.
+     *        The ID of the account that owns the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

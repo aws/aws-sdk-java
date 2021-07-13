@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The permission type is not supported. <i>Share</i> is the only supported permission type.
+ * The permission type isn't supported. <i>Share</i> is the only supported permission type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

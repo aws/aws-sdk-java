@@ -33,15 +33,15 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
     private String connectionId;
     /**
      * <p>
-     * The ID of the AWS account ID of the customer for the connection.
+     * The ID of the account ID of the customer for the connection.
      * </p>
      */
     private String ownerAccount;
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      */
     private String bandwidth;
@@ -106,11 +106,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the AWS account ID of the customer for the connection.
+     * The ID of the account ID of the customer for the connection.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account ID of the customer for the connection.
+     *        The ID of the account ID of the customer for the connection.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -119,10 +119,10 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the AWS account ID of the customer for the connection.
+     * The ID of the account ID of the customer for the connection.
      * </p>
      * 
-     * @return The ID of the AWS account ID of the customer for the connection.
+     * @return The ID of the account ID of the customer for the connection.
      */
 
     public String getOwnerAccount() {
@@ -131,11 +131,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the AWS account ID of the customer for the connection.
+     * The ID of the account ID of the customer for the connection.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account ID of the customer for the connection.
+     *        The ID of the account ID of the customer for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,13 +147,13 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      * 
      * @param bandwidth
      *        The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps,
-     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met
+     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met
      *        specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      */
 
@@ -164,12 +164,12 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      * 
      * @return The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps,
-     *         500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met
+     *         500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met
      *         specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      */
 
@@ -180,13 +180,13 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps,
-     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met specific
-     * requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
+     * 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements
+     * are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * </p>
      * 
      * @param bandwidth
      *        The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps,
-     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those AWS Direct Connect Partners who have met
+     *        500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met
      *        specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

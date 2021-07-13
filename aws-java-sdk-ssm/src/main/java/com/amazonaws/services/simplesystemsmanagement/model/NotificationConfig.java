@@ -37,18 +37,30 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
     private String notificationArn;
     /**
      * <p>
-     * The different events for which you can receive notifications. These events include the following: All (events),
-     * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * The different events for which you can receive notifications. To learn more about these events, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationEvents;
     /**
      * <p>
-     * Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple
-     * instances, receive notification on a per-instance basis when the status of a command changes.
+     * The type of notification.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Command</code>: Receive notification when the status of a command changes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance basis
+     * when the status of a command changes.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String notificationType;
 
@@ -100,17 +112,16 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The different events for which you can receive notifications. These events include the following: All (events),
-     * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * The different events for which you can receive notifications. To learn more about these events, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
-     * @return The different events for which you can receive notifications. These events include the following: All
-     *         (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * @return The different events for which you can receive notifications. To learn more about these events, see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">
-     *         Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
-     *         Manager User Guide</i>.
+     *         Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web
+     *         Services Systems Manager User Guide</i>.
      * @see NotificationEvent
      */
 
@@ -123,18 +134,17 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The different events for which you can receive notifications. These events include the following: All (events),
-     * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * The different events for which you can receive notifications. To learn more about these events, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
      * @param notificationEvents
-     *        The different events for which you can receive notifications. These events include the following: All
-     *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
-     *        >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
-     *        Manager User Guide</i>.
+     *        The different events for which you can receive notifications. To learn more about these events, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">
+     *        Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @see NotificationEvent
      */
 
@@ -149,10 +159,10 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The different events for which you can receive notifications. These events include the following: All (events),
-     * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * The different events for which you can receive notifications. To learn more about these events, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -161,11 +171,10 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param notificationEvents
-     *        The different events for which you can receive notifications. These events include the following: All
-     *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
-     *        >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
-     *        Manager User Guide</i>.
+     *        The different events for which you can receive notifications. To learn more about these events, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">
+     *        Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationEvent
      */
@@ -182,18 +191,17 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The different events for which you can receive notifications. These events include the following: All (events),
-     * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * The different events for which you can receive notifications. To learn more about these events, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
      * @param notificationEvents
-     *        The different events for which you can receive notifications. These events include the following: All
-     *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
-     *        >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
-     *        Manager User Guide</i>.
+     *        The different events for which you can receive notifications. To learn more about these events, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">
+     *        Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationEvent
      */
@@ -205,18 +213,17 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The different events for which you can receive notifications. These events include the following: All (events),
-     * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
+     * The different events for which you can receive notifications. To learn more about these events, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
-     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
      * @param notificationEvents
-     *        The different events for which you can receive notifications. These events include the following: All
-     *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html"
-     *        >Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS Systems
-     *        Manager User Guide</i>.
+     *        The different events for which you can receive notifications. To learn more about these events, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">
+     *        Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationEvent
      */
@@ -236,13 +243,36 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple
-     * instances, receive notification on a per-instance basis when the status of a command changes.
+     * The type of notification.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Command</code>: Receive notification when the status of a command changes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance basis
+     * when the status of a command changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notificationType
-     *        Command: Receive notification when the status of a command changes. Invocation: For commands sent to
-     *        multiple instances, receive notification on a per-instance basis when the status of a command changes.
+     *        The type of notification.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Command</code>: Receive notification when the status of a command changes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance
+     *        basis when the status of a command changes.
+     *        </p>
+     *        </li>
      * @see NotificationType
      */
 
@@ -252,12 +282,35 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple
-     * instances, receive notification on a per-instance basis when the status of a command changes.
+     * The type of notification.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Command</code>: Receive notification when the status of a command changes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance basis
+     * when the status of a command changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Command: Receive notification when the status of a command changes. Invocation: For commands sent to
-     *         multiple instances, receive notification on a per-instance basis when the status of a command changes.
+     * @return The type of notification.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Command</code>: Receive notification when the status of a command changes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance
+     *         basis when the status of a command changes.
+     *         </p>
+     *         </li>
      * @see NotificationType
      */
 
@@ -267,13 +320,36 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple
-     * instances, receive notification on a per-instance basis when the status of a command changes.
+     * The type of notification.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Command</code>: Receive notification when the status of a command changes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance basis
+     * when the status of a command changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notificationType
-     *        Command: Receive notification when the status of a command changes. Invocation: For commands sent to
-     *        multiple instances, receive notification on a per-instance basis when the status of a command changes.
+     *        The type of notification.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Command</code>: Receive notification when the status of a command changes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance
+     *        basis when the status of a command changes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationType
      */
@@ -285,13 +361,36 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple
-     * instances, receive notification on a per-instance basis when the status of a command changes.
+     * The type of notification.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Command</code>: Receive notification when the status of a command changes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance basis
+     * when the status of a command changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notificationType
-     *        Command: Receive notification when the status of a command changes. Invocation: For commands sent to
-     *        multiple instances, receive notification on a per-instance basis when the status of a command changes.
+     *        The type of notification.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Command</code>: Receive notification when the status of a command changes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance
+     *        basis when the status of a command changes.
+     *        </p>
+     *        </li>
      * @see NotificationType
      */
 
@@ -301,13 +400,36 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple
-     * instances, receive notification on a per-instance basis when the status of a command changes.
+     * The type of notification.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Command</code>: Receive notification when the status of a command changes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance basis
+     * when the status of a command changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notificationType
-     *        Command: Receive notification when the status of a command changes. Invocation: For commands sent to
-     *        multiple instances, receive notification on a per-instance basis when the status of a command changes.
+     *        The type of notification.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Command</code>: Receive notification when the status of a command changes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invocation</code>: For commands sent to multiple instances, receive notification on a per-instance
+     *        basis when the status of a command changes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationType
      */

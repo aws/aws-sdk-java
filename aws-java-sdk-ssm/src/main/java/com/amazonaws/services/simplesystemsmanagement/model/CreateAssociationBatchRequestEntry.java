@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the association of a Systems Manager SSM document and an instance.
+ * Describes the association of a Amazon Web Services Systems Manager document (SSM document) and an instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatchRequestEntry"
@@ -31,15 +31,15 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * Command or Automation runbooks.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For SSM documents that are shared with you from other accounts, you must specify the complete SSM document ARN,
+     * in the following format:
      * </p>
      * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -51,8 +51,8 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      */
     private String name;
@@ -70,8 +70,8 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      */
     private String automationTargetParameterName;
@@ -111,13 +111,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      */
     private String maxErrors;
@@ -128,9 +128,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      */
     private String maxConcurrency;
@@ -149,8 +150,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -161,16 +163,16 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> calendarNames;
@@ -184,15 +186,15 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * Command or Automation runbooks.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For SSM documents that are shared with you from other accounts, you must specify the complete SSM document ARN,
+     * in the following format:
      * </p>
      * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -204,20 +206,20 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @param name
      *        The name of the SSM document that contains the configuration information for the instance. You can specify
-     *        Command or Automation documents.</p>
+     *        Command or Automation runbooks.</p>
      *        <p>
-     *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
-     *        from another account.
+     *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+     *        shared with you from another account.
      *        </p>
      *        <p>
-     *        For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
-     *        document ARN, in the following format:
+     *        For SSM documents that are shared with you from other accounts, you must specify the complete SSM document
+     *        ARN, in the following format:
      *        </p>
      *        <p>
      *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -229,8 +231,8 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      *        </p>
      *        <p>
-     *        For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
-     *        document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     *        For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+     *        to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      */
 
     public void setName(String name) {
@@ -240,15 +242,15 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * Command or Automation runbooks.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For SSM documents that are shared with you from other accounts, you must specify the complete SSM document ARN,
+     * in the following format:
      * </p>
      * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -260,18 +262,18 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @return The name of the SSM document that contains the configuration information for the instance. You can
-     *         specify Command or Automation documents.</p>
+     *         specify Command or Automation runbooks.</p>
      *         <p>
-     *         You can specify AWS-predefined documents, documents you created, or a document that is shared with you
-     *         from another account.
+     *         You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+     *         shared with you from another account.
      *         </p>
      *         <p>
-     *         For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
+     *         For SSM documents that are shared with you from other accounts, you must specify the complete SSM
      *         document ARN, in the following format:
      *         </p>
      *         <p>
@@ -284,8 +286,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *         <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      *         </p>
      *         <p>
-     *         For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
-     *         document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     *         For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+     *         to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+     *         <code>My-Document</code>.
      */
 
     public String getName() {
@@ -295,15 +298,15 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     /**
      * <p>
      * The name of the SSM document that contains the configuration information for the instance. You can specify
-     * Command or Automation documents.
+     * Command or Automation runbooks.
      * </p>
      * <p>
-     * You can specify AWS-predefined documents, documents you created, or a document that is shared with you from
-     * another account.
+     * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
+     * with you from another account.
      * </p>
      * <p>
-     * For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM document
-     * ARN, in the following format:
+     * For SSM documents that are shared with you from other accounts, you must specify the complete SSM document ARN,
+     * in the following format:
      * </p>
      * <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -315,20 +318,20 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      * </p>
      * <p>
-     * For AWS-predefined documents and SSM documents you created in your account, you only need to specify the document
-     * name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     * For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to
+     * specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * </p>
      * 
      * @param name
      *        The name of the SSM document that contains the configuration information for the instance. You can specify
-     *        Command or Automation documents.</p>
+     *        Command or Automation runbooks.</p>
      *        <p>
-     *        You can specify AWS-predefined documents, documents you created, or a document that is shared with you
-     *        from another account.
+     *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
+     *        shared with you from another account.
      *        </p>
      *        <p>
-     *        For SSM documents that are shared with you from other AWS accounts, you must specify the complete SSM
-     *        document ARN, in the following format:
+     *        For SSM documents that are shared with you from other accounts, you must specify the complete SSM document
+     *        ARN, in the following format:
      *        </p>
      *        <p>
      *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
@@ -340,8 +343,8 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
      *        </p>
      *        <p>
-     *        For AWS-predefined documents and SSM documents you created in your account, you only need to specify the
-     *        document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
+     *        For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+     *        to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,13 +463,14 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param automationTargetParameterName
      *        Specify the target for the association. This target is required for associations that use an Automation
-     *        document and target resources by using rate controls.
+     *        runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *        Systems Manager.
      */
 
     public void setAutomationTargetParameterName(String automationTargetParameterName) {
@@ -475,12 +479,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @return Specify the target for the association. This target is required for associations that use an Automation
-     *         document and target resources by using rate controls.
+     *         runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *         Systems Manager.
      */
 
     public String getAutomationTargetParameterName() {
@@ -489,13 +494,14 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specify the target for the association. This target is required for associations that use an Automation document
-     * and target resources by using rate controls.
+     * Specify the target for the association. This target is required for associations that use an Automation runbook
+     * and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
      * </p>
      * 
      * @param automationTargetParameterName
      *        Specify the target for the association. This target is required for associations that use an Automation
-     *        document and target resources by using rate controls.
+     *        runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services
+     *        Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -743,13 +749,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @param maxErrors
@@ -757,12 +763,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *        stops sending the request when the sixth error is received.</p>
+     *        error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *        the system stops sending the request when the sixth error is received.</p>
      *        <p>
-     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *        Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *        complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *        than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *        a time.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -775,25 +782,26 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @return The number of errors that are allowed before the system stops sending requests to run the association on
      *         additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *         of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *         the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *         error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *         stops sending the request when the sixth error is received.</p>
+     *         error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *         the system stops sending the request when the sixth error is received.</p>
      *         <p>
-     *         Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *         some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *         failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *         Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *         complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *         than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *         a time.
      */
 
     public String getMaxErrors() {
@@ -806,13 +814,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
      * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
-     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
-     * the sixth error is received.
+     * you run an association on 50 instances and set <code>MaxError</code> to 10%, then the system stops sending the
+     * request when the sixth error is received.
      * </p>
      * <p>
-     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
-     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
-     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure that there won't be more than
+     * max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
      * </p>
      * 
      * @param maxErrors
@@ -820,12 +828,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
      *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
      *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
-     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
-     *        stops sending the request when the sixth error is received.</p>
+     *        error is returned. If you run an association on 50 instances and set <code>MaxError</code> to 10%, then
+     *        the system stops sending the request when the sixth error is received.</p>
      *        <p>
-     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
-     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
-     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     *        Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to
+     *        complete, but some of these executions may fail as well. If you need to ensure that there won't be more
+     *        than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at
+     *        a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -841,9 +850,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @param maxConcurrency
@@ -852,8 +862,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        all targets run the association at the same time.</p>
      *        <p>
      *        If a new instance starts and attempts to run an association while Systems Manager is running
-     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *        new instance will process its association within the limit specified for MaxConcurrency.
+     *        <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *        interval, the new instance will process its association within the limit specified for
+     *        <code>MaxConcurrency</code>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -867,9 +878,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @return The maximum number of targets allowed to run the association at the same time. You can specify a number,
@@ -877,8 +889,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *         means all targets run the association at the same time.</p>
      *         <p>
      *         If a new instance starts and attempts to run an association while Systems Manager is running
-     *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *         new instance will process its association within the limit specified for MaxConcurrency.
+     *         <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *         interval, the new instance will process its association within the limit specified for
+     *         <code>MaxConcurrency</code>.
      */
 
     public String getMaxConcurrency() {
@@ -892,9 +905,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * targets run the association at the same time.
      * </p>
      * <p>
-     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
-     * associations, the association is allowed to run. During the next association interval, the new instance will
-     * process its association within the limit specified for MaxConcurrency.
+     * If a new instance starts and attempts to run an association while Systems Manager is running
+     * <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit specified for
+     * <code>MaxConcurrency</code>.
      * </p>
      * 
      * @param maxConcurrency
@@ -903,8 +917,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        all targets run the association at the same time.</p>
      *        <p>
      *        If a new instance starts and attempts to run an association while Systems Manager is running
-     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
-     *        new instance will process its association within the limit specified for MaxConcurrency.
+     *        <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association
+     *        interval, the new instance will process its association within the limit specified for
+     *        <code>MaxConcurrency</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -981,8 +996,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -996,8 +1012,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        <code>NON-COMPLIANT</code>. </p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *        capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *        <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1017,8 +1034,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1031,8 +1049,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *         <code>NON-COMPLIANT</code>. </p>
      *         <p>
      *         In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *         <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It
-     *         is managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *         <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *         capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *         <a>PutComplianceItems</a> API operation.
      *         </p>
      *         <p>
      *         By default, all associations use <code>AUTO</code> mode.
@@ -1052,8 +1071,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1067,8 +1087,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        <code>NON-COMPLIANT</code>. </p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *        capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *        <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1090,8 +1111,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * <p>
      * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     * capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API operation.
      * </p>
      * <p>
      * By default, all associations use <code>AUTO</code> mode.
@@ -1105,8 +1127,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      *        <code>NON-COMPLIANT</code>. </p>
      *        <p>
      *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
-     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
-     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed by State Manager, a
+     *        capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+     *        <a>PutComplianceItems</a> API operation.
      *        </p>
      *        <p>
      *        By default, all associations use <code>AUTO</code> mode.
@@ -1123,13 +1146,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new associations, the system runs it immediately after it is created and
      *        then according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it. This parameter is not supported for rate expressions.
+     *        immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public void setApplyOnlyAtCronInterval(Boolean applyOnlyAtCronInterval) {
@@ -1140,12 +1163,12 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new associations, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it. This parameter is not supported for rate expressions.
+     *         immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public Boolean getApplyOnlyAtCronInterval() {
@@ -1156,13 +1179,13 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
      *        By default, when you create a new associations, the system runs it immediately after it is created and
      *        then according to the schedule you specified. Specify this option if you don't want an association to run
-     *        immediately after you create it. This parameter is not supported for rate expressions.
+     *        immediately after you create it. This parameter isn't supported for rate expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1175,12 +1198,12 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * <p>
      * By default, when you create a new associations, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
-     * after you create it. This parameter is not supported for rate expressions.
+     * after you create it. This parameter isn't supported for rate expressions.
      * </p>
      * 
      * @return By default, when you create a new associations, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
-     *         immediately after you create it. This parameter is not supported for rate expressions.
+     *         immediately after you create it. This parameter isn't supported for rate expressions.
      */
 
     public Boolean isApplyOnlyAtCronInterval() {
@@ -1189,17 +1212,17 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
-     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *         associations are gated under. The associations only run when that Change Calendar is open. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *         Systems Manager Change Calendar</a>.
+     * @return The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *         gated under. The associations only run when that Change Calendar is open. For more information, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *         Web Services Systems Manager Change Calendar</a>.
      */
 
     public java.util.List<String> getCalendarNames() {
@@ -1211,18 +1234,17 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *        associations are gated under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *        gated under. The associations only run when that Change Calendar is open. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *        Web Services Systems Manager Change Calendar</a>.
      */
 
     public void setCalendarNames(java.util.Collection<String> calendarNames) {
@@ -1236,10 +1258,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1248,11 +1270,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *        associations are gated under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *        gated under. The associations only run when that Change Calendar is open. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *        Web Services Systems Manager Change Calendar</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1268,18 +1289,17 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your associations
-     * are gated under. The associations only run when that Change Calendar is open. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems
-     * Manager Change Calendar</a>.
+     * The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated
+     * under. The associations only run when that Change Calendar is open. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web
+     * Services Systems Manager Change Calendar</a>.
      * </p>
      * 
      * @param calendarNames
-     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents your
-     *        associations are gated under. The associations only run when that Change Calendar is open. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
-     *        Systems Manager Change Calendar</a>.
+     *        The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are
+     *        gated under. The associations only run when that Change Calendar is open. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
+     *        Web Services Systems Manager Change Calendar</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,7 +88,7 @@ public class Snapshot implements Serializable, Cloneable {
     private java.util.Date clusterCreateTime;
     /**
      * <p>
-     * The master user name for the cluster.
+     * The admin user name for the cluster.
      * </p>
      */
     private String masterUsername;
@@ -144,8 +144,8 @@ public class Snapshot implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster
-     * from which the snapshot was taken.
+     * The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from
+     * which the snapshot was taken.
      * </p>
      */
     private String kmsKeyId;
@@ -158,15 +158,15 @@ public class Snapshot implements Serializable, Cloneable {
     private Boolean encryptedWithHSM;
     /**
      * <p>
-     * A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts
-     * are authorized. Visible only to the snapshot owner.
+     * A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     * authorized. Visible only to the snapshot owner.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountWithRestoreAccess> accountsWithRestoreAccess;
     /**
      * <p>
-     * For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the
-     * owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
+     * For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner of the
+     * cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      * </p>
      */
     private String ownerAccount;
@@ -658,11 +658,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The master user name for the cluster.
+     * The admin user name for the cluster.
      * </p>
      * 
      * @param masterUsername
-     *        The master user name for the cluster.
+     *        The admin user name for the cluster.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -671,10 +671,10 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The master user name for the cluster.
+     * The admin user name for the cluster.
      * </p>
      * 
-     * @return The master user name for the cluster.
+     * @return The admin user name for the cluster.
      */
 
     public String getMasterUsername() {
@@ -683,11 +683,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The master user name for the cluster.
+     * The admin user name for the cluster.
      * </p>
      * 
      * @param masterUsername
-     *        The master user name for the cluster.
+     *        The admin user name for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1042,13 +1042,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster
-     * from which the snapshot was taken.
+     * The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from
+     * which the snapshot was taken.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the
-     *        cluster from which the snapshot was taken.
+     *        The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster
+     *        from which the snapshot was taken.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1057,11 +1057,11 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster
-     * from which the snapshot was taken.
+     * The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from
+     * which the snapshot was taken.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the
+     * @return The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the
      *         cluster from which the snapshot was taken.
      */
 
@@ -1071,13 +1071,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster
-     * from which the snapshot was taken.
+     * The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from
+     * which the snapshot was taken.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the
-     *        cluster from which the snapshot was taken.
+     *        The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster
+     *        from which the snapshot was taken.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1148,12 +1148,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts
-     * are authorized. Visible only to the snapshot owner.
+     * A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     * authorized. Visible only to the snapshot owner.
      * </p>
      * 
-     * @return A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no
-     *         accounts are authorized. Visible only to the snapshot owner.
+     * @return A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     *         authorized. Visible only to the snapshot owner.
      */
 
     public java.util.List<AccountWithRestoreAccess> getAccountsWithRestoreAccess() {
@@ -1165,13 +1165,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts
-     * are authorized. Visible only to the snapshot owner.
+     * A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     * authorized. Visible only to the snapshot owner.
      * </p>
      * 
      * @param accountsWithRestoreAccess
-     *        A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no
-     *        accounts are authorized. Visible only to the snapshot owner.
+     *        A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     *        authorized. Visible only to the snapshot owner.
      */
 
     public void setAccountsWithRestoreAccess(java.util.Collection<AccountWithRestoreAccess> accountsWithRestoreAccess) {
@@ -1185,8 +1185,8 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts
-     * are authorized. Visible only to the snapshot owner.
+     * A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     * authorized. Visible only to the snapshot owner.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1195,8 +1195,8 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param accountsWithRestoreAccess
-     *        A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no
-     *        accounts are authorized. Visible only to the snapshot owner.
+     *        A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     *        authorized. Visible only to the snapshot owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1212,13 +1212,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts
-     * are authorized. Visible only to the snapshot owner.
+     * A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     * authorized. Visible only to the snapshot owner.
      * </p>
      * 
      * @param accountsWithRestoreAccess
-     *        A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code> if no
-     *        accounts are authorized. Visible only to the snapshot owner.
+     *        A list of the accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are
+     *        authorized. Visible only to the snapshot owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1229,14 +1229,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the
-     * owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
+     * For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner of the
+     * cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      * </p>
      * 
      * @param ownerAccount
-     *        For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic
-     *        snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual
-     *        snapshot.
+     *        For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner
+     *        of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -1245,13 +1244,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the
-     * owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
+     * For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner of the
+     * cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      * </p>
      * 
-     * @return For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic
-     *         snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual
-     *         snapshot.
+     * @return For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner
+     *         of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      */
 
     public String getOwnerAccount() {
@@ -1260,14 +1258,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the
-     * owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
+     * For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner of the
+     * cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      * </p>
      * 
      * @param ownerAccount
-     *        For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic
-     *        snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual
-     *        snapshot.
+     *        For manual snapshots, the account used to create or copy the snapshot. For automatic snapshots, the owner
+     *        of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource type is not valid. For example, if you are attempting to tag an instance, the instance must be a
+ * The resource type isn't valid. For example, if you are attempting to tag an instance, the instance must be a
  * registered, managed instance.
  * </p>
  */

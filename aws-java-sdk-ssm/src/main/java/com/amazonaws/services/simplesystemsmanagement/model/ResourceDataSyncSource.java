@@ -31,37 +31,38 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
-     * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     * <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      * <code>SingleAccountMultiRegions</code>.
      * </p>
      */
     private String sourceType;
     /**
      * <p>
-     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     * synchronize data from AWS Organizations.
+     * Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type
+     * can synchronize data from Organizations.
      * </p>
      */
     private ResourceDataSyncAwsOrganizationsSource awsOrganizationsSource;
     /**
      * <p>
-     * The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     * The <code>SyncSource</code> Regions included in the resource data sync.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> sourceRegions;
     /**
      * <p>
-     * Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.
+     * Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      * </p>
      */
     private Boolean includeFutureRegions;
     /**
      * <p>
-     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
-     * (or in the selected organization units). For more information, see <a href=
+     * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected Regions for all accounts in your organization (or in
+     * the selected organization units). For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      */
     private Boolean enableAllOpsDataSources;
@@ -69,13 +70,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
-     * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     * <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      * <code>SingleAccountMultiRegions</code>.
      * </p>
      * 
      * @param sourceType
      *        The type of data source for the resource data sync. <code>SourceType</code> is either
-     *        <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     *        <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      *        <code>SingleAccountMultiRegions</code>.
      */
 
@@ -86,12 +87,12 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
-     * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     * <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      * <code>SingleAccountMultiRegions</code>.
      * </p>
      * 
      * @return The type of data source for the resource data sync. <code>SourceType</code> is either
-     *         <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     *         <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      *         <code>SingleAccountMultiRegions</code>.
      */
 
@@ -102,13 +103,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
-     * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     * <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      * <code>SingleAccountMultiRegions</code>.
      * </p>
      * 
      * @param sourceType
      *        The type of data source for the resource data sync. <code>SourceType</code> is either
-     *        <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+     *        <code>AwsOrganizations</code> (if an organization is present in Organizations) or
      *        <code>SingleAccountMultiRegions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -120,13 +121,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     * synchronize data from AWS Organizations.
+     * Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type
+     * can synchronize data from Organizations.
      * </p>
      * 
      * @param awsOrganizationsSource
-     *        Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     *        synchronize data from AWS Organizations.
+     *        Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this
+     *        type can synchronize data from Organizations.
      */
 
     public void setAwsOrganizationsSource(ResourceDataSyncAwsOrganizationsSource awsOrganizationsSource) {
@@ -135,12 +136,12 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     * synchronize data from AWS Organizations.
+     * Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type
+     * can synchronize data from Organizations.
      * </p>
      * 
-     * @return Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     *         synchronize data from AWS Organizations.
+     * @return Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of
+     *         this type can synchronize data from Organizations.
      */
 
     public ResourceDataSyncAwsOrganizationsSource getAwsOrganizationsSource() {
@@ -149,13 +150,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     * synchronize data from AWS Organizations.
+     * Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type
+     * can synchronize data from Organizations.
      * </p>
      * 
      * @param awsOrganizationsSource
-     *        Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
-     *        synchronize data from AWS Organizations.
+     *        Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this
+     *        type can synchronize data from Organizations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +167,10 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     * The <code>SyncSource</code> Regions included in the resource data sync.
      * </p>
      * 
-     * @return The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     * @return The <code>SyncSource</code> Regions included in the resource data sync.
      */
 
     public java.util.List<String> getSourceRegions() {
@@ -181,11 +182,11 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     * The <code>SyncSource</code> Regions included in the resource data sync.
      * </p>
      * 
      * @param sourceRegions
-     *        The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     *        The <code>SyncSource</code> Regions included in the resource data sync.
      */
 
     public void setSourceRegions(java.util.Collection<String> sourceRegions) {
@@ -199,7 +200,7 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     * The <code>SyncSource</code> Regions included in the resource data sync.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -208,7 +209,7 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param sourceRegions
-     *        The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     *        The <code>SyncSource</code> Regions included in the resource data sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +225,11 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     * The <code>SyncSource</code> Regions included in the resource data sync.
      * </p>
      * 
      * @param sourceRegions
-     *        The <code>SyncSource</code> AWS Regions included in the resource data sync.
+     *        The <code>SyncSource</code> Regions included in the resource data sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,12 +240,11 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.
+     * Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      * </p>
      * 
      * @param includeFutureRegions
-     *        Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come
-     *        online.
+     *        Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      */
 
     public void setIncludeFutureRegions(Boolean includeFutureRegions) {
@@ -253,11 +253,10 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.
+     * Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      * </p>
      * 
-     * @return Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come
-     *         online.
+     * @return Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      */
 
     public Boolean getIncludeFutureRegions() {
@@ -266,12 +265,11 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.
+     * Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      * </p>
      * 
      * @param includeFutureRegions
-     *        Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come
-     *        online.
+     *        Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +280,10 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.
+     * Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      * </p>
      * 
-     * @return Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come
-     *         online.
+     * @return Whether to automatically synchronize and aggregate data from new Regions when those Regions come online.
      */
 
     public Boolean isIncludeFutureRegions() {
@@ -295,19 +292,21 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
-     * (or in the selected organization units). For more information, see <a href=
+     * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected Regions for all accounts in your organization (or in
+     * the selected organization units). For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param enableAllOpsDataSources
-     *        When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
-     *        Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your
-     *        organization (or in the selected organization units). For more information, see <a href=
+     *        When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     *        automatically enables all OpsData sources in the selected Regions for all accounts in your organization
+     *        (or in the selected organization units). For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *        >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      */
 
     public void setEnableAllOpsDataSources(Boolean enableAllOpsDataSources) {
@@ -316,18 +315,20 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
-     * (or in the selected organization units). For more information, see <a href=
+     * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected Regions for all accounts in your organization (or in
+     * the selected organization units). For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
-     * @return When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
-     *         Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
-     *         your organization (or in the selected organization units). For more information, see <a href=
+     * @return When you create a resource data sync, if you choose one of the Organizations options, then Systems
+     *         Manager automatically enables all OpsData sources in the selected Regions for all accounts in your
+     *         organization (or in the selected organization units). For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *         >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
+     *         User Guide</i>.
      */
 
     public Boolean getEnableAllOpsDataSources() {
@@ -336,19 +337,21 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
-     * (or in the selected organization units). For more information, see <a href=
+     * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected Regions for all accounts in your organization (or in
+     * the selected organization units). For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param enableAllOpsDataSources
-     *        When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
-     *        Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your
-     *        organization (or in the selected organization units). For more information, see <a href=
+     *        When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     *        automatically enables all OpsData sources in the selected Regions for all accounts in your organization
+     *        (or in the selected organization units). For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *        >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,18 +362,20 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
-     * (or in the selected organization units). For more information, see <a href=
+     * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected Regions for all accounts in your organization (or in
+     * the selected organization units). For more information, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.
      * </p>
      * 
-     * @return When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
-     *         Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
-     *         your organization (or in the selected organization units). For more information, see <a href=
+     * @return When you create a resource data sync, if you choose one of the Organizations options, then Systems
+     *         Manager automatically enables all OpsData sources in the selected Regions for all accounts in your
+     *         organization (or in the selected organization units). For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *         >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
+     *         User Guide</i>.
      */
 
     public Boolean isEnableAllOpsDataSources() {

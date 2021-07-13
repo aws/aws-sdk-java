@@ -49,9 +49,10 @@ public class DescribeReservedNodeOfferingsRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns
-     * a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      */
     private String marker;
@@ -187,16 +188,17 @@ public class DescribeReservedNodeOfferingsRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns
-     * a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request.
      */
 
@@ -207,15 +209,16 @@ public class DescribeReservedNodeOfferingsRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns
-     * a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @return An optional parameter that specifies the starting point to return a set of response records. When the
      *         results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in
-     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *         response. You can retrieve the next set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      */
 
@@ -226,16 +229,17 @@ public class DescribeReservedNodeOfferingsRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns
-     * a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

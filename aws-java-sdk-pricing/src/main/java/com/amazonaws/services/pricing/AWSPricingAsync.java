@@ -26,12 +26,13 @@ import com.amazonaws.services.pricing.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Price List Service API (AWS Price List Service) is a centralized and convenient way to programmatically query
- * Amazon Web Services for services, products, and pricing information. The AWS Price List Service uses standardized
- * product attributes such as <code>Location</code>, <code>Storage Class</code>, and <code>Operating System</code>, and
- * provides prices at the SKU level. You can use the AWS Price List Service to build cost control and scenario planning
- * tools, reconcile billing data, forecast future spend for budgeting purposes, and provide cost benefit analysis that
- * compare your internal workloads with AWS.
+ * Amazon Web Services Price List Service API (Amazon Web Services Price List Service) is a centralized and convenient
+ * way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web
+ * Services Price List Service uses standardized product attributes such as <code>Location</code>,
+ * <code>Storage Class</code>, and <code>Operating System</code>, and provides prices at the SKU level. You can use the
+ * Amazon Web Services Price List Service to build cost control and scenario planning tools, reconcile billing data,
+ * forecast future spend for budgeting purposes, and provide cost benefit analysis that compare your internal workloads
+ * with Amazon Web Services.
  * </p>
  * <p>
  * Use <code>GetServices</code> without a service code to retrieve the service codes for all AWS services, then
@@ -45,7 +46,7 @@ import com.amazonaws.services.pricing.model.*;
  * Service Endpoint
  * </p>
  * <p>
- * AWS Price List Service API provides the following two endpoints:
+ * Amazon Web Services Price List Service API provides the following two endpoints:
  * </p>
  * <ul>
  * <li>
@@ -108,8 +109,8 @@ public interface AWSPricingAsync extends AWSPricing {
      * list of available attributes, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File
      * Definitions</a> in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">AWS Billing and Cost
-     * Management User Guide</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon Web Services
+     * Billing and Cost Management User Guide</a>.
      * </p>
      * 
      * @param getAttributeValuesRequest
@@ -126,8 +127,8 @@ public interface AWSPricingAsync extends AWSPricing {
      * list of available attributes, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File
      * Definitions</a> in the <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">AWS Billing and Cost
-     * Management User Guide</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon Web Services
+     * Billing and Cost Management User Guide</a>.
      * </p>
      * 
      * @param getAttributeValuesRequest

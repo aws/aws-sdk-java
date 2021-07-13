@@ -40,7 +40,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
     private String proposalId;
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     * The ID of the account that owns the virtual private gateway or transit gateway.
      * </p>
      */
     private String associatedGatewayOwnerAccount;
@@ -51,7 +51,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> overrideAllowedPrefixesToDirectConnectGateway;
@@ -138,11 +138,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     * The ID of the account that owns the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param associatedGatewayOwnerAccount
-     *        The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     *        The ID of the account that owns the virtual private gateway or transit gateway.
      */
 
     public void setAssociatedGatewayOwnerAccount(String associatedGatewayOwnerAccount) {
@@ -151,10 +151,10 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     * The ID of the account that owns the virtual private gateway or transit gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     * @return The ID of the account that owns the virtual private gateway or transit gateway.
      */
 
     public String getAssociatedGatewayOwnerAccount() {
@@ -163,11 +163,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     * The ID of the account that owns the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param associatedGatewayOwnerAccount
-     *        The ID of the AWS account that owns the virtual private gateway or transit gateway.
+     *        The ID of the account that owns the virtual private gateway or transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,14 +183,14 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @return Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
      *         <p>
      *         For information about how to set the prefixes, see <a href=
      *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     *         >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      */
 
     public java.util.List<RouteFilterPrefix> getOverrideAllowedPrefixesToDirectConnectGateway() {
@@ -207,7 +207,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
@@ -215,7 +215,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      *        <p>
      *        For information about how to set the prefixes, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      */
 
     public void setOverrideAllowedPrefixesToDirectConnectGateway(java.util.Collection<RouteFilterPrefix> overrideAllowedPrefixesToDirectConnectGateway) {
@@ -235,7 +235,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -249,7 +249,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      *        <p>
      *        For information about how to set the prefixes, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,7 +272,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     * >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
@@ -280,7 +280,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      *        <p>
      *        For information about how to set the prefixes, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
-     *        >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        >Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

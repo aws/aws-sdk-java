@@ -379,6 +379,32 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     }
 
     @Override
+    public java.util.concurrent.Future<GetMigrationResult> getMigrationAsync(GetMigrationRequest request) {
+
+        return getMigrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMigrationResult> getMigrationAsync(GetMigrationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMigrationRequest, GetMigrationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMigrationsResult> getMigrationsAsync(GetMigrationsRequest request) {
+
+        return getMigrationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMigrationsResult> getMigrationsAsync(GetMigrationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMigrationsRequest, GetMigrationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSlotTypeResult> getSlotTypeAsync(GetSlotTypeRequest request) {
 
         return getSlotTypeAsync(request, null);
@@ -504,6 +530,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     @Override
     public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request,
             com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMigrationResult> startMigrationAsync(StartMigrationRequest request) {
+
+        return startMigrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMigrationResult> startMigrationAsync(StartMigrationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMigrationRequest, StartMigrationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

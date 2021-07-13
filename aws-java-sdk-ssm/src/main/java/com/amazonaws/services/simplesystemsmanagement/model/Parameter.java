@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An Systems Manager parameter in Parameter Store.
+ * An Amazon Web Services Systems Manager parameter in Parameter Store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter" target="_top">AWS API
@@ -68,8 +68,8 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
     private String selector;
     /**
      * <p>
-     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     * response from the source.
+     * Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code>
+     * is the raw result or response from the source.
      * </p>
      */
     private String sourceResult;
@@ -377,13 +377,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     * response from the source.
+     * Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code>
+     * is the raw result or response from the source.
      * </p>
      * 
      * @param sourceResult
-     *        Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     *        response from the source.
+     *        Applies to parameters that reference information in other Amazon Web Services services.
+     *        <code>SourceResult</code> is the raw result or response from the source.
      */
 
     public void setSourceResult(String sourceResult) {
@@ -392,12 +392,12 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     * response from the source.
+     * Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code>
+     * is the raw result or response from the source.
      * </p>
      * 
-     * @return Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     *         response from the source.
+     * @return Applies to parameters that reference information in other Amazon Web Services services.
+     *         <code>SourceResult</code> is the raw result or response from the source.
      */
 
     public String getSourceResult() {
@@ -406,13 +406,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     * response from the source.
+     * Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code>
+     * is the raw result or response from the source.
      * </p>
      * 
      * @param sourceResult
-     *        Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
-     *        response from the source.
+     *        Applies to parameters that reference information in other Amazon Web Services services.
+     *        <code>SourceResult</code> is the raw result or response from the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,7 +68,7 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      */
     private Boolean approvedPatchesEnableNonSecurity;
@@ -80,8 +80,9 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     private com.amazonaws.internal.SdkInternalList<String> rejectedPatches;
     /**
      * <p>
-     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
-     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed
+     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     * dependency.
      * </p>
      */
     private String rejectedPatchesAction;
@@ -499,12 +500,12 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @param approvedPatchesEnableNonSecurity
      *        Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     *        instances. The default value is 'false'. Applies to Linux instances only.
+     *        instances. The default value is <code>false</code>. Applies to Linux instances only.
      */
 
     public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
@@ -514,11 +515,11 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @return Indicates whether the list of approved patches includes non-security updates that should be applied to
-     *         the instances. The default value is 'false'. Applies to Linux instances only.
+     *         the instances. The default value is <code>false</code>. Applies to Linux instances only.
      */
 
     public Boolean getApprovedPatchesEnableNonSecurity() {
@@ -528,12 +529,12 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @param approvedPatchesEnableNonSecurity
      *        Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     *        instances. The default value is 'false'. Applies to Linux instances only.
+     *        instances. The default value is <code>false</code>. Applies to Linux instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -545,11 +546,11 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @return Indicates whether the list of approved patches includes non-security updates that should be applied to
-     *         the instances. The default value is 'false'. Applies to Linux instances only.
+     *         the instances. The default value is <code>false</code>. Applies to Linux instances only.
      */
 
     public Boolean isApprovedPatchesEnableNonSecurity() {
@@ -631,14 +632,15 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
-     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed
+     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     * dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
-     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     *        dependency.
+     *        The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be
+     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
+     *        include it as a dependency.
      * @see PatchAction
      */
 
@@ -648,13 +650,14 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
-     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed
+     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     * dependency.
      * </p>
      * 
-     * @return The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
-     *         if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     *         dependency.
+     * @return The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be
+     *         allowed only if it is a dependency of another package, or blocked entirely along with packages that
+     *         include it as a dependency.
      * @see PatchAction
      */
 
@@ -664,14 +667,15 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
-     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed
+     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     * dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
-     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     *        dependency.
+     *        The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be
+     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
+     *        include it as a dependency.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchAction
      */
@@ -683,14 +687,15 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
-     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed
+     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     * dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
-     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     *        dependency.
+     *        The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be
+     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
+     *        include it as a dependency.
      * @see PatchAction
      */
 
@@ -700,14 +705,15 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
-     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed
+     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     * dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
-     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     *        dependency.
+     *        The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be
+     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
+     *        include it as a dependency.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchAction
      */

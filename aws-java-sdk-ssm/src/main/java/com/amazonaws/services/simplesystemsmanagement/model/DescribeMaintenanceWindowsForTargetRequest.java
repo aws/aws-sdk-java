@@ -27,13 +27,13 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The instance ID or key/value pair to retrieve information about.
+     * The instance ID or key-value pair to retrieve information about.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The type of resource you want to retrieve information about. For example, "INSTANCE".
+     * The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * </p>
      */
     private String resourceType;
@@ -53,10 +53,10 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The instance ID or key/value pair to retrieve information about.
+     * The instance ID or key-value pair to retrieve information about.
      * </p>
      * 
-     * @return The instance ID or key/value pair to retrieve information about.
+     * @return The instance ID or key-value pair to retrieve information about.
      */
 
     public java.util.List<Target> getTargets() {
@@ -68,11 +68,11 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The instance ID or key/value pair to retrieve information about.
+     * The instance ID or key-value pair to retrieve information about.
      * </p>
      * 
      * @param targets
-     *        The instance ID or key/value pair to retrieve information about.
+     *        The instance ID or key-value pair to retrieve information about.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -86,7 +86,7 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The instance ID or key/value pair to retrieve information about.
+     * The instance ID or key-value pair to retrieve information about.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,7 +95,7 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
      * </p>
      * 
      * @param targets
-     *        The instance ID or key/value pair to retrieve information about.
+     *        The instance ID or key-value pair to retrieve information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The instance ID or key/value pair to retrieve information about.
+     * The instance ID or key-value pair to retrieve information about.
      * </p>
      * 
      * @param targets
-     *        The instance ID or key/value pair to retrieve information about.
+     *        The instance ID or key-value pair to retrieve information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The type of resource you want to retrieve information about. For example, "INSTANCE".
+     * The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource you want to retrieve information about. For example, "INSTANCE".
+     *        The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * @see MaintenanceWindowResourceType
      */
 
@@ -140,10 +140,10 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The type of resource you want to retrieve information about. For example, "INSTANCE".
+     * The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * </p>
      * 
-     * @return The type of resource you want to retrieve information about. For example, "INSTANCE".
+     * @return The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * @see MaintenanceWindowResourceType
      */
 
@@ -153,11 +153,11 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The type of resource you want to retrieve information about. For example, "INSTANCE".
+     * The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource you want to retrieve information about. For example, "INSTANCE".
+     *        The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowResourceType
      */
@@ -169,11 +169,11 @@ public class DescribeMaintenanceWindowsForTargetRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The type of resource you want to retrieve information about. For example, "INSTANCE".
+     * The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource you want to retrieve information about. For example, "INSTANCE".
+     *        The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowResourceType
      */

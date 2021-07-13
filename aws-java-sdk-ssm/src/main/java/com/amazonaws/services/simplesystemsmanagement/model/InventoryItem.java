@@ -30,9 +30,10 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
-     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
+     * type names will start with Custom. Default inventory item types include the following:
+     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      * </p>
      */
     private String typeName;
@@ -51,8 +52,8 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update.
+     * information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed
+     * since last update.
      * </p>
      */
     private String contentHash;
@@ -73,15 +74,17 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
-     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
+     * type names will start with Custom. Default inventory item types include the following:
+     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
-     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
-     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
+     *        inventory type names will start with Custom. Default inventory item types include the following:
+     *        <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     *        <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -90,14 +93,16 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
-     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
+     * type names will start with Custom. Default inventory item types include the following:
+     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      * </p>
      * 
-     * @return The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
-     *         names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
-     *         AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     * @return The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
+     *         inventory type names will start with Custom. Default inventory item types include the following:
+     *         <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     *         <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      */
 
     public String getTypeName() {
@@ -106,15 +111,17 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
-     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
+     * type names will start with Custom. Default inventory item types include the following:
+     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
-     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
-     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
+     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
+     *        inventory type names will start with Custom. Default inventory item types include the following:
+     *        <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     *        <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,14 +213,14 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update.
+     * information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed
+     * since last update.
      * </p>
      * 
      * @param contentHash
      *        MD5 hash of the inventory item type contents. The content hash is used to determine whether to update
-     *        inventory information. The PutInventory API does not update the inventory item type contents if the MD5
-     *        hash has not changed since last update.
+     *        inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5
+     *        hash hasn't changed since last update.
      */
 
     public void setContentHash(String contentHash) {
@@ -223,13 +230,13 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update.
+     * information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed
+     * since last update.
      * </p>
      * 
      * @return MD5 hash of the inventory item type contents. The content hash is used to determine whether to update
-     *         inventory information. The PutInventory API does not update the inventory item type contents if the MD5
-     *         hash has not changed since last update.
+     *         inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5
+     *         hash hasn't changed since last update.
      */
 
     public String getContentHash() {
@@ -239,14 +246,14 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
-     * changed since last update.
+     * information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed
+     * since last update.
      * </p>
      * 
      * @param contentHash
      *        MD5 hash of the inventory item type contents. The content hash is used to determine whether to update
-     *        inventory information. The PutInventory API does not update the inventory item type contents if the MD5
-     *        hash has not changed since last update.
+     *        inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5
+     *        hash hasn't changed since last update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

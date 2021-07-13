@@ -104,6 +104,10 @@ public class AssociateConnectionWithLagResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     associateConnectionWithLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    associateConnectionWithLagResult.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     associateConnectionWithLagResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

@@ -48,7 +48,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
      * For example, you must specify a <code>Force</code> flag to delete a document of type
-     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
      * Identity and Access Management (IAM) policy.
      * </p>
      */
@@ -187,7 +187,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
      * For example, you must specify a <code>Force</code> flag to delete a document of type
-     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
      * Identity and Access Management (IAM) policy.
      * </p>
      * 
@@ -195,7 +195,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
      *        document. For example, you must specify a <code>Force</code> flag to delete a document of type
      *        <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
-     *        AWS Identity and Access Management (IAM) policy.
+     *        Identity and Access Management (IAM) policy.
      */
 
     public void setForce(Boolean force) {
@@ -206,14 +206,14 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
      * For example, you must specify a <code>Force</code> flag to delete a document of type
-     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
      * Identity and Access Management (IAM) policy.
      * </p>
      * 
      * @return Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
      *         document. For example, you must specify a <code>Force</code> flag to delete a document of type
      *         <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
-     *         AWS Identity and Access Management (IAM) policy.
+     *         Identity and Access Management (IAM) policy.
      */
 
     public Boolean getForce() {
@@ -224,7 +224,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
      * For example, you must specify a <code>Force</code> flag to delete a document of type
-     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
      * Identity and Access Management (IAM) policy.
      * </p>
      * 
@@ -232,7 +232,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
      *        document. For example, you must specify a <code>Force</code> flag to delete a document of type
      *        <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
-     *        AWS Identity and Access Management (IAM) policy.
+     *        Identity and Access Management (IAM) policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,14 +245,14 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
      * For example, you must specify a <code>Force</code> flag to delete a document of type
-     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
      * Identity and Access Management (IAM) policy.
      * </p>
      * 
      * @return Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
      *         document. For example, you must specify a <code>Force</code> flag to delete a document of type
      *         <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
-     *         AWS Identity and Access Management (IAM) policy.
+     *         Identity and Access Management (IAM) policy.
      */
 
     public Boolean isForce() {

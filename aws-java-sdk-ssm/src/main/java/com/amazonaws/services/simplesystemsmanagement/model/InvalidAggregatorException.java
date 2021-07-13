@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified aggregator is not valid for inventory groups. Verify that the aggregator uses a valid inventory type
+ * The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type
  * such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
  * </p>
  */

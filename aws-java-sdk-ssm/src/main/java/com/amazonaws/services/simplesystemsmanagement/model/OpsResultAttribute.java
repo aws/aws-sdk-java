@@ -30,21 +30,21 @@ public class OpsResultAttribute implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     * AWS:ComplianceSummary.
+     * Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     * <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      * </p>
      */
     private String typeName;
 
     /**
      * <p>
-     * Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     * AWS:ComplianceSummary.
+     * Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     * <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      * </p>
      * 
      * @param typeName
-     *        Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     *        AWS:ComplianceSummary.
+     *        Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     *        <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -53,12 +53,12 @@ public class OpsResultAttribute implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     * AWS:ComplianceSummary.
+     * Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     * <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      * </p>
      * 
-     * @return Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     *         AWS:ComplianceSummary.
+     * @return Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     *         <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      */
 
     public String getTypeName() {
@@ -67,13 +67,13 @@ public class OpsResultAttribute implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     * AWS:ComplianceSummary.
+     * Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     * <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      * </p>
      * 
      * @param typeName
-     *        Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or
-     *        AWS:ComplianceSummary.
+     *        Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>,
+     *        <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

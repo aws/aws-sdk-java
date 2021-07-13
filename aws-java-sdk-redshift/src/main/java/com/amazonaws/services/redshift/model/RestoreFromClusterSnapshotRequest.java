@@ -56,7 +56,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -130,8 +130,8 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not
-     * own, optional if you own the snapshot.
+     * The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     * optional if you own the snapshot.
      * </p>
      */
     private String ownerAccount;
@@ -260,8 +260,8 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     private Integer manualSnapshotRetentionPeriod;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
-     * cluster that you restore from a shared snapshot.
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster
+     * that you restore from a shared snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -305,9 +305,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     private String additionalInfo;
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated at any time.
@@ -351,7 +351,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -398,7 +398,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -431,7 +431,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      */
@@ -470,7 +470,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -502,7 +502,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique for all clusters within an AWS account.
+     *         Must be unique for all clusters within an account.
      *         </p>
      *         </li>
      */
@@ -541,7 +541,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -574,7 +574,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1030,13 +1030,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not
-     * own, optional if you own the snapshot.
+     * The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     * optional if you own the snapshot.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you
-     *        do not own, optional if you own the snapshot.
+     *        The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     *        optional if you own the snapshot.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -1045,12 +1045,12 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not
-     * own, optional if you own the snapshot.
+     * The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     * optional if you own the snapshot.
      * </p>
      * 
-     * @return The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot
-     *         you do not own, optional if you own the snapshot.
+     * @return The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     *         optional if you own the snapshot.
      */
 
     public String getOwnerAccount() {
@@ -1059,13 +1059,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not
-     * own, optional if you own the snapshot.
+     * The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     * optional if you own the snapshot.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you
-     *        do not own, optional if you own the snapshot.
+     *        The account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own,
+     *        optional if you own the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1926,13 +1926,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
-     * cluster that you restore from a shared snapshot.
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster
+     * that you restore from a shared snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *        the cluster that you restore from a shared snapshot.
+     *        The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *        cluster that you restore from a shared snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1941,12 +1941,12 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
-     * cluster that you restore from a shared snapshot.
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster
+     * that you restore from a shared snapshot.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *         the cluster that you restore from a shared snapshot.
+     * @return The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *         cluster that you restore from a shared snapshot.
      */
 
     public String getKmsKeyId() {
@@ -1955,13 +1955,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
-     * cluster that you restore from a shared snapshot.
+     * The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster
+     * that you restore from a shared snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
-     *        the cluster that you restore from a shared snapshot.
+     *        The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     *        cluster that you restore from a shared snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2235,17 +2235,17 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated at any time.
      * </p>
      * 
-     * @return A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *         AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *         to 10 IAM roles in a single request.</p>
+     * @return A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *         Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *         You can supply up to 10 IAM roles in a single request.</p>
      *         <p>
      *         A cluster can have up to 10 IAM roles associated at any time.
      */
@@ -2259,18 +2259,18 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated at any time.
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *        to 10 IAM roles in a single request.</p>
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
      *        A cluster can have up to 10 IAM roles associated at any time.
      */
@@ -2286,9 +2286,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated at any time.
@@ -2300,9 +2300,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *        to 10 IAM roles in a single request.</p>
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
      *        A cluster can have up to 10 IAM roles associated at any time.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2320,18 +2320,18 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other AWS
-     * services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
-     * roles in a single request.
+     * A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web
+     * Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to
+     * 10 IAM roles in a single request.
      * </p>
      * <p>
      * A cluster can have up to 10 IAM roles associated at any time.
      * </p>
      * 
      * @param iamRoles
-     *        A list of AWS Identity and Access Management (IAM) roles that can be used by the cluster to access other
-     *        AWS services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up
-     *        to 10 IAM roles in a single request.</p>
+     *        A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other
+     *        Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format.
+     *        You can supply up to 10 IAM roles in a single request.</p>
      *        <p>
      *        A cluster can have up to 10 IAM roles associated at any time.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2554,7 +2554,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -2575,7 +2575,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *        </p>
      *        </li>
      *        <li>
@@ -2603,7 +2603,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -2623,7 +2623,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *         <ul>
      *         <li>
      *         <p>
-     *         enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *         enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *         </p>
      *         </li>
      *         <li>
@@ -2651,7 +2651,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -2672,7 +2672,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *        </p>
      *        </li>
      *        <li>
@@ -2702,7 +2702,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      * </p>
      * </li>
      * <li>
@@ -2723,7 +2723,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        enabled - Use AQUA if it is available for the current Region and Amazon Redshift node type.
      *        </p>
      *        </li>
      *        <li>

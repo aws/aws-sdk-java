@@ -60,7 +60,7 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
     private Integer priority;
     /**
      * <p>
-     * The impacted AWS resource.
+     * The impacted Amazon Web Services resource.
      * </p>
      */
     private String source;
@@ -337,11 +337,11 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The impacted AWS resource.
+     * The impacted Amazon Web Services resource.
      * </p>
      * 
      * @param source
-     *        The impacted AWS resource.
+     *        The impacted Amazon Web Services resource.
      */
 
     public void setSource(String source) {
@@ -350,10 +350,10 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The impacted AWS resource.
+     * The impacted Amazon Web Services resource.
      * </p>
      * 
-     * @return The impacted AWS resource.
+     * @return The impacted Amazon Web Services resource.
      */
 
     public String getSource() {
@@ -362,11 +362,11 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The impacted AWS resource.
+     * The impacted Amazon Web Services resource.
      * </p>
      * 
      * @param source
-     *        The impacted AWS resource.
+     *        The impacted Amazon Web Services resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

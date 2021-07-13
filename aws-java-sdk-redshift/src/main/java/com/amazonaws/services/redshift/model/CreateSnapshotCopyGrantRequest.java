@@ -30,7 +30,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the account.
      * </p>
      * <p>
      * Constraints:
@@ -58,7 +58,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
@@ -80,7 +80,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the account.
      * </p>
      * <p>
      * Constraints:
@@ -108,13 +108,13 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param snapshotCopyGrantName
-     *        The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
+     *        The name of the snapshot copy grant. This name must be unique in the region for the account.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -141,7 +141,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      */
@@ -152,7 +152,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the account.
      * </p>
      * <p>
      * Constraints:
@@ -180,12 +180,12 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
+     * @return The name of the snapshot copy grant. This name must be unique in the region for the account.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -212,7 +212,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique for all clusters within an AWS account.
+     *         Must be unique for all clusters within an account.
      *         </p>
      *         </li>
      */
@@ -223,7 +223,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the snapshot copy grant. This name must be unique in the region for the AWS account.
+     * The name of the snapshot copy grant. This name must be unique in the region for the account.
      * </p>
      * <p>
      * Constraints:
@@ -251,13 +251,13 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Must be unique for all clusters within an AWS account.
+     * Must be unique for all clusters within an account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param snapshotCopyGrantName
-     *        The name of the snapshot copy grant. This name must be unique in the region for the AWS account.</p>
+     *        The name of the snapshot copy grant. This name must be unique in the region for the account.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -284,7 +284,7 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all clusters within an AWS account.
+     *        Must be unique for all clusters within an account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

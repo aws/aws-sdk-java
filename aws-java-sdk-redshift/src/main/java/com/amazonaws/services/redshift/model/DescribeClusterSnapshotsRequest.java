@@ -86,17 +86,17 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots
-     * owned by a particular account. To describe snapshots you own, either specify your AWS customer account, or do not
-     * specify the parameter.
+     * The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a
+     * particular account. To describe snapshots you own, either specify your account, or do not specify the parameter.
      * </p>
      */
     private String ownerAccount;
@@ -517,17 +517,18 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>
-     *        , AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
-     *        response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
-     *        the request.
+     *        , Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve
+     *        the next set of response records by providing the returned marker value in the <code>Marker</code>
+     *        parameter and retrying the request.
      */
 
     public void setMarker(String marker) {
@@ -537,15 +538,16 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @return An optional parameter that specifies the starting point to return a set of response records. When the
      *         results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in
-     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *         response. You can retrieve the next set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request.
      */
 
@@ -556,17 +558,18 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>
-     *        , AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
-     *        response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
-     *        the request.
+     *        , Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve
+     *        the next set of response records by providing the returned marker value in the <code>Marker</code>
+     *        parameter and retrying the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,15 +580,14 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots
-     * owned by a particular account. To describe snapshots you own, either specify your AWS customer account, or do not
-     * specify the parameter.
+     * The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a
+     * particular account. To describe snapshots you own, either specify your account, or do not specify the parameter.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS customer account used to create or copy the snapshot. Use this field to filter the results to
-     *        snapshots owned by a particular account. To describe snapshots you own, either specify your AWS customer
-     *        account, or do not specify the parameter.
+     *        The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned
+     *        by a particular account. To describe snapshots you own, either specify your account, or do not specify the
+     *        parameter.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -594,14 +596,13 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots
-     * owned by a particular account. To describe snapshots you own, either specify your AWS customer account, or do not
-     * specify the parameter.
+     * The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a
+     * particular account. To describe snapshots you own, either specify your account, or do not specify the parameter.
      * </p>
      * 
-     * @return The AWS customer account used to create or copy the snapshot. Use this field to filter the results to
-     *         snapshots owned by a particular account. To describe snapshots you own, either specify your AWS customer
-     *         account, or do not specify the parameter.
+     * @return The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned
+     *         by a particular account. To describe snapshots you own, either specify your account, or do not specify
+     *         the parameter.
      */
 
     public String getOwnerAccount() {
@@ -610,15 +611,14 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots
-     * owned by a particular account. To describe snapshots you own, either specify your AWS customer account, or do not
-     * specify the parameter.
+     * The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a
+     * particular account. To describe snapshots you own, either specify your account, or do not specify the parameter.
      * </p>
      * 
      * @param ownerAccount
-     *        The AWS customer account used to create or copy the snapshot. Use this field to filter the results to
-     *        snapshots owned by a particular account. To describe snapshots you own, either specify your AWS customer
-     *        account, or do not specify the parameter.
+     *        The account used to create or copy the snapshot. Use this field to filter the results to snapshots owned
+     *        by a particular account. To describe snapshots you own, either specify your account, or do not specify the
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

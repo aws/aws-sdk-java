@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified sync name was not found.
+ * The specified sync name wasn't found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

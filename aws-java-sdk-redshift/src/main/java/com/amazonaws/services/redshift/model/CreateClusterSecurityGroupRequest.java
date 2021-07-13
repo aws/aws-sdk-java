@@ -46,7 +46,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all security groups that are created by your AWS account.
+     * Must be unique for all security groups that are created by your account.
      * </p>
      * </li>
      * </ul>
@@ -88,7 +88,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all security groups that are created by your AWS account.
+     * Must be unique for all security groups that are created by your account.
      * </p>
      * </li>
      * </ul>
@@ -114,7 +114,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all security groups that are created by your AWS account.
+     *        Must be unique for all security groups that are created by your account.
      *        </p>
      *        </li>
      *        </ul>
@@ -146,7 +146,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all security groups that are created by your AWS account.
+     * Must be unique for all security groups that are created by your account.
      * </p>
      * </li>
      * </ul>
@@ -171,7 +171,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         Must be unique for all security groups that are created by your AWS account.
+     *         Must be unique for all security groups that are created by your account.
      *         </p>
      *         </li>
      *         </ul>
@@ -203,7 +203,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * Must be unique for all security groups that are created by your AWS account.
+     * Must be unique for all security groups that are created by your account.
      * </p>
      * </li>
      * </ul>
@@ -229,7 +229,7 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be unique for all security groups that are created by your AWS account.
+     *        Must be unique for all security groups that are created by your account.
      *        </p>
      *        </li>
      *        </ul>

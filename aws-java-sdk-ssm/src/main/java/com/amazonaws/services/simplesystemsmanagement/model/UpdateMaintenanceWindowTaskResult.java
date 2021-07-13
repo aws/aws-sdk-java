@@ -49,8 +49,8 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
     private String taskArn;
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      */
     private String serviceRoleArn;
@@ -82,13 +82,13 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
     private Integer priority;
     /**
      * <p>
-     * The updated MaxConcurrency value.
+     * The updated <code>MaxConcurrency</code> value.
      * </p>
      */
     private String maxConcurrency;
     /**
      * <p>
-     * The updated MaxErrors value.
+     * The updated <code>MaxErrors</code> value.
      * </p>
      */
     private String maxErrors;
@@ -98,10 +98,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      */
@@ -314,13 +315,13 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *        notifications for maintenance window Run Command tasks.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish
+     *        Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -329,12 +330,12 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      * 
-     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *         notifications for maintenance window Run Command tasks.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish
+     *         Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      */
 
     public String getServiceRoleArn() {
@@ -343,13 +344,13 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
-     * for maintenance window Run Command tasks.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon
+     * Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
-     *        notifications for maintenance window Run Command tasks.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish
+     *        Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -550,11 +551,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The updated MaxConcurrency value.
+     * The updated <code>MaxConcurrency</code> value.
      * </p>
      * 
      * @param maxConcurrency
-     *        The updated MaxConcurrency value.
+     *        The updated <code>MaxConcurrency</code> value.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -563,10 +564,10 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The updated MaxConcurrency value.
+     * The updated <code>MaxConcurrency</code> value.
      * </p>
      * 
-     * @return The updated MaxConcurrency value.
+     * @return The updated <code>MaxConcurrency</code> value.
      */
 
     public String getMaxConcurrency() {
@@ -575,11 +576,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The updated MaxConcurrency value.
+     * The updated <code>MaxConcurrency</code> value.
      * </p>
      * 
      * @param maxConcurrency
-     *        The updated MaxConcurrency value.
+     *        The updated <code>MaxConcurrency</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,11 +591,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The updated MaxErrors value.
+     * The updated <code>MaxErrors</code> value.
      * </p>
      * 
      * @param maxErrors
-     *        The updated MaxErrors value.
+     *        The updated <code>MaxErrors</code> value.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -603,10 +604,10 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The updated MaxErrors value.
+     * The updated <code>MaxErrors</code> value.
      * </p>
      * 
-     * @return The updated MaxErrors value.
+     * @return The updated <code>MaxErrors</code> value.
      */
 
     public String getMaxErrors() {
@@ -615,11 +616,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The updated MaxErrors value.
+     * The updated <code>MaxErrors</code> value.
      * </p>
      * 
      * @param maxErrors
-     *        The updated MaxErrors value.
+     *        The updated <code>MaxErrors</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -634,20 +635,21 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
      *        The updated logging information in Amazon S3.</p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -662,20 +664,21 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @return The updated logging information in Amazon S3.</p> <note>
      *         <p>
-     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported maintenance window task types, see
-     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *         bucket to contain logs, instead use the <code>OutputS3BucketName</code> and
+     *         <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For
+     *         information about how Amazon Web Services Systems Manager handles these options for the supported
+     *         maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
 
@@ -689,20 +692,21 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
      * </p>
      * <note>
      * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+     * handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
      * @param loggingInfo
      *        The updated logging information in Amazon S3.</p> <note>
      *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported maintenance window task types, see
+     *        <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3)
+     *        bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+     *        options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web
+     *        Services Systems Manager handles these options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -41,7 +41,7 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
     private String snapshotClusterIdentifier;
     /**
      * <p>
-     * The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     * The identifier of the account that can no longer restore the specified snapshot.
      * </p>
      */
     private String accountWithRestoreAccess;
@@ -137,11 +137,11 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     * The identifier of the account that can no longer restore the specified snapshot.
      * </p>
      * 
      * @param accountWithRestoreAccess
-     *        The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     *        The identifier of the account that can no longer restore the specified snapshot.
      */
 
     public void setAccountWithRestoreAccess(String accountWithRestoreAccess) {
@@ -150,10 +150,10 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     * The identifier of the account that can no longer restore the specified snapshot.
      * </p>
      * 
-     * @return The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     * @return The identifier of the account that can no longer restore the specified snapshot.
      */
 
     public String getAccountWithRestoreAccess() {
@@ -162,11 +162,11 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     * The identifier of the account that can no longer restore the specified snapshot.
      * </p>
      * 
      * @param accountWithRestoreAccess
-     *        The identifier of the AWS customer account that can no longer restore the specified snapshot.
+     *        The identifier of the account that can no longer restore the specified snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

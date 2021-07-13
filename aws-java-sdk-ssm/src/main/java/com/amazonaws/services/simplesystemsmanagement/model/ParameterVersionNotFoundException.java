@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified parameter version was not found. Verify the parameter name and version, and try again.
+ * The specified parameter version wasn't found. Verify the parameter name and version, and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

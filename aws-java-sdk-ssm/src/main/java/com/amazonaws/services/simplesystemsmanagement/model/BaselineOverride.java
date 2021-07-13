@@ -45,8 +45,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> approvedPatches;
@@ -64,23 +64,23 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> rejectedPatches;
     /**
      * <p>
-     * The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be allowed
-     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     * dependency.
+     * The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can
+     * be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it
+     * as a dependency.
      * </p>
      */
     private String rejectedPatchesAction;
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      */
     private Boolean approvedPatchesEnableNonSecurity;
@@ -210,16 +210,16 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @return A list of explicitly approved patches for the baseline.</p>
      *         <p>
      *         For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *         >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *         Guide</i>.
+     *         >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *         Systems Manager User Guide</i>.
      */
 
     public java.util.List<String> getApprovedPatches() {
@@ -236,8 +236,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @param approvedPatches
@@ -245,8 +245,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *        >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      */
 
     public void setApprovedPatches(java.util.Collection<String> approvedPatches) {
@@ -265,8 +265,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -279,8 +279,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *        >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,8 +301,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @param approvedPatches
@@ -310,8 +310,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *        >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,16 +394,16 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @return A list of explicitly rejected patches for the baseline.</p>
      *         <p>
      *         For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *         >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *         Guide</i>.
+     *         >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *         Systems Manager User Guide</i>.
      */
 
     public java.util.List<String> getRejectedPatches() {
@@ -420,8 +420,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @param rejectedPatches
@@ -429,8 +429,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *        >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      */
 
     public void setRejectedPatches(java.util.Collection<String> rejectedPatches) {
@@ -449,8 +449,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -463,8 +463,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *        >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,8 +485,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     * >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     * Guide</i>.
+     * >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems
+     * Manager User Guide</i>.
      * </p>
      * 
      * @param rejectedPatches
@@ -494,8 +494,8 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For information about accepted formats for lists of approved patches and rejected patches, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html"
-     *        >About package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User
-     *        Guide</i>.
+     *        >About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services
+     *        Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,15 +506,15 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be allowed
-     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     * dependency.
+     * The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can
+     * be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it
+     * as a dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be
-     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
-     *        include it as a dependency.
+     *        The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A
+     *        patch can be allowed only if it is a dependency of another package, or blocked entirely along with
+     *        packages that include it as a dependency.
      * @see PatchAction
      */
 
@@ -524,14 +524,14 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be allowed
-     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     * dependency.
+     * The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can
+     * be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it
+     * as a dependency.
      * </p>
      * 
-     * @return The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be
-     *         allowed only if it is a dependency of another package, or blocked entirely along with packages that
-     *         include it as a dependency.
+     * @return The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A
+     *         patch can be allowed only if it is a dependency of another package, or blocked entirely along with
+     *         packages that include it as a dependency.
      * @see PatchAction
      */
 
@@ -541,15 +541,15 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be allowed
-     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     * dependency.
+     * The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can
+     * be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it
+     * as a dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be
-     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
-     *        include it as a dependency.
+     *        The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A
+     *        patch can be allowed only if it is a dependency of another package, or blocked entirely along with
+     *        packages that include it as a dependency.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchAction
      */
@@ -561,15 +561,15 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be allowed
-     * only if it is a dependency of another package, or blocked entirely along with packages that include it as a
-     * dependency.
+     * The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A patch can
+     * be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it
+     * as a dependency.
      * </p>
      * 
      * @param rejectedPatchesAction
-     *        The action for Patch Manager to take on patches included in the RejectedPackages list. A patch can be
-     *        allowed only if it is a dependency of another package, or blocked entirely along with packages that
-     *        include it as a dependency.
+     *        The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list. A
+     *        patch can be allowed only if it is a dependency of another package, or blocked entirely along with
+     *        packages that include it as a dependency.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchAction
      */
@@ -582,12 +582,12 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @param approvedPatchesEnableNonSecurity
      *        Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     *        instances. The default value is 'false'. Applies to Linux instances only.
+     *        instances. The default value is <code>false</code>. Applies to Linux instances only.
      */
 
     public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
@@ -597,11 +597,11 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @return Indicates whether the list of approved patches includes non-security updates that should be applied to
-     *         the instances. The default value is 'false'. Applies to Linux instances only.
+     *         the instances. The default value is <code>false</code>. Applies to Linux instances only.
      */
 
     public Boolean getApprovedPatchesEnableNonSecurity() {
@@ -611,12 +611,12 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @param approvedPatchesEnableNonSecurity
      *        Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     *        instances. The default value is 'false'. Applies to Linux instances only.
+     *        instances. The default value is <code>false</code>. Applies to Linux instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -628,11 +628,11 @@ public class BaselineOverride implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Indicates whether the list of approved patches includes non-security updates that should be applied to the
-     * instances. The default value is 'false'. Applies to Linux instances only.
+     * instances. The default value is <code>false</code>. Applies to Linux instances only.
      * </p>
      * 
      * @return Indicates whether the list of approved patches includes non-security updates that should be applied to
-     *         the instances. The default value is 'false'. Applies to Linux instances only.
+     *         the instances. The default value is <code>false</code>. Applies to Linux instances only.
      */
 
     public Boolean isApprovedPatchesEnableNonSecurity() {

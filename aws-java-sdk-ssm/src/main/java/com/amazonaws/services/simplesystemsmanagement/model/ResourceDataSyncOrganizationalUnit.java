@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The AWS Organizations organizational unit data source for the sync.
+ * The Organizations organizational unit data source for the sync.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncOrganizationalUnit"
@@ -30,18 +30,18 @@ public class ResourceDataSyncOrganizationalUnit implements Serializable, Cloneab
 
     /**
      * <p>
-     * The AWS Organization unit ID data source for the sync.
+     * The Organizations unit ID data source for the sync.
      * </p>
      */
     private String organizationalUnitId;
 
     /**
      * <p>
-     * The AWS Organization unit ID data source for the sync.
+     * The Organizations unit ID data source for the sync.
      * </p>
      * 
      * @param organizationalUnitId
-     *        The AWS Organization unit ID data source for the sync.
+     *        The Organizations unit ID data source for the sync.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -50,10 +50,10 @@ public class ResourceDataSyncOrganizationalUnit implements Serializable, Cloneab
 
     /**
      * <p>
-     * The AWS Organization unit ID data source for the sync.
+     * The Organizations unit ID data source for the sync.
      * </p>
      * 
-     * @return The AWS Organization unit ID data source for the sync.
+     * @return The Organizations unit ID data source for the sync.
      */
 
     public String getOrganizationalUnitId() {
@@ -62,11 +62,11 @@ public class ResourceDataSyncOrganizationalUnit implements Serializable, Cloneab
 
     /**
      * <p>
-     * The AWS Organization unit ID data source for the sync.
+     * The Organizations unit ID data source for the sync.
      * </p>
      * 
      * @param organizationalUnitId
-     *        The AWS Organization unit ID data source for the sync.
+     *        The Organizations unit ID data source for the sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

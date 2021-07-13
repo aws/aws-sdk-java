@@ -37,7 +37,8 @@ public enum OpsItemStatus {
     ChangeCalendarOverrideRejected("ChangeCalendarOverrideRejected"),
     PendingApproval("PendingApproval"),
     Approved("Approved"),
-    Rejected("Rejected");
+    Rejected("Rejected"),
+    Closed("Closed");
 
     private String value;
 

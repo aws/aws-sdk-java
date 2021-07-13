@@ -51,9 +51,10 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
-     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon
+     * Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * <p>
      * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
@@ -211,9 +212,10 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
-     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon
+     * Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * <p>
      * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
@@ -223,8 +225,8 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
      *        Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
@@ -238,9 +240,10 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
-     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon
+     * Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * <p>
      * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
@@ -249,8 +252,8 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @return An optional parameter that specifies the starting point to return a set of response records. When the
      *         results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
-     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *         retrieve the next set of response records by providing the returned marker value in the
+     *         <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *         response. You can retrieve the next set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request. </p>
      *         <p>
      *         Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>
@@ -264,9 +267,10 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, AWS
-     * returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response
-     * records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon
+     * Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the
+     * request.
      * </p>
      * <p>
      * Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter,
@@ -276,8 +280,8 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
      *        results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
+     *        <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the
+     *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
      *        Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b>

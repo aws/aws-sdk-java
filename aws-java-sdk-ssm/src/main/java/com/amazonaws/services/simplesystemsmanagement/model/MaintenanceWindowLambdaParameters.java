@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameters for a LAMBDA task type.
+ * The parameters for a <code>LAMBDA</code> task type.
  * </p>
  * <p>
  * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and
@@ -27,10 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
- * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
- * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for
- * the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+ * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+ * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+ * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+ * handles these options for the supported maintenance window task types, see
+ * <a>MaintenanceWindowTaskInvocationParameters</a>.
  * </p>
  * <p>
  * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use
@@ -58,9 +59,9 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
     private String clientContext;
     /**
      * <p>
-     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
-     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
-     * the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation
+     * uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an
+     * alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      */
     private String qualifier;
@@ -119,15 +120,16 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
-     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
-     * the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation
+     * uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an
+     * alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      * 
      * @param qualifier
-     *        (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action
-     *        uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the
-     *        action uses the alias ARN to invoke the Lambda function version to which the alias points.
+     *        (Optional) Specify an Lambda function version or alias name. If you specify a function version, the
+     *        operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If
+     *        you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which
+     *        the alias points.
      */
 
     public void setQualifier(String qualifier) {
@@ -136,14 +138,15 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
-     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
-     * the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation
+     * uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an
+     * alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      * 
-     * @return (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action
-     *         uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the
-     *         action uses the alias ARN to invoke the Lambda function version to which the alias points.
+     * @return (Optional) Specify an Lambda function version or alias name. If you specify a function version, the
+     *         operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If
+     *         you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to
+     *         which the alias points.
      */
 
     public String getQualifier() {
@@ -152,15 +155,16 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
-     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
-     * the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation
+     * uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an
+     * alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      * 
      * @param qualifier
-     *        (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action
-     *        uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the
-     *        action uses the alias ARN to invoke the Lambda function version to which the alias points.
+     *        (Optional) Specify an Lambda function version or alias name. If you specify a function version, the
+     *        operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If
+     *        you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which
+     *        the alias points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

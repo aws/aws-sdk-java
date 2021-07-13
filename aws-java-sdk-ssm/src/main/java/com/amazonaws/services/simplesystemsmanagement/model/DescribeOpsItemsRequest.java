@@ -80,15 +80,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: Title
+     * Key: Title*
      * </p>
      * <p>
-     * Operations: Contains
+     * Operations: Equals,Contains
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData*
+     * Key: OperationalData**
      * </p>
      * <p>
      * Operations: Equals
@@ -136,7 +136,11 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
+     * system returns an error that the filter value exceeds the length limit.
+     * </p>
+     * <p>
+     * **If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      * following JSON format: {"key":"key_name","value":"a_value"}
      * </p>
      */
@@ -210,15 +214,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: Title
+     * Key: Title*
      * </p>
      * <p>
-     * Operations: Contains
+     * Operations: Equals,Contains
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData*
+     * Key: OperationalData**
      * </p>
      * <p>
      * Operations: Equals
@@ -266,7 +270,11 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
+     * system returns an error that the filter value exceeds the length limit.
+     * </p>
+     * <p>
+     * **If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      * following JSON format: {"key":"key_name","value":"a_value"}
      * </p>
      * 
@@ -322,15 +330,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Key: Title
+     *         Key: Title*
      *         </p>
      *         <p>
-     *         Operations: Contains
+     *         Operations: Equals,Contains
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Key: OperationalData*
+     *         Key: OperationalData**
      *         </p>
      *         <p>
      *         Operations: Equals
@@ -377,6 +385,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters,
+     *         they system returns an error that the filter value exceeds the length limit.
+     *         </p>
      *         <p>
      *         If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      *         following JSON format: {"key":"key_name","value":"a_value"}
@@ -444,15 +456,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: Title
+     * Key: Title*
      * </p>
      * <p>
-     * Operations: Contains
+     * Operations: Equals,Contains
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData*
+     * Key: OperationalData**
      * </p>
      * <p>
      * Operations: Equals
@@ -500,7 +512,11 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
+     * system returns an error that the filter value exceeds the length limit.
+     * </p>
+     * <p>
+     * **If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      * following JSON format: {"key":"key_name","value":"a_value"}
      * </p>
      * 
@@ -557,15 +573,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Key: Title
+     *        Key: Title*
      *        </p>
      *        <p>
-     *        Operations: Contains
+     *        Operations: Equals,Contains
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Key: OperationalData*
+     *        Key: OperationalData**
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -612,6 +628,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters,
+     *        they system returns an error that the filter value exceeds the length limit.
+     *        </p>
      *        <p>
      *        If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      *        following JSON format: {"key":"key_name","value":"a_value"}
@@ -681,15 +701,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: Title
+     * Key: Title*
      * </p>
      * <p>
-     * Operations: Contains
+     * Operations: Equals,Contains
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData*
+     * Key: OperationalData**
      * </p>
      * <p>
      * Operations: Equals
@@ -737,7 +757,11 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
+     * system returns an error that the filter value exceeds the length limit.
+     * </p>
+     * <p>
+     * **If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      * following JSON format: {"key":"key_name","value":"a_value"}
      * </p>
      * <p>
@@ -799,15 +823,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Key: Title
+     *        Key: Title*
      *        </p>
      *        <p>
-     *        Operations: Contains
+     *        Operations: Equals,Contains
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Key: OperationalData*
+     *        Key: OperationalData**
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -854,6 +878,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters,
+     *        they system returns an error that the filter value exceeds the length limit.
+     *        </p>
      *        <p>
      *        If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      *        following JSON format: {"key":"key_name","value":"a_value"}
@@ -925,15 +953,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Key: Title
+     * Key: Title*
      * </p>
      * <p>
-     * Operations: Contains
+     * Operations: Equals,Contains
      * </p>
      * </li>
      * <li>
      * <p>
-     * Key: OperationalData*
+     * Key: OperationalData**
      * </p>
      * <p>
      * Operations: Equals
@@ -981,7 +1009,11 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * *If you filter the response by using the OperationalData operator, specify a key-value pair by using the
+     * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
+     * system returns an error that the filter value exceeds the length limit.
+     * </p>
+     * <p>
+     * **If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      * following JSON format: {"key":"key_name","value":"a_value"}
      * </p>
      * 
@@ -1038,15 +1070,15 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Key: Title
+     *        Key: Title*
      *        </p>
      *        <p>
-     *        Operations: Contains
+     *        Operations: Equals,Contains
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Key: OperationalData*
+     *        Key: OperationalData**
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -1093,6 +1125,10 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters,
+     *        they system returns an error that the filter value exceeds the length limit.
+     *        </p>
      *        <p>
      *        If you filter the response by using the OperationalData operator, specify a key-value pair by using the
      *        following JSON format: {"key":"key_name","value":"a_value"}

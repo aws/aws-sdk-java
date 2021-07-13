@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You cannot specify an instance ID in more than one association.
+ * You can't specify an instance ID in more than one association.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -27,27 +27,43 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Title (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * KBId (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Classification (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Severity (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * State (string, such as "INSTALLED" or "FAILED")
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledTime (DateTime)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledBy (string)
      * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<PatchComplianceData> patches;
     /**
@@ -62,49 +78,81 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Title (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * KBId (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Classification (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Severity (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * State (string, such as "INSTALLED" or "FAILED")
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledTime (DateTime)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledBy (string)
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return Each entry in the array is a structure containing:</p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         Title (string)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         KBId (string)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         Classification (string)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         Severity (string)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         State (string, such as "INSTALLED" or "FAILED")
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         InstalledTime (DateTime)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         InstalledBy (string)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<PatchComplianceData> getPatches() {
@@ -118,50 +166,82 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Title (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * KBId (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Classification (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Severity (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * State (string, such as "INSTALLED" or "FAILED")
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledTime (DateTime)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledBy (string)
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param patches
      *        Each entry in the array is a structure containing:</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Title (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        KBId (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Classification (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Severity (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        State (string, such as "INSTALLED" or "FAILED")
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        InstalledTime (DateTime)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        InstalledBy (string)
+     *        </p>
+     *        </li>
      */
 
     public void setPatches(java.util.Collection<PatchComplianceData> patches) {
@@ -177,27 +257,43 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Title (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * KBId (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Classification (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Severity (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * State (string, such as "INSTALLED" or "FAILED")
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledTime (DateTime)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledBy (string)
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPatches(java.util.Collection)} or {@link #withPatches(java.util.Collection)} if you want to override
@@ -206,26 +302,42 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * 
      * @param patches
      *        Each entry in the array is a structure containing:</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Title (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        KBId (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Classification (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Severity (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        State (string, such as "INSTALLED" or "FAILED")
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        InstalledTime (DateTime)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        InstalledBy (string)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,50 +355,82 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Each entry in the array is a structure containing:
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * Title (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * KBId (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Classification (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Severity (string)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * State (string, such as "INSTALLED" or "FAILED")
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledTime (DateTime)
      * </p>
+     * </li>
+     * <li>
      * <p>
      * InstalledBy (string)
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param patches
      *        Each entry in the array is a structure containing:</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Title (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        KBId (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Classification (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Severity (string)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        State (string, such as "INSTALLED" or "FAILED")
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        InstalledTime (DateTime)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        InstalledBy (string)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

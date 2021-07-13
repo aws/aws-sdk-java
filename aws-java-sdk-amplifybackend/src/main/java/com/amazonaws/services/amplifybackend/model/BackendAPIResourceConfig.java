@@ -36,7 +36,7 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
     private java.util.List<BackendAPIAuthType> additionalAuthTypes;
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of your Amplify project.
      * </p>
      */
     private String apiName;
@@ -137,11 +137,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of your Amplify project.
      * </p>
      * 
      * @param apiName
-     *        The API name used to interact with the data model, configured as a part of the amplify project.
+     *        The API name used to interact with the data model, configured as a part of your Amplify project.
      */
 
     public void setApiName(String apiName) {
@@ -150,10 +150,10 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of your Amplify project.
      * </p>
      * 
-     * @return The API name used to interact with the data model, configured as a part of the amplify project.
+     * @return The API name used to interact with the data model, configured as a part of your Amplify project.
      */
 
     public String getApiName() {
@@ -162,11 +162,11 @@ public class BackendAPIResourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The API name used to interact with the data model, configured as a part of the amplify project.
+     * The API name used to interact with the data model, configured as a part of your Amplify project.
      * </p>
      * 
      * @param apiName
-     *        The API name used to interact with the data model, configured as a part of the amplify project.
+     *        The API name used to interact with the data model, configured as a part of your Amplify project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

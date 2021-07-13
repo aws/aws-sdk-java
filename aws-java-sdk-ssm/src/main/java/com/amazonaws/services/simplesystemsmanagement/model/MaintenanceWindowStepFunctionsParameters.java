@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameters for a STEP_FUNCTIONS task.
+ * The parameters for a <code>STEP_FUNCTIONS</code> task.
  * </p>
  * <p>
  * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and
@@ -27,10 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
- * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
- * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for
- * the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+ * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to
+ * contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+ * <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager
+ * handles these options for the supported maintenance window task types, see
+ * <a>MaintenanceWindowTaskInvocationParameters</a>.
  * </p>
  * <p>
  * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use
@@ -52,24 +53,24 @@ public class MaintenanceWindowStepFunctionsParameters implements Serializable, C
 
     /**
      * <p>
-     * The inputs for the STEP_FUNCTIONS task.
+     * The inputs for the <code>STEP_FUNCTIONS</code> task.
      * </p>
      */
     private String input;
     /**
      * <p>
-     * The name of the STEP_FUNCTIONS task.
+     * The name of the <code>STEP_FUNCTIONS</code> task.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The inputs for the STEP_FUNCTIONS task.
+     * The inputs for the <code>STEP_FUNCTIONS</code> task.
      * </p>
      * 
      * @param input
-     *        The inputs for the STEP_FUNCTIONS task.
+     *        The inputs for the <code>STEP_FUNCTIONS</code> task.
      */
 
     public void setInput(String input) {
@@ -78,10 +79,10 @@ public class MaintenanceWindowStepFunctionsParameters implements Serializable, C
 
     /**
      * <p>
-     * The inputs for the STEP_FUNCTIONS task.
+     * The inputs for the <code>STEP_FUNCTIONS</code> task.
      * </p>
      * 
-     * @return The inputs for the STEP_FUNCTIONS task.
+     * @return The inputs for the <code>STEP_FUNCTIONS</code> task.
      */
 
     public String getInput() {
@@ -90,11 +91,11 @@ public class MaintenanceWindowStepFunctionsParameters implements Serializable, C
 
     /**
      * <p>
-     * The inputs for the STEP_FUNCTIONS task.
+     * The inputs for the <code>STEP_FUNCTIONS</code> task.
      * </p>
      * 
      * @param input
-     *        The inputs for the STEP_FUNCTIONS task.
+     *        The inputs for the <code>STEP_FUNCTIONS</code> task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +106,11 @@ public class MaintenanceWindowStepFunctionsParameters implements Serializable, C
 
     /**
      * <p>
-     * The name of the STEP_FUNCTIONS task.
+     * The name of the <code>STEP_FUNCTIONS</code> task.
      * </p>
      * 
      * @param name
-     *        The name of the STEP_FUNCTIONS task.
+     *        The name of the <code>STEP_FUNCTIONS</code> task.
      */
 
     public void setName(String name) {
@@ -118,10 +119,10 @@ public class MaintenanceWindowStepFunctionsParameters implements Serializable, C
 
     /**
      * <p>
-     * The name of the STEP_FUNCTIONS task.
+     * The name of the <code>STEP_FUNCTIONS</code> task.
      * </p>
      * 
-     * @return The name of the STEP_FUNCTIONS task.
+     * @return The name of the <code>STEP_FUNCTIONS</code> task.
      */
 
     public String getName() {
@@ -130,11 +131,11 @@ public class MaintenanceWindowStepFunctionsParameters implements Serializable, C
 
     /**
      * <p>
-     * The name of the STEP_FUNCTIONS task.
+     * The name of the <code>STEP_FUNCTIONS</code> task.
      * </p>
      * 
      * @param name
-     *        The name of the STEP_FUNCTIONS task.
+     *        The name of the <code>STEP_FUNCTIONS</code> task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

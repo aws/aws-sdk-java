@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result body of the ResetServiceSetting API action.
+ * The result body of the ResetServiceSetting API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting" target="_top">AWS API
@@ -28,18 +28,18 @@ public class ResetServiceSettingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current, effective service setting after calling the ResetServiceSetting API action.
+     * The current, effective service setting after calling the ResetServiceSetting API operation.
      * </p>
      */
     private ServiceSetting serviceSetting;
 
     /**
      * <p>
-     * The current, effective service setting after calling the ResetServiceSetting API action.
+     * The current, effective service setting after calling the ResetServiceSetting API operation.
      * </p>
      * 
      * @param serviceSetting
-     *        The current, effective service setting after calling the ResetServiceSetting API action.
+     *        The current, effective service setting after calling the ResetServiceSetting API operation.
      */
 
     public void setServiceSetting(ServiceSetting serviceSetting) {
@@ -48,10 +48,10 @@ public class ResetServiceSettingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current, effective service setting after calling the ResetServiceSetting API action.
+     * The current, effective service setting after calling the ResetServiceSetting API operation.
      * </p>
      * 
-     * @return The current, effective service setting after calling the ResetServiceSetting API action.
+     * @return The current, effective service setting after calling the ResetServiceSetting API operation.
      */
 
     public ServiceSetting getServiceSetting() {
@@ -60,11 +60,11 @@ public class ResetServiceSettingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current, effective service setting after calling the ResetServiceSetting API action.
+     * The current, effective service setting after calling the ResetServiceSetting API operation.
      * </p>
      * 
      * @param serviceSetting
-     *        The current, effective service setting after calling the ResetServiceSetting API action.
+     *        The current, effective service setting after calling the ResetServiceSetting API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

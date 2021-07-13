@@ -92,6 +92,10 @@ public class InterconnectJsonUnmarshaller implements Unmarshaller<Interconnect, 
                     context.nextToken();
                     interconnect.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    interconnect.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
                     context.nextToken();
                     interconnect.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));

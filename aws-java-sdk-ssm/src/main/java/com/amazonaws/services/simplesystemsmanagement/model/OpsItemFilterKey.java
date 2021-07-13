@@ -45,7 +45,8 @@ public enum OpsItemFilterKey {
     ChangeRequestByApproverArn("ChangeRequestByApproverArn"),
     ChangeRequestByApproverName("ChangeRequestByApproverName"),
     ChangeRequestByTemplate("ChangeRequestByTemplate"),
-    ChangeRequestByTargetsResourceGroup("ChangeRequestByTargetsResourceGroup");
+    ChangeRequestByTargetsResourceGroup("ChangeRequestByTargetsResourceGroup"),
+    InsightByType("InsightByType");
 
     private String value;
 

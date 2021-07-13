@@ -92,6 +92,10 @@ public class LagJsonUnmarshaller implements Unmarshaller<Lag, JsonUnmarshallerCo
                     context.nextToken();
                     lag.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsLogicalDeviceId", targetDepth)) {
+                    context.nextToken();
+                    lag.setAwsLogicalDeviceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
                     lag.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance())

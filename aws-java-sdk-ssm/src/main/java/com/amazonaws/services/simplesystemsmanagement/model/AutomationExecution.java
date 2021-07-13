@@ -36,7 +36,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private String automationExecutionId;
     /**
      * <p>
-     * The name of the Automation document used during the execution.
+     * The name of the Automation runbook used during the execution.
      * </p>
      */
     private String documentName;
@@ -66,27 +66,27 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private String automationExecutionStatus;
     /**
      * <p>
-     * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are run in order.
+     * A list of details about the current state of all steps that comprise an execution. An Automation runbook contains
+     * a list of steps that are run in order.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepExecution> stepExecutions;
     /**
      * <p>
      * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
-     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      * </p>
      */
     private Boolean stepExecutionsTruncated;
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     * The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * The list of execution outputs as defined in the automation document.
+     * The list of execution outputs as defined in the Automation runbook.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> outputs;
@@ -152,7 +152,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private ResolvedTargets resolvedTargets;
     /**
      * <p>
-     * The MaxConcurrency value specified by the user when the execution started.
+     * The <code>MaxConcurrency</code> value specified by the user when the execution started.
      * </p>
      */
     private String maxConcurrency;
@@ -170,14 +170,14 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private String target;
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * The combination of Regions and/or accounts where you want to run the Automation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
     /**
      * <p>
-     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     * Automation execution.
+     * An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+     * multi-Region and multi-account Automation execution.
      * </p>
      */
     private ProgressCounters progressCounters;
@@ -195,7 +195,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private java.util.Date scheduledTime;
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * Information about the Automation runbooks that are run as part of a runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -266,11 +266,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the Automation document used during the execution.
+     * The name of the Automation runbook used during the execution.
      * </p>
      * 
      * @param documentName
-     *        The name of the Automation document used during the execution.
+     *        The name of the Automation runbook used during the execution.
      */
 
     public void setDocumentName(String documentName) {
@@ -279,10 +279,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the Automation document used during the execution.
+     * The name of the Automation runbook used during the execution.
      * </p>
      * 
-     * @return The name of the Automation document used during the execution.
+     * @return The name of the Automation runbook used during the execution.
      */
 
     public String getDocumentName() {
@@ -291,11 +291,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the Automation document used during the execution.
+     * The name of the Automation runbook used during the execution.
      * </p>
      * 
      * @param documentName
-     *        The name of the Automation document used during the execution.
+     *        The name of the Automation runbook used during the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,11 +499,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are run in order.
+     * A list of details about the current state of all steps that comprise an execution. An Automation runbook contains
+     * a list of steps that are run in order.
      * </p>
      * 
-     * @return A list of details about the current state of all steps that comprise an execution. An Automation document
+     * @return A list of details about the current state of all steps that comprise an execution. An Automation runbook
      *         contains a list of steps that are run in order.
      */
 
@@ -516,12 +516,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are run in order.
+     * A list of details about the current state of all steps that comprise an execution. An Automation runbook contains
+     * a list of steps that are run in order.
      * </p>
      * 
      * @param stepExecutions
-     *        A list of details about the current state of all steps that comprise an execution. An Automation document
+     *        A list of details about the current state of all steps that comprise an execution. An Automation runbook
      *        contains a list of steps that are run in order.
      */
 
@@ -536,8 +536,8 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are run in order.
+     * A list of details about the current state of all steps that comprise an execution. An Automation runbook contains
+     * a list of steps that are run in order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -546,7 +546,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param stepExecutions
-     *        A list of details about the current state of all steps that comprise an execution. An Automation document
+     *        A list of details about the current state of all steps that comprise an execution. An Automation runbook
      *        contains a list of steps that are run in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -563,12 +563,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are run in order.
+     * A list of details about the current state of all steps that comprise an execution. An Automation runbook contains
+     * a list of steps that are run in order.
      * </p>
      * 
      * @param stepExecutions
-     *        A list of details about the current state of all steps that comprise an execution. An Automation document
+     *        A list of details about the current state of all steps that comprise an execution. An Automation runbook
      *        contains a list of steps that are run in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -581,12 +581,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
-     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      * </p>
      * 
      * @param stepExecutionsTruncated
      *        A boolean value that indicates if the response contains the full list of the Automation step executions.
-     *        If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     *        If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      */
 
     public void setStepExecutionsTruncated(Boolean stepExecutionsTruncated) {
@@ -596,11 +596,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
-     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      * </p>
      * 
      * @return A boolean value that indicates if the response contains the full list of the Automation step executions.
-     *         If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     *         If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      */
 
     public Boolean getStepExecutionsTruncated() {
@@ -610,12 +610,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
-     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      * </p>
      * 
      * @param stepExecutionsTruncated
      *        A boolean value that indicates if the response contains the full list of the Automation step executions.
-     *        If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     *        If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,11 +627,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A boolean value that indicates if the response contains the full list of the Automation step executions. If true,
-     * use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     * use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      * </p>
      * 
      * @return A boolean value that indicates if the response contains the full list of the Automation step executions.
-     *         If true, use the DescribeAutomationStepExecutions API action to get the full list of step executions.
+     *         If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.
      */
 
     public Boolean isStepExecutionsTruncated() {
@@ -640,10 +640,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     * The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.
      * </p>
      * 
-     * @return The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     * @return The key-value map of execution parameters, which were supplied when calling
+     *         <a>StartAutomationExecution</a>.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -652,11 +653,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     * The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.
      * </p>
      * 
      * @param parameters
-     *        The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     *        The key-value map of execution parameters, which were supplied when calling
+     *        <a>StartAutomationExecution</a>.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -665,11 +667,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     * The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.
      * </p>
      * 
      * @param parameters
-     *        The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
+     *        The key-value map of execution parameters, which were supplied when calling
+     *        <a>StartAutomationExecution</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,10 +711,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of execution outputs as defined in the automation document.
+     * The list of execution outputs as defined in the Automation runbook.
      * </p>
      * 
-     * @return The list of execution outputs as defined in the automation document.
+     * @return The list of execution outputs as defined in the Automation runbook.
      */
 
     public java.util.Map<String, java.util.List<String>> getOutputs() {
@@ -720,11 +723,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of execution outputs as defined in the automation document.
+     * The list of execution outputs as defined in the Automation runbook.
      * </p>
      * 
      * @param outputs
-     *        The list of execution outputs as defined in the automation document.
+     *        The list of execution outputs as defined in the Automation runbook.
      */
 
     public void setOutputs(java.util.Map<String, java.util.List<String>> outputs) {
@@ -733,11 +736,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of execution outputs as defined in the automation document.
+     * The list of execution outputs as defined in the Automation runbook.
      * </p>
      * 
      * @param outputs
-     *        The list of execution outputs as defined in the automation document.
+     *        The list of execution outputs as defined in the Automation runbook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1275,11 +1278,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The MaxConcurrency value specified by the user when the execution started.
+     * The <code>MaxConcurrency</code> value specified by the user when the execution started.
      * </p>
      * 
      * @param maxConcurrency
-     *        The MaxConcurrency value specified by the user when the execution started.
+     *        The <code>MaxConcurrency</code> value specified by the user when the execution started.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1288,10 +1291,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The MaxConcurrency value specified by the user when the execution started.
+     * The <code>MaxConcurrency</code> value specified by the user when the execution started.
      * </p>
      * 
-     * @return The MaxConcurrency value specified by the user when the execution started.
+     * @return The <code>MaxConcurrency</code> value specified by the user when the execution started.
      */
 
     public String getMaxConcurrency() {
@@ -1300,11 +1303,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The MaxConcurrency value specified by the user when the execution started.
+     * The <code>MaxConcurrency</code> value specified by the user when the execution started.
      * </p>
      * 
      * @param maxConcurrency
-     *        The MaxConcurrency value specified by the user when the execution started.
+     *        The <code>MaxConcurrency</code> value specified by the user when the execution started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1395,10 +1398,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * The combination of Regions and/or accounts where you want to run the Automation.
      * </p>
      * 
-     * @return The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * @return The combination of Regions and/or accounts where you want to run the Automation.
      */
 
     public java.util.List<TargetLocation> getTargetLocations() {
@@ -1410,11 +1413,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * The combination of Regions and/or accounts where you want to run the Automation.
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     *        The combination of Regions and/or accounts where you want to run the Automation.
      */
 
     public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
@@ -1428,7 +1431,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * The combination of Regions and/or accounts where you want to run the Automation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1437,7 +1440,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     *        The combination of Regions and/or accounts where you want to run the Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1453,11 +1456,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * The combination of Regions and/or accounts where you want to run the Automation.
      * </p>
      * 
      * @param targetLocations
-     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     *        The combination of Regions and/or accounts where you want to run the Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1468,13 +1471,13 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     * Automation execution.
+     * An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+     * multi-Region and multi-account Automation execution.
      * </p>
      * 
      * @param progressCounters
-     *        An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     *        Automation execution.
+     *        An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+     *        multi-Region and multi-account Automation execution.
      */
 
     public void setProgressCounters(ProgressCounters progressCounters) {
@@ -1483,12 +1486,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     * Automation execution.
+     * An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+     * multi-Region and multi-account Automation execution.
      * </p>
      * 
-     * @return An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     *         Automation execution.
+     * @return An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for
+     *         a multi-Region and multi-account Automation execution.
      */
 
     public ProgressCounters getProgressCounters() {
@@ -1497,13 +1500,13 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     * Automation execution.
+     * An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+     * multi-Region and multi-account Automation execution.
      * </p>
      * 
      * @param progressCounters
-     *        An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
-     *        Automation execution.
+     *        An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+     *        multi-Region and multi-account Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1632,7 +1635,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * Information about the Automation runbooks that are run as part of a runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -1641,8 +1644,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return Information about the Automation runbooks (Automation documents) that are run as part of a runbook
-     *         workflow.</p> <note>
+     * @return Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
      *         <p>
      *         The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *         change request have been received.
@@ -1658,7 +1660,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * Information about the Automation runbooks that are run as part of a runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -1668,8 +1670,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param runbooks
-     *        Information about the Automation runbooks (Automation documents) that are run as part of a runbook
-     *        workflow.</p> <note>
+     *        Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
      *        <p>
      *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *        change request have been received.
@@ -1687,7 +1688,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * Information about the Automation runbooks that are run as part of a runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -1702,8 +1703,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param runbooks
-     *        Information about the Automation runbooks (Automation documents) that are run as part of a runbook
-     *        workflow.</p> <note>
+     *        Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
      *        <p>
      *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *        change request have been received.
@@ -1723,7 +1723,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * Information about the Automation runbooks that are run as part of a runbook workflow.
      * </p>
      * <note>
      * <p>
@@ -1733,8 +1733,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param runbooks
-     *        Information about the Automation runbooks (Automation documents) that are run as part of a runbook
-     *        workflow.</p> <note>
+     *        Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
      *        <p>
      *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
      *        change request have been received.

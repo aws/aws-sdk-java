@@ -31,7 +31,7 @@ public class UnlabelParameterVersionResult extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> removedLabels;
     /**
      * <p>
-     * The labels that are not attached to the given parameter version.
+     * The labels that aren't attached to the given parameter version.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> invalidLabels;
@@ -111,10 +111,10 @@ public class UnlabelParameterVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The labels that are not attached to the given parameter version.
+     * The labels that aren't attached to the given parameter version.
      * </p>
      * 
-     * @return The labels that are not attached to the given parameter version.
+     * @return The labels that aren't attached to the given parameter version.
      */
 
     public java.util.List<String> getInvalidLabels() {
@@ -126,11 +126,11 @@ public class UnlabelParameterVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The labels that are not attached to the given parameter version.
+     * The labels that aren't attached to the given parameter version.
      * </p>
      * 
      * @param invalidLabels
-     *        The labels that are not attached to the given parameter version.
+     *        The labels that aren't attached to the given parameter version.
      */
 
     public void setInvalidLabels(java.util.Collection<String> invalidLabels) {
@@ -144,7 +144,7 @@ public class UnlabelParameterVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The labels that are not attached to the given parameter version.
+     * The labels that aren't attached to the given parameter version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,7 +153,7 @@ public class UnlabelParameterVersionResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param invalidLabels
-     *        The labels that are not attached to the given parameter version.
+     *        The labels that aren't attached to the given parameter version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +169,11 @@ public class UnlabelParameterVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The labels that are not attached to the given parameter version.
+     * The labels that aren't attached to the given parameter version.
      * </p>
      * 
      * @param invalidLabels
-     *        The labels that are not attached to the given parameter version.
+     *        The labels that aren't attached to the given parameter version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

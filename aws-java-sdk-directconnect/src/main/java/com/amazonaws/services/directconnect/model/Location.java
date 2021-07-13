@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an AWS Direct Connect location.
+ * Information about an Direct Connect location.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Location" target="_top">AWS API
@@ -42,7 +42,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
     private String locationName;
     /**
      * <p>
-     * The AWS Region for the location.
+     * The Region for the location.
      * </p>
      */
     private String region;
@@ -150,11 +150,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region for the location.
+     * The Region for the location.
      * </p>
      * 
      * @param region
-     *        The AWS Region for the location.
+     *        The Region for the location.
      */
 
     public void setRegion(String region) {
@@ -163,10 +163,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region for the location.
+     * The Region for the location.
      * </p>
      * 
-     * @return The AWS Region for the location.
+     * @return The Region for the location.
      */
 
     public String getRegion() {
@@ -175,11 +175,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region for the location.
+     * The Region for the location.
      * </p>
      * 
      * @param region
-     *        The AWS Region for the location.
+     *        The Region for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

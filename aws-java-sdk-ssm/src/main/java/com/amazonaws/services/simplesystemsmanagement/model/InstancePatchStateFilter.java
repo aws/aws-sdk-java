@@ -19,9 +19,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to scope down the information returned
- * by the API.
+ * Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope down the information returned by
+ * the API.
  * </p>
+ * <p>
+ * <b>Example</b>: To filter for all instances in a patch group having more than three patches with a
+ * <code>FailedCount</code> status, use the following for the filter:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Value for <code>Key</code>: <code>FailedCount</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Value for <code>Type</code>: <code>GreaterThan</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Value for <code>Values</code>: <code>3</code>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchStateFilter" target="_top">AWS API
  *      Documentation</a>
@@ -31,33 +52,155 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount, MissingCount and
-     * NotApplicableCount.
+     * The key for the filter. Supported values include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>InstalledCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledOtherCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledPendingRebootCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledRejectedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MissingCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FailedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnreportedNotApplicableCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NotApplicableCount</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String key;
     /**
      * <p>
-     * The value for the filter, must be an integer greater than or equal to 0.
+     * The value for the filter. Must be an integer greater than or equal to 0.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
     /**
      * <p>
-     * The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * The type of comparison that should be performed for the value.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount, MissingCount and
-     * NotApplicableCount.
+     * The key for the filter. Supported values include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>InstalledCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledOtherCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledPendingRebootCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledRejectedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MissingCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FailedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnreportedNotApplicableCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NotApplicableCount</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount,
-     *        MissingCount and NotApplicableCount.
+     *        The key for the filter. Supported values include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>InstalledCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstalledOtherCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstalledPendingRebootCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstalledRejectedCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MissingCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FailedCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnreportedNotApplicableCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NotApplicableCount</code>
+     *        </p>
+     *        </li>
      */
 
     public void setKey(String key) {
@@ -66,12 +209,93 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount, MissingCount and
-     * NotApplicableCount.
+     * The key for the filter. Supported values include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>InstalledCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledOtherCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledPendingRebootCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledRejectedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MissingCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FailedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnreportedNotApplicableCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NotApplicableCount</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount,
-     *         MissingCount and NotApplicableCount.
+     * @return The key for the filter. Supported values include the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>InstalledCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstalledOtherCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstalledPendingRebootCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstalledRejectedCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MissingCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FailedCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UnreportedNotApplicableCount</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NotApplicableCount</code>
+     *         </p>
+     *         </li>
      */
 
     public String getKey() {
@@ -80,13 +304,94 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount, MissingCount and
-     * NotApplicableCount.
+     * The key for the filter. Supported values include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>InstalledCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledOtherCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledPendingRebootCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstalledRejectedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MissingCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FailedCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnreportedNotApplicableCount</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NotApplicableCount</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        The key for the filter. Supported values are FailedCount, InstalledCount, InstalledOtherCount,
-     *        MissingCount and NotApplicableCount.
+     *        The key for the filter. Supported values include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>InstalledCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstalledOtherCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstalledPendingRebootCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstalledRejectedCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MissingCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FailedCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnreportedNotApplicableCount</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NotApplicableCount</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,10 +402,10 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The value for the filter, must be an integer greater than or equal to 0.
+     * The value for the filter. Must be an integer greater than or equal to 0.
      * </p>
      * 
-     * @return The value for the filter, must be an integer greater than or equal to 0.
+     * @return The value for the filter. Must be an integer greater than or equal to 0.
      */
 
     public java.util.List<String> getValues() {
@@ -112,11 +417,11 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The value for the filter, must be an integer greater than or equal to 0.
+     * The value for the filter. Must be an integer greater than or equal to 0.
      * </p>
      * 
      * @param values
-     *        The value for the filter, must be an integer greater than or equal to 0.
+     *        The value for the filter. Must be an integer greater than or equal to 0.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -130,7 +435,7 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The value for the filter, must be an integer greater than or equal to 0.
+     * The value for the filter. Must be an integer greater than or equal to 0.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -139,7 +444,7 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param values
-     *        The value for the filter, must be an integer greater than or equal to 0.
+     *        The value for the filter. Must be an integer greater than or equal to 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +460,11 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The value for the filter, must be an integer greater than or equal to 0.
+     * The value for the filter. Must be an integer greater than or equal to 0.
      * </p>
      * 
      * @param values
-     *        The value for the filter, must be an integer greater than or equal to 0.
+     *        The value for the filter. Must be an integer greater than or equal to 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +475,11 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * The type of comparison that should be performed for the value.
      * </p>
      * 
      * @param type
-     *        The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     *        The type of comparison that should be performed for the value.
      * @see InstancePatchStateOperatorType
      */
 
@@ -184,10 +489,10 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * The type of comparison that should be performed for the value.
      * </p>
      * 
-     * @return The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * @return The type of comparison that should be performed for the value.
      * @see InstancePatchStateOperatorType
      */
 
@@ -197,11 +502,11 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * The type of comparison that should be performed for the value.
      * </p>
      * 
      * @param type
-     *        The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     *        The type of comparison that should be performed for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstancePatchStateOperatorType
      */
@@ -213,11 +518,11 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * The type of comparison that should be performed for the value.
      * </p>
      * 
      * @param type
-     *        The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     *        The type of comparison that should be performed for the value.
      * @see InstancePatchStateOperatorType
      */
 
@@ -227,11 +532,11 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     * The type of comparison that should be performed for the value.
      * </p>
      * 
      * @param type
-     *        The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.
+     *        The type of comparison that should be performed for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstancePatchStateOperatorType
      */

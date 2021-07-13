@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the target S3 bucket for the Resource Data Sync.
+ * Information about the target S3 bucket for the resource data sync.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncS3Destination" target="_top">AWS
@@ -48,7 +48,7 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
     private String syncFormat;
     /**
      * <p>
-     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     * The Region with the S3 bucket targeted by the resource data sync.
      * </p>
      */
     private String region;
@@ -221,11 +221,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     * The Region with the S3 bucket targeted by the resource data sync.
      * </p>
      * 
      * @param region
-     *        The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     *        The Region with the S3 bucket targeted by the resource data sync.
      */
 
     public void setRegion(String region) {
@@ -234,10 +234,10 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     * The Region with the S3 bucket targeted by the resource data sync.
      * </p>
      * 
-     * @return The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     * @return The Region with the S3 bucket targeted by the resource data sync.
      */
 
     public String getRegion() {
@@ -246,11 +246,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     * The Region with the S3 bucket targeted by the resource data sync.
      * </p>
      * 
      * @param region
-     *        The AWS Region with the S3 bucket targeted by the Resource Data Sync.
+     *        The Region with the S3 bucket targeted by the resource data sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
