@@ -124,6 +124,9 @@ public class AwsHostNameUtilsTest {
 
         assertEquals("us-west-2", AwsHostNameUtils.parseRegion("cloudsearch.us-west-2.amazonaws.com", null));
         assertEquals("us-west-2", AwsHostNameUtils.parseRegion("domain.us-west-2.cloudsearch.amazonaws.com", null));
+
+        assertEquals("us-west-2", AwsHostNameUtils.parseRegion("domain.s3.us-west-2.vpce.amazonaws.com", null));
+        assertEquals("us-west-2", AwsHostNameUtils.parseRegion("domain.us-west-2.vpce.amazonaws.com", null));
     }
 
     @Test
@@ -143,6 +146,8 @@ public class AwsHostNameUtilsTest {
 
         assertEquals("us-west-2", AwsHostNameUtils.parseRegion("cloudsearch.us-west-2.amazonaws.com", "cloudsearch"));
         assertEquals("us-west-2", AwsHostNameUtils.parseRegion("domain.us-west-2.cloudsearch.amazonaws.com", "cloudsearch"));
+
+        assertEquals("us-west-2", AwsHostNameUtils.parseRegion("domain.s3.us-west-2.vpce.amazonaws.com", "s3"));
     }
 
     @Test

@@ -84,6 +84,9 @@ public class AWS4SignerTest {
         final String EXPECTED_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER =
             "AWS4-HMAC-SHA256 Credential=access/19810216/us-east-1/demo/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date, Signature=77fe7c02927966018667f21d1dc3dfad9057e58401cbb9ed64f1b7868288e35a";
 
+        final String EXPECTED_VPC_ENDPOINT_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER =
+            "AWS4-HMAC-SHA256 Credential=access/19810216/us-east-1/demo/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date, Signature=fe378122184db21f27a4da371497e497730166c7b54a687b5839ca77c25ca357";
+
         final String EXPECTED_AUTHORIZATION_HEADER_WITH_SHA256_HEADER =
             "AWS4-HMAC-SHA256 Credential=access/19810216/us-east-1/demo/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date;x-amz-sha256, Signature=e73e20539446307a5dc71252dbd5b97e861f1d1267456abda3ebd8d57e519951";
 
@@ -91,6 +94,7 @@ public class AWS4SignerTest {
         AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
         // Test request without 'x-amz-sha256' header
         SignableRequest<?> request = generateBasicRequest();
+        SignableRequest<?> vpcEndpointRequest = generateBasicVPCEndpointRequest();
 
         Calendar c = new GregorianCalendar();
         c.set(1981, 1, 16, 6, 30, 0);
@@ -102,6 +106,10 @@ public class AWS4SignerTest {
         signer.sign(request, credentials);
         assertEquals(EXPECTED_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER,
                 request.getHeaders().get("Authorization"));
+
+        signer.sign(vpcEndpointRequest, credentials);
+        assertEquals(EXPECTED_VPC_ENDPOINT_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER,
+                vpcEndpointRequest.getHeaders().get("Authorization"));
 
 
         // Test request with 'x-amz-sha256' header
@@ -270,6 +278,15 @@ public class AWS4SignerTest {
                 .withHeader("x-amz-archive-description", "test  test")
                 .withPath("/")
                 .withEndpoint("http://demo.us-east-1.amazonaws.com").build();
+    }
+
+    private SignableRequest<?> generateBasicVPCEndpointRequest() {
+        return MockRequestBuilder.create()
+                .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))
+                .withHeader("Host", "demo.us-east-1.vpce.amazonaws.com")
+                .withHeader("x-amz-archive-description", "test  test")
+                .withPath("/")
+                .withEndpoint("http://demo.us-east-1.vpce.amazonaws.com").build();
     }
 
     private SignableRequest<?> generateBasicRequestToBjs() {
