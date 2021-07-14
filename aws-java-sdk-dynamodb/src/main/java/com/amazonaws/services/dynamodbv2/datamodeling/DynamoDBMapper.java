@@ -2445,7 +2445,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                 new VersionAttributeConditionExpressionGenerator();
         for (final DynamoDBMapperFieldModel<Object,Object> field : model.fields()) {
             AttributeValue currentValue = null;
-            if (field.versioned()) {
+            if (field.versioned() && SaveBehavior.CLOBBER != config.getSaveBehavior()) {
                 if (writeExpression != null) {
                     throw new SdkClientException("A transactional write operation may not also specify a condition " +
                                                          "expression if a versioned attribute is present on the " +

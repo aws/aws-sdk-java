@@ -56,6 +56,12 @@
         <version>${mockito.all.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
+      <version>${hamcrest.all.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
         <artifactId>jmespath-java</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
