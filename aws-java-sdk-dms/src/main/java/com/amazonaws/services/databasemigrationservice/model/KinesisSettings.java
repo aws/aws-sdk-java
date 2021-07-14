@@ -44,8 +44,8 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     private String messageFormat;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to write
-     * to the Kinesis data stream.
+     * The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must
+     * allow the <code>iam:PassRole</code> action.
      * </p>
      */
     private String serviceAccessRoleArn;
@@ -94,6 +94,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Boolean includeNullAndEmpty;
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kinesis.
+     * </p>
+     */
+    private Boolean noHexPrefix;
 
     /**
      * <p>
@@ -204,13 +211,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to write
-     * to the Kinesis data stream.
+     * The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must
+     * allow the <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to
-     *        write to the Kinesis data stream.
+     *        The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The
+     *        role must allow the <code>iam:PassRole</code> action.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -219,12 +226,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to write
-     * to the Kinesis data stream.
+     * The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must
+     * allow the <code>iam:PassRole</code> action.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to
-     *         write to the Kinesis data stream.
+     * @return The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The
+     *         role must allow the <code>iam:PassRole</code> action.
      */
 
     public String getServiceAccessRoleArn() {
@@ -233,13 +240,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to write
-     * to the Kinesis data stream.
+     * The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must
+     * allow the <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that AWS DMS uses to
-     *        write to the Kinesis data stream.
+     *        The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The
+     *        role must allow the <code>iam:PassRole</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,6 +648,70 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kinesis.
+     * </p>
+     * 
+     * @param noHexPrefix
+     *        If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *        migrated to a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when
+     *        migrated to Kinesis.
+     */
+
+    public void setNoHexPrefix(Boolean noHexPrefix) {
+        this.noHexPrefix = noHexPrefix;
+    }
+
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kinesis.
+     * </p>
+     * 
+     * @return If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *         migrated to a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when
+     *         migrated to Kinesis.
+     */
+
+    public Boolean getNoHexPrefix() {
+        return this.noHexPrefix;
+    }
+
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kinesis.
+     * </p>
+     * 
+     * @param noHexPrefix
+     *        If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *        migrated to a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when
+     *        migrated to Kinesis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KinesisSettings withNoHexPrefix(Boolean noHexPrefix) {
+        setNoHexPrefix(noHexPrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kinesis.
+     * </p>
+     * 
+     * @return If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *         migrated to a Kinesis target. If this attribute is N, all hexadecimal values include this prefix when
+     *         migrated to Kinesis.
+     */
+
+    public Boolean isNoHexPrefix() {
+        return this.noHexPrefix;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -669,7 +740,9 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
         if (getIncludeControlDetails() != null)
             sb.append("IncludeControlDetails: ").append(getIncludeControlDetails()).append(",");
         if (getIncludeNullAndEmpty() != null)
-            sb.append("IncludeNullAndEmpty: ").append(getIncludeNullAndEmpty());
+            sb.append("IncludeNullAndEmpty: ").append(getIncludeNullAndEmpty()).append(",");
+        if (getNoHexPrefix() != null)
+            sb.append("NoHexPrefix: ").append(getNoHexPrefix());
         sb.append("}");
         return sb.toString();
     }
@@ -720,6 +793,10 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getIncludeNullAndEmpty() != null && other.getIncludeNullAndEmpty().equals(this.getIncludeNullAndEmpty()) == false)
             return false;
+        if (other.getNoHexPrefix() == null ^ this.getNoHexPrefix() == null)
+            return false;
+        if (other.getNoHexPrefix() != null && other.getNoHexPrefix().equals(this.getNoHexPrefix()) == false)
+            return false;
         return true;
     }
 
@@ -737,6 +814,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getIncludeTableAlterOperations() == null) ? 0 : getIncludeTableAlterOperations().hashCode());
         hashCode = prime * hashCode + ((getIncludeControlDetails() == null) ? 0 : getIncludeControlDetails().hashCode());
         hashCode = prime * hashCode + ((getIncludeNullAndEmpty() == null) ? 0 : getIncludeNullAndEmpty().hashCode());
+        hashCode = prime * hashCode + ((getNoHexPrefix() == null) ? 0 : getNoHexPrefix().hashCode());
         return hashCode;
     }
 

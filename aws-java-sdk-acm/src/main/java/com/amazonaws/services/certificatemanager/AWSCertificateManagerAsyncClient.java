@@ -30,11 +30,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when an
  * asynchronous operation completes.
  * <p>
- * <fullname>AWS Certificate Manager</fullname>
+ * <fullname>Amazon Web Services Certificate Manager</fullname>
  * <p>
- * You can use AWS Certificate Manager (ACM) to manage SSL/TLS certificates for your AWS-based websites and
- * applications. For more information about using ACM, see the <a
- * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
+ * You can use Amazon Web Services Certificate Manager (ACM) to manage SSL/TLS certificates for your Amazon Web
+ * Services-based websites and applications. For more information about using ACM, see the <a
+ * href="https://docs.aws.amazon.com/acm/latest/userguide/">Amazon Web Services Certificate Manager User Guide</a>.
  * </p>
  */
 @ThreadSafe

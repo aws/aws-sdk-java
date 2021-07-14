@@ -41,6 +41,12 @@ public class PostgreSQLSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecuteTimeout").build();
     private static final MarshallingInfo<Boolean> FAILTASKSONLOBTRUNCATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailTasksOnLobTruncation").build();
+    private static final MarshallingInfo<Boolean> HEARTBEATENABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeartbeatEnable").build();
+    private static final MarshallingInfo<String> HEARTBEATSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeartbeatSchema").build();
+    private static final MarshallingInfo<Integer> HEARTBEATFREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HeartbeatFrequency").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +57,8 @@ public class PostgreSQLSettingsMarshaller {
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<String> SLOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SlotName").build();
+    private static final MarshallingInfo<String> PLUGINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PluginName").build();
     private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,11 +87,15 @@ public class PostgreSQLSettingsMarshaller {
             protocolMarshaller.marshall(postgreSQLSettings.getDdlArtifactsSchema(), DDLARTIFACTSSCHEMA_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getExecuteTimeout(), EXECUTETIMEOUT_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getFailTasksOnLobTruncation(), FAILTASKSONLOBTRUNCATION_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getHeartbeatEnable(), HEARTBEATENABLE_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getHeartbeatSchema(), HEARTBEATSCHEMA_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getHeartbeatFrequency(), HEARTBEATFREQUENCY_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getSlotName(), SLOTNAME_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getPluginName(), PLUGINNAME_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {

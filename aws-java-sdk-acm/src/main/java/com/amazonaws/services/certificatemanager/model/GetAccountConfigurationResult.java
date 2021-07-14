@@ -25,18 +25,18 @@ public class GetAccountConfigurationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Expiration events configuration options associated with the AWS account.
+     * Expiration events configuration options associated with the Amazon Web Services account.
      * </p>
      */
     private ExpiryEventsConfiguration expiryEvents;
 
     /**
      * <p>
-     * Expiration events configuration options associated with the AWS account.
+     * Expiration events configuration options associated with the Amazon Web Services account.
      * </p>
      * 
      * @param expiryEvents
-     *        Expiration events configuration options associated with the AWS account.
+     *        Expiration events configuration options associated with the Amazon Web Services account.
      */
 
     public void setExpiryEvents(ExpiryEventsConfiguration expiryEvents) {
@@ -45,10 +45,10 @@ public class GetAccountConfigurationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Expiration events configuration options associated with the AWS account.
+     * Expiration events configuration options associated with the Amazon Web Services account.
      * </p>
      * 
-     * @return Expiration events configuration options associated with the AWS account.
+     * @return Expiration events configuration options associated with the Amazon Web Services account.
      */
 
     public ExpiryEventsConfiguration getExpiryEvents() {
@@ -57,11 +57,11 @@ public class GetAccountConfigurationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Expiration events configuration options associated with the AWS account.
+     * Expiration events configuration options associated with the Amazon Web Services account.
      * </p>
      * 
      * @param expiryEvents
-     *        Expiration events configuration options associated with the AWS account.
+     *        Expiration events configuration options associated with the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

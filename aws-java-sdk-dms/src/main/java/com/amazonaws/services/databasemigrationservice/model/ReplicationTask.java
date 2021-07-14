@@ -304,7 +304,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
@@ -2045,14 +2045,14 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -2064,13 +2064,13 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *         Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -2082,14 +2082,14 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -72,6 +72,12 @@ public class AnswerSummaryJsonUnmarshaller implements Unmarshaller<AnswerSummary
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ChoiceAnswerSummaries", targetDepth)) {
+                    context.nextToken();
+                    answerSummary.setChoiceAnswerSummaries(new ListUnmarshaller<ChoiceAnswerSummary>(ChoiceAnswerSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("IsApplicable", targetDepth)) {
                     context.nextToken();
                     answerSummary.setIsApplicable(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -79,6 +85,10 @@ public class AnswerSummaryJsonUnmarshaller implements Unmarshaller<AnswerSummary
                 if (context.testExpression("Risk", targetDepth)) {
                     context.nextToken();
                     answerSummary.setRisk(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Reason", targetDepth)) {
+                    context.nextToken();
+                    answerSummary.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

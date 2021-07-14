@@ -35,27 +35,28 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     private String replicationTaskArn;
     /**
      * <p>
-     * ARN of a service role needed to start the assessment run.
+     * ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code>
+     * action.
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      */
     private String resultLocationBucket;
     /**
      * <p>
-     * Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      */
     private String resultLocationFolder;
     /**
      * <p>
      * Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this
-     * request parameter, AWS DMS stores the assessment run results without encryption. You can specify one of the
-     * options following:
+     * request parameter, DMS stores the assessment run results without encryption. You can specify one of the options
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -65,8 +66,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either a custom
-     * KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS
+     * encryption key that you specify or the default KMS encryption key that DMS provides.
      * </p>
      * </li>
      * </ul>
@@ -88,7 +89,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to include. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -97,8 +98,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
@@ -107,7 +108,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to exclude. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -116,8 +117,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
@@ -172,11 +173,13 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ARN of a service role needed to start the assessment run.
+     * ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code>
+     * action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        ARN of a service role needed to start the assessment run.
+     *        ARN of the service role needed to start the assessment run. The role must allow the
+     *        <code>iam:PassRole</code> action.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -185,10 +188,12 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ARN of a service role needed to start the assessment run.
+     * ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code>
+     * action.
      * </p>
      * 
-     * @return ARN of a service role needed to start the assessment run.
+     * @return ARN of the service role needed to start the assessment run. The role must allow the
+     *         <code>iam:PassRole</code> action.
      */
 
     public String getServiceAccessRoleArn() {
@@ -197,11 +202,13 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ARN of a service role needed to start the assessment run.
+     * ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code>
+     * action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        ARN of a service role needed to start the assessment run.
+     *        ARN of the service role needed to start the assessment run. The role must allow the
+     *        <code>iam:PassRole</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +219,11 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      * 
      * @param resultLocationBucket
-     *        Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     *        Amazon S3 bucket where you want DMS to store the results of this assessment run.
      */
 
     public void setResultLocationBucket(String resultLocationBucket) {
@@ -225,10 +232,10 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      * 
-     * @return Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * @return Amazon S3 bucket where you want DMS to store the results of this assessment run.
      */
 
     public String getResultLocationBucket() {
@@ -237,11 +244,11 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      * 
      * @param resultLocationBucket
-     *        Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     *        Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +259,11 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      * 
      * @param resultLocationFolder
-     *        Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     *        Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      */
 
     public void setResultLocationFolder(String resultLocationFolder) {
@@ -265,10 +272,10 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      * 
-     * @return Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * @return Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      */
 
     public String getResultLocationFolder() {
@@ -277,11 +284,11 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     * Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * </p>
      * 
      * @param resultLocationFolder
-     *        Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment run.
+     *        Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,8 +300,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this
-     * request parameter, AWS DMS stores the assessment run results without encryption. You can specify one of the
-     * options following:
+     * request parameter, DMS stores the assessment run results without encryption. You can specify one of the options
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -304,16 +311,16 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either a custom
-     * KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS
+     * encryption key that you specify or the default KMS encryption key that DMS provides.
      * </p>
      * </li>
      * </ul>
      * 
      * @param resultEncryptionMode
      *        Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify
-     *        this request parameter, AWS DMS stores the assessment run results without encryption. You can specify one
-     *        of the options following:</p>
+     *        this request parameter, DMS stores the assessment run results without encryption. You can specify one of
+     *        the options following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -322,8 +329,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either a
-     *        custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     *        <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom
+     *        KMS encryption key that you specify or the default KMS encryption key that DMS provides.
      *        </p>
      *        </li>
      */
@@ -335,8 +342,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this
-     * request parameter, AWS DMS stores the assessment run results without encryption. You can specify one of the
-     * options following:
+     * request parameter, DMS stores the assessment run results without encryption. You can specify one of the options
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -346,15 +353,15 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either a custom
-     * KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS
+     * encryption key that you specify or the default KMS encryption key that DMS provides.
      * </p>
      * </li>
      * </ul>
      * 
      * @return Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify
-     *         this request parameter, AWS DMS stores the assessment run results without encryption. You can specify one
-     *         of the options following:</p>
+     *         this request parameter, DMS stores the assessment run results without encryption. You can specify one of
+     *         the options following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -363,8 +370,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      *         </li>
      *         <li>
      *         <p>
-     *         <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either
-     *         a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     *         <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom
+     *         KMS encryption key that you specify or the default KMS encryption key that DMS provides.
      *         </p>
      *         </li>
      */
@@ -376,8 +383,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this
-     * request parameter, AWS DMS stores the assessment run results without encryption. You can specify one of the
-     * options following:
+     * request parameter, DMS stores the assessment run results without encryption. You can specify one of the options
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -387,16 +394,16 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either a custom
-     * KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS
+     * encryption key that you specify or the default KMS encryption key that DMS provides.
      * </p>
      * </li>
      * </ul>
      * 
      * @param resultEncryptionMode
      *        Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify
-     *        this request parameter, AWS DMS stores the assessment run results without encryption. You can specify one
-     *        of the options following:</p>
+     *        this request parameter, DMS stores the assessment run results without encryption. You can specify one of
+     *        the options following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -405,8 +412,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption. This encryption can use either a
-     *        custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.
+     *        <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom
+     *        KMS encryption key that you specify or the default KMS encryption key that DMS provides.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -506,7 +513,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to include. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -515,21 +522,21 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
      * 
      * @return Space-separated list of names for specific individual assessments that you want to include. These names
-     *         come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *         task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *         come from the default list of individual assessments that DMS supports for the associated migration task.
+     *         This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *         <p>
      *         You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in
      *         the API operation.
      *         </p>
      *         <p>
-     *         To identify the names of the default individual assessments that AWS DMS supports for the associated
+     *         To identify the names of the default individual assessments that DMS supports for the associated
      *         migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *         <code>ReplicationTaskArn</code> request parameter.
      *         </p>
@@ -542,7 +549,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to include. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -551,23 +558,23 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
      * 
      * @param includeOnly
      *        Space-separated list of names for specific individual assessments that you want to include. These names
-     *        come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *        task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *        come from the default list of individual assessments that DMS supports for the associated migration task.
+     *        This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *        <p>
      *        You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the
      *        API operation.
      *        </p>
      *        <p>
-     *        To identify the names of the default individual assessments that AWS DMS supports for the associated
-     *        migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     *        To identify the names of the default individual assessments that DMS supports for the associated migration
+     *        task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *        <code>ReplicationTaskArn</code> request parameter.
      *        </p>
      */
@@ -584,7 +591,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to include. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -593,8 +600,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
@@ -606,15 +613,15 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * 
      * @param includeOnly
      *        Space-separated list of names for specific individual assessments that you want to include. These names
-     *        come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *        task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *        come from the default list of individual assessments that DMS supports for the associated migration task.
+     *        This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *        <p>
      *        You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the
      *        API operation.
      *        </p>
      *        <p>
-     *        To identify the names of the default individual assessments that AWS DMS supports for the associated
-     *        migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     *        To identify the names of the default individual assessments that DMS supports for the associated migration
+     *        task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *        <code>ReplicationTaskArn</code> request parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -633,7 +640,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to include. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -642,23 +649,23 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
      * 
      * @param includeOnly
      *        Space-separated list of names for specific individual assessments that you want to include. These names
-     *        come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *        task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *        come from the default list of individual assessments that DMS supports for the associated migration task.
+     *        This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *        <p>
      *        You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the
      *        API operation.
      *        </p>
      *        <p>
-     *        To identify the names of the default individual assessments that AWS DMS supports for the associated
-     *        migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     *        To identify the names of the default individual assessments that DMS supports for the associated migration
+     *        task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *        <code>ReplicationTaskArn</code> request parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -672,7 +679,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to exclude. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -681,21 +688,21 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
      * 
      * @return Space-separated list of names for specific individual assessments that you want to exclude. These names
-     *         come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *         task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *         come from the default list of individual assessments that DMS supports for the associated migration task.
+     *         This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *         <p>
      *         You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in
      *         the API operation.
      *         </p>
      *         <p>
-     *         To identify the names of the default individual assessments that AWS DMS supports for the associated
+     *         To identify the names of the default individual assessments that DMS supports for the associated
      *         migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *         <code>ReplicationTaskArn</code> request parameter.
      *         </p>
@@ -708,7 +715,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to exclude. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -717,23 +724,23 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
      * 
      * @param exclude
      *        Space-separated list of names for specific individual assessments that you want to exclude. These names
-     *        come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *        task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *        come from the default list of individual assessments that DMS supports for the associated migration task.
+     *        This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *        <p>
      *        You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the
      *        API operation.
      *        </p>
      *        <p>
-     *        To identify the names of the default individual assessments that AWS DMS supports for the associated
-     *        migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     *        To identify the names of the default individual assessments that DMS supports for the associated migration
+     *        task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *        <code>ReplicationTaskArn</code> request parameter.
      *        </p>
      */
@@ -750,7 +757,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to exclude. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -759,8 +766,8 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
@@ -772,15 +779,15 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * 
      * @param exclude
      *        Space-separated list of names for specific individual assessments that you want to exclude. These names
-     *        come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *        task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *        come from the default list of individual assessments that DMS supports for the associated migration task.
+     *        This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *        <p>
      *        You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the
      *        API operation.
      *        </p>
      *        <p>
-     *        To identify the names of the default individual assessments that AWS DMS supports for the associated
-     *        migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     *        To identify the names of the default individual assessments that DMS supports for the associated migration
+     *        task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *        <code>ReplicationTaskArn</code> request parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -799,7 +806,7 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * Space-separated list of names for specific individual assessments that you want to exclude. These names come from
-     * the default list of individual assessments that AWS DMS supports for the associated migration task. This task is
+     * the default list of individual assessments that DMS supports for the associated migration task. This task is
      * specified by <code>ReplicationTaskArn</code>.
      * </p>
      * <note>
@@ -808,23 +815,23 @@ public class StartReplicationTaskAssessmentRunRequest extends com.amazonaws.Amaz
      * operation.
      * </p>
      * <p>
-     * To identify the names of the default individual assessments that AWS DMS supports for the associated migration
-     * task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     * To identify the names of the default individual assessments that DMS supports for the associated migration task,
+     * run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      * <code>ReplicationTaskArn</code> request parameter.
      * </p>
      * </note>
      * 
      * @param exclude
      *        Space-separated list of names for specific individual assessments that you want to exclude. These names
-     *        come from the default list of individual assessments that AWS DMS supports for the associated migration
-     *        task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+     *        come from the default list of individual assessments that DMS supports for the associated migration task.
+     *        This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
      *        <p>
      *        You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the
      *        API operation.
      *        </p>
      *        <p>
-     *        To identify the names of the default individual assessments that AWS DMS supports for the associated
-     *        migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
+     *        To identify the names of the default individual assessments that DMS supports for the associated migration
+     *        task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own
      *        <code>ReplicationTaskArn</code> request parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

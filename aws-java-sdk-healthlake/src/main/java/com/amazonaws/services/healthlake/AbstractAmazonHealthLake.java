@@ -58,12 +58,37 @@ public class AbstractAmazonHealthLake implements AmazonHealthLake {
     }
 
     @Override
+    public ListFHIRExportJobsResult listFHIRExportJobs(ListFHIRExportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFHIRImportJobsResult listFHIRImportJobs(ListFHIRImportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartFHIRExportJobResult startFHIRExportJob(StartFHIRExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartFHIRImportJobResult startFHIRImportJob(StartFHIRImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

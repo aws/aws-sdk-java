@@ -53,6 +53,8 @@ public interface AmazonHealthLake {
      *         The user input parameter was invalid.
      * @throws ThrottlingException
      *         The user has exceeded their maximum number of allowed calls to the given API.
+     * @throws AccessDeniedException
+     *         Access is denied. Your account is not authorized to perform this operation.
      * @throws InternalServerException
      *         Unknown error occurs in the service.
      * @sample AmazonHealthLake.CreateFHIRDatastore
@@ -171,6 +173,69 @@ public interface AmazonHealthLake {
 
     /**
      * <p>
+     * Lists all FHIR export jobs associated with an account and their statuses.
+     * </p>
+     * 
+     * @param listFHIRExportJobsRequest
+     * @return Result of the ListFHIRExportJobs operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @throws AccessDeniedException
+     *         Access is denied. Your account is not authorized to perform this operation.
+     * @throws ThrottlingException
+     *         The user has exceeded their maximum number of allowed calls to the given API.
+     * @throws InternalServerException
+     *         Unknown error occurs in the service.
+     * @sample AmazonHealthLake.ListFHIRExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListFHIRExportJobsResult listFHIRExportJobs(ListFHIRExportJobsRequest listFHIRExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all FHIR import jobs associated with an account and their statuses.
+     * </p>
+     * 
+     * @param listFHIRImportJobsRequest
+     * @return Result of the ListFHIRImportJobs operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @throws AccessDeniedException
+     *         Access is denied. Your account is not authorized to perform this operation.
+     * @throws ThrottlingException
+     *         The user has exceeded their maximum number of allowed calls to the given API.
+     * @throws InternalServerException
+     *         Unknown error occurs in the service.
+     * @sample AmazonHealthLake.ListFHIRImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListFHIRImportJobsResult listFHIRImportJobs(ListFHIRImportJobsRequest listFHIRImportJobsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all existing tags associated with a Data Store.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @sample AmazonHealthLake.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Begins a FHIR export job.
      * </p>
      * 
@@ -214,6 +279,40 @@ public interface AmazonHealthLake {
      *      API Documentation</a>
      */
     StartFHIRImportJobResult startFHIRImportJob(StartFHIRImportJobRequest startFHIRImportJobRequest);
+
+    /**
+     * <p>
+     * Adds a user specifed key and value tag to a Data Store.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @sample AmazonHealthLake.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a Data Store.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         The user input parameter was invalid.
+     * @throws ResourceNotFoundException
+     *         The requested Data Store was not found.
+     * @sample AmazonHealthLake.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

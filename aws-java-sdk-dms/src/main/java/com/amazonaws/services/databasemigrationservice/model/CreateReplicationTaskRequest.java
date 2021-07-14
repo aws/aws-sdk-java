@@ -80,7 +80,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      */
     private String tableMappings;
@@ -88,7 +88,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      */
     private String replicationTaskSettings;
@@ -126,7 +126,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      */
@@ -155,7 +155,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
@@ -167,7 +167,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      */
@@ -532,13 +532,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public void setTableMappings(String tableMappings) {
@@ -549,13 +549,12 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return The table mappings for the task, in JSON format. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *         >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User
-     *         Guide.</i>
+     *         >Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public String getTableMappings() {
@@ -566,13 +565,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,13 +584,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
      *        Overall settings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
-     *        >Specifying Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+     *        >Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service
      *        User Guide.</i>
      */
 
@@ -603,12 +602,12 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Overall settings for the task, in JSON format. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
-     *         >Specifying Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+     *         >Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service
      *         User Guide.</i>
      */
 
@@ -620,13 +619,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
      *        Overall settings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
-     *        >Specifying Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+     *        >Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service
      *        User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -724,7 +723,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -752,7 +751,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *        </p>
      */
 
@@ -784,7 +783,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -811,7 +810,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *         >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *         >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *         </p>
      */
 
@@ -843,7 +842,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -871,7 +870,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1035,14 +1034,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -1054,13 +1053,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *         Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -1072,14 +1071,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1096,7 +1095,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      * 
@@ -1107,7 +1106,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
      *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
      *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      *        <code>EndpointArn</code>.
      */
 
@@ -1123,7 +1122,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      * 
@@ -1133,7 +1132,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
      *         <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
      *         <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     *         <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *         <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      *         <code>EndpointArn</code>.
      */
 
@@ -1149,7 +1148,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      * 
@@ -1160,7 +1159,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
      *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
      *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      *        <code>EndpointArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

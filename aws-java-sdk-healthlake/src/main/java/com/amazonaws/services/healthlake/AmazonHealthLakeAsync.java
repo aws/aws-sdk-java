@@ -223,6 +223,99 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
+     * Lists all FHIR export jobs associated with an account and their statuses.
+     * </p>
+     * 
+     * @param listFHIRExportJobsRequest
+     * @return A Java Future containing the result of the ListFHIRExportJobs operation returned by the service.
+     * @sample AmazonHealthLakeAsync.ListFHIRExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFHIRExportJobsResult> listFHIRExportJobsAsync(ListFHIRExportJobsRequest listFHIRExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all FHIR export jobs associated with an account and their statuses.
+     * </p>
+     * 
+     * @param listFHIRExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFHIRExportJobs operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.ListFHIRExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFHIRExportJobsResult> listFHIRExportJobsAsync(ListFHIRExportJobsRequest listFHIRExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFHIRExportJobsRequest, ListFHIRExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all FHIR import jobs associated with an account and their statuses.
+     * </p>
+     * 
+     * @param listFHIRImportJobsRequest
+     * @return A Java Future containing the result of the ListFHIRImportJobs operation returned by the service.
+     * @sample AmazonHealthLakeAsync.ListFHIRImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFHIRImportJobsResult> listFHIRImportJobsAsync(ListFHIRImportJobsRequest listFHIRImportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all FHIR import jobs associated with an account and their statuses.
+     * </p>
+     * 
+     * @param listFHIRImportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFHIRImportJobs operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.ListFHIRImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFHIRImportJobsResult> listFHIRImportJobsAsync(ListFHIRImportJobsRequest listFHIRImportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFHIRImportJobsRequest, ListFHIRImportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all existing tags associated with a Data Store.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonHealthLakeAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of all existing tags associated with a Data Store.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Begins a FHIR export job.
      * </p>
      * 
@@ -282,5 +375,67 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
      */
     java.util.concurrent.Future<StartFHIRImportJobResult> startFHIRImportJobAsync(StartFHIRImportJobRequest startFHIRImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<StartFHIRImportJobRequest, StartFHIRImportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a user specifed key and value tag to a Data Store.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonHealthLakeAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds a user specifed key and value tag to a Data Store.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a Data Store.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonHealthLakeAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a Data Store.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonHealthLakeAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

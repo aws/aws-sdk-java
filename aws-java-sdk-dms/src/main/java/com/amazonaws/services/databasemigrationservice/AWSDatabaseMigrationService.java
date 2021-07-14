@@ -27,17 +27,16 @@ import com.amazonaws.services.databasemigrationservice.waiters.AWSDatabaseMigrat
  * {@link com.amazonaws.services.databasemigrationservice.AbstractAWSDatabaseMigrationService} instead.
  * </p>
  * <p>
- * <fullname>AWS Database Migration Service</fullname>
+ * <fullname>Database Migration Service</fullname>
  * <p>
- * AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and
- * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora,
- * MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
- * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
- * Server to PostgreSQL.
+ * Database Migration Service (DMS) can migrate your data to and from the most widely used commercial and open-source
+ * databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP
+ * Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as
+ * heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
  * </p>
  * <p>
- * For more information about AWS DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
- * Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
+ * For more information about DMS, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is
+ * Database Migration Service?</a> in the <i>Database Migration Service User Guide.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -104,15 +103,15 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Adds metadata tags to an AWS DMS resource, including replication instance, endpoint, security group, and
-     * migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS
-     * resources, or used in a Condition statement in an IAM policy for DMS. For more information, see <a
+     * Adds metadata tags to an DMS resource, including replication instance, endpoint, security group, and migration
+     * task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or
+     * used in a Condition statement in an IAM policy for DMS. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type
      * description.
      * </p>
      * 
      * @param addTagsToResourceRequest
-     *        Associates a set of tags with an AWS DMS resource.
+     *        Associates a set of tags with an DMS resource.
      * @return Result of the AddTagsToResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -149,7 +148,7 @@ public interface AWSDatabaseMigrationService {
      * @param cancelReplicationTaskAssessmentRunRequest
      * @return Result of the CancelReplicationTaskAssessmentRun operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidResourceStateException
@@ -165,11 +164,19 @@ public interface AWSDatabaseMigrationService {
      * <p>
      * Creates an endpoint using the provided settings.
      * </p>
+     * <note>
+     * <p>
+     * For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code>
+     * request parameter on the <code>CreateEndpoint</code> API call. Specifying <code>DatabaseName</code> when you
+     * create a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+     * the database only when you specify the schema in the table-mapping rules of the DMS task.
+     * </p>
+     * </note>
      * 
      * @param createEndpointRequest
      * @return Result of the CreateEndpoint operation returned by the service.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws ResourceQuotaExceededException
@@ -179,7 +186,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws S3AccessDeniedException
      *         Insufficient privileges are preventing access to an Amazon S3 object.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
@@ -190,23 +197,23 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Creates an AWS DMS event notification subscription.
+     * Creates an DMS event notification subscription.
      * </p>
      * <p>
-     * You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of AWS
-     * DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (
+     * You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of DMS
+     * source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (
      * <code>EventCategories</code>) for events you want to be notified of. If you specify both the
      * <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and
      * <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for
      * the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>,
-     * you receive notice of the events for that source type for all your AWS DMS sources. If you don't specify either
-     * <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all AWS
-     * DMS sources belonging to your customer account.
+     * you receive notice of the events for that source type for all your DMS sources. If you don't specify either
+     * <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all DMS
+     * sources belonging to your customer account.
      * </p>
      * <p>
-     * For more information about AWS DMS events, see <a
+     * For more information about DMS events, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Notifications</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param createEventSubscriptionRequest
@@ -226,11 +233,11 @@ public interface AWSDatabaseMigrationService {
      * @throws KMSDisabledException
      *         The specified master key (CMK) isn't enabled.
      * @throws KMSInvalidStateException
-     *         The state of the specified AWS KMS resource isn't valid for this request.
+     *         The state of the specified KMS resource isn't valid for this request.
      * @throws KMSNotFoundException
-     *         The specified AWS KMS entity or resource can't be found.
+     *         The specified KMS entity or resource can't be found.
      * @throws KMSThrottlingException
-     *         This request triggered AWS KMS request throttling.
+     *         This request triggered KMS request throttling.
      * @sample AWSDatabaseMigrationService.CreateEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -242,18 +249,18 @@ public interface AWSDatabaseMigrationService {
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
-     * AWS DMS requires that your account have certain roles with appropriate permissions before you can create a
+     * DMS requires that your account have certain roles with appropriate permissions before you can create a
      * replication instance. For information on the required roles, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.APIRole">Creating the IAM
-     * Roles to Use With the AWS CLI and AWS DMS API</a>. For information on the required permissions, see <a
+     * Roles to Use With the CLI and DMS API</a>. For information on the required permissions, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
-     * Permissions Needed to Use AWS DMS</a>.
+     * Permissions Needed to Use DMS</a>.
      * </p>
      * 
      * @param createReplicationInstanceRequest
      * @return Result of the CreateReplicationInstance operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws InsufficientResourceCapacityException
@@ -272,7 +279,7 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidSubnetException
      *         The subnet provided is invalid.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.CreateReplicationInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance" target="_top">AWS
      *      API Documentation</a>
@@ -287,7 +294,7 @@ public interface AWSDatabaseMigrationService {
      * @param createReplicationSubnetGroupRequest
      * @return Result of the CreateReplicationSubnetGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws ResourceNotFoundException
@@ -313,7 +320,7 @@ public interface AWSDatabaseMigrationService {
      * @param createReplicationTaskRequest
      * @return Result of the CreateReplicationTask operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceAlreadyExistsException
@@ -321,7 +328,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.CreateReplicationTask
@@ -355,7 +362,7 @@ public interface AWSDatabaseMigrationService {
      * @param deleteConnectionRequest
      * @return Result of the DeleteConnection operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidResourceStateException
@@ -391,7 +398,7 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Deletes an AWS DMS event subscription.
+     * Deletes an DMS event subscription.
      * </p>
      * 
      * @param deleteEventSubscriptionRequest
@@ -468,14 +475,14 @@ public interface AWSDatabaseMigrationService {
      * Deletes the record of a single premigration assessment run.
      * </p>
      * <p>
-     * This operation removes all metadata that AWS DMS maintains about this assessment run. However, the operation
-     * leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket.
+     * This operation removes all metadata that DMS maintains about this assessment run. However, the operation leaves
+     * untouched all information about this assessment run that is stored in your Amazon S3 bucket.
      * </p>
      * 
      * @param deleteReplicationTaskAssessmentRunRequest
      * @return Result of the DeleteReplicationTaskAssessmentRun operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidResourceStateException
@@ -489,11 +496,11 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Lists all of the AWS DMS attributes for a customer account. These attributes include AWS DMS quotas for the
-     * account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
-     * supported by the account, such as the number of replication instances allowed. The description for each resource
-     * quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the
-     * unique account identifier to name each artifact used by DMS in the given region.
+     * Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the account and a
+     * unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas supported by
+     * the account, such as the number of replication instances allowed. The description for each resource quota,
+     * includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the unique
+     * account identifier to name each artifact used by DMS in the given region.
      * </p>
      * <p>
      * This command does not take any parameters.
@@ -534,7 +541,7 @@ public interface AWSDatabaseMigrationService {
      * @param describeApplicableIndividualAssessmentsRequest
      * @return Result of the DescribeApplicableIndividualAssessments operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidResourceStateException
@@ -624,7 +631,7 @@ public interface AWSDatabaseMigrationService {
      * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
      * the event categories and source types in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Notifications</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param describeEventCategoriesRequest
@@ -658,9 +665,9 @@ public interface AWSDatabaseMigrationService {
     /**
      * <p>
      * Lists events for a given source identifier and source type. You can also specify a start and end time. For more
-     * information on AWS DMS events, see <a
+     * information on DMS events, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-     * Notifications</a> in the <i>AWS Database Migration User Guide.</i>
+     * Notifications</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param describeEventsRequest
@@ -767,7 +774,15 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Returns the task assessment results from Amazon S3. This action always returns the latest results.
+     * Returns the task assessment results from the Amazon S3 bucket that DMS creates in your account. This action
+     * always returns the latest results.
+     * </p>
+     * <p>
+     * For more information about DMS task assessments, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task
+     * assessment report</a> in the <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> Database
+     * Migration Service User Guide</a>.
      * </p>
      * 
      * @param describeReplicationTaskAssessmentResultsRequest
@@ -866,7 +881,7 @@ public interface AWSDatabaseMigrationService {
      * rows deleted.
      * </p>
      * <p>
-     * Note that the "last updated" column the DMS console only indicates the time that AWS DMS last updated the table
+     * Note that the "last updated" column the DMS console only indicates the time that DMS last updated the table
      * statistics record for a table. It does not indicate the time of the last update to the table.
      * </p>
      * 
@@ -903,8 +918,8 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Lists all metadata tags attached to an AWS DMS resource, including replication instance, endpoint, security
-     * group, and migration task. For more information, see <a
+     * Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, security group,
+     * and migration task. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type
      * description.
      * </p>
@@ -923,6 +938,14 @@ public interface AWSDatabaseMigrationService {
      * <p>
      * Modifies the specified endpoint.
      * </p>
+     * <note>
+     * <p>
+     * For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code>
+     * request parameter on the <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you
+     * modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+     * the database only when you specify the schema in the table-mapping rules of the DMS task.
+     * </p>
+     * </note>
      * 
      * @param modifyEndpointRequest
      * @return Result of the ModifyEndpoint operation returned by the service.
@@ -933,9 +956,9 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.ModifyEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -944,7 +967,7 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Modifies an existing AWS DMS event notification subscription.
+     * Modifies an existing DMS event notification subscription.
      * </p>
      * 
      * @param modifyEventSubscriptionRequest
@@ -962,11 +985,11 @@ public interface AWSDatabaseMigrationService {
      * @throws KMSDisabledException
      *         The specified master key (CMK) isn't enabled.
      * @throws KMSInvalidStateException
-     *         The state of the specified AWS KMS resource isn't valid for this request.
+     *         The state of the specified KMS resource isn't valid for this request.
      * @throws KMSNotFoundException
-     *         The specified AWS KMS entity or resource can't be found.
+     *         The specified KMS entity or resource can't be found.
      * @throws KMSThrottlingException
-     *         This request triggered AWS KMS request throttling.
+     *         This request triggered KMS request throttling.
      * @sample AWSDatabaseMigrationService.ModifyEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription" target="_top">AWS
      *      API Documentation</a>
@@ -986,7 +1009,7 @@ public interface AWSDatabaseMigrationService {
      * @param modifyReplicationInstanceRequest
      * @return Result of the ModifyReplicationInstance operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceAlreadyExistsException
@@ -1013,7 +1036,7 @@ public interface AWSDatabaseMigrationService {
      * @param modifyReplicationSubnetGroupRequest
      * @return Result of the ModifyReplicationSubnetGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws ResourceQuotaExceededException
@@ -1039,9 +1062,9 @@ public interface AWSDatabaseMigrationService {
      * You can't modify the task endpoints. The task must be stopped before you can modify it.
      * </p>
      * <p>
-     * For more information about AWS DMS tasks, see <a
+     * For more information about DMS tasks, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks</a> in the
-     * <i>AWS Database Migration Service User Guide</i>.
+     * <i>Database Migration Service User Guide</i>.
      * </p>
      * 
      * @param modifyReplicationTaskRequest
@@ -1053,7 +1076,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceAlreadyExistsException
      *         The resource you are attempting to create already exists.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.ModifyReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask" target="_top">AWS API
      *      Documentation</a>
@@ -1063,20 +1086,20 @@ public interface AWSDatabaseMigrationService {
     /**
      * <p>
      * Moves a replication task from its current replication instance to a different target replication instance using
-     * the specified parameters. The target replication instance must be created with the same or later AWS DMS version
-     * as the current replication instance.
+     * the specified parameters. The target replication instance must be created with the same or later DMS version as
+     * the current replication instance.
      * </p>
      * 
      * @param moveReplicationTaskRequest
      * @return Result of the MoveReplicationTask operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.MoveReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask" target="_top">AWS API
      *      Documentation</a>
@@ -1114,7 +1137,7 @@ public interface AWSDatabaseMigrationService {
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.RefreshSchemas
@@ -1142,14 +1165,14 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Removes metadata tags from an AWS DMS resource, including replication instance, endpoint, security group, and
+     * Removes metadata tags from an DMS resource, including replication instance, endpoint, security group, and
      * migration task. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type
      * description.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
-     *        Removes one or more tags from an AWS DMS resource.
+     *        Removes one or more tags from an DMS resource.
      * @return Result of the RemoveTagsFromResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -1164,9 +1187,9 @@ public interface AWSDatabaseMigrationService {
      * Starts the replication task.
      * </p>
      * <p>
-     * For more information about AWS DMS tasks, see <a
+     * For more information about DMS tasks, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the
-     * <i>AWS Database Migration Service User Guide.</i>
+     * <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param startReplicationTaskRequest
@@ -1176,7 +1199,7 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.StartReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask" target="_top">AWS API
      *      Documentation</a>
@@ -1214,7 +1237,7 @@ public interface AWSDatabaseMigrationService {
      * @param startReplicationTaskAssessmentRunRequest
      * @return Result of the StartReplicationTaskAssessmentRun operation returned by the service.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidResourceStateException
@@ -1224,13 +1247,13 @@ public interface AWSDatabaseMigrationService {
      * @throws KMSDisabledException
      *         The specified master key (CMK) isn't enabled.
      * @throws KMSException
-     *         An AWS Key Management Service (AWS KMS) error is preventing access to AWS KMS.
+     *         An Key Management Service (KMS) error is preventing access to KMS.
      * @throws KMSInvalidStateException
-     *         The state of the specified AWS KMS resource isn't valid for this request.
+     *         The state of the specified KMS resource isn't valid for this request.
      * @throws KMSNotFoundException
-     *         The specified AWS KMS entity or resource can't be found.
+     *         The specified KMS entity or resource can't be found.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @throws S3AccessDeniedException
      *         Insufficient privileges are preventing access to an Amazon S3 object.
      * @throws S3ResourceNotFoundException
@@ -1272,11 +1295,11 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws KMSKeyNotAccessibleException
-     *         AWS DMS cannot access the AWS KMS key.
+     *         DMS cannot access the KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
      * @throws AccessDeniedException
-     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.TestConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection" target="_top">AWS API
      *      Documentation</a>

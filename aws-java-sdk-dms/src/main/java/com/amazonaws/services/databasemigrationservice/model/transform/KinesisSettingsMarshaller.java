@@ -45,6 +45,8 @@ public class KinesisSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeControlDetails").build();
     private static final MarshallingInfo<Boolean> INCLUDENULLANDEMPTY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeNullAndEmpty").build();
+    private static final MarshallingInfo<Boolean> NOHEXPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NoHexPrefix").build();
 
     private static final KinesisSettingsMarshaller instance = new KinesisSettingsMarshaller();
 
@@ -71,6 +73,7 @@ public class KinesisSettingsMarshaller {
             protocolMarshaller.marshall(kinesisSettings.getIncludeTableAlterOperations(), INCLUDETABLEALTEROPERATIONS_BINDING);
             protocolMarshaller.marshall(kinesisSettings.getIncludeControlDetails(), INCLUDECONTROLDETAILS_BINDING);
             protocolMarshaller.marshall(kinesisSettings.getIncludeNullAndEmpty(), INCLUDENULLANDEMPTY_BINDING);
+            protocolMarshaller.marshall(kinesisSettings.getNoHexPrefix(), NOHEXPREFIX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

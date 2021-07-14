@@ -80,9 +80,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      */
@@ -139,7 +139,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -171,7 +171,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -196,7 +196,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -566,9 +566,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      * 
@@ -578,9 +578,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     *        >Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a
+     *        href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      */
 
@@ -597,9 +597,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      * 
@@ -608,9 +608,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *         Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *         <code>pkg</code>. For a complete list, see the <a href=
-     *         "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     *         >Dev Guide</a>.
+     *         <code>pkg</code>. For a complete list, see the <a
+     *         href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      */
 
@@ -627,9 +627,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      * 
@@ -639,9 +639,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     *        >Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a
+     *        href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -973,7 +973,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -996,7 +996,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -1024,7 +1024,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1046,7 +1046,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -1074,7 +1074,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1097,7 +1097,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1134,7 +1134,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1163,7 +1163,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -1198,7 +1198,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1226,7 +1226,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -1261,7 +1261,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1290,7 +1290,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1320,7 +1320,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1343,7 +1343,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -1371,7 +1371,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1393,7 +1393,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -1421,7 +1421,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1444,7 +1444,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1474,7 +1474,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1496,7 +1496,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */

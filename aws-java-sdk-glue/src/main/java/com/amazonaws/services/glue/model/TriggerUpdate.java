@@ -62,6 +62,13 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Predicate predicate;
+    /**
+     * <p>
+     * Batch condition that must be met (specified number of events received or batch time window expired) before
+     * EventBridge event trigger fires.
+     * </p>
+     */
+    private EventBatchingCondition eventBatchingCondition;
 
     /**
      * <p>
@@ -312,6 +319,52 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Batch condition that must be met (specified number of events received or batch time window expired) before
+     * EventBridge event trigger fires.
+     * </p>
+     * 
+     * @param eventBatchingCondition
+     *        Batch condition that must be met (specified number of events received or batch time window expired) before
+     *        EventBridge event trigger fires.
+     */
+
+    public void setEventBatchingCondition(EventBatchingCondition eventBatchingCondition) {
+        this.eventBatchingCondition = eventBatchingCondition;
+    }
+
+    /**
+     * <p>
+     * Batch condition that must be met (specified number of events received or batch time window expired) before
+     * EventBridge event trigger fires.
+     * </p>
+     * 
+     * @return Batch condition that must be met (specified number of events received or batch time window expired)
+     *         before EventBridge event trigger fires.
+     */
+
+    public EventBatchingCondition getEventBatchingCondition() {
+        return this.eventBatchingCondition;
+    }
+
+    /**
+     * <p>
+     * Batch condition that must be met (specified number of events received or batch time window expired) before
+     * EventBridge event trigger fires.
+     * </p>
+     * 
+     * @param eventBatchingCondition
+     *        Batch condition that must be met (specified number of events received or batch time window expired) before
+     *        EventBridge event trigger fires.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TriggerUpdate withEventBatchingCondition(EventBatchingCondition eventBatchingCondition) {
+        setEventBatchingCondition(eventBatchingCondition);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -332,7 +385,9 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
         if (getActions() != null)
             sb.append("Actions: ").append(getActions()).append(",");
         if (getPredicate() != null)
-            sb.append("Predicate: ").append(getPredicate());
+            sb.append("Predicate: ").append(getPredicate()).append(",");
+        if (getEventBatchingCondition() != null)
+            sb.append("EventBatchingCondition: ").append(getEventBatchingCondition());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +422,10 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPredicate() != null && other.getPredicate().equals(this.getPredicate()) == false)
             return false;
+        if (other.getEventBatchingCondition() == null ^ this.getEventBatchingCondition() == null)
+            return false;
+        if (other.getEventBatchingCondition() != null && other.getEventBatchingCondition().equals(this.getEventBatchingCondition()) == false)
+            return false;
         return true;
     }
 
@@ -380,6 +439,7 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getPredicate() == null) ? 0 : getPredicate().hashCode());
+        hashCode = prime * hashCode + ((getEventBatchingCondition() == null) ? 0 : getEventBatchingCondition().hashCode());
         return hashCode;
     }
 

@@ -76,6 +76,18 @@ public class PostgreSQLSettingsJsonUnmarshaller implements Unmarshaller<PostgreS
                     context.nextToken();
                     postgreSQLSettings.setFailTasksOnLobTruncation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("HeartbeatEnable", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setHeartbeatEnable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("HeartbeatSchema", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setHeartbeatSchema(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HeartbeatFrequency", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setHeartbeatFrequency(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
                     postgreSQLSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
@@ -95,6 +107,10 @@ public class PostgreSQLSettingsJsonUnmarshaller implements Unmarshaller<PostgreS
                 if (context.testExpression("SlotName", targetDepth)) {
                     context.nextToken();
                     postgreSQLSettings.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PluginName", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setPluginName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
                     context.nextToken();

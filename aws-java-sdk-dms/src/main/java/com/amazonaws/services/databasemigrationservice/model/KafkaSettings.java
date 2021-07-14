@@ -36,13 +36,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
      * list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
-     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     * Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      */
     private String broker;
     /**
      * <p>
-     * The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     * The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      * <code>"kafka-default-topic"</code> as the migration topic.
      * </p>
      */
@@ -64,7 +64,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     private Boolean includeTransactionDetails;
     /**
      * <p>
-     * Shows the partition value within the Kafka message output, unless the partition type is
+     * Shows the partition value within the Kafka message output unless the partition type is
      * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      */
@@ -134,14 +134,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     private String sslClientKeyPassword;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to securely
      * connect to your Kafka target endpoint.
      * </p>
      */
     private String sslCaCertificateArn;
     /**
      * <p>
-     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * The secure user name you created when you first set up your MSK cluster to validate a client identity and make an
      * encrypted connection between server and client using SASL-SSL authentication.
      * </p>
      */
@@ -153,6 +153,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String saslPassword;
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kafka target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kafka.
+     * </p>
+     */
+    private Boolean noHexPrefix;
 
     /**
      * <p>
@@ -161,7 +168,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
      * list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
-     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     * Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * 
      * @param broker
@@ -170,7 +177,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      *        . For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and
      *        examples of specifying a list of broker locations, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     *        target for AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     *        target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      */
 
     public void setBroker(String broker) {
@@ -184,7 +191,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
      * list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
-     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     * Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * 
      * @return A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka
@@ -193,7 +200,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      *         <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of
      *         specifying a list of broker locations, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     *         target for AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     *         target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      */
 
     public String getBroker() {
@@ -207,7 +214,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
      * list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
-     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     * Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * 
      * @param broker
@@ -216,7 +223,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      *        . For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and
      *        examples of specifying a list of broker locations, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
-     *        target for AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
+     *        target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,12 +234,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     * The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      * <code>"kafka-default-topic"</code> as the migration topic.
      * </p>
      * 
      * @param topic
-     *        The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     *        The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      *        <code>"kafka-default-topic"</code> as the migration topic.
      */
 
@@ -242,11 +249,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     * The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      * <code>"kafka-default-topic"</code> as the migration topic.
      * </p>
      * 
-     * @return The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     * @return The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      *         <code>"kafka-default-topic"</code> as the migration topic.
      */
 
@@ -256,12 +263,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     * The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      * <code>"kafka-default-topic"</code> as the migration topic.
      * </p>
      * 
      * @param topic
-     *        The topic to which you migrate the data. If you don't specify a topic, AWS DMS specifies
+     *        The topic to which you migrate the data. If you don't specify a topic, DMS specifies
      *        <code>"kafka-default-topic"</code> as the migration topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -412,12 +419,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Shows the partition value within the Kafka message output, unless the partition type is
+     * Shows the partition value within the Kafka message output unless the partition type is
      * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includePartitionValue
-     *        Shows the partition value within the Kafka message output, unless the partition type is
+     *        Shows the partition value within the Kafka message output unless the partition type is
      *        <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
@@ -427,11 +434,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Shows the partition value within the Kafka message output, unless the partition type is
+     * Shows the partition value within the Kafka message output unless the partition type is
      * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
-     * @return Shows the partition value within the Kafka message output, unless the partition type is
+     * @return Shows the partition value within the Kafka message output unless the partition type is
      *         <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
@@ -441,12 +448,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Shows the partition value within the Kafka message output, unless the partition type is
+     * Shows the partition value within the Kafka message output unless the partition type is
      * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includePartitionValue
-     *        Shows the partition value within the Kafka message output, unless the partition type is
+     *        Shows the partition value within the Kafka message output unless the partition type is
      *        <code>schema-table-type</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -458,11 +465,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Shows the partition value within the Kafka message output, unless the partition type is
+     * Shows the partition value within the Kafka message output unless the partition type is
      * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
-     * @return Shows the partition value within the Kafka message output, unless the partition type is
+     * @return Shows the partition value within the Kafka message output unless the partition type is
      *         <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
@@ -977,13 +984,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to securely
      * connect to your Kafka target endpoint.
      * </p>
      * 
      * @param sslCaCertificateArn
-     *        The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to
-     *        securely connect to your Kafka target endpoint.
+     *        The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to securely
+     *        connect to your Kafka target endpoint.
      */
 
     public void setSslCaCertificateArn(String sslCaCertificateArn) {
@@ -992,11 +999,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to securely
      * connect to your Kafka target endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to
+     * @return The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to
      *         securely connect to your Kafka target endpoint.
      */
 
@@ -1006,13 +1013,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to securely
      * connect to your Kafka target endpoint.
      * </p>
      * 
      * @param sslCaCertificateArn
-     *        The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to
-     *        securely connect to your Kafka target endpoint.
+     *        The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses to securely
+     *        connect to your Kafka target endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1023,12 +1030,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * The secure user name you created when you first set up your MSK cluster to validate a client identity and make an
      * encrypted connection between server and client using SASL-SSL authentication.
      * </p>
      * 
      * @param saslUsername
-     *        The secure username you created when you first set up your MSK cluster to validate a client identity and
+     *        The secure user name you created when you first set up your MSK cluster to validate a client identity and
      *        make an encrypted connection between server and client using SASL-SSL authentication.
      */
 
@@ -1038,11 +1045,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * The secure user name you created when you first set up your MSK cluster to validate a client identity and make an
      * encrypted connection between server and client using SASL-SSL authentication.
      * </p>
      * 
-     * @return The secure username you created when you first set up your MSK cluster to validate a client identity and
+     * @return The secure user name you created when you first set up your MSK cluster to validate a client identity and
      *         make an encrypted connection between server and client using SASL-SSL authentication.
      */
 
@@ -1052,12 +1059,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * The secure user name you created when you first set up your MSK cluster to validate a client identity and make an
      * encrypted connection between server and client using SASL-SSL authentication.
      * </p>
      * 
      * @param saslUsername
-     *        The secure username you created when you first set up your MSK cluster to validate a client identity and
+     *        The secure user name you created when you first set up your MSK cluster to validate a client identity and
      *        make an encrypted connection between server and client using SASL-SSL authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1114,6 +1121,70 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kafka target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kafka.
+     * </p>
+     * 
+     * @param noHexPrefix
+     *        If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *        migrated to a Kafka target. If this attribute is N, all hexadecimal values include this prefix when
+     *        migrated to Kafka.
+     */
+
+    public void setNoHexPrefix(Boolean noHexPrefix) {
+        this.noHexPrefix = noHexPrefix;
+    }
+
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kafka target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kafka.
+     * </p>
+     * 
+     * @return If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *         migrated to a Kafka target. If this attribute is N, all hexadecimal values include this prefix when
+     *         migrated to Kafka.
+     */
+
+    public Boolean getNoHexPrefix() {
+        return this.noHexPrefix;
+    }
+
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kafka target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kafka.
+     * </p>
+     * 
+     * @param noHexPrefix
+     *        If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *        migrated to a Kafka target. If this attribute is N, all hexadecimal values include this prefix when
+     *        migrated to Kafka.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withNoHexPrefix(Boolean noHexPrefix) {
+        setNoHexPrefix(noHexPrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when migrated to
+     * a Kafka target. If this attribute is N, all hexadecimal values include this prefix when migrated to Kafka.
+     * </p>
+     * 
+     * @return If this attribute is Y, it allows hexadecimal values that don't have the <code>0x</code> prefix when
+     *         migrated to a Kafka target. If this attribute is N, all hexadecimal values include this prefix when
+     *         migrated to Kafka.
+     */
+
+    public Boolean isNoHexPrefix() {
+        return this.noHexPrefix;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1158,7 +1229,9 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSaslUsername() != null)
             sb.append("SaslUsername: ").append(getSaslUsername()).append(",");
         if (getSaslPassword() != null)
-            sb.append("SaslPassword: ").append("***Sensitive Data Redacted***");
+            sb.append("SaslPassword: ").append("***Sensitive Data Redacted***").append(",");
+        if (getNoHexPrefix() != null)
+            sb.append("NoHexPrefix: ").append(getNoHexPrefix());
         sb.append("}");
         return sb.toString();
     }
@@ -1241,6 +1314,10 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSaslPassword() != null && other.getSaslPassword().equals(this.getSaslPassword()) == false)
             return false;
+        if (other.getNoHexPrefix() == null ^ this.getNoHexPrefix() == null)
+            return false;
+        if (other.getNoHexPrefix() != null && other.getNoHexPrefix().equals(this.getNoHexPrefix()) == false)
+            return false;
         return true;
     }
 
@@ -1266,6 +1343,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSslCaCertificateArn() == null) ? 0 : getSslCaCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getSaslUsername() == null) ? 0 : getSaslUsername().hashCode());
         hashCode = prime * hashCode + ((getSaslPassword() == null) ? 0 : getSaslPassword().hashCode());
+        hashCode = prime * hashCode + ((getNoHexPrefix() == null) ? 0 : getNoHexPrefix().hashCode());
         return hashCode;
     }
 

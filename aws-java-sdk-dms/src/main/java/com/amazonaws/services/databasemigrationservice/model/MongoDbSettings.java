@@ -118,18 +118,18 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     private String authSource;
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a
+     * value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default
+     * encryption key for your account. Your account has a different default encryption key for each Region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MongoDB endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MongoDB endpoint.
      * </p>
      * <note>
      * <p>
@@ -137,10 +137,9 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      */
@@ -856,17 +855,16 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a
+     * value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default
+     * encryption key for your account. Your account has a different default encryption key for each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        The KMS key identifier that is used to encrypt the content on the replication instance. If you don't
+     *        specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS
+     *        creates the default encryption key for your account. Your account has a different default encryption key
+     *        for each Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -875,16 +873,15 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a
+     * value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default
+     * encryption key for your account. Your account has a different default encryption key for each Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *         specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
-     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     * @return The KMS key identifier that is used to encrypt the content on the replication instance. If you don't
+     *         specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS
+     *         creates the default encryption key for your account. Your account has a different default encryption key
+     *         for each Region.
      */
 
     public String getKmsKeyId() {
@@ -893,17 +890,16 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify
-     * a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key. AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a different default encryption key for each
-     * AWS Region.
+     * The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a
+     * value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default
+     * encryption key for your account. Your account has a different default encryption key for each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier that is used to encrypt the content on the replication instance. If you don't
-     *        specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption key.
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        The KMS key identifier that is used to encrypt the content on the replication instance. If you don't
+     *        specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS
+     *        creates the default encryption key for your account. Your account has a different default encryption key
+     *        for each Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -914,9 +910,10 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MongoDB endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MongoDB endpoint.
      * </p>
      * <note>
      * <p>
@@ -924,28 +921,27 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the MongoDB endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -955,9 +951,10 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MongoDB endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MongoDB endpoint.
      * </p>
      * <note>
      * <p>
@@ -965,27 +962,26 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *         the MongoDB endpoint.</p> <note>
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *         the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow
+     *         the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *         Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
      *         <p>
      *         You can specify one of two sets of values for these permissions. You can specify the values for this
      *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *         see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *         Service User Guide</i>.
+     *         see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -995,9 +991,10 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MongoDB endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MongoDB endpoint.
      * </p>
      * <note>
      * <p>
@@ -1005,28 +1002,27 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the MongoDB endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

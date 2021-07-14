@@ -37,6 +37,8 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private InputDataConfig inputDataConfig;
+
+    private OutputDataConfig jobOutputDataConfig;
     /**
      * <p>
      * The AWS-generated Data Store ID.
@@ -133,6 +135,32 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     public StartFHIRImportJobRequest withInputDataConfig(InputDataConfig inputDataConfig) {
         setInputDataConfig(inputDataConfig);
+        return this;
+    }
+
+    /**
+     * @param jobOutputDataConfig
+     */
+
+    public void setJobOutputDataConfig(OutputDataConfig jobOutputDataConfig) {
+        this.jobOutputDataConfig = jobOutputDataConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public OutputDataConfig getJobOutputDataConfig() {
+        return this.jobOutputDataConfig;
+    }
+
+    /**
+     * @param jobOutputDataConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartFHIRImportJobRequest withJobOutputDataConfig(OutputDataConfig jobOutputDataConfig) {
+        setJobOutputDataConfig(jobOutputDataConfig);
         return this;
     }
 
@@ -272,6 +300,8 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
+        if (getJobOutputDataConfig() != null)
+            sb.append("JobOutputDataConfig: ").append(getJobOutputDataConfig()).append(",");
         if (getDatastoreId() != null)
             sb.append("DatastoreId: ").append(getDatastoreId()).append(",");
         if (getDataAccessRoleArn() != null)
@@ -300,6 +330,10 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getInputDataConfig() != null && other.getInputDataConfig().equals(this.getInputDataConfig()) == false)
             return false;
+        if (other.getJobOutputDataConfig() == null ^ this.getJobOutputDataConfig() == null)
+            return false;
+        if (other.getJobOutputDataConfig() != null && other.getJobOutputDataConfig().equals(this.getJobOutputDataConfig()) == false)
+            return false;
         if (other.getDatastoreId() == null ^ this.getDatastoreId() == null)
             return false;
         if (other.getDatastoreId() != null && other.getDatastoreId().equals(this.getDatastoreId()) == false)
@@ -322,6 +356,7 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getJobOutputDataConfig() == null) ? 0 : getJobOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getDatastoreId() == null) ? 0 : getDatastoreId().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());

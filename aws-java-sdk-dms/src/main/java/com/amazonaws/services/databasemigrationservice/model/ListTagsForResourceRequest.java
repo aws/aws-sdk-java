@@ -28,18 +28,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -48,10 +48,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     * @return The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      */
 
     public String getResourceArn() {
@@ -60,11 +60,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     * The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS resource.
+     *        The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

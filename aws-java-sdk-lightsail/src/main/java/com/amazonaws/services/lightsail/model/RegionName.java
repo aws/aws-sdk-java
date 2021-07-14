@@ -33,7 +33,8 @@ public enum RegionName {
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
     ApNortheast1("ap-northeast-1"),
-    ApNortheast2("ap-northeast-2");
+    ApNortheast2("ap-northeast-2"),
+    EuNorth1("eu-north-1");
 
     private String value;
 

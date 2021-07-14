@@ -73,6 +73,12 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
     private String datastoreEndpoint;
     /**
      * <p>
+     * The server-side encryption key configuration for a customer provided encryption key (CMK).
+     * </p>
+     */
+    private SseConfiguration sseConfiguration;
+    /**
+     * <p>
      * The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * </p>
      */
@@ -404,6 +410,46 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The server-side encryption key configuration for a customer provided encryption key (CMK).
+     * </p>
+     * 
+     * @param sseConfiguration
+     *        The server-side encryption key configuration for a customer provided encryption key (CMK).
+     */
+
+    public void setSseConfiguration(SseConfiguration sseConfiguration) {
+        this.sseConfiguration = sseConfiguration;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption key configuration for a customer provided encryption key (CMK).
+     * </p>
+     * 
+     * @return The server-side encryption key configuration for a customer provided encryption key (CMK).
+     */
+
+    public SseConfiguration getSseConfiguration() {
+        return this.sseConfiguration;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption key configuration for a customer provided encryption key (CMK).
+     * </p>
+     * 
+     * @param sseConfiguration
+     *        The server-side encryption key configuration for a customer provided encryption key (CMK).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatastoreProperties withSseConfiguration(SseConfiguration sseConfiguration) {
+        setSseConfiguration(sseConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.
      * </p>
      * 
@@ -468,6 +514,8 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
             sb.append("DatastoreTypeVersion: ").append(getDatastoreTypeVersion()).append(",");
         if (getDatastoreEndpoint() != null)
             sb.append("DatastoreEndpoint: ").append(getDatastoreEndpoint()).append(",");
+        if (getSseConfiguration() != null)
+            sb.append("SseConfiguration: ").append(getSseConfiguration()).append(",");
         if (getPreloadDataConfig() != null)
             sb.append("PreloadDataConfig: ").append(getPreloadDataConfig());
         sb.append("}");
@@ -512,6 +560,10 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getDatastoreEndpoint() != null && other.getDatastoreEndpoint().equals(this.getDatastoreEndpoint()) == false)
             return false;
+        if (other.getSseConfiguration() == null ^ this.getSseConfiguration() == null)
+            return false;
+        if (other.getSseConfiguration() != null && other.getSseConfiguration().equals(this.getSseConfiguration()) == false)
+            return false;
         if (other.getPreloadDataConfig() == null ^ this.getPreloadDataConfig() == null)
             return false;
         if (other.getPreloadDataConfig() != null && other.getPreloadDataConfig().equals(this.getPreloadDataConfig()) == false)
@@ -531,6 +583,7 @@ public class DatastoreProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDatastoreTypeVersion() == null) ? 0 : getDatastoreTypeVersion().hashCode());
         hashCode = prime * hashCode + ((getDatastoreEndpoint() == null) ? 0 : getDatastoreEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getSseConfiguration() == null) ? 0 : getSseConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPreloadDataConfig() == null) ? 0 : getPreloadDataConfig().hashCode());
         return hashCode;
     }

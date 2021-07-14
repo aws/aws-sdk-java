@@ -90,6 +90,12 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private WorkflowGraph graph;
+    /**
+     * <p>
+     * The batch condition that started the workflow run.
+     * </p>
+     */
+    private StartingEventBatchCondition startingEventBatchCondition;
 
     /**
      * <p>
@@ -551,6 +557,46 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The batch condition that started the workflow run.
+     * </p>
+     * 
+     * @param startingEventBatchCondition
+     *        The batch condition that started the workflow run.
+     */
+
+    public void setStartingEventBatchCondition(StartingEventBatchCondition startingEventBatchCondition) {
+        this.startingEventBatchCondition = startingEventBatchCondition;
+    }
+
+    /**
+     * <p>
+     * The batch condition that started the workflow run.
+     * </p>
+     * 
+     * @return The batch condition that started the workflow run.
+     */
+
+    public StartingEventBatchCondition getStartingEventBatchCondition() {
+        return this.startingEventBatchCondition;
+    }
+
+    /**
+     * <p>
+     * The batch condition that started the workflow run.
+     * </p>
+     * 
+     * @param startingEventBatchCondition
+     *        The batch condition that started the workflow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowRun withStartingEventBatchCondition(StartingEventBatchCondition startingEventBatchCondition) {
+        setStartingEventBatchCondition(startingEventBatchCondition);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -581,7 +627,9 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
         if (getStatistics() != null)
             sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getGraph() != null)
-            sb.append("Graph: ").append(getGraph());
+            sb.append("Graph: ").append(getGraph()).append(",");
+        if (getStartingEventBatchCondition() != null)
+            sb.append("StartingEventBatchCondition: ").append(getStartingEventBatchCondition());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +684,10 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGraph() != null && other.getGraph().equals(this.getGraph()) == false)
             return false;
+        if (other.getStartingEventBatchCondition() == null ^ this.getStartingEventBatchCondition() == null)
+            return false;
+        if (other.getStartingEventBatchCondition() != null && other.getStartingEventBatchCondition().equals(this.getStartingEventBatchCondition()) == false)
+            return false;
         return true;
     }
 
@@ -654,6 +706,7 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getGraph() == null) ? 0 : getGraph().hashCode());
+        hashCode = prime * hashCode + ((getStartingEventBatchCondition() == null) ? 0 : getStartingEventBatchCondition().hashCode());
         return hashCode;
     }
 

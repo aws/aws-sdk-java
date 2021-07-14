@@ -49,6 +49,8 @@ public class WorkflowRunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Statistics").build();
     private static final MarshallingInfo<StructuredPojo> GRAPH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Graph").build();
+    private static final MarshallingInfo<StructuredPojo> STARTINGEVENTBATCHCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingEventBatchCondition").build();
 
     private static final WorkflowRunMarshaller instance = new WorkflowRunMarshaller();
 
@@ -76,6 +78,7 @@ public class WorkflowRunMarshaller {
             protocolMarshaller.marshall(workflowRun.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(workflowRun.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(workflowRun.getGraph(), GRAPH_BINDING);
+            protocolMarshaller.marshall(workflowRun.getStartingEventBatchCondition(), STARTINGEVENTBATCHCONDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -70,6 +70,8 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private InputDataConfig inputDataConfig;
+
+    private OutputDataConfig jobOutputDataConfig;
     /**
      * <p>
      * The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
@@ -383,6 +385,32 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * @param jobOutputDataConfig
+     */
+
+    public void setJobOutputDataConfig(OutputDataConfig jobOutputDataConfig) {
+        this.jobOutputDataConfig = jobOutputDataConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public OutputDataConfig getJobOutputDataConfig() {
+        return this.jobOutputDataConfig;
+    }
+
+    /**
+     * @param jobOutputDataConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportJobProperties withJobOutputDataConfig(OutputDataConfig jobOutputDataConfig) {
+        setJobOutputDataConfig(jobOutputDataConfig);
+        return this;
+    }
+
+    /**
      * <p>
      * The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.
      * </p>
@@ -488,6 +516,8 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
             sb.append("DatastoreId: ").append(getDatastoreId()).append(",");
         if (getInputDataConfig() != null)
             sb.append("InputDataConfig: ").append(getInputDataConfig()).append(",");
+        if (getJobOutputDataConfig() != null)
+            sb.append("JobOutputDataConfig: ").append(getJobOutputDataConfig()).append(",");
         if (getDataAccessRoleArn() != null)
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
         if (getMessage() != null)
@@ -534,6 +564,10 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInputDataConfig() != null && other.getInputDataConfig().equals(this.getInputDataConfig()) == false)
             return false;
+        if (other.getJobOutputDataConfig() == null ^ this.getJobOutputDataConfig() == null)
+            return false;
+        if (other.getJobOutputDataConfig() != null && other.getJobOutputDataConfig().equals(this.getJobOutputDataConfig()) == false)
+            return false;
         if (other.getDataAccessRoleArn() == null ^ this.getDataAccessRoleArn() == null)
             return false;
         if (other.getDataAccessRoleArn() != null && other.getDataAccessRoleArn().equals(this.getDataAccessRoleArn()) == false)
@@ -557,6 +591,7 @@ public class ImportJobProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getDatastoreId() == null) ? 0 : getDatastoreId().hashCode());
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getJobOutputDataConfig() == null) ? 0 : getJobOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;

@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class OutputDataConfigMarshaller {
 
-    private static final MarshallingInfo<String> S3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("S3Uri").build();
+    private static final MarshallingInfo<StructuredPojo> S3CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Configuration").build();
 
     private static final OutputDataConfigMarshaller instance = new OutputDataConfigMarshaller();
 
@@ -46,7 +46,7 @@ public class OutputDataConfigMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(outputDataConfig.getS3Uri(), S3URI_BINDING);
+            protocolMarshaller.marshall(outputDataConfig.getS3Configuration(), S3CONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

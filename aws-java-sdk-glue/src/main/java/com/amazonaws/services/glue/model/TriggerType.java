@@ -22,7 +22,8 @@ public enum TriggerType {
 
     SCHEDULED("SCHEDULED"),
     CONDITIONAL("CONDITIONAL"),
-    ON_DEMAND("ON_DEMAND");
+    ON_DEMAND("ON_DEMAND"),
+    EVENT("EVENT");
 
     private String value;
 

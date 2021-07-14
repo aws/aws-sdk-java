@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A node represents an Glue component such as a trigger, or job, etc., that is part of a workflow.
+ * A node represents an Glue component (trigger, crawler, or job) on a workflow graph.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Node" target="_top">AWS API Documentation</a>

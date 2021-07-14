@@ -60,12 +60,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
+     * class. It is a required parameter, although a default value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -214,15 +214,14 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      */
     private String kmsKeyId;
@@ -466,23 +465,23 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
+     * class. It is a required parameter, although a default value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
      *        The compute and memory capacity of the replication instance as defined for the specified replication
-     *        instance class. It is a required parameter, although a defualt value is pre-selected in the DMS
+     *        instance class. It is a required parameter, although a default value is pre-selected in the DMS
      *        console.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -492,22 +491,22 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
+     * class. It is a required parameter, although a default value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
-     *         instance class. It is a required parameter, although a defualt value is pre-selected in the DMS
+     *         instance class. It is a required parameter, although a default value is pre-selected in the DMS
      *         console.</p>
      *         <p>
      *         For more information on the settings and capacities for the available replication instance classes, see
      *         <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *         > Selecting the right AWS DMS replication instance for your migration</a>.
+     *         > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -517,23 +516,23 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
+     * class. It is a required parameter, although a default value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
      *        The compute and memory capacity of the replication instance as defined for the specified replication
-     *        instance class. It is a required parameter, although a defualt value is pre-selected in the DMS
+     *        instance class. It is a required parameter, although a default value is pre-selected in the DMS
      *        console.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1496,26 +1495,25 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        An KMS key identifier that is used to encrypt the data on the replication instance.</p>
      *        <p>
-     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *        encryption key.
      *        </p>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        KMS creates the default encryption key for your account. Your account has a different default encryption
+     *        key for each Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1524,25 +1522,24 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
-     * @return An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     * @return An KMS key identifier that is used to encrypt the data on the replication instance.</p>
      *         <p>
-     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *         encryption key.
      *         </p>
      *         <p>
-     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     *         KMS creates the default encryption key for your account. Your account has a different default encryption
+     *         key for each Region.
      */
 
     public String getKmsKeyId() {
@@ -1551,26 +1548,25 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        An KMS key identifier that is used to encrypt the data on the replication instance.</p>
      *        <p>
-     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *        encryption key.
      *        </p>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        KMS creates the default encryption key for your account. Your account has a different default encryption
+     *        key for each Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

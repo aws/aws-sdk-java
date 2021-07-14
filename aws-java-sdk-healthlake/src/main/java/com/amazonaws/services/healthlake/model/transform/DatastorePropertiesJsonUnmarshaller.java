@@ -76,6 +76,10 @@ public class DatastorePropertiesJsonUnmarshaller implements Unmarshaller<Datasto
                     context.nextToken();
                     datastoreProperties.setDatastoreEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SseConfiguration", targetDepth)) {
+                    context.nextToken();
+                    datastoreProperties.setSseConfiguration(SseConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("PreloadDataConfig", targetDepth)) {
                     context.nextToken();
                     datastoreProperties.setPreloadDataConfig(PreloadDataConfigJsonUnmarshaller.getInstance().unmarshall(context));

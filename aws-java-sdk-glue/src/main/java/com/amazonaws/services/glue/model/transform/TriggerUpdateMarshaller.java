@@ -38,6 +38,8 @@ public class TriggerUpdateMarshaller {
             .marshallLocationName("Actions").build();
     private static final MarshallingInfo<StructuredPojo> PREDICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Predicate").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTBATCHINGCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBatchingCondition").build();
 
     private static final TriggerUpdateMarshaller instance = new TriggerUpdateMarshaller();
 
@@ -60,6 +62,7 @@ public class TriggerUpdateMarshaller {
             protocolMarshaller.marshall(triggerUpdate.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(triggerUpdate.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(triggerUpdate.getPredicate(), PREDICATE_BINDING);
+            protocolMarshaller.marshall(triggerUpdate.getEventBatchingCondition(), EVENTBATCHINGCONDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

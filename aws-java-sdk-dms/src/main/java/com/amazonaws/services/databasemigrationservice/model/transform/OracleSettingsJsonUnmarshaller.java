@@ -168,9 +168,25 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                     context.nextToken();
                     oracleSettings.setSpatialDataOptionToGeoJsonFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StandbyDelayTime", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setStandbyDelayTime(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     oracleSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UseBFile", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setUseBFile(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UseDirectPathFullLoad", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setUseDirectPathFullLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UseLogminerReader", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setUseLogminerReader(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
                     context.nextToken();

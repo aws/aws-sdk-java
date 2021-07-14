@@ -28,15 +28,15 @@ import com.amazonaws.services.lightsail.model.*;
  * <p>
  * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
  * websites or web applications. It includes everything you need to launch your project quickly - instances (virtual
- * private servers), container services, managed databases, SSD-based block storage, static IP addresses, load
- * balancers, content delivery network (CDN) distributions, DNS management of registered domains, and resource snapshots
- * (backups) - for a low, predictable monthly price.
+ * private servers), container services, storage buckets, managed databases, SSD-based block storage, static IP
+ * addresses, load balancers, content delivery network (CDN) distributions, DNS management of registered domains, and
+ * resource snapshots (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
  * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
  * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
- * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
- * >Lightsail Dev Guide</a>.
+ * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
+ * >Amazon Lightsail Developer Guide</a>.
  * </p>
  * <p>
  * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
@@ -150,8 +150,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>attach disk</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>disk name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param attachDiskRequest
@@ -170,8 +170,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>attach disk</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>disk name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param attachDiskRequest
@@ -197,8 +197,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
@@ -221,8 +221,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
@@ -253,8 +253,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -280,8 +280,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -337,8 +337,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>CloseInstancePublicPorts</code> action supports tag-based access control via resource tags applied to
      * the resource identified by <code>instanceName</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param closeInstancePublicPortsRequest
@@ -356,8 +356,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>CloseInstancePublicPorts</code> action supports tag-based access control via resource tags applied to
      * the resource identified by <code>instanceName</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param closeInstancePublicPortsRequest
@@ -425,6 +425,110 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest copySnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, CopySnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * A bucket is a cloud storage resource available in the Lightsail object storage service. Use buckets to store
+     * objects such as data and its descriptive metadata. For more information about buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon
+     * Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param createBucketRequest
+     * @return A Java Future containing the result of the CreateBucket operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBucketResult> createBucketAsync(CreateBucketRequest createBucketRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * A bucket is a cloud storage resource available in the Lightsail object storage service. Use buckets to store
+     * objects such as data and its descriptive metadata. For more information about buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon
+     * Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param createBucketRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBucket operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBucketResult> createBucketAsync(CreateBucketRequest createBucketRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBucketRequest, CreateBucketResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of an access key ID and
+     * corresponding secret access key.
+     * </p>
+     * <p>
+     * Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two
+     * access keys per bucket. Use the <a>GetBucketAccessKeys</a> action to get a list of current access keys for a
+     * specific bucket. For more information about access keys, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys"
+     * >Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code>
+     * action. You can get a secret access key only when you first create an access key; you cannot get the secret
+     * access key later. If you lose the secret access key, you must create a new access key.
+     * </p>
+     * </important>
+     * 
+     * @param createBucketAccessKeyRequest
+     * @return A Java Future containing the result of the CreateBucketAccessKey operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateBucketAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucketAccessKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBucketAccessKeyResult> createBucketAccessKeyAsync(CreateBucketAccessKeyRequest createBucketAccessKeyRequest);
+
+    /**
+     * <p>
+     * Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of an access key ID and
+     * corresponding secret access key.
+     * </p>
+     * <p>
+     * Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two
+     * access keys per bucket. Use the <a>GetBucketAccessKeys</a> action to get a list of current access keys for a
+     * specific bucket. For more information about access keys, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys"
+     * >Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code>
+     * action. You can get a secret access key only when you first create an access key; you cannot get the secret
+     * access key later. If you lose the secret access key, you must create a new access key.
+     * </p>
+     * </important>
+     * 
+     * @param createBucketAccessKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBucketAccessKey operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateBucketAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucketAccessKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBucketAccessKeyResult> createBucketAccessKeyAsync(CreateBucketAccessKeyRequest createBucketAccessKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBucketAccessKeyRequest, CreateBucketAccessKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -636,7 +740,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * You can deploy containers to your container service using container images from a public registry like Docker
      * Hub, or from your local machine. For more information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images"
-     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer
+     * Guide</i>.
      * </p>
      * 
      * @param createContainerServiceDeploymentRequest
@@ -663,7 +768,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * You can deploy containers to your container service using container images from a public registry like Docker
      * Hub, or from your local machine. For more information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images"
-     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * >Creating container images for your Amazon Lightsail container services</a> in the <i>Amazon Lightsail Developer
+     * Guide</i>.
      * </p>
      * 
      * @param createContainerServiceDeploymentRequest
@@ -705,7 +811,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
      * images to your Lightsail container service. For more information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
-     * and managing container images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * and managing container images on your Amazon Lightsail container services</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -743,7 +850,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
      * images to your Lightsail container service. For more information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
-     * and managing container images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * and managing container images on your Amazon Lightsail container services</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -770,8 +878,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDiskRequest
@@ -790,8 +898,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDiskRequest
@@ -816,8 +924,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
      * resource tags applied to the resource identified by <code>disk snapshot name</code>. For more information, see
      * the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">
-     * Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDiskFromSnapshotRequest
@@ -837,8 +945,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
      * resource tags applied to the resource identified by <code>disk snapshot name</code>. For more information, see
      * the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">
-     * Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDiskFromSnapshotRequest
@@ -879,8 +987,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDiskSnapshotRequest
@@ -916,8 +1024,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDiskSnapshotRequest
@@ -983,8 +1091,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create domain</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDomainRequest
@@ -1002,8 +1110,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create domain</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDomainRequest
@@ -1027,8 +1135,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDomainEntryRequest
@@ -1047,8 +1155,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createDomainEntryRequest
@@ -1072,8 +1180,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createInstanceSnapshotRequest
@@ -1092,8 +1200,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createInstanceSnapshotRequest
@@ -1116,8 +1224,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create instances</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createInstancesRequest
@@ -1135,8 +1243,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create instances</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createInstancesRequest
@@ -1160,8 +1268,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and
      * resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createInstancesFromSnapshotRequest
@@ -1181,8 +1289,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and
      * resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information,
      * see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createInstancesFromSnapshotRequest
@@ -1206,8 +1314,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create key pair</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -1225,8 +1333,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create key pair</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -1245,7 +1353,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">
      * Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region
      * in your account.
      * </p>
@@ -1256,8 +1364,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create load balancer</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -1271,7 +1379,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">
      * Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region
      * in your account.
      * </p>
@@ -1282,8 +1390,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create load balancer</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -1309,8 +1417,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
@@ -1333,8 +1441,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
@@ -1359,8 +1467,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create relational database</code> operation supports tag-based access control via request tags. For
      * more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseRequest
@@ -1378,8 +1486,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create relational database</code> operation supports tag-based access control via request tags. For
      * more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseRequest
@@ -1407,8 +1515,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>create relational database from snapshot</code> operation supports tag-based access control via request
      * tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseFromSnapshotRequest
@@ -1433,8 +1541,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>create relational database from snapshot</code> operation supports tag-based access control via request
      * tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more
      * information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseFromSnapshotRequest
@@ -1460,8 +1568,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create relational database snapshot</code> operation supports tag-based access control via request
      * tags. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseSnapshotRequest
@@ -1482,8 +1590,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>create relational database snapshot</code> operation supports tag-based access control via request
      * tags. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param createRelationalDatabaseSnapshotRequest
@@ -1548,7 +1656,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes an automatic snapshot of an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteAutoSnapshotRequest
@@ -1563,7 +1671,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes an automatic snapshot of an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteAutoSnapshotRequest
@@ -1578,6 +1686,96 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<DeleteAutoSnapshotResult> deleteAutoSnapshotAsync(DeleteAutoSnapshotRequest deleteAutoSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAutoSnapshotRequest, DeleteAutoSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Amazon Lightsail bucket.
+     * </p>
+     * <note>
+     * <p>
+     * When you delete your bucket, the bucket name is released and can be reused for a new bucket in your account or
+     * another AWS account.
+     * </p>
+     * </note>
+     * 
+     * @param deleteBucketRequest
+     * @return A Java Future containing the result of the DeleteBucket operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBucketResult> deleteBucketAsync(DeleteBucketRequest deleteBucketRequest);
+
+    /**
+     * <p>
+     * Deletes a Amazon Lightsail bucket.
+     * </p>
+     * <note>
+     * <p>
+     * When you delete your bucket, the bucket name is released and can be reused for a new bucket in your account or
+     * another AWS account.
+     * </p>
+     * </note>
+     * 
+     * @param deleteBucketRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBucket operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBucketResult> deleteBucketAsync(DeleteBucketRequest deleteBucketRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBucketRequest, DeleteBucketResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an access key for the specified Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * We recommend that you delete an access key if the secret access key is compromised.
+     * </p>
+     * <p>
+     * For more information about access keys, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys"
+     * >Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteBucketAccessKeyRequest
+     * @return A Java Future containing the result of the DeleteBucketAccessKey operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteBucketAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBucketAccessKeyResult> deleteBucketAccessKeyAsync(DeleteBucketAccessKeyRequest deleteBucketAccessKeyRequest);
+
+    /**
+     * <p>
+     * Deletes an access key for the specified Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * We recommend that you delete an access key if the secret access key is compromised.
+     * </p>
+     * <p>
+     * For more information about access keys, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys"
+     * >Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteBucketAccessKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBucketAccessKey operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteBucketAccessKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBucketAccessKeyResult> deleteBucketAccessKeyAsync(DeleteBucketAccessKeyRequest deleteBucketAccessKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBucketAccessKeyRequest, DeleteBucketAccessKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1740,8 +1938,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete disk</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>disk name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDiskRequest
@@ -1765,8 +1963,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete disk</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>disk name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDiskRequest
@@ -1795,8 +1993,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete disk snapshot</code> operation supports tag-based access control via resource tags applied to
      * the resource identified by <code>disk snapshot name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDiskSnapshotRequest
@@ -1820,8 +2018,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete disk snapshot</code> operation supports tag-based access control via resource tags applied to
      * the resource identified by <code>disk snapshot name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDiskSnapshotRequest
@@ -1875,8 +2073,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete domain</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -1894,8 +2092,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete domain</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -1918,8 +2116,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete domain entry</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDomainEntryRequest
@@ -1937,8 +2135,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete domain entry</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteDomainEntryRequest
@@ -1961,8 +2159,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteInstanceRequest
@@ -1980,8 +2178,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteInstanceRequest
@@ -2004,8 +2202,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by <code>instance snapshot name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteInstanceSnapshotRequest
@@ -2023,8 +2221,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by <code>instance snapshot name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteInstanceSnapshotRequest
@@ -2047,8 +2245,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>key pair name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteKeyPairRequest
@@ -2066,8 +2264,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>key pair name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteKeyPairRequest
@@ -2093,7 +2291,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
      * with the new host key or certificate on the instance. For more information, see <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
      * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
      * </p>
      * </important>
@@ -2116,7 +2314,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
      * with the new host key or certificate on the instance. For more information, see <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
      * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
      * </p>
      * </important>
@@ -2142,8 +2340,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete load balancer</code> operation supports tag-based access control via resource tags applied to
      * the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerRequest
@@ -2162,8 +2360,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete load balancer</code> operation supports tag-based access control via resource tags applied to
      * the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerRequest
@@ -2186,8 +2384,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -2207,8 +2405,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -2233,8 +2431,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteRelationalDatabaseRequest
@@ -2252,8 +2450,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteRelationalDatabaseRequest
@@ -2276,8 +2474,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete relational database snapshot</code> operation supports tag-based access control via resource
      * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteRelationalDatabaseSnapshotRequest
@@ -2297,8 +2495,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>delete relational database snapshot</code> operation supports tag-based access control via resource
      * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param deleteRelationalDatabaseSnapshotRequest
@@ -2367,8 +2565,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>detach disk</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>disk name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param detachDiskRequest
@@ -2387,8 +2585,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>detach disk</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>disk name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param detachDiskRequest
@@ -2415,8 +2613,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>detach instances from load balancer</code> operation supports tag-based access control via resource
      * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
      * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+     * Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
@@ -2440,8 +2638,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The <code>detach instances from load balancer</code> operation supports tag-based access control via resource
      * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
      * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+     * Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
@@ -2494,7 +2692,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Disables an add-on for an Amazon Lightsail resource. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param disableAddOnRequest
@@ -2509,7 +2707,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Disables an add-on for an Amazon Lightsail resource. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param disableAddOnRequest
@@ -2560,7 +2758,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param enableAddOnRequest
@@ -2575,7 +2773,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param enableAddOnRequest
@@ -2607,8 +2805,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>export snapshot</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>source snapshot name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * <note>
      * <p>
@@ -2641,8 +2839,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>export snapshot</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>source snapshot name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * <note>
      * <p>
@@ -2746,7 +2944,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Returns the available automatic snapshots for an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param getAutoSnapshotsRequest
@@ -2761,7 +2959,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Returns the available automatic snapshots for an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param getAutoSnapshotsRequest
@@ -2825,6 +3023,174 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetBlueprintsResult> getBlueprintsAsync(GetBlueprintsRequest getBlueprintsRequest,
             com.amazonaws.handlers.AsyncHandler<GetBlueprintsRequest, GetBlueprintsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the existing access key IDs for the specified Amazon Lightsail bucket.
+     * </p>
+     * <important>
+     * <p>
+     * This action does not return the secret access key value of an access key. You can get a secret access key only
+     * when you create it from the response of the <a>CreateBucketAccessKey</a> action. If you lose the secret access
+     * key, you must create a new access key.
+     * </p>
+     * </important>
+     * 
+     * @param getBucketAccessKeysRequest
+     * @return A Java Future containing the result of the GetBucketAccessKeys operation returned by the service.
+     * @sample AmazonLightsailAsync.GetBucketAccessKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketAccessKeysResult> getBucketAccessKeysAsync(GetBucketAccessKeysRequest getBucketAccessKeysRequest);
+
+    /**
+     * <p>
+     * Returns the existing access key IDs for the specified Amazon Lightsail bucket.
+     * </p>
+     * <important>
+     * <p>
+     * This action does not return the secret access key value of an access key. You can get a secret access key only
+     * when you create it from the response of the <a>CreateBucketAccessKey</a> action. If you lose the secret access
+     * key, you must create a new access key.
+     * </p>
+     * </important>
+     * 
+     * @param getBucketAccessKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBucketAccessKeys operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetBucketAccessKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketAccessKeysResult> getBucketAccessKeysAsync(GetBucketAccessKeysRequest getBucketAccessKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBucketAccessKeysRequest, GetBucketAccessKeysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the bundles that you can apply to a Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a bucket.
+     * </p>
+     * <p>
+     * Use the <a>UpdateBucketBundle</a> action to update the bundle for a bucket.
+     * </p>
+     * 
+     * @param getBucketBundlesRequest
+     * @return A Java Future containing the result of the GetBucketBundles operation returned by the service.
+     * @sample AmazonLightsailAsync.GetBucketBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketBundlesResult> getBucketBundlesAsync(GetBucketBundlesRequest getBucketBundlesRequest);
+
+    /**
+     * <p>
+     * Returns the bundles that you can apply to a Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a bucket.
+     * </p>
+     * <p>
+     * Use the <a>UpdateBucketBundle</a> action to update the bundle for a bucket.
+     * </p>
+     * 
+     * @param getBucketBundlesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBucketBundles operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetBucketBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketBundlesResult> getBucketBundlesAsync(GetBucketBundlesRequest getBucketBundlesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBucketBundlesRequest, GetBucketBundlesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric for an Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * Metrics report the utilization of a bucket. View and collect metric data regularly to monitor the number of
+     * objects stored in a bucket (including object versions) and the storage space used by those objects.
+     * </p>
+     * 
+     * @param getBucketMetricDataRequest
+     * @return A Java Future containing the result of the GetBucketMetricData operation returned by the service.
+     * @sample AmazonLightsailAsync.GetBucketMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketMetricData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketMetricDataResult> getBucketMetricDataAsync(GetBucketMetricDataRequest getBucketMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric for an Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * Metrics report the utilization of a bucket. View and collect metric data regularly to monitor the number of
+     * objects stored in a bucket (including object versions) and the storage space used by those objects.
+     * </p>
+     * 
+     * @param getBucketMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBucketMetricData operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetBucketMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketMetricData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketMetricDataResult> getBucketMetricDataAsync(GetBucketMetricDataRequest getBucketMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBucketMetricDataRequest, GetBucketMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about one or more Amazon Lightsail buckets.
+     * </p>
+     * <p>
+     * For more information about buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon
+     * Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..
+     * </p>
+     * 
+     * @param getBucketsRequest
+     * @return A Java Future containing the result of the GetBuckets operation returned by the service.
+     * @sample AmazonLightsailAsync.GetBuckets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketsResult> getBucketsAsync(GetBucketsRequest getBucketsRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more Amazon Lightsail buckets.
+     * </p>
+     * <p>
+     * For more information about buckets, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon
+     * Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..
+     * </p>
+     * 
+     * @param getBucketsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBuckets operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetBuckets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketsResult> getBucketsAsync(GetBucketsRequest getBucketsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBucketsRequest, GetBucketsResult> asyncHandler);
 
     /**
      * <p>
@@ -3429,8 +3795,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the list bundles that can be applied to you Amazon Lightsail content delivery network (CDN)
-     * distributions.
+     * Returns the bundles that can be applied to your Amazon Lightsail content delivery network (CDN) distributions.
      * </p>
      * <p>
      * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
@@ -3446,8 +3811,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the list bundles that can be applied to you Amazon Lightsail content delivery network (CDN)
-     * distributions.
+     * Returns the bundles that can be applied to your Amazon Lightsail content delivery network (CDN) distributions.
      * </p>
      * <p>
      * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
@@ -3639,11 +4003,11 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the export snapshot record created as a result of the <code>export snapshot</code> operation.
+     * Returns all export snapshot records created as a result of the <code>export snapshot</code> operation.
      * </p>
      * <p>
      * An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the
-     * <code>create cloud formation stack</code> operation.
+     * <a>CreateCloudFormationStack</a> action.
      * </p>
      * 
      * @param getExportSnapshotRecordsRequest
@@ -3656,11 +4020,11 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the export snapshot record created as a result of the <code>export snapshot</code> operation.
+     * Returns all export snapshot records created as a result of the <code>export snapshot</code> operation.
      * </p>
      * <p>
      * An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the
-     * <code>create cloud formation stack</code> operation.
+     * <a>CreateCloudFormationStack</a> action.
      * </p>
      * 
      * @param getExportSnapshotRecordsRequest
@@ -3714,8 +4078,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>get instance access details</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param getInstanceAccessDetailsRequest
@@ -3733,8 +4097,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>get instance access details</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param getInstanceAccessDetailsRequest
@@ -4886,8 +5250,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>OpenInstancePublicPorts</code> action supports tag-based access control via resource tags applied to
      * the resource identified by <code>instanceName</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param openInstancePublicPortsRequest
@@ -4906,8 +5270,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>OpenInstancePublicPorts</code> action supports tag-based access control via resource tags applied to
      * the resource identified by <code>instanceName</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param openInstancePublicPortsRequest
@@ -4925,7 +5289,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Tries to peer the Lightsail VPC with the user's default VPC.
+     * Peers the Lightsail VPC with the user's default VPC.
      * </p>
      * 
      * @param peerVpcRequest
@@ -4938,7 +5302,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Tries to peer the Lightsail VPC with the user's default VPC.
+     * Peers the Lightsail VPC with the user's default VPC.
      * </p>
      * 
      * @param peerVpcRequest
@@ -5026,8 +5390,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>PutInstancePublicPorts</code> action supports tag-based access control via resource tags applied to the
      * resource identified by <code>instanceName</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param putInstancePublicPortsRequest
@@ -5049,8 +5413,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>PutInstancePublicPorts</code> action supports tag-based access control via resource tags applied to the
      * resource identified by <code>instanceName</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param putInstancePublicPortsRequest
@@ -5073,8 +5437,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param rebootInstanceRequest
@@ -5092,8 +5456,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param rebootInstanceRequest
@@ -5116,8 +5480,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param rebootRelationalDatabaseRequest
@@ -5135,8 +5499,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param rebootRelationalDatabaseRequest
@@ -5161,7 +5525,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
      * images to your Lightsail container service. For more information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
-     * and managing container images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * and managing container images on your Amazon Lightsail container services</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -5182,7 +5547,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * This action is not required if you install and use the Lightsail Control (lightsailctl) plugin to push container
      * images to your Lightsail container service. For more information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing
-     * and managing container images on your Amazon Lightsail container services</a> in the <i>Lightsail Dev Guide</i>.
+     * and managing container images on your Amazon Lightsail container services</a> in the <i>Amazon Lightsail
+     * Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -5381,6 +5747,45 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.
+     * </p>
+     * <p>
+     * Lightsail buckets currently support setting access for Lightsail instances in the same AWS Region.
+     * </p>
+     * 
+     * @param setResourceAccessForBucketRequest
+     * @return A Java Future containing the result of the SetResourceAccessForBucket operation returned by the service.
+     * @sample AmazonLightsailAsync.SetResourceAccessForBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetResourceAccessForBucketResult> setResourceAccessForBucketAsync(
+            SetResourceAccessForBucketRequest setResourceAccessForBucketRequest);
+
+    /**
+     * <p>
+     * Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.
+     * </p>
+     * <p>
+     * Lightsail buckets currently support setting access for Lightsail instances in the same AWS Region.
+     * </p>
+     * 
+     * @param setResourceAccessForBucketRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetResourceAccessForBucket operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.SetResourceAccessForBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetResourceAccessForBucketResult> setResourceAccessForBucketAsync(
+            SetResourceAccessForBucketRequest setResourceAccessForBucketRequest,
+            com.amazonaws.handlers.AsyncHandler<SetResourceAccessForBucketRequest, SetResourceAccessForBucketResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
      * <code>reboot instance</code> operation.
      * </p>
@@ -5389,14 +5794,15 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
      * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
      * more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail
+     * Developer Guide</a>.
      * </p>
      * </note>
      * <p>
      * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param startInstanceRequest
@@ -5417,14 +5823,15 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
      * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
      * more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail
+     * Developer Guide</a>.
      * </p>
      * </note>
      * <p>
      * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param startInstanceRequest
@@ -5448,8 +5855,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>start relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param startRelationalDatabaseRequest
@@ -5468,8 +5875,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>start relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param startRelationalDatabaseRequest
@@ -5494,14 +5901,15 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
      * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
      * more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail
+     * Developer Guide</a>.
      * </p>
      * </note>
      * <p>
      * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param stopInstanceRequest
@@ -5521,14 +5929,15 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
      * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
      * more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail
+     * Developer Guide</a>.
      * </p>
      * </note>
      * <p>
      * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>instance name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param stopInstanceRequest
@@ -5551,8 +5960,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>stop relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param stopRelationalDatabaseRequest
@@ -5570,8 +5979,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>stop relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param stopRelationalDatabaseRequest
@@ -5592,13 +6001,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a maximum of 50 tags.
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
      * about tags, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      * <p>
      * The <code>tag resource</code> operation supports tag-based access control via request tags and resource tags
      * applied to the resource identified by <code>resource name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -5614,13 +6024,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a maximum of 50 tags.
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
      * about tags, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      * <p>
      * The <code>tag resource</code> operation supports tag-based access control via request tags and resource tags
      * applied to the resource identified by <code>resource name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -5685,7 +6096,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Attempts to unpeer the Lightsail VPC from the user's default VPC.
+     * Unpeers the Lightsail VPC from the user's default VPC.
      * </p>
      * 
      * @param unpeerVpcRequest
@@ -5698,7 +6109,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Attempts to unpeer the Lightsail VPC from the user's default VPC.
+     * Unpeers the Lightsail VPC from the user's default VPC.
      * </p>
      * 
      * @param unpeerVpcRequest
@@ -5721,8 +6132,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>untag resource</code> operation supports tag-based access control via request tags and resource tags
      * applied to the resource identified by <code>resource name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -5740,8 +6151,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>untag resource</code> operation supports tag-based access control via request tags and resource tags
      * applied to the resource identified by <code>resource name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -5756,6 +6167,102 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and
+     * the AWS accounts that can access the bucket.
+     * </p>
+     * 
+     * @param updateBucketRequest
+     * @return A Java Future containing the result of the UpdateBucket operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBucketResult> updateBucketAsync(UpdateBucketRequest updateBucketRequest);
+
+    /**
+     * <p>
+     * Updates an existing Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and
+     * the AWS accounts that can access the bucket.
+     * </p>
+     * 
+     * @param updateBucketRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBucket operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBucketResult> updateBucketAsync(UpdateBucketRequest updateBucketRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBucketRequest, UpdateBucketResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a
+     * bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's
+     * bundle, use the <a>GetBuckets</a> action. The <code>ableToUpdateBundle</code> parameter in the response will
+     * indicate whether you can currently update a bucket's bundle.
+     * </p>
+     * <p>
+     * Update a bucket's bundle if it's consistently going over its storage space or data transfer quota, or if a
+     * bucket's usage is consistently in the lower range of its storage space or data transfer quota. Due to the
+     * unpredictable usage fluctuations that a bucket might experience, we strongly recommend that you update a bucket's
+     * bundle only as a long-term strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket
+     * bundle that will provide the bucket with ample storage space and data transfer for a long time to come.
+     * </p>
+     * 
+     * @param updateBucketBundleRequest
+     * @return A Java Future containing the result of the UpdateBucketBundle operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateBucketBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBucketBundleResult> updateBucketBundleAsync(UpdateBucketBundleRequest updateBucketBundleRequest);
+
+    /**
+     * <p>
+     * Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.
+     * </p>
+     * <p>
+     * A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a
+     * bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's
+     * bundle, use the <a>GetBuckets</a> action. The <code>ableToUpdateBundle</code> parameter in the response will
+     * indicate whether you can currently update a bucket's bundle.
+     * </p>
+     * <p>
+     * Update a bucket's bundle if it's consistently going over its storage space or data transfer quota, or if a
+     * bucket's usage is consistently in the lower range of its storage space or data transfer quota. Due to the
+     * unpredictable usage fluctuations that a bucket might experience, we strongly recommend that you update a bucket's
+     * bundle only as a long-term strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket
+     * bundle that will provide the bucket with ample storage space and data transfer for a long time to come.
+     * </p>
+     * 
+     * @param updateBucketBundleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBucketBundle operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateBucketBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBucketBundleResult> updateBucketBundleAsync(UpdateBucketBundleRequest updateBucketBundleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBucketBundleRequest, UpdateBucketBundleResult> asyncHandler);
 
     /**
      * <p>
@@ -5795,7 +6302,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
      * </p>
      * <p>
-     * Use this action to update the configuration of your existing distribution
+     * Use this action to update the configuration of your existing distribution.
      * </p>
      * 
      * @param updateDistributionRequest
@@ -5811,7 +6318,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
      * </p>
      * <p>
-     * Use this action to update the configuration of your existing distribution
+     * Use this action to update the configuration of your existing distribution.
      * </p>
      * 
      * @param updateDistributionRequest
@@ -5891,8 +6398,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateDomainEntryRequest
@@ -5910,8 +6417,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by <code>domain name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateDomainEntryRequest
@@ -5934,8 +6441,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update load balancer attribute</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateLoadBalancerAttributeRequest
@@ -5954,8 +6461,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update load balancer attribute</code> operation supports tag-based access control via resource tags
      * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateLoadBalancerAttributeRequest
@@ -5983,8 +6490,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateRelationalDatabaseRequest
@@ -6006,8 +6513,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update relational database</code> operation supports tag-based access control via resource tags applied
      * to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateRelationalDatabaseRequest
@@ -6037,8 +6544,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update relational database parameters</code> operation supports tag-based access control via resource
      * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateRelationalDatabaseParametersRequest
@@ -6065,8 +6572,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * The <code>update relational database parameters</code> operation supports tag-based access control via resource
      * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
-     * >Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * 
      * @param updateRelationalDatabaseParametersRequest

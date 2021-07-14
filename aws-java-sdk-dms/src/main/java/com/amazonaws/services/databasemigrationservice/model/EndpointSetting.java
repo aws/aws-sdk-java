@@ -76,6 +76,13 @@ public class EndpointSetting implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer intValueMax;
+    /**
+     * <p>
+     * The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code>.
+     * </p>
+     */
+    private String defaultValue;
 
     /**
      * <p>
@@ -459,6 +466,52 @@ public class EndpointSetting implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code>.
+     * </p>
+     * 
+     * @param defaultValue
+     *        The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     *        <code>ModifyEndpoint</code>.
+     */
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    /**
+     * <p>
+     * The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code>.
+     * </p>
+     * 
+     * @return The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     *         <code>ModifyEndpoint</code>.
+     */
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * <p>
+     * The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code>.
+     * </p>
+     * 
+     * @param defaultValue
+     *        The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or
+     *        <code>ModifyEndpoint</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointSetting withDefaultValue(String defaultValue) {
+        setDefaultValue(defaultValue);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -485,7 +538,9 @@ public class EndpointSetting implements Serializable, Cloneable, StructuredPojo 
         if (getIntValueMin() != null)
             sb.append("IntValueMin: ").append(getIntValueMin()).append(",");
         if (getIntValueMax() != null)
-            sb.append("IntValueMax: ").append(getIntValueMax());
+            sb.append("IntValueMax: ").append(getIntValueMax()).append(",");
+        if (getDefaultValue() != null)
+            sb.append("DefaultValue: ").append(getDefaultValue());
         sb.append("}");
         return sb.toString();
     }
@@ -532,6 +587,10 @@ public class EndpointSetting implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getIntValueMax() != null && other.getIntValueMax().equals(this.getIntValueMax()) == false)
             return false;
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
+            return false;
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+            return false;
         return true;
     }
 
@@ -548,6 +607,7 @@ public class EndpointSetting implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getApplicability() == null) ? 0 : getApplicability().hashCode());
         hashCode = prime * hashCode + ((getIntValueMin() == null) ? 0 : getIntValueMin().hashCode());
         hashCode = prime * hashCode + ((getIntValueMax() == null) ? 0 : getIntValueMax().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
         return hashCode;
     }
 

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes an identifiable significant activity that affects a replication instance or task. This object can provide
- * the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
+ * the message, the available event categories, the date and source of the event, and the DMS resource type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Event" target="_top">AWS API Documentation</a>
@@ -36,7 +36,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String sourceIdentifier;
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | endpoint | replication-task
@@ -104,14 +104,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | endpoint | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | endpoint | replication-task
      * @see SourceType
@@ -123,13 +123,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | endpoint | replication-task
      * </p>
      * 
-     * @return The type of AWS DMS resource that generates events. </p>
+     * @return The type of DMS resource that generates events. </p>
      *         <p>
      *         Valid values: replication-instance | endpoint | replication-task
      * @see SourceType
@@ -141,14 +141,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | endpoint | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | endpoint | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -162,14 +162,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | endpoint | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | endpoint | replication-task
      * @see SourceType
@@ -181,14 +181,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | endpoint | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | endpoint | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.

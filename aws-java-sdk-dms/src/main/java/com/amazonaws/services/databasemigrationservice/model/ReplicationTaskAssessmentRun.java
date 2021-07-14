@@ -132,19 +132,19 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
     /**
      * <p>
      * ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code>
-     * operation.
+     * operation. The role must allow the <code>iam:PassRole</code> action.
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      */
     private String resultLocationBucket;
     /**
      * <p>
-     * Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      */
     private String resultLocationFolder;
@@ -156,7 +156,7 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
     private String resultEncryptionMode;
     /**
      * <p>
-     * ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     * ARN of the KMS encryption key used to encrypt the assessment run results.
      * </p>
      */
     private String resultKmsKeyArn;
@@ -773,12 +773,13 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
     /**
      * <p>
      * ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code>
-     * operation.
+     * operation. The role must allow the <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
      *        ARN of the service role used to start the assessment run using the
-     *        <code>StartReplicationTaskAssessmentRun</code> operation.
+     *        <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow the
+     *        <code>iam:PassRole</code> action.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -788,11 +789,12 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
     /**
      * <p>
      * ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code>
-     * operation.
+     * operation. The role must allow the <code>iam:PassRole</code> action.
      * </p>
      * 
      * @return ARN of the service role used to start the assessment run using the
-     *         <code>StartReplicationTaskAssessmentRun</code> operation.
+     *         <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow the
+     *         <code>iam:PassRole</code> action.
      */
 
     public String getServiceAccessRoleArn() {
@@ -802,12 +804,13 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
     /**
      * <p>
      * ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code>
-     * operation.
+     * operation. The role must allow the <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
      *        ARN of the service role used to start the assessment run using the
-     *        <code>StartReplicationTaskAssessmentRun</code> operation.
+     *        <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow the
+     *        <code>iam:PassRole</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -818,11 +821,11 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      * 
      * @param resultLocationBucket
-     *        Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     *        Amazon S3 bucket where DMS stores the results of this assessment run.
      */
 
     public void setResultLocationBucket(String resultLocationBucket) {
@@ -831,10 +834,10 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      * 
-     * @return Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * @return Amazon S3 bucket where DMS stores the results of this assessment run.
      */
 
     public String getResultLocationBucket() {
@@ -843,11 +846,11 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      * 
      * @param resultLocationBucket
-     *        Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     *        Amazon S3 bucket where DMS stores the results of this assessment run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -858,11 +861,11 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      * 
      * @param resultLocationFolder
-     *        Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     *        Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      */
 
     public void setResultLocationFolder(String resultLocationFolder) {
@@ -871,10 +874,10 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      * 
-     * @return Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * @return Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      */
 
     public String getResultLocationFolder() {
@@ -883,11 +886,11 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     * Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      * </p>
      * 
      * @param resultLocationFolder
-     *        Folder in an Amazon S3 bucket where AWS DMS stores the results of this assessment run.
+     *        Folder in an Amazon S3 bucket where DMS stores the results of this assessment run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -938,11 +941,11 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     * ARN of the KMS encryption key used to encrypt the assessment run results.
      * </p>
      * 
      * @param resultKmsKeyArn
-     *        ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     *        ARN of the KMS encryption key used to encrypt the assessment run results.
      */
 
     public void setResultKmsKeyArn(String resultKmsKeyArn) {
@@ -951,10 +954,10 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     * ARN of the KMS encryption key used to encrypt the assessment run results.
      * </p>
      * 
-     * @return ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     * @return ARN of the KMS encryption key used to encrypt the assessment run results.
      */
 
     public String getResultKmsKeyArn() {
@@ -963,11 +966,11 @@ public class ReplicationTaskAssessmentRun implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     * ARN of the KMS encryption key used to encrypt the assessment run results.
      * </p>
      * 
      * @param resultKmsKeyArn
-     *        ARN of the AWS KMS encryption key used to encrypt the assessment run results.
+     *        ARN of the KMS encryption key used to encrypt the assessment run results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

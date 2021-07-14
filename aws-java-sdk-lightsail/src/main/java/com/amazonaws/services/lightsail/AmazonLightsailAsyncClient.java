@@ -33,15 +33,15 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
  * websites or web applications. It includes everything you need to launch your project quickly - instances (virtual
- * private servers), container services, managed databases, SSD-based block storage, static IP addresses, load
- * balancers, content delivery network (CDN) distributions, DNS management of registered domains, and resource snapshots
- * (backups) - for a low, predictable monthly price.
+ * private servers), container services, storage buckets, managed databases, SSD-based block storage, static IP
+ * addresses, load balancers, content delivery network (CDN) distributions, DNS management of registered domains, and
+ * resource snapshots (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
  * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
  * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
- * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
- * >Lightsail Dev Guide</a>.
+ * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
+ * >Amazon Lightsail Developer Guide</a>.
  * </p>
  * <p>
  * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
@@ -527,6 +527,72 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeCopySnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBucketResult> createBucketAsync(CreateBucketRequest request) {
+
+        return createBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBucketResult> createBucketAsync(final CreateBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBucketRequest, CreateBucketResult> asyncHandler) {
+        final CreateBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBucketResult>() {
+            @Override
+            public CreateBucketResult call() throws Exception {
+                CreateBucketResult result = null;
+
+                try {
+                    result = executeCreateBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBucketAccessKeyResult> createBucketAccessKeyAsync(CreateBucketAccessKeyRequest request) {
+
+        return createBucketAccessKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBucketAccessKeyResult> createBucketAccessKeyAsync(final CreateBucketAccessKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBucketAccessKeyRequest, CreateBucketAccessKeyResult> asyncHandler) {
+        final CreateBucketAccessKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBucketAccessKeyResult>() {
+            @Override
+            public CreateBucketAccessKeyResult call() throws Exception {
+                CreateBucketAccessKeyResult result = null;
+
+                try {
+                    result = executeCreateBucketAccessKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1296,6 +1362,72 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDeleteAutoSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketResult> deleteBucketAsync(DeleteBucketRequest request) {
+
+        return deleteBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketResult> deleteBucketAsync(final DeleteBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBucketRequest, DeleteBucketResult> asyncHandler) {
+        final DeleteBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBucketResult>() {
+            @Override
+            public DeleteBucketResult call() throws Exception {
+                DeleteBucketResult result = null;
+
+                try {
+                    result = executeDeleteBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketAccessKeyResult> deleteBucketAccessKeyAsync(DeleteBucketAccessKeyRequest request) {
+
+        return deleteBucketAccessKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketAccessKeyResult> deleteBucketAccessKeyAsync(final DeleteBucketAccessKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBucketAccessKeyRequest, DeleteBucketAccessKeyResult> asyncHandler) {
+        final DeleteBucketAccessKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBucketAccessKeyResult>() {
+            @Override
+            public DeleteBucketAccessKeyResult call() throws Exception {
+                DeleteBucketAccessKeyResult result = null;
+
+                try {
+                    result = executeDeleteBucketAccessKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2261,6 +2393,138 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeGetBlueprints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketAccessKeysResult> getBucketAccessKeysAsync(GetBucketAccessKeysRequest request) {
+
+        return getBucketAccessKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketAccessKeysResult> getBucketAccessKeysAsync(final GetBucketAccessKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketAccessKeysRequest, GetBucketAccessKeysResult> asyncHandler) {
+        final GetBucketAccessKeysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketAccessKeysResult>() {
+            @Override
+            public GetBucketAccessKeysResult call() throws Exception {
+                GetBucketAccessKeysResult result = null;
+
+                try {
+                    result = executeGetBucketAccessKeys(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketBundlesResult> getBucketBundlesAsync(GetBucketBundlesRequest request) {
+
+        return getBucketBundlesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketBundlesResult> getBucketBundlesAsync(final GetBucketBundlesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketBundlesRequest, GetBucketBundlesResult> asyncHandler) {
+        final GetBucketBundlesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketBundlesResult>() {
+            @Override
+            public GetBucketBundlesResult call() throws Exception {
+                GetBucketBundlesResult result = null;
+
+                try {
+                    result = executeGetBucketBundles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketMetricDataResult> getBucketMetricDataAsync(GetBucketMetricDataRequest request) {
+
+        return getBucketMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketMetricDataResult> getBucketMetricDataAsync(final GetBucketMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketMetricDataRequest, GetBucketMetricDataResult> asyncHandler) {
+        final GetBucketMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketMetricDataResult>() {
+            @Override
+            public GetBucketMetricDataResult call() throws Exception {
+                GetBucketMetricDataResult result = null;
+
+                try {
+                    result = executeGetBucketMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketsResult> getBucketsAsync(GetBucketsRequest request) {
+
+        return getBucketsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketsResult> getBucketsAsync(final GetBucketsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketsRequest, GetBucketsResult> asyncHandler) {
+        final GetBucketsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketsResult>() {
+            @Override
+            public GetBucketsResult call() throws Exception {
+                GetBucketsResult result = null;
+
+                try {
+                    result = executeGetBuckets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4508,6 +4772,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<SetResourceAccessForBucketResult> setResourceAccessForBucketAsync(SetResourceAccessForBucketRequest request) {
+
+        return setResourceAccessForBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetResourceAccessForBucketResult> setResourceAccessForBucketAsync(final SetResourceAccessForBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetResourceAccessForBucketRequest, SetResourceAccessForBucketResult> asyncHandler) {
+        final SetResourceAccessForBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetResourceAccessForBucketResult>() {
+            @Override
+            public SetResourceAccessForBucketResult call() throws Exception {
+                SetResourceAccessForBucketResult result = null;
+
+                try {
+                    result = executeSetResourceAccessForBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest request) {
 
         return startInstanceAsync(request, null);
@@ -4756,6 +5053,72 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBucketResult> updateBucketAsync(UpdateBucketRequest request) {
+
+        return updateBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBucketResult> updateBucketAsync(final UpdateBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBucketRequest, UpdateBucketResult> asyncHandler) {
+        final UpdateBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBucketResult>() {
+            @Override
+            public UpdateBucketResult call() throws Exception {
+                UpdateBucketResult result = null;
+
+                try {
+                    result = executeUpdateBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBucketBundleResult> updateBucketBundleAsync(UpdateBucketBundleRequest request) {
+
+        return updateBucketBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBucketBundleResult> updateBucketBundleAsync(final UpdateBucketBundleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBucketBundleRequest, UpdateBucketBundleResult> asyncHandler) {
+        final UpdateBucketBundleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBucketBundleResult>() {
+            @Override
+            public UpdateBucketBundleResult call() throws Exception {
+                UpdateBucketBundleResult result = null;
+
+                try {
+                    result = executeUpdateBucketBundle(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

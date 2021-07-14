@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon
+ * Provides the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to define an Amazon
  * DynamoDB target endpoint.
  * </p>
  * 
@@ -31,18 +31,21 @@ public class DynamoDbSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      */
     private String serviceAccessRoleArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -51,10 +54,12 @@ public class DynamoDbSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used by the service access IAM role.
+     * @return The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *         <code>iam:PassRole</code> action.
      */
 
     public String getServiceAccessRoleArn() {
@@ -63,11 +68,13 @@ public class DynamoDbSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

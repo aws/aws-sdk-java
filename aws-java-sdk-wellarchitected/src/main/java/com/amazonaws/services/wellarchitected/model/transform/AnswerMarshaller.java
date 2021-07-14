@@ -44,12 +44,16 @@ public class AnswerMarshaller {
             .marshallLocationName("Choices").build();
     private static final MarshallingInfo<List> SELECTEDCHOICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedChoices").build();
+    private static final MarshallingInfo<List> CHOICEANSWERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ChoiceAnswers").build();
     private static final MarshallingInfo<Boolean> ISAPPLICABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsApplicable").build();
     private static final MarshallingInfo<String> RISK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Risk").build();
     private static final MarshallingInfo<String> NOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Notes").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Reason").build();
 
     private static final AnswerMarshaller instance = new AnswerMarshaller();
 
@@ -75,9 +79,11 @@ public class AnswerMarshaller {
             protocolMarshaller.marshall(answer.getHelpfulResourceUrl(), HELPFULRESOURCEURL_BINDING);
             protocolMarshaller.marshall(answer.getChoices(), CHOICES_BINDING);
             protocolMarshaller.marshall(answer.getSelectedChoices(), SELECTEDCHOICES_BINDING);
+            protocolMarshaller.marshall(answer.getChoiceAnswers(), CHOICEANSWERS_BINDING);
             protocolMarshaller.marshall(answer.getIsApplicable(), ISAPPLICABLE_BINDING);
             protocolMarshaller.marshall(answer.getRisk(), RISK_BINDING);
             protocolMarshaller.marshall(answer.getNotes(), NOTES_BINDING);
+            protocolMarshaller.marshall(answer.getReason(), REASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

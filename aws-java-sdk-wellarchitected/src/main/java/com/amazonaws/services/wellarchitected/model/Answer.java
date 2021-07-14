@@ -43,12 +43,24 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Choice> choices;
 
     private java.util.List<String> selectedChoices;
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     */
+    private java.util.List<ChoiceAnswer> choiceAnswers;
 
     private Boolean isApplicable;
 
     private String risk;
 
     private String notes;
+    /**
+     * <p>
+     * The reason why the question is not applicable to your workload.
+     * </p>
+     */
+    private String reason;
 
     /**
      * @param questionId
@@ -311,6 +323,76 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * 
+     * @return A list of selected choices to a question in your workload.
+     */
+
+    public java.util.List<ChoiceAnswer> getChoiceAnswers() {
+        return choiceAnswers;
+    }
+
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * 
+     * @param choiceAnswers
+     *        A list of selected choices to a question in your workload.
+     */
+
+    public void setChoiceAnswers(java.util.Collection<ChoiceAnswer> choiceAnswers) {
+        if (choiceAnswers == null) {
+            this.choiceAnswers = null;
+            return;
+        }
+
+        this.choiceAnswers = new java.util.ArrayList<ChoiceAnswer>(choiceAnswers);
+    }
+
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChoiceAnswers(java.util.Collection)} or {@link #withChoiceAnswers(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param choiceAnswers
+     *        A list of selected choices to a question in your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Answer withChoiceAnswers(ChoiceAnswer... choiceAnswers) {
+        if (this.choiceAnswers == null) {
+            setChoiceAnswers(new java.util.ArrayList<ChoiceAnswer>(choiceAnswers.length));
+        }
+        for (ChoiceAnswer ele : choiceAnswers) {
+            this.choiceAnswers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * 
+     * @param choiceAnswers
+     *        A list of selected choices to a question in your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Answer withChoiceAnswers(java.util.Collection<ChoiceAnswer> choiceAnswers) {
+        setChoiceAnswers(choiceAnswers);
+        return this;
+    }
+
+    /**
      * @param isApplicable
      */
 
@@ -411,6 +493,65 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The reason why the question is not applicable to your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why the question is not applicable to your workload.
+     * @see AnswerReason
+     */
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason why the question is not applicable to your workload.
+     * </p>
+     * 
+     * @return The reason why the question is not applicable to your workload.
+     * @see AnswerReason
+     */
+
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason why the question is not applicable to your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why the question is not applicable to your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnswerReason
+     */
+
+    public Answer withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason why the question is not applicable to your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why the question is not applicable to your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnswerReason
+     */
+
+    public Answer withReason(AnswerReason reason) {
+        this.reason = reason.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -438,12 +579,16 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
             sb.append("Choices: ").append(getChoices()).append(",");
         if (getSelectedChoices() != null)
             sb.append("SelectedChoices: ").append(getSelectedChoices()).append(",");
+        if (getChoiceAnswers() != null)
+            sb.append("ChoiceAnswers: ").append(getChoiceAnswers()).append(",");
         if (getIsApplicable() != null)
             sb.append("IsApplicable: ").append(getIsApplicable()).append(",");
         if (getRisk() != null)
             sb.append("Risk: ").append(getRisk()).append(",");
         if (getNotes() != null)
-            sb.append("Notes: ").append(getNotes());
+            sb.append("Notes: ").append(getNotes()).append(",");
+        if (getReason() != null)
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +635,10 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSelectedChoices() != null && other.getSelectedChoices().equals(this.getSelectedChoices()) == false)
             return false;
+        if (other.getChoiceAnswers() == null ^ this.getChoiceAnswers() == null)
+            return false;
+        if (other.getChoiceAnswers() != null && other.getChoiceAnswers().equals(this.getChoiceAnswers()) == false)
+            return false;
         if (other.getIsApplicable() == null ^ this.getIsApplicable() == null)
             return false;
         if (other.getIsApplicable() != null && other.getIsApplicable().equals(this.getIsApplicable()) == false)
@@ -501,6 +650,10 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
         if (other.getNotes() == null ^ this.getNotes() == null)
             return false;
         if (other.getNotes() != null && other.getNotes().equals(this.getNotes()) == false)
+            return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
         return true;
     }
@@ -518,9 +671,11 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHelpfulResourceUrl() == null) ? 0 : getHelpfulResourceUrl().hashCode());
         hashCode = prime * hashCode + ((getChoices() == null) ? 0 : getChoices().hashCode());
         hashCode = prime * hashCode + ((getSelectedChoices() == null) ? 0 : getSelectedChoices().hashCode());
+        hashCode = prime * hashCode + ((getChoiceAnswers() == null) ? 0 : getChoiceAnswers().hashCode());
         hashCode = prime * hashCode + ((getIsApplicable() == null) ? 0 : getIsApplicable().hashCode());
         hashCode = prime * hashCode + ((getRisk() == null) ? 0 : getRisk().hashCode());
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

@@ -44,7 +44,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -91,7 +91,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      */
@@ -145,7 +145,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -156,7 +156,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -171,7 +171,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
@@ -181,7 +181,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *         For more information on the settings and capacities for the available replication instance classes, see
      *         <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *         > Selecting the right AWS DMS replication instance for your migration</a>.
+     *         > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -196,7 +196,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -207,7 +207,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,7 +493,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -501,7 +501,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
      *        test mode. This indicates some features might not work as expected.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *        </p>
      * @see ReleaseStatusValues
      */
@@ -517,14 +517,14 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
      * @return The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta
      *         or test mode. This indicates some features might not work as expected.</p> <note>
      *         <p>
-     *         AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     *         DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *         </p>
      * @see ReleaseStatusValues
      */
@@ -540,7 +540,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -548,7 +548,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
      *        test mode. This indicates some features might not work as expected.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReleaseStatusValues
@@ -566,7 +566,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -574,7 +574,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
      *        test mode. This indicates some features might not work as expected.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReleaseStatusValues

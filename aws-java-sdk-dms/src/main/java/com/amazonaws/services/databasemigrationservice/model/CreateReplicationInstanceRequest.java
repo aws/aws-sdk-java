@@ -69,7 +69,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -83,7 +83,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
-     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     * system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      * </p>
      */
     private String availabilityZone;
@@ -101,8 +101,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -147,15 +147,14 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      */
     private String kmsKeyId;
@@ -184,7 +183,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      */
@@ -413,7 +412,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -424,7 +423,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -439,7 +438,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
@@ -449,7 +448,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         For more information on the settings and capacities for the available replication instance classes, see
      *         <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *         > Selecting the right AWS DMS replication instance for your migration</a>.
+     *         > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -464,7 +463,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -475,7 +474,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,12 +564,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
-     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     * system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where the replication instance will be created. The default value is a random,
-     *        system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     *        system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -580,11 +579,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
-     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     * system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @return The Availability Zone where the replication instance will be created. The default value is a random,
-     *         system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     *         system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      */
 
     public String getAvailabilityZone() {
@@ -594,12 +593,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
-     * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     * system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where the replication instance will be created. The default value is a random,
-     *        system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
+     *        system-chosen Availability Zone in the endpoint's Region, for example: <code>us-east-1d</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,8 +655,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -672,7 +671,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a
      *        random day of the week.
      *        </p>
      *        <p>
@@ -694,8 +693,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -709,8 +708,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
-     *         a random day of the week.
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a
+     *         random day of the week.
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -731,8 +730,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week.
+     * Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a random day
+     * of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -747,7 +746,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per Region, occurring on a
      *        random day of the week.
      *        </p>
      *        <p>
@@ -1036,26 +1035,25 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        An KMS key identifier that is used to encrypt the data on the replication instance.</p>
      *        <p>
-     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *        encryption key.
      *        </p>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        KMS creates the default encryption key for your account. Your account has a different default encryption
+     *        key for each Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1064,25 +1062,24 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
-     * @return An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     * @return An KMS key identifier that is used to encrypt the data on the replication instance.</p>
      *         <p>
-     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *         encryption key.
      *         </p>
      *         <p>
-     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     *         KMS creates the default encryption key for your account. Your account has a different default encryption
+     *         key for each Region.
      */
 
     public String getKmsKeyId() {
@@ -1091,26 +1088,25 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the data on the replication instance.
+     * An KMS key identifier that is used to encrypt the data on the replication instance.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        An AWS KMS key identifier that is used to encrypt the data on the replication instance.</p>
+     *        An KMS key identifier that is used to encrypt the data on the replication instance.</p>
      *        <p>
-     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *        encryption key.
      *        </p>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        KMS creates the default encryption key for your account. Your account has a different default encryption
+     *        key for each Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1253,7 +1249,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      * 
@@ -1264,7 +1260,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
      *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
      *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      *        <code>EndpointArn</code>.
      */
 
@@ -1280,7 +1276,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      * 
@@ -1290,7 +1286,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
      *         <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
      *         <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     *         <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *         <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      *         <code>EndpointArn</code>.
      */
 
@@ -1306,7 +1302,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      * <code>EndpointArn</code>.
      * </p>
      * 
@@ -1317,7 +1313,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
      *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
      *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
-     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of
      *        <code>EndpointArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

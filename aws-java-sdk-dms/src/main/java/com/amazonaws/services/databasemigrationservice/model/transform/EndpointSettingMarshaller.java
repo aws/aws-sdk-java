@@ -44,6 +44,8 @@ public class EndpointSettingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IntValueMin").build();
     private static final MarshallingInfo<Integer> INTVALUEMAX_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IntValueMax").build();
+    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
 
     private static final EndpointSettingMarshaller instance = new EndpointSettingMarshaller();
 
@@ -69,6 +71,7 @@ public class EndpointSettingMarshaller {
             protocolMarshaller.marshall(endpointSetting.getApplicability(), APPLICABILITY_BINDING);
             protocolMarshaller.marshall(endpointSetting.getIntValueMin(), INTVALUEMIN_BINDING);
             protocolMarshaller.marshall(endpointSetting.getIntValueMax(), INTVALUEMAX_BINDING);
+            protocolMarshaller.marshall(endpointSetting.getDefaultValue(), DEFAULTVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

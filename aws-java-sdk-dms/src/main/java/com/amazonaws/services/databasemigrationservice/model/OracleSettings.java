@@ -40,18 +40,24 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private Boolean addSupplementalLogging;
     /**
      * <p>
-     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
-     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
-     * accessed from the outset.
+     * Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the
+     * dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves
+     * performance by ensuring that the correct logs are accessed from the outset.
      * </p>
      */
     private Integer archivedLogDestId;
     /**
      * <p>
-     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
-     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
-     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * <p>
+     * Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href=
+     * "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     * >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      * </p>
      */
     private Integer additionalArchivedLogDestId;
@@ -64,7 +70,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private Boolean allowSelectNestedTables;
     /**
      * <p>
-     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC)
      * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
      * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
      * </p>
@@ -72,7 +78,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer parallelAsmReadThreads;
     /**
      * <p>
-     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture
      * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).
      * </p>
@@ -133,8 +139,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private Boolean directPathNoLog;
     /**
      * <p>
-     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
-     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
+     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      * </p>
      */
     private Boolean archivedLogsOnly;
@@ -189,8 +195,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
-     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
-     * that the target table cannot have any constraints or indexes.
+     * is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that
+     * the target table cannot have any constraints or indexes.
      * </p>
      */
     private Boolean directPathParallelLoad;
@@ -250,8 +256,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      */
     private String securityDbEncryption;
@@ -263,8 +269,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      * <code>securityDbEncryptionName</code> extra connection attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      */
     private String securityDbEncryptionName;
@@ -285,15 +291,57 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String spatialDataOptionToGeoJsonFunctionName;
     /**
      * <p>
+     * Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active
+     * Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.
+     * </p>
+     * <p>
+     * In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     * replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in
+     * production.
+     * </p>
+     */
+    private Integer standbyDelayTime;
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      */
     private String username;
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the Oracle endpoint.
+     * Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     * <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle
+     * as the source, you set additional attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     * </p>
+     */
+    private Boolean useBFile;
+    /**
+     * <p>
+     * Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     * protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables
+     * during a full load.
+     * </p>
+     */
+    private Boolean useDirectPathFullLoad;
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     * attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code>
+     * to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     * </p>
+     */
+    private Boolean useLogminerReader;
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the Oracle endpoint.
      * </p>
      * <note>
      * <p>
@@ -301,10 +349,9 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      */
@@ -319,7 +366,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
-     * specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
      * </p>
@@ -330,10 +377,9 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
-     * access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      */
@@ -429,17 +475,17 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
-     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
-     * accessed from the outset.
+     * Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the
+     * dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves
+     * performance by ensuring that the correct logs are accessed from the outset.
      * </p>
      * 
      * @param archivedLogDestId
-     *        Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in
-     *        the v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to
-     *        specify an archived redo logs location identifier. Doing this improves performance by ensuring that the
-     *        correct logs are accessed from the outset.
+     *        Specifies the ID of the destination for the archived redo logs. This value should be the same as a number
+     *        in the dest_id column of the v$archived_log view. If you work with an additional redo log destination, use
+     *        the <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this
+     *        improves performance by ensuring that the correct logs are accessed from the outset.
      */
 
     public void setArchivedLogDestId(Integer archivedLogDestId) {
@@ -448,16 +494,16 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
-     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
-     * accessed from the outset.
+     * Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the
+     * dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves
+     * performance by ensuring that the correct logs are accessed from the outset.
      * </p>
      * 
-     * @return Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number
-     *         in the v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you
-     *         to specify an archived redo logs location identifier. Doing this improves performance by ensuring that
-     *         the correct logs are accessed from the outset.
+     * @return Specifies the ID of the destination for the archived redo logs. This value should be the same as a number
+     *         in the dest_id column of the v$archived_log view. If you work with an additional redo log destination,
+     *         use the <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing
+     *         this improves performance by ensuring that the correct logs are accessed from the outset.
      */
 
     public Integer getArchivedLogDestId() {
@@ -466,17 +512,17 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in the
-     * v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to specify an
-     * archived redo logs location identifier. Doing this improves performance by ensuring that the correct logs are
-     * accessed from the outset.
+     * Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the
+     * dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the
+     * <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves
+     * performance by ensuring that the correct logs are accessed from the outset.
      * </p>
      * 
      * @param archivedLogDestId
-     *        Specifies the destination of the archived redo logs. The value should be the same as the DEST_ID number in
-     *        the v$archived_log table. When working with multiple log destinations (DEST_ID), we recommend that you to
-     *        specify an archived redo logs location identifier. Doing this improves performance by ensuring that the
-     *        correct logs are accessed from the outset.
+     *        Specifies the ID of the destination for the archived redo logs. This value should be the same as a number
+     *        in the dest_id column of the v$archived_log view. If you work with an additional redo log destination, use
+     *        the <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this
+     *        improves performance by ensuring that the correct logs are accessed from the outset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,16 +533,28 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
-     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
-     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * <p>
+     * Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href=
+     * "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     * >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      * </p>
      * 
      * @param additionalArchivedLogDestId
-     *        Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is
-     *        useful in the case of a switchover. In this case, AWS DMS needs to know which destination to get archive
-     *        redo logs from to read changes. This need arises because the previous primary instance is now a standby
-     *        instance after switchover.
+     *        Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is
+     *        useful in the case of a switchover. In this case, DMS needs to know which destination to get archive redo
+     *        logs from to read changes. This need arises because the previous primary instance is now a standby
+     *        instance after switchover.</p>
+     *        <p>
+     *        Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     *        <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a
+     *        href=
+     *        "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     *        >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      */
 
     public void setAdditionalArchivedLogDestId(Integer additionalArchivedLogDestId) {
@@ -505,15 +563,27 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
-     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
-     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * <p>
+     * Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href=
+     * "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     * >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      * </p>
      * 
-     * @return Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is
-     *         useful in the case of a switchover. In this case, AWS DMS needs to know which destination to get archive
-     *         redo logs from to read changes. This need arises because the previous primary instance is now a standby
-     *         instance after switchover.
+     * @return Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is
+     *         useful in the case of a switchover. In this case, DMS needs to know which destination to get archive redo
+     *         logs from to read changes. This need arises because the previous primary instance is now a standby
+     *         instance after switchover.</p>
+     *         <p>
+     *         Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     *         <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a
+     *         href=
+     *         "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     *         >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      */
 
     public Integer getAdditionalArchivedLogDestId() {
@@ -522,16 +592,28 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
-     * the case of a switchover. In this case, AWS DMS needs to know which destination to get archive redo logs from to
-     * read changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in
+     * the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read
+     * changes. This need arises because the previous primary instance is now a standby instance after switchover.
+     * </p>
+     * <p>
+     * Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     * <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href=
+     * "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     * >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      * </p>
      * 
      * @param additionalArchivedLogDestId
-     *        Set this attribute with <code>archivedLogDestId</code> in a primary/ standby setup. This attribute is
-     *        useful in the case of a switchover. In this case, AWS DMS needs to know which destination to get archive
-     *        redo logs from to read changes. This need arises because the previous primary instance is now a standby
-     *        instance after switchover.
+     *        Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is
+     *        useful in the case of a switchover. In this case, DMS needs to know which destination to get archive redo
+     *        logs from to read changes. This need arises because the previous primary instance is now a standby
+     *        instance after switchover.</p>
+     *        <p>
+     *        Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use
+     *        <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a
+     *        href=
+     *        "https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"
+     *        >RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,13 +684,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC)
      * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
      * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
      * </p>
      * 
      * @param parallelAsmReadThreads
-     *        Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture
+     *        Set this attribute to change the number of threads that DMS configures to perform a change data capture
      *        (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2
      *        (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      *        attribute.
@@ -620,12 +702,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC)
      * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
      * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
      * </p>
      * 
-     * @return Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture
+     * @return Set this attribute to change the number of threads that DMS configures to perform a change data capture
      *         (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2
      *         (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      *         attribute.
@@ -637,13 +719,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture (CDC)
+     * Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC)
      * load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default)
      * and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.
      * </p>
      * 
      * @param parallelAsmReadThreads
-     *        Set this attribute to change the number of threads that DMS configures to perform a Change Data Capture
+     *        Set this attribute to change the number of threads that DMS configures to perform a change data capture
      *        (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2
      *        (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code>
      *        attribute.
@@ -657,14 +739,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture
      * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).
      * </p>
      * 
      * @param readAheadBlocks
-     *        Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data
-     *        Capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
+     *        Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data
+     *        capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
      *        between 1000 (the default) and 200,000 (the maximum).
      */
 
@@ -674,13 +756,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture
      * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).
      * </p>
      * 
-     * @return Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data
-     *         Capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
+     * @return Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data
+     *         capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
      *         between 1000 (the default) and 200,000 (the maximum).
      */
 
@@ -690,14 +772,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data Capture
+     * Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture
      * (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the
      * default) and 200,000 (the maximum).
      * </p>
      * 
      * @param readAheadBlocks
-     *        Set this attribute to change the number of read-ahead blocks that DMS configures to perform a Change Data
-     *        Capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
+     *        Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data
+     *        capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value
      *        between 1000 (the default) and 200,000 (the maximum).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1134,13 +1216,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
-     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
+     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @param archivedLogsOnly
-     *        When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
-     *        redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     *        When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
+     *        logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      */
 
     public void setArchivedLogsOnly(Boolean archivedLogsOnly) {
@@ -1149,12 +1231,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
-     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
+     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
-     * @return When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
-     *         redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * @return When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
+     *         logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      */
 
     public Boolean getArchivedLogsOnly() {
@@ -1163,13 +1245,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
-     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
+     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @param archivedLogsOnly
-     *        When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
-     *        redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     *        When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
+     *        logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1180,12 +1262,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived redo logs
-     * are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
+     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
-     * @return When this field is set to <code>Y</code>, AWS DMS only accesses the archived redo logs. If the archived
-     *         redo logs are stored on Oracle ASM only, the AWS DMS user account needs to be granted ASM privileges.
+     * @return When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
+     *         logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
      */
 
     public Boolean isArchivedLogsOnly() {
@@ -1528,14 +1610,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
-     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
-     * that the target table cannot have any constraints or indexes.
+     * is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that
+     * the target table cannot have any constraints or indexes.
      * </p>
      * 
      * @param directPathParallelLoad
      *        When set to <code>true</code>, this attribute specifies a parallel load when
      *        <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use
-     *        the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     *        the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
      */
 
     public void setDirectPathParallelLoad(Boolean directPathParallelLoad) {
@@ -1545,13 +1627,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
-     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
-     * that the target table cannot have any constraints or indexes.
+     * is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that
+     * the target table cannot have any constraints or indexes.
      * </p>
      * 
      * @return When set to <code>true</code>, this attribute specifies a parallel load when
      *         <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you
-     *         use the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     *         use the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
      */
 
     public Boolean getDirectPathParallelLoad() {
@@ -1561,14 +1643,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
-     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
-     * that the target table cannot have any constraints or indexes.
+     * is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that
+     * the target table cannot have any constraints or indexes.
      * </p>
      * 
      * @param directPathParallelLoad
      *        When set to <code>true</code>, this attribute specifies a parallel load when
      *        <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use
-     *        the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     *        the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1580,13 +1662,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
-     * is set to <code>Y</code>. This attribute also only applies when you use the AWS DMS parallel load feature. Note
-     * that the target table cannot have any constraints or indexes.
+     * is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that
+     * the target table cannot have any constraints or indexes.
      * </p>
      * 
      * @return When set to <code>true</code>, this attribute specifies a parallel load when
      *         <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you
-     *         use the AWS DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
+     *         use the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.
      */
 
     public Boolean isDirectPathParallelLoad() {
@@ -1937,8 +2019,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      * 
      * @param securityDbEncryption
@@ -1948,8 +2030,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *        request parameter when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is related
      *        to this <code>SecurityDbEncryptionName</code> setting. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"
-     *        > Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database
-     *        Migration Service User Guide</i>.
+     *        > Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration
+     *        Service User Guide</i>.
      */
 
     public void setSecurityDbEncryption(String securityDbEncryption) {
@@ -1964,8 +2046,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      * 
      * @return For an Oracle source endpoint, the transparent data encryption (TDE) password required by AWM DMS to
@@ -1974,8 +2056,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *         request parameter when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is related
      *         to this <code>SecurityDbEncryptionName</code> setting. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"
-     *         > Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database
-     *         Migration Service User Guide</i>.
+     *         > Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration
+     *         Service User Guide</i>.
      */
 
     public String getSecurityDbEncryption() {
@@ -1990,8 +2072,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      * 
      * @param securityDbEncryption
@@ -2001,8 +2083,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *        request parameter when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is related
      *        to this <code>SecurityDbEncryptionName</code> setting. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"
-     *        > Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database
-     *        Migration Service User Guide</i>.
+     *        > Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration
+     *        Service User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2019,8 +2101,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      * <code>securityDbEncryptionName</code> extra connection attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      * 
      * @param securityDbEncryptionName
@@ -2030,8 +2112,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *        of <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      *        <code>securityDbEncryptionName</code> extra connection attribute in <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"
-     *        > Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database
-     *        Migration Service User Guide</i>.
+     *        > Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration
+     *        Service User Guide</i>.
      */
 
     public void setSecurityDbEncryptionName(String securityDbEncryptionName) {
@@ -2046,8 +2128,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      * <code>securityDbEncryptionName</code> extra connection attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      * 
      * @return For an Oracle source endpoint, the name of a key used for the transparent data encryption (TDE) of the
@@ -2056,8 +2138,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *         value of <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      *         <code>securityDbEncryptionName</code> extra connection attribute in <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"
-     *         > Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database
-     *         Migration Service User Guide</i>.
+     *         > Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration
+     *         Service User Guide</i>.
      */
 
     public String getSecurityDbEncryptionName() {
@@ -2072,8 +2154,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      * <code>securityDbEncryptionName</code> extra connection attribute in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
-     * Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database Migration
-     * Service User Guide</i>.
+     * Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User
+     * Guide</i>.
      * </p>
      * 
      * @param securityDbEncryptionName
@@ -2083,8 +2165,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *        of <code>SecurityDbEncryptionName</code>, see the information and example for setting the
      *        <code>securityDbEncryptionName</code> extra connection attribute in <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"
-     *        > Supported encryption methods for using Oracle as a source for AWS DMS</a> in the <i>AWS Database
-     *        Migration Service User Guide</i>.
+     *        > Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration
+     *        Service User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2193,6 +2275,82 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active
+     * Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.
+     * </p>
+     * <p>
+     * In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     * replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in
+     * production.
+     * </p>
+     * 
+     * @param standbyDelayTime
+     *        Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle
+     *        Active Data Guard standby database, use this attribute to specify the time lag between primary and standby
+     *        databases.</p>
+     *        <p>
+     *        In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     *        replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be
+     *        in production.
+     */
+
+    public void setStandbyDelayTime(Integer standbyDelayTime) {
+        this.standbyDelayTime = standbyDelayTime;
+    }
+
+    /**
+     * <p>
+     * Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active
+     * Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.
+     * </p>
+     * <p>
+     * In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     * replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in
+     * production.
+     * </p>
+     * 
+     * @return Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle
+     *         Active Data Guard standby database, use this attribute to specify the time lag between primary and
+     *         standby databases.</p>
+     *         <p>
+     *         In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     *         replicating ongoing changes. Doing this eliminates the need to connect to an active database that might
+     *         be in production.
+     */
+
+    public Integer getStandbyDelayTime() {
+        return this.standbyDelayTime;
+    }
+
+    /**
+     * <p>
+     * Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active
+     * Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.
+     * </p>
+     * <p>
+     * In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     * replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in
+     * production.
+     * </p>
+     * 
+     * @param standbyDelayTime
+     *        Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle
+     *        Active Data Guard standby database, use this attribute to specify the time lag between primary and standby
+     *        databases.</p>
+     *        <p>
+     *        In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for
+     *        replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be
+     *        in production.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withStandbyDelayTime(Integer standbyDelayTime) {
+        setStandbyDelayTime(standbyDelayTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      * 
@@ -2233,9 +2391,258 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the Oracle endpoint.
+     * Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     * <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle
+     * as the source, you set additional attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     * </p>
+     * 
+     * @param useBFile
+     *        Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     *        <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for
+     *        Oracle as the source, you set additional attributes. For more information about using this setting with
+     *        Oracle Automatic Storage Management (ASM), see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *        Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     */
+
+    public void setUseBFile(Boolean useBFile) {
+        this.useBFile = useBFile;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     * <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle
+     * as the source, you set additional attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     * </p>
+     * 
+     * @return Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     *         <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for
+     *         Oracle as the source, you set additional attributes. For more information about using this setting with
+     *         Oracle Automatic Storage Management (ASM), see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *         Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     */
+
+    public Boolean getUseBFile() {
+        return this.useBFile;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     * <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle
+     * as the source, you set additional attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     * </p>
+     * 
+     * @param useBFile
+     *        Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     *        <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for
+     *        Oracle as the source, you set additional attributes. For more information about using this setting with
+     *        Oracle Automatic Storage Management (ASM), see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *        Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withUseBFile(Boolean useBFile) {
+        setUseBFile(useBFile);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     * <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle
+     * as the source, you set additional attributes. For more information about using this setting with Oracle Automatic
+     * Storage Management (ASM), see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     * </p>
+     * 
+     * @return Set this attribute to Y to capture change data using the Binary Reader utility. Set
+     *         <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for
+     *         Oracle as the source, you set additional attributes. For more information about using this setting with
+     *         Oracle Automatic Storage Management (ASM), see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *         Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
+     */
+
+    public Boolean isUseBFile() {
+        return this.useBFile;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     * protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables
+     * during a full load.
+     * </p>
+     * 
+     * @param useDirectPathFullLoad
+     *        Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     *        protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target
+     *        tables during a full load.
+     */
+
+    public void setUseDirectPathFullLoad(Boolean useDirectPathFullLoad) {
+        this.useDirectPathFullLoad = useDirectPathFullLoad;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     * protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables
+     * during a full load.
+     * </p>
+     * 
+     * @return Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct
+     *         path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle
+     *         target tables during a full load.
+     */
+
+    public Boolean getUseDirectPathFullLoad() {
+        return this.useDirectPathFullLoad;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     * protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables
+     * during a full load.
+     * </p>
+     * 
+     * @param useDirectPathFullLoad
+     *        Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     *        protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target
+     *        tables during a full load.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withUseDirectPathFullLoad(Boolean useDirectPathFullLoad) {
+        setUseDirectPathFullLoad(useDirectPathFullLoad);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path
+     * protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables
+     * during a full load.
+     * </p>
+     * 
+     * @return Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct
+     *         path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle
+     *         target tables during a full load.
+     */
+
+    public Boolean isUseDirectPathFullLoad() {
+        return this.useDirectPathFullLoad;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     * attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code>
+     * to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     * </p>
+     * 
+     * @param useLogminerReader
+     *        Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     *        attribute to N if you want to access the redo logs as a binary file. When you set
+     *        <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this
+     *        setting and using Oracle ASM, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *        Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     */
+
+    public void setUseLogminerReader(Boolean useLogminerReader) {
+        this.useLogminerReader = useLogminerReader;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     * attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code>
+     * to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     * </p>
+     * 
+     * @return Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     *         attribute to N if you want to access the redo logs as a binary file. When you set
+     *         <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this
+     *         setting and using Oracle ASM, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *         Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     */
+
+    public Boolean getUseLogminerReader() {
+        return this.useLogminerReader;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     * attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code>
+     * to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     * </p>
+     * 
+     * @param useLogminerReader
+     *        Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     *        attribute to N if you want to access the redo logs as a binary file. When you set
+     *        <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this
+     *        setting and using Oracle ASM, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *        Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withUseLogminerReader(Boolean useLogminerReader) {
+        setUseLogminerReader(useLogminerReader);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     * attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code>
+     * to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using
+     * Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     * </p>
+     * 
+     * @return Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this
+     *         attribute to N if you want to access the redo logs as a binary file. When you set
+     *         <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this
+     *         setting and using Oracle ASM, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+     *         Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
+     */
+
+    public Boolean isUseLogminerReader() {
+        return this.useLogminerReader;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the Oracle endpoint.
      * </p>
      * <note>
      * <p>
@@ -2243,28 +2650,27 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the Oracle endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the Oracle endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -2274,9 +2680,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the Oracle endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the Oracle endpoint.
      * </p>
      * <note>
      * <p>
@@ -2284,27 +2691,26 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *         the Oracle endpoint.</p> <note>
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *         the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow
+     *         the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *         Services Secrets Manager secret that allows access to the Oracle endpoint.</p> <note>
      *         <p>
      *         You can specify one of two sets of values for these permissions. You can specify the values for this
      *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *         see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *         Service User Guide</i>.
+     *         see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -2314,9 +2720,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the Oracle endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the Oracle endpoint.
      * </p>
      * <note>
      * <p>
@@ -2324,28 +2731,27 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the Oracle endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the Oracle endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2404,7 +2810,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
-     * specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
      * </p>
@@ -2415,16 +2821,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
-     * access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerOracleAsmAccessRoleArn
      *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *        that specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     *        that specifies DMS as the trusted entity and grants the required permissions to access the
      *        <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret
      *        value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *        <p>
@@ -2433,10 +2838,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *        <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify
      *        both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
      *        <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code>
-     *        required to access it, see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        required to access it, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -2447,7 +2852,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
-     * specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
      * </p>
@@ -2458,15 +2863,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
-     * access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @return Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *         that specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     *         that specifies DMS as the trusted entity and grants the required permissions to access the
      *         <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the
      *         secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *         <p>
@@ -2475,10 +2879,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *         <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify
      *         both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
      *         <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code>
-     *         required to access it, see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *         Service User Guide</i>.
+     *         required to access it, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -2489,7 +2893,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
-     * specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
      * </p>
@@ -2500,16 +2904,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
-     * access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerOracleAsmAccessRoleArn
      *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *        that specifies AWS DMS as the trusted entity and grants the required permissions to access the
+     *        that specifies DMS as the trusted entity and grants the required permissions to access the
      *        <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret
      *        value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *        <p>
@@ -2518,10 +2921,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      *        <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify
      *        both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
      *        <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code>
-     *        required to access it, see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        required to access it, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2655,8 +3058,16 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("ServerName: ").append(getServerName()).append(",");
         if (getSpatialDataOptionToGeoJsonFunctionName() != null)
             sb.append("SpatialDataOptionToGeoJsonFunctionName: ").append(getSpatialDataOptionToGeoJsonFunctionName()).append(",");
+        if (getStandbyDelayTime() != null)
+            sb.append("StandbyDelayTime: ").append(getStandbyDelayTime()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
+        if (getUseBFile() != null)
+            sb.append("UseBFile: ").append(getUseBFile()).append(",");
+        if (getUseDirectPathFullLoad() != null)
+            sb.append("UseDirectPathFullLoad: ").append(getUseDirectPathFullLoad()).append(",");
+        if (getUseLogminerReader() != null)
+            sb.append("UseLogminerReader: ").append(getUseLogminerReader()).append(",");
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
@@ -2800,9 +3211,25 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getSpatialDataOptionToGeoJsonFunctionName() != null
                 && other.getSpatialDataOptionToGeoJsonFunctionName().equals(this.getSpatialDataOptionToGeoJsonFunctionName()) == false)
             return false;
+        if (other.getStandbyDelayTime() == null ^ this.getStandbyDelayTime() == null)
+            return false;
+        if (other.getStandbyDelayTime() != null && other.getStandbyDelayTime().equals(this.getStandbyDelayTime()) == false)
+            return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
+            return false;
+        if (other.getUseBFile() == null ^ this.getUseBFile() == null)
+            return false;
+        if (other.getUseBFile() != null && other.getUseBFile().equals(this.getUseBFile()) == false)
+            return false;
+        if (other.getUseDirectPathFullLoad() == null ^ this.getUseDirectPathFullLoad() == null)
+            return false;
+        if (other.getUseDirectPathFullLoad() != null && other.getUseDirectPathFullLoad().equals(this.getUseDirectPathFullLoad()) == false)
+            return false;
+        if (other.getUseLogminerReader() == null ^ this.getUseLogminerReader() == null)
+            return false;
+        if (other.getUseLogminerReader() != null && other.getUseLogminerReader().equals(this.getUseLogminerReader()) == false)
             return false;
         if (other.getSecretsManagerAccessRoleArn() == null ^ this.getSecretsManagerAccessRoleArn() == null)
             return false;
@@ -2860,7 +3287,11 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityDbEncryptionName() == null) ? 0 : getSecurityDbEncryptionName().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getSpatialDataOptionToGeoJsonFunctionName() == null) ? 0 : getSpatialDataOptionToGeoJsonFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getStandbyDelayTime() == null) ? 0 : getStandbyDelayTime().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getUseBFile() == null) ? 0 : getUseBFile().hashCode());
+        hashCode = prime * hashCode + ((getUseDirectPathFullLoad() == null) ? 0 : getUseDirectPathFullLoad().hashCode());
+        hashCode = prime * hashCode + ((getUseLogminerReader() == null) ? 0 : getUseLogminerReader().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerOracleAsmAccessRoleArn() == null) ? 0 : getSecretsManagerOracleAsmAccessRoleArn().hashCode());

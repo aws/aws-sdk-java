@@ -41,6 +41,8 @@ public class DatastorePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatastoreTypeVersion").build();
     private static final MarshallingInfo<String> DATASTOREENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatastoreEndpoint").build();
+    private static final MarshallingInfo<StructuredPojo> SSECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SseConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> PRELOADDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreloadDataConfig").build();
 
@@ -67,6 +69,7 @@ public class DatastorePropertiesMarshaller {
             protocolMarshaller.marshall(datastoreProperties.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getDatastoreTypeVersion(), DATASTORETYPEVERSION_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getDatastoreEndpoint(), DATASTOREENDPOINT_BINDING);
+            protocolMarshaller.marshall(datastoreProperties.getSseConfiguration(), SSECONFIGURATION_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getPreloadDataConfig(), PRELOADDATACONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

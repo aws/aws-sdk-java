@@ -30,14 +30,14 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by service to access the IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
-     * specified.
+     * The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.
      * </p>
      */
     private String endpointUri;
@@ -61,11 +61,13 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by service to access the IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by service to access the IAM role.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -74,10 +76,12 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by service to access the IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used by service to access the IAM role.
+     * @return The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *         <code>iam:PassRole</code> action.
      */
 
     public String getServiceAccessRoleArn() {
@@ -86,11 +90,13 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by service to access the IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by service to access the IAM role.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +107,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
-     * specified.
+     * The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.
      * </p>
      * 
      * @param endpointUri
-     *        The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     *        The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not
      *        specified.
      */
 
@@ -116,12 +121,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
-     * specified.
+     * The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.
      * </p>
      * 
-     * @return The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is
-     *         not specified.
+     * @return The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not
+     *         specified.
      */
 
     public String getEndpointUri() {
@@ -130,12 +134,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
-     * specified.
+     * The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.
      * </p>
      * 
      * @param endpointUri
-     *        The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol (http/https) is not
+     *        The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not
      *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

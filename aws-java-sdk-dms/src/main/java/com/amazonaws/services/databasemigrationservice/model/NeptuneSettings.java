@@ -30,55 +30,55 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For more
-     * information, see <a href=
+     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role
+     * must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database Migration
-     * Service User Guide. </i>
+     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service
+     * User Guide. </i>
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files before
-     * bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data before storing it
-     * in these .csv files.
+     * The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     * bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in
+     * these .csv files.
      * </p>
      */
     private String s3BucketName;
     /**
      * <p>
-     * A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     * A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      * <code>S3BucketName</code>
      * </p>
      */
     private String s3BucketFolder;
     /**
      * <p>
-     * The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
+     * The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
      * database before raising an error. The default is 250.
      * </p>
      */
     private Integer errorRetryDuration;
     /**
      * <p>
-     * The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the data to
-     * the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS clears the
-     * bucket, ready to store the next batch of migrated graph data.
+     * The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the
+     * Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket,
+     * ready to store the next batch of migrated graph data.
      * </p>
      */
     private Integer maxFileSize;
     /**
      * <p>
-     * The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database before
+     * The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before
      * raising an error. The default is 5.
      * </p>
      */
     private Integer maxRetryCount;
     /**
      * <p>
-     * If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter
-     * to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
+     * If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to
+     * <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
      * <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      * </p>
      */
@@ -86,19 +86,19 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For more
-     * information, see <a href=
+     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role
+     * must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database Migration
-     * Service User Guide. </i>
+     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service
+     * User Guide. </i>
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For
-     *        more information, see <a href=
+     *        The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The
+     *        role must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     *        >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database
-     *        Migration Service User Guide. </i>
+     *        >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration
+     *        Service User Guide. </i>
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -107,18 +107,18 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For more
-     * information, see <a href=
+     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role
+     * must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database Migration
-     * Service User Guide. </i>
+     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service
+     * User Guide. </i>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For
-     *         more information, see <a href=
+     * @return The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The
+     *         role must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     *         >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database
-     *         Migration Service User Guide. </i>
+     *         >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration
+     *         Service User Guide. </i>
      */
 
     public String getServiceAccessRoleArn() {
@@ -127,19 +127,19 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For more
-     * information, see <a href=
+     * The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role
+     * must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database Migration
-     * Service User Guide. </i>
+     * >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service
+     * User Guide. </i>
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. For
-     *        more information, see <a href=
+     *        The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The
+     *        role must allow the <code>iam:PassRole</code> action. For more information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole"
-     *        >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>AWS Database
-     *        Migration Service User Guide. </i>
+     *        >Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration
+     *        Service User Guide. </i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,15 +150,15 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files before
-     * bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data before storing it
-     * in these .csv files.
+     * The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     * bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in
+     * these .csv files.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files
-     *        before bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data
-     *        before storing it in these .csv files.
+     *        The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     *        bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing
+     *        it in these .csv files.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -167,14 +167,14 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files before
-     * bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data before storing it
-     * in these .csv files.
+     * The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     * bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in
+     * these .csv files.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files
-     *         before bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data
-     *         before storing it in these .csv files.
+     * @return The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     *         bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing
+     *         it in these .csv files.
      */
 
     public String getS3BucketName() {
@@ -183,15 +183,15 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files before
-     * bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data before storing it
-     * in these .csv files.
+     * The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     * bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in
+     * these .csv files.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of the Amazon S3 bucket where AWS DMS can temporarily store migrated graph data in .csv files
-     *        before bulk-loading it to the Neptune target database. AWS DMS maps the SQL source data to graph data
-     *        before storing it in these .csv files.
+     *        The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before
+     *        bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing
+     *        it in these .csv files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,12 +202,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     * A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      * <code>S3BucketName</code>
      * </p>
      * 
      * @param s3BucketFolder
-     *        A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     *        A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      *        <code>S3BucketName</code>
      */
 
@@ -217,11 +217,11 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     * A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      * <code>S3BucketName</code>
      * </p>
      * 
-     * @return A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     * @return A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      *         <code>S3BucketName</code>
      */
 
@@ -231,12 +231,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     * A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      * <code>S3BucketName</code>
      * </p>
      * 
      * @param s3BucketFolder
-     *        A folder path where you want AWS DMS to store migrated graph data in the S3 bucket specified by
+     *        A folder path where you want DMS to store migrated graph data in the S3 bucket specified by
      *        <code>S3BucketName</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -248,12 +248,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
+     * The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
      * database before raising an error. The default is 250.
      * </p>
      * 
      * @param errorRetryDuration
-     *        The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune
+     *        The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune
      *        target database before raising an error. The default is 250.
      */
 
@@ -263,11 +263,11 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
+     * The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
      * database before raising an error. The default is 250.
      * </p>
      * 
-     * @return The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune
+     * @return The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune
      *         target database before raising an error. The default is 250.
      */
 
@@ -277,12 +277,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
+     * The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target
      * database before raising an error. The default is 250.
      * </p>
      * 
      * @param errorRetryDuration
-     *        The number of milliseconds for AWS DMS to wait to retry a bulk-load of migrated graph data to the Neptune
+     *        The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune
      *        target database before raising an error. The default is 250.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -294,15 +294,15 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the data to
-     * the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS clears the
-     * bucket, ready to store the next batch of migrated graph data.
+     * The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the
+     * Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket,
+     * ready to store the next batch of migrated graph data.
      * </p>
      * 
      * @param maxFileSize
-     *        The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the
-     *        data to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS
-     *        clears the bucket, ready to store the next batch of migrated graph data.
+     *        The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data
+     *        to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears
+     *        the bucket, ready to store the next batch of migrated graph data.
      */
 
     public void setMaxFileSize(Integer maxFileSize) {
@@ -311,14 +311,14 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the data to
-     * the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS clears the
-     * bucket, ready to store the next batch of migrated graph data.
+     * The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the
+     * Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket,
+     * ready to store the next batch of migrated graph data.
      * </p>
      * 
-     * @return The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the
-     *         data to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS
-     *         clears the bucket, ready to store the next batch of migrated graph data.
+     * @return The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data
+     *         to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears
+     *         the bucket, ready to store the next batch of migrated graph data.
      */
 
     public Integer getMaxFileSize() {
@@ -327,15 +327,15 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the data to
-     * the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS clears the
-     * bucket, ready to store the next batch of migrated graph data.
+     * The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the
+     * Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket,
+     * ready to store the next batch of migrated graph data.
      * </p>
      * 
      * @param maxFileSize
-     *        The maximum size in kilobytes of migrated graph data stored in a .csv file before AWS DMS bulk-loads the
-     *        data to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, AWS DMS
-     *        clears the bucket, ready to store the next batch of migrated graph data.
+     *        The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data
+     *        to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears
+     *        the bucket, ready to store the next batch of migrated graph data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,12 +346,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database before
+     * The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before
      * raising an error. The default is 5.
      * </p>
      * 
      * @param maxRetryCount
-     *        The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database
+     *        The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database
      *        before raising an error. The default is 5.
      */
 
@@ -361,12 +361,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database before
+     * The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before
      * raising an error. The default is 5.
      * </p>
      * 
-     * @return The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target
-     *         database before raising an error. The default is 5.
+     * @return The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database
+     *         before raising an error. The default is 5.
      */
 
     public Integer getMaxRetryCount() {
@@ -375,12 +375,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database before
+     * The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before
      * raising an error. The default is 5.
      * </p>
      * 
      * @param maxRetryCount
-     *        The number of times for AWS DMS to retry a bulk load of migrated graph data to the Neptune target database
+     *        The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database
      *        before raising an error. The default is 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -392,13 +392,13 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter
-     * to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
+     * If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to
+     * <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
      * <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param iamAuthEnabled
-     *        If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this
+     *        If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this
      *        parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role
      *        specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      */
@@ -409,12 +409,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter
-     * to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
+     * If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to
+     * <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
      * <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      * </p>
      * 
-     * @return If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this
+     * @return If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this
      *         parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role
      *         specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      */
@@ -425,13 +425,13 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter
-     * to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
+     * If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to
+     * <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
      * <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param iamAuthEnabled
-     *        If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this
+     *        If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this
      *        parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role
      *        specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -444,12 +444,12 @@ public class NeptuneSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter
-     * to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
+     * If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to
+     * <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by
      * <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      * </p>
      * 
-     * @return If you want AWS Identity and Access Management (IAM) authorization enabled for this endpoint, set this
+     * @return If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this
      *         parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role
      *         specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.
      */

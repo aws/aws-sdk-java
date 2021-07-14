@@ -53,7 +53,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -84,7 +84,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -109,7 +109,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -237,7 +237,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -253,7 +253,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -274,7 +274,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -289,7 +289,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -310,7 +310,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -326,7 +326,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -362,7 +362,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -391,7 +391,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -425,7 +425,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -453,7 +453,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -487,7 +487,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -516,7 +516,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -546,7 +546,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -570,7 +570,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -598,7 +598,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -621,7 +621,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -649,7 +649,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -673,7 +673,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -703,7 +703,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
      * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -726,7 +726,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */

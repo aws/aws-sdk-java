@@ -38,10 +38,14 @@ public class AnswerSummaryMarshaller {
             .marshallLocationName("Choices").build();
     private static final MarshallingInfo<List> SELECTEDCHOICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedChoices").build();
+    private static final MarshallingInfo<List> CHOICEANSWERSUMMARIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChoiceAnswerSummaries").build();
     private static final MarshallingInfo<Boolean> ISAPPLICABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsApplicable").build();
     private static final MarshallingInfo<String> RISK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Risk").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Reason").build();
 
     private static final AnswerSummaryMarshaller instance = new AnswerSummaryMarshaller();
 
@@ -64,8 +68,10 @@ public class AnswerSummaryMarshaller {
             protocolMarshaller.marshall(answerSummary.getQuestionTitle(), QUESTIONTITLE_BINDING);
             protocolMarshaller.marshall(answerSummary.getChoices(), CHOICES_BINDING);
             protocolMarshaller.marshall(answerSummary.getSelectedChoices(), SELECTEDCHOICES_BINDING);
+            protocolMarshaller.marshall(answerSummary.getChoiceAnswerSummaries(), CHOICEANSWERSUMMARIES_BINDING);
             protocolMarshaller.marshall(answerSummary.getIsApplicable(), ISAPPLICABLE_BINDING);
             protocolMarshaller.marshall(answerSummary.getRisk(), RISK_BINDING);
+            protocolMarshaller.marshall(answerSummary.getReason(), REASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

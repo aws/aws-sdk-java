@@ -54,7 +54,7 @@ public class DistributionBundle implements Serializable, Cloneable, StructuredPo
     private Integer transferPerMonthInGb;
     /**
      * <p>
-     * Indicates whether the bundle is active, and can be specified for a new distribution.
+     * Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      * </p>
      */
     private Boolean isActive;
@@ -221,11 +221,11 @@ public class DistributionBundle implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the bundle is active, and can be specified for a new distribution.
+     * Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      * </p>
      * 
      * @param isActive
-     *        Indicates whether the bundle is active, and can be specified for a new distribution.
+     *        Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      */
 
     public void setIsActive(Boolean isActive) {
@@ -234,10 +234,10 @@ public class DistributionBundle implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the bundle is active, and can be specified for a new distribution.
+     * Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      * </p>
      * 
-     * @return Indicates whether the bundle is active, and can be specified for a new distribution.
+     * @return Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      */
 
     public Boolean getIsActive() {
@@ -246,11 +246,11 @@ public class DistributionBundle implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the bundle is active, and can be specified for a new distribution.
+     * Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      * </p>
      * 
      * @param isActive
-     *        Indicates whether the bundle is active, and can be specified for a new distribution.
+     *        Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,10 +261,10 @@ public class DistributionBundle implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether the bundle is active, and can be specified for a new distribution.
+     * Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      * </p>
      * 
-     * @return Indicates whether the bundle is active, and can be specified for a new distribution.
+     * @return Indicates whether the bundle is active, and can be specified for a new or existing distribution.
      */
 
     public Boolean isActive() {

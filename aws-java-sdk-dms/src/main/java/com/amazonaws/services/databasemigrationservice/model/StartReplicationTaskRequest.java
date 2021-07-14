@@ -72,7 +72,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      */
@@ -292,7 +292,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -320,7 +320,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *        </p>
      */
 
@@ -352,7 +352,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -379,7 +379,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *         >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *         >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *         </p>
      */
 
@@ -411,7 +411,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -439,7 +439,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

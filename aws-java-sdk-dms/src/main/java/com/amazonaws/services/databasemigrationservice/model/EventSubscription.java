@@ -30,25 +30,25 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS customer account associated with the AWS DMS event notification subscription.
+     * The Amazon Web Services customer account associated with the DMS event notification subscription.
      * </p>
      */
     private String customerAwsId;
     /**
      * <p>
-     * The AWS DMS event notification subscription Id.
+     * The DMS event notification subscription Id.
      * </p>
      */
     private String custSubscriptionId;
     /**
      * <p>
-     * The topic ARN of the AWS DMS event notification subscription.
+     * The topic ARN of the DMS event notification subscription.
      * </p>
      */
     private String snsTopicArn;
     /**
      * <p>
-     * The status of the AWS DMS event notification subscription.
+     * The status of the DMS event notification subscription.
      * </p>
      * <p>
      * Constraints:
@@ -57,20 +57,20 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The status
+     * The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status
      * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The time the AWS DMS event notification subscription was created.
+     * The time the DMS event notification subscription was created.
      * </p>
      */
     private String subscriptionCreationTime;
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-server | security-group | replication-task
@@ -98,11 +98,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS customer account associated with the AWS DMS event notification subscription.
+     * The Amazon Web Services customer account associated with the DMS event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the AWS DMS event notification subscription.
+     *        The Amazon Web Services customer account associated with the DMS event notification subscription.
      */
 
     public void setCustomerAwsId(String customerAwsId) {
@@ -111,10 +111,10 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS customer account associated with the AWS DMS event notification subscription.
+     * The Amazon Web Services customer account associated with the DMS event notification subscription.
      * </p>
      * 
-     * @return The AWS customer account associated with the AWS DMS event notification subscription.
+     * @return The Amazon Web Services customer account associated with the DMS event notification subscription.
      */
 
     public String getCustomerAwsId() {
@@ -123,11 +123,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS customer account associated with the AWS DMS event notification subscription.
+     * The Amazon Web Services customer account associated with the DMS event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the AWS DMS event notification subscription.
+     *        The Amazon Web Services customer account associated with the DMS event notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS DMS event notification subscription Id.
+     * The DMS event notification subscription Id.
      * </p>
      * 
      * @param custSubscriptionId
-     *        The AWS DMS event notification subscription Id.
+     *        The DMS event notification subscription Id.
      */
 
     public void setCustSubscriptionId(String custSubscriptionId) {
@@ -151,10 +151,10 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS DMS event notification subscription Id.
+     * The DMS event notification subscription Id.
      * </p>
      * 
-     * @return The AWS DMS event notification subscription Id.
+     * @return The DMS event notification subscription Id.
      */
 
     public String getCustSubscriptionId() {
@@ -163,11 +163,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS DMS event notification subscription Id.
+     * The DMS event notification subscription Id.
      * </p>
      * 
      * @param custSubscriptionId
-     *        The AWS DMS event notification subscription Id.
+     *        The DMS event notification subscription Id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The topic ARN of the AWS DMS event notification subscription.
+     * The topic ARN of the DMS event notification subscription.
      * </p>
      * 
      * @param snsTopicArn
-     *        The topic ARN of the AWS DMS event notification subscription.
+     *        The topic ARN of the DMS event notification subscription.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -191,10 +191,10 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The topic ARN of the AWS DMS event notification subscription.
+     * The topic ARN of the DMS event notification subscription.
      * </p>
      * 
-     * @return The topic ARN of the AWS DMS event notification subscription.
+     * @return The topic ARN of the DMS event notification subscription.
      */
 
     public String getSnsTopicArn() {
@@ -203,11 +203,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The topic ARN of the AWS DMS event notification subscription.
+     * The topic ARN of the DMS event notification subscription.
      * </p>
      * 
      * @param snsTopicArn
-     *        The topic ARN of the AWS DMS event notification subscription.
+     *        The topic ARN of the DMS event notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,7 +218,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the AWS DMS event notification subscription.
+     * The status of the DMS event notification subscription.
      * </p>
      * <p>
      * Constraints:
@@ -227,12 +227,12 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The status
+     * The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status
      * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      * 
      * @param status
-     *        The status of the AWS DMS event notification subscription.</p>
+     *        The status of the DMS event notification subscription.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -240,7 +240,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      *        Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      *        </p>
      *        <p>
-     *        The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The
+     *        The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The
      *        status "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      */
 
@@ -250,7 +250,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the AWS DMS event notification subscription.
+     * The status of the DMS event notification subscription.
      * </p>
      * <p>
      * Constraints:
@@ -259,11 +259,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The status
+     * The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status
      * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      * 
-     * @return The status of the AWS DMS event notification subscription.</p>
+     * @return The status of the DMS event notification subscription.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -271,7 +271,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      *         Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      *         </p>
      *         <p>
-     *         The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The
+     *         The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The
      *         status "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      */
 
@@ -281,7 +281,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the AWS DMS event notification subscription.
+     * The status of the DMS event notification subscription.
      * </p>
      * <p>
      * Constraints:
@@ -290,12 +290,12 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      * </p>
      * <p>
-     * The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The status
+     * The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status
      * "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * </p>
      * 
      * @param status
-     *        The status of the AWS DMS event notification subscription.</p>
+     *        The status of the DMS event notification subscription.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -303,7 +303,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      *        Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist
      *        </p>
      *        <p>
-     *        The status "no-permission" indicates that AWS DMS no longer has permission to post to the SNS topic. The
+     *        The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The
      *        status "topic-not-exist" indicates that the topic was deleted after the subscription was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -315,11 +315,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time the AWS DMS event notification subscription was created.
+     * The time the DMS event notification subscription was created.
      * </p>
      * 
      * @param subscriptionCreationTime
-     *        The time the AWS DMS event notification subscription was created.
+     *        The time the DMS event notification subscription was created.
      */
 
     public void setSubscriptionCreationTime(String subscriptionCreationTime) {
@@ -328,10 +328,10 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time the AWS DMS event notification subscription was created.
+     * The time the DMS event notification subscription was created.
      * </p>
      * 
-     * @return The time the AWS DMS event notification subscription was created.
+     * @return The time the DMS event notification subscription was created.
      */
 
     public String getSubscriptionCreationTime() {
@@ -340,11 +340,11 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time the AWS DMS event notification subscription was created.
+     * The time the DMS event notification subscription was created.
      * </p>
      * 
      * @param subscriptionCreationTime
-     *        The time the AWS DMS event notification subscription was created.
+     *        The time the DMS event notification subscription was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,14 +355,14 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | replication-server | security-group | replication-task
      */
@@ -373,13 +373,13 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      * 
-     * @return The type of AWS DMS resource that generates events. </p>
+     * @return The type of DMS resource that generates events. </p>
      *         <p>
      *         Valid values: replication-instance | replication-server | security-group | replication-task
      */
@@ -390,14 +390,14 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-server | security-group | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | replication-server | security-group | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.

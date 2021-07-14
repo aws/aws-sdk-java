@@ -106,6 +106,45 @@ public class AbstractAmazonHealthLakeAsync extends AbstractAmazonHealthLake impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListFHIRExportJobsResult> listFHIRExportJobsAsync(ListFHIRExportJobsRequest request) {
+
+        return listFHIRExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFHIRExportJobsResult> listFHIRExportJobsAsync(ListFHIRExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFHIRExportJobsRequest, ListFHIRExportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFHIRImportJobsResult> listFHIRImportJobsAsync(ListFHIRImportJobsRequest request) {
+
+        return listFHIRImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFHIRImportJobsResult> listFHIRImportJobsAsync(ListFHIRImportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFHIRImportJobsRequest, ListFHIRImportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFHIRExportJobResult> startFHIRExportJobAsync(StartFHIRExportJobRequest request) {
 
         return startFHIRExportJobAsync(request, null);
@@ -127,6 +166,32 @@ public class AbstractAmazonHealthLakeAsync extends AbstractAmazonHealthLake impl
     @Override
     public java.util.concurrent.Future<StartFHIRImportJobResult> startFHIRImportJobAsync(StartFHIRImportJobRequest request,
             com.amazonaws.handlers.AsyncHandler<StartFHIRImportJobRequest, StartFHIRImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

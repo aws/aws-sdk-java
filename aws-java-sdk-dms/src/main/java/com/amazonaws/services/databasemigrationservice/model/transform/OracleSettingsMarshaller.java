@@ -87,8 +87,16 @@ public class OracleSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
     private static final MarshallingInfo<String> SPATIALDATAOPTIONTOGEOJSONFUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpatialDataOptionToGeoJsonFunctionName").build();
+    private static final MarshallingInfo<Integer> STANDBYDELAYTIME_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StandbyDelayTime").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<Boolean> USEBFILE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseBFile").build();
+    private static final MarshallingInfo<Boolean> USEDIRECTPATHFULLLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseDirectPathFullLoad").build();
+    private static final MarshallingInfo<Boolean> USELOGMINERREADER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseLogminerReader").build();
     private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -144,7 +152,11 @@ public class OracleSettingsMarshaller {
             protocolMarshaller.marshall(oracleSettings.getSecurityDbEncryptionName(), SECURITYDBENCRYPTIONNAME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSpatialDataOptionToGeoJsonFunctionName(), SPATIALDATAOPTIONTOGEOJSONFUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getStandbyDelayTime(), STANDBYDELAYTIME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getUseBFile(), USEBFILE_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getUseDirectPathFullLoad(), USEDIRECTPATHFULLLOAD_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getUseLogminerReader(), USELOGMINERREADER_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerOracleAsmAccessRoleArn(), SECRETSMANAGERORACLEASMACCESSROLEARN_BINDING);

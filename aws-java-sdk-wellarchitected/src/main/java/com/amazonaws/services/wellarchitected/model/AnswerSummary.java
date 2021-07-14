@@ -37,10 +37,22 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Choice> choices;
 
     private java.util.List<String> selectedChoices;
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     */
+    private java.util.List<ChoiceAnswerSummary> choiceAnswerSummaries;
 
     private Boolean isApplicable;
 
     private String risk;
+    /**
+     * <p>
+     * The reason why a choice is non-applicable to a question in your workload.
+     * </p>
+     */
+    private String reason;
 
     /**
      * @param questionId
@@ -225,6 +237,76 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * 
+     * @return A list of selected choices to a question in your workload.
+     */
+
+    public java.util.List<ChoiceAnswerSummary> getChoiceAnswerSummaries() {
+        return choiceAnswerSummaries;
+    }
+
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * 
+     * @param choiceAnswerSummaries
+     *        A list of selected choices to a question in your workload.
+     */
+
+    public void setChoiceAnswerSummaries(java.util.Collection<ChoiceAnswerSummary> choiceAnswerSummaries) {
+        if (choiceAnswerSummaries == null) {
+            this.choiceAnswerSummaries = null;
+            return;
+        }
+
+        this.choiceAnswerSummaries = new java.util.ArrayList<ChoiceAnswerSummary>(choiceAnswerSummaries);
+    }
+
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChoiceAnswerSummaries(java.util.Collection)} or
+     * {@link #withChoiceAnswerSummaries(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param choiceAnswerSummaries
+     *        A list of selected choices to a question in your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnswerSummary withChoiceAnswerSummaries(ChoiceAnswerSummary... choiceAnswerSummaries) {
+        if (this.choiceAnswerSummaries == null) {
+            setChoiceAnswerSummaries(new java.util.ArrayList<ChoiceAnswerSummary>(choiceAnswerSummaries.length));
+        }
+        for (ChoiceAnswerSummary ele : choiceAnswerSummaries) {
+            this.choiceAnswerSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of selected choices to a question in your workload.
+     * </p>
+     * 
+     * @param choiceAnswerSummaries
+     *        A list of selected choices to a question in your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnswerSummary withChoiceAnswerSummaries(java.util.Collection<ChoiceAnswerSummary> choiceAnswerSummaries) {
+        setChoiceAnswerSummaries(choiceAnswerSummaries);
+        return this;
+    }
+
+    /**
      * @param isApplicable
      */
 
@@ -299,6 +381,65 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The reason why a choice is non-applicable to a question in your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why a choice is non-applicable to a question in your workload.
+     * @see AnswerReason
+     */
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason why a choice is non-applicable to a question in your workload.
+     * </p>
+     * 
+     * @return The reason why a choice is non-applicable to a question in your workload.
+     * @see AnswerReason
+     */
+
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason why a choice is non-applicable to a question in your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why a choice is non-applicable to a question in your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnswerReason
+     */
+
+    public AnswerSummary withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason why a choice is non-applicable to a question in your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why a choice is non-applicable to a question in your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnswerReason
+     */
+
+    public AnswerSummary withReason(AnswerReason reason) {
+        this.reason = reason.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -320,10 +461,14 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("Choices: ").append(getChoices()).append(",");
         if (getSelectedChoices() != null)
             sb.append("SelectedChoices: ").append(getSelectedChoices()).append(",");
+        if (getChoiceAnswerSummaries() != null)
+            sb.append("ChoiceAnswerSummaries: ").append(getChoiceAnswerSummaries()).append(",");
         if (getIsApplicable() != null)
             sb.append("IsApplicable: ").append(getIsApplicable()).append(",");
         if (getRisk() != null)
-            sb.append("Risk: ").append(getRisk());
+            sb.append("Risk: ").append(getRisk()).append(",");
+        if (getReason() != null)
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +503,10 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSelectedChoices() != null && other.getSelectedChoices().equals(this.getSelectedChoices()) == false)
             return false;
+        if (other.getChoiceAnswerSummaries() == null ^ this.getChoiceAnswerSummaries() == null)
+            return false;
+        if (other.getChoiceAnswerSummaries() != null && other.getChoiceAnswerSummaries().equals(this.getChoiceAnswerSummaries()) == false)
+            return false;
         if (other.getIsApplicable() == null ^ this.getIsApplicable() == null)
             return false;
         if (other.getIsApplicable() != null && other.getIsApplicable().equals(this.getIsApplicable()) == false)
@@ -365,6 +514,10 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getRisk() == null ^ this.getRisk() == null)
             return false;
         if (other.getRisk() != null && other.getRisk().equals(this.getRisk()) == false)
+            return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
         return true;
     }
@@ -379,8 +532,10 @@ public class AnswerSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQuestionTitle() == null) ? 0 : getQuestionTitle().hashCode());
         hashCode = prime * hashCode + ((getChoices() == null) ? 0 : getChoices().hashCode());
         hashCode = prime * hashCode + ((getSelectedChoices() == null) ? 0 : getSelectedChoices().hashCode());
+        hashCode = prime * hashCode + ((getChoiceAnswerSummaries() == null) ? 0 : getChoiceAnswerSummaries().hashCode());
         hashCode = prime * hashCode + ((getIsApplicable() == null) ? 0 : getIsApplicable().hashCode());
         hashCode = prime * hashCode + ((getRisk() == null) ? 0 : getRisk().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

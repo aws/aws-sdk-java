@@ -84,6 +84,12 @@ public class AnswerJsonUnmarshaller implements Unmarshaller<Answer, JsonUnmarsha
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ChoiceAnswers", targetDepth)) {
+                    context.nextToken();
+                    answer.setChoiceAnswers(new ListUnmarshaller<ChoiceAnswer>(ChoiceAnswerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("IsApplicable", targetDepth)) {
                     context.nextToken();
                     answer.setIsApplicable(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -95,6 +101,10 @@ public class AnswerJsonUnmarshaller implements Unmarshaller<Answer, JsonUnmarsha
                 if (context.testExpression("Notes", targetDepth)) {
                     context.nextToken();
                     answer.setNotes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Reason", targetDepth)) {
+                    context.nextToken();
+                    answer.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

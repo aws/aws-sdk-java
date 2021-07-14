@@ -47,6 +47,8 @@ public class CreateTriggerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartOnCreation").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTBATCHINGCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBatchingCondition").build();
 
     private static final CreateTriggerRequestMarshaller instance = new CreateTriggerRequestMarshaller();
 
@@ -73,6 +75,7 @@ public class CreateTriggerRequestMarshaller {
             protocolMarshaller.marshall(createTriggerRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getStartOnCreation(), STARTONCREATION_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createTriggerRequest.getEventBatchingCondition(), EVENTBATCHINGCONDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -97,7 +97,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -128,7 +128,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -152,7 +152,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -584,7 +584,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -606,7 +606,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *        the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -633,7 +633,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -654,7 +654,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *         the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -681,7 +681,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -703,7 +703,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *        the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -739,7 +739,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -768,7 +768,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *        the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -802,7 +802,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -830,7 +830,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *         the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -864,7 +864,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -893,7 +893,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *        the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -922,7 +922,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -945,7 +945,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *        the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      */
@@ -972,7 +972,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -994,7 +994,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *         the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */
@@ -1021,7 +1021,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1044,7 +1044,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *        the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *        >Lightsail Dev Guide</a>.
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1073,7 +1073,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
-     * Lightsail Dev Guide</a>.
+     * Amazon Lightsail Developer Guide</a>.
      * </p>
      * </li>
      * </ul>
@@ -1095,7 +1095,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
      *         the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     *         >Lightsail Dev Guide</a>.
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      *         </li>
      */

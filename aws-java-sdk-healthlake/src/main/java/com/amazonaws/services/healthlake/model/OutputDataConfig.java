@@ -30,48 +30,48 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * The output data configuration that was supplied when the export job was created.
      * </p>
      */
-    private String s3Uri;
+    private S3Configuration s3Configuration;
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * The output data configuration that was supplied when the export job was created.
      * </p>
      * 
-     * @param s3Uri
-     *        The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * @param s3Configuration
+     *        The output data configuration that was supplied when the export job was created.
      */
 
-    public void setS3Uri(String s3Uri) {
-        this.s3Uri = s3Uri;
+    public void setS3Configuration(S3Configuration s3Configuration) {
+        this.s3Configuration = s3Configuration;
     }
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * The output data configuration that was supplied when the export job was created.
      * </p>
      * 
-     * @return The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * @return The output data configuration that was supplied when the export job was created.
      */
 
-    public String getS3Uri() {
-        return this.s3Uri;
+    public S3Configuration getS3Configuration() {
+        return this.s3Configuration;
     }
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * The output data configuration that was supplied when the export job was created.
      * </p>
      * 
-     * @param s3Uri
-     *        The S3Uri is the user specified S3 location to which data will be exported from a FHIR Data Store.
+     * @param s3Configuration
+     *        The output data configuration that was supplied when the export job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public OutputDataConfig withS3Uri(String s3Uri) {
-        setS3Uri(s3Uri);
+    public OutputDataConfig withS3Configuration(S3Configuration s3Configuration) {
+        setS3Configuration(s3Configuration);
         return this;
     }
 
@@ -87,8 +87,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getS3Uri() != null)
-            sb.append("S3Uri: ").append(getS3Uri());
+        if (getS3Configuration() != null)
+            sb.append("S3Configuration: ").append(getS3Configuration());
         sb.append("}");
         return sb.toString();
     }
@@ -103,9 +103,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof OutputDataConfig == false)
             return false;
         OutputDataConfig other = (OutputDataConfig) obj;
-        if (other.getS3Uri() == null ^ this.getS3Uri() == null)
+        if (other.getS3Configuration() == null ^ this.getS3Configuration() == null)
             return false;
-        if (other.getS3Uri() != null && other.getS3Uri().equals(this.getS3Uri()) == false)
+        if (other.getS3Configuration() != null && other.getS3Configuration().equals(this.getS3Configuration()) == false)
             return false;
         return true;
     }
@@ -115,7 +115,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
+        hashCode = prime * hashCode + ((getS3Configuration() == null) ? 0 : getS3Configuration().hashCode());
         return hashCode;
     }
 

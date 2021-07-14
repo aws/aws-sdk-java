@@ -33,6 +33,8 @@ public class StartFHIRImportJobRequestMarshaller {
             .marshallLocationName("JobName").build();
     private static final MarshallingInfo<StructuredPojo> INPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputDataConfig").build();
+    private static final MarshallingInfo<StructuredPojo> JOBOUTPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobOutputDataConfig").build();
     private static final MarshallingInfo<String> DATASTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatastoreId").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,7 @@ public class StartFHIRImportJobRequestMarshaller {
         try {
             protocolMarshaller.marshall(startFHIRImportJobRequest.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(startFHIRImportJobRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
+            protocolMarshaller.marshall(startFHIRImportJobRequest.getJobOutputDataConfig(), JOBOUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(startFHIRImportJobRequest.getDatastoreId(), DATASTOREID_BINDING);
             protocolMarshaller.marshall(startFHIRImportJobRequest.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(startFHIRImportJobRequest.getClientToken(), CLIENTTOKEN_BINDING);

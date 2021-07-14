@@ -39,6 +39,13 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
     private String datastoreTypeVersion;
     /**
      * <p>
+     * The server-side encryption key configuration for a customer provided encryption key specified for creating a Data
+     * Store.
+     * </p>
+     */
+    private SseConfiguration sseConfiguration;
+    /**
+     * <p>
      * Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data
      * is synthetic data generated from Synthea.
      * </p>
@@ -50,6 +57,12 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Resource tags that are applied to a Data Store when it is created.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -152,6 +165,52 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The server-side encryption key configuration for a customer provided encryption key specified for creating a Data
+     * Store.
+     * </p>
+     * 
+     * @param sseConfiguration
+     *        The server-side encryption key configuration for a customer provided encryption key specified for creating
+     *        a Data Store.
+     */
+
+    public void setSseConfiguration(SseConfiguration sseConfiguration) {
+        this.sseConfiguration = sseConfiguration;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption key configuration for a customer provided encryption key specified for creating a Data
+     * Store.
+     * </p>
+     * 
+     * @return The server-side encryption key configuration for a customer provided encryption key specified for
+     *         creating a Data Store.
+     */
+
+    public SseConfiguration getSseConfiguration() {
+        return this.sseConfiguration;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption key configuration for a customer provided encryption key specified for creating a Data
+     * Store.
+     * </p>
+     * 
+     * @param sseConfiguration
+     *        The server-side encryption key configuration for a customer provided encryption key specified for creating
+     *        a Data Store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFHIRDatastoreRequest withSseConfiguration(SseConfiguration sseConfiguration) {
+        setSseConfiguration(sseConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data
      * is synthetic data generated from Synthea.
      * </p>
@@ -237,6 +296,76 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Resource tags that are applied to a Data Store when it is created.
+     * </p>
+     * 
+     * @return Resource tags that are applied to a Data Store when it is created.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Resource tags that are applied to a Data Store when it is created.
+     * </p>
+     * 
+     * @param tags
+     *        Resource tags that are applied to a Data Store when it is created.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Resource tags that are applied to a Data Store when it is created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Resource tags that are applied to a Data Store when it is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFHIRDatastoreRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Resource tags that are applied to a Data Store when it is created.
+     * </p>
+     * 
+     * @param tags
+     *        Resource tags that are applied to a Data Store when it is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFHIRDatastoreRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -252,10 +381,14 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("DatastoreName: ").append(getDatastoreName()).append(",");
         if (getDatastoreTypeVersion() != null)
             sb.append("DatastoreTypeVersion: ").append(getDatastoreTypeVersion()).append(",");
+        if (getSseConfiguration() != null)
+            sb.append("SseConfiguration: ").append(getSseConfiguration()).append(",");
         if (getPreloadDataConfig() != null)
             sb.append("PreloadDataConfig: ").append(getPreloadDataConfig()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -278,6 +411,10 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getDatastoreTypeVersion() != null && other.getDatastoreTypeVersion().equals(this.getDatastoreTypeVersion()) == false)
             return false;
+        if (other.getSseConfiguration() == null ^ this.getSseConfiguration() == null)
+            return false;
+        if (other.getSseConfiguration() != null && other.getSseConfiguration().equals(this.getSseConfiguration()) == false)
+            return false;
         if (other.getPreloadDataConfig() == null ^ this.getPreloadDataConfig() == null)
             return false;
         if (other.getPreloadDataConfig() != null && other.getPreloadDataConfig().equals(this.getPreloadDataConfig()) == false)
@@ -285,6 +422,10 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -296,8 +437,10 @@ public class CreateFHIRDatastoreRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getDatastoreName() == null) ? 0 : getDatastoreName().hashCode());
         hashCode = prime * hashCode + ((getDatastoreTypeVersion() == null) ? 0 : getDatastoreTypeVersion().hashCode());
+        hashCode = prime * hashCode + ((getSseConfiguration() == null) ? 0 : getSseConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPreloadDataConfig() == null) ? 0 : getPreloadDataConfig().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

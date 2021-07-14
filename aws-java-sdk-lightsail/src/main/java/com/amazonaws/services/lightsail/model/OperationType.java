@@ -91,7 +91,14 @@ public enum OperationType {
     CreateContainerServiceDeployment("CreateContainerServiceDeployment"),
     CreateContainerServiceRegistryLogin("CreateContainerServiceRegistryLogin"),
     RegisterContainerImage("RegisterContainerImage"),
-    DeleteContainerImage("DeleteContainerImage");
+    DeleteContainerImage("DeleteContainerImage"),
+    CreateBucket("CreateBucket"),
+    DeleteBucket("DeleteBucket"),
+    CreateBucketAccessKey("CreateBucketAccessKey"),
+    DeleteBucketAccessKey("DeleteBucketAccessKey"),
+    UpdateBucketBundle("UpdateBucketBundle"),
+    UpdateBucket("UpdateBucket"),
+    SetResourceAccessForBucket("SetResourceAccessForBucket");
 
     private String value;
 

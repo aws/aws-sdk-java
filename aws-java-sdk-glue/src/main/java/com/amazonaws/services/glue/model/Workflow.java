@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A workflow represents a flow in which Glue components should be run to complete a logical task.
+ * A workflow is a collection of multiple dependent Glue jobs and crawlers that are run to complete a complex ETL task.
+ * A workflow manages the execution and monitoring of all its jobs and crawlers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Workflow" target="_top">AWS API
@@ -30,7 +31,7 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the workflow representing the flow.
+     * The name of the workflow.
      * </p>
      */
     private String name;
@@ -42,7 +43,8 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * A collection of properties to be used as part of each execution of the workflow.
+     * A collection of properties to be used as part of each execution of the workflow. The run properties are made
+     * available to each job in the workflow. A job can modify the properties for the next jobs in the flow.
      * </p>
      */
     private java.util.Map<String, String> defaultRunProperties;
@@ -82,11 +84,11 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the workflow representing the flow.
+     * The name of the workflow.
      * </p>
      * 
      * @param name
-     *        The name of the workflow representing the flow.
+     *        The name of the workflow.
      */
 
     public void setName(String name) {
@@ -95,10 +97,10 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the workflow representing the flow.
+     * The name of the workflow.
      * </p>
      * 
-     * @return The name of the workflow representing the flow.
+     * @return The name of the workflow.
      */
 
     public String getName() {
@@ -107,11 +109,11 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the workflow representing the flow.
+     * The name of the workflow.
      * </p>
      * 
      * @param name
-     *        The name of the workflow representing the flow.
+     *        The name of the workflow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,10 +164,13 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of properties to be used as part of each execution of the workflow.
+     * A collection of properties to be used as part of each execution of the workflow. The run properties are made
+     * available to each job in the workflow. A job can modify the properties for the next jobs in the flow.
      * </p>
      * 
-     * @return A collection of properties to be used as part of each execution of the workflow.
+     * @return A collection of properties to be used as part of each execution of the workflow. The run properties are
+     *         made available to each job in the workflow. A job can modify the properties for the next jobs in the
+     *         flow.
      */
 
     public java.util.Map<String, String> getDefaultRunProperties() {
@@ -174,11 +179,13 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of properties to be used as part of each execution of the workflow.
+     * A collection of properties to be used as part of each execution of the workflow. The run properties are made
+     * available to each job in the workflow. A job can modify the properties for the next jobs in the flow.
      * </p>
      * 
      * @param defaultRunProperties
-     *        A collection of properties to be used as part of each execution of the workflow.
+     *        A collection of properties to be used as part of each execution of the workflow. The run properties are
+     *        made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.
      */
 
     public void setDefaultRunProperties(java.util.Map<String, String> defaultRunProperties) {
@@ -187,11 +194,13 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of properties to be used as part of each execution of the workflow.
+     * A collection of properties to be used as part of each execution of the workflow. The run properties are made
+     * available to each job in the workflow. A job can modify the properties for the next jobs in the flow.
      * </p>
      * 
      * @param defaultRunProperties
-     *        A collection of properties to be used as part of each execution of the workflow.
+     *        A collection of properties to be used as part of each execution of the workflow. The run properties are
+     *        made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

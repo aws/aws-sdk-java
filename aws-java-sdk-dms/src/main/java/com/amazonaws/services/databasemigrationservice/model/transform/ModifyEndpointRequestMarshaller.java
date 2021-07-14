@@ -87,6 +87,8 @@ public class ModifyEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IBMDb2Settings").build();
     private static final MarshallingInfo<StructuredPojo> DOCDBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocDbSettings").build();
+    private static final MarshallingInfo<Boolean> EXACTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExactSettings").build();
 
     private static final ModifyEndpointRequestMarshaller instance = new ModifyEndpointRequestMarshaller();
 
@@ -134,6 +136,7 @@ public class ModifyEndpointRequestMarshaller {
             protocolMarshaller.marshall(modifyEndpointRequest.getMicrosoftSQLServerSettings(), MICROSOFTSQLSERVERSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getIBMDb2Settings(), IBMDB2SETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getDocDbSettings(), DOCDBSETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getExactSettings(), EXACTSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

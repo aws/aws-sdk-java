@@ -28,7 +28,7 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the AWS DMS event subscription to be described.
+     * The name of the DMS event subscription to be described.
      * </p>
      */
     private String subscriptionName;
@@ -62,11 +62,11 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the AWS DMS event subscription to be described.
+     * The name of the DMS event subscription to be described.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the AWS DMS event subscription to be described.
+     *        The name of the DMS event subscription to be described.
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -75,10 +75,10 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the AWS DMS event subscription to be described.
+     * The name of the DMS event subscription to be described.
      * </p>
      * 
-     * @return The name of the AWS DMS event subscription to be described.
+     * @return The name of the DMS event subscription to be described.
      */
 
     public String getSubscriptionName() {
@@ -87,11 +87,11 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the AWS DMS event subscription to be described.
+     * The name of the DMS event subscription to be described.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the AWS DMS event subscription to be described.
+     *        The name of the DMS event subscription to be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,7 +38,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -70,7 +70,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -80,7 +80,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -95,7 +95,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
@@ -104,7 +104,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      *         For more information on the settings and capacities for the available replication instance classes, see
      *         <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *         > Selecting the right AWS DMS replication instance for your migration</a>.
+     *         > Selecting the right DMS replication instance for your migration</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -119,7 +119,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right AWS DMS replication instance for your migration</a>.
+     * > Selecting the right DMS replication instance for your migration</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -129,7 +129,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right AWS DMS replication instance for your migration</a>.
+     *        > Selecting the right DMS replication instance for your migration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

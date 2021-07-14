@@ -38,7 +38,8 @@ public enum ResourceType {
     Alarm("Alarm"),
     ContactMethod("ContactMethod"),
     Distribution("Distribution"),
-    Certificate("Certificate");
+    Certificate("Certificate"),
+    Bucket("Bucket");
 
     private String value;
 

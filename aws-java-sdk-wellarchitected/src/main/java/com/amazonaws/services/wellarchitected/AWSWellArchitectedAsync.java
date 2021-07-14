@@ -316,7 +316,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * Get lens review.
+     * Get the answer to a specific question in a workload review.
      * </p>
      * 
      * @param getAnswerRequest
@@ -330,7 +330,7 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * Get lens review.
+     * Get the answer to a specific question in a workload review.
      * </p>
      * 
      * @param getAnswerRequest
@@ -873,6 +873,12 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * <p>
      * Deletes specified tags from a resource.
      * </p>
+     * <p>
+     * To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
+     * </p>
+     * <p>
+     * <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code>
+     * </p>
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -885,6 +891,12 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
     /**
      * <p>
      * Deletes specified tags from a resource.
+     * </p>
+     * <p>
+     * To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
+     * </p>
+     * <p>
+     * <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code>
      * </p>
      * 
      * @param untagResourceRequest

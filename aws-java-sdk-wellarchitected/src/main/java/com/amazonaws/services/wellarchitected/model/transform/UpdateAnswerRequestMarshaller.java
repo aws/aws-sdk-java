@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wellarchitected.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -36,10 +37,14 @@ public class UpdateAnswerRequestMarshaller {
             .marshallLocationName("QuestionId").build();
     private static final MarshallingInfo<List> SELECTEDCHOICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectedChoices").build();
+    private static final MarshallingInfo<Map> CHOICEUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ChoiceUpdates").build();
     private static final MarshallingInfo<String> NOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Notes").build();
     private static final MarshallingInfo<Boolean> ISAPPLICABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsApplicable").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Reason").build();
 
     private static final UpdateAnswerRequestMarshaller instance = new UpdateAnswerRequestMarshaller();
 
@@ -61,8 +66,10 @@ public class UpdateAnswerRequestMarshaller {
             protocolMarshaller.marshall(updateAnswerRequest.getLensAlias(), LENSALIAS_BINDING);
             protocolMarshaller.marshall(updateAnswerRequest.getQuestionId(), QUESTIONID_BINDING);
             protocolMarshaller.marshall(updateAnswerRequest.getSelectedChoices(), SELECTEDCHOICES_BINDING);
+            protocolMarshaller.marshall(updateAnswerRequest.getChoiceUpdates(), CHOICEUPDATES_BINDING);
             protocolMarshaller.marshall(updateAnswerRequest.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(updateAnswerRequest.getIsApplicable(), ISAPPLICABLE_BINDING);
+            protocolMarshaller.marshall(updateAnswerRequest.getReason(), REASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -28,7 +28,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription to be modified.
+     * The name of the DMS event notification subscription to be modified.
      * </p>
      */
     private String subscriptionName;
@@ -41,7 +41,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private String snsTopicArn;
     /**
      * <p>
-     * The type of AWS DMS resource that generates the events you want to subscribe to.
+     * The type of DMS resource that generates the events you want to subscribe to.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
@@ -64,11 +64,11 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription to be modified.
+     * The name of the DMS event notification subscription to be modified.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the AWS DMS event notification subscription to be modified.
+     *        The name of the DMS event notification subscription to be modified.
      */
 
     public void setSubscriptionName(String subscriptionName) {
@@ -77,10 +77,10 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription to be modified.
+     * The name of the DMS event notification subscription to be modified.
      * </p>
      * 
-     * @return The name of the AWS DMS event notification subscription to be modified.
+     * @return The name of the DMS event notification subscription to be modified.
      */
 
     public String getSubscriptionName() {
@@ -89,11 +89,11 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the AWS DMS event notification subscription to be modified.
+     * The name of the DMS event notification subscription to be modified.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the AWS DMS event notification subscription to be modified.
+     *        The name of the DMS event notification subscription to be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,14 +150,14 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates the events you want to subscribe to.
+     * The type of DMS resource that generates the events you want to subscribe to.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates the events you want to subscribe to. </p>
+     *        The type of DMS resource that generates the events you want to subscribe to. </p>
      *        <p>
      *        Valid values: replication-instance | replication-task
      */
@@ -168,13 +168,13 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates the events you want to subscribe to.
+     * The type of DMS resource that generates the events you want to subscribe to.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
      * </p>
      * 
-     * @return The type of AWS DMS resource that generates the events you want to subscribe to. </p>
+     * @return The type of DMS resource that generates the events you want to subscribe to. </p>
      *         <p>
      *         Valid values: replication-instance | replication-task
      */
@@ -185,14 +185,14 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates the events you want to subscribe to.
+     * The type of DMS resource that generates the events you want to subscribe to.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates the events you want to subscribe to. </p>
+     *        The type of DMS resource that generates the events you want to subscribe to. </p>
      *        <p>
      *        Valid values: replication-instance | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.

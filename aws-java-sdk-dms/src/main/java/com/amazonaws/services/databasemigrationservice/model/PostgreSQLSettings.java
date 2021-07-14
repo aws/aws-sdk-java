@@ -30,7 +30,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user triggers to
+     * For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to
      * reduce the time it takes to bulk load data.
      * </p>
      * <p>
@@ -40,7 +40,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     private String afterConnectScript;
     /**
      * <p>
-     * To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts. You can
+     * To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can
      * later remove these artifacts.
      * </p>
      * <p>
@@ -94,6 +94,26 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     private Boolean failTasksOnLobTruncation;
     /**
      * <p>
+     * If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code> moving and
+     * prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle logical replication
+     * slots don't hold onto old WAL logs that result in storage full situations on the source.
+     * </p>
+     */
+    private Boolean heartbeatEnable;
+    /**
+     * <p>
+     * Sets the schema in which the heartbeat artifacts are created.
+     * </p>
+     */
+    private String heartbeatSchema;
+    /**
+     * <p>
+     * Sets the WAL heartbeat frequency (in minutes).
+     * </p>
+     */
+    private Integer heartbeatFrequency;
+    /**
+     * <p>
      * Endpoint connection password.
      * </p>
      */
@@ -121,16 +141,23 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source instance.
      * </p>
      * <p>
-     * When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
+     * When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
      * native CDC start points.
      * </p>
      */
     private String slotName;
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * Specifies the plugin to use to create a replication slot.
+     * </p>
+     */
+    private String pluginName;
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the PostgreSQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -138,10 +165,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      */
@@ -156,7 +182,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user triggers to
+     * For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to
      * reduce the time it takes to bulk load data.
      * </p>
      * <p>
@@ -164,8 +190,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param afterConnectScript
-     *        For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user
-     *        triggers to reduce the time it takes to bulk load data.</p>
+     *        For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers
+     *        to reduce the time it takes to bulk load data.</p>
      *        <p>
      *        Example: <code>afterConnectScript=SET session_replication_role='replica'</code>
      */
@@ -176,15 +202,15 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user triggers to
+     * For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to
      * reduce the time it takes to bulk load data.
      * </p>
      * <p>
      * Example: <code>afterConnectScript=SET session_replication_role='replica'</code>
      * </p>
      * 
-     * @return For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user
-     *         triggers to reduce the time it takes to bulk load data.</p>
+     * @return For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers
+     *         to reduce the time it takes to bulk load data.</p>
      *         <p>
      *         Example: <code>afterConnectScript=SET session_replication_role='replica'</code>
      */
@@ -195,7 +221,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user triggers to
+     * For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to
      * reduce the time it takes to bulk load data.
      * </p>
      * <p>
@@ -203,8 +229,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param afterConnectScript
-     *        For use with change data capture (CDC) only, this attribute has AWS DMS bypass foreign keys and user
-     *        triggers to reduce the time it takes to bulk load data.</p>
+     *        For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers
+     *        to reduce the time it takes to bulk load data.</p>
      *        <p>
      *        Example: <code>afterConnectScript=SET session_replication_role='replica'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -217,7 +243,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts. You can
+     * To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can
      * later remove these artifacts.
      * </p>
      * <p>
@@ -225,8 +251,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param captureDdls
-     *        To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts.
-     *        You can later remove these artifacts.</p>
+     *        To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You
+     *        can later remove these artifacts.</p>
      *        <p>
      *        If this value is set to <code>N</code>, you don't have to create tables or triggers on the source
      *        database.
@@ -238,15 +264,15 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts. You can
+     * To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can
      * later remove these artifacts.
      * </p>
      * <p>
      * If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.
      * </p>
      * 
-     * @return To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts.
-     *         You can later remove these artifacts.</p>
+     * @return To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You
+     *         can later remove these artifacts.</p>
      *         <p>
      *         If this value is set to <code>N</code>, you don't have to create tables or triggers on the source
      *         database.
@@ -258,7 +284,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts. You can
+     * To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can
      * later remove these artifacts.
      * </p>
      * <p>
@@ -266,8 +292,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param captureDdls
-     *        To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts.
-     *        You can later remove these artifacts.</p>
+     *        To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You
+     *        can later remove these artifacts.</p>
      *        <p>
      *        If this value is set to <code>N</code>, you don't have to create tables or triggers on the source
      *        database.
@@ -281,15 +307,15 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts. You can
+     * To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can
      * later remove these artifacts.
      * </p>
      * <p>
      * If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.
      * </p>
      * 
-     * @return To capture DDL events, AWS DMS creates various artifacts in the PostgreSQL database when the task starts.
-     *         You can later remove these artifacts.</p>
+     * @return To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You
+     *         can later remove these artifacts.</p>
      *         <p>
      *         If this value is set to <code>N</code>, you don't have to create tables or triggers on the source
      *         database.
@@ -597,6 +623,158 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code> moving and
+     * prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle logical replication
+     * slots don't hold onto old WAL logs that result in storage full situations on the source.
+     * </p>
+     * 
+     * @param heartbeatEnable
+     *        If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code>
+     *        moving and prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle
+     *        logical replication slots don't hold onto old WAL logs that result in storage full situations on the
+     *        source.
+     */
+
+    public void setHeartbeatEnable(Boolean heartbeatEnable) {
+        this.heartbeatEnable = heartbeatEnable;
+    }
+
+    /**
+     * <p>
+     * If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code> moving and
+     * prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle logical replication
+     * slots don't hold onto old WAL logs that result in storage full situations on the source.
+     * </p>
+     * 
+     * @return If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code>
+     *         moving and prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle
+     *         logical replication slots don't hold onto old WAL logs that result in storage full situations on the
+     *         source.
+     */
+
+    public Boolean getHeartbeatEnable() {
+        return this.heartbeatEnable;
+    }
+
+    /**
+     * <p>
+     * If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code> moving and
+     * prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle logical replication
+     * slots don't hold onto old WAL logs that result in storage full situations on the source.
+     * </p>
+     * 
+     * @param heartbeatEnable
+     *        If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code>
+     *        moving and prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle
+     *        logical replication slots don't hold onto old WAL logs that result in storage full situations on the
+     *        source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withHeartbeatEnable(Boolean heartbeatEnable) {
+        setHeartbeatEnable(heartbeatEnable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code> moving and
+     * prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle logical replication
+     * slots don't hold onto old WAL logs that result in storage full situations on the source.
+     * </p>
+     * 
+     * @return If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps <code>restart_lsn</code>
+     *         moving and prevents storage full scenarios. The WAL heartbeat mimics a dummy transaction, so that idle
+     *         logical replication slots don't hold onto old WAL logs that result in storage full situations on the
+     *         source.
+     */
+
+    public Boolean isHeartbeatEnable() {
+        return this.heartbeatEnable;
+    }
+
+    /**
+     * <p>
+     * Sets the schema in which the heartbeat artifacts are created.
+     * </p>
+     * 
+     * @param heartbeatSchema
+     *        Sets the schema in which the heartbeat artifacts are created.
+     */
+
+    public void setHeartbeatSchema(String heartbeatSchema) {
+        this.heartbeatSchema = heartbeatSchema;
+    }
+
+    /**
+     * <p>
+     * Sets the schema in which the heartbeat artifacts are created.
+     * </p>
+     * 
+     * @return Sets the schema in which the heartbeat artifacts are created.
+     */
+
+    public String getHeartbeatSchema() {
+        return this.heartbeatSchema;
+    }
+
+    /**
+     * <p>
+     * Sets the schema in which the heartbeat artifacts are created.
+     * </p>
+     * 
+     * @param heartbeatSchema
+     *        Sets the schema in which the heartbeat artifacts are created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withHeartbeatSchema(String heartbeatSchema) {
+        setHeartbeatSchema(heartbeatSchema);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the WAL heartbeat frequency (in minutes).
+     * </p>
+     * 
+     * @param heartbeatFrequency
+     *        Sets the WAL heartbeat frequency (in minutes).
+     */
+
+    public void setHeartbeatFrequency(Integer heartbeatFrequency) {
+        this.heartbeatFrequency = heartbeatFrequency;
+    }
+
+    /**
+     * <p>
+     * Sets the WAL heartbeat frequency (in minutes).
+     * </p>
+     * 
+     * @return Sets the WAL heartbeat frequency (in minutes).
+     */
+
+    public Integer getHeartbeatFrequency() {
+        return this.heartbeatFrequency;
+    }
+
+    /**
+     * <p>
+     * Sets the WAL heartbeat frequency (in minutes).
+     * </p>
+     * 
+     * @param heartbeatFrequency
+     *        Sets the WAL heartbeat frequency (in minutes).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withHeartbeatFrequency(Integer heartbeatFrequency) {
+        setHeartbeatFrequency(heartbeatFrequency);
+        return this;
+    }
+
+    /**
+     * <p>
      * Endpoint connection password.
      * </p>
      * 
@@ -760,7 +938,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source instance.
      * </p>
      * <p>
-     * When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
+     * When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
      * native CDC start points.
      * </p>
      * 
@@ -768,8 +946,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *        Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source
      *        instance.</p>
      *        <p>
-     *        When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also
-     *        enables using native CDC start points.
+     *        When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables
+     *        using native CDC start points.
      */
 
     public void setSlotName(String slotName) {
@@ -781,15 +959,15 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source instance.
      * </p>
      * <p>
-     * When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
+     * When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
      * native CDC start points.
      * </p>
      * 
      * @return Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source
      *         instance.</p>
      *         <p>
-     *         When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also
-     *         enables using native CDC start points.
+     *         When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables
+     *         using native CDC start points.
      */
 
     public String getSlotName() {
@@ -801,7 +979,7 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source instance.
      * </p>
      * <p>
-     * When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
+     * When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables using
      * native CDC start points.
      * </p>
      * 
@@ -809,8 +987,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *        Sets the name of a previously created logical replication slot for a CDC load of the PostgreSQL source
      *        instance.</p>
      *        <p>
-     *        When used with the AWS DMS API <code>CdcStartPosition</code> request parameter, this attribute also
-     *        enables using native CDC start points.
+     *        When used with the DMS API <code>CdcStartPosition</code> request parameter, this attribute also enables
+     *        using native CDC start points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,9 +999,69 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * Specifies the plugin to use to create a replication slot.
+     * </p>
+     * 
+     * @param pluginName
+     *        Specifies the plugin to use to create a replication slot.
+     * @see PluginNameValue
+     */
+
+    public void setPluginName(String pluginName) {
+        this.pluginName = pluginName;
+    }
+
+    /**
+     * <p>
+     * Specifies the plugin to use to create a replication slot.
+     * </p>
+     * 
+     * @return Specifies the plugin to use to create a replication slot.
+     * @see PluginNameValue
+     */
+
+    public String getPluginName() {
+        return this.pluginName;
+    }
+
+    /**
+     * <p>
+     * Specifies the plugin to use to create a replication slot.
+     * </p>
+     * 
+     * @param pluginName
+     *        Specifies the plugin to use to create a replication slot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginNameValue
+     */
+
+    public PostgreSQLSettings withPluginName(String pluginName) {
+        setPluginName(pluginName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the plugin to use to create a replication slot.
+     * </p>
+     * 
+     * @param pluginName
+     *        Specifies the plugin to use to create a replication slot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginNameValue
+     */
+
+    public PostgreSQLSettings withPluginName(PluginNameValue pluginName) {
+        this.pluginName = pluginName.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the PostgreSQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -831,28 +1069,27 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the PostgreSQL endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -862,9 +1099,10 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the PostgreSQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -872,27 +1110,26 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *         the PostgreSQL endpoint.</p> <note>
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *         the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow
+     *         the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *         Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
      *         <p>
      *         You can specify one of two sets of values for these permissions. You can specify the values for this
      *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *         see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *         Service User Guide</i>.
+     *         see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -902,9 +1139,10 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the PostgreSQL endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the PostgreSQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -912,28 +1150,27 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the PostgreSQL endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1015,6 +1252,12 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             sb.append("ExecuteTimeout: ").append(getExecuteTimeout()).append(",");
         if (getFailTasksOnLobTruncation() != null)
             sb.append("FailTasksOnLobTruncation: ").append(getFailTasksOnLobTruncation()).append(",");
+        if (getHeartbeatEnable() != null)
+            sb.append("HeartbeatEnable: ").append(getHeartbeatEnable()).append(",");
+        if (getHeartbeatSchema() != null)
+            sb.append("HeartbeatSchema: ").append(getHeartbeatSchema()).append(",");
+        if (getHeartbeatFrequency() != null)
+            sb.append("HeartbeatFrequency: ").append(getHeartbeatFrequency()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getPort() != null)
@@ -1025,6 +1268,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             sb.append("Username: ").append(getUsername()).append(",");
         if (getSlotName() != null)
             sb.append("SlotName: ").append(getSlotName()).append(",");
+        if (getPluginName() != null)
+            sb.append("PluginName: ").append(getPluginName()).append(",");
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
@@ -1071,6 +1316,18 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getFailTasksOnLobTruncation() != null && other.getFailTasksOnLobTruncation().equals(this.getFailTasksOnLobTruncation()) == false)
             return false;
+        if (other.getHeartbeatEnable() == null ^ this.getHeartbeatEnable() == null)
+            return false;
+        if (other.getHeartbeatEnable() != null && other.getHeartbeatEnable().equals(this.getHeartbeatEnable()) == false)
+            return false;
+        if (other.getHeartbeatSchema() == null ^ this.getHeartbeatSchema() == null)
+            return false;
+        if (other.getHeartbeatSchema() != null && other.getHeartbeatSchema().equals(this.getHeartbeatSchema()) == false)
+            return false;
+        if (other.getHeartbeatFrequency() == null ^ this.getHeartbeatFrequency() == null)
+            return false;
+        if (other.getHeartbeatFrequency() != null && other.getHeartbeatFrequency().equals(this.getHeartbeatFrequency()) == false)
+            return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
@@ -1090,6 +1347,10 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         if (other.getSlotName() == null ^ this.getSlotName() == null)
             return false;
         if (other.getSlotName() != null && other.getSlotName().equals(this.getSlotName()) == false)
+            return false;
+        if (other.getPluginName() == null ^ this.getPluginName() == null)
+            return false;
+        if (other.getPluginName() != null && other.getPluginName().equals(this.getPluginName()) == false)
             return false;
         if (other.getSecretsManagerAccessRoleArn() == null ^ this.getSecretsManagerAccessRoleArn() == null)
             return false;
@@ -1114,11 +1375,15 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getDdlArtifactsSchema() == null) ? 0 : getDdlArtifactsSchema().hashCode());
         hashCode = prime * hashCode + ((getExecuteTimeout() == null) ? 0 : getExecuteTimeout().hashCode());
         hashCode = prime * hashCode + ((getFailTasksOnLobTruncation() == null) ? 0 : getFailTasksOnLobTruncation().hashCode());
+        hashCode = prime * hashCode + ((getHeartbeatEnable() == null) ? 0 : getHeartbeatEnable().hashCode());
+        hashCode = prime * hashCode + ((getHeartbeatSchema() == null) ? 0 : getHeartbeatSchema().hashCode());
+        hashCode = prime * hashCode + ((getHeartbeatFrequency() == null) ? 0 : getHeartbeatFrequency().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getSlotName() == null) ? 0 : getSlotName().hashCode());
+        hashCode = prime * hashCode + ((getPluginName() == null) ? 0 : getPluginName().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         return hashCode;

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data
- * type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
+ * Describes a maintenance action pending for an DMS resource, including when and how it will be applied. This data type
+ * is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/PendingMaintenanceAction" target="_top">AWS API

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The certificate is in use by another AWS service in the caller's account. Remove the association and try again.
+ * The certificate is in use by another Amazon Web Services service in the caller's account. Remove the association and
+ * try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

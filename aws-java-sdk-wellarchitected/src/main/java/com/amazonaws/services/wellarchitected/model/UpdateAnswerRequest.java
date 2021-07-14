@@ -35,10 +35,23 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String questionId;
 
     private java.util.List<String> selectedChoices;
+    /**
+     * <p>
+     * A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be
+     * updated.
+     * </p>
+     */
+    private java.util.Map<String, ChoiceUpdate> choiceUpdates;
 
     private String notes;
 
     private Boolean isApplicable;
+    /**
+     * <p>
+     * The reason why a question is not applicable to your workload.
+     * </p>
+     */
+    private String reason;
 
     /**
      * @param workloadId
@@ -171,6 +184,80 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be
+     * updated.
+     * </p>
+     * 
+     * @return A list of choices to update on a question in your workload. The String key corresponds to the choice ID
+     *         to be updated.
+     */
+
+    public java.util.Map<String, ChoiceUpdate> getChoiceUpdates() {
+        return choiceUpdates;
+    }
+
+    /**
+     * <p>
+     * A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be
+     * updated.
+     * </p>
+     * 
+     * @param choiceUpdates
+     *        A list of choices to update on a question in your workload. The String key corresponds to the choice ID to
+     *        be updated.
+     */
+
+    public void setChoiceUpdates(java.util.Map<String, ChoiceUpdate> choiceUpdates) {
+        this.choiceUpdates = choiceUpdates;
+    }
+
+    /**
+     * <p>
+     * A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be
+     * updated.
+     * </p>
+     * 
+     * @param choiceUpdates
+     *        A list of choices to update on a question in your workload. The String key corresponds to the choice ID to
+     *        be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAnswerRequest withChoiceUpdates(java.util.Map<String, ChoiceUpdate> choiceUpdates) {
+        setChoiceUpdates(choiceUpdates);
+        return this;
+    }
+
+    /**
+     * Add a single ChoiceUpdates entry
+     *
+     * @see UpdateAnswerRequest#withChoiceUpdates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAnswerRequest addChoiceUpdatesEntry(String key, ChoiceUpdate value) {
+        if (null == this.choiceUpdates) {
+            this.choiceUpdates = new java.util.HashMap<String, ChoiceUpdate>();
+        }
+        if (this.choiceUpdates.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.choiceUpdates.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ChoiceUpdates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAnswerRequest clearChoiceUpdatesEntries() {
+        this.choiceUpdates = null;
+        return this;
+    }
+
+    /**
      * @param notes
      */
 
@@ -231,6 +318,65 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The reason why a question is not applicable to your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why a question is not applicable to your workload.
+     * @see AnswerReason
+     */
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason why a question is not applicable to your workload.
+     * </p>
+     * 
+     * @return The reason why a question is not applicable to your workload.
+     * @see AnswerReason
+     */
+
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason why a question is not applicable to your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why a question is not applicable to your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnswerReason
+     */
+
+    public UpdateAnswerRequest withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason why a question is not applicable to your workload.
+     * </p>
+     * 
+     * @param reason
+     *        The reason why a question is not applicable to your workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnswerReason
+     */
+
+    public UpdateAnswerRequest withReason(AnswerReason reason) {
+        this.reason = reason.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,10 +396,14 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("QuestionId: ").append(getQuestionId()).append(",");
         if (getSelectedChoices() != null)
             sb.append("SelectedChoices: ").append(getSelectedChoices()).append(",");
+        if (getChoiceUpdates() != null)
+            sb.append("ChoiceUpdates: ").append(getChoiceUpdates()).append(",");
         if (getNotes() != null)
             sb.append("Notes: ").append(getNotes()).append(",");
         if (getIsApplicable() != null)
-            sb.append("IsApplicable: ").append(getIsApplicable());
+            sb.append("IsApplicable: ").append(getIsApplicable()).append(",");
+        if (getReason() != null)
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }
@@ -284,6 +434,10 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getSelectedChoices() != null && other.getSelectedChoices().equals(this.getSelectedChoices()) == false)
             return false;
+        if (other.getChoiceUpdates() == null ^ this.getChoiceUpdates() == null)
+            return false;
+        if (other.getChoiceUpdates() != null && other.getChoiceUpdates().equals(this.getChoiceUpdates()) == false)
+            return false;
         if (other.getNotes() == null ^ this.getNotes() == null)
             return false;
         if (other.getNotes() != null && other.getNotes().equals(this.getNotes()) == false)
@@ -291,6 +445,10 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getIsApplicable() == null ^ this.getIsApplicable() == null)
             return false;
         if (other.getIsApplicable() != null && other.getIsApplicable().equals(this.getIsApplicable()) == false)
+            return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
         return true;
     }
@@ -304,8 +462,10 @@ public class UpdateAnswerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getLensAlias() == null) ? 0 : getLensAlias().hashCode());
         hashCode = prime * hashCode + ((getQuestionId() == null) ? 0 : getQuestionId().hashCode());
         hashCode = prime * hashCode + ((getSelectedChoices() == null) ? 0 : getSelectedChoices().hashCode());
+        hashCode = prime * hashCode + ((getChoiceUpdates() == null) ? 0 : getChoiceUpdates().hashCode());
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
         hashCode = prime * hashCode + ((getIsApplicable() == null) ? 0 : getIsApplicable().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

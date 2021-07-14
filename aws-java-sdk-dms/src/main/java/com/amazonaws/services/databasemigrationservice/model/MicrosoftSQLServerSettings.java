@@ -48,9 +48,8 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private String databaseName;
     /**
      * <p>
-     * Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the internal AWS
-     * DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file
-     * group.
+     * Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS
+     * control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.
      * </p>
      */
     private String controlTablesFileGroup;
@@ -70,7 +69,7 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private Boolean querySingleAlwaysOnNode;
     /**
      * <p>
-     * When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and doesn't
+     * When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't
      * read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code>
      * enables you to control active transaction log file growth during full load and ongoing replication tasks.
      * However, it can add some source latency to ongoing replication.
@@ -79,21 +78,21 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private Boolean readBackupOnly;
     /**
      * <p>
-     * Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation using
-     * one of the following two methods.
+     * Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one
+     * of the following two methods.
      * </p>
      * <p>
-     * <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS prevents
+     * <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents
      * TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that
      * appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your
      * database, then you must choose this method.
      * </p>
      * <p>
-     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the changes and
-     * then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve
-     * any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
-     * method, only one AWS DMS task can access the database at any given time. Therefore, if you need to run parallel
-     * AWS DMS tasks against the same database, use the default method.
+     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then
+     * uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any
+     * transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
+     * method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS
+     * tasks against the same database, use the default method.
      * </p>
      */
     private String safeguardPolicy;
@@ -125,9 +124,10 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private Boolean useThirdPartyBackupDevice;
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the SQL Server endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the SQL Server endpoint.
      * </p>
      * <note>
      * <p>
@@ -135,10 +135,9 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      */
@@ -273,15 +272,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the internal AWS
-     * DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file
-     * group.
+     * Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS
+     * control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.
      * </p>
      * 
      * @param controlTablesFileGroup
-     *        Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the internal
-     *        AWS DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the
-     *        specified file group.
+     *        Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS
+     *        control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file
+     *        group.
      */
 
     public void setControlTablesFileGroup(String controlTablesFileGroup) {
@@ -290,14 +288,13 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the internal AWS
-     * DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file
-     * group.
+     * Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS
+     * control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.
      * </p>
      * 
-     * @return Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the
-     *         internal AWS DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for
-     *         the specified file group.
+     * @return Specifies a file group for the DMS internal tables. When the replication task starts, all the internal
+     *         DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified
+     *         file group.
      */
 
     public String getControlTablesFileGroup() {
@@ -306,15 +303,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the internal AWS
-     * DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file
-     * group.
+     * Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS
+     * control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.
      * </p>
      * 
      * @param controlTablesFileGroup
-     *        Specifies a file group for the AWS DMS internal tables. When the replication task starts, all the internal
-     *        AWS DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the
-     *        specified file group.
+     *        Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS
+     *        control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,14 +429,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and doesn't
+     * When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't
      * read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code>
      * enables you to control active transaction log file growth during full load and ongoing replication tasks.
      * However, it can add some source latency to ongoing replication.
      * </p>
      * 
      * @param readBackupOnly
-     *        When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and
+     *        When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and
      *        doesn't read from the active transaction log file during ongoing replication. Setting this parameter to
      *        <code>Y</code> enables you to control active transaction log file growth during full load and ongoing
      *        replication tasks. However, it can add some source latency to ongoing replication.
@@ -452,13 +448,13 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and doesn't
+     * When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't
      * read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code>
      * enables you to control active transaction log file growth during full load and ongoing replication tasks.
      * However, it can add some source latency to ongoing replication.
      * </p>
      * 
-     * @return When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and
+     * @return When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and
      *         doesn't read from the active transaction log file during ongoing replication. Setting this parameter to
      *         <code>Y</code> enables you to control active transaction log file growth during full load and ongoing
      *         replication tasks. However, it can add some source latency to ongoing replication.
@@ -470,14 +466,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and doesn't
+     * When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't
      * read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code>
      * enables you to control active transaction log file growth during full load and ongoing replication tasks.
      * However, it can add some source latency to ongoing replication.
      * </p>
      * 
      * @param readBackupOnly
-     *        When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and
+     *        When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and
      *        doesn't read from the active transaction log file during ongoing replication. Setting this parameter to
      *        <code>Y</code> enables you to control active transaction log file growth during full load and ongoing
      *        replication tasks. However, it can add some source latency to ongoing replication.
@@ -491,13 +487,13 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and doesn't
+     * When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't
      * read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code>
      * enables you to control active transaction log file growth during full load and ongoing replication tasks.
      * However, it can add some source latency to ongoing replication.
      * </p>
      * 
-     * @return When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and
+     * @return When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and
      *         doesn't read from the active transaction log file during ongoing replication. Setting this parameter to
      *         <code>Y</code> enables you to control active transaction log file growth during full load and ongoing
      *         replication tasks. However, it can add some source latency to ongoing replication.
@@ -509,38 +505,38 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation using
-     * one of the following two methods.
+     * Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one
+     * of the following two methods.
      * </p>
      * <p>
-     * <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS prevents
+     * <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents
      * TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that
      * appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your
      * database, then you must choose this method.
      * </p>
      * <p>
-     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the changes and
-     * then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve
-     * any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
-     * method, only one AWS DMS task can access the database at any given time. Therefore, if you need to run parallel
-     * AWS DMS tasks against the same database, use the default method.
+     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then
+     * uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any
+     * transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
+     * method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS
+     * tasks against the same database, use the default method.
      * </p>
      * 
      * @param safeguardPolicy
-     *        Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation
+     *        Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation
      *        using one of the following two methods.</p>
      *        <p>
-     *        <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS
+     *        <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS
      *        prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is
      *        open, changes that appear after the transaction started aren't truncated. If you need Microsoft
      *        Replication to be enabled in your database, then you must choose this method.
      *        </p>
      *        <p>
-     *        <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the
-     *        changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this
-     *        method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
-     *        running. Also, when using this method, only one AWS DMS task can access the database at any given time.
-     *        Therefore, if you need to run parallel AWS DMS tasks against the same database, use the default method.
+     *        <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes
+     *        and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method
+     *        doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
+     *        running. Also, when using this method, only one DMS task can access the database at any given time.
+     *        Therefore, if you need to run parallel DMS tasks against the same database, use the default method.
      * @see SafeguardPolicy
      */
 
@@ -550,37 +546,37 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation using
-     * one of the following two methods.
+     * Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one
+     * of the following two methods.
      * </p>
      * <p>
-     * <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS prevents
+     * <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents
      * TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that
      * appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your
      * database, then you must choose this method.
      * </p>
      * <p>
-     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the changes and
-     * then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve
-     * any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
-     * method, only one AWS DMS task can access the database at any given time. Therefore, if you need to run parallel
-     * AWS DMS tasks against the same database, use the default method.
+     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then
+     * uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any
+     * transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
+     * method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS
+     * tasks against the same database, use the default method.
      * </p>
      * 
-     * @return Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation
+     * @return Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation
      *         using one of the following two methods.</p>
      *         <p>
-     *         <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS
+     *         <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS
      *         prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is
      *         open, changes that appear after the transaction started aren't truncated. If you need Microsoft
      *         Replication to be enabled in your database, then you must choose this method.
      *         </p>
      *         <p>
-     *         <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the
-     *         changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this
-     *         method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
-     *         running. Also, when using this method, only one AWS DMS task can access the database at any given time.
-     *         Therefore, if you need to run parallel AWS DMS tasks against the same database, use the default method.
+     *         <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes
+     *         and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method
+     *         doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
+     *         running. Also, when using this method, only one DMS task can access the database at any given time.
+     *         Therefore, if you need to run parallel DMS tasks against the same database, use the default method.
      * @see SafeguardPolicy
      */
 
@@ -590,38 +586,38 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation using
-     * one of the following two methods.
+     * Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one
+     * of the following two methods.
      * </p>
      * <p>
-     * <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS prevents
+     * <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents
      * TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that
      * appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your
      * database, then you must choose this method.
      * </p>
      * <p>
-     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the changes and
-     * then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve
-     * any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
-     * method, only one AWS DMS task can access the database at any given time. Therefore, if you need to run parallel
-     * AWS DMS tasks against the same database, use the default method.
+     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then
+     * uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any
+     * transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
+     * method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS
+     * tasks against the same database, use the default method.
      * </p>
      * 
      * @param safeguardPolicy
-     *        Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation
+     *        Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation
      *        using one of the following two methods.</p>
      *        <p>
-     *        <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS
+     *        <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS
      *        prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is
      *        open, changes that appear after the transaction started aren't truncated. If you need Microsoft
      *        Replication to be enabled in your database, then you must choose this method.
      *        </p>
      *        <p>
-     *        <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the
-     *        changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this
-     *        method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
-     *        running. Also, when using this method, only one AWS DMS task can access the database at any given time.
-     *        Therefore, if you need to run parallel AWS DMS tasks against the same database, use the default method.
+     *        <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes
+     *        and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method
+     *        doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
+     *        running. Also, when using this method, only one DMS task can access the database at any given time.
+     *        Therefore, if you need to run parallel DMS tasks against the same database, use the default method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SafeguardPolicy
      */
@@ -633,38 +629,38 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation using
-     * one of the following two methods.
+     * Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one
+     * of the following two methods.
      * </p>
      * <p>
-     * <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS prevents
+     * <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents
      * TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that
      * appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your
      * database, then you must choose this method.
      * </p>
      * <p>
-     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the changes and
-     * then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve
-     * any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
-     * method, only one AWS DMS task can access the database at any given time. Therefore, if you need to run parallel
-     * AWS DMS tasks against the same database, use the default method.
+     * <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then
+     * uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any
+     * transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this
+     * method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS
+     * tasks against the same database, use the default method.
      * </p>
      * 
      * @param safeguardPolicy
-     *        Use this attribute to minimize the need to access the backup log and enable AWS DMS to prevent truncation
+     *        Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation
      *        using one of the following two methods.</p>
      *        <p>
-     *        <i>Start transactions in the database:</i> This is the default method. When this method is used, AWS DMS
+     *        <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS
      *        prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is
      *        open, changes that appear after the transaction started aren't truncated. If you need Microsoft
      *        Replication to be enabled in your database, then you must choose this method.
      *        </p>
      *        <p>
-     *        <i>Exclusively use sp_repldone within a single task</i>: When this method is used, AWS DMS reads the
-     *        changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this
-     *        method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
-     *        running. Also, when using this method, only one AWS DMS task can access the database at any given time.
-     *        Therefore, if you need to run parallel AWS DMS tasks against the same database, use the default method.
+     *        <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes
+     *        and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method
+     *        doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't
+     *        running. Also, when using this method, only one DMS task can access the database at any given time.
+     *        Therefore, if you need to run parallel DMS tasks against the same database, use the default method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SafeguardPolicy
      */
@@ -880,9 +876,10 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the SQL Server endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the SQL Server endpoint.
      * </p>
      * <note>
      * <p>
@@ -890,28 +887,27 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the SQL Server endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -921,9 +917,10 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the SQL Server endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the SQL Server endpoint.
      * </p>
      * <note>
      * <p>
@@ -931,27 +928,26 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *         the SQL Server endpoint.</p> <note>
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *         the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow
+     *         the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *         Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
      *         <p>
      *         You can specify one of two sets of values for these permissions. You can specify the values for this
      *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *         see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *         Service User Guide</i>.
+     *         see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -961,9 +957,10 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the SQL Server endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the SQL Server endpoint.
      * </p>
      * <note>
      * <p>
@@ -971,28 +968,27 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the SQL Server endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

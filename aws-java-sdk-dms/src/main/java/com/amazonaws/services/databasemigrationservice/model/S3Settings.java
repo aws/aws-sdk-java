@@ -30,8 +30,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an S3 bucket.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an
+     * S3 bucket.
      * </p>
      */
     private String serviceAccessRoleArn;
@@ -90,7 +91,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * <p>
-     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
      * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
@@ -154,9 +155,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private String encryptionMode;
     /**
      * <p>
-     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID. The key
-     * that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user permissions and
-     * allows use of the key.
+     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that
+     * you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows
+     * use of the key.
      * </p>
      * <p>
      * Here is a CLI example:
@@ -259,7 +260,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -274,7 +275,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
      * parameters for output to .csv files only. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
-     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      */
@@ -295,12 +296,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * first field to indicate the INSERT operation at the source. For more information about how these settings work
      * together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      * </p>
      * <p>
@@ -313,12 +313,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private Boolean cdcInsertsOnly;
     /**
      * <p>
-     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for an
      * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -351,22 +351,22 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes all
      * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
      * them with microsecond precision.
      * </p>
      * <p>
-     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
-     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
-     * to query or process the data with Athena or AWS Glue.
+     * Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values. Set
+     * this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan to
+     * query or process the data with Athena or Glue.
      * </p>
      * <note>
      * <p>
-     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
      * precision.
      * </p>
      * <p>
@@ -391,12 +391,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * records are written without an indication of INSERT or UPDATE operations at the source. For more information
      * about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      * </p>
      * <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
@@ -409,7 +408,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * default value is <code>false</code>. For more information about date-based folder partitioning, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
      * date-based folder partitioning</a>.
      * </p>
@@ -432,15 +431,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
-     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
-     * <a href=
-     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
-     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these
      * columns.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      */
@@ -450,21 +448,21 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
      * .csv format. If <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
-     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
-     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
-     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for
+     * these columns regardless of the <code>UseCsvNoSupValue</code> setting.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      */
     private String csvNoSupValue;
     /**
      * <p>
-     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
-     * Amazon S3 target specified by <a
+     * If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon
+     * S3 target specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      * <code>CdcPath</code> </a>. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
@@ -472,7 +470,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      */
@@ -480,12 +478,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
-     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
-     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
-     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this parameter to a
+     * folder path on your S3 target where DMS can save the transaction order for the CDC load. DMS creates this CDC
+     * folder path in either your S3 target working directory or the S3 target location specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
@@ -493,12 +491,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
-     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS creates
+     * the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      * </p>
      * <p>
      * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the CDC
      * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      * </p>
      * <p>
@@ -508,7 +506,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      */
@@ -516,13 +514,15 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an S3 bucket.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an
+     * S3 bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-     *        enables DMS to write and read objects from an S3 bucket.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects
+     *        from an S3 bucket.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -531,12 +531,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an S3 bucket.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an
+     * S3 bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-     *         enables DMS to write and read objects from an S3 bucket.
+     * @return The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *         <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects
+     *         from an S3 bucket.
      */
 
     public String getServiceAccessRoleArn() {
@@ -545,13 +547,15 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an S3 bucket.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects from an
+     * S3 bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-     *        enables DMS to write and read objects from an S3 bucket.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action. It is a required parameter that enables DMS to write and read objects
+     *        from an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -888,7 +892,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * <p>
-     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
      * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
@@ -960,8 +964,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </note>
      *        <p>
-     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
-     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
+     *        <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      *        </p>
      *        <ul>
      *        <li>
@@ -1040,7 +1044,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * <p>
-     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
      * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
@@ -1111,7 +1115,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </note>
      *         <p>
-     *         To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *         To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to
      *         allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      *         </p>
      *         <ul>
@@ -1191,7 +1195,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * <p>
-     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
      * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
@@ -1263,8 +1267,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </note>
      *        <p>
-     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
-     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
+     *        <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      *        </p>
      *        <ul>
      *        <li>
@@ -1345,7 +1349,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * <p>
-     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
      * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
@@ -1417,8 +1421,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </note>
      *        <p>
-     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
-     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
+     *        <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      *        </p>
      *        <ul>
      *        <li>
@@ -1497,7 +1501,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * <p>
-     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
      * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
@@ -1569,8 +1573,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </note>
      *        <p>
-     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
-     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role with permission to allow
+     *        <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      *        </p>
      *        <ul>
      *        <li>
@@ -1639,9 +1643,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID. The key
-     * that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user permissions and
-     * allows use of the key.
+     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that
+     * you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows
+     * use of the key.
      * </p>
      * <p>
      * Here is a CLI example:
@@ -1649,9 +1653,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param serverSideEncryptionKmsKeyId
-     *        If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID. The
-     *        key that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user
-     *        permissions and allows use of the key.</p>
+     *        If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key
+     *        that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions
+     *        and allows use of the key.</p>
      *        <p>
      *        Here is a CLI example:
      *        <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code>
@@ -1663,17 +1667,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID. The key
-     * that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user permissions and
-     * allows use of the key.
+     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that
+     * you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows
+     * use of the key.
      * </p>
      * <p>
      * Here is a CLI example:
      * <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code>
      * </p>
      * 
-     * @return If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID.
-     *         The key that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user
+     * @return If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The
+     *         key that you use needs an attached policy that enables Identity and Access Management (IAM) user
      *         permissions and allows use of the key.</p>
      *         <p>
      *         Here is a CLI example:
@@ -1686,9 +1690,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID. The key
-     * that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user permissions and
-     * allows use of the key.
+     * If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key that
+     * you use needs an attached policy that enables Identity and Access Management (IAM) user permissions and allows
+     * use of the key.
      * </p>
      * <p>
      * Here is a CLI example:
@@ -1696,9 +1700,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param serverSideEncryptionKmsKeyId
-     *        If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the AWS KMS key ID. The
-     *        key that you use needs an attached policy that enables AWS Identity and Access Management (IAM) user
-     *        permissions and allows use of the key.</p>
+     *        If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the KMS key ID. The key
+     *        that you use needs an attached policy that enables Identity and Access Management (IAM) user permissions
+     *        and allows use of the key.</p>
      *        <p>
      *        Here is a CLI example:
      *        <code>aws dms create-endpoint --endpoint-identifier <i>value</i> --endpoint-type target --engine-name s3 --s3-settings ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i> </code>
@@ -2509,7 +2513,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2524,7 +2528,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
      * parameters for output to .csv files only. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
-     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
@@ -2532,7 +2536,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *        files only to indicate how the rows were added to the source database.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -2548,7 +2552,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        parameters for output to .csv files only. For more information about how these settings work together, see
      *        <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
      *        </p>
      */
@@ -2564,7 +2568,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2579,14 +2583,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
      * parameters for output to .csv files only. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
-     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
      * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *         files only to indicate how the rows were added to the source database.</p> <note>
      *         <p>
-     *         AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *         DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -2602,7 +2606,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For more information about
      *         how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
      *         </p>
      */
@@ -2618,7 +2622,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2633,7 +2637,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
      * parameters for output to .csv files only. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
-     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
@@ -2641,7 +2645,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *        files only to indicate how the rows were added to the source database.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -2657,7 +2661,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        parameters for output to .csv files only. For more information about how these settings work together, see
      *        <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2675,7 +2679,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2690,14 +2694,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
      * parameters for output to .csv files only. For more information about how these settings work together, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
-     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
      * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *         files only to indicate how the rows were added to the source database.</p> <note>
      *         <p>
-     *         AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *         DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -2713,7 +2717,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For more information about
      *         how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
      *         </p>
      */
@@ -2738,12 +2742,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * first field to indicate the INSERT operation at the source. For more information about how these settings work
      * together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      * </p>
      * <p>
@@ -2767,12 +2770,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        without a first field to indicate the INSERT operation at the source. For more information about how these
      *        settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     *        DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *        <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *        </p>
      *        <p>
@@ -2802,12 +2805,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * first field to indicate the INSERT operation at the source. For more information about how these settings work
      * together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      * </p>
      * <p>
@@ -2831,12 +2833,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         record is written without a first field to indicate the INSERT operation at the source. For more
      *         information about how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     *         DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *         <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *         </p>
      *         <p>
@@ -2866,12 +2868,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * first field to indicate the INSERT operation at the source. For more information about how these settings work
      * together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      * </p>
      * <p>
@@ -2895,12 +2896,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        without a first field to indicate the INSERT operation at the source. For more information about how these
      *        settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     *        DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *        <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *        </p>
      *        <p>
@@ -2932,12 +2933,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * first field to indicate the INSERT operation at the source. For more information about how these settings work
      * together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      * </p>
      * <p>
@@ -2961,12 +2961,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         record is written without a first field to indicate the INSERT operation at the source. For more
      *         information about how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     *         DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *         <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *         </p>
      *         <p>
@@ -2982,12 +2982,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for an
      * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -3013,10 +3013,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param timestampColumnName
-     *        A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data
-     *        for an Amazon S3 target.</p> <note>
+     *        A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for
+     *        an Amazon S3 target.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -3047,12 +3047,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for an
      * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -3077,10 +3077,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * timestamp column that you set with <code>TimestampColumnName</code>.
      * </p>
      * 
-     * @return A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data
-     *         for an Amazon S3 target.</p> <note>
+     * @return A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for
+     *         an Amazon S3 target.</p> <note>
      *         <p>
-     *         AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     *         DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -3111,12 +3111,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for an
      * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -3142,10 +3142,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param timestampColumnName
-     *        A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data
-     *        for an Amazon S3 target.</p> <note>
+     *        A value that when nonblank causes DMS to add a column with timestamp information to the endpoint data for
+     *        an Amazon S3 target.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -3183,22 +3183,22 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes all
      * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
      * them with microsecond precision.
      * </p>
      * <p>
-     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
-     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
-     * to query or process the data with Athena or AWS Glue.
+     * Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values. Set
+     * this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan to
+     * query or process the data with Athena or Glue.
      * </p>
      * <note>
      * <p>
-     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
      * precision.
      * </p>
      * <p>
@@ -3211,23 +3211,23 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
      *        Amazon S3 object file in .parquet format.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
-     *        When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
-     *        writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
-     *        Otherwise, DMS writes them with microsecond precision.
+     *        When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes
+     *        all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS
+     *        writes them with microsecond precision.
      *        </p>
      *        <p>
-     *        Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
-     *        values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     *        only if you plan to query or process the data with Athena or AWS Glue.
+     *        Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     *        Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if
+     *        you plan to query or process the data with Athena or Glue.
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
-     *        microsecond precision.
+     *        DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     *        precision.
      *        </p>
      *        <p>
      *        Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
@@ -3246,22 +3246,22 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes all
      * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
      * them with microsecond precision.
      * </p>
      * <p>
-     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
-     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
-     * to query or process the data with Athena or AWS Glue.
+     * Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values. Set
+     * this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan to
+     * query or process the data with Athena or Glue.
      * </p>
      * <note>
      * <p>
-     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
      * precision.
      * </p>
      * <p>
@@ -3273,23 +3273,23 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @return A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
      *         Amazon S3 object file in .parquet format.</p> <note>
      *         <p>
-     *         AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *         DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
-     *         When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
-     *         writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
-     *         Otherwise, DMS writes them with microsecond precision.
+     *         When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes
+     *         all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise,
+     *         DMS writes them with microsecond precision.
      *         </p>
      *         <p>
-     *         Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+     *         Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code>
      *         values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     *         only if you plan to query or process the data with Athena or AWS Glue.
+     *         only if you plan to query or process the data with Athena or Glue.
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
-     *         microsecond precision.
+     *         DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     *         precision.
      *         </p>
      *         <p>
      *         Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
@@ -3308,22 +3308,22 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes all
      * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
      * them with microsecond precision.
      * </p>
      * <p>
-     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
-     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
-     * to query or process the data with Athena or AWS Glue.
+     * Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values. Set
+     * this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan to
+     * query or process the data with Athena or Glue.
      * </p>
      * <note>
      * <p>
-     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
      * precision.
      * </p>
      * <p>
@@ -3336,23 +3336,23 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
      *        Amazon S3 object file in .parquet format.</p> <note>
      *        <p>
-     *        AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *        DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
-     *        When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
-     *        writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
-     *        Otherwise, DMS writes them with microsecond precision.
+     *        When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes
+     *        all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS
+     *        writes them with microsecond precision.
      *        </p>
      *        <p>
-     *        Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
-     *        values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     *        only if you plan to query or process the data with Athena or AWS Glue.
+     *        Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     *        Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if
+     *        you plan to query or process the data with Athena or Glue.
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
-     *        microsecond precision.
+     *        DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     *        precision.
      *        </p>
      *        <p>
      *        Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
@@ -3373,22 +3373,22 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes all
      * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
      * them with microsecond precision.
      * </p>
      * <p>
-     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
-     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
-     * to query or process the data with Athena or AWS Glue.
+     * Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code> values. Set
+     * this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan to
+     * query or process the data with Athena or Glue.
      * </p>
      * <note>
      * <p>
-     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
      * precision.
      * </p>
      * <p>
@@ -3400,23 +3400,23 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @return A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
      *         Amazon S3 object file in .parquet format.</p> <note>
      *         <p>
-     *         AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *         DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
-     *         When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
-     *         writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
-     *         Otherwise, DMS writes them with microsecond precision.
+     *         When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, DMS writes
+     *         all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise,
+     *         DMS writes them with microsecond precision.
      *         </p>
      *         <p>
-     *         Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+     *         Currently, Amazon Athena and Glue can handle only millisecond precision for <code>TIMESTAMP</code>
      *         values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
-     *         only if you plan to query or process the data with Athena or AWS Glue.
+     *         only if you plan to query or process the data with Athena or Glue.
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
-     *         microsecond precision.
+     *         DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     *         precision.
      *         </p>
      *         <p>
      *         Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
@@ -3443,12 +3443,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * records are written without an indication of INSERT or UPDATE operations at the source. For more information
      * about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      * </p>
      * <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
@@ -3470,12 +3469,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the
      *        source. For more information about how these settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *        DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      *        </p>
      *        <p>
      *        <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
@@ -3503,12 +3502,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * records are written without an indication of INSERT or UPDATE operations at the source. For more information
      * about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      * </p>
      * <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
@@ -3529,12 +3527,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at
      *         the source. For more information about how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *         DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      *         </p>
      *         <p>
      *         <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
@@ -3562,12 +3560,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * records are written without an indication of INSERT or UPDATE operations at the source. For more information
      * about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      * </p>
      * <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
@@ -3589,12 +3586,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the
      *        source. For more information about how these settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *        DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      *        </p>
      *        <p>
      *        <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
@@ -3624,12 +3621,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * records are written without an indication of INSERT or UPDATE operations at the source. For more information
      * about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      * </p>
      * <p>
      * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
@@ -3650,12 +3646,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at
      *         the source. For more information about how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *         DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
      *         </p>
      *         <p>
      *         <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
@@ -3671,14 +3667,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * default value is <code>false</code>. For more information about date-based folder partitioning, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
      * date-based folder partitioning</a>.
      * </p>
      * 
      * @param datePartitionEnabled
      *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
-     *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *        dates. The default value is <code>false</code>. For more information about date-based folder partitioning,
      *        see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
      *        >Using date-based folder partitioning</a>.
@@ -3691,14 +3687,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * default value is <code>false</code>. For more information about date-based folder partitioning, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
      * date-based folder partitioning</a>.
      * </p>
      * 
      * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
-     *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
-     *         see <a href=
+     *         dates. The default value is <code>false</code>. For more information about date-based folder
+     *         partitioning, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
      *         >Using date-based folder partitioning</a>.
      */
@@ -3710,14 +3706,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * default value is <code>false</code>. For more information about date-based folder partitioning, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
      * date-based folder partitioning</a>.
      * </p>
      * 
      * @param datePartitionEnabled
      *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
-     *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *        dates. The default value is <code>false</code>. For more information about date-based folder partitioning,
      *        see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
      *        >Using date-based folder partitioning</a>.
@@ -3732,14 +3728,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
-     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * default value is <code>false</code>. For more information about date-based folder partitioning, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
      * date-based folder partitioning</a>.
      * </p>
      * 
      * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
-     *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
-     *         see <a href=
+     *         dates. The default value is <code>false</code>. For more information about date-based folder
+     *         partitioning, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
      *         >Using date-based folder partitioning</a>.
      */
@@ -3927,27 +3923,26 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
-     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
-     * <a href=
-     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
-     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these
      * columns.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
      * @param useCsvNoSupValue
      *        This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
-     *        format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
-     *        value specified by <a href=
+     *        format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value
+     *        specified by <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
-     *        > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
-     *        for these columns.</p> <note>
+     *        > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for
+     *        these columns.</p> <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        This setting is supported in DMS versions 3.4.1 and later.
      *        </p>
      */
 
@@ -3958,26 +3953,25 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
-     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
-     * <a href=
-     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
-     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these
      * columns.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
      * @return This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
-     *         format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
-     *         value specified by <a href=
+     *         format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value
+     *         specified by <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
-     *         > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
-     *         for these columns.</p> <note>
+     *         > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for
+     *         these columns.</p> <note>
      *         <p>
-     *         This setting is supported in AWS DMS versions 3.4.1 and later.
+     *         This setting is supported in DMS versions 3.4.1 and later.
      *         </p>
      */
 
@@ -3988,27 +3982,26 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
-     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
-     * <a href=
-     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
-     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these
      * columns.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
      * @param useCsvNoSupValue
      *        This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
-     *        format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
-     *        value specified by <a href=
+     *        format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value
+     *        specified by <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
-     *        > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
-     *        for these columns.</p> <note>
+     *        > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for
+     *        these columns.</p> <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        This setting is supported in DMS versions 3.4.1 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4021,26 +4014,25 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
-     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
-     * <a href=
-     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
-     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for these
      * columns.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
      * @return This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
-     *         format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
-     *         value specified by <a href=
+     *         format. If set to <code>true</code> for columns not included in the supplemental log, DMS uses the value
+     *         specified by <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
-     *         > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
-     *         for these columns.</p> <note>
+     *         > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, DMS uses the null value for
+     *         these columns.</p> <note>
      *         <p>
-     *         This setting is supported in AWS DMS versions 3.4.1 and later.
+     *         This setting is supported in DMS versions 3.4.1 and later.
      *         </p>
      */
 
@@ -4053,13 +4045,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
      * .csv format. If <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
-     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
-     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
-     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for
+     * these columns regardless of the <code>UseCsvNoSupValue</code> setting.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
@@ -4067,11 +4059,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are
      *        written in .csv format. If <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"
-     *        > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use
-     *        for all columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses
-     *        the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+     *        > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for
+     *        all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null
+     *        value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        This setting is supported in DMS versions 3.4.1 and later.
      *        </p>
      */
 
@@ -4084,24 +4076,24 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
      * .csv format. If <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
-     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
-     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
-     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for
+     * these columns regardless of the <code>UseCsvNoSupValue</code> setting.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
      * @return This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are
      *         written in .csv format. If <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"
-     *         > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use
-     *         for all columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses
-     *         the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+     *         > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for
+     *         all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null
+     *         value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
      *         <p>
-     *         This setting is supported in AWS DMS versions 3.4.1 and later.
+     *         This setting is supported in DMS versions 3.4.1 and later.
      *         </p>
      */
 
@@ -4114,13 +4106,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
      * .csv format. If <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
-     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
-     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
-     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, DMS uses the null value for
+     * these columns regardless of the <code>UseCsvNoSupValue</code> setting.
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * This setting is supported in DMS versions 3.4.1 and later.
      * </p>
      * </note>
      * 
@@ -4128,11 +4120,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are
      *        written in .csv format. If <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"
-     *        > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use
-     *        for all columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses
-     *        the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+     *        > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want DMS to use for
+     *        all columns not included in the supplemental log. If you do not specify a string value, DMS uses the null
+     *        value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        This setting is supported in DMS versions 3.4.1 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4144,8 +4136,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
-     * Amazon S3 target specified by <a
+     * If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon
+     * S3 target specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      * <code>CdcPath</code> </a>. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
@@ -4153,19 +4145,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
      * @param preserveTransactions
-     *        If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
-     *        the Amazon S3 target specified by <a href=
+     *        If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the
+     *        Amazon S3 target specified by <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      *        <code>CdcPath</code> </a>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
      *        >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        This setting is supported in DMS versions 3.4.2 and later.
      *        </p>
      */
 
@@ -4175,8 +4167,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
-     * Amazon S3 target specified by <a
+     * If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon
+     * S3 target specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      * <code>CdcPath</code> </a>. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
@@ -4184,18 +4176,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
-     * @return If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
-     *         the Amazon S3 target specified by <a href=
+     * @return If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the
+     *         Amazon S3 target specified by <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      *         <code>CdcPath</code> </a>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
      *         >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
      *         <p>
-     *         This setting is supported in AWS DMS versions 3.4.2 and later.
+     *         This setting is supported in DMS versions 3.4.2 and later.
      *         </p>
      */
 
@@ -4205,8 +4197,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
-     * Amazon S3 target specified by <a
+     * If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon
+     * S3 target specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      * <code>CdcPath</code> </a>. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
@@ -4214,19 +4206,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
      * @param preserveTransactions
-     *        If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
-     *        the Amazon S3 target specified by <a href=
+     *        If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the
+     *        Amazon S3 target specified by <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      *        <code>CdcPath</code> </a>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
      *        >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        This setting is supported in DMS versions 3.4.2 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4238,8 +4230,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
-     * Amazon S3 target specified by <a
+     * If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the Amazon
+     * S3 target specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      * <code>CdcPath</code> </a>. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
@@ -4247,18 +4239,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
-     * @return If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
-     *         the Amazon S3 target specified by <a href=
+     * @return If set to <code>true</code>, DMS saves the transaction order for a change data capture (CDC) load on the
+     *         Amazon S3 target specified by <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
      *         <code>CdcPath</code> </a>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
      *         >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
      *         <p>
-     *         This setting is supported in AWS DMS versions 3.4.2 and later.
+     *         This setting is supported in DMS versions 3.4.2 and later.
      *         </p>
      */
 
@@ -4269,12 +4261,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
-     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
-     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
-     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this parameter to a
+     * folder path on your S3 target where DMS can save the transaction order for the CDC load. DMS creates this CDC
+     * folder path in either your S3 target working directory or the S3 target location specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
@@ -4282,12 +4274,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
-     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS creates
+     * the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      * </p>
      * <p>
      * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the CDC
      * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      * </p>
      * <p>
@@ -4297,32 +4289,32 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
      * @param cdcPath
      *        Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures
-     *        change data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this
-     *        path and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     *        change data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path
+     *        and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     *        > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this
-     *        parameter to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC
-     *        load. AWS DMS creates this CDC folder path in either your S3 target working directory or the S3 target
-     *        location specified by <a href=
+     *        > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this
+     *        parameter to a folder path on your S3 target where DMS can save the transaction order for the CDC load.
+     *        DMS creates this CDC folder path in either your S3 target working directory or the S3 target location
+     *        specified by <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"
      *        > <code>BucketFolder</code> </a> and <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"
      *        > <code>BucketName</code> </a>.</p>
      *        <p>
      *        For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     *        <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS
-     *        DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     *        <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS
+     *        creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      *        </p>
      *        <p>
      *        If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     *        <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates
-     *        the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     *        <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the
+     *        CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      *        </p>
      *        <p>
      *        For more information on CDC including transaction order on an S3 target, see <a href=
@@ -4331,7 +4323,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        This setting is supported in DMS versions 3.4.2 and later.
      *        </p>
      */
 
@@ -4342,12 +4334,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
-     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
-     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
-     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this parameter to a
+     * folder path on your S3 target where DMS can save the transaction order for the CDC load. DMS creates this CDC
+     * folder path in either your S3 target working directory or the S3 target location specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
@@ -4355,12 +4347,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
-     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS creates
+     * the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      * </p>
      * <p>
      * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the CDC
      * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      * </p>
      * <p>
@@ -4370,31 +4362,31 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
      * @return Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures
-     *         change data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this
-     *         path and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     *         change data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path
+     *         and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     *         > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this
-     *         parameter to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC
-     *         load. AWS DMS creates this CDC folder path in either your S3 target working directory or the S3 target
-     *         location specified by <a href=
+     *         > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this
+     *         parameter to a folder path on your S3 target where DMS can save the transaction order for the CDC load.
+     *         DMS creates this CDC folder path in either your S3 target working directory or the S3 target location
+     *         specified by <a href=
      *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"
      *         > <code>BucketFolder</code> </a> and <a
      *         href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"
      *         > <code>BucketName</code> </a>.</p>
      *         <p>
      *         For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     *         <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS
-     *         DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     *         <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS
+     *         creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      *         </p>
      *         <p>
      *         If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     *         <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates
-     *         the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     *         <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the
+     *         CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      *         </p>
      *         <p>
      *         For more information on CDC including transaction order on an S3 target, see <a href=
@@ -4403,7 +4395,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         This setting is supported in AWS DMS versions 3.4.2 and later.
+     *         This setting is supported in DMS versions 3.4.2 and later.
      *         </p>
      */
 
@@ -4414,12 +4406,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
-     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
-     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path and replicates
+     * the data changes to the target endpoint. For an S3 target if you set <a href=
      * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
-     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
-     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this parameter to a
+     * folder path on your S3 target where DMS can save the transaction order for the CDC load. DMS creates this CDC
+     * folder path in either your S3 target working directory or the S3 target location specified by <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
      * <code>BucketFolder</code> </a> and <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
@@ -4427,12 +4419,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
-     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS creates
+     * the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      * </p>
      * <p>
      * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the CDC
      * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      * </p>
      * <p>
@@ -4442,32 +4434,32 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * This setting is supported in DMS versions 3.4.2 and later.
      * </p>
      * </note>
      * 
      * @param cdcPath
      *        Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures
-     *        change data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this
-     *        path and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     *        change data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS reads CDC files from this path
+     *        and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
-     *        > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this
-     *        parameter to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC
-     *        load. AWS DMS creates this CDC folder path in either your S3 target working directory or the S3 target
-     *        location specified by <a href=
+     *        > <code>PreserveTransactions</code> </a> to <code>true</code>, DMS verifies that you have set this
+     *        parameter to a folder path on your S3 target where DMS can save the transaction order for the CDC load.
+     *        DMS creates this CDC folder path in either your S3 target working directory or the S3 target location
+     *        specified by <a href=
      *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"
      *        > <code>BucketFolder</code> </a> and <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"
      *        > <code>BucketName</code> </a>.</p>
      *        <p>
      *        For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
-     *        <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS
-     *        DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     *        <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, DMS
+     *        creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
      *        </p>
      *        <p>
      *        If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
-     *        <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates
-     *        the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     *        <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, DMS creates the
+     *        CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
      *        </p>
      *        <p>
      *        For more information on CDC including transaction order on an S3 target, see <a href=
@@ -4476,7 +4468,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        This setting is supported in DMS versions 3.4.2 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

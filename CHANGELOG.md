@@ -1,3 +1,28 @@
+# __1.12.24__ __2021-07-14__
+## __AWS Certificate Manager__
+  - ### Features
+    - Added support for RSA 3072 SSL certificate import
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Release of feature needed for ECA-Endpoint settings. This allows customer to delete a field in endpoint settings by using --exact-settings flag in modify-endpoint api. This also displays default values for certain required fields of endpoint settings in describe-endpoint-settings api.
+
+## __AWS Glue__
+  - ### Features
+    - Add support for Event Driven Workflows
+
+## __AWS Well-Architected Tool__
+  - ### Features
+    - This update provides support for Well-Architected API users to mark answer choices as not applicable.
+
+## __Amazon HealthLake__
+  - ### Features
+    - General availability for Amazon HealthLake. StartFHIRImportJob and StartFHIRExportJob APIs now require AWS KMS parameter. For more information, see the Amazon HealthLake Documentation https://docs.aws.amazon.com/healthlake/index.html.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds support for the Amazon Lightsail object storage service, which allows you to create buckets and store objects.
+
 # __1.12.23__ __2021-07-13__
 ## __AWS Direct Connect__
   - ### Features

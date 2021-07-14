@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Describes an alarm.
  * </p>
  * <p>
- * An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a
+ * An alarm is a way to monitor your Lightsail resource metrics. For more information, see <a
  * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon
  * Lightsail</a>.
  * </p>

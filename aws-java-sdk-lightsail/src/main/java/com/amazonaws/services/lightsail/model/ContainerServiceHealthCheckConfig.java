@@ -65,7 +65,8 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The HTTP codes to use when checking for a successful response from a container. You can specify values between
-     * 200 and 499.
+     * <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a
+     * range of values (for example, <code>200-299</code>).
      * </p>
      */
     private String successCodes;
@@ -297,12 +298,14 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The HTTP codes to use when checking for a successful response from a container. You can specify values between
-     * 200 and 499.
+     * <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a
+     * range of values (for example, <code>200-299</code>).
      * </p>
      * 
      * @param successCodes
      *        The HTTP codes to use when checking for a successful response from a container. You can specify values
-     *        between 200 and 499.
+     *        between <code>200</code> and <code>499</code>. You can specify multiple values (for example,
+     *        <code>200,202</code>) or a range of values (for example, <code>200-299</code>).
      */
 
     public void setSuccessCodes(String successCodes) {
@@ -312,11 +315,13 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The HTTP codes to use when checking for a successful response from a container. You can specify values between
-     * 200 and 499.
+     * <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a
+     * range of values (for example, <code>200-299</code>).
      * </p>
      * 
      * @return The HTTP codes to use when checking for a successful response from a container. You can specify values
-     *         between 200 and 499.
+     *         between <code>200</code> and <code>499</code>. You can specify multiple values (for example,
+     *         <code>200,202</code>) or a range of values (for example, <code>200-299</code>).
      */
 
     public String getSuccessCodes() {
@@ -326,12 +331,14 @@ public class ContainerServiceHealthCheckConfig implements Serializable, Cloneabl
     /**
      * <p>
      * The HTTP codes to use when checking for a successful response from a container. You can specify values between
-     * 200 and 499.
+     * <code>200</code> and <code>499</code>. You can specify multiple values (for example, <code>200,202</code>) or a
+     * range of values (for example, <code>200-299</code>).
      * </p>
      * 
      * @param successCodes
      *        The HTTP codes to use when checking for a successful response from a container. You can specify values
-     *        between 200 and 499.
+     *        between <code>200</code> and <code>499</code>. You can specify multiple values (for example,
+     *        <code>200,202</code>) or a range of values (for example, <code>200-299</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

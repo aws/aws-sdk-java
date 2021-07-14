@@ -89,6 +89,10 @@ public class WorkflowRunJsonUnmarshaller implements Unmarshaller<WorkflowRun, Js
                     context.nextToken();
                     workflowRun.setGraph(WorkflowGraphJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("StartingEventBatchCondition", targetDepth)) {
+                    context.nextToken();
+                    workflowRun.setStartingEventBatchCondition(StartingEventBatchConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

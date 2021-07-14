@@ -61,7 +61,8 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -450,12 +451,13 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      * 
      * @return The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
-     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
-     *         Guide</a>.
+     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail
+     *         Developer Guide</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -465,13 +467,14 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      * 
      * @param tags
      *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
-     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
-     *        Guide</a>.
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail
+     *        Developer Guide</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -486,7 +489,8 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -496,8 +500,8 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * 
      * @param tags
      *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
-     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
-     *        Guide</a>.
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail
+     *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,13 +518,14 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer
+     * Guide</a>.
      * </p>
      * 
      * @param tags
      *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
-     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
-     *        Guide</a>.
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail
+     *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

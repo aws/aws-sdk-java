@@ -33,7 +33,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String certificateArn;
@@ -144,8 +144,8 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     private String signatureAlgorithm;
     /**
      * <p>
-     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
-     * resources.
+     * A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by
+     * multiple Amazon Web Services resources.
      * </p>
      */
     private java.util.List<String> inUseBy;
@@ -154,7 +154,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      */
     private String failureReason;
@@ -166,7 +166,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * imported certificates. For more information about the differences between certificates that you import and those
      * that ACM provides, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      */
     private String type;
@@ -223,13 +223,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -240,12 +240,12 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getCertificateArn() {
@@ -256,13 +256,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1140,12 +1140,12 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
-     * resources.
+     * A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by
+     * multiple Amazon Web Services resources.
      * </p>
      * 
-     * @return A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by
-     *         multiple AWS resources.
+     * @return A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be
+     *         used by multiple Amazon Web Services resources.
      */
 
     public java.util.List<String> getInUseBy() {
@@ -1154,13 +1154,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
-     * resources.
+     * A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by
+     * multiple Amazon Web Services resources.
      * </p>
      * 
      * @param inUseBy
-     *        A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple
-     *        AWS resources.
+     *        A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be
+     *        used by multiple Amazon Web Services resources.
      */
 
     public void setInUseBy(java.util.Collection<String> inUseBy) {
@@ -1174,8 +1174,8 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
-     * resources.
+     * A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by
+     * multiple Amazon Web Services resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1184,8 +1184,8 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param inUseBy
-     *        A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple
-     *        AWS resources.
+     *        A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be
+     *        used by multiple Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1201,13 +1201,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS
-     * resources.
+     * A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by
+     * multiple Amazon Web Services resources.
      * </p>
      * 
      * @param inUseBy
-     *        A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple
-     *        AWS resources.
+     *        A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be
+     *        used by multiple Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1221,14 +1221,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
      *        <code>FAILED</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        >Certificate Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @see FailureReason
      */
 
@@ -1241,13 +1241,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @return The reason the certificate request failed. This value exists only when the certificate status is
      *         <code>FAILED</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     *         >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *         >Certificate Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @see FailureReason
      */
 
@@ -1260,14 +1260,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
      *        <code>FAILED</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        >Certificate Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailureReason
      */
@@ -1282,14 +1282,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
      *        <code>FAILED</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        >Certificate Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @see FailureReason
      */
 
@@ -1302,14 +1302,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * The reason the certificate request failed. This value exists only when the certificate status is
      * <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
      *        <code>FAILED</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        >Certificate Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailureReason
      */
@@ -1327,7 +1327,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * imported certificates. For more information about the differences between certificates that you import and those
      * that ACM provides, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
@@ -1337,7 +1337,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
-     *        in the <i>AWS Certificate Manager User Guide</i>.
+     *        in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @see CertificateType
      */
 
@@ -1353,7 +1353,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * imported certificates. For more information about the differences between certificates that you import and those
      * that ACM provides, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @return The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>
@@ -1362,7 +1362,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      *         renewal</a> for imported certificates. For more information about the differences between certificates
      *         that you import and those that ACM provides, see <a
      *         href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     *         Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *         Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @see CertificateType
      */
 
@@ -1378,7 +1378,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * imported certificates. For more information about the differences between certificates that you import and those
      * that ACM provides, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
@@ -1388,7 +1388,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
-     *        in the <i>AWS Certificate Manager User Guide</i>.
+     *        in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -1406,7 +1406,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * imported certificates. For more information about the differences between certificates that you import and those
      * that ACM provides, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
@@ -1416,7 +1416,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
-     *        in the <i>AWS Certificate Manager User Guide</i>.
+     *        in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @see CertificateType
      */
 
@@ -1432,7 +1432,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * imported certificates. For more information about the differences between certificates that you import and those
      * that ACM provides, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * <i>Amazon Web Services Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
@@ -1442,7 +1442,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
      *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
-     *        in the <i>AWS Certificate Manager User Guide</i>.
+     *        in the <i>Amazon Web Services Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */

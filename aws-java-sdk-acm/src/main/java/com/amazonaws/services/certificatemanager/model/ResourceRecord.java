@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by
- * the <a>DescribeCertificate</a> action.
+ * Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the
+ * <a>DescribeCertificate</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResourceRecord" target="_top">AWS API

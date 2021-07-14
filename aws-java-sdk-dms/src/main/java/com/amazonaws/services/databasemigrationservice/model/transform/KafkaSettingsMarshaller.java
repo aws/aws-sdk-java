@@ -61,6 +61,8 @@ public class KafkaSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaslUsername").build();
     private static final MarshallingInfo<String> SASLPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaslPassword").build();
+    private static final MarshallingInfo<Boolean> NOHEXPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NoHexPrefix").build();
 
     private static final KafkaSettingsMarshaller instance = new KafkaSettingsMarshaller();
 
@@ -95,6 +97,7 @@ public class KafkaSettingsMarshaller {
             protocolMarshaller.marshall(kafkaSettings.getSslCaCertificateArn(), SSLCACERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getSaslUsername(), SASLUSERNAME_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getSaslPassword(), SASLPASSWORD_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getNoHexPrefix(), NOHEXPREFIX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -43,7 +43,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     private String engineName;
     /**
      * <p>
-     * Indicates if Change Data Capture (CDC) is supported.
+     * Indicates if change data capture (CDC) is supported.
      * </p>
      */
     private Boolean supportsCDC;
@@ -55,8 +55,8 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     private String endpointType;
     /**
      * <p>
-     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
-     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS
+     * versions earlier than 3.1.1 do not return a value for this parameter.
      * </p>
      */
     private String replicationInstanceEngineMinimumVersion;
@@ -140,11 +140,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates if Change Data Capture (CDC) is supported.
+     * Indicates if change data capture (CDC) is supported.
      * </p>
      * 
      * @param supportsCDC
-     *        Indicates if Change Data Capture (CDC) is supported.
+     *        Indicates if change data capture (CDC) is supported.
      */
 
     public void setSupportsCDC(Boolean supportsCDC) {
@@ -153,10 +153,10 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates if Change Data Capture (CDC) is supported.
+     * Indicates if change data capture (CDC) is supported.
      * </p>
      * 
-     * @return Indicates if Change Data Capture (CDC) is supported.
+     * @return Indicates if change data capture (CDC) is supported.
      */
 
     public Boolean getSupportsCDC() {
@@ -165,11 +165,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates if Change Data Capture (CDC) is supported.
+     * Indicates if change data capture (CDC) is supported.
      * </p>
      * 
      * @param supportsCDC
-     *        Indicates if Change Data Capture (CDC) is supported.
+     *        Indicates if change data capture (CDC) is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,10 +180,10 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates if Change Data Capture (CDC) is supported.
+     * Indicates if change data capture (CDC) is supported.
      * </p>
      * 
-     * @return Indicates if Change Data Capture (CDC) is supported.
+     * @return Indicates if change data capture (CDC) is supported.
      */
 
     public Boolean isSupportsCDC() {
@@ -265,13 +265,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
-     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS
+     * versions earlier than 3.1.1 do not return a value for this parameter.
      * </p>
      * 
      * @param replicationInstanceEngineMinimumVersion
-     *        The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines
-     *        released with AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     *        The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released
+     *        with DMS versions earlier than 3.1.1 do not return a value for this parameter.
      */
 
     public void setReplicationInstanceEngineMinimumVersion(String replicationInstanceEngineMinimumVersion) {
@@ -280,12 +280,12 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
-     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS
+     * versions earlier than 3.1.1 do not return a value for this parameter.
      * </p>
      * 
-     * @return The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines
-     *         released with AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * @return The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released
+     *         with DMS versions earlier than 3.1.1 do not return a value for this parameter.
      */
 
     public String getReplicationInstanceEngineMinimumVersion() {
@@ -294,13 +294,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
-     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS
+     * versions earlier than 3.1.1 do not return a value for this parameter.
      * </p>
      * 
      * @param replicationInstanceEngineMinimumVersion
-     *        The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines
-     *        released with AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     *        The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released
+     *        with DMS versions earlier than 3.1.1 do not return a value for this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,7 +31,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      * the specified request parameters. For more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     * premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      */
     private java.util.List<String> individualAssessmentNames;
@@ -50,14 +50,14 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      * the specified request parameters. For more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     * premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return List of names for the individual assessments supported by the premigration assessment run that you start
      *         based on the specified request parameters. For more information on the available individual assessments,
      *         including compatibility with different migration task configurations, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     *         premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *         premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public java.util.List<String> getIndividualAssessmentNames() {
@@ -70,7 +70,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      * the specified request parameters. For more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     * premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param individualAssessmentNames
@@ -78,7 +78,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      *        based on the specified request parameters. For more information on the available individual assessments,
      *        including compatibility with different migration task configurations, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     *        premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public void setIndividualAssessmentNames(java.util.Collection<String> individualAssessmentNames) {
@@ -96,7 +96,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      * the specified request parameters. For more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     * premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -109,7 +109,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      *        based on the specified request parameters. For more information on the available individual assessments,
      *        including compatibility with different migration task configurations, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     *        premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,7 +129,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      * the specified request parameters. For more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     * premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param individualAssessmentNames
@@ -137,7 +137,7 @@ public class DescribeApplicableIndividualAssessmentsResult extends com.amazonaws
      *        based on the specified request parameters. For more information on the available individual assessments,
      *        including compatibility with different migration task configurations, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with
-     *        premigration assessment runs</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      * </p>
      */
     private String replicationInstanceArn;
@@ -68,11 +68,11 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     *        The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      */
 
     public void setReplicationInstanceArn(String replicationInstanceArn) {
@@ -81,10 +81,10 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     * @return The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      */
 
     public String getReplicationInstanceArn() {
@@ -93,11 +93,11 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     * The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance action applies to.
+     *        The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

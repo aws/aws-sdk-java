@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
- * operation.
+ * Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> action.
  * </p>
  * <p>
  * A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon

@@ -30,9 +30,6 @@ public class GetDistributionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the distribution for which to return information.
      * </p>
      * <p>
-     * Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     * </p>
-     * <p>
      * When omitted, the response includes all of your distributions in the AWS Region where the request is made.
      * </p>
      */
@@ -53,17 +50,11 @@ public class GetDistributionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the distribution for which to return information.
      * </p>
      * <p>
-     * Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     * </p>
-     * <p>
      * When omitted, the response includes all of your distributions in the AWS Region where the request is made.
      * </p>
      * 
      * @param distributionName
      *        The name of the distribution for which to return information.</p>
-     *        <p>
-     *        Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     *        </p>
      *        <p>
      *        When omitted, the response includes all of your distributions in the AWS Region where the request is made.
      */
@@ -77,16 +68,10 @@ public class GetDistributionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the distribution for which to return information.
      * </p>
      * <p>
-     * Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     * </p>
-     * <p>
      * When omitted, the response includes all of your distributions in the AWS Region where the request is made.
      * </p>
      * 
      * @return The name of the distribution for which to return information.</p>
-     *         <p>
-     *         Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     *         </p>
      *         <p>
      *         When omitted, the response includes all of your distributions in the AWS Region where the request is
      *         made.
@@ -101,17 +86,11 @@ public class GetDistributionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the distribution for which to return information.
      * </p>
      * <p>
-     * Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     * </p>
-     * <p>
      * When omitted, the response includes all of your distributions in the AWS Region where the request is made.
      * </p>
      * 
      * @param distributionName
      *        The name of the distribution for which to return information.</p>
-     *        <p>
-     *        Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.
-     *        </p>
      *        <p>
      *        When omitted, the response includes all of your distributions in the AWS Region where the request is made.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the static IP.
+ * Describes a static IP.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StaticIp" target="_top">AWS API

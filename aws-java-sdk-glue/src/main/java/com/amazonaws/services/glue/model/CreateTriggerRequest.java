@@ -92,6 +92,8 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
     private java.util.Map<String, String> tags;
 
+    private EventBatchingCondition eventBatchingCondition;
+
     /**
      * <p>
      * The name of the trigger.
@@ -610,6 +612,32 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @param eventBatchingCondition
+     */
+
+    public void setEventBatchingCondition(EventBatchingCondition eventBatchingCondition) {
+        this.eventBatchingCondition = eventBatchingCondition;
+    }
+
+    /**
+     * @return
+     */
+
+    public EventBatchingCondition getEventBatchingCondition() {
+        return this.eventBatchingCondition;
+    }
+
+    /**
+     * @param eventBatchingCondition
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTriggerRequest withEventBatchingCondition(EventBatchingCondition eventBatchingCondition) {
+        setEventBatchingCondition(eventBatchingCondition);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -638,7 +666,9 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getStartOnCreation() != null)
             sb.append("StartOnCreation: ").append(getStartOnCreation()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEventBatchingCondition() != null)
+            sb.append("EventBatchingCondition: ").append(getEventBatchingCondition());
         sb.append("}");
         return sb.toString();
     }
@@ -689,6 +719,10 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEventBatchingCondition() == null ^ this.getEventBatchingCondition() == null)
+            return false;
+        if (other.getEventBatchingCondition() != null && other.getEventBatchingCondition().equals(this.getEventBatchingCondition()) == false)
+            return false;
         return true;
     }
 
@@ -706,6 +740,7 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getStartOnCreation() == null) ? 0 : getStartOnCreation().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEventBatchingCondition() == null) ? 0 : getEventBatchingCondition().hashCode());
         return hashCode;
     }
 

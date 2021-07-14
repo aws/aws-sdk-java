@@ -66,9 +66,9 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String migrationType;
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
-     * with the DMS API, provide the JSON as the parameter value.
+     * When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path
+     * with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with
+     * the DMS API, provide the JSON as the parameter value.
      * </p>
      */
     private String tableMappings;
@@ -112,7 +112,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      */
@@ -135,7 +135,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
@@ -417,16 +417,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
-     * with the DMS API, provide the JSON as the parameter value.
+     * When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path
+     * with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with
+     * the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @param tableMappings
-     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with <code>file://</code>. For example,
-     *        <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
-     *        the parameter value.
+     *        When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede
+     *        the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>.
+     *        When working with the DMS API, provide the JSON as the parameter value.
      */
 
     public void setTableMappings(String tableMappings) {
@@ -435,15 +434,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
-     * with the DMS API, provide the JSON as the parameter value.
+     * When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path
+     * with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with
+     * the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
-     * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *         Precede the path with <code>file://</code>. For example,
-     *         <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
-     *         the parameter value.
+     * @return When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede
+     *         the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>.
+     *         When working with the DMS API, provide the JSON as the parameter value.
      */
 
     public String getTableMappings() {
@@ -452,16 +450,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
-     * with the DMS API, provide the JSON as the parameter value.
+     * When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path
+     * with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with
+     * the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @param tableMappings
-     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with <code>file://</code>. For example,
-     *        <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
-     *        the parameter value.
+     *        When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede
+     *        the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>.
+     *        When working with the DMS API, provide the JSON as the parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,7 +595,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -626,7 +623,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *        </p>
      */
 
@@ -658,7 +655,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -685,7 +682,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *         >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *         >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *         </p>
      */
 
@@ -717,7 +714,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
      * connection attribute to the name of this logical replication slot. For more information, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      * </p>
      * </note>
      * 
@@ -745,7 +742,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
-     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -839,14 +836,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -858,13 +855,13 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *         Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -876,14 +873,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,8 +30,11 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
-     * running regardless if the SQL statement succeeds or fails.
+     * Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running
+     * regardless if the SQL statement succeeds or fails.
+     * </p>
+     * <p>
+     * For this parameter, provide the code of the script itself, not the name of a file containing the script.
      * </p>
      */
     private String afterConnectScript;
@@ -45,7 +48,11 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private Boolean cleanSourceMetadataOnMismatch;
     /**
      * <p>
-     * Database name for the endpoint.
+     * Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database
+     * using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL
+     * endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database
+     * only when you specify the schema in the table-mapping rules of the DMS task.
      * </p>
      */
     private String databaseName;
@@ -57,7 +64,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>eventsPollInterval=5;</code>
      * </p>
      * <p>
-     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * In the example, DMS checks for changes in the binary logs every five seconds.
      * </p>
      */
     private Integer eventsPollInterval;
@@ -128,9 +135,10 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private String username;
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MySQL endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MySQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -138,10 +146,9 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      */
@@ -156,13 +163,18 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
-     * running regardless if the SQL statement succeeds or fails.
+     * Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running
+     * regardless if the SQL statement succeeds or fails.
+     * </p>
+     * <p>
+     * For this parameter, provide the code of the script itself, not the name of a file containing the script.
      * </p>
      * 
      * @param afterConnectScript
-     *        Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
-     *        running regardless if the SQL statement succeeds or fails.
+     *        Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues
+     *        running regardless if the SQL statement succeeds or fails.</p>
+     *        <p>
+     *        For this parameter, provide the code of the script itself, not the name of a file containing the script.
      */
 
     public void setAfterConnectScript(String afterConnectScript) {
@@ -171,12 +183,17 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
-     * running regardless if the SQL statement succeeds or fails.
+     * Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running
+     * regardless if the SQL statement succeeds or fails.
+     * </p>
+     * <p>
+     * For this parameter, provide the code of the script itself, not the name of a file containing the script.
      * </p>
      * 
-     * @return Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task
-     *         continues running regardless if the SQL statement succeeds or fails.
+     * @return Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues
+     *         running regardless if the SQL statement succeeds or fails.</p>
+     *         <p>
+     *         For this parameter, provide the code of the script itself, not the name of a file containing the script.
      */
 
     public String getAfterConnectScript() {
@@ -185,13 +202,18 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
-     * running regardless if the SQL statement succeeds or fails.
+     * Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running
+     * regardless if the SQL statement succeeds or fails.
+     * </p>
+     * <p>
+     * For this parameter, provide the code of the script itself, not the name of a file containing the script.
      * </p>
      * 
      * @param afterConnectScript
-     *        Specifies a script to run immediately after AWS DMS connects to the endpoint. The migration task continues
-     *        running regardless if the SQL statement succeeds or fails.
+     *        Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues
+     *        running regardless if the SQL statement succeeds or fails.</p>
+     *        <p>
+     *        For this parameter, provide the code of the script itself, not the name of a file containing the script.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +292,19 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Database name for the endpoint.
+     * Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database
+     * using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL
+     * endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database
+     * only when you specify the schema in the table-mapping rules of the DMS task.
      * </p>
      * 
      * @param databaseName
-     *        Database name for the endpoint.
+     *        Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the
+     *        database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+     *        or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+     *        MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+     *        the database only when you specify the schema in the table-mapping rules of the DMS task.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -283,10 +313,18 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Database name for the endpoint.
+     * Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database
+     * using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL
+     * endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database
+     * only when you specify the schema in the table-mapping rules of the DMS task.
      * </p>
      * 
-     * @return Database name for the endpoint.
+     * @return Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the
+     *         database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+     *         or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+     *         MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+     *         the database only when you specify the schema in the table-mapping rules of the DMS task.
      */
 
     public String getDatabaseName() {
@@ -295,11 +333,19 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Database name for the endpoint.
+     * Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database
+     * using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL
+     * endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database
+     * only when you specify the schema in the table-mapping rules of the DMS task.
      * </p>
      * 
      * @param databaseName
-     *        Database name for the endpoint.
+     *        Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the
+     *        database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code>
+     *        or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a
+     *        MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify
+     *        the database only when you specify the schema in the table-mapping rules of the DMS task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,7 +362,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>eventsPollInterval=5;</code>
      * </p>
      * <p>
-     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * In the example, DMS checks for changes in the binary logs every five seconds.
      * </p>
      * 
      * @param eventsPollInterval
@@ -325,7 +371,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      *        Example: <code>eventsPollInterval=5;</code>
      *        </p>
      *        <p>
-     *        In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     *        In the example, DMS checks for changes in the binary logs every five seconds.
      */
 
     public void setEventsPollInterval(Integer eventsPollInterval) {
@@ -340,7 +386,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>eventsPollInterval=5;</code>
      * </p>
      * <p>
-     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * In the example, DMS checks for changes in the binary logs every five seconds.
      * </p>
      * 
      * @return Specifies how often to check the binary log for new changes/events when the database is idle.</p>
@@ -348,7 +394,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      *         Example: <code>eventsPollInterval=5;</code>
      *         </p>
      *         <p>
-     *         In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     *         In the example, DMS checks for changes in the binary logs every five seconds.
      */
 
     public Integer getEventsPollInterval() {
@@ -363,7 +409,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>eventsPollInterval=5;</code>
      * </p>
      * <p>
-     * In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     * In the example, DMS checks for changes in the binary logs every five seconds.
      * </p>
      * 
      * @param eventsPollInterval
@@ -372,7 +418,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      *        Example: <code>eventsPollInterval=5;</code>
      *        </p>
      *        <p>
-     *        In the example, AWS DMS checks for changes in the binary logs every five seconds.
+     *        In the example, DMS checks for changes in the binary logs every five seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,9 +873,10 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MySQL endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MySQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -837,28 +884,27 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the MySQL endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      */
 
@@ -868,9 +914,10 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MySQL endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MySQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -878,27 +925,26 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *         grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *         <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *         the MySQL endpoint.</p> <note>
+     * @return The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *         the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow
+     *         the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *         Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
      *         <p>
      *         You can specify one of two sets of values for these permissions. You can specify the values for this
      *         setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *         <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *         specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *         <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *         see <a href=
-     *         "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *         >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *         Service User Guide</i>.
+     *         see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *         >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *         User Guide</i>.
      *         </p>
      */
 
@@ -908,9 +954,10 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
-     * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
-     * has the value of the AWS Secrets Manager secret that allows access to the MySQL endpoint.
+     * The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the
+     * required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services
+     * Secrets Manager secret that allows access to the MySQL endpoint.
      * </p>
      * <note>
      * <p>
@@ -918,28 +965,27 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>,
      * <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
      * information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-     * and <code>SecretsManagerSecretId</code> required to access it, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     * >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration Service
-     * User Guide</i>.
+     * and <code>SecretsManagerSecretId</code> required to access it, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.
      * </p>
      * </note>
      * 
      * @param secretsManagerAccessRoleArn
-     *        The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and
-     *        grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-     *        <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret that allows access to
-     *        the MySQL endpoint.</p> <note>
+     *        The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants
+     *        the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the
+     *        <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web
+     *        Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      *        <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't
      *        specify both. For more information on creating this <code>SecretsManagerSecret</code> and the
      *        <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it,
-     *        see <a href=
-     *        "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
-     *        >Using secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database Migration
-     *        Service User Guide</i>.
+     *        see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
+     *        >Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service
+     *        User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

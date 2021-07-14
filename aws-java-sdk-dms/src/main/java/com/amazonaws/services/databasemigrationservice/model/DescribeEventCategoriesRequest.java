@@ -28,7 +28,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
@@ -44,14 +44,14 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | replication-task
      */
@@ -62,13 +62,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
      * </p>
      * 
-     * @return The type of AWS DMS resource that generates events. </p>
+     * @return The type of DMS resource that generates events. </p>
      *         <p>
      *         Valid values: replication-instance | replication-task
      */
@@ -79,14 +79,14 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of AWS DMS resource that generates events.
+     * The type of DMS resource that generates events.
      * </p>
      * <p>
      * Valid values: replication-instance | replication-task
      * </p>
      * 
      * @param sourceType
-     *        The type of AWS DMS resource that generates events. </p>
+     *        The type of DMS resource that generates events. </p>
      *        <p>
      *        Valid values: replication-instance | replication-task
      * @return Returns a reference to this object so that method calls can be chained together.

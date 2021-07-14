@@ -78,6 +78,16 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public CreateBucketResult createBucket(CreateBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateBucketAccessKeyResult createBucketAccessKey(CreateBucketAccessKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCertificateResult createCertificate(CreateCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +199,16 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public DeleteAutoSnapshotResult deleteAutoSnapshot(DeleteAutoSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBucketResult deleteBucket(DeleteBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBucketAccessKeyResult deleteBucketAccessKey(DeleteBucketAccessKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -334,6 +354,26 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public GetBlueprintsResult getBlueprints(GetBlueprintsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketAccessKeysResult getBucketAccessKeys(GetBucketAccessKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketBundlesResult getBucketBundles(GetBucketBundlesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketMetricDataResult getBucketMetricData(GetBucketMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketsResult getBuckets(GetBucketsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -673,6 +713,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public SetResourceAccessForBucketResult setResourceAccessForBucket(SetResourceAccessForBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInstanceResult startInstance(StartInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -709,6 +754,16 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBucketResult updateBucket(UpdateBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBucketBundleResult updateBucketBundle(UpdateBucketBundleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

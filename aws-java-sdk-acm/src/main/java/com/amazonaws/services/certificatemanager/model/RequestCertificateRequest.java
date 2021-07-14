@@ -113,8 +113,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
-     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
+     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -798,8 +798,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
-     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
+     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -809,8 +809,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *        attempt to issue a public certificate. For more information about private CAs, see the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager
-     *        Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services
+     *        Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
+     *        form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      */
@@ -824,8 +825,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
-     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
+     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -834,8 +835,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *         certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *         attempt to issue a public certificate. For more information about private CAs, see the <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager
-     *         Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services
+     *         Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
+     *         form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      */
@@ -849,8 +851,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
-     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate
+     * Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -860,8 +862,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *        attempt to issue a public certificate. For more information about private CAs, see the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager
-     *        Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services
+     *        Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
+     *        form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be chained together.

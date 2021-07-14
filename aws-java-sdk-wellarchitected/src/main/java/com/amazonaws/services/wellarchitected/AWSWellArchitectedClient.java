@@ -656,7 +656,7 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Get lens review.
+     * Get the answer to a specific question in a workload review.
      * </p>
      * 
      * @param getAnswerRequest
@@ -1759,6 +1759,12 @@ public class AWSWellArchitectedClient extends AmazonWebServiceClient implements 
     /**
      * <p>
      * Deletes specified tags from a resource.
+     * </p>
+     * <p>
+     * To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
+     * </p>
+     * <p>
+     * <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code>
      * </p>
      * 
      * @param untagResourceRequest

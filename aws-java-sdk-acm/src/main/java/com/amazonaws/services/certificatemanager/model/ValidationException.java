@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The supplied input failed to satisfy constraints of an AWS service.
+ * The supplied input failed to satisfy constraints of an Amazon Web Services service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

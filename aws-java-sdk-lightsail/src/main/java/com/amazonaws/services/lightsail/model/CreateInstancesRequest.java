@@ -83,9 +83,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      */
@@ -464,9 +464,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      * 
@@ -476,9 +476,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     *        >Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a
+     *        href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      */
 
@@ -495,9 +495,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      * 
@@ -506,9 +506,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *         Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *         <code>pkg</code>. For a complete list, see the <a href=
-     *         "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     *         >Dev Guide</a>.
+     *         <code>pkg</code>. For a complete list, see the <a
+     *         href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     *         >Amazon Lightsail Developer Guide</a>.
      *         </p>
      */
 
@@ -525,9 +525,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a href=
-     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     * >Dev Guide</a>.
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     * >Amazon Lightsail Developer Guide</a>.
      * </p>
      * </note>
      * 
@@ -537,9 +537,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
-     *        >Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a
+     *        href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image"
+     *        >Amazon Lightsail Developer Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

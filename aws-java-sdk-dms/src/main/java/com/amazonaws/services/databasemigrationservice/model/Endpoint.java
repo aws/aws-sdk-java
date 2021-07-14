@@ -34,11 +34,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <code>DescribeEndpointTypes</code>
- * </p>
- * </li>
- * <li>
- * <p>
  * <code>ModifyEndpoint</code>
  * </p>
  * </li>
@@ -118,15 +113,14 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * An KMS key identifier that is used to encrypt the connection parameters for the endpoint.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      */
     private String kmsKeyId;
@@ -150,7 +144,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private String sslMode;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      */
     private String serviceAccessRoleArn;
@@ -190,7 +185,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
+     * must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -198,20 +194,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>BucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
-     * </p>
-     * </li>
      * </ul>
      * <p>
-     * Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      * </p>
      * <p>
      * JSON syntax for these settings is as follows:
-     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      * </p>
      */
     private DmsTransferSettings dmsTransferSettings;
@@ -778,26 +767,25 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * An KMS key identifier that is used to encrypt the connection parameters for the endpoint.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *        An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
      *        <p>
-     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *        encryption key.
      *        </p>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        KMS creates the default encryption key for your account. Your account has a different default encryption
+     *        key for each Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -806,25 +794,24 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * An KMS key identifier that is used to encrypt the connection parameters for the endpoint.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
-     * @return An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     * @return An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
      *         <p>
-     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *         encryption key.
      *         </p>
      *         <p>
-     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     *         KMS creates the default encryption key for your account. Your account has a different default encryption
+     *         key for each Region.
      */
 
     public String getKmsKeyId() {
@@ -833,26 +820,25 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * An KMS key identifier that is used to encrypt the connection parameters for the endpoint.
      * </p>
      * <p>
-     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
-     * key.
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.
      * </p>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * KMS creates the default encryption key for your account. Your account has a different default encryption key for
+     * each Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *        An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
      *        <p>
-     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default
      *        encryption key.
      *        </p>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        KMS creates the default encryption key for your account. Your account has a different default encryption
+     *        key for each Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1016,11 +1002,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -1029,10 +1017,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used by the service access IAM role.
+     * @return The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *         <code>iam:PassRole</code> action.
      */
 
     public String getServiceAccessRoleArn() {
@@ -1041,11 +1031,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     * <code>iam:PassRole</code> action.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the
+     *        <code>iam:PassRole</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1236,7 +1228,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
+     * must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1244,20 +1237,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>BucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
-     * </p>
-     * </li>
      * </ul>
      * <p>
-     * Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      * </p>
      * <p>
      * JSON syntax for these settings is as follows:
-     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      * </p>
      * 
      * @param dmsTransferSettings
@@ -1268,7 +1254,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     *        <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The
+     *        role must allow the <code>iam:PassRole</code> action.
      *        </p>
      *        </li>
      *        <li>
@@ -1276,21 +1263,14 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <code>BucketName</code> - The name of the S3 bucket to use.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use
-     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
-     *        value.
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        Shorthand syntax for these settings is as follows:
-     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      *        </p>
      *        <p>
      *        JSON syntax for these settings is as follows:
-     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      */
 
     public void setDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
@@ -1307,7 +1287,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
+     * must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1315,20 +1296,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>BucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
-     * </p>
-     * </li>
      * </ul>
      * <p>
-     * Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      * </p>
      * <p>
      * JSON syntax for these settings is as follows:
-     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      * </p>
      * 
      * @return The settings in JSON format for the DMS transfer type of source endpoint. </p>
@@ -1338,7 +1312,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     *         <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The
+     *         role must allow the <code>iam:PassRole</code> action.
      *         </p>
      *         </li>
      *         <li>
@@ -1346,21 +1321,14 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *         <code>BucketName</code> - The name of the S3 bucket to use.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use
-     *         GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
-     *         value.
-     *         </p>
-     *         </li>
      *         </ul>
      *         <p>
      *         Shorthand syntax for these settings is as follows:
-     *         <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     *         <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      *         </p>
      *         <p>
      *         JSON syntax for these settings is as follows:
-     *         <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     *         <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      */
 
     public DmsTransferSettings getDmsTransferSettings() {
@@ -1377,7 +1345,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The role
+     * must allow the <code>iam:PassRole</code> action.
      * </p>
      * </li>
      * <li>
@@ -1385,20 +1354,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>BucketName</code> - The name of the S3 bucket to use.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
-     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
-     * </p>
-     * </li>
      * </ul>
      * <p>
-     * Shorthand syntax for these settings is as follows:
-     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      * </p>
      * <p>
      * JSON syntax for these settings is as follows:
-     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      * </p>
      * 
      * @param dmsTransferSettings
@@ -1409,7 +1371,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     *        <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket. The
+     *        role must allow the <code>iam:PassRole</code> action.
      *        </p>
      *        </li>
      *        <li>
@@ -1417,21 +1380,14 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <code>BucketName</code> - The name of the S3 bucket to use.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>CompressionType</code> - An optional parameter to use GZIP to compress the target files. To use
-     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
-     *        value.
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        Shorthand syntax for these settings is as follows:
-     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,</code>
      *        </p>
      *        <p>
      *        JSON syntax for these settings is as follows:
-     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
