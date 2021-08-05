@@ -518,7 +518,7 @@ public class ReceiveQueueBuffer {
      */
     private class ReceiveMessageBatchTask implements Runnable {
         private Exception exception = null;
-        private List<Message> messages;
+        private LinkedList<Message> messages;
         private long visibilityDeadlineNano;
         private boolean open = false;
         private ReceiveQueueBuffer parentBuffer;
@@ -528,7 +528,7 @@ public class ReceiveQueueBuffer {
          */
         ReceiveMessageBatchTask(ReceiveQueueBuffer paramParentBuffer) {
             parentBuffer = paramParentBuffer;
-            messages = Collections.emptyList();
+            messages = new LinkedList<>();
         }
 
         synchronized boolean isEmpty() {
@@ -571,7 +571,7 @@ public class ReceiveQueueBuffer {
             if (messages.isEmpty())
                 return null;
             else
-                return messages.remove(messages.size() - 1);
+                return messages.poll();
         }
 
         boolean isExpired() {
@@ -637,7 +637,7 @@ public class ReceiveQueueBuffer {
                     request.withWaitTimeSeconds(config.getLongPollWaitTimeoutSeconds());
                 }
 
-                messages = sqsClient.receiveMessage(request).getMessages();
+                messages.addAll(sqsClient.receiveMessage(request).getMessages());
             } catch (AmazonClientException e) {
                 exception = e;
             } finally {
