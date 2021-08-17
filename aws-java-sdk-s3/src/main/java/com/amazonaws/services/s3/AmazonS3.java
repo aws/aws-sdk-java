@@ -425,22 +425,6 @@ public interface AmazonS3 extends S3DirectSpi {
      * an easy way to get the next page of object listings.
      * </p>
      * <p>
-     * For example, consider a bucket that contains the following keys:
-     * <ul>
-     * 	<li>"foo/bar/baz"</li>
-     * 	<li>"foo/bar/bash"</li>
-     * 	<li>"foo/bar/bang"</li>
-     * 	<li>"foo/boo"</li>
-     * </ul>
-     * If calling <code>listObjects</code> with
-     * a <code>prefix</code> value of "foo/" and a <code>delimiter</code> value of "/"
-     * on this bucket, an <code>ObjectListing</code> is returned that contains one key
-     * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").
-     * To see deeper into the virtual hierarchy, make another
-     * call to <code>listObjects</code> setting the prefix parameter to any interesting
-     * common prefix to list the individual keys under that prefix.
-     * </p>
-     * <p>
      * The total number of keys in a bucket doesn't substantially
      * affect list performance.
      * </p>
