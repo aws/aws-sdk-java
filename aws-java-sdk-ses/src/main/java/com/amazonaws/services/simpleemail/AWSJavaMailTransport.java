@@ -34,6 +34,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.simpleemail.model.RawMessage;
 import com.amazonaws.services.simpleemail.model.SendRawEmailRequest;
@@ -61,7 +62,7 @@ public class AWSJavaMailTransport extends Transport {
     public static final String AWS_SECRET_KEY_PROPERTY = "mail.aws.password";
     public static final String AWS_ACCESS_KEY_PROPERTY = "mail.aws.user";
 
-    private AmazonSimpleEmailServiceClient emailService;
+    private AmazonSimpleEmailService emailService;
     private final String accessKey;
     private final String secretKey;
     private final String httpsEndpoint;
@@ -308,7 +309,7 @@ public class AWSJavaMailTransport extends Transport {
      */
     @Override
     protected boolean protocolConnect(String host, int port, String awsAccessKey,
-            String awsSecretKey) {
+                                      String awsSecretKey) {
         if (isConnected())
             throw new IllegalStateException("Already connected");
 
@@ -318,7 +319,7 @@ public class AWSJavaMailTransport extends Transport {
                 // - Environment Variables
                 // - Java System Properties
                 // - Instance profile credentials delivered through the Amazon EC2 metadata service
-                this.emailService = new AmazonSimpleEmailServiceClient();
+                this.emailService = AmazonSimpleEmailServiceClientBuilder.defaultClient();
             }
             awsAccessKey = this.accessKey;
             awsSecretKey = this.secretKey;
@@ -326,7 +327,10 @@ public class AWSJavaMailTransport extends Transport {
 
         if (this.emailService == null) {
             // Use the supplied credentials.
-            this.emailService = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials(awsAccessKey, awsSecretKey));
+            this.emailService = AmazonSimpleEmailServiceClientBuilder.standard()
+                    .withCredentials(
+                            new AWSStaticCredentialsProvider(
+                                    new BasicAWSCredentials(awsAccessKey, awsSecretKey))).build();
         }
 
         if (!isNullOrEmpty(host)) {
@@ -345,13 +349,13 @@ public class AWSJavaMailTransport extends Transport {
     }
 
     /**
-    * <p>
-    * The unique message identifier ot the last message sent by <code>sendMessage</code>
-            * </p>
-            *
-            * @return The unique message identifier sent by the last
-    *         <code>sendMessage</code> action.
-    */
+     * <p>
+     * The unique message identifier ot the last message sent by <code>sendMessage</code>
+     * </p>
+     *
+     * @return The unique message identifier sent by the last
+     *         <code>sendMessage</code> action.
+     */
     public String getLastMessageId() {
         return lastMessageId;
     }
