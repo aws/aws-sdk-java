@@ -385,6 +385,10 @@
             <target>${jre.version}</target>
             <encoding>UTF-8</encoding>
             <forceJavacCompilerUse>true</forceJavacCompilerUse>
+          	<fork>true</fork>
+          	<useIncrementalCompilation>true</useIncrementalCompilation>
+
+
           </configuration>
         </plugin>
 
