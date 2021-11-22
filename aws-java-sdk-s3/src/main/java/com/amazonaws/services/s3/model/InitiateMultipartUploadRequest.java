@@ -16,7 +16,9 @@ package com.amazonaws.services.s3.model;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.Mimetypes;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -534,6 +536,39 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      */
     public InitiateMultipartUploadRequest withObjectMetadata(ObjectMetadata objectMetadata) {
         setObjectMetadata(objectMetadata);
+        return this;
+    }
+
+    /**
+     * Sets the additional information of content type about the new object being created.
+     * Sets content type in the object metadata. Creates object metadata if does not exist.
+     *
+     * @param file
+     *            File that would be uploaded. Uses file extension to determine
+     *            mimetype.
+     */
+    public void setObjectMetadataContentTypeFromFile(File file) {
+        if (this.objectMetadata == null) {
+            this.objectMetadata = new ObjectMetadata();
+        }
+        this.objectMetadata.setContentType(Mimetypes.getInstance().getMimetype(file));
+    }
+
+    /**
+     * Sets the additional information of content type about the new object being created.
+     * Sets content type in the object metadata. Creates object metadata if does not exist.
+     * <p>
+     * Returns this updated InitiateMultipartUploadRequest object so that
+     * additional method calls can be chained together.
+     *
+     * @param file
+     *            File that would be uploaded. Uses file extension to determine
+     *            mimetype.
+     *
+     * @return This updated InitiateMultipartUploadRequest object.
+     */
+    public InitiateMultipartUploadRequest withObjectMetadataContentTypeFromFile(File file) {
+        setObjectMetadataContentTypeFromFile(file);
         return this;
     }
 
