@@ -667,4 +667,22 @@ public class StepFunctionBuilderTest {
         StateMachine.fromJson("{");
     }
 
+    @Test
+    public void stateMachineFromJson_timestamp() {
+        StateMachine.fromJson("{" +
+                    "\"StartAt\": \"TestTime\"," +
+                    "\"States\": {" +
+                        "\"TestTime\": {" +
+                            "\"Type\": \"Wait\"," +
+                            "\"Timestamp\": \"2016-03-14T01:59:00:00Z\"," +
+                            "\"Next\": \"HelloWorld\"" +
+                        "}," +
+                        "\"HelloWorld\": {" +
+                            "\"Type\": \"Pass\"," +
+                            "\"Result\": \"Hello World!\"," +
+                            "\"End\": true" +
+                        "}" +
+                    "}" +
+                "}");
+    }
 }
