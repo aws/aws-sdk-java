@@ -667,14 +667,15 @@ public class StepFunctionBuilderTest {
         StateMachine.fromJson("{");
     }
 
+    //Test StateMachine with Timestamp in the format of hh:mm:ssZ
     @Test
-    public void stateMachineFromJson_timestamp() {
+    public void stateMachineFromJson_timestamp1() {
         StateMachine.fromJson("{" +
                     "\"StartAt\": \"TestTime\"," +
                     "\"States\": {" +
                         "\"TestTime\": {" +
                             "\"Type\": \"Wait\"," +
-                            "\"Timestamp\": \"2016-03-14T01:59:00:00Z\"," +
+                            "\"Timestamp\": \"2016-03-14T01:59:00Z\"," +
                             "\"Next\": \"HelloWorld\"" +
                         "}," +
                         "\"HelloWorld\": {" +
@@ -683,6 +684,26 @@ public class StepFunctionBuilderTest {
                             "\"End\": true" +
                         "}" +
                     "}" +
+                "}");
+    }
+
+    //Test StateMachine with Timestamp in the format of hh:mm:ss.fractionZ
+    @Test
+    public void stateMachineFromJson_timestamp2() {
+        StateMachine.fromJson("{" +
+                "\"StartAt\": \"TestTime\"," +
+                "\"States\": {" +
+                "\"TestTime\": {" +
+                "\"Type\": \"Wait\"," +
+                "\"Timestamp\": \"2016-03-14T01:59:00.000Z\"," +
+                "\"Next\": \"HelloWorld\"" +
+                "}," +
+                "\"HelloWorld\": {" +
+                "\"Type\": \"Pass\"," +
+                "\"Result\": \"Hello World!\"," +
+                "\"End\": true" +
+                "}" +
+                "}" +
                 "}");
     }
 }
