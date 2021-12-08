@@ -124,6 +124,7 @@ public final class StateMachine {
         }
     }
 
+    //CS427 Issue link: https://github.com/aws/aws-sdk-java/issues/2130
     /**
      * Deserializes a JSON representation of a state machine into a {@link StateMachine.Builder} .
      *
