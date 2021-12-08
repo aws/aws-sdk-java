@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+
 /**
  * Represents a StepFunctions state machine. A state machine must have at least one state.
  *
@@ -130,6 +131,19 @@ public final class StateMachine {
      * @return Mutable {@link StateMachine.Builder} deserialized from JSON representation.
      */
     public static StateMachine.Builder fromJson(String json) {
+        int find = json.indexOf("\"Timestamp\"");
+        if (find != -1) {
+            int end = json.indexOf(",", find);
+            int check = json.indexOf(".", find);
+            if (check == -1) {
+                StringBuilder builder = new StringBuilder(json);
+                builder.insert(end - 2, '.');
+                builder.insert(end - 1, '0');
+                builder.insert(end - 1, '0');
+                builder.insert(end - 1, '0');
+                json = builder.toString();
+            }
+        }
         try {
             return MAPPER.readValue(json, StateMachine.Builder.class);
         } catch (IOException e) {
