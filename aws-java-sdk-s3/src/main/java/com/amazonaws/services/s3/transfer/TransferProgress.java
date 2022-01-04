@@ -83,7 +83,7 @@ public final class TransferProgress {
         &&  this.bytesTransferred > this.totalBytesToTransfer) {
             this.bytesTransferred = this.totalBytesToTransfer;
             if (log.isDebugEnabled()) {
-                log.debug("Number of bytes transfered is more than the actual total bytes to transfer. Total number of bytes to Transfer : "
+                log.debug("Number of bytes transferred is more than the actual total bytes to transfer. Total number of bytes to Transfer : "
                         + totalBytesToTransfer
                         + ". Bytes Transferred : "
                         + (bytesTransferred + bytes));
