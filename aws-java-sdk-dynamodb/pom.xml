@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.762-dw4-SNAPSHOT</version>
+    <version>1.12.138-dw-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>com.amazonaws</groupId>
@@ -15,6 +15,13 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+
+    <dependency>
+        <groupId>javax.annotation</groupId>
+        <artifactId>javax.annotation-api</artifactId>
+        <version>1.3.2</version>
+    </dependency>
+
     <dependency>
         <artifactId>aws-java-sdk-s3</artifactId>
         <groupId>com.amazonaws</groupId>
