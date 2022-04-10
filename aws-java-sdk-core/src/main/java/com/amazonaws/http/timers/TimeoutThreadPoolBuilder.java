@@ -28,7 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
  */
 @SdkInternalApi
 public class TimeoutThreadPoolBuilder {
-    
+
+    private static final String DEFAULT_KEEP_ALIVE_TIME_PROPERTY_NAME = "com.amazonaws.sdk.http.defaultKeepAliveThreadPoolTime";
+    private static final String DEFAULT_CORE_POOL_SIZE_PROPERTY_NAME = "com.amazonaws.sdk.http.defaultCorePoolSize";
+
+    private static int getFromSystemProperty(String name, String defaultValue) {
+        return Integer.parseInt(
+                System.getProperty(name, "5")
+        );
+    }
+
     /**
      * Creates a {@link ScheduledThreadPoolExecutor} with custom name for the threads.
      *
@@ -36,9 +45,21 @@ public class TimeoutThreadPoolBuilder {
      * @return The default thread pool for request timeout and client execution timeout features.
      */
     public static ScheduledThreadPoolExecutor buildDefaultTimeoutThreadPool(final String name) {
-        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(5, getThreadFactory(name));
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(
+                getFromSystemProperty(
+                        DEFAULT_CORE_POOL_SIZE_PROPERTY_NAME,
+                        "5"
+                ),
+                getThreadFactory(name)
+        );
         safeSetRemoveOnCancel(executor);
-        executor.setKeepAliveTime(5, TimeUnit.SECONDS);
+        executor.setKeepAliveTime(
+                getFromSystemProperty(
+                        DEFAULT_KEEP_ALIVE_TIME_PROPERTY_NAME,
+                        "5"
+                ),
+                TimeUnit.SECONDS
+        );
         executor.allowCoreThreadTimeOut(true);
 
         return executor;
