@@ -21,6 +21,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.Fie
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.TableMap;
 import com.amazonaws.util.StringUtils;
 
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -199,15 +201,31 @@ final class StandardBeanProperties {
         }
 
         private void putAll(Class<T> clazz, boolean inherited) {
+            PropertyDescriptor[] propertyDescriptors = null;
+            try {
+                propertyDescriptors = Introspector.getBeanInfo(clazz).getPropertyDescriptors();
+            } catch (final Exception no) {}
             for (final Method method : clazz.getMethods()) {
                 if (canMap(method, inherited)) {
-                    final FieldMap<V> annotations = StandardAnnotationMaps.<V>of(method, null);
+                    final FieldMap<V> annotations = StandardAnnotationMaps.<V>of(method, getFieldNameForMethod(propertyDescriptors, method));
                     if (!annotations.ignored()) {
                         final Reflect<T,V> reflect = new MethodReflect<T,V>(method);
                         putOrFlatten(annotations, reflect, method);
                     }
                 }
             }
+        }
+
+        private String getFieldNameForMethod(PropertyDescriptor[] propertyDescriptors, Method method) {
+            String defaultName = null;
+            for (PropertyDescriptor propertyDescriptor : propertyDescriptors)
+            {
+                if(method.equals(propertyDescriptor.getWriteMethod()) || method.equals(propertyDescriptor.getReadMethod()))
+                {
+                    defaultName =  propertyDescriptor.getName();
+                }
+            }
+            return defaultName;
         }
 
         private void putOrFlatten(FieldMap<V> annotations, Reflect<T,V> reflect, Method getter) {
