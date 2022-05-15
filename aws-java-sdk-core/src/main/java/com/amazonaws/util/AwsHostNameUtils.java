@@ -214,8 +214,15 @@ public class AwsHostNameUtils {
             return "us-east-1";
         }
 
-        // host was 'service.[region].amazonaws.com'.
+        // host was 'service.[region].amazonaws.com' or
+        // 'domain.service.[region].vpce.amazonaws.com'.
         String region = fragment.substring(index + 1);
+
+        if ("vpce".equals(region)) {
+            // host was 'domain.service.[region].vpce.amazonaws.com'
+            region = fragment.substring(0, fragment.lastIndexOf(".vpce"));
+            region = region.substring(region.lastIndexOf('.') + 1);
+        }
 
         // Special case for iam.us-gov.amazonaws.com, which is actually
         // us-gov-west-1.
