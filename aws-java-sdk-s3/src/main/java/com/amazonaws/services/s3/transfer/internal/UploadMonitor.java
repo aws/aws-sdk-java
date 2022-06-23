@@ -134,7 +134,7 @@ public class UploadMonitor implements Callable<Void>, TransferMonitor {
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
             publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
-            SdkClientException exception = new SdkClientException("Upload canceled");
+            SdkClientException exception = new SdkClientException("Upload canceled", e);
             resultFuture.setDelegate(new FailedFuture<UploadResult>(exception));
         } catch (Throwable e) {
             transfer.setState(TransferState.Failed);
