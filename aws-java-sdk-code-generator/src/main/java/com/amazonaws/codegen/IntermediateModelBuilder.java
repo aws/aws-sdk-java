@@ -23,6 +23,7 @@ import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.AuthorizerModel;
+import com.amazonaws.codegen.model.intermediate.AwsQueryCompatibleModel;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
@@ -45,6 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 import static com.amazonaws.codegen.AddMetadata.constructMetadata;
 import static com.amazonaws.codegen.RemoveUnusedShapes.removeUnusedShapes;
@@ -140,9 +142,22 @@ public class IntermediateModelBuilder {
 
         System.out.println(shapes.size() + " shapes found in total.");
 
+        Map<String, AwsQueryCompatibleModel> awsQueryCompatibleMap;
+        if (service.getAwsQueryCompatible() == null) {
+            awsQueryCompatibleMap = Collections.emptyMap();
+        } else {
+            awsQueryCompatibleMap = service.getAwsQueryCompatible().entrySet().stream()
+                    .collect(Collectors.toMap(
+                                    kv -> kv.getKey(),
+                                    kv -> new AwsQueryCompatibleModel(kv.getValue().getName(), kv.getValue().getCode()))
+                    );
+        }
+
+        System.out.println(awsQueryCompatibleMap.size() + " AwsQuery mappings were found in total.");
+
         IntermediateModel fullModel = new IntermediateModel(
                 constructMetadata(service, codeGenConfig, customConfig), operations, shapes,
-                customConfig, examples, endpointOperation, waiters, authorizers);
+                customConfig, examples, awsQueryCompatibleMap, endpointOperation, waiters, authorizers);
 
         customization.postprocess(fullModel);
 
@@ -158,6 +173,7 @@ public class IntermediateModelBuilder {
                                                                trimmedShapes,
                                                                fullModel.getCustomizationConfig(),
                                                                fullModel.getExamples(),
+                                                               awsQueryCompatibleMap,
                                                                fullModel.getEndpointOperation(),
                                                                fullModel.getWaiters(),
                                                                fullModel.getCustomAuthorizers());

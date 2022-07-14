@@ -46,6 +46,8 @@ public class IntermediateModel {
 
     private final ServiceExamples examples;
 
+    private final Map<String, AwsQueryCompatibleModel> awsQueryCompatible;
+
     @JsonIgnore
     private final Map<String, AuthorizerModel> customAuthorizers;
 
@@ -61,9 +63,10 @@ public class IntermediateModel {
             @JsonProperty("operations") Map<String, OperationModel> operations,
             @JsonProperty("shapes") Map<String, ShapeModel> shapes,
             @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
-            @JsonProperty("serviceExamples") ServiceExamples examples) {
+            @JsonProperty("serviceExamples") ServiceExamples examples,
+            @JsonProperty("awsQueryCompatible") Map<String, AwsQueryCompatibleModel> awsQueryCompatible) {
 
-        this(metadata, operations, shapes, customizationConfig, examples, null, Collections.emptyMap(), Collections.emptyMap());
+        this(metadata, operations, shapes, customizationConfig, examples, awsQueryCompatible, null, Collections.emptyMap(), Collections.emptyMap());
     }
 
     public IntermediateModel(
@@ -72,6 +75,7 @@ public class IntermediateModel {
             Map<String, ShapeModel> shapes,
             CustomizationConfig customizationConfig,
             ServiceExamples examples,
+            @JsonProperty("awsQueryCompatible") Map<String, AwsQueryCompatibleModel> awsQueryCompatible,
             OperationModel endpointOperation,
             Map<String, WaiterDefinitionModel> waiters,
             Map<String, AuthorizerModel> customAuthorizers) {
@@ -80,6 +84,7 @@ public class IntermediateModel {
         this.shapes = shapes;
         this.customizationConfig = customizationConfig;
         this.examples = examples;
+        this.awsQueryCompatible = awsQueryCompatible;
         this.endpointOperation = endpointOperation;
         this.waiters = ValidationUtils.assertNotNull(waiters, "waiters");
         this.customAuthorizers = customAuthorizers;
@@ -212,5 +217,9 @@ public class IntermediateModel {
      */
     public String getTransformPackage() {
         return metadata.getPackageName() + ".model." + Utils.directoryToPackage(customizationConfig.getTransformDirectory());
+    }
+
+    public Map<String, AwsQueryCompatibleModel> getAwsQueryCompatible() {
+        return awsQueryCompatible;
     }
 }

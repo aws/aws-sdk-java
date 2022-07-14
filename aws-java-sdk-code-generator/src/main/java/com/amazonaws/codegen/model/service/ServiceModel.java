@@ -31,14 +31,18 @@ public class ServiceModel {
 
     private String documentation;
 
+    private final Map<String, AwsQueryCompatible> awsQueryCompatible;
+
     public ServiceModel(@JsonProperty(value = "metadata", required = true) ServiceMetadata metadata,
                         @JsonProperty(value = "operations", required = true) Map<String, Operation> operations,
                         @JsonProperty(value = "shapes", required = true) Map<String, Shape> shapes,
-                        @JsonProperty(value = "authorizers") Map<String, Authorizer> authorizers) {
+                        @JsonProperty(value = "authorizers") Map<String, Authorizer> authorizers,
+                        @JsonProperty(value = "awsQueryCompatible") Map<String, AwsQueryCompatible> awsQueryCompatible) {
         this.metadata = metadata;
         this.operations = operations;
         this.shapes = shapes;
         this.authorizers = authorizers;
+        this.awsQueryCompatible = awsQueryCompatible;
     }
 
     public ServiceMetadata getMetadata() {
@@ -93,5 +97,9 @@ public class ServiceModel {
 
     public Map<String, Authorizer> getAuthorizers() {
         return authorizers != null ? authorizers : Collections.emptyMap();
+    }
+
+    public Map<String, AwsQueryCompatible> getAwsQueryCompatible() {
+        return awsQueryCompatible;
     }
 }

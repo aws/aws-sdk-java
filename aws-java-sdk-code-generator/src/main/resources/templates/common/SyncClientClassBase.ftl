@@ -39,6 +39,10 @@ import ${metadata.packageName}.${metadata.syncClientBuilderClassName};
 import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
 </#if>
 
+<#if awsQueryCompatible??>
+    import com.amazonaws.util.ImmutableMapParameter;
+</#if>
+
 <#if customizationConfig.serviceClientHoldInputStream>
 import com.amazonaws.util.ServiceClientHolderInputStream;
 </#if>
@@ -418,7 +422,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
         request.setTimeOffset(timeOffset);
 
-        <@ClientInvokeMethodErrorResponseHandlerCreation.content metadata customizationConfig />
+        <@ClientInvokeMethodErrorResponseHandlerCreation.content metadata customizationConfig awsQueryCompatible />
 
         return client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

@@ -18,6 +18,7 @@ import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Contains various metadata needed to create an appropriate {@link com.amazonaws.http.JsonErrorResponseHandler}
@@ -38,6 +39,7 @@ public class JsonErrorResponseMetadata {
      */
     private List<JsonErrorShapeMetadata> errorShapes;
 
+    private Map<String, String> awsQueryCompatibleErrorMapping;
     public String getCustomErrorCodeFieldName() {
         return customErrorCodeFieldName;
     }
@@ -53,6 +55,15 @@ public class JsonErrorResponseMetadata {
 
     public JsonErrorResponseMetadata withErrorShapes(List<JsonErrorShapeMetadata> errorShapes) {
         this.errorShapes = errorShapes;
+        return this;
+    }
+
+    public Map<String, String> getAwsQueryCompatibleErrorMapping() {
+        return awsQueryCompatibleErrorMapping;
+    }
+
+    public JsonErrorResponseMetadata withAwsQueryCompatibleErrorMapping(Map<String, String> awsQueryCompatibleErrorMapping) {
+        this.awsQueryCompatibleErrorMapping = awsQueryCompatibleErrorMapping;
         return this;
     }
 }

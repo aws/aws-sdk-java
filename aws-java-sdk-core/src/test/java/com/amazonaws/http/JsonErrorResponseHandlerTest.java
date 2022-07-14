@@ -17,6 +17,7 @@ package com.amazonaws.http;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.internal.http.JsonErrorCodeMapper;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.protocol.json.JsonContent;
@@ -30,6 +31,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import java.io.ByteArrayInputStream;
+import java.util.Collections;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
@@ -73,6 +75,8 @@ public class JsonErrorResponseHandlerTest {
     @Mock
     private JsonErrorCodeParser errorCodeParser;
 
+    private final JsonErrorCodeMapper errorCodeMapper = new JsonErrorCodeMapper(Collections.<String, String>emptyMap());
+
     @Mock
     private Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers;
 
@@ -93,6 +97,7 @@ public class JsonErrorResponseHandlerTest {
                                                        simpleTypeUnmarshallers,
                                                        customTypeUnmarshallers,
                                                        errorCodeParser,
+                                                       errorCodeMapper,
                                                        JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                                                        new JsonFactory());
     }
@@ -102,6 +107,7 @@ public class JsonErrorResponseHandlerTest {
                                                                                    Exception {
         responseHandler = new JsonErrorResponseHandler(new ArrayList<JsonErrorUnmarshaller>(),
                                                        new JsonErrorCodeParser(),
+                                                       errorCodeMapper,
                                                        JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                                                        new JsonFactory());
 
@@ -264,6 +270,7 @@ public class JsonErrorResponseHandlerTest {
                 simpleTypeUnmarshallers,
                 customTypeUnmarshallers,
                 errorCodeParser,
+                errorCodeMapper,
                 JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                 new JsonFactory());
 
@@ -280,6 +287,7 @@ public class JsonErrorResponseHandlerTest {
                 simpleTypeUnmarshallers,
                 customTypeUnmarshallers,
                 errorCodeParser,
+                errorCodeMapper,
                 JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                 new JsonFactory());
 
@@ -311,6 +319,7 @@ public class JsonErrorResponseHandlerTest {
                 simpleTypeUnmarshallers,
                 customTypeUnmarshallers,
                 errorCodeParser,
+                errorCodeMapper,
                 JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                 new JsonFactory());
 
@@ -342,6 +351,7 @@ public class JsonErrorResponseHandlerTest {
                 simpleTypeUnmarshallers,
                 customTypeUnmarshallers,
                 errorCodeParser,
+                errorCodeMapper,
                 JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                 new JsonFactory());
 

@@ -141,7 +141,7 @@ public class SdkStructuredIonFactoryTest {
         List<JsonErrorUnmarshaller> unmarshallers = new LinkedList<JsonErrorUnmarshaller>();
         unmarshallers.add(new InvalidParameterExceptionUnmarshaller(ERROR_TYPE));
 
-        JsonErrorResponseHandler handler = SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY.createErrorResponseHandler(unmarshallers, NO_CUSTOM_ERROR_CODE_FIELD_NAME);
+        JsonErrorResponseHandler handler = SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY.createErrorResponseHandler(unmarshallers, new JsonErrorResponseMetadata());
         return handler.handle(error);
     }
 

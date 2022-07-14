@@ -17,6 +17,7 @@ package com.amazonaws.protocol.json;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.internal.http.ErrorCodeParser;
+import com.amazonaws.internal.http.JsonErrorCodeMapper;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
@@ -65,17 +66,22 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
 
     @Override
     public JsonErrorResponseHandler createErrorResponseHandler(
-            final List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName) {
+            final List<JsonErrorUnmarshaller> errorUnmarshallers, JsonErrorResponseMetadata jsonErrorResponseMetadata) {
         return new JsonErrorResponseHandler(errorUnmarshallers,
                                             unmarshallers,
                                             customTypeUnmarshallers,
-                                            getErrorCodeParser(customErrorCodeFieldName),
+                                            getErrorCodeParser(jsonErrorResponseMetadata.getCustomErrorCodeFieldName()),
+                                            getErrorCodeMapper(jsonErrorResponseMetadata.getAwsQueryCompatibleErrorMapping()),
                                             JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                                             jsonFactory);
     }
 
     protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
         return new JsonErrorCodeParser(customErrorCodeFieldName);
+    }
+
+    private JsonErrorCodeMapper getErrorCodeMapper(Map<String, String> awsQueryCompatibleErrorMapping) {
+        return new JsonErrorCodeMapper(awsQueryCompatibleErrorMapping);
     }
 
 }

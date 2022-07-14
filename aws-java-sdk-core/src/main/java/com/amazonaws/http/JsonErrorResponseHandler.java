@@ -18,6 +18,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.http.ErrorCodeParser;
+import com.amazonaws.internal.http.JsonErrorCodeMapper;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.protocol.json.JsonContent;
 import com.amazonaws.transform.EnhancedJsonErrorUnmarshaller;
@@ -44,6 +45,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
 
     private final List<JsonErrorUnmarshaller> unmarshallers;
     private final ErrorCodeParser errorCodeParser;
+    private final JsonErrorCodeMapper errorCodeMapper;
     private final JsonErrorMessageParser errorMessageParser;
     private final JsonFactory jsonFactory;
 
@@ -54,12 +56,14 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     public JsonErrorResponseHandler(
             List<JsonErrorUnmarshaller> errorUnmarshallers,
             ErrorCodeParser errorCodeParser,
+            JsonErrorCodeMapper errorCodeMapper,
             JsonErrorMessageParser errorMessageParser,
             JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
         this.simpleTypeUnmarshallers = null;
         this.customTypeUnmarshallers = null;
         this.errorCodeParser = errorCodeParser;
+        this.errorCodeMapper = errorCodeMapper;
         this.errorMessageParser = errorMessageParser;
         this.jsonFactory = jsonFactory;
     }
@@ -69,12 +73,14 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers,
             Map<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers,
             ErrorCodeParser errorCodeParser,
+            JsonErrorCodeMapper errorCodeMapper,
             JsonErrorMessageParser errorMessageParser,
             JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
         this.simpleTypeUnmarshallers = simpleTypeUnmarshallers;
         this.customTypeUnmarshallers = customTypeUnmarshallers;
         this.errorCodeParser = errorCodeParser;
+        this.errorCodeMapper = errorCodeMapper;
         this.errorMessageParser = errorMessageParser;
         this.jsonFactory = jsonFactory;
     }
@@ -100,7 +106,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             ase.setErrorMessage(errorMessageParser.parseErrorMessage(response, jsonContent.getJsonNode()));
         }
 
-        ase.setErrorCode(errorCode);
+        ase.setErrorCode(errorCodeMapper.mapErrorCode(errorCode));
         ase.setServiceName(response.getRequest().getServiceName());
         ase.setStatusCode(response.getStatusCode());
         ase.setErrorType(getErrorTypeFromStatusCode(response.getStatusCode()));
