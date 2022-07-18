@@ -139,15 +139,15 @@ A version 2.x of the SDK is generally available. It is a major rewrite of the 1.
 
 For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-guide] or check the project repository in https://github.com/aws/aws-sdk-java-v2.
 
-[aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/java-dg-roles.html
+[aws-iam-credentials]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
 [blog]: https://aws.amazon.com/blogs/developer/category/java/
 [docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
-[docs-guide]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/welcome.html
+[docs-guide]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/welcome.html
 [docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
-[docs-java-env]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/setup-install.html#installing-a-java-development-environment
-[docs-signup]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/signup-create-iam-user.html
-[docs-setup]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/setup-install.html
+[docs-java-env]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html#installing-a-java-development-environment
+[docs-signup]: http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/signup-create-iam-user.html
+[docs-setup]: http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html
 [install-jar]: http://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
 [sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=70
 [sdk-issues]: https://github.com/aws/aws-sdk-java/issues
