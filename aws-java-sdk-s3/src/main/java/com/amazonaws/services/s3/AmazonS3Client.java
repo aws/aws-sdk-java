@@ -3672,8 +3672,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultipartUpload");
         request.addParameter("uploads", null);
 
-        if (initiateMultipartUploadRequest.getStorageClass() != null)
-            request.addHeader(Headers.STORAGE_CLASS, initiateMultipartUploadRequest.getStorageClass().toString());
+        if (initiateMultipartUploadRequest.getStorageClassValue() != null)
+            request.addHeader(Headers.STORAGE_CLASS, initiateMultipartUploadRequest.getStorageClassValue());
 
         if (initiateMultipartUploadRequest.getRedirectLocation() != null) {
             request.addHeader(Headers.REDIRECT_LOCATION, initiateMultipartUploadRequest.getRedirectLocation());

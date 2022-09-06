@@ -85,7 +85,7 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * The optional storage class to use when storing this upload's data in S3.
      * If not specified, the default storage class is used.
      */
-    private StorageClass storageClass;
+    private String storageClass;
 
     /**
      * The optional redirect location for the new object.
@@ -445,11 +445,16 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      *
      * @return The optional storage class to use when storing this upload's data
      *         in S3. If not specified, the default storage class is used.
+     * @throws IllegalArgumentException if a non-null value
      *
      * @see StorageClass
+     * @see #getStorageClassValue()
      */
     public StorageClass getStorageClass() {
-        return storageClass;
+        if (this.storageClass != null)
+            return StorageClass.fromValue(storageClass);
+        else
+            return null;
     }
 
     /**
@@ -466,7 +471,10 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * @see StorageClass
      */
     public void setStorageClass(StorageClass storageClass) {
-        this.storageClass = storageClass;
+        if (storageClass != null)
+            this.storageClass = storageClass.toString();
+        else
+            this.storageClass = null;
     }
 
     /**
@@ -484,16 +492,28 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * @return This updated InitiateMultipartUploadRequest object.
      */
     public InitiateMultipartUploadRequest withStorageClass(StorageClass storageClass) {
-        this.storageClass = storageClass;
+        setStorageClass(storageClass);
         return this;
     }
 
     public InitiateMultipartUploadRequest withStorageClass(String storageClass) {
-        if (storageClass != null)
-            this.storageClass = StorageClass.fromValue(storageClass);
-        else
-            this.storageClass = null;
+        this.storageClass = storageClass;
         return this;
+    }
+
+    /**
+     * Returns the optional storage class to use when storing this upload's data
+     * in S3. If not specified, the default storage class is used.
+     * <p>
+     * If not specified, the default is {@link StorageClass#Standard}.
+     *
+     * @return The optional storage class to use when storing this upload's data
+     *         in S3. If not specified, the default storage class is used.
+     *
+     * @see StorageClass
+     */
+    public String getStorageClassValue() {
+        return this.storageClass;
     }
 
     /**
