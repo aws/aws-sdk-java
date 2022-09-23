@@ -1109,7 +1109,16 @@ public class ClientConfiguration {
     private String getNonProxyHostsEnvironment() {
         String nonProxyHosts = getEnvironmentVariableCaseInsensitive("NO_PROXY");
         if (nonProxyHosts != null) {
-            nonProxyHosts = nonProxyHosts.replace(",", "|");
+            String[] nonProxyDomains = nonProxyHosts.split(",|\\|");
+            StringBuilder nonProxyDomainsAndSubDomains = new StringBuilder();
+            for (String nonProxyDomain : nonProxyDomains) {
+              nonProxyDomainsAndSubDomains.append(nonProxyDomain);
+              nonProxyDomainsAndSubDomains.append("|*.");
+              nonProxyDomainsAndSubDomains.append(nonProxyDomain);
+              nonProxyDomainsAndSubDomains.append("|");
+            }
+            nonProxyHosts = nonProxyDomainsAndSubDomains.substring(0,
+              nonProxyDomainsAndSubDomains.length() - 1);
         }
 
         return nonProxyHosts;

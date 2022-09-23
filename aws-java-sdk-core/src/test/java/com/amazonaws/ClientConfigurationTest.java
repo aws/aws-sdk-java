@@ -491,9 +491,9 @@ public class ClientConfigurationTest {
         config.setProtocol(Protocol.HTTP);
         assertNull(config.getNonProxyHosts());
         environmentVariableHelper.set("no_proxy", "test1.com");
-        assertEquals("test1.com", config.getNonProxyHosts());
+        assertEquals("test1.com|*.test1.com", config.getNonProxyHosts());
         environmentVariableHelper.set("NO_PROXY", "test2.com");
-        assertEquals("test2.com", config.getNonProxyHosts());
+        assertEquals("test2.com|*.test2.com", config.getNonProxyHosts());
         System.setProperty("http.nonProxyHosts", "test3.com");
         assertEquals("test3.com", config.getNonProxyHosts());
         config.setNonProxyHosts("test4.com");
@@ -505,9 +505,9 @@ public class ClientConfigurationTest {
         assertNull(config.getNonProxyHosts());
         config.setProtocol(Protocol.HTTP);
         environmentVariableHelper.set("no_proxy", "test1.com,test2.com,test3.com");
-        assertEquals("test1.com|test2.com|test3.com", config.getNonProxyHosts());
+        assertEquals("test1.com|*.test1.com|test2.com|*.test2.com|test3.com|*.test3.com", config.getNonProxyHosts());
         environmentVariableHelper.set("no_proxy", "test1.com|test2.com|test3.com");
-        assertEquals("test1.com|test2.com|test3.com", config.getNonProxyHosts());
+        assertEquals("test1.com|*.test1.com|test2.com|*.test2.com|test3.com|*.test3.com", config.getNonProxyHosts());
         environmentVariableHelper.reset();
     }
 
